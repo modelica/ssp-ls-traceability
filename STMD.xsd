@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
+    vc:minVersion="1.0" vc:maxVersion="1.1"
+    xmlns:stmd="http://apps.pmsf.net/STMD/SimulationTask"
+    xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon"
+    targetNamespace="http://apps.pmsf.net/STMD/SimulationTask">
+    
+    <xs:import namespace="http://ssp-standard.org/SSP1/SystemStructureCommon" schemaLocation="../ssp/ssp-standard-dev/SystemStructureDescription/SystemStructureCommon.xsd"/>
+    
+    <xs:element name="SimulationTask">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="System">
+                    <xs:complexType>
+                        <xs:attribute name="type" type="xs:string" use="optional" default="application/x-ssp-definition">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This attribute specifies the MIME type of the system, which defaults to
+                                    application/x-ssp-definition to indicate an SSD.  When referencing another
+                                    system structure definition file, the MIME type application/x-ssp-definition
+                                    is used. No further types are currently defined.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                        <xs:attribute name="source" type="xs:anyURI" use="required">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This attribute indicates the source of the system as an URI
+                                    (cf. RFC 3986).  For purposes of the resolution of relative URIs
+                                    the base URI is the URI of the STMD.  Therefore for components
+                                    that are located alongside the STMD, relative URIs without scheme
+                                    and authority can and should be used to specify the component
+                                    sources.  For components that are packaged inside an SSP that
+                                    contains this STMD, this is mandatory (in this way, the STMD URIs
+                                    remain valid after unpacking the SSP into the filesystem).
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="version" use="required">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        Version of SSD format, 1.0 for this release.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:simpleType>
+                    <xs:restriction base="xs:normalizedString">
+                        <xs:pattern value="0[.][0-9]+(-.*)?"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="name" type="xs:string" use="required">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        This attribute gives the system structure a name, which can be used
+                        for purposes of presenting the system structure to the user, e.g.
+                        when selecting individual variant SSDs from an SSP.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
+            <xs:attributeGroup ref="ssc:ABaseElement"/>
+            <xs:attributeGroup ref="ssc:ATopLevelMetaData"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
