@@ -2,13 +2,13 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
     vc:minVersion="1.0" vc:maxVersion="1.1"
-    xmlns:stmd="http://apps.pmsf.net/STMD/SimulationTask"
+    xmlns:stmd="http://apps.pmsf.net/STMD/SimulationTaskMetaData"
     xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon"
-    targetNamespace="http://apps.pmsf.net/STMD/SimulationTask">
+    targetNamespace="http://apps.pmsf.net/STMD/SimulationTaskMetaData">
     
     <xs:import namespace="http://ssp-standard.org/SSP1/SystemStructureCommon" schemaLocation="../ssp/ssp-standard-dev/SystemStructureDescription/SystemStructureCommon.xsd"/>
     
-    <xs:element name="SimulationTask">
+    <xs:element name="SimulationTaskMetaData">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="System">
@@ -43,7 +43,7 @@
             <xs:attribute name="version" use="required">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">
-                        Version of SSD format, 1.0 for this release.
+                        Version of STMD format, 0.x for this pre-release.
                     </xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
@@ -55,9 +55,9 @@
             <xs:attribute name="name" type="xs:string" use="required">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">
-                        This attribute gives the system structure a name, which can be used
-                        for purposes of presenting the system structure to the user, e.g.
-                        when selecting individual variant SSDs from an SSP.
+                        This attribute gives the simulation task a name, which can be used
+                        for purposes of presenting the simulation task to the user, e.g.
+                        when selecting individual variant STMDs from an SSP.
                     </xs:documentation>
                 </xs:annotation>
             </xs:attribute>

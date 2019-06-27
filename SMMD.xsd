@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
-	<xs:element name="Category">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" attributeFormDefault="unqualified"
+	xmlns:smmd="http://apps.pmsf.net/SMMD/SimulationModelMetaData"
+	xmlns:stmd="http://apps.pmsf.net/STMD/SimulationTaskMetaData"
+	xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon"
+	targetNamespace="http://apps.pmsf.net/SMMD/SimulationModelMetaData">
+	
+	<xs:import namespace="http://ssp-standard.org/SSP1/SystemStructureCommon" schemaLocation="../ssp/ssp-standard-dev/SystemStructureDescription/SystemStructureCommon.xsd"/>
+	
+	<xs:element name="SimulationModelMetaData">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="GeneralInformation">
@@ -1235,6 +1243,20 @@
 					</xs:complexType>
 				</xs:element>
 			</xs:sequence>
+			<xs:attribute name="version" use="required">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						Version of SMMD format, 0.x for this pre-release.
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:normalizedString">
+						<xs:pattern value="0[.][0-9]+(-.*)?"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attributeGroup ref="ssc:ABaseElement"/>
+			<xs:attributeGroup ref="ssc:ATopLevelMetaData"/>
 		</xs:complexType>
 	</xs:element>
 </xs:schema>
