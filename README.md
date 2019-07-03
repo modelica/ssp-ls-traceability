@@ -59,10 +59,10 @@ well-formed XML 1.0 [XML10] file that conforms to the SimulationTask XML
 Schema distributed as part of this standard.  The file MUST use the
 UTF-8 encoding.
 
-All STMD-specific elements live in the `http://apps.pmsf.net/STMD/SimulationTask`
-namespace, nicknamed `stmd`.
+All STMD-specific elements live in the `http://apps.pmsf.net/STMD/SimulationTaskMetaData`
+namespace, nicknamed `stmd` in this document.
 
-The root element of an STMD file MUST be a `SimulationTask` element,
+The root element of an STMD file MUST be a `SimulationTaskMetaData` element,
 which gives overall information about the simulation task described in
 this STMD file.
 
