@@ -86,14 +86,20 @@ system structure description MAY be provided either inline or through
 external references to files placed in the `resources` folder of the
 SSP package.
 
-In either case, an annotation with type `net.pmsf.ssp.smmd` MUST be
+In either case, an annotation with type `net.pmsf.ssp.sspmd` MUST be
 added to the component in question. The content of the annotation
-MUST be an `smmd` element in the `http://apps.pmsf.net/XSD/smmd`
+MUST be a `ModelMetaData` element in the `http://apps.pmsf.net/SSPMD/SSPMetaData`
 namespace.  If the SMMD content is to be placed inline, then the
-content of the `smmd` element MUST be valid SMMD content.  If the
-SMMD content is to be referenced externally, then the `smmd` element
+content of the `ModelMetaData` element MUST be valid SMMD content.  If the
+SMMD content is to be referenced externally, then the `ModelMetaData` element
 MUST be empty, and MUST have an attribute named `source` that provides
 the location of the SMMD file as a URI.  If the SMMD meta-data is
 packaged inside the SSP archive, then the URI MUST be a relative URI
 that is resolved against the SSD file as its base URI, as specified
-in the SSP standard for all SSP-relative content addressing.
+in the SSP standard for all SSP-relative content addressing, unless the
+`sourceBase` attribute is present and has a value of `component`, in which
+case the relative URI is resolved against the component itself as its base URI,
+allowing the addressing of meta-data that is packaged within the component.
+
+SMMD content itself must be valid against the SMMD XML Schema in the
+`http://apps.pmsf.net/SMMD/SimulationModelMetaData` namespace.
