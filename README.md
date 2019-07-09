@@ -66,8 +66,8 @@ The root element of an STMD file MUST be a `SimulationTaskMetaData` element,
 which gives overall information about the simulation task described in
 this STMD file.
 
-The STMD file MUST reference the system structure description that the
-simulation task is intended to use through a `System` element with the
+The STMD file CAN reference any system structure descriptions that the
+simulation task is intended to use through `Resource` elements with the
 attribute `source` providing the URI to the SSD file. The relative URI
 resolution mechanisms are the same as for SSP generally, so that the
 URI will be resolved against the URI of the STMD file as a base URI.
@@ -75,11 +75,19 @@ URI will be resolved against the URI of the STMD file as a base URI.
 Hence a reference to the main SSD of an SSP package will be specified
 as
 
-`<stmd:System source="../../SystemStructure.ssd"/>`
+`<stmd:Resource source="../../SystemStructure.ssd" type="application/x-ssp-definition" kind="system"/>`
 
 due to the relative location of the STMD file.
 
-## SMMD
+Simulation model meta data and parameter meta data is referenced inside
+the STMD file using either Resource records directly if the meta data is
+directly relevant, or through MetaData elements inside Resource elements
+if the meta data is only used in a meta data role.
+
+If meta data is intended to be carried in the purely SSP subset of the SSP
+package, then the following sections apply.
+
+### SMMD
 
 Simulation model meta data for components that are referenced in the
 system structure description MAY be provided either inline or through
