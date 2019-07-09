@@ -6,39 +6,105 @@
     xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon"
     targetNamespace="http://apps.pmsf.net/STMD/SimulationTaskMetaData">
     
-    <xs:import namespace="http://ssp-standard.org/SSP1/SystemStructureCommon" schemaLocation="../ssp/ssp-standard-dev/SystemStructureDescription/SystemStructureCommon.xsd"/>
+    <xs:import namespace="http://ssp-standard.org/SSP1/SystemStructureCommon" schemaLocation="ssp/SystemStructureCommon.xsd"/>
     
     <xs:element name="SimulationTaskMetaData">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="System">
+                <xs:element name="AnalysisPhase" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                            This element specifies the Analysis Phase of the overall Simulation Task.
+                        </xs:documentation>
+                    </xs:annotation>
                     <xs:complexType>
-                        <xs:attribute name="type" type="xs:string" use="optional" default="application/x-ssp-definition">
-                            <xs:annotation>
-                                <xs:documentation xml:lang="en">
-                                    This attribute specifies the MIME type of the system, which defaults to
-                                    application/x-ssp-definition to indicate an SSD.  When referencing another
-                                    system structure definition file, the MIME type application/x-ssp-definition
-                                    is used. No further types are currently defined.
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:attribute>
-                        <xs:attribute name="source" type="xs:anyURI" use="required">
-                            <xs:annotation>
-                                <xs:documentation xml:lang="en">
-                                    This attribute indicates the source of the system as an URI
-                                    (cf. RFC 3986).  For purposes of the resolution of relative URIs
-                                    the base URI is the URI of the STMD.  Therefore for components
-                                    that are located alongside the STMD, relative URIs without scheme
-                                    and authority can and should be used to specify the component
-                                    sources.  For components that are packaged inside an SSP that
-                                    contains this STMD, this is mandatory (in this way, the STMD URIs
-                                    remain valid after unpacking the SSP into the filesystem).
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:attribute>
+                        <xs:sequence>
+                            <xs:element name="AnalyseEngineeringTask" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+                        </xs:sequence>
+                        <xs:attributeGroup ref="ssc:ABaseElement"/>
                     </xs:complexType>
                 </xs:element>
+                <xs:element name="RequirementsPhase" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                            This element specifies the Requirements Phase of the overall Simulation Task.
+                        </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="DeriveRequirements" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+                        </xs:sequence>
+                        <xs:attributeGroup ref="ssc:ABaseElement"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="SpecificationPhase" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                            This element specifies the Specification Phase of the overall Simulation Task.
+                        </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="DesignTestCaseSpecification" type="stmd:StepType" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="DesignModelSpecification" type="stmd:StepType" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="DesignParameterSpecification" type="stmd:StepType" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="DesignSimulationEnvironmentSpecification" type="stmd:StepType" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+                        </xs:sequence>
+                        <xs:attributeGroup ref="ssc:ABaseElement"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="ImplementationAndValidationPhase" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                            This element specifies the Implementation and Validation Phase of the overall Simulation Task.
+                        </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ImplementTestCase" type="stmd:StepType" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="ImplementModel" type="stmd:StepType" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="ImplementParameter" type="stmd:StepType" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="ImplementSimulationEnvironment" type="stmd:StepType" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="IntegrateSimulation" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="ValidateSimulation" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+                        </xs:sequence>
+                        <xs:attributeGroup ref="ssc:ABaseElement"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="ExecutionPhase" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                            This element specifies the Execution Phase of the overall Simulation Task.
+                        </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ExecuteSimulation" type="stmd:StepType" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+                        </xs:sequence>
+                        <xs:attributeGroup ref="ssc:ABaseElement"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="EvaluationAndDecisionPhase" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                            This element specifies the Evaluation and Decision Phase of the overall Simulation Task.
+                        </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="EvaluateSimulationResults" type="stmd:StepType" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="DecideGoalFulfillment" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+                        </xs:sequence>
+                        <xs:attributeGroup ref="ssc:ABaseElement"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>                
             </xs:sequence>
             <xs:attribute name="version" use="required">
                 <xs:annotation>
@@ -65,4 +131,281 @@
             <xs:attributeGroup ref="ssc:ATopLevelMetaData"/>
         </xs:complexType>
     </xs:element>
+    
+    <xs:complexType name="StepType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                This type specifies the content of each individual step inside a phase of the overall Simulation Task.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Input" minOccurs="0" type="stmd:ParticleType"/>
+            <xs:element name="Process" minOccurs="0" type="stmd:ParticleType"/>
+            <xs:element name="Output" minOccurs="0" type="stmd:ParticleType"/>
+            <xs:element name="Why" minOccurs="0" type="stmd:ParticleType"/>
+            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="ssc:ABaseElement"/>
+    </xs:complexType>
+    
+    <xs:complexType name="ParticleType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                This type specifies the content of each individual particle inside a step of a phase of the overall Simulation Task.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Resource" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        This element provides information on one resource that is related to the particular step
+                        and particle.  Multiple (or no) resources may be present.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Content" minOccurs="0" maxOccurs="1" type="stmd:ContentType">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This optional element can contain inlined content of the resource. If it is present,
+                                    then the attribute source of the Resource element must not be present.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="MetaData" minOccurs="0" maxOccurs="unbounded">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This element can specify additional meta data for the given resource. Multiple
+                                    (or no) MetaData elements may be present.
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType>
+                                <xs:sequence>
+                                    <xs:element name="Content" minOccurs="0" maxOccurs="1" type="stmd:ContentType">
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="en">
+                                                This optional element can contain inlined content of the resource meta data. If it
+                                                is present, then the attribute source of the MetaData element must not be present.
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="Signature" minOccurs="0" maxOccurs="unbounded" type="stmd:SignatureType">
+                                        <xs:annotation>
+                                            <xs:documentation xml:lang="en">
+                                                This element can contain digital signature information on the meta data referenced
+                                                by the enclosing MetaData element. It is left unspecified what types of signatures
+                                                are used and/or available for now.  Multiple or no signature elements may be present.
+                                            </xs:documentation>
+                                        </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+                                </xs:sequence>
+                                <xs:attribute name="kind" use="required">
+                                    <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+                                            This attribute indicates the kind of resource meta data that is referenced, i.e.
+                                            what role it plays in relation to the resource being described.
+                                        </xs:documentation>
+                                    </xs:annotation>
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:enumeration value="general"/>
+                                            <xs:enumeration value="quality"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                                <xs:attribute name="type" type="xs:string" use="required">
+                                    <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+                                            This mandatory attribute specifies the MIME type of the resource meta data, which
+                                            does not have a default value.  If no specific MIME type can be indicated, then
+                                            the type application/octet-stream is to be used.
+                                        </xs:documentation>
+                                    </xs:annotation>
+                                </xs:attribute>
+                                <xs:attribute name="source" type="xs:anyURI" use="optional">
+                                    <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+                                            This attribute indicates the source of the resource meta data as a
+                                            URI (cf. RFC 3986).  For purposes of the resolution of relative URIs
+                                            the base URI is the URI of the STMD, if the sourceBase attribute is
+                                            not specified or is specified as STMD, and the URI of the referenced
+                                            resource if the sourceBase attribute is specified as resource.
+                                            
+                                            This allows the specification of meta data sources that reside
+                                            inside the resource (e.g. an FMU) through relative URIs.
+                                            
+                                            For meta data that are located alongside the STMD, relative URIs
+                                            without scheme and authority can and should be used to specify the
+                                            meta data sources.  For meta data that are packaged inside an SSP
+                                            that contains this STMD, this is mandatory (in this way, the STMD
+                                            URIs remain valid after unpacking the SSP into the filesystem).
+                                            
+                                            If the source attribute is missing, the meta data is provided
+                                            inline as contents of the Content element, which must not be
+                                            present otherwise.
+                                        </xs:documentation>
+                                    </xs:annotation>
+                                </xs:attribute>
+                                <xs:attribute name="sourceBase" use="optional" default="STMD">
+                                    <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+                                            Defines the base the source URI is resolved against:  If the attribute
+                                            is missing or is specified as STMD, the source is resolved against the
+                                            URI of the STMD, if the attribute is specified as resource the URI is
+                                            resolved against the (resolved) URI of the resource source.
+                                        </xs:documentation>
+                                    </xs:annotation>
+                                    <xs:simpleType>
+                                        <xs:restriction base="xs:string">
+                                            <xs:enumeration value="STMD"/>
+                                            <xs:enumeration value="resource"/>
+                                        </xs:restriction>
+                                    </xs:simpleType>
+                                </xs:attribute>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Signature" minOccurs="0" maxOccurs="unbounded" type="stmd:SignatureType">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This element can contain digital signature information on the resource referenced
+                                    by the enclosing Resource element. It is left unspecified what types of signatures
+                                    are used and/or available for now.  Multiple or no signature elements may be present.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+                    </xs:sequence>
+                    <xs:attribute name="kind" use="required">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                This attribute indicates the kind of resource that is referenced, i.e. what role it
+                                plays in relation to the particle being described.
+                            </xs:documentation>
+                        </xs:annotation>
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="document"/>
+                                <xs:enumeration value="specification"/>
+                                <xs:enumeration value="model"/>
+                                <xs:enumeration value="parameter"/>
+                                <xs:enumeration value="system"/>
+                                <xs:enumeration value="test"/>
+                                <xs:enumeration value="result"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                    <xs:attribute name="type" type="xs:string" use="required">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                This mandatory attribute specifies the MIME type of the resource, which does not
+                                have a default value.  If no specific MIME type can be indicated, then the type
+                                application/octet-stream is to be used.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute name="source" type="xs:anyURI" use="optional">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                This attribute indicates the source of the resource as a URI
+                                (cf. RFC 3986).  For purposes of the resolution of relative URIs
+                                the base URI is the URI of the STMD.  Therefore for resources
+                                that are located alongside the STMD, relative URIs without scheme
+                                and authority can and should be used to specify the component
+                                sources.  For resources that are packaged inside an SSP that
+                                contains this STMD, this is mandatory (in this way, the STMD URIs
+                                remain valid after unpacking the SSP into the filesystem).
+                                
+                                If the source attribute is missing, the resource is provided
+                                inline as contents of the Content element, which must not be
+                                present otherwise.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute name="master" type="xs:anyURI" use="optional">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                This attribute, if present, indicates the original, canonical master source for the resource.
+                                If it is present, it indicates that the content provided via source attribute and/or Content
+                                element is only a copy of the original, canonical data, and this attributes provides the
+                                URI reference to that original canonical master data.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                    <xs:attributeGroup ref="ssc:ABaseElement"/>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="ssc:ABaseElement"/>
+    </xs:complexType>
+    
+    <xs:complexType name="SignatureType">
+        <xs:sequence>
+            <xs:element name="Content" minOccurs="0" maxOccurs="1" type="stmd:ContentType"/>
+            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+        </xs:sequence>
+        <xs:attribute name="type" type="xs:string" use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    This mandatory attribute specifies the MIME type of the resource signature, which
+                    does not have a default value.  If no specific MIME type can be indicated, then
+                    the type application/octet-stream is to be used.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="source" type="xs:anyURI" use="optional">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    This attribute indicates the source of the resource signature as a
+                    URI (cf. RFC 3986).  For purposes of the resolution of relative URIs
+                    the base URI is the URI of the STMD, if the sourceBase attribute is
+                    not specified or is specified as STMD, and the URI of the referenced
+                    resource if the sourceBase attribute is specified as resource.
+                    
+                    This allows the specification of signature sources that reside
+                    inside the resource (e.g. an FMU) through relative URIs.
+                    
+                    For signatures that are located alongside the STMD, relative URIs
+                    without scheme and authority can and should be used to specify the
+                    signature sources.  For signatures that are packaged inside an SSP
+                    that contains this STMD, this is mandatory (in this way, the STMD
+                    URIs remain valid after unpacking the SSP into the filesystem).
+                    
+                    If the source attribute is missing, the signature is provided
+                    inline as contents of the Content element, which must not be
+                    present otherwise.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="sourceBase" use="optional" default="STMD">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    Defines the base the source URI is resolved against:  If the attribute
+                    is missing or is specified as STMD, the source is resolved against the
+                    URI of the STMD, if the attribute is specified as resource the URI is
+                    resolved against the (resolved) URI of the resource source.
+                </xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="STMD"/>
+                    <xs:enumeration value="resource"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+    </xs:complexType>
+    
+    <xs:complexType name="ContentType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                This optional element can contain inlined content of an entity. If it is present,
+                then the attribute source of the enclosing element must not be present.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:choice>
+            <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:choice>
+    </xs:complexType>
+    
 </xs:schema>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ssd:SystemStructureDescription xmlns:ssd="http://ssp-standard.org/SSP1/SystemStructureDescription"
+  xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon"
+  xmlns:sspmd="http://apps.pmsf.net/SSPMD/SSPMetaData"
+  xsi:schemaLocation="http://ssp-standard.org/SSP1/SystemStructureCommon ../../SSP/ssp-standard-dev/SystemStructureDescription/SystemStructureDescription11.xsd"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" name="SystemStructure"
+  generationTool="PMSF FMI Bench 1.9.9.1" generationDateAndTime="2019-05-05T23:13:39+02:00">
+  <ssd:System name="Project">
+    <ssd:Elements>
+      <ssd:Component source="resources/Stimuli.fmu" type="application/x-fmu-sharedlibrary" name="Stimuli">
+        <ssd:Connectors>
+          <ssd:Connector name="U" kind="output"/>
+          <ssd:Connector name="tau_load" kind="output"/>
+        </ssd:Connectors>
+        <ssd:Annotations>
+          <ssc:Annotation type="net.pmsf.ssp.sspmd">
+            <sspmd:ModelMetaData source="resources/Stimuli.smmd"/>
+          </ssc:Annotation>
+        </ssd:Annotations>
+      </ssd:Component>
+      <ssd:System name="SuT">
+        <ssd:Connectors>
+          <ssd:Connector name="U" kind="input"/>
+          <ssd:Connector name="tau_load" kind="input"/>
+          <ssd:Connector name="phiB" kind="output"/>
+          <ssd:Connector name="wB" kind="output"/>
+          <ssd:Connector name="I" kind="output"/>
+        </ssd:Connectors>
+        <ssd:Elements>
+          <ssd:Component source="resources/eMachine.fmu" type="application/x-fmu-sharedlibrary" name="emachine">
+            <ssd:Connectors>
+              <ssd:Connector name="w" kind="input"/>
+              <ssd:Connector name="phi" kind="input"/>
+              <ssd:Connector name="U" kind="input"/>
+              <ssd:Connector name="I" kind="output"/>
+              <ssd:Connector name="tau" kind="output"/>
+            </ssd:Connectors>
+            <ssd:Annotations>
+              <ssc:Annotation type="net.pmsf.ssp.sspmd">
+                <sspmd:ModelMetaData source="resources/eMachine.smmd"/>
+              </ssc:Annotation>
+            </ssd:Annotations>
+          </ssd:Component>
+          <ssd:Component source="resources/mass.fmu" type="application/x-fmu-sharedlibrary" name="mass">
+            <ssd:Connectors>
+              <ssd:Connector name="tauA" kind="input"/>
+              <ssd:Connector name="tauB" kind="input"/>
+              <ssd:Connector name="wA" kind="output"/>
+              <ssd:Connector name="phiA" kind="output"/>
+              <ssd:Connector name="wB" kind="output"/>
+              <ssd:Connector name="phiB" kind="output"/>
+            </ssd:Connectors>
+            <ssd:Annotations>
+              <ssc:Annotation type="net.pmsf.ssp.smmd">
+                <sspmd:ModelMetaData source="resources/mass.smmd"/>
+              </ssc:Annotation>
+            </ssd:Annotations>
+          </ssd:Component>
+        </ssd:Elements>
+        <ssd:Connections>
+          <ssd:Connection startConnector="U" endElement="emachine" endConnector="U"/>
+          <ssd:Connection startConnector="tau_load" endElement="mass" endConnector="tauB"/>
+          <ssd:Connection startElement="mass" startConnector="phiB" endConnector="phiB"/>
+          <ssd:Connection startElement="mass" startConnector="wB" endConnector="wB"/>
+          <ssd:Connection startElement="emachine" startConnector="w" endElement="mass" endConnector="wA"/>
+          <ssd:Connection startElement="emachine" startConnector="phi" endElement="mass" endConnector="phiA"/>
+          <ssd:Connection startElement="emachine" startConnector="tau" endElement="mass" endConnector="tauA"/>
+          <ssd:Connection startElement="emachine" startConnector="I" endConnector="I"/>
+        </ssd:Connections>
+      </ssd:System>
+    </ssd:Elements>
+    <ssd:Connections>
+      <ssd:Connection startElement="Stimuli" startConnector="U" endElement="SuT" endConnector="U"/>
+      <ssd:Connection startElement="Stimuli" startConnector="tau_load" endElement="SuT" endConnector="tau_load"/>
+    </ssd:Connections>
+  </ssd:System>
+</ssd:SystemStructureDescription>
