@@ -286,11 +286,12 @@
                         <xs:simpleType>
                             <xs:restriction base="xs:string">
                                 <xs:enumeration value="document"/>
+                                <xs:enumeration value="requirement"/>
                                 <xs:enumeration value="specification"/>
                                 <xs:enumeration value="model"/>
                                 <xs:enumeration value="parameter"/>
                                 <xs:enumeration value="system"/>
-                                <xs:enumeration value="test"/>
+                                <xs:enumeration value="test case"/>
                                 <xs:enumeration value="result"/>
                             </xs:restriction>
                         </xs:simpleType>
