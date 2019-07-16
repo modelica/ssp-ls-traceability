@@ -159,28 +159,28 @@
             <xs:element name="Resource" minOccurs="0" maxOccurs="unbounded" type="stmd:ResourceType"/>
             <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
         </xs:sequence>
-        <xs:attribute name="date" type="xs:dateTimeStamp">
+        <xs:attribute name="date" type="xs:dateTimeStamp" use="required">
             <xs:annotation>
                 <xs:documentation xml:lang="en">
                     Timestamp when life cycle entry was assigned
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="responsible" type="xs:string">
+        <xs:attribute name="responsible" type="xs:string" use="required">
             <xs:annotation>
                 <xs:documentation xml:lang="en">
                     Name of the responsible person for assigning the life cycle entry
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="qualityNorm" type="xs:string">
+        <xs:attribute name="qualityNorm" type="xs:string" use="optional">
             <xs:annotation>
                 <xs:documentation xml:lang="en">
                     Name of the quality norm that is used to interpret the qualityLabel attribute value
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="qualityLabel" type="xs:string">
+        <xs:attribute name="qualityLabel" type="xs:string" use="optional">
             <xs:annotation>
                 <xs:documentation xml:lang="en">
                     Assigned quality label as specified by the qualityNorm attribute value
