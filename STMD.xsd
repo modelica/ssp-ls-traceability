@@ -157,19 +157,13 @@
     <xs:complexType name="LifeCycleEntryType">
         <xs:sequence>
             <xs:element name="Resource" minOccurs="0" maxOccurs="unbounded" type="stmd:ResourceType"/>
+            <xs:element name="Responsible" type="stmd:ResponsibleType"/>
             <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
         </xs:sequence>
         <xs:attribute name="date" type="xs:dateTimeStamp" use="required">
             <xs:annotation>
                 <xs:documentation xml:lang="en">
                     Timestamp when life cycle entry was assigned
-                </xs:documentation>
-            </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="responsible" type="xs:string" use="required">
-            <xs:annotation>
-                <xs:documentation xml:lang="en">
-                    Name of the responsible person for assigning the life cycle entry
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -200,9 +194,27 @@
             <xs:element name="Process" minOccurs="0" type="stmd:ParticleType"/>
             <xs:element name="Output" minOccurs="0" type="stmd:ParticleType"/>
             <xs:element name="Why" minOccurs="0" type="stmd:ParticleType"/>
+            <xs:element name="Responsible" minOccurs="0" type="stmd:ResponsibleType"/>
             <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
         </xs:sequence>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
+        <xs:attribute name="validationClassification" type="xs:string">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    This attribute specifies a validation classification system, which is used to interpret the
+                    validation level, as specified in the validationLevel attribute.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="validationLevel" type="xs:string">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    This attribute specifies the required and implemented validation level for the given step,
+                    as interpreted in the validation classification system as specified by the validationClassification
+                    attribute.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
     </xs:complexType>
     
     <xs:complexType name="ParticleType">
@@ -473,5 +485,34 @@
             <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
         </xs:choice>
     </xs:complexType>
-        
+    
+    <xs:complexType name="ResponsibleType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                This element gives information on the responsible entity for a given step.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="organization" type="xs:string">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    This attribute gives the organization that is responsible for a given step.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="role" type="xs:string">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    This attribute gives the role of the person that is responsible for a given step.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="name" type="xs:string">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    This attribute gives the name of the person that is responsible for a given step.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    
 </xs:schema>

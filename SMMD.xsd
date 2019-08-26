@@ -8,1240 +8,13 @@
 	
 	<xs:import namespace="http://ssp-standard.org/SSP1/SystemStructureCommon" schemaLocation="../ssp/ssp-standard-dev/SystemStructureDescription/SystemStructureCommon.xsd"/>
 	
-	<xs:element name="SimulationModelMetaData">
+	<xs:element name="SimulationModelSpecificationData">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="GeneralInformation">
-					<xs:annotation>
-						<xs:appinfo xml:lang="en">
-							<displayName>General Information</displayName>
-							<description>The general information contains administrational and organizational model metadata and information that helps to classify the model within the product lifecycle context.</description>
-						</xs:appinfo>
-						<xs:documentation xml:lang="en"></xs:documentation>
-					</xs:annotation>
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="Logistics">
-								<xs:annotation>
-									<xs:appinfo xml:lang="en">										
-										<description>The object describes logistical meta data.</description>
-									</xs:appinfo>
-									<xs:documentation xml:lang="en"></xs:documentation>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="Type" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<description>The attribute distinguishes whether the following [name] are a model specification or a model documentation.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="Sender" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<description>The attribute references to a person and organization object with the role "sender" that represents the sender of the [name]. (see General information > Person and organization > role).</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="Recipient" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<description>The attribute references to a person and organization object with the role "recipient" that represents the recipient of the [name]. (see General information > Person and organization > role).</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="ModelDateTransferFormat">
-								<xs:annotation>
-									<xs:appinfo xml:lang="en">
-										<displayName>Model Date Transfer Format</displayName>
-										<description>The object describes the format that ist used to tranfer the model</description>
-									</xs:appinfo>
-									<xs:documentation xml:lang="en"></xs:documentation>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="Format" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<description>The attribute indicates the format that is used to transfer the model.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="FormatVersion" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Format Version</displayName>
-													<description>The attributes indicates the format version that is used to transfer the model.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="ModelMetaData">
-								<xs:annotation>
-									<xs:appinfo xml:lang="en">
-										<displayName>Model Meta Data</displayName>
-										<description>The object contains the core model meta data.</description>
-									</xs:appinfo>
-									<xs:documentation xml:lang="en"></xs:documentation>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="Content" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<description>The attribute contains a description or the identification of the modelled real world items/object. The description and identification shall be as clear and unambiguous as possible for the recipient of the [name] with respect to the confidentiality of the IDs and information.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="Purpose" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<description>The attribute describes the intended use of the transferred model, i.e. the attribute describes the simulation purpose for which the model is intended.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="CreationDate" type="xs:date">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Creation Date</displayName>
-													<description>The attribute indicates the date the model was created. This attribute is only applicable and mandatory for the documentation of an actually created and tranferred model. It is not applicable for the specification of a requested model.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="Version" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<description>The attribute indicated the version of the model. This attribute is only applicable for the documentation of an actually created and tranferred model (see General information > Logistics > type). It is not applicable for the specification of a requested model.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="LifecycleStage" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Lifecycle Stage</displayName>
-													<description>The attribute indicates the lifecycle stage the model content is associated with.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="IndividualLifecycleStage" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Individual Lifecycle Stage</displayName>
-													<description>The attribute may be used in case the attribute lifecycle stage (see General Information > Model > lifecycle stage) with its predefined value entries does not provide an appropriate entry.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="ConfidentialityLevel" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Confidentiality Level</displayName>
-													<description>The attribute indicates the confidentality level of the model content is associated with.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="IndividualConfidentialityLevel" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Individual Confidentiality Level</displayName>
-													<description>The attribute may be used in case the attribute lifecycle stage (see General Information > Model > confidentiality level) with its predefined value entries does not provide an appropriate entry.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="PersonsAndOrganizations">
-								<xs:annotation>
-									<xs:appinfo xml:lang="en">
-										<displayName>Persons And Organizations</displayName>
-										<description>The object contains organizational data regarding creator, sender and receiver.</description>
-									</xs:appinfo>
-									<xs:documentation xml:lang="en"></xs:documentation>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="PersonAndOrganization" minOccurs="0" maxOccurs="unbounded">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Persons And Organization</displayName>
-													<description>The object contains organizational data regarding creator, sender and receiver.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-											<xs:complexType>
-												<xs:sequence>
-													<xs:element name="Role" type="xs:string">
-														<xs:annotation>
-															<xs:appinfo xml:lang="en">
-																<description>The attribute specifies the role of the person described by the instatiated person object.</description>
-															</xs:appinfo>
-															<xs:documentation xml:lang="en"></xs:documentation>
-														</xs:annotation>
-													</xs:element>
-													<xs:element name="Name" type="xs:string">
-														<xs:annotation>
-															<xs:appinfo xml:lang="en">
-																<description>The attribute indicates the name and surname of the specified person.</description>
-															</xs:appinfo>
-															<xs:documentation xml:lang="en"></xs:documentation>
-														</xs:annotation>
-													</xs:element>
-													<xs:element name="Organization" type="xs:string">
-														<xs:annotation>
-															<xs:appinfo xml:lang="en">
-																<description>The attribute contains some information about the organization the specified person belongs to. The rules regarding the details of company and department information given are not binding. In case of a company internal datra transfer the department information might be sufficient enough, in case of a cross company data transfer the name of the company might be sufficient enough. Due to the sensitivity of organizational information this attribute is optional.</description>
-															</xs:appinfo>
-															<xs:documentation xml:lang="en"></xs:documentation>
-														</xs:annotation>
-													</xs:element>
-													<xs:element name="PhoneNumber" type="xs:string">
-														<xs:annotation>
-															<xs:appinfo xml:lang="en">
-																<displayName>Phone Number</displayName>
-																<description>The attribute contains the phone number of thespecified person. Due to the sensitivity of personal contact information this attribute is optional.</description>
-															</xs:appinfo>
-															<xs:documentation xml:lang="en"></xs:documentation>
-														</xs:annotation>
-													</xs:element>
-													<xs:element name="EmailAddress" type="xs:string">
-														<xs:annotation>
-															<xs:appinfo xml:lang="en">
-																<displayName>Email Address</displayName>
-																<description>The attribute contains the email address of the specified person. Due to the sensitivity of personal contact information this attribute is optional.</description>
-															</xs:appinfo>
-															<xs:documentation xml:lang="en"></xs:documentation>
-														</xs:annotation>
-													</xs:element>
-												</xs:sequence>
-											</xs:complexType>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="IntellectualPropertyRights">
-								<xs:annotation>
-									<xs:appinfo xml:lang="en">
-										<displayName>Intellectual Property Rights</displayName>
-										<description>The object contains information about the creators/senders intellectual property right for the model and its content.</description>
-									</xs:appinfo>
-									<xs:documentation xml:lang="en"></xs:documentation>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="PropertyRights" type="xs:boolean">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Property Rights</displayName>
-													<description>The attribute indicates whether or not the model is subject to intellectual property rights.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="LicenseType" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>License Type</displayName>
-													<description>The attribute indicates the type of license for the usage of the model content and associated information. This attribute is only applicable in case the model and its content is associated with property rights (see General information > Intellectual property rights > property rights).</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="IndividualLicenseType" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Individual License Type</displayName>
-													<description>The attribute indicates the type of license for the usage of the model content and associated information. This attribute may be used in case the attribute license type with ist predefined value entries (see General information > Intellectual property rights > license type) does not provide an appropriate entry. The individual license type could e.g. be a reference to an bilateral aggreement or an indiviual license model.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="AdditionallyRequiredLicenses" minOccurs="0">
-								<xs:annotation>
-									<xs:appinfo xml:lang="en">
-										<displayName>Additionally Required Licenses</displayName>
-										<description></description>
-									</xs:appinfo>
-									<xs:documentation xml:lang="en"></xs:documentation>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="AdditionalLicense" minOccurs="0" maxOccurs="unbounded">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Additionally Required License</displayName>
-													<description></description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-											<xs:complexType>
-												<xs:sequence>
-													<xs:element name="License" type="xs:string">
-														<xs:annotation>
-															<xs:appinfo xml:lang="en">
-																<description></description>
-															</xs:appinfo>
-															<xs:documentation xml:lang="en"/>
-														</xs:annotation>
-													</xs:element>
-													<xs:element name="Comment" type="xs:string">
-														<xs:annotation>
-															<xs:appinfo xml:lang="en">
-																<displayName></displayName>
-																<description></description>
-															</xs:appinfo>
-															<xs:documentation xml:lang="en"/>
-														</xs:annotation>
-													</xs:element>
-												</xs:sequence>
-											</xs:complexType>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element name="ModelImplementationInformation">
-					<xs:annotation>
-						<xs:appinfo xml:lang="en">
-							<displayName>Model Implementation Information</displayName>
-							<description>The model implementation information contain information about the tools and technologies used to implement the model</description>
-						</xs:appinfo>
-						<xs:documentation xml:lang="en"></xs:documentation>
-					</xs:annotation>
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="ImplementationLanguage">
-								<xs:annotation>
-									<xs:appinfo xml:lang="en">
-										<displayName>Implementation Language</displayName>
-										<description>The object indecates the implementation language used to implement the model. Note that for a model the language can be specified in addition to a tool and/or a compiler or not. For example for a Dymola model, the implementation language is Modelica. The user can specify Dymola as a tool and Modelica as a language.</description>
-									</xs:appinfo>
-									<xs:documentation xml:lang="en"></xs:documentation>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="LanguageName" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Language Name</displayName>
-													<description>The attribute indicates the name of the implementation language.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="LanguageVersion" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Language Version</displayName>
-													<description>The attributes indicates the specific version of the implementation language.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="Compiler">
-								<xs:annotation>
-									<xs:appinfo xml:lang="en">
-										<description></description>
-									</xs:appinfo>
-									<xs:documentation xml:lang="en"/>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="CompilerName" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Compiler Name</displayName>
-													<description>The attribute indicated the name of the compiler for the model.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="CompilerVersion" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Compiler Version</displayName>
-													<description>The attribute indicated the version of the compiler for the model.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="LicenseType" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>License Type</displayName>
-													<description></description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="ModellingTool">
-								<xs:annotation>
-									<xs:appinfo xml:lang="en">
-										<displayName>Modelling Tool</displayName>
-										<description></description>
-									</xs:appinfo>
-									<xs:documentation xml:lang="en"></xs:documentation>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="ToolName" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Tool Name</displayName>
-													<description>The attribute indicates the name of the preprocessing tool for generating the model</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="ToolVersion" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Tool Version</displayName>
-													<description>The attribute indicates the version of the preprocessing tool for generating the model</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element name="ModelExecutionInformation">
-					<xs:annotation>
-						<xs:appinfo xml:lang="en">
-							<displayName>Model Execution Information</displayName>
-							<description>The model execution information contain information about the technical environment in wich the model is intended processed and simulated. The technical environment may be different at the creators and users site. The different technical circumstances might have influences on the execution and simulation behaviour. Therefore these technical environment information are very significant für the usage of the model at the receivers site.</description>
-						</xs:appinfo>
-						<xs:documentation xml:lang="en"></xs:documentation>
-					</xs:annotation>
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="ModelExecutionEnvironment">
-								<xs:annotation>
-									<xs:appinfo xml:lang="en">
-										<displayName>Model Execution Environment</displayName>
-										<description>The object contains the detailed information about the operating system parameters and other information related to the model execution environment. It helps the simulation architect to anticipate the integration of the model.</description>
-									</xs:appinfo>
-									<xs:documentation xml:lang="en"></xs:documentation>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="OperatingSystem" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Operating System</displayName>
-													<description>The attributeindicates the operation system, in case the model execution is technically restricted to a specific operation system or a list of operation systems. It may be empty in case of no restrictions.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="CPUCoreNumber" type="xs:integer">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>CPU Core Number</displayName>
-													<description>The attribut indicates the number of CPU cores needed to execute the model with sufficient performance. It may be empty in case the number of CPU cores is not significant.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="MassMemory" type="xs:float">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Mass Memory</displayName>
-													<description>The attribute indicates the size of available mass memory during the execution of the model to intermediately store runtime data and results of the simulation. It may be empty in case the requirements about the mass memory are presumed not significant.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="RAMSize" type="xs:float">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>RAM Size</displayName>
-													<description>The attribute indicates the size of available RAM during the execution of the model to execute the model with sufficient performance and to intermediately store runtime data and results of the simulation. It may be empty in case the requirements about the RAM size are presumed not significant.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="RAMBandWith" type="xs:float">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>RAM Band With</displayName>
-													<description>The attribute indicates the available RAM band width during the execution of the model to process the execution with sufficient performance, and to intermediately store runtime data and results of the simulation. It may be empty in case the requirements about the RAM band width are presumed not significant.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="OSFunctions" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>OS Functions</displayName>
-													<description>The attribute describes required and used operating system functionalities like copy,paste functionalities. It may be empty in case such functionalities are not significant.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="CacheProtocol" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Cache Protocol</displayName>
-													<description></description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="HPCRequirements" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>HPC Requirements</displayName>
-													<description>The attribute indicated the name of the solver that is used or required to execute the model.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="SolverSettings">
-								<xs:annotation>
-									<xs:appinfo xml:lang="en">
-										<displayName>Solver Settings</displayName>
-										<description>The object indicates the solver tool and describes the set of solver settings, that schould be used for simulating the model.</description>
-									</xs:appinfo>
-									<xs:documentation xml:lang="en"></xs:documentation>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="SolverName" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Solver Name</displayName>
-													<description></description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="SolverVersion" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Solver Version</displayName>
-													<description>The attribute indicated the version of the solver that is used or required or a list of versions that are valid for the execution of the model.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>											
-										</xs:element>
-										<xs:element name="StepSize" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Step Size</displayName>
-													<description>The attribute indicates the step size setting for the simulation.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="Accuracy" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName></displayName>
-													<description>The attribute indicates the accuracy setting for the simulation.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="AdditionalIndiviudalSolverSettings" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Additional Indiviudal Solver Settings</displayName>
-													<description>The attribute describe any other additional and solver specific settings significant for the simulation.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="ExternalLibrariesOrCode">
-								<xs:annotation>
-									<xs:appinfo xml:lang="en">
-										<displayName>External Libraries Or Code</displayName>
-										<description>The object describes any other addtinional external libraries or code that is significantly needed for the simulation. This object is separately instatiated for each specific individual library or code.</description>
-									</xs:appinfo>
-									<xs:documentation xml:lang="en"></xs:documentation>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="ExternalLibraryOrCode" minOccurs="0" maxOccurs="unbounded">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>External Library Or Code</displayName>
-													<description></description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-											<xs:complexType>
-												<xs:sequence>
-													<xs:element name="NameOfLibraryOrCode" type="xs:string">
-														<xs:annotation>
-															<xs:appinfo xml:lang="en">
-																<displayName>Name Of Library Or Code</displayName>
-																<description>The attribute indicates the name of a referenced external library or code.</description>
-															</xs:appinfo>
-															<xs:documentation xml:lang="en"></xs:documentation>
-														</xs:annotation>
-													</xs:element>
-													<xs:element name="VersionOfLibraryOrCode" type="xs:string">
-														<xs:annotation>
-															<xs:appinfo xml:lang="en">
-																<displayName>Version Of Library Or Code</displayName>
-																<description>The attribute indicates a specific  version of a referenced external library or code in case a version ID is available or a list of valid versions. It may be empty in case a version ID ist not aailavle.</description>
-															</xs:appinfo>
-															<xs:documentation xml:lang="en"></xs:documentation>
-														</xs:annotation>
-													</xs:element>
-													<xs:element name="LinkToLibraryOrCode" type="xs:string">
-														<xs:annotation>
-															<xs:appinfo xml:lang="en">
-																<displayName>Link To Library Or Code</displayName>
-																<description>The attribute contains a reference link to an external library or code, in case the refence link is required. It may be empty in case a specific reference link ist not required for the execution of the model or not available.</description>
-															</xs:appinfo>
-															<xs:documentation xml:lang="en"></xs:documentation>
-														</xs:annotation>
-													</xs:element>
-												</xs:sequence>												
-											</xs:complexType>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="ReadWriteOperations">
-								<xs:annotation>
-									<xs:appinfo xml:lang="en">
-										<displayName>Read Write Operations</displayName>
-										<description>The object indicates the data access requirements for specific files or directories. (e.g. look up tables) or write to files (e.g. result files). It is instatiated separately for each individual file or directory and also may indicate whether or not subdirectories are included in the read/white access specification.</description>
-									</xs:appinfo>
-									<xs:documentation xml:lang="en"></xs:documentation>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="ReadWriteOperation" minOccurs="0" maxOccurs="unbounded">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Read Write Operation</displayName>
-													<description></description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-											<xs:complexType>
-												<xs:sequence>
-													<xs:element name="FileOrDirectory" type="xs:string">
-														<xs:annotation>
-															<xs:appinfo xml:lang="en">
-																<displayName>File Or Directory</displayName>
-																<description>The attribute indicates a specific file or directory that has to be accessed execute the simulation</description>
-															</xs:appinfo>
-															<xs:documentation xml:lang="en"></xs:documentation>
-														</xs:annotation>
-													</xs:element>
-													<xs:element name="AccessRights" type="xs:string">
-														<xs:annotation>
-															<xs:appinfo xml:lang="en">
-																<displayName>Access Rights</displayName>
-																<description>The attributes spefies the access level, i.e. read access, right access read/write access or execution access</description>
-															</xs:appinfo>
-															<xs:documentation xml:lang="en"></xs:documentation>
-														</xs:annotation>
-													</xs:element>
-													<xs:element name="RecursiveAccess" type="xs:boolean">
-														<xs:annotation>
-															<xs:appinfo xml:lang="en">
-																<displayName>Recursive Access</displayName>
-																<description>The attribute indicates whether or not subdirectories are included or not</description>
-															</xs:appinfo>
-															<xs:documentation xml:lang="en"></xs:documentation>
-														</xs:annotation>
-													</xs:element>
-												</xs:sequence>
-											</xs:complexType>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="DecimalTimeComputation">
-								<xs:annotation>
-									<xs:appinfo xml:lang="en">
-										<displayName>Decimal Time Computation</displayName>
-										<description>The object desribes the real time computation parameteters.</description>
-									</xs:appinfo>
-									<xs:documentation xml:lang="en"></xs:documentation>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="DecimalTimeCapable" type="xs:boolean">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Decimal Time Capable</displayName>
-													<description>The attribute indicates whether or not the model is designed to be used in a real time environment.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="CPUTime" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>CPU Time</displayName>
-													<description>The attribute indicates the CPU time for the real time computation.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="SampleTime" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Sample Time</displayName>
-													<description>The attribute indicates the sample time for the real time computation.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="DecimalTimeFactor" type="xs:decimal">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Decimal Time Factor</displayName>
-													<description>The attribute indicates the real time factor for the real time computation.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="NumberOfAllowedTaskOverruns" type="xs:decimal">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Number Of Allowed Task Overruns</displayName>
-													<description>The attribute specifies the maximum number of  times of real time overruns, before the simulation is interrupted and canceled.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="ReferenceHardware" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Reference Hardware</displayName>
-													<description>The attribute describes the reference hardware for the real time computation.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="Comment" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName></displayName>
-													<description>The attribute provides an additional comment for all in formation about the real time computation that ist not covered by the other attributes.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="Parallelization">
-								<xs:annotation>
-									<xs:appinfo xml:lang="en">
-										<displayName></displayName>
-										<description>The object contains information about the parallization.</description>
-									</xs:appinfo>
-									<xs:documentation xml:lang="en"></xs:documentation>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="Parallelization" type="xs:boolean">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName></displayName>
-													<description>The attribute indicated whether or not the execution of the simulation will be parallelized on several machines or will be hosted by a single machine.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="CommunicationMode" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Communication Mode</displayName>
-													<description>The attribute describes how the model communicates with ist environment.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="CouplingInformation">
-								<xs:annotation>
-									<xs:appinfo xml:lang="en">
-										<displayName>Coupling Information</displayName>
-										<description>The object contains inforamtion about the cross model comunication.</description>
-									</xs:appinfo>
-									<xs:documentation xml:lang="en"></xs:documentation>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="CouplingMode" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Coupling Mode</displayName>
-													<description>The attribute describes how the model will be connected with other models in the simulation architecture. In a workflow mode the model is called through its inputs and provides results by means of its outputs. In a co-simulation mode the model has a stronger interaction with other models.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="PhysicsType" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Physics Type</displayName>
-													<description>Enumeration of the different physics included in the model. The physics couplings can be evaluated by variables description.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="TimeScale" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Time Scale</displayName>
-													<description>The attribute gives the time scale of the execution of the model. It purpose is to anticipate potential problems of time scale when the simulation models are coupled.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>											
-										</xs:element>
-										<xs:element name="Linearity" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName></displayName>
-													<description></description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="ModelisationResolutionMethod" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Modelisation Resolution Method</displayName>
-													<description>The attribute describes the modelisation method.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
-				<xs:element name="ModelContentAndUsageInformation">
-					<xs:annotation>
-						<xs:appinfo xml:lang="en">
-							<displayName>Model Content And Usage Information</displayName>
-							<description></description>
-						</xs:appinfo>
-						<xs:documentation xml:lang="en"></xs:documentation>
-					</xs:annotation>
-					<xs:complexType>
-						<xs:sequence>
-							<xs:element name="ModelImplementation">
-								<xs:annotation>
-									<xs:appinfo xml:lang="en">
-										<displayName>Model Implementation</displayName>
-										<description>This objcets decsribes detailed implementation parameters of the model.</description>
-									</xs:appinfo>
-									<xs:documentation xml:lang="en"></xs:documentation>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="BoxType" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Box Type</displayName>
-													<description>The attribute indicates whether the model is a "black box" or a "white box" model. (black box: Internal structures or working behavior is unknown white box: Internal structures or working behavior is known and model can used for debugging.)</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="LicenseType" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>License Type</displayName>
-													<description></description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="ModelType" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Model Type</displayName>
-													<description>The attribute indicates the type of the model.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="ModelDimension" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Model Dimension</displayName>
-													<description>The attribute indicates the dimension of the model.The dimension of the model.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="ValidityRange">
-								<xs:annotation>
-									<xs:appinfo xml:lang="en">
-										<displayName>Validity Range</displayName>
-										<description></description>
-									</xs:appinfo>
-									<xs:documentation xml:lang="en"></xs:documentation>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="ValidForUseCases" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Valid For Use Cases</displayName>
-													<description>The attribute contains a list of use cases the model ist designed for.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="NotValidForUseCases" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Not Valid For Use Cases</displayName>
-													<description>The attribute contains a list of use cases the model ist explicitly not designed for.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="ValidParameters" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Valid Parameters</displayName>
-													<description>The attribute contains a list of valid parameters of the model.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="Comment" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName></displayName>
-													<description>The attribute contails any further information about the validity range.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="Fidelity">
-								<xs:annotation>
-									<xs:appinfo xml:lang="en">
-										<displayName></displayName>
-										<description>The object contains a list of considered and neglected effects of the model that describes what is modelled and how detailed the model represents the reality. It purpose is to assess compliance of the model with the required specifications.</description>
-									</xs:appinfo>
-									<xs:documentation xml:lang="en"></xs:documentation>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="RepresentedPhenomena" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Represented Phenomena</displayName>
-													<description>The attribute contains a list of phenomena considered and represented by the model.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="NeglectedPhenomena" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Neglected Phenomena</displayName>
-													<description>The attribute contains a list of phenomena that are neglected by the model for some reason.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="PortsAndParameters">
-								<xs:annotation>
-									<xs:appinfo xml:lang="en">
-										<displayName>Ports And Parameters</displayName>
-										<description>Detailed description of the used variables and their meaning (semantics) within the given model context. This object is separately instantiated for each individual port or parameter.</description>
-									</xs:appinfo>
-									<xs:documentation xml:lang="en"></xs:documentation>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="PortOrParameter" minOccurs="0" maxOccurs="unbounded">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Ports And Parameters</displayName>
-													<description></description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-											<xs:complexType>
-												<xs:sequence>
-													<xs:element name="Type" type="xs:string">
-														<xs:annotation>
-															<xs:appinfo xml:lang="en">
-																<displayName></displayName>
-																<description>The attribute indicates, whether the information object describes a model internal parameter or a model port, that represents an interface of the model to surrounding models.</description>
-															</xs:appinfo>
-															<xs:documentation xml:lang="en"></xs:documentation>
-														</xs:annotation>
-													</xs:element>
-													<xs:element name="Name" type="xs:string">
-														<xs:annotation>
-															<xs:appinfo xml:lang="en">
-																<displayName></displayName>
-																<description>The attribute contains the name of the port or parameter.</description>
-															</xs:appinfo>
-															<xs:documentation xml:lang="en"></xs:documentation>
-														</xs:annotation>
-													</xs:element>
-													<xs:element name="MinValue" type="xs:string">
-														<xs:annotation>
-															<xs:appinfo xml:lang="en">
-																<displayName>Min Value</displayName>
-																<description>The attribute contains the minumum value of the port or parameter.</description>
-															</xs:appinfo>
-															<xs:documentation xml:lang="en"></xs:documentation>
-														</xs:annotation>
-													</xs:element>
-													<xs:element name="MaxValue" type="xs:string">
-														<xs:annotation>
-															<xs:appinfo xml:lang="en">
-																<displayName>Max Value</displayName>
-																<description>The attribute contains the maximum value of the port or parameter.</description>
-															</xs:appinfo>
-															<xs:documentation xml:lang="en"></xs:documentation>
-														</xs:annotation>
-													</xs:element>
-													<xs:element name="InitialValue" type="xs:string">
-														<xs:annotation>
-															<xs:appinfo xml:lang="en">
-																<displayName>Initial Value</displayName>
-																<description>The attribute contains the initial value for the port or parameter.</description>
-															</xs:appinfo>
-															<xs:documentation xml:lang="en"></xs:documentation>
-														</xs:annotation>
-													</xs:element>
-													<xs:element name="Unit" type="xs:string">
-														<xs:annotation>
-															<xs:appinfo xml:lang="en">
-																<displayName></displayName>
-																<description>The attribute contains the unit for the values of the port or parameter.</description>
-															</xs:appinfo>
-															<xs:documentation xml:lang="en"></xs:documentation>
-														</xs:annotation>
-													</xs:element>
-													<xs:element name="Dimension" type="xs:string">
-														<xs:annotation>
-															<xs:appinfo xml:lang="en">
-																<displayName></displayName>
-																<description>The attribute contains the dimension of the port or parameter.</description>
-															</xs:appinfo>
-															<xs:documentation xml:lang="en"></xs:documentation>
-														</xs:annotation>
-													</xs:element>
-													<xs:element name="DirectionType" type="xs:string">
-														<xs:annotation>
-															<xs:appinfo xml:lang="en">
-																<displayName>Direction Type</displayName>
-																<description>The attribute contains the direction of a port, not applicable for parameters.</description>
-															</xs:appinfo>
-															<xs:documentation xml:lang="en"></xs:documentation>
-														</xs:annotation>
-													</xs:element>
-													<xs:element name="ParameterList" type="xs:string">
-														<xs:annotation>
-															<xs:appinfo xml:lang="en">
-																<displayName>Parameter List</displayName>
-																<description>The attribute contains a link to an external port or parameter list.</description>
-															</xs:appinfo>
-															<xs:documentation xml:lang="en"></xs:documentation>
-														</xs:annotation>
-													</xs:element>
-												</xs:sequence>
-											</xs:complexType>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="StartAndInitialConditions">
-								<xs:annotation>
-									<xs:appinfo xml:lang="en">
-										<displayName>Start And Initial Conditions</displayName>
-										<description>"Verbal description of the initial state of the model. Initial values that lead to a stable / stationary behavior. What is the transient behavior? How many over runs are allowed in the initial phase or in general?"</description>
-									</xs:appinfo>
-									<xs:documentation xml:lang="en"></xs:documentation>
-								</xs:annotation>								
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="Conditions" minOccurs="0" maxOccurs="unbounded">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Conditions</displayName>
-													<description>The attribute contains the textual description of the conditions.</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>								
-											<xs:complexType>
-												<xs:sequence>
-													<xs:element name="Condition" type="xs:string">
-														<xs:annotation>
-															<xs:appinfo xml:lang="en">
-																<displayName></displayName>
-																<description>The attribute contains the textual description of the condition.</description>
-															</xs:appinfo>
-															<xs:documentation xml:lang="en"></xs:documentation>
-														</xs:annotation>
-													</xs:element>
-												</xs:sequence>
-											</xs:complexType>								
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>								
-							</xs:element>
-							<xs:element name="PhysicalDomain">
-								<xs:annotation>
-									<xs:appinfo xml:lang="en">
-										<displayName>Physical Domain</displayName>
-										<description>Specify the captured physical domains of the model.</description>
-									</xs:appinfo>
-									<xs:documentation xml:lang="en"></xs:documentation>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="PhysicalDomain" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Physical Domain</displayName>
-													<description>List of physical domains (multiple selection allowed)</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="OtherPhysicalDomain" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Other Physical Domain</displayName>
-													<description>This attribute can be used to document other physical domains than provided by the list of predefined physical domains (see attribute Model content and usage inforamtion > Physical domain > physical domain)</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-							<xs:element name="ValidationLevel">
-								<xs:annotation>
-									<xs:appinfo xml:lang="en">
-										<displayName>Validation Level</displayName>
-										<description></description>
-									</xs:appinfo>
-									<xs:documentation xml:lang="en"></xs:documentation>
-								</xs:annotation>
-								<xs:complexType>
-									<xs:sequence>
-										<xs:element name="ValidationScenario" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Validation Scenario</displayName>
-													<description>The NASA credibility assessment [standard for models and simulations NASA-STD-7009] is used to evaluate the validation process of the model. The notation is supported by a documentation (for each scenario).</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="ValiditionLevel" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Validition Level</displayName>
-													<description>Validation Quality Level
-                                                    0-Insufficient evidence.
-                                                    1-Conceptual models agree with simple referents MS conceptual and mathematical models compare favorably with “general problem” and “textbook” referents.
-                                                    2-Results agree with other simulation models MS results compare favorably for unit problems at validation points by comparison of MS results to an acceptable referent, which is either experimental measurements or higher fidelity MS results.
-                                                    3-Results agree with experiments MS results compare favorably for problems of interest at validation points by comparison of MS results to an acceptable referent, which is experimental measurements on problems of interest.
-                                                    4-Results agree with real-world data MS results compare favorably for the real world system at validation points by comparison of MS results to an acceptable referent, which measurements on the real-world system."</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="LinkToTestingInformation" type="xs:string">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Link To Testing Information</displayName>
-													<description>Specify an identifier to identify the correct physical test which fits to this version of the model?</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="ValidityRangeMin" type="xs:decimal">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Validity Range Min</displayName>
-													<description>What validity range was covered with the physical test?</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-										<xs:element name="ValidityRangeMax" type="xs:decimal">
-											<xs:annotation>
-												<xs:appinfo xml:lang="en">
-													<displayName>Validity Range Max</displayName>
-													<description>What validity range was covered with the physical test?</description>
-												</xs:appinfo>
-												<xs:documentation xml:lang="en"></xs:documentation>
-											</xs:annotation>
-										</xs:element>
-									</xs:sequence>
-								</xs:complexType>
-							</xs:element>
-						</xs:sequence>
-					</xs:complexType>
-				</xs:element>
+				<xs:element name="ContentAndUsage" type="smmd:ContentAndUsageType"/>
+				<xs:element name="Implementation" type="smmd:ImplementationType"/>
+				<xs:element name="Execution" type="smmd:ExecutionType"/>
+				<xs:element name="Rights" type="smmd:RightsType"/>
 			</xs:sequence>
 			<xs:attribute name="version" use="required">
 				<xs:annotation>
@@ -1257,6 +30,938 @@
 			</xs:attribute>
 			<xs:attributeGroup ref="ssc:ABaseElement"/>
 			<xs:attributeGroup ref="ssc:ATopLevelMetaData"/>
+			<xs:attributeGroup ref="smmd:ATopLevelMetaData"/>
 		</xs:complexType>
 	</xs:element>
+	
+	<xs:element name="SimulationModelMetaData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="ContentAndUsage" type="smmd:ContentAndUsageType"/>
+				<xs:element name="Implementation" type="smmd:ImplementationType"/>
+				<xs:element name="Execution" type="smmd:ExecutionType"/>
+				<xs:element name="Rights" type="smmd:RightsType"/>
+			</xs:sequence>
+			<xs:attribute name="version" use="required">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						Version of SMMD format, 0.x for this pre-release.
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:normalizedString">
+						<xs:pattern value="0[.][0-9]+(-.*)?"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attributeGroup ref="ssc:ABaseElement"/>
+			<xs:attributeGroup ref="ssc:ATopLevelMetaData"/>
+			<xs:attributeGroup ref="smmd:ATopLevelMetaData"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:complexType name="ContentAndUsageType">
+		<xs:annotation>
+			<xs:appinfo xml:lang="en">
+				<displayName>Model Content And Usage Information</displayName>
+				<description></description>
+			</xs:appinfo>
+			<xs:documentation xml:lang="en"></xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="Content" type="xs:string">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						The element contains a description or the identification of the modelled real world items/object.
+						The description and identification shall be as clear and unambiguous as possible for the recipient
+						of the model or specification with respect to the confidentiality of the IDs and information.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="Purpose" type="xs:string">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						The element describes the intended use of the model, i.e. the attribute describes the simulation purpose for which the model is intended.
+					</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="ModelImplementation">
+				<xs:annotation>
+					<xs:appinfo xml:lang="en">
+						<displayName>Model Implementation</displayName>
+						<description>This objcets decsribes detailed implementation parameters of the model.</description>
+					</xs:appinfo>
+					<xs:documentation xml:lang="en"></xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="BoxType" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Box Type</displayName>
+									<description>The attribute indicates whether the model is a "black box" or a "white box" model. (black box: Internal structures or working behavior is unknown white box: Internal structures or working behavior is known and model can used for debugging.)</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ModelType" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Model Type</displayName>
+									<description>The attribute indicates the type of the model.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ModelDimension" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Model Dimension</displayName>
+									<description>The attribute indicates the dimension of the model.The dimension of the model.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ValidityRange">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						This element contains information on the range of valid uses of the model.
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ValidForUseCases" type="xs:string">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									The element contains a list of use cases the model ist designed for.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="NotValidForUseCases" type="xs:string">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									The element contains a list of use cases the model ist explicitly not designed for.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ValidParameters" type="xs:string">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									The element contains a list of valid parameters of the model.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Comment" type="xs:string">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">The element contails any further information about the validity range.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Fidelity">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						The element contains a list of considered and neglected effects of the model that describes what is modelled and
+						how detailed the model represents the reality. Its purpose is to assess compliance of the model with the required specifications.
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="RepresentedPhenomena" type="xs:string">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">The element contains a list of phenomena considered and represented by the model.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="NeglectedPhenomena" type="xs:string">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									The element contains a list of phenomena that are neglected by the model for some reason.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="PortsAndParameters">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						Detailed description of the used variables and their meaning (semantics) within the given model context.
+						The sub-elements of this element are separately instantiated for each individual port or parameter.
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="PortOrParameter" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									Element describing an individual port or parameter of the model.
+								</xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Type" type="xs:string">
+										<xs:annotation>
+											<xs:appinfo xml:lang="en">
+												<displayName></displayName>
+												<description>The attribute indicates, whether the information object describes a model internal parameter or a model port, that represents an interface of the model to surrounding models.</description>
+											</xs:appinfo>
+											<xs:documentation xml:lang="en"></xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="Name" type="xs:string">
+										<xs:annotation>
+											<xs:appinfo xml:lang="en">
+												<displayName></displayName>
+												<description>The attribute contains the name of the port or parameter.</description>
+											</xs:appinfo>
+											<xs:documentation xml:lang="en"></xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="MinValue" type="xs:string">
+										<xs:annotation>
+											<xs:appinfo xml:lang="en">
+												<displayName>Min Value</displayName>
+												<description>The attribute contains the minumum value of the port or parameter.</description>
+											</xs:appinfo>
+											<xs:documentation xml:lang="en"></xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="MaxValue" type="xs:string">
+										<xs:annotation>
+											<xs:appinfo xml:lang="en">
+												<displayName>Max Value</displayName>
+												<description>The attribute contains the maximum value of the port or parameter.</description>
+											</xs:appinfo>
+											<xs:documentation xml:lang="en"></xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="InitialValue" type="xs:string">
+										<xs:annotation>
+											<xs:appinfo xml:lang="en">
+												<displayName>Initial Value</displayName>
+												<description>The attribute contains the initial value for the port or parameter.</description>
+											</xs:appinfo>
+											<xs:documentation xml:lang="en"></xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="Unit" type="xs:string">
+										<xs:annotation>
+											<xs:appinfo xml:lang="en">
+												<displayName></displayName>
+												<description>The attribute contains the unit for the values of the port or parameter.</description>
+											</xs:appinfo>
+											<xs:documentation xml:lang="en"></xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="Dimension" type="xs:string">
+										<xs:annotation>
+											<xs:appinfo xml:lang="en">
+												<displayName></displayName>
+												<description>The attribute contains the dimension of the port or parameter.</description>
+											</xs:appinfo>
+											<xs:documentation xml:lang="en"></xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="DirectionType" type="xs:string">
+										<xs:annotation>
+											<xs:appinfo xml:lang="en">
+												<displayName>Direction Type</displayName>
+												<description>The attribute contains the direction of a port, not applicable for parameters.</description>
+											</xs:appinfo>
+											<xs:documentation xml:lang="en"></xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="ParameterList" type="xs:string">
+										<xs:annotation>
+											<xs:appinfo xml:lang="en">
+												<displayName>Parameter List</displayName>
+												<description>The attribute contains a link to an external port or parameter list.</description>
+											</xs:appinfo>
+											<xs:documentation xml:lang="en"></xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="StartAndInitialConditions">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						Verbal description of the initial state of the model. Initial values that lead to a stable / stationary behavior.
+						What is the transient behavior? How many over runs are allowed in the initial phase or in general?
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Conditions" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									The attribute contains the textual description of the conditions.
+								</xs:documentation>
+							</xs:annotation>								
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="Condition" type="xs:string">
+										<xs:annotation>
+											<xs:documentation xml:lang="en">
+												The element contains the textual description of the condition.
+											</xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>								
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>								
+			</xs:element>
+			<xs:element name="PhysicalDomain">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						Specification of the captured physical domains of the model.
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="PhysicalDomain" type="xs:string">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									List of physical domains (multiple selection allowed).
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ValidationLevel">
+				<xs:annotation>
+					<xs:appinfo xml:lang="en">
+						<displayName>Validation Level</displayName>
+						<description></description>
+					</xs:appinfo>
+					<xs:documentation xml:lang="en"></xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ValidationScenario" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Validation Scenario</displayName>
+									<description>The NASA credibility assessment [standard for models and simulations NASA-STD-7009] is used to evaluate the validation process of the model. The notation is supported by a documentation (for each scenario).</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ValiditionLevel" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Validition Level</displayName>
+									<description>Validation Quality Level
+										0-Insufficient evidence.
+										1-Conceptual models agree with simple referents MS conceptual and mathematical models compare favorably with “general problem” and “textbook” referents.
+										2-Results agree with other simulation models MS results compare favorably for unit problems at validation points by comparison of MS results to an acceptable referent, which is either experimental measurements or higher fidelity MS results.
+										3-Results agree with experiments MS results compare favorably for problems of interest at validation points by comparison of MS results to an acceptable referent, which is experimental measurements on problems of interest.
+										4-Results agree with real-world data MS results compare favorably for the real world system at validation points by comparison of MS results to an acceptable referent, which measurements on the real-world system."</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="LinkToTestingInformation" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Link To Testing Information</displayName>
+									<description>Specify an identifier to identify the correct physical test which fits to this version of the model?</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ValidityRangeMin" type="xs:decimal">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Validity Range Min</displayName>
+									<description>What validity range was covered with the physical test?</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ValidityRangeMax" type="xs:decimal">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Validity Range Max</displayName>
+									<description>What validity range was covered with the physical test?</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ImplementationType">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				This element contains information about the tools and technologies used to implement the model.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ImplementationLanguage">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						The element indecates the implementation language used to implement the model. Note that for a model
+						the language can be specified in addition to a tool and/or a compiler or not. For example for a Dymola
+						model, the implementation language is Modelica. The user can specify Dymola as a tool and Modelica as
+						a language.
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="LanguageName" type="xs:string">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									The element indicates the name of the implementation language.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="LanguageVersion" type="xs:string">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									The element indicates the specific version of the implementation language.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Compiler">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						The element indecates the compiler used to implement the model.
+					</xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="CompilerName" type="xs:string">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									The element indicates the name of the compiler for the model.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="CompilerVersion" type="xs:string">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									The element indicates the version of the compiler for the model.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ModellingTool">
+				<xs:annotation>
+					<xs:documentation xml:lang="en"></xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ToolName" type="xs:string">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									The element indicates the name of the preprocessing tool for generating the model.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ToolVersion" type="xs:string">
+							<xs:annotation>
+								<xs:documentation xml:lang="en">
+									The element indicates the version of the preprocessing tool for generating the model.
+								</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ExecutionType">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				The model execution information contain information about the technical environment in wich the model is
+				intended processed and simulated. The technical environment may be different at the creators and users site.
+				The different technical circumstances might have influences on the execution and simulation behaviour.
+				Therefore these technical environment information are very significant für the usage of the model at the
+				receivers site.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="ModelExecutionEnvironment">
+				<xs:annotation>
+					<xs:appinfo xml:lang="en">
+						<displayName>Model Execution Environment</displayName>
+						<description>The object contains the detailed information about the operating system parameters and other information related to the model execution environment. It helps the simulation architect to anticipate the integration of the model.</description>
+					</xs:appinfo>
+					<xs:documentation xml:lang="en"></xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="OperatingSystem" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Operating System</displayName>
+									<description>The attributeindicates the operation system, in case the model execution is technically restricted to a specific operation system or a list of operation systems. It may be empty in case of no restrictions.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="CPUCoreNumber" type="xs:integer">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>CPU Core Number</displayName>
+									<description>The attribut indicates the number of CPU cores needed to execute the model with sufficient performance. It may be empty in case the number of CPU cores is not significant.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="MassMemory" type="xs:float">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Mass Memory</displayName>
+									<description>The attribute indicates the size of available mass memory during the execution of the model to intermediately store runtime data and results of the simulation. It may be empty in case the requirements about the mass memory are presumed not significant.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="RAMSize" type="xs:float">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>RAM Size</displayName>
+									<description>The attribute indicates the size of available RAM during the execution of the model to execute the model with sufficient performance and to intermediately store runtime data and results of the simulation. It may be empty in case the requirements about the RAM size are presumed not significant.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="RAMBandWith" type="xs:float">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>RAM Band With</displayName>
+									<description>The attribute indicates the available RAM band width during the execution of the model to process the execution with sufficient performance, and to intermediately store runtime data and results of the simulation. It may be empty in case the requirements about the RAM band width are presumed not significant.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="OSFunctions" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>OS Functions</displayName>
+									<description>The attribute describes required and used operating system functionalities like copy,paste functionalities. It may be empty in case such functionalities are not significant.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="CacheProtocol" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Cache Protocol</displayName>
+									<description></description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="HPCRequirements" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>HPC Requirements</displayName>
+									<description>The attribute indicated the name of the solver that is used or required to execute the model.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="SolverSettings">
+				<xs:annotation>
+					<xs:appinfo xml:lang="en">
+						<displayName>Solver Settings</displayName>
+						<description>The object indicates the solver tool and describes the set of solver settings, that schould be used for simulating the model.</description>
+					</xs:appinfo>
+					<xs:documentation xml:lang="en"></xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="SolverName" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Solver Name</displayName>
+									<description></description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="SolverVersion" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Solver Version</displayName>
+									<description>The attribute indicated the version of the solver that is used or required or a list of versions that are valid for the execution of the model.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>											
+						</xs:element>
+						<xs:element name="StepSize" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Step Size</displayName>
+									<description>The attribute indicates the step size setting for the simulation.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Accuracy" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName></displayName>
+									<description>The attribute indicates the accuracy setting for the simulation.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="AdditionalIndiviudalSolverSettings" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Additional Indiviudal Solver Settings</displayName>
+									<description>The attribute describe any other additional and solver specific settings significant for the simulation.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ExternalLibrariesOrCode">
+				<xs:annotation>
+					<xs:appinfo xml:lang="en">
+						<displayName>External Libraries Or Code</displayName>
+						<description>The object describes any other addtinional external libraries or code that is significantly needed for the simulation. This object is separately instatiated for each specific individual library or code.</description>
+					</xs:appinfo>
+					<xs:documentation xml:lang="en"></xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ExternalLibraryOrCode" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>External Library Or Code</displayName>
+									<description></description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="NameOfLibraryOrCode" type="xs:string">
+										<xs:annotation>
+											<xs:appinfo xml:lang="en">
+												<displayName>Name Of Library Or Code</displayName>
+												<description>The attribute indicates the name of a referenced external library or code.</description>
+											</xs:appinfo>
+											<xs:documentation xml:lang="en"></xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="VersionOfLibraryOrCode" type="xs:string">
+										<xs:annotation>
+											<xs:appinfo xml:lang="en">
+												<displayName>Version Of Library Or Code</displayName>
+												<description>The attribute indicates a specific  version of a referenced external library or code in case a version ID is available or a list of valid versions. It may be empty in case a version ID ist not aailavle.</description>
+											</xs:appinfo>
+											<xs:documentation xml:lang="en"></xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="LinkToLibraryOrCode" type="xs:string">
+										<xs:annotation>
+											<xs:appinfo xml:lang="en">
+												<displayName>Link To Library Or Code</displayName>
+												<description>The attribute contains a reference link to an external library or code, in case the refence link is required. It may be empty in case a specific reference link ist not required for the execution of the model or not available.</description>
+											</xs:appinfo>
+											<xs:documentation xml:lang="en"></xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>												
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="ReadWriteOperations">
+				<xs:annotation>
+					<xs:appinfo xml:lang="en">
+						<displayName>Read Write Operations</displayName>
+						<description>The object indicates the data access requirements for specific files or directories. (e.g. look up tables) or write to files (e.g. result files). It is instatiated separately for each individual file or directory and also may indicate whether or not subdirectories are included in the read/white access specification.</description>
+					</xs:appinfo>
+					<xs:documentation xml:lang="en"></xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="ReadWriteOperation" minOccurs="0" maxOccurs="unbounded">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Read Write Operation</displayName>
+									<description></description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+							<xs:complexType>
+								<xs:sequence>
+									<xs:element name="FileOrDirectory" type="xs:string">
+										<xs:annotation>
+											<xs:appinfo xml:lang="en">
+												<displayName>File Or Directory</displayName>
+												<description>The attribute indicates a specific file or directory that has to be accessed execute the simulation</description>
+											</xs:appinfo>
+											<xs:documentation xml:lang="en"></xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="AccessRights" type="xs:string">
+										<xs:annotation>
+											<xs:appinfo xml:lang="en">
+												<displayName>Access Rights</displayName>
+												<description>The attributes spefies the access level, i.e. read access, right access read/write access or execution access</description>
+											</xs:appinfo>
+											<xs:documentation xml:lang="en"></xs:documentation>
+										</xs:annotation>
+									</xs:element>
+									<xs:element name="RecursiveAccess" type="xs:boolean">
+										<xs:annotation>
+											<xs:appinfo xml:lang="en">
+												<displayName>Recursive Access</displayName>
+												<description>The attribute indicates whether or not subdirectories are included or not</description>
+											</xs:appinfo>
+											<xs:documentation xml:lang="en"></xs:documentation>
+										</xs:annotation>
+									</xs:element>
+								</xs:sequence>
+							</xs:complexType>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="DecimalTimeComputation">
+				<xs:annotation>
+					<xs:appinfo xml:lang="en">
+						<displayName>Decimal Time Computation</displayName>
+						<description>The object desribes the real time computation parameteters.</description>
+					</xs:appinfo>
+					<xs:documentation xml:lang="en"></xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="DecimalTimeCapable" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Decimal Time Capable</displayName>
+									<description>The attribute indicates whether or not the model is designed to be used in a real time environment.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="CPUTime" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>CPU Time</displayName>
+									<description>The attribute indicates the CPU time for the real time computation.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="SampleTime" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Sample Time</displayName>
+									<description>The attribute indicates the sample time for the real time computation.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="DecimalTimeFactor" type="xs:decimal">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Decimal Time Factor</displayName>
+									<description>The attribute indicates the real time factor for the real time computation.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="NumberOfAllowedTaskOverruns" type="xs:decimal">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Number Of Allowed Task Overruns</displayName>
+									<description>The attribute specifies the maximum number of  times of real time overruns, before the simulation is interrupted and canceled.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ReferenceHardware" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Reference Hardware</displayName>
+									<description>The attribute describes the reference hardware for the real time computation.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="Comment" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName></displayName>
+									<description>The attribute provides an additional comment for all in formation about the real time computation that ist not covered by the other attributes.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Parallelization">
+				<xs:annotation>
+					<xs:appinfo xml:lang="en">
+						<displayName></displayName>
+						<description>The object contains information about the parallization.</description>
+					</xs:appinfo>
+					<xs:documentation xml:lang="en"></xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Parallelization" type="xs:boolean">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName></displayName>
+									<description>The attribute indicated whether or not the execution of the simulation will be parallelized on several machines or will be hosted by a single machine.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="CommunicationMode" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Communication Mode</displayName>
+									<description>The attribute describes how the model communicates with ist environment.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="CouplingInformation">
+				<xs:annotation>
+					<xs:appinfo xml:lang="en">
+						<displayName>Coupling Information</displayName>
+						<description>The object contains inforamtion about the cross model comunication.</description>
+					</xs:appinfo>
+					<xs:documentation xml:lang="en"></xs:documentation>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="CouplingMode" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Coupling Mode</displayName>
+									<description>The attribute describes how the model will be connected with other models in the simulation architecture. In a workflow mode the model is called through its inputs and provides results by means of its outputs. In a co-simulation mode the model has a stronger interaction with other models.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="PhysicsType" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Physics Type</displayName>
+									<description>Enumeration of the different physics included in the model. The physics couplings can be evaluated by variables description.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="TimeScale" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Time Scale</displayName>
+									<description>The attribute gives the time scale of the execution of the model. It purpose is to anticipate potential problems of time scale when the simulation models are coupled.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>											
+						</xs:element>
+						<xs:element name="Linearity" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName></displayName>
+									<description></description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="ModelisationResolutionMethod" type="xs:string">
+							<xs:annotation>
+								<xs:appinfo xml:lang="en">
+									<displayName>Modelisation Resolution Method</displayName>
+									<description>The attribute describes the modelisation method.</description>
+								</xs:appinfo>
+								<xs:documentation xml:lang="en"></xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="RightsType">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">This element contains general information about the model as specified or documented.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="License" minOccurs="0" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="Content" minOccurs="0" type="smmd:ContentType"/>
+					</xs:sequence>
+					<xs:attribute name="licensor" type="xs:string"/>
+					<xs:attribute name="type" type="xs:string"/>
+					<xs:attribute name="comment" type="xs:string"/>
+					<xs:attribute name="source" type="xs:anyURI"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="ContentType">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				This optional element can contain inlined content of an entity. If it is present,
+				then the attribute source of the enclosing element must not be present.
+			</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:choice>
+	</xs:complexType>
+	
+	<xs:attributeGroup name="ATopLevelMetaData">
+		<xs:attribute name="lifecycleModel" type="xs:string">
+			
+		</xs:attribute>
+		<xs:attribute name="lifecycleStage" type="xs:string">
+			
+		</xs:attribute>
+		<xs:attribute name="confidentialityClassification" type="xs:string">
+			
+		</xs:attribute>
+		<xs:attribute name="confidentialityLevel" type="xs:string">
+			
+		</xs:attribute>
+	</xs:attributeGroup>
+	
 </xs:schema>
