@@ -976,10 +976,44 @@
 					<xs:sequence>
 						<xs:element name="Content" minOccurs="0" type="smmd:ContentType"/>
 					</xs:sequence>
-					<xs:attribute name="licensor" type="xs:string"/>
-					<xs:attribute name="type" type="xs:string"/>
-					<xs:attribute name="comment" type="xs:string"/>
-					<xs:attribute name="source" type="xs:anyURI"/>
+					<xs:attribute name="licensor" type="xs:string">
+						<xs:annotation>
+							<xs:documentation xml:lang="en">
+								This attribute gives the identity of the licensor, i.e. the entity that is in possession of licensed IP rights.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="type" type="xs:string">
+						<xs:annotation>
+							<xs:documentation xml:lang="en">
+								This attribute gives the type of license being given.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="comment" type="xs:string">
+						<xs:annotation>
+							<xs:documentation xml:lang="en">
+								This attribute gives additional comments on the licensed IP rights and the license being granted.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="source" type="xs:anyURI">
+						<xs:annotation>
+							<xs:documentation xml:lang="en">
+								This attribute gives the location of the actual license text/information as a URI that is resolved
+								against the URI of the current file as a base URI.  Alternatively the license text/information can
+								be included inline using the Content element.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
+					<xs:attribute name="mimeType" type="xs:string">
+						<xs:annotation>
+							<xs:documentation xml:lang="en">
+								This attribute gives the MIME type of the license text/information that is referenced via the 
+								source attribute or included inline using the Content element.
+							</xs:documentation>
+						</xs:annotation>
+					</xs:attribute>
 				</xs:complexType>
 			</xs:element>
 		</xs:sequence>
