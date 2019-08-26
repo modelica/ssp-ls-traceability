@@ -59,6 +59,54 @@
 			<xs:attributeGroup ref="smmd:ATopLevelMetaData"/>
 		</xs:complexType>
 	</xs:element>
+
+	<xs:element name="SimulationExecutionSpecificationData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Execution" type="smmd:ExecutionType"/>
+				<xs:element name="Rights" type="smmd:RightsType"/>
+			</xs:sequence>
+			<xs:attribute name="version" use="required">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						Version of SMMD format, 0.x for this pre-release.
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:normalizedString">
+						<xs:pattern value="0[.][0-9]+(-.*)?"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attributeGroup ref="ssc:ABaseElement"/>
+			<xs:attributeGroup ref="ssc:ATopLevelMetaData"/>
+			<xs:attributeGroup ref="smmd:ATopLevelMetaData"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="SimulationExecutionMetaData">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Execution" type="smmd:ExecutionType"/>
+				<xs:element name="Rights" type="smmd:RightsType"/>
+			</xs:sequence>
+			<xs:attribute name="version" use="required">
+				<xs:annotation>
+					<xs:documentation xml:lang="en">
+						Version of SMMD format, 0.x for this pre-release.
+					</xs:documentation>
+				</xs:annotation>
+				<xs:simpleType>
+					<xs:restriction base="xs:normalizedString">
+						<xs:pattern value="0[.][0-9]+(-.*)?"/>
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attributeGroup ref="ssc:ABaseElement"/>
+			<xs:attributeGroup ref="ssc:ATopLevelMetaData"/>
+			<xs:attributeGroup ref="smmd:ATopLevelMetaData"/>
+		</xs:complexType>
+	</xs:element>
 	
 	<xs:complexType name="ContentAndUsageType">
 		<xs:annotation>
