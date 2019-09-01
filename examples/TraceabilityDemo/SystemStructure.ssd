@@ -2,15 +2,19 @@
 <ssd:SystemStructureDescription xmlns:ssd="http://ssp-standard.org/SSP1/SystemStructureDescription"
   xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon"
   xmlns:sspmd="http://apps.pmsf.net/SSPMD/SSPMetaData"
-  xsi:schemaLocation="http://ssp-standard.org/SSP1/SystemStructureCommon ../../SSP/ssp-standard-dev/SystemStructureDescription/SystemStructureDescription11.xsd"
+  xsi:schemaLocation="http://ssp-standard.org/SSP1/SystemStructureCommon ../../../SSP/ssp-standard-dev/SystemStructureDescription/SystemStructureDescription11.xsd"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" name="SystemStructure"
   generationTool="PMSF FMI Bench 1.9.9.1" generationDateAndTime="2019-05-05T23:13:39+02:00">
   <ssd:System name="Project">
     <ssd:Elements>
       <ssd:Component source="resources/Stimuli.fmu" type="application/x-fmu-sharedlibrary" name="Stimuli">
         <ssd:Connectors>
-          <ssd:Connector name="U" kind="output"/>
-          <ssd:Connector name="tau_load" kind="output"/>
+          <ssd:Connector name="U" kind="output">
+            <ssc:Real unit="V"/>
+          </ssd:Connector>
+          <ssd:Connector name="tau_load" kind="output">
+            <ssc:Real unit="Nm"/>
+          </ssd:Connector>
         </ssd:Connectors>
         <ssd:Annotations>
           <ssc:Annotation type="net.pmsf.ssp.sspmd">
@@ -20,20 +24,40 @@
       </ssd:Component>
       <ssd:System name="SuT">
         <ssd:Connectors>
-          <ssd:Connector name="U" kind="input"/>
-          <ssd:Connector name="tau_load" kind="input"/>
-          <ssd:Connector name="phiB" kind="output"/>
-          <ssd:Connector name="wB" kind="output"/>
-          <ssd:Connector name="I" kind="output"/>
+          <ssd:Connector name="U" kind="input">
+            <ssc:Real unit="V"/>
+          </ssd:Connector>
+          <ssd:Connector name="tau_load" kind="input">
+            <ssc:Real unit="Nm"/>
+          </ssd:Connector>
+          <ssd:Connector name="phiB" kind="output">
+            <ssc:Real unit="rad"/>
+          </ssd:Connector>
+          <ssd:Connector name="wB" kind="output">
+            <ssc:Real unit="rad/s"/>
+          </ssd:Connector>
+          <ssd:Connector name="I" kind="output">
+            <ssc:Real unit="A"/>
+          </ssd:Connector>
         </ssd:Connectors>
         <ssd:Elements>
           <ssd:Component source="resources/eMachine.fmu" type="application/x-fmu-sharedlibrary" name="emachine">
             <ssd:Connectors>
-              <ssd:Connector name="w" kind="input"/>
-              <ssd:Connector name="phi" kind="input"/>
-              <ssd:Connector name="U" kind="input"/>
-              <ssd:Connector name="I" kind="output"/>
-              <ssd:Connector name="tau" kind="output"/>
+              <ssd:Connector name="w" kind="input">
+                <ssc:Real unit="rad/s"/>
+              </ssd:Connector>
+              <ssd:Connector name="phi" kind="input">
+                <ssc:Real unit="rad"/>
+              </ssd:Connector>
+              <ssd:Connector name="U" kind="input">
+                <ssc:Real unit="V"/>
+              </ssd:Connector>
+              <ssd:Connector name="I" kind="output">
+                <ssc:Real unit="A"/>
+              </ssd:Connector>
+              <ssd:Connector name="tau" kind="output">
+                <ssc:Real unit="Nm"/>
+              </ssd:Connector>
             </ssd:Connectors>
             <ssd:Annotations>
               <ssc:Annotation type="net.pmsf.ssp.sspmd">
@@ -43,12 +67,24 @@
           </ssd:Component>
           <ssd:Component source="resources/mass.fmu" type="application/x-fmu-sharedlibrary" name="mass">
             <ssd:Connectors>
-              <ssd:Connector name="tauA" kind="input"/>
-              <ssd:Connector name="tauB" kind="input"/>
-              <ssd:Connector name="wA" kind="output"/>
-              <ssd:Connector name="phiA" kind="output"/>
-              <ssd:Connector name="wB" kind="output"/>
-              <ssd:Connector name="phiB" kind="output"/>
+              <ssd:Connector name="tauA" kind="input">
+                <ssc:Real unit="Nm"/>
+              </ssd:Connector>
+              <ssd:Connector name="tauB" kind="input">
+                <ssc:Real unit="Nm"/>
+              </ssd:Connector>
+              <ssd:Connector name="wA" kind="output">
+                <ssc:Real unit="rad/s"/>
+              </ssd:Connector>
+              <ssd:Connector name="phiA" kind="output">
+                <ssc:Real unit="rad"/>
+              </ssd:Connector>
+              <ssd:Connector name="wB" kind="output">
+                <ssc:Real unit="rad/s"/>
+              </ssd:Connector>
+              <ssd:Connector name="phiB" kind="output">
+                <ssc:Real unit="rad"/>
+              </ssd:Connector>
             </ssd:Connectors>
             <ssd:Annotations>
               <ssc:Annotation type="net.pmsf.ssp.smmd">
@@ -74,4 +110,21 @@
       <ssd:Connection startElement="Stimuli" startConnector="tau_load" endElement="SuT" endConnector="tau_load"/>
     </ssd:Connections>
   </ssd:System>
+  <ssd:Units>
+    <ssc:Unit name="V">
+      <ssc:BaseUnit A="-1" kg="1" m="2" s="-3"/>
+    </ssc:Unit>
+    <ssc:Unit name="A">
+      <ssc:BaseUnit A="1"/>
+    </ssc:Unit>
+    <ssc:Unit name="rad">
+      <ssc:BaseUnit rad="1"/>
+    </ssc:Unit>
+    <ssc:Unit name="rad/s">
+      <ssc:BaseUnit rad="1" s="-1"/>
+    </ssc:Unit>
+    <ssc:Unit name="Nm">
+      <ssc:BaseUnit kg="1" m="2" s="-2"/>
+    </ssc:Unit>
+  </ssd:Units>
 </ssd:SystemStructureDescription>

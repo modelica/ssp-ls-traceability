@@ -2,76 +2,59 @@
 <SimulationModelMetaData xmlns="http://apps.pmsf.net/SMMD/SimulationModelMetaData"
   version="0.1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://apps.pmsf.net/SMMD/SimulationModelMetaData ../../SMMD.xsd">
-  <GeneralInformation>
-    <Logistics>
-      <Type></Type>
-      <Sender>Peter Tabbert</Sender>
-      <Recipient>Klaus Mai</Recipient>
-    </Logistics>
-    <ModelDateTransferFormat>
-      <Format>FMI</Format>
-      <FormatVersion>2.0</FormatVersion>
-    </ModelDateTransferFormat>
-    <ModelMetaData>
-      <Content></Content>
-      <Purpose>Behaviour simulation</Purpose>
-      <CreationDate>1967-08-13</CreationDate>
-      <Version>V 1.1</Version>
-      <LifecycleStage>Engineering</LifecycleStage>
-      <IndividualLifecycleStage></IndividualLifecycleStage>
-      <ConfidentialityLevel></ConfidentialityLevel>
-      <IndividualConfidentialityLevel></IndividualConfidentialityLevel>
-    </ModelMetaData>
-    <PersonsAndOrganizations>
-      <PersonAndOrganization>
-        <Role></Role>
-        <Name>Peter Tabbert</Name>
-        <Organization>:em engineering methods AG</Organization>
-        <PhoneNumber></PhoneNumber>
-        <EmailAddress>peter.tabbert@em.ag</EmailAddress>
-      </PersonAndOrganization>
-      <PersonAndOrganization>
-        <Role></Role>
-        <Name>Klaus Mai</Name>
-        <Organization>:em engineering methods AG</Organization>
-        <PhoneNumber></PhoneNumber>
-        <EmailAddress>klaus.mai@em.ag</EmailAddress>
-      </PersonAndOrganization>
-    </PersonsAndOrganizations>
-    <IntellectualPropertyRights>
-      <PropertyRights>false</PropertyRights>
-      <LicenseType></LicenseType>
-      <IndividualLicenseType></IndividualLicenseType>
-    </IntellectualPropertyRights>
-    <AdditionallyRequiredLicenses>
-      <AdditionalLicense>
-        <License></License>
-        <Comment></Comment>
-      </AdditionalLicense>
-    </AdditionallyRequiredLicenses>
-  </GeneralInformation>
-  <ModelImplementationInformation>
+  xsi:schemaLocation="http://apps.pmsf.net/SMMD/SimulationModelMetaData ../../../SMMD.xsd"
+  author="Pierre R. Mai" fileversion="1.0" lifecycleModel="PMSF" lifecycleStage="Engineering">
+  <ContentAndUsage>
+    <Content>Stimulation Driver</Content>
+    <Purpose>Behaviour simulation</Purpose>
+    <ModelImplementation>
+      <BoxType>Gray</BoxType>
+      <ModelType></ModelType>
+      <ModelDimension></ModelDimension>
+    </ModelImplementation>
+    <ValidityRange>
+      <ValidForUseCases>Traceability Demonstration</ValidForUseCases>
+      <NotValidForUseCases>System or Component Engineering</NotValidForUseCases>
+      <ValidParameters></ValidParameters>
+      <Comment></Comment>
+    </ValidityRange>
+    <Fidelity>
+      <RepresentedPhenomena></RepresentedPhenomena>
+      <NeglectedPhenomena></NeglectedPhenomena>
+    </Fidelity>
+    <PortsAndParameters></PortsAndParameters>
+    <StartAndInitialConditions></StartAndInitialConditions>
+    <PhysicalDomain>
+      <PhysicalDomain></PhysicalDomain>
+    </PhysicalDomain>
+    <ValidationLevel>
+      <ValidationScenario></ValidationScenario>
+      <ValiditionLevel></ValiditionLevel>
+      <LinkToTestingInformation></LinkToTestingInformation>
+      <ValidityRangeMin>0</ValidityRangeMin>
+      <ValidityRangeMax>0</ValidityRangeMax>
+    </ValidationLevel>
+  </ContentAndUsage>
+  <Implementation>
     <ImplementationLanguage>
-      <LanguageName></LanguageName>
+      <LanguageName>Modelica</LanguageName>
       <LanguageVersion></LanguageVersion>
     </ImplementationLanguage>
     <Compiler>
-      <CompilerName></CompilerName>
+      <CompilerName>ITI Simulation X</CompilerName>
       <CompilerVersion></CompilerVersion>
-      <LicenseType></LicenseType>
     </Compiler>
     <ModellingTool>
-      <ToolName></ToolName>
+      <ToolName>ITI Simulation X</ToolName>
       <ToolVersion></ToolVersion>
     </ModellingTool>
-  </ModelImplementationInformation>
-  <ModelExecutionInformation>
+  </Implementation>
+  <Execution>
     <ModelExecutionEnvironment>
-      <OperatingSystem></OperatingSystem>
-      <CPUCoreNumber>0</CPUCoreNumber>
+      <OperatingSystem>Windows</OperatingSystem>
+      <CPUCoreNumber>1</CPUCoreNumber>
       <MassMemory>0</MassMemory>
-      <RAMSize>0</RAMSize>
+      <RAMSize>128</RAMSize>
       <RAMBandWith>0</RAMBandWith>
       <OSFunctions></OSFunctions>
       <CacheProtocol></CacheProtocol>
@@ -84,25 +67,13 @@
       <Accuracy></Accuracy>
       <AdditionalIndiviudalSolverSettings></AdditionalIndiviudalSolverSettings>
     </SolverSettings>
-    <ExternalLibrariesOrCode>
-      <ExternalLibraryOrCode>
-        <NameOfLibraryOrCode></NameOfLibraryOrCode>
-        <VersionOfLibraryOrCode></VersionOfLibraryOrCode>
-        <LinkToLibraryOrCode></LinkToLibraryOrCode>
-      </ExternalLibraryOrCode>
-    </ExternalLibrariesOrCode>
-    <ReadWriteOperations>
-      <ReadWriteOperation>
-        <FileOrDirectory></FileOrDirectory>
-        <AccessRights></AccessRights>
-        <RecursiveAccess>false</RecursiveAccess>
-      </ReadWriteOperation>
-    </ReadWriteOperations>
+    <ExternalLibrariesOrCode></ExternalLibrariesOrCode>
+    <ReadWriteOperations></ReadWriteOperations>
     <DecimalTimeComputation>
-      <DecimalTimeCapable>false</DecimalTimeCapable>
+      <DecimalTimeCapable>true</DecimalTimeCapable>
       <CPUTime></CPUTime>
       <SampleTime></SampleTime>
-      <DecimalTimeFactor>0</DecimalTimeFactor>
+      <DecimalTimeFactor>1</DecimalTimeFactor>
       <NumberOfAllowedTaskOverruns>0</NumberOfAllowedTaskOverruns>
       <ReferenceHardware></ReferenceHardware>
       <Comment></Comment>
@@ -118,52 +89,6 @@
       <Linearity></Linearity>
       <ModelisationResolutionMethod></ModelisationResolutionMethod>
     </CouplingInformation>
-  </ModelExecutionInformation>
-  <ModelContentAndUsageInformation>
-    <ModelImplementation>
-      <BoxType></BoxType>
-      <LicenseType></LicenseType>
-      <ModelType></ModelType>
-      <ModelDimension></ModelDimension>
-    </ModelImplementation>
-    <ValidityRange>
-      <ValidForUseCases></ValidForUseCases>
-      <NotValidForUseCases></NotValidForUseCases>
-      <ValidParameters></ValidParameters>
-      <Comment></Comment>
-    </ValidityRange>
-    <Fidelity>
-      <RepresentedPhenomena></RepresentedPhenomena>
-      <NeglectedPhenomena></NeglectedPhenomena>
-    </Fidelity>
-    <PortsAndParameters>
-      <PortOrParameter>
-        <Type></Type>
-        <Name></Name>
-        <MinValue></MinValue>
-        <MaxValue></MaxValue>
-        <InitialValue></InitialValue>
-        <Unit></Unit>
-        <Dimension></Dimension>
-        <DirectionType></DirectionType>
-        <ParameterList></ParameterList>
-      </PortOrParameter>
-    </PortsAndParameters>
-    <StartAndInitialConditions>
-      <Conditions>
-        <Condition></Condition>
-      </Conditions>
-    </StartAndInitialConditions>
-    <PhysicalDomain>
-      <PhysicalDomain></PhysicalDomain>
-      <OtherPhysicalDomain></OtherPhysicalDomain>
-    </PhysicalDomain>
-    <ValidationLevel>
-      <ValidationScenario></ValidationScenario>
-      <ValiditionLevel></ValiditionLevel>
-      <LinkToTestingInformation></LinkToTestingInformation>
-      <ValidityRangeMin>0</ValidityRangeMin>
-      <ValidityRangeMax>0</ValidityRangeMax>
-    </ValidationLevel>
-  </ModelContentAndUsageInformation>
+  </Execution>
+  <Rights></Rights>
 </SimulationModelMetaData>
