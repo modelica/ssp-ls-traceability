@@ -133,17 +133,25 @@
             </xs:attribute>
             <xs:attributeGroup ref="ssc:ABaseElement"/>
             <xs:attributeGroup ref="ssc:ATopLevelMetaData"/>
+            <xs:attribute name="GUID" use="required" type="xs:string">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        GUID identifier of this STMD file. Must be globally unique and change
+                        at any time that the content of the file changes.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:attribute>
         </xs:complexType>
     </xs:element>
     
     <xs:group name="GPhaseCommon">
         <xs:sequence>
-            <xs:element name="LifeCycleInformation" minOccurs="0" type="stmd:LifeCycleType"/>
+            <xs:element name="LifeCycleInformation" minOccurs="0" type="stmd:LifeCycleInformationType"/>
             <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
         </xs:sequence>
     </xs:group>
 
-    <xs:complexType name="LifeCycleType">
+    <xs:complexType name="LifeCycleInformationType">
         <xs:sequence>
             <xs:element name="Drafted" minOccurs="0" type="stmd:LifeCycleEntryType"/>
             <xs:element name="Defined" minOccurs="0" type="stmd:LifeCycleEntryType"/>
@@ -158,12 +166,33 @@
         <xs:sequence>
             <xs:element name="Resource" minOccurs="0" maxOccurs="unbounded" type="stmd:ResourceType"/>
             <xs:element name="Responsible" type="stmd:ResponsibleType"/>
+            <xs:element name="Signature" minOccurs="0" maxOccurs="unbounded" type="stmd:SignatureType">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        This element can contain digital signature information on the checksum
+                        attribute of the life cycle entry element.  It is left unspecified what types
+                        of signatures are used and/or available for now.  Multiple or no signature elements
+                        may be present.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
             <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
         </xs:sequence>
         <xs:attribute name="date" type="xs:dateTimeStamp" use="required">
             <xs:annotation>
                 <xs:documentation xml:lang="en">
                     Timestamp when life cycle entry was assigned
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="checksum" type="xs:hexBinary">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    This attribute gives the SHA3 checksum over the phase/task information stored in the enclosing
+                    phase/task element, calculated according to the STMD specification.  This attribute is optional
+                    if the life cycle stage is not Frozen or Archived, but becomes required if the life cycle stage
+                    is Frozen or Archived. Optionally, digital signatures over this checksum can be provided using
+                    Signature elements in the enclosing life cycle entry element.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -194,7 +223,7 @@
             <xs:element name="Process" minOccurs="0" type="stmd:ParticleType"/>
             <xs:element name="Output" minOccurs="0" type="stmd:ParticleType"/>
             <xs:element name="Why" minOccurs="0" type="stmd:ParticleType"/>
-            <xs:element name="Responsible" minOccurs="0" type="stmd:ResponsibleType"/>
+            <xs:element name="LifeCycleInformation" type="stmd:LifeCycleInformationType" minOccurs="0"/>
             <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
         </xs:sequence>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
