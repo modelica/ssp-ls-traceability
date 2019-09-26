@@ -11,6 +11,7 @@
     <xs:element name="SimulationTaskMetaData">
         <xs:complexType>
             <xs:sequence>
+                <xs:element name="GeneralInformation" type="stmd:GeneralInformationType"/>
                 <xs:element name="AnalysisPhase" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">
@@ -136,14 +137,42 @@
             <xs:attribute name="GUID" use="required" type="xs:string">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">
-                        GUID identifier of this STMD file. Must be globally unique and change
-                        at any time that the content of the file changes.
+                        GUID identifier of this STMD file. Must be globally unique and MUST
+                        change, whenever a new file with differing information is written.
                     </xs:documentation>
                 </xs:annotation>
             </xs:attribute>
         </xs:complexType>
     </xs:element>
-    
+
+    <xs:complexType name="GeneralInformationType">
+        <xs:annotation></xs:annotation>
+        <xs:sequence>
+            <xs:element name="DerivationChain">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        This element can be used to provide the set of file information that
+                        was used to derive the current file. I.e. if the content of the current
+                        file can be considered to be derived from one or a set of other STMD
+                        files, then the top level meta data and DerivationChain information of
+                        those files should be included in their original order as entries in
+                        this file's DerivationChain element.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Entry" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:attribute name="GUID" type="xs:string" use="required"/>
+                                <xs:attributeGroup ref="ssc:ATopLevelMetaData"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
+    </xs:complexType>
+
     <xs:group name="GPhaseCommon">
         <xs:sequence>
             <xs:element name="LifeCycleInformation" minOccurs="0" type="stmd:LifeCycleInformationType"/>
