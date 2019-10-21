@@ -484,6 +484,24 @@
             <xs:element name="Content" minOccurs="0" maxOccurs="1" type="stmd:ContentType"/>
             <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
         </xs:sequence>
+        <xs:attribute name="role" use="required">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    This mandatory attribute specifies the role this signature has in the overall
+                    process. It indicates whether the digital signature is intended to just convey
+                    the authenticity of the information, or whether a claim for suitability of
+                    the information for certain purposes is made.  In the later case, the digital
+                    signature format should include detailed information about what suitability
+                    claims are being made.
+                </xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="authenticity"></xs:enumeration>
+                    <xs:enumeration value="suitability"></xs:enumeration>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
         <xs:attribute name="type" type="xs:string" use="required">
             <xs:annotation>
                 <xs:documentation xml:lang="en">
