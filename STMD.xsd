@@ -34,8 +34,11 @@
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="DeriveSimulationRequirements" type="stmd:StepType" minOccurs="0"/>
-                            <xs:element name="DeriveValidationRequirements" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="DeriveModelRequirements" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="DeriveParameterRequirements" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="DeriveSimulationEnvironmentRequirements" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="DeriveTestCaseRequirements" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="DeriveVandVRequirements" type="stmd:StepType" minOccurs="0"/>
                             <xs:group ref="stmd:GPhaseCommon"/>
                         </xs:sequence>
                         <xs:attributeGroup ref="ssc:ABaseElement"/>
@@ -49,11 +52,11 @@
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="DesignSimulationTestCaseSpecification" type="stmd:StepType" minOccurs="0" maxOccurs="unbounded"/>
-                            <xs:element name="DesignValidationTestCaseSpecification" type="stmd:StepType" minOccurs="0" maxOccurs="unbounded"/>
-                            <xs:element name="DesignModelSpecification" type="stmd:StepType" minOccurs="0" maxOccurs="unbounded"/>
-                            <xs:element name="DesignParameterSpecification" type="stmd:StepType" minOccurs="0" maxOccurs="unbounded"/>
-                            <xs:element name="DesignSimulationEnvironmentSpecification" type="stmd:StepType" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="DesignModelSpecification" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="DesignParameterSpecification" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="DesignSimulationEnvironmentSpecification" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="DesignTestCaseSpecification" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="DesignVandVSpecification" type="stmd:StepType" minOccurs="0"/>
                             <xs:group ref="stmd:GPhaseCommon"/>
                         </xs:sequence>
                         <xs:attributeGroup ref="ssc:ABaseElement"/>
@@ -67,13 +70,11 @@
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="ImplementSimulationTestCase" type="stmd:StepType" minOccurs="0" maxOccurs="unbounded"/>
-                            <xs:element name="ImplementValidationTestCase" type="stmd:StepType" minOccurs="0" maxOccurs="unbounded"/>
-                            <xs:element name="ImplementModel" type="stmd:StepType" minOccurs="0" maxOccurs="unbounded"/>
-                            <xs:element name="ImplementParameter" type="stmd:StepType" minOccurs="0" maxOccurs="unbounded"/>
-                            <xs:element name="ImplementSimulationEnvironment" type="stmd:StepType" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="ImplementModel" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="ImplementParameter" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="ImplementSimulationEnvironment" type="stmd:StepType" minOccurs="0"/>
                             <xs:element name="IntegrateSimulation" type="stmd:StepType" minOccurs="0"/>
-                            <xs:element name="ValidateSimulation" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="VandVSimulation" type="stmd:StepType" minOccurs="0"/>
                             <xs:group ref="stmd:GPhaseCommon"/>
                         </xs:sequence>
                         <xs:attributeGroup ref="ssc:ABaseElement"/>
@@ -87,7 +88,8 @@
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="ExecuteSimulation" type="stmd:StepType" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="ImplementTestCase" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="ExecuteSimulation" type="stmd:StepType" minOccurs="0"/>
                             <xs:group ref="stmd:GPhaseCommon"/>
                         </xs:sequence>
                         <xs:attributeGroup ref="ssc:ABaseElement"/>
@@ -101,8 +103,8 @@
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="EvaluateSimulationValidity" type="stmd:StepType" minOccurs="0" maxOccurs="unbounded"/>
-                            <xs:element name="EvaluateSimulationResults" type="stmd:StepType" minOccurs="0" maxOccurs="unbounded"/>
+                            <xs:element name="EvaluateSimulationValidity" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="EvaluateSimulationResults" type="stmd:StepType" minOccurs="0"/>
                             <xs:element name="DecideGoalFulfillment" type="stmd:StepType" minOccurs="0"/>
                             <xs:group ref="stmd:GPhaseCommon"/>
                         </xs:sequence>
