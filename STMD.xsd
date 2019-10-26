@@ -146,7 +146,7 @@
             </xs:attribute>
         </xs:complexType>
     </xs:element>
-
+    
     <xs:complexType name="GeneralInformationType">
         <xs:annotation></xs:annotation>
         <xs:sequence>
@@ -181,7 +181,7 @@
             <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
         </xs:sequence>
     </xs:group>
-
+    
     <xs:complexType name="LifeCycleInformationType">
         <xs:sequence>
             <xs:element name="Drafted" minOccurs="0" type="stmd:LifeCycleEntryType"/>
