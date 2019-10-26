@@ -148,7 +148,12 @@
     </xs:element>
     
     <xs:complexType name="GeneralInformationType">
-        <xs:annotation></xs:annotation>
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                This element is used to encapsulate general information about the
+                simulation task, which is not part of any specific phase or step.
+            </xs:documentation>
+        </xs:annotation>
         <xs:sequence>
             <xs:element name="DerivationChain">
                 <xs:annotation>
@@ -183,11 +188,27 @@
     </xs:group>
     
     <xs:complexType name="LifeCycleInformationType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                This element contains life cycle information about the enclosing phase or or step
+                element.  Due to the inherent dependencies of life cycles, life cycle information
+                at later phases will be dependent on life cycle status of former phases to a
+                certain extent:  For example, if the Implementation Phase is designated as having
+                reached the status "Validated", it would create a contradiction if the Requirements
+                Phase has only reached status "Drafted".
+                
+                Multiple life cycle information entries can be present, in order to record the
+                historical progression of the life cycle status, however only the last entry in
+                document order, which will also be of the highest maturity, will be considered
+                valid for the current file contents, earlier states only recording historical
+                data.
+            </xs:documentation>
+        </xs:annotation>
         <xs:sequence>
             <xs:element name="Drafted" minOccurs="0" type="stmd:LifeCycleEntryType"/>
             <xs:element name="Defined" minOccurs="0" type="stmd:LifeCycleEntryType"/>
             <xs:element name="Validated" minOccurs="0" type="stmd:LifeCycleEntryType"/>
-            <xs:element name="Frozen" minOccurs="0" type="stmd:LifeCycleEntryType"/>
+            <xs:element name="Approved" minOccurs="0" type="stmd:LifeCycleEntryType"/>
             <xs:element name="Archived" minOccurs="0" type="stmd:LifeCycleEntryType"/>
             <xs:element name="Retracted" minOccurs="0" type="stmd:LifeCycleEntryType"/>
         </xs:sequence>
@@ -212,17 +233,18 @@
         <xs:attribute name="date" type="xs:dateTimeStamp" use="required">
             <xs:annotation>
                 <xs:documentation xml:lang="en">
-                    Timestamp when life cycle entry was assigned
+                    Timestamp when life cycle entry was assigned. Note that the time stamp data type makes
+                    timezone information mandatory, so that a full ordering of times is possible.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
         <xs:attribute name="checksum" type="xs:hexBinary">
             <xs:annotation>
                 <xs:documentation xml:lang="en">
-                    This attribute gives the checksum over the phase/task information stored in the enclosing
-                    phase/task element, calculated according to the STMD specification.  This attribute is optional
-                    if the life cycle stage is not Frozen or Archived, but becomes required if the life cycle stage
-                    is Frozen or Archived. Optionally, digital signatures over this checksum can be provided using
+                    This attribute gives the checksum over the phase/step information stored in the enclosing
+                    phase/step element, calculated according to the STMD specification.  This attribute is optional
+                    if the life cycle stage is not Approved or Archived, but becomes required if the life cycle stage
+                    is Approved or Archived. Optionally, digital signatures over this checksum can be provided using
                     Signature elements in the enclosing life cycle entry element.
                     
                     The checksum is calculated using the algorithm indicated by the checksumType attribute.
@@ -499,8 +521,8 @@
             </xs:annotation>
             <xs:simpleType>
                 <xs:restriction base="xs:string">
-                    <xs:enumeration value="authenticity"></xs:enumeration>
-                    <xs:enumeration value="suitability"></xs:enumeration>
+                    <xs:enumeration value="authenticity"/>
+                    <xs:enumeration value="suitability"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
