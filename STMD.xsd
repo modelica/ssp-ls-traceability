@@ -397,6 +397,89 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
+            <xs:element name="Summary" minOccurs="0" maxOccurs="1">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        This element provides an optional summary of the resource being referenced.  The
+                        summary information is intended for human consumption to get an overview of the
+                        resource content without looking at the content itself.  The summary content can
+                        be provided inline through the Content element, or it can be provided through the
+                        source URI attribute.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Content" minOccurs="0" maxOccurs="1" type="stmd:ContentType">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This optional element can contain inlined content of the resource summary. If it
+                                    is present, then the attribute source of the Summary element must not be present.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:element name="Signature" minOccurs="0" maxOccurs="unbounded" type="stmd:SignatureType">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This element can contain digital signature information on the summary referenced
+                                    by the enclosing Summary element. It is left unspecified what types of signatures
+                                    are used and/or available for now.  Multiple or no signature elements may be present.
+                                </xs:documentation>
+                            </xs:annotation>
+                        </xs:element>
+                        <xs:group ref="stmd:GElementCommon"/>
+                    </xs:sequence>
+                    <xs:attribute name="type" type="xs:string" use="required">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                This mandatory attribute specifies the MIME type of the resource summary, which
+                                does not have a default value.  If no specific MIME type can be indicated, then
+                                the type application/octet-stream is to be used.  If markdown content is used,
+                                then the type text/markdown shall be used.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute name="source" type="xs:anyURI" use="optional">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                This attribute indicates the source of the resource summary as a
+                                URI (cf. RFC 3986).  For purposes of the resolution of relative URIs
+                                the base URI is the URI of the STMD, if the sourceBase attribute is
+                                not specified or is specified as STMD, and the URI of the referenced
+                                resource if the sourceBase attribute is specified as resource.
+                                
+                                This allows the specification of summary sources that reside
+                                inside the resource (e.g. an FMU) through relative URIs.
+                                
+                                For summaries that are located alongside the STMD, relative URIs
+                                without scheme and authority can and should be used to specify the
+                                summary sources.  For summaries that are packaged inside an SSP
+                                that contains this STMD, this is mandatory (in this way, the STMD
+                                URIs remain valid after unpacking the SSP into the filesystem).
+                                
+                                If the source attribute is missing, the summary is provided
+                                inline as contents of the Content element, which must not be
+                                present otherwise.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute name="sourceBase" use="optional" default="STMD">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                Defines the base the source URI is resolved against:  If the attribute
+                                is missing or is specified as STMD, the source is resolved against the
+                                URI of the STMD, if the attribute is specified as resource the URI is
+                                resolved against the (resolved) URI of the resource source.
+                            </xs:documentation>
+                        </xs:annotation>
+                        <xs:simpleType>
+                            <xs:restriction base="xs:string">
+                                <xs:enumeration value="STMD"/>
+                                <xs:enumeration value="resource"/>
+                            </xs:restriction>
+                        </xs:simpleType>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
             <xs:element name="MetaData" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">
