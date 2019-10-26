@@ -21,6 +21,7 @@
                     <xs:complexType>
                         <xs:sequence>
                             <xs:element name="AnalyzeEngineeringTask" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="VerifyEngineeringTaskAnalysis" type="stmd:StepType" minOccurs="0"/>
                             <xs:group ref="stmd:GPhaseCommon"/>
                         </xs:sequence>
                         <xs:attributeGroup ref="ssc:ABaseElement"/>
@@ -37,14 +38,16 @@
                             <xs:element name="DeriveModelRequirements" type="stmd:StepType" minOccurs="0"/>
                             <xs:element name="DeriveParameterRequirements" type="stmd:StepType" minOccurs="0"/>
                             <xs:element name="DeriveSimulationEnvironmentRequirements" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="DeriveSimulationIntegrationRequirements" type="stmd:StepType" minOccurs="0"/>
                             <xs:element name="DeriveTestCaseRequirements" type="stmd:StepType" minOccurs="0"/>
-                            <xs:element name="DeriveVandVRequirements" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="DeriveProcessQualityRequirements" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="VerifyRequirements" type="stmd:StepType" minOccurs="0"/>
                             <xs:group ref="stmd:GPhaseCommon"/>
                         </xs:sequence>
                         <xs:attributeGroup ref="ssc:ABaseElement"/>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="SpecificationPhase" minOccurs="0">
+                <xs:element name="DesignPhase" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">
                             This element specifies the Specification Phase of the overall Simulation Task.
@@ -55,14 +58,16 @@
                             <xs:element name="DesignModelSpecification" type="stmd:StepType" minOccurs="0"/>
                             <xs:element name="DesignParameterSpecification" type="stmd:StepType" minOccurs="0"/>
                             <xs:element name="DesignSimulationEnvironmentSpecification" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="DesignSimulationIntegrationSpecification" type="stmd:StepType" minOccurs="0"/>
                             <xs:element name="DesignTestCaseSpecification" type="stmd:StepType" minOccurs="0"/>
-                            <xs:element name="DesignVandVSpecification" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="DesignProcessQualitySpecification" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="VerifyDesignSpecification" type="stmd:StepType" minOccurs="0"/>
                             <xs:group ref="stmd:GPhaseCommon"/>
                         </xs:sequence>
                         <xs:attributeGroup ref="ssc:ABaseElement"/>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="ImplementationAndValidationPhase" minOccurs="0">
+                <xs:element name="ImplementationPhase" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">
                             This element specifies the Implementation and Validation Phase of the overall Simulation Task.
@@ -73,8 +78,10 @@
                             <xs:element name="ImplementModel" type="stmd:StepType" minOccurs="0"/>
                             <xs:element name="ImplementParameter" type="stmd:StepType" minOccurs="0"/>
                             <xs:element name="ImplementSimulationEnvironment" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="ImplementTestCase" type="stmd:StepType" minOccurs="0"/>
                             <xs:element name="IntegrateSimulation" type="stmd:StepType" minOccurs="0"/>
-                            <xs:element name="VandVSimulation" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="AssureSimulationSetupQuality" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="DeriveSimulationSetupQualityVerdict" type="stmd:StepType" minOccurs="0"/>
                             <xs:group ref="stmd:GPhaseCommon"/>
                         </xs:sequence>
                         <xs:attributeGroup ref="ssc:ABaseElement"/>
@@ -88,14 +95,13 @@
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="ImplementTestCase" type="stmd:StepType" minOccurs="0"/>
                             <xs:element name="ExecuteSimulation" type="stmd:StepType" minOccurs="0"/>
                             <xs:group ref="stmd:GPhaseCommon"/>
                         </xs:sequence>
                         <xs:attributeGroup ref="ssc:ABaseElement"/>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="EvaluationAndDecisionPhase" minOccurs="0">
+                <xs:element name="EvaluationPhase" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">
                             This element specifies the Evaluation and Decision Phase of the overall Simulation Task.
@@ -103,9 +109,23 @@
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="EvaluateSimulationValidity" type="stmd:StepType" minOccurs="0"/>
                             <xs:element name="EvaluateSimulationResults" type="stmd:StepType" minOccurs="0"/>
-                            <xs:element name="DecideGoalFulfillment" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="AssureSimulationQuality" type="stmd:StepType" minOccurs="0"/>
+                            <xs:element name="DeriveSimulationQualityVerdict" type="stmd:StepType" minOccurs="0"/>
+                            <xs:group ref="stmd:GPhaseCommon"/>
+                        </xs:sequence>
+                        <xs:attributeGroup ref="ssc:ABaseElement"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="DecisionPhase" minOccurs="0">
+                    <xs:annotation>
+                        <xs:documentation xml:lang="en">
+                            This element specifies the Evaluation and Decision Phase of the overall Simulation Task.
+                        </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="DecideObjectiveFulfillment" type="stmd:StepType" minOccurs="0"/>
                             <xs:group ref="stmd:GPhaseCommon"/>
                         </xs:sequence>
                         <xs:attributeGroup ref="ssc:ABaseElement"/>
