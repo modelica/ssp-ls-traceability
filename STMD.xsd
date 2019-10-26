@@ -111,7 +111,7 @@
                         <xs:attributeGroup ref="ssc:ABaseElement"/>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+                <xs:group ref="stmd:GElementCommon"/>
             </xs:sequence>
             <xs:attribute name="version" use="required">
                 <xs:annotation>
@@ -179,11 +179,80 @@
             </xs:element>
         </xs:sequence>
     </xs:complexType>
-
+    
+    <xs:group name="GElementCommon">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                Common element content for all modeling elements of the STMD file.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Classification" minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        This element, which can occur multiple times, provides a set of classifications
+                        of an STMD modeling element, provided as Keyword Value Pairs (KWP), the meaning
+                        of which is interpreted according to the name of the classification provided in
+                        the name attribute.
+                        
+                        This approach can be used, for example, to provide searchable keywords for
+                        content, or to assign and track quality or validation level requirements
+                        across the STMD process, or to maintain variant or other classification
+                        content across the process.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Entry" minOccurs="0" maxOccurs="unbounded">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This element provides a keyword value pair entry, with the
+                                    keyword provided through the keyword attribute and the value
+                                    being the contents of the element.
+                                </xs:documentation>
+                            </xs:annotation>
+                            <xs:complexType mixed="true">
+                                <xs:sequence>
+                                    <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+                                </xs:sequence>
+                                <xs:attribute name="keyword" type="xs:normalizedString">
+                                    <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+                                            This attribute gives the keyword for the classification entry
+                                            (i.e. keyword value pair).  It is left undefined whether this
+                                            must be unique across the entries of the Classification element,
+                                            or whether repeated entries are allowed.  This will depend on
+                                            the definition of the classification.
+                                        </xs:documentation>
+                                    </xs:annotation>
+                                </xs:attribute>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute name="type" type="xs:normalizedString">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                This attribute provides the name of the type of classification
+                                being provided.  The name should be unique across the Classification
+                                elements of the immediately enclosing element.
+                                
+                                In order to ensure uniqueness all types should be identified
+                                with reverse domain name notation (cf. Java package names
+                                or Apple UTIs) of a domain that is controlled by the entity
+                                defining the semantics and content of the classification.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+        </xs:sequence>
+    </xs:group>
+    
     <xs:group name="GPhaseCommon">
         <xs:sequence>
             <xs:element name="LifeCycleInformation" minOccurs="0" type="stmd:LifeCycleInformationType"/>
-            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+            <xs:group ref="stmd:GElementCommon"/>
         </xs:sequence>
     </xs:group>
     
@@ -228,7 +297,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+            <xs:group ref="stmd:GElementCommon"/>
         </xs:sequence>
         <xs:attribute name="date" type="xs:dateTimeStamp" use="required">
             <xs:annotation>
@@ -260,20 +329,6 @@
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="qualityNorm" type="xs:string" use="optional">
-            <xs:annotation>
-                <xs:documentation xml:lang="en">
-                    Name of the quality norm that is used to interpret the qualityLabel attribute value
-                </xs:documentation>
-            </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="qualityLabel" type="xs:string" use="optional">
-            <xs:annotation>
-                <xs:documentation xml:lang="en">
-                    Assigned quality label as specified by the qualityNorm attribute value
-                </xs:documentation>
-            </xs:annotation>
-        </xs:attribute>
     </xs:complexType>
     
     <xs:complexType name="StepType">
@@ -288,26 +343,9 @@
             <xs:element name="Output" minOccurs="0" type="stmd:ParticleType"/>
             <xs:element name="Rationale" minOccurs="0" type="stmd:ParticleType"/>
             <xs:element name="LifeCycleInformation" type="stmd:LifeCycleInformationType" minOccurs="0"/>
-            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+            <xs:group ref="stmd:GElementCommon"/>
         </xs:sequence>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
-        <xs:attribute name="validationClassification" type="xs:string">
-            <xs:annotation>
-                <xs:documentation xml:lang="en">
-                    This attribute specifies a validation classification system, which is used to interpret the
-                    validation level, as specified in the validationLevel attribute.
-                </xs:documentation>
-            </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="validationLevel" type="xs:string">
-            <xs:annotation>
-                <xs:documentation xml:lang="en">
-                    This attribute specifies the required and implemented validation level for the given step,
-                    as interpreted in the validation classification system as specified by the validationClassification
-                    attribute.
-                </xs:documentation>
-            </xs:annotation>
-        </xs:attribute>
     </xs:complexType>
     
     <xs:complexType name="ParticleType">
@@ -318,7 +356,7 @@
         </xs:annotation>
         <xs:sequence>
             <xs:element name="Resource" minOccurs="0" maxOccurs="unbounded" type="stmd:ResourceType"/>
-            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+            <xs:group ref="stmd:GElementCommon"/>
         </xs:sequence>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
     </xs:complexType>
@@ -365,7 +403,7 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+                        <xs:group ref="stmd:GElementCommon"/>
                     </xs:sequence>
                     <xs:attribute name="kind" use="required">
                         <xs:annotation>
@@ -441,7 +479,7 @@
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
-            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+            <xs:group ref="stmd:GElementCommon"/>
         </xs:sequence>
         <xs:attribute name="kind" use="required">
             <xs:annotation>
@@ -506,7 +544,7 @@
     <xs:complexType name="SignatureType">
         <xs:sequence>
             <xs:element name="Content" minOccurs="0" maxOccurs="1" type="stmd:ContentType"/>
-            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+            <xs:group ref="stmd:GElementCommon"/>
         </xs:sequence>
         <xs:attribute name="role" use="required">
             <xs:annotation>
