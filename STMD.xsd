@@ -718,7 +718,7 @@
         </xs:attribute>
     </xs:complexType>
     
-    <xs:complexType name="ContentType">
+    <xs:complexType name="ContentType" mixed="true">
         <xs:annotation>
             <xs:documentation xml:lang="en">
                 This optional element can contain inlined content of an entity. If it is present,
@@ -726,14 +726,6 @@
             </xs:documentation>
         </xs:annotation>
         <xs:choice>
-            <xs:element name="Markdown" type="xs:string">
-                <xs:annotation>
-                    <xs:documentation xml:lang="en">
-                        This element can be used in content of resources to embed simple Markdown formatted
-                        textual content.  The content must match the Markdown specification 
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:element>
             <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
         </xs:choice>
     </xs:complexType>
