@@ -3,72 +3,73 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://apps.pmsf.net/STMD/SimulationTaskMetaData ../../../../STMD.xsd"
     version="0.1" name="Simulation Task"
-    generationTool="PMSF FMI Bench 1.9.9.1" generationDateAndTime="2019-05-05T23:13:39+02:00">
+    generationTool="PMSF FMI Bench 1.9.9.1" generationDateAndTime="2019-05-05T23:13:39+02:00"
+    GUID="1234567890">
+    <stmd:GeneralInformation>
+        <stmd:DerivationChain/>
+    </stmd:GeneralInformation>
     <stmd:AnalysisPhase>
-        <stmd:AnalyseEngineeringTask>
+        <stmd:AnalyzeEngineeringTask>
             <stmd:Input description="Someone gave me some task to do"/>
             <stmd:Process description="Random thoughts"/>
             <stmd:Output description="I decided a simulation of an eMachine with Mass and Stimuli is the thing to do"/>
-            <stmd:Why description="I was bored"/>
-        </stmd:AnalyseEngineeringTask>
+            <stmd:Rationale description="I was bored"/>
+        </stmd:AnalyzeEngineeringTask>
     </stmd:AnalysisPhase>
-    <stmd:SpecificationPhase>
+    <stmd:RequirementsPhase>
+        <stmd:DeriveModelRequirements>
+            <stmd:Input description="Domain Knowledge of eMachines"/>
+            <stmd:Process description="Agile Development"/>
+            <stmd:Output>
+                <stmd:Resource kind="requirement" type="text/markdown" id="ModelReqs">
+                    <stmd:Content>The model should be good to test acceleration and deceleration.</stmd:Content>
+                </stmd:Resource>
+            </stmd:Output>
+        </stmd:DeriveModelRequirements>
+    </stmd:RequirementsPhase>
+    <stmd:DesignPhase>
         <stmd:DesignModelSpecification description="Model Specification of eMachine Model">
-            <stmd:Input description="Domain Knowledge of eMachines"/>
-            <stmd:Process description="Agile Development"/>
-            <stmd:Output description="Specification for eMachine Model" id="eMachineModelSpec"/>
-        </stmd:DesignModelSpecification>
-        <stmd:DesignModelSpecification description="Model Specification of mass Model">
-            <stmd:Input description="Domain Knowledge of eMachines"/>
-            <stmd:Process description="Agile Development"/>
-            <stmd:Output description="Specification for mass Model" id="MassModelSpec"/>
-        </stmd:DesignModelSpecification>
-        <stmd:DesignModelSpecification description="Model Specification of Stimuli Model">
-            <stmd:Input description="Domain Knowledge of eMachines"/>
-            <stmd:Process description="Agile Development"/>
-            <stmd:Output description="Specification for Stimuli Model" id="StimuliModelSpec"/>
-        </stmd:DesignModelSpecification>
-    </stmd:SpecificationPhase>
-    <stmd:ImplementationAndValidationPhase>
-        <stmd:ImplementModel description="Implement eMachine Model">
             <stmd:Input>
-                <stmd:Resource kind="specification" type="application/x-ssp-stmd-particle" source="#eMachineModelSpec"/>
+                <stmd:Resource kind="requirement" type="text/markdown" source="#ModelReqs"/>
+            </stmd:Input>
+            <stmd:Process description="Agile Development"/>
+            <stmd:Output description="Specification for Model" id="ModelSpec">
+                <stmd:Resource kind="specification" type="text/markdown" id="eMachineModelSpec">
+                    <stmd:Content>The eMachine Model should be good</stmd:Content>
+                </stmd:Resource>
+                <stmd:Resource kind="specification" type="text/markdown" id="MassModelSpec">
+                    <stmd:Content>The Mass Model should be good</stmd:Content>
+                </stmd:Resource>
+                <stmd:Resource kind="specification" type="text/markdown" id="StimuliModelSpec">
+                    <stmd:Content>The Stimuli Model should be good</stmd:Content>
+                </stmd:Resource>
+            </stmd:Output>
+        </stmd:DesignModelSpecification>
+    </stmd:DesignPhase>
+    <stmd:ImplementationPhase>
+        <stmd:ImplementModel description="Implement Model">
+            <stmd:Input>
+                <stmd:Resource kind="specification" type="text/markdown" source="#eMachineModelSpec"/>
+                <stmd:Resource kind="specification" type="text/markdown" source="#MassModelSpec"/>
+                <stmd:Resource kind="specification" type="text/markdown" source="#StimuliModelSpec"/>
             </stmd:Input>
             <stmd:Process description="Agile Development"/>
             <stmd:Output>
                 <stmd:Resource kind="model" type="application/x-fmu-sharedlibrary" source="../../resources/eMachine.fmu">
                     <stmd:MetaData kind="general" type="application/x-ssp-smmd" source="../../resources/eMachine.smmd" sourceBase="STMD">
-                        <stmd:Signature type="application/x-ssp-sha3-signature">
-                            <stmd:Content><sha3:checksum xmlns:sha3="http://apps.pmsf.net/STMD/SHA3">6841973219C4565E7AE4ECBB4B8A41CD4A0FB9BB7483B3092CC925AD8656FAFAAA78498FDE5A76E1E92FBD959C196134FAE971F2B68AF536FE4B67C19AAE15BB</sha3:checksum></stmd:Content>
+                        <stmd:Signature type="application/x-ssp-sha3-signature" role="authenticity">
+                            <stmd:Content>6841973219C4565E7AE4ECBB4B8A41CD4A0FB9BB7483B3092CC925AD8656FAFAAA78498FDE5A76E1E92FBD959C196134FAE971F2B68AF536FE4B67C19AAE15BB</stmd:Content>
                         </stmd:Signature>
                     </stmd:MetaData>
-                    <stmd:Signature type="application/x-ssp-sha3-signature">
-                        <stmd:Content><sha3:checksum xmlns:sha3="http://apps.pmsf.net/STMD/SHA3">1D9F161B04BBD5B5B0E92FDD8289D34744A036016087E07CFA877DE8B1EF848CFE9D514FD38D372719734AF219D83A15D16B3A21360F1B792DDDA791F70A6495</sha3:checksum></stmd:Content>
+                    <stmd:Signature type="application/x-ssp-sha3-signature" role="authenticity">
+                        <stmd:Content>1D9F161B04BBD5B5B0E92FDD8289D34744A036016087E07CFA877DE8B1EF848CFE9D514FD38D372719734AF219D83A15D16B3A21360F1B792DDDA791F70A6495</stmd:Content>
                     </stmd:Signature>
                 </stmd:Resource>
-            </stmd:Output>
-        </stmd:ImplementModel>
-        <stmd:ImplementModel description="Implement Mass Model">
-            <stmd:Input>
-                <stmd:Resource kind="specification" type="application/x-ssp-stmd-particle" source="#MassModelSpec"/>
-            </stmd:Input>
-            <stmd:Process description="Agile Development"/>
-            <stmd:Output>
                 <stmd:Resource kind="model" type="application/x-fmu-sharedlibrary" source="../../resources/mass.fmu">
-                    <stmd:MetaData kind="general" type="application/x-ssp-smmd" source="../../resources/mass.smmd" sourceBase="STMD">
-                    </stmd:MetaData>
+                    <stmd:MetaData kind="general" type="application/x-ssp-smmd" source="../../resources/mass.smmd" sourceBase="STMD"/>
                 </stmd:Resource>
-            </stmd:Output>
-        </stmd:ImplementModel>
-        <stmd:ImplementModel description="Implement Stimuli Model">
-            <stmd:Input>
-                <stmd:Resource kind="specification" type="application/x-ssp-stmd-particle" source="#StimuliModelSpec"/>
-            </stmd:Input>
-            <stmd:Process description="Agile Development"/>
-            <stmd:Output>
                 <stmd:Resource kind="model" type="application/x-fmu-sharedlibrary" source="../../resources/Stimuli.fmu">
-                    <stmd:MetaData kind="general" type="application/x-ssp-smmd" source="../../resources/Stimuli.smmd" sourceBase="STMD">
-                    </stmd:MetaData>
+                    <stmd:MetaData kind="general" type="application/x-ssp-smmd" source="../../resources/Stimuli.smmd" sourceBase="STMD"/>
                 </stmd:Resource>
             </stmd:Output>
         </stmd:ImplementModel>
@@ -80,22 +81,25 @@
             </stmd:Input>
             <stmd:Output>
                 <stmd:Resource kind="system" type="application/x-ssp-definition" source="../../SystemStructure.ssd" description="Fully configured system description">
-                    <stmd:Signature type="application/x-ssp-sha3-signature">
-                        <stmd:Content><sha3:checksum xmlns:sha3="http://apps.pmsf.net/STMD/SHA3">13FF76CA1E0408BF8C9691C0A327ACA4FDB5289E6C3555C11F751779E3089A12604EC60DE6F5DBB4A0E94FF1AE46E4AF0055A462896FA0F09413F3F3575FE7F8</sha3:checksum></stmd:Content>
+                    <stmd:Signature type="application/x-ssp-sha3-signature" role="authenticity">
+                        <stmd:Content>13FF76CA1E0408BF8C9691C0A327ACA4FDB5289E6C3555C11F751779E3089A12604EC60DE6F5DBB4A0E94FF1AE46E4AF0055A462896FA0F09413F3F3575FE7F8</stmd:Content>
                     </stmd:Signature>
                 </stmd:Resource>
             </stmd:Output>
         </stmd:IntegrateSimulation>
-    </stmd:ImplementationAndValidationPhase>
+    </stmd:ImplementationPhase>
     <stmd:ExecutionPhase>
         <stmd:ExecuteSimulation>
             <stmd:Input description="All the inputs for execution">
                 <stmd:Resource kind="system" type="application/x-ssp-definition" source="../../SystemStructure.ssd" description="Fully configured system description">
-                    <stmd:Signature type="application/x-ssp-sha3-signature">
-                        <stmd:Content><sha3:checksum xmlns:sha3="http://apps.pmsf.net/STMD/SHA3">13FF76CA1E0408BF8C9691C0A327ACA4FDB5289E6C3555C11F751779E3089A12604EC60DE6F5DBB4A0E94FF1AE46E4AF0055A462896FA0F09413F3F3575FE7F8</sha3:checksum></stmd:Content>
+                    <stmd:Signature type="application/x-ssp-sha3-signature" role="authenticity">
+                        <stmd:Content>13FF76CA1E0408BF8C9691C0A327ACA4FDB5289E6C3555C11F751779E3089A12604EC60DE6F5DBB4A0E94FF1AE46E4AF0055A462896FA0F09413F3F3575FE7F8</stmd:Content>
                     </stmd:Signature>
                 </stmd:Resource>
             </stmd:Input>
+            <stmd:Output>
+                <stmd:Resource kind="document" type=""><stmd:Content></stmd:Content></stmd:Resource>
+            </stmd:Output>
         </stmd:ExecuteSimulation>
     </stmd:ExecutionPhase>
 </stmd:SimulationTaskMetaData>

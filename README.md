@@ -6,7 +6,7 @@ meta-data packages allow the packaging of simulation task meta-data
 files together with related system descriptions, models and other
 resources using the SSP packaging format.
 
-This is version 0.1.0 of this document. The version number is
+This is version 0.2.0 of this document. The version number is
 to be interpreted according to the [Semantic Versioning Specification
 (SemVer) 2.0.0][SemVer2.0.0].
 
