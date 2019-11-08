@@ -104,7 +104,7 @@
                 <xs:element name="EvaluationPhase" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">
-                            This element specifies the Evaluation and Decision Phase of the overall Simulation Task.
+                            This element specifies the Evaluation Phase of the overall Simulation Task.
                         </xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
@@ -117,10 +117,10 @@
                         <xs:attributeGroup ref="ssc:ABaseElement"/>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="DecisionPhase" minOccurs="0">
+                <xs:element name="FulfillmentPhase" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">
-                            This element specifies the Evaluation and Decision Phase of the overall Simulation Task.
+                            This element specifies the Fulfillment Phase of the overall Simulation Task.
                         </xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
