@@ -601,6 +601,8 @@
                     <xs:enumeration value="system"/>
                     <xs:enumeration value="test case"/>
                     <xs:enumeration value="result"/>
+                    <xs:enumeration value="method"/>
+                    <xs:enumeration value="rationale"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
