@@ -359,7 +359,7 @@
         </xs:annotation>
         <xs:sequence>
             <xs:element name="Input" minOccurs="0" type="stmd:ParticleType"/>
-            <xs:element name="Process" minOccurs="0" type="stmd:ParticleType"/>
+            <xs:element name="Procedure" minOccurs="0" type="stmd:ParticleType"/>
             <xs:element name="Output" minOccurs="0" type="stmd:ParticleType"/>
             <xs:element name="Rationale" minOccurs="0" type="stmd:ParticleType"/>
             <xs:element name="LifeCycleInformation" type="stmd:LifeCycleInformationType" minOccurs="0"/>
