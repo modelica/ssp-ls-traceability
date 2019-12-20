@@ -4,7 +4,8 @@ SSP Traceability Specification
 This directory will contain the final specification document.
 For now it contains the two inputs for the final specification document:
 
- * The [manual](SSPTraceabilityManual.docx) document for the STMD format,
+ * The [manual](SSPTraceabilityManual.pdf) document for the STMD format,
+   also available in [word](SSPTraceabilityManual.docx) source format,
    and
  * an early [draft](SSPTraceabilityPackaging.md) of the remainder of the
    specification in terms of packaging and SSP integration.
