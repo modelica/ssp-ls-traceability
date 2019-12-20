@@ -188,7 +188,7 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="Entry" minOccurs="0" maxOccurs="unbounded">
+                        <xs:element name="DerivationChainEntry" minOccurs="0" maxOccurs="unbounded">
                             <xs:complexType>
                                 <xs:attribute name="GUID" type="xs:string" use="required"/>
                                 <xs:attributeGroup ref="ssc:ATopLevelMetaData"/>
@@ -223,7 +223,7 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="Entry" minOccurs="0" maxOccurs="unbounded">
+                        <xs:element name="ClassificationEntry" minOccurs="0" maxOccurs="unbounded">
                             <xs:annotation>
                                 <xs:documentation xml:lang="en">
                                     This element provides a keyword value pair entry, with the

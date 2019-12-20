@@ -3,7 +3,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://apps.pmsf.net/STMD/SimulationTaskMetaData ../../../../STMD.xsd"
     version="0.1" name="Simulation Task"
-    generationTool="PMSF FMI Bench 1.9.9.1" generationDateAndTime="2019-05-05T23:13:39+02:00"
+    generationTool="PMSF FMI Bench 1.9.9.1" generationDateAndTime="2019-12-19T08:13:39+02:00"
     GUID="1234567890">
     <stmd:GeneralInformation>
         <stmd:DerivationChain/>
@@ -11,7 +11,7 @@
     <stmd:AnalysisPhase>
         <stmd:AnalyzeEngineeringTask>
             <stmd:Input description="Someone gave me some task to do"/>
-            <stmd:Process description="Random thoughts"/>
+            <stmd:Procedure description="Random thoughts"/>
             <stmd:Output description="I decided a simulation of an eMachine with Mass and Stimuli is the thing to do"/>
             <stmd:Rationale description="I was bored"/>
         </stmd:AnalyzeEngineeringTask>
@@ -19,7 +19,7 @@
     <stmd:RequirementsPhase>
         <stmd:DeriveModelRequirements>
             <stmd:Input description="Domain Knowledge of eMachines"/>
-            <stmd:Process description="Agile Development"/>
+            <stmd:Procedure description="Agile Development"/>
             <stmd:Output>
                 <stmd:Resource kind="requirement" type="text/markdown" id="ModelReqs">
                     <stmd:Content>The model should be good to test acceleration and deceleration.</stmd:Content>
@@ -32,7 +32,7 @@
             <stmd:Input>
                 <stmd:Resource kind="requirement" type="text/markdown" source="#ModelReqs"/>
             </stmd:Input>
-            <stmd:Process description="Agile Development"/>
+            <stmd:Procedure description="Agile Development"/>
             <stmd:Output description="Specification for Model" id="ModelSpec">
                 <stmd:Resource kind="specification" type="text/markdown" id="eMachineModelSpec">
                     <stmd:Content>The eMachine Model should be good</stmd:Content>
@@ -53,7 +53,7 @@
                 <stmd:Resource kind="specification" type="text/markdown" source="#MassModelSpec"/>
                 <stmd:Resource kind="specification" type="text/markdown" source="#StimuliModelSpec"/>
             </stmd:Input>
-            <stmd:Process description="Agile Development"/>
+            <stmd:Procedure description="Agile Development"/>
             <stmd:Output>
                 <stmd:Resource kind="model" type="application/x-fmu-sharedlibrary" source="../../resources/eMachine.fmu">
                     <stmd:MetaData kind="general" type="application/x-ssp-smmd" source="../../resources/eMachine.smmd" sourceBase="STMD">
