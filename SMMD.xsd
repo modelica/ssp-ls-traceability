@@ -147,7 +147,9 @@
 							<xs:annotation>
 								<xs:appinfo xml:lang="en">
 									<displayName>Box Type</displayName>
-									<description>The attribute indicates whether the model is a "black box" or a "white box" model. (black box: Internal structures or working behavior is unknown white box: Internal structures or working behavior is known and model can used for debugging.)</description>
+									<description>The attribute indicates whether the model is a "black box" or a "white box" model.  
+									- black box: Internal structures or working behavior is unknown. 
+									- white box: Internal structures or working behavior is known and its model can be used for debugging.)</description>
 								</xs:appinfo>
 								<xs:documentation xml:lang="en"></xs:documentation>
 							</xs:annotation>
