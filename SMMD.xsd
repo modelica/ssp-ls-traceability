@@ -137,7 +137,7 @@
 				<xs:annotation>
 					<xs:appinfo xml:lang="en">
 						<displayName>Model Implementation</displayName>
-						<description>This objcets decsribes detailed implementation parameters of the model.</description>
+						<description>This objects describes detailed implementation parameters of the model.</description>
 					</xs:appinfo>
 					<xs:documentation xml:lang="en"></xs:documentation>
 				</xs:annotation>
@@ -184,14 +184,14 @@
 						<xs:element name="ValidForUseCases" type="xs:string">
 							<xs:annotation>
 								<xs:documentation xml:lang="en">
-									The element contains a list of use cases the model ist designed for.
+									The element contains a list of use cases the model is designed for.
 								</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 						<xs:element name="NotValidForUseCases" type="xs:string">
 							<xs:annotation>
 								<xs:documentation xml:lang="en">
-									The element contains a list of use cases the model ist explicitly not designed for.
+									The element contains a list of use cases the model is explicitly not designed for.
 								</xs:documentation>
 							</xs:annotation>
 						</xs:element>
@@ -204,7 +204,7 @@
 						</xs:element>
 						<xs:element name="Comment" type="xs:string">
 							<xs:annotation>
-								<xs:documentation xml:lang="en">The element contails any further information about the validity range.</xs:documentation>
+								<xs:documentation xml:lang="en">The element contains any further information about the validity range.</xs:documentation>
 							</xs:annotation>
 						</xs:element>
 					</xs:sequence>
@@ -273,7 +273,7 @@
 										<xs:annotation>
 											<xs:appinfo xml:lang="en">
 												<displayName>Min Value</displayName>
-												<description>The attribute contains the minumum value of the port or parameter.</description>
+												<description>The attribute contains the minimum value of the port or parameter.</description>
 											</xs:appinfo>
 											<xs:documentation xml:lang="en"></xs:documentation>
 										</xs:annotation>
@@ -541,10 +541,10 @@
 	<xs:complexType name="ExecutionType">
 		<xs:annotation>
 			<xs:documentation xml:lang="en">
-				The model execution information contain information about the technical environment in wich the model is
+				The model execution information contain information about the technical environment in which the model is
 				intended processed and simulated. The technical environment may be different at the creators and users site.
-				The different technical circumstances might have influences on the execution and simulation behaviour.
-				Therefore these technical environment information are very significant für the usage of the model at the
+				The different technical circumstances might have influences on the execution and simulation behavior.
+				Therefore these technical environment information are very significant for the usage of the model at the
 				receivers site.
 			</xs:documentation>
 		</xs:annotation>
@@ -563,7 +563,7 @@
 							<xs:annotation>
 								<xs:appinfo xml:lang="en">
 									<displayName>Operating System</displayName>
-									<description>The attributeindicates the operation system, in case the model execution is technically restricted to a specific operation system or a list of operation systems. It may be empty in case of no restrictions.</description>
+									<description>The attribute indicates the operation system, in case the model execution is technically restricted to a specific operation system or a list of operation systems. It may be empty in case of no restrictions.</description>
 								</xs:appinfo>
 								<xs:documentation xml:lang="en"></xs:documentation>
 							</xs:annotation>
@@ -572,7 +572,7 @@
 							<xs:annotation>
 								<xs:appinfo xml:lang="en">
 									<displayName>CPU Core Number</displayName>
-									<description>The attribut indicates the number of CPU cores needed to execute the model with sufficient performance. It may be empty in case the number of CPU cores is not significant.</description>
+									<description>The attribute indicates the number of CPU cores needed to execute the model with sufficient performance. It may be empty in case the number of CPU cores is not significant.</description>
 								</xs:appinfo>
 								<xs:documentation xml:lang="en"></xs:documentation>
 							</xs:annotation>
@@ -581,7 +581,7 @@
 							<xs:annotation>
 								<xs:appinfo xml:lang="en">
 									<displayName>Mass Memory</displayName>
-									<description>The attribute indicates the size of available mass memory during the execution of the model to intermediately store runtime data and results of the simulation. It may be empty in case the requirements about the mass memory are presumed not significant.</description>
+									<description>The attribute indicates the size of available mass memory during the execution of the model to intermediately store run-time data and results of the simulation. It may be empty in case the requirements about the mass memory are presumed not significant.</description>
 								</xs:appinfo>
 								<xs:documentation xml:lang="en"></xs:documentation>
 							</xs:annotation>
@@ -590,7 +590,7 @@
 							<xs:annotation>
 								<xs:appinfo xml:lang="en">
 									<displayName>RAM Size</displayName>
-									<description>The attribute indicates the size of available RAM during the execution of the model to execute the model with sufficient performance and to intermediately store runtime data and results of the simulation. It may be empty in case the requirements about the RAM size are presumed not significant.</description>
+									<description>The attribute indicates the size of available RAM during the execution of the model to execute the model with sufficient performance and to intermediately store run-time data and results of the simulation. It may be empty in case the requirements about the RAM size are presumed not significant.</description>
 								</xs:appinfo>
 								<xs:documentation xml:lang="en"></xs:documentation>
 							</xs:annotation>
@@ -638,7 +638,7 @@
 				<xs:annotation>
 					<xs:appinfo xml:lang="en">
 						<displayName>Solver Settings</displayName>
-						<description>The object indicates the solver tool and describes the set of solver settings, that schould be used for simulating the model.</description>
+						<description>The object indicates the solver tool and describes the set of solver settings, that should be used for simulating the model.</description>
 					</xs:appinfo>
 					<xs:documentation xml:lang="en"></xs:documentation>
 				</xs:annotation>
@@ -683,7 +683,7 @@
 						<xs:element name="AdditionalIndiviudalSolverSettings" type="xs:string">
 							<xs:annotation>
 								<xs:appinfo xml:lang="en">
-									<displayName>Additional Indiviudal Solver Settings</displayName>
+									<displayName>Additional Individual Solver Settings</displayName>
 									<description>The attribute describe any other additional and solver specific settings significant for the simulation.</description>
 								</xs:appinfo>
 								<xs:documentation xml:lang="en"></xs:documentation>
@@ -696,7 +696,7 @@
 				<xs:annotation>
 					<xs:appinfo xml:lang="en">
 						<displayName>External Libraries Or Code</displayName>
-						<description>The object describes any other addtinional external libraries or code that is significantly needed for the simulation. This object is separately instatiated for each specific individual library or code.</description>
+						<description>The object describes any other additional external libraries or code that is significantly needed for the simulation. This object is separately instantiated for each specific individual library or code.</description>
 					</xs:appinfo>
 					<xs:documentation xml:lang="en"></xs:documentation>
 				</xs:annotation>
@@ -725,7 +725,7 @@
 										<xs:annotation>
 											<xs:appinfo xml:lang="en">
 												<displayName>Version Of Library Or Code</displayName>
-												<description>The attribute indicates a specific  version of a referenced external library or code in case a version ID is available or a list of valid versions. It may be empty in case a version ID ist not aailavle.</description>
+												<description>The attribute indicates a specific  version of a referenced external library or code in case a version ID is available or a list of valid versions. It may be empty in case a version ID is not available.</description>
 											</xs:appinfo>
 											<xs:documentation xml:lang="en"></xs:documentation>
 										</xs:annotation>
@@ -734,7 +734,7 @@
 										<xs:annotation>
 											<xs:appinfo xml:lang="en">
 												<displayName>Link To Library Or Code</displayName>
-												<description>The attribute contains a reference link to an external library or code, in case the refence link is required. It may be empty in case a specific reference link ist not required for the execution of the model or not available.</description>
+												<description>The attribute contains a reference link to an external library or code, in case the reference link is required. It may be empty in case a specific reference link is not required for the execution of the model or not available.</description>
 											</xs:appinfo>
 											<xs:documentation xml:lang="en"></xs:documentation>
 										</xs:annotation>
@@ -749,7 +749,7 @@
 				<xs:annotation>
 					<xs:appinfo xml:lang="en">
 						<displayName>Read Write Operations</displayName>
-						<description>The object indicates the data access requirements for specific files or directories. (e.g. look up tables) or write to files (e.g. result files). It is instatiated separately for each individual file or directory and also may indicate whether or not subdirectories are included in the read/white access specification.</description>
+						<description>The object indicates the data access requirements for specific files or directories. (e.g. look up tables) or write to files (e.g. result files). It is instantiated separately for each individual file or directory and also may indicate whether or not sub-directories are included in the read/white access specification.</description>
 					</xs:appinfo>
 					<xs:documentation xml:lang="en"></xs:documentation>
 				</xs:annotation>
@@ -778,7 +778,7 @@
 										<xs:annotation>
 											<xs:appinfo xml:lang="en">
 												<displayName>Access Rights</displayName>
-												<description>The attributes spefies the access level, i.e. read access, right access read/write access or execution access</description>
+												<description>The attributes specifies the access level, i.e. read access, right access read/write access or execution access</description>
 											</xs:appinfo>
 											<xs:documentation xml:lang="en"></xs:documentation>
 										</xs:annotation>
@@ -787,7 +787,7 @@
 										<xs:annotation>
 											<xs:appinfo xml:lang="en">
 												<displayName>Recursive Access</displayName>
-												<description>The attribute indicates whether or not subdirectories are included or not</description>
+												<description>The attribute indicates whether or not sub-directories are included or not</description>
 											</xs:appinfo>
 											<xs:documentation xml:lang="en"></xs:documentation>
 										</xs:annotation>
@@ -802,7 +802,7 @@
 				<xs:annotation>
 					<xs:appinfo xml:lang="en">
 						<displayName>Decimal Time Computation</displayName>
-						<description>The object desribes the real time computation parameteters.</description>
+						<description>The object describes the real time computation parameters.</description>
 					</xs:appinfo>
 					<xs:documentation xml:lang="en"></xs:documentation>
 				</xs:annotation>
@@ -866,7 +866,7 @@
 							<xs:annotation>
 								<xs:appinfo xml:lang="en">
 									<displayName></displayName>
-									<description>The attribute provides an additional comment for all in formation about the real time computation that ist not covered by the other attributes.</description>
+									<description>The attribute provides an additional comment for all in formation about the real time computation that is not covered by the other attributes.</description>
 								</xs:appinfo>
 								<xs:documentation xml:lang="en"></xs:documentation>
 							</xs:annotation>
@@ -897,7 +897,7 @@
 							<xs:annotation>
 								<xs:appinfo xml:lang="en">
 									<displayName>Communication Mode</displayName>
-									<description>The attribute describes how the model communicates with ist environment.</description>
+									<description>The attribute describes how the model communicates with is environment.</description>
 								</xs:appinfo>
 								<xs:documentation xml:lang="en"></xs:documentation>
 							</xs:annotation>
@@ -909,7 +909,7 @@
 				<xs:annotation>
 					<xs:appinfo xml:lang="en">
 						<displayName>Coupling Information</displayName>
-						<description>The object contains inforamtion about the cross model comunication.</description>
+						<description>The object contains information about the cross model communication.</description>
 					</xs:appinfo>
 					<xs:documentation xml:lang="en"></xs:documentation>
 				</xs:annotation>
@@ -1022,7 +1022,7 @@
 	<xs:complexType name="ContentType">
 		<xs:annotation>
 			<xs:documentation xml:lang="en">
-				This optional element can contain inlined content of an entity. If it is present,
+				This optional element can contain inline content of an entity. If it is present,
 				then the attribute source of the enclosing element must not be present.
 			</xs:documentation>
 		</xs:annotation>
