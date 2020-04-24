@@ -1,14 +1,14 @@
 # Simulation Task Meta-Data Packages
 
 This document specifies the packaging of simulation task meta-data
-packages, as a third-party layered standard upon [SSP][] 1.0.  Simulation task
-meta-data packages allow the packaging of simulation task meta-data
-files together with related system descriptions, models and other
-resources using the SSP packaging format.
+packages, as a third-party layered standard upon [SSP][] 1.0.
+Simulation task meta-data packages allow the packaging of simulation
+task meta-data files together with related system descriptions, models
+and other resources using the SSP packaging format.
 
-This is version 0.2.0 of this document. The version number is
-to be interpreted according to the [Semantic Versioning Specification
-(SemVer) 2.0.0][SemVer2.0.0].
+This is version 0.3.0 of this document. The version number is to be
+interpreted according to the [Semantic Versioning Specification (SemVer)
+2.0.0][SemVer2.0.0].
 
 The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
 "SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this
@@ -62,9 +62,9 @@ UTF-8 encoding.
 All STMD-specific elements live in the `http://apps.pmsf.net/STMD/SimulationTaskMetaData`
 namespace, nicknamed `stmd` in this document.
 
-The root element of an STMD file MUST be a `SimulationTaskMetaData` element,
-which gives overall information about the simulation task described in
-this STMD file.
+The root element of an STMD file MUST be a `SimulationTaskMetaData`
+element, which gives overall information about the simulation task
+described in this STMD file.
 
 The STMD file CAN reference any system structure descriptions that the
 simulation task is intended to use through `Resource` elements with the
@@ -80,34 +80,73 @@ as
 due to the relative location of the STMD file.
 
 Simulation model meta data and parameter meta data is referenced inside
-the STMD file using either Resource records directly if the meta data is
-directly relevant, or through MetaData elements inside Resource elements
-if the meta data is only used in a meta data role.
+the STMD file using either `Resource` records directly if the meta data
+is directly relevant, or through `MetaData` elements inside `Resource`
+elements if the meta data is only used in a meta data role.
 
-If meta data is intended to be carried in the purely SSP subset of the SSP
-package, then the following sections apply.
+If meta data is intended to be carried in the purely SSP subset of the
+SSP package, then the following sections apply.
 
-### SMMD
+The MIME type of STMD files is `application/x-stmd-simulationtask`, the
+file name extension is `.stmd`.
 
-Simulation model meta data for components that are referenced in the
-system structure description MAY be provided either inline or through
-external references to files placed in the `resources` folder of the
-SSP package.
+### SRMD
 
-In either case, an annotation with type `net.pmsf.ssp.sspmd` MUST be
-added to the component in question. The content of the annotation
-MUST be a `ModelMetaData` element in the `http://apps.pmsf.net/SSPMD/SSPMetaData`
-namespace.  If the SMMD content is to be placed inline, then the
-content of the `ModelMetaData` element MUST be valid SMMD content.  If the
-SMMD content is to be referenced externally, then the `ModelMetaData` element
-MUST be empty, and MUST have an attribute named `source` that provides
-the location of the SMMD file as a URI.  If the SMMD meta-data is
-packaged inside the SSP archive, then the URI MUST be a relative URI
-that is resolved against the SSD file as its base URI, as specified
-in the SSP standard for all SSP-relative content addressing, unless the
-`sourceBase` attribute is present and has a value of `component`, in which
-case the relative URI is resolved against the component itself as its base URI,
-allowing the addressing of meta-data that is packaged within the component.
+Simulation resource meta data for components or other resources (e.g.
+parameter sets, etc.) can be provided using SRMD files. These files can
+be embedded into such resources, where possible, they can be placed
+outside the resources and reference the resources to which they apply,
+or they can be tied to the resources through the STMD meta-data
+mechanisms.
 
-SMMD content itself must be valid against the SMMD XML Schema in the
-`http://apps.pmsf.net/SMMD/SimulationModelMetaData` namespace.
+The MIME type for SRMD files is `application/x-srmd-meta-data`, the file
+name extension is `.srmd`.
+
+#### Attaching via STMD meta-data mechanism
+
+For SRMD data that is to be tied to the resource through the STMD
+meta-data mechanism, the SRMD file is either referenced from or
+contained in the `MetaData` elements for the resource.
+
+#### Embedding into FMUs
+
+For FMUs the SRMD file CAN be embedded by placing the SRMD data into a
+file named `extra/net.pmsf.ssp.srmd/resourceMetaData.srmd` in the FMU
+archive.
+
+#### Embedding into SSPs
+
+For SSPs the SRMD file that applies to the SSP as a whole CAN be
+embedded by placing the SRMD data into a file named
+`extra/net.pmsf.ssp.srmd/resourceMetaData.srmd` in the SSP archive.
+
+Inside SSPs, additional SRMD files for referenced resources of the SSP
+can be specified using the SSPMD referencing mechanism:
+
+An annotation with type `net.pmsf.ssp.sspmd` MUST be added to the
+element (e.g. the `Component` element) in question. The content of the
+annotation MUST be a `ResourceMetaData` element in the
+`http://apps.pmsf.net/SSPMD/SSPMetaData` namespace.
+
+If the SRMD content is to be placed inline, then the content of the
+`ResourceMetaData` element MUST be valid SRMD content.  If the SRMD
+content is to be referenced externally, then the `ResourceMetaData`
+element MUST be empty, and MUST have an attribute named `source` that
+provides the location of the SRMD file as a URI.
+
+If the SRMD meta-data is packaged inside the SSP archive, then the URI
+MUST be a relative URI that is resolved against the SSD file as its base
+URI, as specified in the SSP standard for all SSP-relative content
+addressing, unless the `sourceBase` attribute is present and has a value
+of `component`, in which case the relative URI is resolved against the
+component itself as its base URI, allowing the addressing of meta-data
+that is packaged within the component.
+
+#### Placing beside resources
+
+When placing an SRMD file beside (i.e. outside of) the referenced
+resources, the SRMD file SHOULD be named like the resource file name,
+where possible, with a file name extension of `.srmd`.
+
+The `data` attribute of the SRMD top-level element SHOULD provide a URI
+to the resource.
