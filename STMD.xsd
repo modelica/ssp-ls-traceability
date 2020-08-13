@@ -588,7 +588,8 @@
             <xs:annotation>
                 <xs:documentation xml:lang="en">
                     This attribute indicates the kind of resource that is referenced, i.e. what role it
-                    plays in relation to the particle being described.
+                    plays in relation to the particle being described.  If no more precise label applies,
+                    the kind document can be used.
                 </xs:documentation>
             </xs:annotation>
             <xs:simpleType>
@@ -603,6 +604,25 @@
                     <xs:enumeration value="result"/>
                     <xs:enumeration value="method"/>
                     <xs:enumeration value="rationale"/>
+                    <xs:enumeration value="report"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:attribute>
+        <xs:attribute name="scope">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    This attribute indicates the scope or level that a resource is specific to, i.e. whether the
+                    resource applies at a global, system, subsystem or component level.  The use of this attribute
+                    is optional, i.e. it should only be specified where it makes sense to give this kind of
+                    information.
+                </xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="global"/>
+                    <xs:enumeration value="system"/>
+                    <xs:enumeration value="subsystem"/>
+                    <xs:enumeration value="component"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
