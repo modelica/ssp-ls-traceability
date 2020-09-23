@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <stmd:SimulationTaskMetaData xmlns:stmd="http://apps.pmsf.net/STMD/SimulationTaskMetaData"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://apps.pmsf.net/STMD/SimulationTaskMetaData ../../../../STMD.xsd"
     version="0.1" name="Simulation Task"
@@ -86,6 +87,19 @@
                     </stmd:Signature>
                 </stmd:Resource>
             </stmd:Output>
+            <stmd:Links>
+                <stmd:Link>
+                    <stmd:Locator xlink:href="../../resources/eMachine.fmu" xlink:label="sutmodel" xlink:role="model" xlink:title="Model Input"/>
+                    <stmd:Locator xlink:href="../../resources/mass.fmu" xlink:label="sutmodel" xlink:role="model" xlink:title="Model Input"/>
+                    <stmd:Locator xlink:href="../../resources/Stimuli.fmu" xlink:label="stimmodel" xlink:role="model" xlink:title="Model Input"/>
+                    <stmd:Locator xlink:href="../../SystemStructure.ssd#Project" xlink:label="system" xlink:role="system" 
+                        xlink:title="Top-Level System"/>
+                    <stmd:Locator xlink:href="../../SystemStructure.ssd#Project.SuT" xlink:label="sutsystem" xlink:role="system" 
+                        xlink:title="SuT Sub-System"/>
+                    <stmd:Arc xlink:from="sutmodel" xlink:to="sutsystem" xlink:arcrole="integration" xlink:title="Integration"/>
+                    <stmd:Arc xlink:from="stimmodel" xlink:to="system" xlink:arcrole="integration" xlink:title="Integration"/>
+                </stmd:Link>
+            </stmd:Links>
         </stmd:IntegrateSimulation>
     </stmd:ImplementationPhase>
     <stmd:ExecutionPhase>

@@ -4,9 +4,11 @@
     vc:minVersion="1.1" 
     xmlns:stmd="http://apps.pmsf.net/STMD/SimulationTaskMetaData"
     xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
     targetNamespace="http://apps.pmsf.net/STMD/SimulationTaskMetaData">
     
     <xs:import namespace="http://ssp-standard.org/SSP1/SystemStructureCommon" schemaLocation="ssp/SystemStructureCommon.xsd"/>
+    <xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="https://www.w3.org/XML/2008/06/xlink.xsd"/>
     
     <xs:element name="SimulationTaskMetaData">
         <xs:complexType>
@@ -362,6 +364,7 @@
             <xs:element name="Procedure" minOccurs="0" type="stmd:ParticleType"/>
             <xs:element name="Output" minOccurs="0" type="stmd:ParticleType"/>
             <xs:element name="Rationale" minOccurs="0" type="stmd:ParticleType"/>
+            <xs:element name="Links" minOccurs="0" type="stmd:LinksType"/>
             <xs:element name="LifeCycleInformation" type="stmd:LifeCycleInformationType" minOccurs="0"/>
             <xs:group ref="stmd:GElementCommon"/>
         </xs:sequence>
@@ -379,6 +382,38 @@
             <xs:group ref="stmd:GElementCommon"/>
         </xs:sequence>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
+    </xs:complexType>
+
+    <xs:complexType name="LinksType">
+        <xs:sequence>
+            <xs:element name="Link" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="Locator" minOccurs="2" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:attribute ref="xlink:type" fixed="locator"/>
+                                <xs:attribute ref="xlink:href" use="required"/>
+                                <xs:attribute ref="xlink:label"/>
+                                <xs:attribute ref="xlink:title"/>
+                                <xs:attribute ref="xlink:role"/>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="Arc" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:attribute ref="xlink:type" fixed="arc"/>
+                                <xs:attribute ref="xlink:from" use="required"/>
+                                <xs:attribute ref="xlink:to" use="required"/>
+                                <xs:attribute ref="xlink:title"/>
+                                <xs:attribute ref="xlink:arcrole"/>
+                            </xs:complexType>
+                        </xs:element>
+                    </xs:sequence>
+                    <xs:attribute ref="xlink:type" fixed="extended"/>
+                    <xs:attribute ref="xlink:title"/>
+                    <xs:attribute ref="xlink:role"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:sequence>
     </xs:complexType>
     
     <xs:complexType name="ResourceType">
