@@ -1,4 +1,4 @@
-# Simulation Task Meta-Data Packages
+# SSP Traceability Specification
 
 This repository contains the current prototyped draft specification
 for an [SSP][]-based layered standard for simulation traceability
