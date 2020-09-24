@@ -38,3 +38,4 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: build
         destination_dir: ${{ steps.extract_branch.outputs.branch }}
+        enable_jekyll: true
