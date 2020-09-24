@@ -11,4 +11,4 @@ published [here][spec]. It is based on the [SSP 1.0][SSP10] standard.
 [SSP]: https://ssp-standard.org/
 [SSP10]: https://ssp-standard.org/publications/SSP10/SystemStructureAndParameterization10.pdf
 [github]: https://github.com/PMSFIT/SSPTraceability/
-[spec]: https://pmsfit.github.io/SSPTraceability/feature/asciidoc/
+[spec]: https://pmsfit.github.io/SSPTraceability/master/
