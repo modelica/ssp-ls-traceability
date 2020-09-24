@@ -1,5 +1,7 @@
 # SSP Traceability Specification
 
+[![Build Specification](https://github.com/PMSFIT/SSPTraceability/workflows/Build%20Specification/badge.svg)](https://github.com/PMSFIT/SSPTraceability/actions?query=workflow%3A%22Build+Specification%22)
+
 This repository contains the current prototyped draft specification
 for an [SSP][]-based layered standard for simulation traceability
 information exchange.  Note that this specification is actively
