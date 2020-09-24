@@ -10,4 +10,4 @@ the [SSP 1.0][SSP10] standard.
 
 [SSP]: https://ssp-standard.org/
 [SSP10]: https://ssp-standard.org/publications/SSP10/SystemStructureAndParameterization10.pdf
-[spec]: specification/README.md
+[spec]: specification/index.adoc

@@ -1,0 +1,27 @@
+= SSP Traceability Specification
+:sectnums:
+:sectnumlevels: 5
+:toc: left
+:toc-title: Contents
+:toclevels: 5
+:xrefstyle: short
+:docinfo: shared
+:stylesheet: ssp-spec.css
+:stem: latexmath
+:source-highlighter: highlightjs
+:nofooter:
+:revdate: unreleased
+:revnumber: 0.3.0
+:icons: font
+
+include::0___preamble.adoc[]
+
+include::1___overview.adoc[]
+
+include::2___STMD.adoc[]
+
+include::3___SRMD.adoc[]
+
+include::4___packaging.adoc[]
+
+include::5___literature.adoc[]

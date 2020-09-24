@@ -1,0 +1,38 @@
+== Introduction
+
+=== What is SSP Traceability
+
+// Place introductory material here
+
+=== Overview
+
+The SSP Traceability Specification consists of the following parts:
+
+ * The Simulation Task Meta Data (STMD) file format specification, specifying how to store, retrieve and handle simulation task meta data.
+
+ * The Simulation Resource Meta Data (SRMD) file format specification, specifying how to store, retrieve and handle simulation resource meta data.
+
+ * The SSP Traceability Packaging specification, specifying how to package STMD and SRMD data, as well as related resources into SSP.
+
+==== Simulation Task Meta Data
+
+// Short introduction here
+
+==== Simulation Resource Meta Data
+
+// Short introduction here
+
+==== SSP Traceability Packaging
+
+// Short introduction here
+
+=== Conventions Used in This Document
+
+* The version number of this specification is to be interpreted according to the _Semantic Versioning Specification (SemVer) 2.0.0_ <<SEMVER200>>.
+
+* Non-normative text is given in square brackets in italic font: _[Especially examples are defined in this style.]_
+
+* The key words *MUST*, *MUST NOT*, *REQUIRED*, *SHALL*, *SHALL NOT*, *SHOULD*, *SHOULD NOT*, *RECOMMENDED*, *NOT RECOMMENDED*, *MAY*, and *OPTIONAL* in this document are to be interpreted as described in _RFC 2119_ <<RFC2119>>.
+
+* All namespaces and reverse domain notation domain names used in this draft version of this document are subject to change once the draft is finalized.
+

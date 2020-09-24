@@ -1,28 +1,12 @@
-# Simulation Task Meta-Data Packages
+== SSP Traceability Packaging
 
-This document specifies the packaging of simulation task meta-data
-packages, as a third-party layered standard upon [SSP][] 1.0.
+This section specifies the packaging of simulation task meta-data
+packages, as a third-party layered standard upon _SSP_ <<SSP10>>.
 Simulation task meta-data packages allow the packaging of simulation
 task meta-data files together with related system descriptions, models
 and other resources using the SSP packaging format.
 
-This is version 0.3.0 of this document. The version number is to be
-interpreted according to the [Semantic Versioning Specification (SemVer)
-2.0.0][SemVer2.0.0].
-
-The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT",
-"SHOULD", "SHOULD NOT", "RECOMMENDED",  "MAY", and "OPTIONAL" in this
-document are to be interpreted as described in [RFC 2119][].
-
-All namespaces and reverse domain notation domain names used in this
-draft version of this document are subject to change once the draft
-is finalized.
-
-[SSP]: https://ssp-standard.org/
-[SemVer2.0.0]: http://semver.org/spec/v2.0.0.html
-[RFC 2119]: https://www.ietf.org/rfc/rfc2119.txt
-
-## Introduction
+=== Introduction
 
 The current specification specifies the packaging of simulation task
 meta-data files together with all referenced system descriptions,
@@ -36,9 +20,9 @@ that do not yet support STMD-based work flows. Furthermore this
 approach simplifies the definition of STMD-based packages by reusing
 the built-in functionality of the SSP standard.
 
-## SSP 1.0
+=== SSP 1.0
 
-Any STMD-based package MUST be a valid [SSP 1.0][SSP10] SSP archive.
+Any STMD-based package MUST be a valid _SSP 1.0_ <<SSP10>> SSP archive.
 Inter alia this means that it MUST contain at least one SSD file named
 `SystemStructure.ssd` in the root of the archive, which MUST be a valid
 system structure description file. In phases of the simulation task
@@ -46,9 +30,7 @@ workflow where a proper system structure description has not yet been
 created, this CAN be a dummy file containing an otherwise empty system.
 Those cases will be recognizable by the content of the STMD file.
 
-[SSP10]: https://ssp-standard.org/publications/SSP10/SystemStructureAndParameterization10.pdf
-
-## STMD File
+=== STMD File
 
 Any STMD-based package MUST include an STMD XML file under the
 `extra/net.pmsf.ssp.stmd/SimulationTask.stmd` name. The file MUST be
@@ -90,7 +72,7 @@ SSP package, then the following sections apply.
 The MIME type of STMD files is `application/x-stmd-simulationtask`, the
 file name extension is `.stmd`.
 
-### SRMD
+=== SRMD
 
 Simulation resource meta data for components or other resources (e.g.
 parameter sets, etc.) can be provided using SRMD files. These files can
@@ -102,19 +84,19 @@ mechanisms.
 The MIME type for SRMD files is `application/x-srmd-meta-data`, the file
 name extension is `.srmd`.
 
-#### Attaching via STMD meta-data mechanism
+==== Attaching via STMD meta-data mechanism
 
 For SRMD data that is to be tied to the resource through the STMD
 meta-data mechanism, the SRMD file is either referenced from or
 contained in the `MetaData` elements for the resource.
 
-#### Embedding into FMUs
+==== Embedding into FMUs
 
 For FMUs the SRMD file CAN be embedded by placing the SRMD data into a
 file named `extra/net.pmsf.ssp.srmd/resourceMetaData.srmd` in the FMU
 archive.
 
-#### Embedding into SSPs
+==== Embedding into SSPs
 
 For SSPs the SRMD file that applies to the SSP as a whole CAN be
 embedded by placing the SRMD data into a file named
@@ -142,7 +124,7 @@ of `component`, in which case the relative URI is resolved against the
 component itself as its base URI, allowing the addressing of meta-data
 that is packaged within the component.
 
-#### Placing beside resources
+==== Placing beside resources
 
 When placing an SRMD file beside (i.e. outside of) the referenced
 resources, the SRMD file SHOULD be named like the resource file name,

@@ -1,0 +1,32 @@
+name: Build Specification
+
+on:
+  push:
+    branches-ignore: [ 'temp/*' ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build-spec:
+    name: Build Specification
+
+    runs-on: ubuntu-18.04
+
+    steps:
+    - name: checkout
+      uses: actions/checkout@v2
+    - name: prepare
+      run: mkdir build
+    - name: build
+      uses: avattathil/asciidoctor-action@master
+      with:
+        program: "asciidoctor -D build --backend=html5 -o index.html specification/index.adoc"
+    - name: archive
+      uses: actions/upload-artifact@v2
+      with:
+        name: SSP-Traceability-Spec
+        path: build/*
+        if-no-files-found: error
+    - name: deploy
+      if: github.ref == 'refs/heads/master' && github.event_name == 'push'
+      run: echo "Deploying"
