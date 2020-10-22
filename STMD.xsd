@@ -307,7 +307,7 @@
     
     <xs:complexType name="LifeCycleEntryType">
         <xs:sequence>
-            <xs:element name="Resource" minOccurs="0" maxOccurs="unbounded" type="stmd:ResourceType"/>
+            <xs:group ref="stmd:GResourceOrReference" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="Responsible" type="stmd:ResponsibleType"/>
             <xs:element name="Signature" minOccurs="0" maxOccurs="unbounded" type="stmd:SignatureType">
                 <xs:annotation>
@@ -378,7 +378,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="Resource" minOccurs="0" maxOccurs="unbounded" type="stmd:ResourceType"/>
+            <xs:group ref="stmd:GResourceOrReference" minOccurs="0" maxOccurs="unbounded"/>
             <xs:group ref="stmd:GElementCommon"/>
         </xs:sequence>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
@@ -815,5 +815,27 @@
             </xs:annotation>
         </xs:attribute>
     </xs:complexType>
+    
+    <xs:group name="GResourceOrReference">
+        <xs:choice>
+            <xs:element name="Resource" type="stmd:ResourceType"/>
+            <xs:element name="ResourceReference">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        This element references a resource element defined in another place, that is
+                        related to the particular step and particle.
+                    </xs:documentation>
+                </xs:annotation>
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:group ref="stmd:GElementCommon"/>
+                    </xs:sequence>
+                    <xs:attribute ref="xlink:type" fixed="simple"/>
+                    <xs:attribute ref="xlink:href" use="required"/>
+                    <xs:attributeGroup ref="ssc:ABaseElement"/>
+                </xs:complexType>
+            </xs:element>
+        </xs:choice>
+    </xs:group>
     
 </xs:schema>
