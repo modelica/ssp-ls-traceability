@@ -199,6 +199,7 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
+            <xs:element name="Links" minOccurs="0" type="stmd:LinksType"/>
         </xs:sequence>
     </xs:complexType>
     
@@ -273,6 +274,7 @@
     
     <xs:group name="GPhaseCommon">
         <xs:sequence>
+            <xs:element name="Links" minOccurs="0" type="stmd:LinksType"/>
             <xs:element name="LifeCycleInformation" minOccurs="0" type="stmd:LifeCycleInformationType"/>
             <xs:group ref="stmd:GElementCommon"/>
         </xs:sequence>
