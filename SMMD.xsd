@@ -120,7 +120,7 @@
 			<xs:element name="Content" type="xs:string">
 				<xs:annotation>
 					<xs:documentation xml:lang="en">
-						The element contains a description or the identification of the modelled real world items/object.
+						The element contains a description or the identification of the modeled real world items/object.
 						The description and identification shall be as clear and unambiguous as possible for the recipient
 						of the model or specification with respect to the confidentiality of the IDs and information.
 					</xs:documentation>
@@ -167,7 +167,7 @@
 							<xs:annotation>
 								<xs:appinfo xml:lang="en">
 									<displayName>Model Dimension</displayName>
-									<description>The attribute indicates the dimension of the model.The dimension of the model.</description>
+									<description>The attribute indicates the dimension of the model.</description>
 								</xs:appinfo>
 								<xs:documentation xml:lang="en"></xs:documentation>
 							</xs:annotation>
@@ -215,7 +215,7 @@
 			<xs:element name="Fidelity">
 				<xs:annotation>
 					<xs:documentation xml:lang="en">
-						The element contains a list of considered and neglected effects of the model that describes what is modelled and
+						The element contains a list of considered and neglected effects of the model that describes what is modeled and
 						how detailed the model represents the reality. Its purpose is to assess compliance of the model with the required specifications.
 					</xs:documentation>
 				</xs:annotation>
@@ -492,7 +492,7 @@
 			<xs:element name="Compiler">
 				<xs:annotation>
 					<xs:documentation xml:lang="en">
-						The element indecates the compiler used to implement the model.
+						The element indicates the compiler used to implement the model.
 					</xs:documentation>
 				</xs:annotation>
 				<xs:complexType>
