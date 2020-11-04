@@ -9,7 +9,7 @@
 	<xs:import namespace="http://ssp-standard.org/SSP1/SystemStructureCommon" schemaLocation="../ssp/ssp-standard-dev/SystemStructureDescription/SystemStructureCommon.xsd"/>
 	
 	<xs:element name="SimulationModelSpecificationData">
-		<xs:complexType>
+		<xs:complexType> <!-- Attribute "name" missing? -->
 			<xs:sequence>
 				<xs:element name="ContentAndUsage" type="smmd:ContentAndUsageType"/>
 				<xs:element name="Implementation" type="smmd:ImplementationType"/>
@@ -35,7 +35,7 @@
 	</xs:element>
 	
 	<xs:element name="SimulationModelMetaData">
-		<xs:complexType>
+		<xs:complexType> <!-- Attribute "name" missing? -->
 			<xs:sequence>
 				<xs:element name="ContentAndUsage" type="smmd:ContentAndUsageType"/>
 				<xs:element name="Implementation" type="smmd:ImplementationType"/>
@@ -61,7 +61,7 @@
 	</xs:element>
 
 	<xs:element name="SimulationExecutionSpecificationData">
-		<xs:complexType>
+		<xs:complexType> <!-- Attribute "name" missing? -->
 			<xs:sequence>
 				<xs:element name="Execution" type="smmd:ExecutionType"/>
 				<xs:element name="Rights" type="smmd:RightsType"/>
@@ -85,7 +85,7 @@
 	</xs:element>
 	
 	<xs:element name="SimulationExecutionMetaData">
-		<xs:complexType>
+		<xs:complexType> <!-- Attribute "name" missing? -->
 			<xs:sequence>
 				<xs:element name="Execution" type="smmd:ExecutionType"/>
 				<xs:element name="Rights" type="smmd:RightsType"/>
