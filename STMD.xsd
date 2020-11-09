@@ -13,7 +13,7 @@
     <xs:element name="SimulationTaskMetaData">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="GeneralInformation" type="stmd:GeneralInformationType"/>
+                <xs:element name="GeneralInformation" minOccurs="0" type="stmd:GeneralInformationType"/>
                 <xs:element name="AnalysisPhase" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">
@@ -177,7 +177,7 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="DerivationChain">
+            <xs:element name="DerivationChain" minOccurs="0">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">
                         This element can be used to provide the set of file information that
