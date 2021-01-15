@@ -90,6 +90,18 @@
                                         </xs:documentation>
                                     </xs:annotation>
                                 </xs:attribute>
+                                <xs:attribute ref="xlink:type" fixed="simple"/>
+                                <xs:attribute ref="xlink:href">
+                                    <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+                                            This attribute gives an optional link for the classification
+                                            entry (i.e. keyword value pair).  This link can be given in
+                                            addition to any content of the classification entry, or it
+                                            can be the sole information of the classification entry.
+                                            The rules will depend on the definition of the classification.
+                                        </xs:documentation>
+                                    </xs:annotation>
+                                </xs:attribute>
                             </xs:complexType>
                         </xs:element>
                     </xs:sequence>
