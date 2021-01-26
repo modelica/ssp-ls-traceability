@@ -24,8 +24,8 @@
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="AnalyzeEngineeringTask" type="stc:StepType" minOccurs="0"/>
-                            <xs:element name="VerifyEngineeringTaskAnalysis" type="stc:StepType" minOccurs="0"/>
+                            <xs:element name="AnalyzeSimulationTaskAndObjectives" type="stc:StepType" minOccurs="0"/>
+                            <xs:element name="VerifyAnalysis" type="stc:StepType" minOccurs="0"/>
                             <xs:group ref="stc:GPhaseCommon"/>
                         </xs:sequence>
                         <xs:attributeGroup ref="ssc:ABaseElement"/>
@@ -39,12 +39,12 @@
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="DeriveModelRequirements" type="stc:StepType" minOccurs="0"/>
-                            <xs:element name="DeriveParameterRequirements" type="stc:StepType" minOccurs="0"/>
-                            <xs:element name="DeriveSimulationEnvironmentRequirements" type="stc:StepType" minOccurs="0"/>
-                            <xs:element name="DeriveSimulationIntegrationRequirements" type="stc:StepType" minOccurs="0"/>
-                            <xs:element name="DeriveTestCaseRequirements" type="stc:StepType" minOccurs="0"/>
-                            <xs:element name="DeriveProcessQualityRequirements" type="stc:StepType" minOccurs="0"/>
+                            <xs:element name="DefineModelRequirements" type="stc:StepType" minOccurs="0"/>
+                            <xs:element name="DefineParameterRequirements" type="stc:StepType" minOccurs="0"/>
+                            <xs:element name="DefineSimulationEnvironmentRequirements" type="stc:StepType" minOccurs="0"/>
+                            <xs:element name="DefineSimulationIntegrationRequirements" type="stc:StepType" minOccurs="0"/>
+                            <xs:element name="DefineTestCaseRequirements" type="stc:StepType" minOccurs="0"/>
+                            <xs:element name="DefineQualityAssuranceRequirements" type="stc:StepType" minOccurs="0"/>
                             <xs:element name="VerifyRequirements" type="stc:StepType" minOccurs="0"/>
                             <xs:group ref="stc:GPhaseCommon"/>
                         </xs:sequence>
@@ -59,12 +59,12 @@
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="DesignModelSpecification" type="stc:StepType" minOccurs="0"/>
-                            <xs:element name="DesignParameterSpecification" type="stc:StepType" minOccurs="0"/>
-                            <xs:element name="DesignSimulationEnvironmentSpecification" type="stc:StepType" minOccurs="0"/>
-                            <xs:element name="DesignSimulationIntegrationSpecification" type="stc:StepType" minOccurs="0"/>
-                            <xs:element name="DesignTestCaseSpecification" type="stc:StepType" minOccurs="0"/>
-                            <xs:element name="DesignProcessQualitySpecification" type="stc:StepType" minOccurs="0"/>
+                            <xs:element name="DefineModelDesignSpecification" type="stc:StepType" minOccurs="0"/>
+                            <xs:element name="DefineParameterDesignSpecification" type="stc:StepType" minOccurs="0"/>
+                            <xs:element name="DefineSimulationEnvironmentDesignSpecification" type="stc:StepType" minOccurs="0"/>
+                            <xs:element name="DefineSimulationIntegrationDesignSpecification" type="stc:StepType" minOccurs="0"/>
+                            <xs:element name="DefineTestCaseDesignSpecification" type="stc:StepType" minOccurs="0"/>
+                            <xs:element name="DefineQualityAssuranceDesignSpecification" type="stc:StepType" minOccurs="0"/>
                             <xs:element name="VerifyDesignSpecification" type="stc:StepType" minOccurs="0"/>
                             <xs:group ref="stc:GPhaseCommon"/>
                         </xs:sequence>
@@ -129,7 +129,7 @@
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="DecideObjectiveFulfillment" type="stc:StepType" minOccurs="0"/>
+                            <xs:element name="DecideSimulationObjectiveFulfillment" type="stc:StepType" minOccurs="0"/>
                             <xs:group ref="stc:GPhaseCommon"/>
                         </xs:sequence>
                         <xs:attributeGroup ref="ssc:ABaseElement"/>
