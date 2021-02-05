@@ -3,74 +3,16 @@
     xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
     vc:minVersion="1.1" 
     xmlns:srmd="http://apps.pmsf.net/STMD/SimulationResourceMetaData"
+    xmlns:stc="http://apps.pmsf.net/SSPTraceability/SSPTraceabilityCommon"
     xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon"
     targetNamespace="http://apps.pmsf.net/STMD/SimulationResourceMetaData">
     
     <xs:import namespace="http://ssp-standard.org/SSP1/SystemStructureCommon" schemaLocation="ssp/SystemStructureCommon.xsd"/>
+    <xs:import namespace="http://apps.pmsf.net/SSPTraceability/SSPTraceabilityCommon" schemaLocation="STC.xsd"/>
     
     <xs:element name="SimulationResourceMetaData">
         <xs:complexType>
-            <xs:sequence>
-                <xs:element name="Classification" minOccurs="0" maxOccurs="unbounded">
-                    <xs:annotation>
-                        <xs:documentation xml:lang="en">
-                            This element, which can occur multiple times, provides a set of classifications
-                            of an STMD modeling element, provided as Keyword Value Pairs (KWP), the meaning
-                            of which is interpreted according to the name of the classification provided in
-                            the name attribute.
-                            
-                            This approach can be used, for example, to provide searchable keywords for
-                            content, or to assign and track quality or validation level requirements
-                            across the STMD process, or to maintain variant or other classification
-                            content across the process.
-                        </xs:documentation>
-                    </xs:annotation>
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="ClassificationEntry" minOccurs="0" maxOccurs="unbounded">
-                                <xs:annotation>
-                                    <xs:documentation xml:lang="en">
-                                        This element provides a keyword value pair entry, with the
-                                        keyword provided through the keyword attribute and the value
-                                        being the contents of the element.
-                                    </xs:documentation>
-                                </xs:annotation>
-                                <xs:complexType mixed="true">
-                                    <xs:sequence>
-                                        <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
-                                    </xs:sequence>
-                                    <xs:attribute name="keyword" type="xs:normalizedString">
-                                        <xs:annotation>
-                                            <xs:documentation xml:lang="en">
-                                                This attribute gives the keyword for the classification entry
-                                                (i.e. keyword value pair).  It is left undefined whether this
-                                                must be unique across the entries of the Classification element,
-                                                or whether repeated entries are allowed.  This will depend on
-                                                the definition of the classification.
-                                            </xs:documentation>
-                                        </xs:annotation>
-                                    </xs:attribute>
-                                </xs:complexType>
-                            </xs:element>
-                        </xs:sequence>
-                        <xs:attribute name="type" type="xs:normalizedString">
-                            <xs:annotation>
-                                <xs:documentation xml:lang="en">
-                                    This attribute provides the name of the type of classification
-                                    being provided.  The name should be unique across the Classification
-                                    elements of the immediately enclosing element.
-                                    
-                                    In order to ensure uniqueness all types should be identified
-                                    with reverse domain name notation (cf. Java package names
-                                    or Apple UTIs) of a domain that is controlled by the entity
-                                    defining the semantics and content of the classification.
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:attribute>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
-            </xs:sequence>
+            <xs:group ref="stc:GElementCommon"></xs:group>
             <xs:attribute name="version" use="required">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">
