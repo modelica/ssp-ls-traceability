@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <stmd:SimulationTaskMetaData xmlns:stmd="http://apps.pmsf.net/STMD/SimulationTaskMetaData"
+    xmlns:stc="http://apps.pmsf.net/SSPTraceability/SSPTraceabilityCommon"
+    xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://apps.pmsf.net/STMD/SimulationTaskMetaData ../../../../STMD.xsd"
@@ -7,113 +9,113 @@
     generationTool="PMSF FMI Bench 1.9.9.1" generationDateAndTime="2019-12-19T08:13:39+02:00"
     GUID="1234567890">
     <stmd:GeneralInformation>
-        <stmd:DerivationChain/>
+        <stc:DerivationChain/>
     </stmd:GeneralInformation>
     <stmd:AnalysisPhase>
-        <stmd:AnalyzeEngineeringTask>
-            <stmd:Input description="Someone gave me some task to do"/>
-            <stmd:Procedure description="Random thoughts"/>
-            <stmd:Output description="I decided a simulation of an eMachine with Mass and Stimuli is the thing to do"/>
-            <stmd:Rationale description="I was bored"/>
-        </stmd:AnalyzeEngineeringTask>
+        <stmd:AnalyzeSimulationTaskAndObjectives>
+            <stc:Input description="Someone gave me some task to do"/>
+            <stc:Procedure description="Random thoughts"/>
+            <stc:Output description="I decided a simulation of an eMachine with Mass and Stimuli is the thing to do"/>
+            <stc:Rationale description="I was bored"/>
+        </stmd:AnalyzeSimulationTaskAndObjectives>
     </stmd:AnalysisPhase>
     <stmd:RequirementsPhase>
-        <stmd:DeriveModelRequirements>
-            <stmd:Input description="Domain Knowledge of eMachines"/>
-            <stmd:Procedure description="Agile Development"/>
-            <stmd:Output>
-                <stmd:Resource kind="requirement" type="text/markdown" id="ModelReqs">
-                    <stmd:Content>The model should be good to test acceleration and deceleration.</stmd:Content>
-                </stmd:Resource>
-            </stmd:Output>
-        </stmd:DeriveModelRequirements>
+        <stmd:DefineModelRequirements>
+            <stc:Input description="Domain Knowledge of eMachines"/>
+            <stc:Procedure description="Agile Development"/>
+            <stc:Output>
+                <stc:Resource kind="requirement" type="text/markdown" id="ModelReqs">
+                    <stc:Content>The model should be good to test acceleration and deceleration.</stc:Content>
+                </stc:Resource>
+            </stc:Output>
+        </stmd:DefineModelRequirements>
     </stmd:RequirementsPhase>
     <stmd:DesignPhase>
-        <stmd:DesignModelSpecification description="Model Specification of eMachine Model">
-            <stmd:Input>
-                <stmd:Resource kind="requirement" type="text/markdown" source="#ModelReqs"/>
-            </stmd:Input>
-            <stmd:Procedure description="Agile Development"/>
-            <stmd:Output description="Specification for Model" id="ModelSpec">
-                <stmd:Resource kind="specification" type="text/markdown" id="eMachineModelSpec">
-                    <stmd:Content>The eMachine Model should be good</stmd:Content>
-                </stmd:Resource>
-                <stmd:Resource kind="specification" type="text/markdown" id="MassModelSpec">
-                    <stmd:Content>The Mass Model should be good</stmd:Content>
-                </stmd:Resource>
-                <stmd:Resource kind="specification" type="text/markdown" id="StimuliModelSpec">
-                    <stmd:Content>The Stimuli Model should be good</stmd:Content>
-                </stmd:Resource>
-            </stmd:Output>
-        </stmd:DesignModelSpecification>
+        <stmd:DefineModelDesignSpecification description="Model Specification of eMachine Model">
+            <stc:Input>
+                <stc:ResourceReference xlink:href="#ModelReqs"/>
+            </stc:Input>
+            <stc:Procedure description="Agile Development"/>
+            <stc:Output description="Specification for Model" id="ModelSpec">
+                <stc:Resource kind="specification" type="text/markdown" id="eMachineModelSpec">
+                    <stc:Content>The eMachine Model should be good</stc:Content>
+                </stc:Resource>
+                <stc:Resource kind="specification" type="text/markdown" id="MassModelSpec">
+                    <stc:Content>The Mass Model should be good</stc:Content>
+                </stc:Resource>
+                <stc:Resource kind="specification" type="text/markdown" id="StimuliModelSpec">
+                    <stc:Content>The Stimuli Model should be good</stc:Content>
+                </stc:Resource>
+            </stc:Output>
+        </stmd:DefineModelDesignSpecification>
     </stmd:DesignPhase>
     <stmd:ImplementationPhase>
         <stmd:ImplementModel description="Implement Model">
-            <stmd:Input>
-                <stmd:Resource kind="specification" type="text/markdown" source="#eMachineModelSpec"/>
-                <stmd:Resource kind="specification" type="text/markdown" source="#MassModelSpec"/>
-                <stmd:Resource kind="specification" type="text/markdown" source="#StimuliModelSpec"/>
-            </stmd:Input>
-            <stmd:Procedure description="Agile Development"/>
-            <stmd:Output>
-                <stmd:Resource kind="model" type="application/x-fmu-sharedlibrary" source="../../resources/eMachine.fmu">
-                    <stmd:MetaData kind="general" type="application/x-ssp-smmd" source="../../resources/eMachine.smmd" sourceBase="STMD">
-                        <stmd:Signature type="application/x-ssp-sha3-signature" role="authenticity">
-                            <stmd:Content>6841973219C4565E7AE4ECBB4B8A41CD4A0FB9BB7483B3092CC925AD8656FAFAAA78498FDE5A76E1E92FBD959C196134FAE971F2B68AF536FE4B67C19AAE15BB</stmd:Content>
-                        </stmd:Signature>
-                    </stmd:MetaData>
-                    <stmd:Signature type="application/x-ssp-sha3-signature" role="authenticity">
-                        <stmd:Content>1D9F161B04BBD5B5B0E92FDD8289D34744A036016087E07CFA877DE8B1EF848CFE9D514FD38D372719734AF219D83A15D16B3A21360F1B792DDDA791F70A6495</stmd:Content>
-                    </stmd:Signature>
-                </stmd:Resource>
-                <stmd:Resource kind="model" type="application/x-fmu-sharedlibrary" source="../../resources/mass.fmu">
-                    <stmd:MetaData kind="general" type="application/x-ssp-smmd" source="../../resources/mass.smmd" sourceBase="STMD"/>
-                </stmd:Resource>
-                <stmd:Resource kind="model" type="application/x-fmu-sharedlibrary" source="../../resources/Stimuli.fmu">
-                    <stmd:MetaData kind="general" type="application/x-ssp-smmd" source="../../resources/Stimuli.smmd" sourceBase="STMD"/>
-                </stmd:Resource>
-            </stmd:Output>
+            <stc:Input>
+                <stc:ResourceReference xlink:href="#eMachineModelSpec"/>
+                <stc:ResourceReference xlink:href="#MassModelSpec"/>
+                <stc:ResourceReference xlink:href="#StimuliModelSpec"/>
+            </stc:Input>
+            <stc:Procedure description="Agile Development"/>
+            <stc:Output>
+                <stc:Resource kind="model" type="application/x-fmu-sharedlibrary" source="../../resources/eMachine.fmu">
+                    <stc:MetaData kind="general" type="application/x-ssp-smmd" source="../../resources/eMachine.smmd" sourceBase="STC">
+                        <stc:Signature type="application/x-ssp-sha3-signature" role="authenticity">
+                            <stc:Content>6841973219C4565E7AE4ECBB4B8A41CD4A0FB9BB7483B3092CC925AD8656FAFAAA78498FDE5A76E1E92FBD959C196134FAE971F2B68AF536FE4B67C19AAE15BB</stc:Content>
+                        </stc:Signature>
+                    </stc:MetaData>
+                    <stc:Signature type="application/x-ssp-sha3-signature" role="authenticity">
+                        <stc:Content>1D9F161B04BBD5B5B0E92FDD8289D34744A036016087E07CFA877DE8B1EF848CFE9D514FD38D372719734AF219D83A15D16B3A21360F1B792DDDA791F70A6495</stc:Content>
+                    </stc:Signature>
+                </stc:Resource>
+                <stc:Resource kind="model" type="application/x-fmu-sharedlibrary" source="../../resources/mass.fmu">
+                    <stc:MetaData kind="general" type="application/x-ssp-smmd" source="../../resources/mass.smmd" sourceBase="STC"/>
+                </stc:Resource>
+                <stc:Resource kind="model" type="application/x-fmu-sharedlibrary" source="../../resources/Stimuli.fmu">
+                    <stc:MetaData kind="general" type="application/x-ssp-smmd" source="../../resources/Stimuli.smmd" sourceBase="STC"/>
+                </stc:Resource>
+            </stc:Output>
         </stmd:ImplementModel>
         <stmd:IntegrateSimulation>
-            <stmd:Input>
-                <stmd:Resource kind="model" type="application/x-fmu-sharedlibrary" source="../../resources/eMachine.fmu"/>
-                <stmd:Resource kind="model" type="application/x-fmu-sharedlibrary" source="../../resources/mass.fmu"/>
-                <stmd:Resource kind="model" type="application/x-fmu-sharedlibrary" source="../../resources/Stimuli.fmu"/>
-            </stmd:Input>
-            <stmd:Output>
-                <stmd:Resource kind="system" type="application/x-ssp-definition" source="../../SystemStructure.ssd" description="Fully configured system description">
-                    <stmd:Signature type="application/x-ssp-sha3-signature" role="authenticity">
-                        <stmd:Content>13FF76CA1E0408BF8C9691C0A327ACA4FDB5289E6C3555C11F751779E3089A12604EC60DE6F5DBB4A0E94FF1AE46E4AF0055A462896FA0F09413F3F3575FE7F8</stmd:Content>
-                    </stmd:Signature>
-                </stmd:Resource>
-            </stmd:Output>
-            <stmd:Links>
-                <stmd:Link>
-                    <stmd:Locator xlink:href="../../resources/eMachine.fmu" xlink:label="sutmodel" xlink:role="model" xlink:title="Model Input"/>
-                    <stmd:Locator xlink:href="../../resources/mass.fmu" xlink:label="sutmodel" xlink:role="model" xlink:title="Model Input"/>
-                    <stmd:Locator xlink:href="../../resources/Stimuli.fmu" xlink:label="stimmodel" xlink:role="model" xlink:title="Model Input"/>
-                    <stmd:Locator xlink:href="../../SystemStructure.ssd#Project" xlink:label="system" xlink:role="system" 
+            <stc:Input>
+                <stc:Resource kind="model" type="application/x-fmu-sharedlibrary" source="../../resources/eMachine.fmu"/>
+                <stc:Resource kind="model" type="application/x-fmu-sharedlibrary" source="../../resources/mass.fmu"/>
+                <stc:Resource kind="model" type="application/x-fmu-sharedlibrary" source="../../resources/Stimuli.fmu"/>
+            </stc:Input>
+            <stc:Output>
+                <stc:Resource kind="system" type="application/x-ssp-definition" source="../../SystemStructure.ssd" description="Fully configured system description">
+                    <stc:Signature type="application/x-ssp-sha3-signature" role="authenticity">
+                        <stc:Content>13FF76CA1E0408BF8C9691C0A327ACA4FDB5289E6C3555C11F751779E3089A12604EC60DE6F5DBB4A0E94FF1AE46E4AF0055A462896FA0F09413F3F3575FE7F8</stc:Content>
+                    </stc:Signature>
+                </stc:Resource>
+            </stc:Output>
+            <stc:Links>
+                <stc:Link>
+                    <stc:Locator xlink:href="../../resources/eMachine.fmu" xlink:label="sutmodel" xlink:role="model" xlink:title="Model Input"/>
+                    <stc:Locator xlink:href="../../resources/mass.fmu" xlink:label="sutmodel" xlink:role="model" xlink:title="Model Input"/>
+                    <stc:Locator xlink:href="../../resources/Stimuli.fmu" xlink:label="stimmodel" xlink:role="model" xlink:title="Model Input"/>
+                    <stc:Locator xlink:href="../../SystemStructure.ssd#Project" xlink:label="system" xlink:role="system" 
                         xlink:title="Top-Level System"/>
-                    <stmd:Locator xlink:href="../../SystemStructure.ssd#Project.SuT" xlink:label="sutsystem" xlink:role="system" 
+                    <stc:Locator xlink:href="../../SystemStructure.ssd#Project.SuT" xlink:label="sutsystem" xlink:role="system" 
                         xlink:title="SuT Sub-System"/>
-                    <stmd:Arc xlink:from="sutmodel" xlink:to="sutsystem" xlink:arcrole="integration" xlink:title="Integration"/>
-                    <stmd:Arc xlink:from="stimmodel" xlink:to="system" xlink:arcrole="integration" xlink:title="Integration"/>
-                </stmd:Link>
-            </stmd:Links>
+                    <stc:Arc xlink:from="sutmodel" xlink:to="sutsystem" xlink:arcrole="integration" xlink:title="Integration"/>
+                    <stc:Arc xlink:from="stimmodel" xlink:to="system" xlink:arcrole="integration" xlink:title="Integration"/>
+                </stc:Link>
+            </stc:Links>
         </stmd:IntegrateSimulation>
     </stmd:ImplementationPhase>
     <stmd:ExecutionPhase>
         <stmd:ExecuteSimulation>
-            <stmd:Input description="All the inputs for execution">
-                <stmd:Resource kind="system" type="application/x-ssp-definition" source="../../SystemStructure.ssd" description="Fully configured system description">
-                    <stmd:Signature type="application/x-ssp-sha3-signature" role="authenticity">
-                        <stmd:Content>13FF76CA1E0408BF8C9691C0A327ACA4FDB5289E6C3555C11F751779E3089A12604EC60DE6F5DBB4A0E94FF1AE46E4AF0055A462896FA0F09413F3F3575FE7F8</stmd:Content>
-                    </stmd:Signature>
-                </stmd:Resource>
-            </stmd:Input>
-            <stmd:Output>
-                <stmd:Resource kind="document" type=""><stmd:Content></stmd:Content></stmd:Resource>
-            </stmd:Output>
+            <stc:Input description="All the inputs for execution">
+                <stc:Resource kind="system" type="application/x-ssp-definition" source="../../SystemStructure.ssd" description="Fully configured system description">
+                    <stc:Signature type="application/x-ssp-sha3-signature" role="authenticity">
+                        <stc:Content>13FF76CA1E0408BF8C9691C0A327ACA4FDB5289E6C3555C11F751779E3089A12604EC60DE6F5DBB4A0E94FF1AE46E4AF0055A462896FA0F09413F3F3575FE7F8</stc:Content>
+                    </stc:Signature>
+                </stc:Resource>
+            </stc:Input>
+            <stc:Output>
+                <stc:Resource kind="document" type=""><stc:Content></stc:Content></stc:Resource>
+            </stc:Output>
         </stmd:ExecuteSimulation>
     </stmd:ExecutionPhase>
 </stmd:SimulationTaskMetaData>
