@@ -1,6 +1,6 @@
 = SSP Traceability Specification
 :doctype: book
-:imagesdir: ./images
+:imagesdir: images
 :sectnums:
 :sectnumlevels: 5
 :toc: left
