@@ -1,3 +1,0 @@
-== Simulation Task Meta Data File Format
-
-// Place material here

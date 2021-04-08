@@ -1,0 +1,110 @@
+== Overview of SSP Traceability
+
+The SSP Traceability Specification consists of the following parts:
+
+ * The Simulation Task Meta Data (STMD) file format specification, specifying how to store, retrieve and handle simulation task meta data.
+
+ * The Simulation Resource Meta Data (SRMD) file format specification, specifying how to store, retrieve and handle simulation resource meta data.
+
+ * Definitions common to these two file format specifications, that can also be re-used in other traceability contexts.
+
+ * The SSP Traceability Packaging specification, specifying how to package STMD and SRMD data, as well as related resources into SSP.
+
+=== Purpose and usage of Glue Particle
+
+ + + + tbd + + + 
+ 
+A Glue Particle does not store any version histories of simulation traceability information but does store one snapchot of simulation traceability information of a specific date and time. The only exception is the lifecycle information. A Glue Particle stores who and as which role had influenced in which way, i.e. drafted, accepted etc. the simulation traceability information within a Glue Particle and when the interaction took place.
+
+=== Simulation Task Meta Data
+
+In the sense of tracking simulation processes that have actually been performed, all relevant information about the simulation process should be recorded in the form of metadata. If necessary, these metadata can be evaluated at a later time in order to be able to trace simulation processes of the past.
+
+The metadata for a simulation task is organized in an XML files called STMD files. The strcuture of STMD files is spefiied by an STMD XML Schema. The glue particle approach implies that IT tools and systems that contribute or use metadata can read and write STMD files depending on the situation. The STMD files are filled step by step with metadata by the IT tools and systems involved in the simulation process. The graphic in figure <<im-bild>> shows this principle of filling the STMD files step by step.
+
+[#im-bild]
+.Bildunterschrift
+image::Bild1.png[]
+
+It is importamt to understand that STMD files do not document the simulation process itself. The STMD data format is not a process documentation format. STMD files document metadata of process inputs, procedures, outputs, responsibilitiess etc. that are associated with the simzulation process.  
+
+=== Glue Particle Layout
+
+The *_Glue Particle_* files are based on a generic traceability documentation layout that determines which descriptive elements are required to document engineering activities in general in a transparent and comprehensible way in terms of traceability. This layout is basically independent of the actual engineering activities described. This means that it can be applied to mechanical design as well as to software development, E/E development, system development and simulation processes.
+
+A glue particle documents a structured scope of engineering activities. The size of this scope depends on the amount and complexity of the activities described within a glue particle. The documentation of such a scope can also be done in several referencing/referenced glue particles files.
+
+The traceability documentation layout with its overall structure and descriptive elements will be introduced and explained in the following.
+
+*_Note:_* _The description of the traceability documentation layout is completely independent from STMD standard format._
+
+
+==== General information
+
+Each glue particle always has a chapter reserved for information valid for the entire glue particle, i.e. valid for all engineering activities described by a single glue particle.
+
+==== Technical content structure
+
+The actual technical content is organized in a generic three-level hierarchy structure. This structure contains engineering activity phase’s information on the first level and engineering activity step’s information on the second level (see figure). The structure and the naming of the phases and steps is derived from the process of the engineering activity described. Each step is broken down into a generic structure with a subchapter for inputs, procedure, outputs, rationales and lifecycle information valid for the step. These subchapter represent the third level of the generic three-level hierarchy structure. Lifecycle information might also be considered valid for an entire phase which implies, that the lifecycle Information is valid for all underlying steps of the phase. In this case lifecycle information is documented on the second level of the technical content structure.
+
+[#im-glueparticlesructure]
+.General structure of a Glue Particle *AUISTAUSCHEN GEGEN EIN SCHÖNERES BILD*
+image::GlueParticleStructure.png[]
+
+====	Descriptive elements
+
+===== Title
+
+A glue particle and a structural segment on the first and the second level (phases and steps) within a glue particle always has a title. A glue particle can be recognized by its title. However, the title does not serve to uniquely identify a glue particle.
+
+===== Identifier
+
+A glue particle and a structural segment (XML Element) within a glue particle has an identifier by which a glue particle or the structural segment within a glue particle can be uniquely identified within a given namespace. In principle, an identifier can also be multi-part, e.g. a combination of two attributes or the specification of a given namespace and an ID attribute.
+
+===== Short description
+
+A short description in a glue particle and a structural segment within a glue particle serves to quickly recognize what the glue particle is documenting without inspecting the contents in detail. This can be, for example, a short textual description of the contents or a set of descriptive attributes by which you can recognize the contents or the scope and purpose of a glue particle.
+
+===== Long description
+
+A long description within a glue particle and a structural segment within a glue particle is the documentation of the actual technical content of a glue particle. It is thus at the same time the legitimation of the glue particle. Without a long description, the glue particle may lose its value or must inevitably be considered incomplete.
+
+===== Lifecycle information
+
+Lifecycle information in a glue particle and a structural segment within a glue particle can be used to control processes, but also to assess the formal status of the information of a glue particle. Lifecycle Information are lifecycle stage specific and comprises the lifecycle stage itself, responsibilities, signatures and checksums.
+
+====== Lifecycle stage
+
+The lifecycle stage itself marks the progress and the liability of an assessed information, i.e. engineering activity phase information and engineering activity step information.
+
+====== Responsible
+
+The responsible is, depending on the lifecycle stage either the person who created or edited the information (e.g. for lifecycle stage “defined”) or the person who set the lifecycle (e.g. for lifecycle stage “approved”).
+
+====== Signature
+
+The signature helps to prove that the person who is recorded responsible is actually authentic.
+
+====== Checksum
+
+The checksum should make it possible to determine whether or not the content of a glue particle has been changed after the checksum has been created by generating a new "live checksum" at a certain time and comparing it with the checksum stored in the glue particle. If these two checksums are the same, it can be assumed that the glue particle or the area of the glue particle being checked has not been changed after the checksum has been saved in the file.
+
+===== Quality information
+
+Quality information in a glue particle or a structural segment within a glue particle gives a statement about how high the quality of the information and the confidence in the quality of the information is. Unlike the lifecycle stage which is only a single label, the quality information can provide more details about the actual quality.
+
+===== Administrative metadata
+
+These are usually fixed attributes that can be assigned a limited selection of values. Metadata is used both to control data management processes and to search for glue particles.
+
+===== Keywords or classifications
+
+Keywords or classification usually are terms that can be used to describe content, but do not necessarily have to be predefined.
+
+===== Internal and external object links / references
+
+Internal links serve to avoid or reduce documentation redundancy within a single glue particle file. External links are used to link information that is distributed across several glue particles and to integrate or reference other external resources, such as specifications or procedural instructions.
+
+=== Glue Particle Packaging
+
+=== Glue Particle Linkage

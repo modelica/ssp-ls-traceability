@@ -1,4 +1,6 @@
 = SSP Traceability Specification
+:doctype: book
+:imagesdir: ./images
 :sectnums:
 :sectnumlevels: 5
 :toc: left
@@ -16,12 +18,16 @@
 
 include::0___preamble.adoc[]
 
-include::1___overview.adoc[]
+include::1___introduction.adoc[]
 
-include::2___STMD.adoc[]
+include::2___overview.adoc[]
 
-include::3___SRMD.adoc[]
+include::3___STC.adoc[]
 
-include::4___packaging.adoc[]
+include::4___STMD.adoc[]
 
-include::5___literature.adoc[]
+include::5___SRMD.adoc[]
+
+include::6___packaging.adoc[]
+
+include::7___literature.adoc[]
