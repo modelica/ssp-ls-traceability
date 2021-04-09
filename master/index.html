@@ -584,7 +584,7 @@ document.addEventListener('keydown', (event) => {
 <img style="display: block; margin: 2em auto; width: 30em;" src="images/FMI_logo_horizontal.svg" alt="FMI logo">
 -->
 </head>
-<body class="article toc2 toc-left">
+<body class="book toc2 toc-left">
 <div id="header">
 <h1>SSP Traceability Specification</h1>
 <div class="details">
@@ -596,30 +596,250 @@ document.addEventListener('keydown', (event) => {
 <ul class="sectlevel1">
 <li><a href="#_introduction">1. Introduction</a>
 <ul class="sectlevel2">
-<li><a href="#_what_is_ssp_traceability">1.1. What is SSP Traceability</a></li>
-<li><a href="#_overview">1.2. Overview</a>
-<ul class="sectlevel3">
-<li><a href="#_simulation_task_meta_data">1.2.1. Simulation Task Meta Data</a></li>
-<li><a href="#_simulation_resource_meta_data">1.2.2. Simulation Resource Meta Data</a></li>
-<li><a href="#_ssp_traceability_packaging">1.2.3. SSP Traceability Packaging</a></li>
-</ul>
-</li>
+<li><a href="#_engineering_task_traceability">1.1. Engineering task traceability</a></li>
+<li><a href="#_credible_simulation_process">1.2. Credible Simulation Process</a></li>
 <li><a href="#_conventions_used_in_this_document">1.3. Conventions Used in This Document</a></li>
 </ul>
 </li>
-<li><a href="#_simulation_task_meta_data_file_format">2. Simulation Task Meta Data File Format</a></li>
-<li><a href="#_simulation_resource_meta_data_file_format">3. Simulation Resource Meta Data File Format</a></li>
-<li><a href="#_ssp_traceability_packaging_2">4. SSP Traceability Packaging</a>
+<li><a href="#_overview_of_ssp_traceability">2. Overview of SSP Traceability</a>
 <ul class="sectlevel2">
-<li><a href="#_introduction_2">4.1. Introduction</a></li>
-<li><a href="#_ssp_1_0">4.2. SSP 1.0</a></li>
-<li><a href="#_stmd_file">4.3. STMD File</a></li>
-<li><a href="#_srmd">4.4. SRMD</a>
+<li><a href="#_purpose_and_usage_of_glue_particle">2.1. Purpose and usage of Glue Particle</a></li>
+<li><a href="#_simulation_task_meta_data">2.2. Simulation Task Meta Data</a></li>
+<li><a href="#_glue_particle_layout">2.3. Glue Particle Layout</a>
 <ul class="sectlevel3">
-<li><a href="#_attaching_via_stmd_meta_data_mechanism">4.4.1. Attaching via STMD meta-data mechanism</a></li>
-<li><a href="#_embedding_into_fmus">4.4.2. Embedding into FMUs</a></li>
-<li><a href="#_embedding_into_ssps">4.4.3. Embedding into SSPs</a></li>
-<li><a href="#_placing_beside_resources">4.4.4. Placing beside resources</a></li>
+<li><a href="#_general_information">2.3.1. General information</a></li>
+<li><a href="#_technical_content_structure">2.3.2. Technical content structure</a></li>
+<li><a href="#_descriptive_elements">2.3.3. Descriptive elements</a>
+<ul class="sectlevel4">
+<li><a href="#_title">2.3.3.1. Title</a></li>
+<li><a href="#_identifier">2.3.3.2. Identifier</a></li>
+<li><a href="#_short_description">2.3.3.3. Short description</a></li>
+<li><a href="#_long_description">2.3.3.4. Long description</a></li>
+<li><a href="#_lifecycle_information">2.3.3.5. Lifecycle information</a>
+<ul class="sectlevel5">
+<li><a href="#_lifecycle_stage">2.3.3.5.1. Lifecycle stage</a></li>
+<li><a href="#_responsible">2.3.3.5.2. Responsible</a></li>
+<li><a href="#_signature">2.3.3.5.3. Signature</a></li>
+<li><a href="#_checksum">2.3.3.5.4. Checksum</a></li>
+</ul>
+</li>
+<li><a href="#_quality_information">2.3.3.6. Quality information</a></li>
+<li><a href="#_administrative_metadata">2.3.3.7. Administrative metadata</a></li>
+<li><a href="#_keywords_or_classifications">2.3.3.8. Keywords or classifications</a></li>
+<li><a href="#_internal_and_external_object_links_references">2.3.3.9. Internal and external object links / references</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_glue_particle_packaging">2.4. Glue Particle Packaging</a></li>
+<li><a href="#_glue_particle_linkage">2.5. Glue Particle Linkage</a></li>
+</ul>
+</li>
+<li><a href="#_ssp_traceability_common">3. SSP Traceability Common</a>
+<ul class="sectlevel2">
+<li><a href="#sec-generalinformationtype">3.1. GeneralInformationType</a>
+<ul class="sectlevel3">
+<li><a href="#_deviationchain">3.1.1. DeviationChain</a>
+<ul class="sectlevel4">
+<li><a href="#_deviationchainentry">3.1.1.1. DeviationChainEntry</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-steptype">3.2. StepType</a>
+<ul class="sectlevel3">
+<li><a href="#_inputs">3.2.1. Inputs</a></li>
+<li><a href="#_procedure">3.2.2. Procedure</a></li>
+<li><a href="#_output">3.2.3. Output</a></li>
+<li><a href="#_rationale">3.2.4. Rationale</a></li>
+<li><a href="#_lifecycle_information_2">3.2.5. Lifecycle information</a></li>
+<li><a href="#_classification">3.2.6. Classification</a></li>
+<li><a href="#_annotations">3.2.7. Annotations</a></li>
+</ul>
+</li>
+<li><a href="#sec-particletype">3.3. ParticleType</a>
+<ul class="sectlevel3">
+<li><a href="#_resource">3.3.1. Resource</a></li>
+<li><a href="#_classification_2">3.3.2. Classification</a></li>
+<li><a href="#_annotations_2">3.3.3. Annotations</a></li>
+</ul>
+</li>
+<li><a href="#sec-lifecycleinformationtype">3.4. LifeCycleInformationType</a>
+<ul class="sectlevel3">
+<li><a href="#_drafted">3.4.1. Drafted</a></li>
+<li><a href="#_defined">3.4.2. Defined</a></li>
+<li><a href="#_validated">3.4.3. Validated</a></li>
+<li><a href="#_approved">3.4.4. Approved</a></li>
+<li><a href="#_archived">3.4.5. Archived</a></li>
+<li><a href="#_retracted">3.4.6. Retracted</a></li>
+</ul>
+</li>
+<li><a href="#sec-lifecycleentrytype">3.5. LifeCycleEntryType</a>
+<ul class="sectlevel3">
+<li><a href="#_resource_2">3.5.1. Resource</a></li>
+<li><a href="#_responsible_2">3.5.2. Responsible</a></li>
+<li><a href="#_signature_2">3.5.3. Signature</a></li>
+<li><a href="#_classification_3">3.5.4. Classification</a></li>
+<li><a href="#_annotations_3">3.5.5. Annotations</a></li>
+</ul>
+</li>
+<li><a href="#sec-responsibletype">3.6. ResponsibleType</a></li>
+<li><a href="#sec-signaturetype">3.7. SignatureType</a>
+<ul class="sectlevel3">
+<li><a href="#_content">3.7.1. Content</a></li>
+<li><a href="#_classification_4">3.7.2. Classification</a></li>
+<li><a href="#_annotations_4">3.7.3. Annotations</a></li>
+</ul>
+</li>
+<li><a href="#sec-resourcetype">3.8. ResourceType</a>
+<ul class="sectlevel3">
+<li><a href="#_content_2">3.8.1. Content</a></li>
+<li><a href="#_summary">3.8.2. Summary</a>
+<ul class="sectlevel4">
+<li><a href="#_content_3">3.8.2.1. Content</a></li>
+<li><a href="#_signature_3">3.8.2.2. Signature</a></li>
+<li><a href="#_classification_5">3.8.2.3. Classification</a></li>
+<li><a href="#_annotations_5">3.8.2.4. Annotations</a></li>
+</ul>
+</li>
+<li><a href="#_metadata">3.8.3. MetaData</a>
+<ul class="sectlevel4">
+<li><a href="#_content_4">3.8.3.1. Content</a></li>
+<li><a href="#_signature_4">3.8.3.2. Signature</a></li>
+<li><a href="#_classification_6">3.8.3.3. Classification</a></li>
+<li><a href="#_annotation">3.8.3.4. Annotation</a></li>
+</ul>
+</li>
+<li><a href="#_signature_5">3.8.4. Signature</a></li>
+<li><a href="#_classification_7">3.8.5. Classification</a></li>
+<li><a href="#_annotations_6">3.8.6. Annotations</a></li>
+</ul>
+</li>
+<li><a href="#sec-contenttype">3.9. ContentType</a>
+<ul class="sectlevel3">
+<li><a href="#_any">3.9.1. ##any</a></li>
+</ul>
+</li>
+<li><a href="#sec-classification">3.10. Classification</a>
+<ul class="sectlevel3">
+<li><a href="#_classificationentry">3.10.1. ClassificationEntry</a>
+<ul class="sectlevel4">
+<li><a href="#_any_2">3.10.1.1. ##any</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#sec-annotations">3.11. Annotations</a>
+<ul class="sectlevel3">
+<li><a href="#_annotation_2">3.11.1. Annotation</a>
+<ul class="sectlevel4">
+<li><a href="#_any_3">3.11.1.1. ##any</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_simulation_task_meta_data_file_format">4. Simulation Task Meta Data File Format</a>
+<ul class="sectlevel2">
+<li><a href="#_simulationtaskmetadata">4.1. SimulationTaskMetaData</a>
+<ul class="sectlevel3">
+<li><a href="#_generalinformation">4.1.1. GeneralInformation</a></li>
+<li><a href="#_analysisphase">4.1.2. AnalysisPhase</a>
+<ul class="sectlevel4">
+<li><a href="#_analyzeengineeringtask">4.1.2.1. AnalyzeEngineeringTask</a></li>
+<li><a href="#_verifyengineeringtaskanalysis">4.1.2.2. VerifyEngineeringTaskAnalysis</a></li>
+<li><a href="#_lifecycleinformation">4.1.2.3. LifeCycleInformation</a></li>
+<li><a href="#_classification_8">4.1.2.4. Classification</a></li>
+<li><a href="#_annotations_7">4.1.2.5. Annotations</a></li>
+</ul>
+</li>
+<li><a href="#_requirementsphase">4.1.3. RequirementsPhase</a>
+<ul class="sectlevel4">
+<li><a href="#_derivemodelrequirements">4.1.3.1. DeriveModelRequirements</a></li>
+<li><a href="#_deriveparameterrequirements">4.1.3.2. DeriveParameterRequirements</a></li>
+<li><a href="#_derivesimulationenvironmentrequirements">4.1.3.3. DeriveSimulationEnvironmentRequirements</a></li>
+<li><a href="#_derivesimulationintegrationrequirements">4.1.3.4. DeriveSimulationIntegrationRequirements</a></li>
+<li><a href="#_derivetestcaserequirements">4.1.3.5. DeriveTestCaseRequirements</a></li>
+<li><a href="#_deriveprocessqualityrequirements">4.1.3.6. DeriveProcessQualityRequirements</a></li>
+<li><a href="#_verifyrequirements">4.1.3.7. VerifyRequirements</a></li>
+<li><a href="#_lifecycleinformation_2">4.1.3.8. LifeCycleInformation</a></li>
+<li><a href="#_classification_9">4.1.3.9. Classification</a></li>
+<li><a href="#_annotations_8">4.1.3.10. Annotations</a></li>
+</ul>
+</li>
+<li><a href="#_designphase">4.1.4. DesignPhase</a>
+<ul class="sectlevel4">
+<li><a href="#_designmodelspecification">4.1.4.1. DesignModelSpecification</a></li>
+<li><a href="#_designparameterspecification">4.1.4.2. DesignParameterSpecification</a></li>
+<li><a href="#_designsimulationenvironmentspecification">4.1.4.3. DesignSimulationEnvironmentSpecification</a></li>
+<li><a href="#_designsimulationintegrationspecification">4.1.4.4. DesignSimulationIntegrationSpecification</a></li>
+<li><a href="#_designtestcasespecification">4.1.4.5. DesignTestCaseSpecification</a></li>
+<li><a href="#_deriveprocessqualityrequirements_2">4.1.4.6. DeriveProcessQualityRequirements</a></li>
+<li><a href="#_verifydesignspecification">4.1.4.7. VerifyDesignSpecification</a></li>
+<li><a href="#_lifecycleinformation_3">4.1.4.8. LifeCycleInformation</a></li>
+<li><a href="#_classification_10">4.1.4.9. Classification</a></li>
+<li><a href="#_annotations_9">4.1.4.10. Annotations</a></li>
+</ul>
+</li>
+<li><a href="#_implementationphase">4.1.5. ImplementationPhase</a>
+<ul class="sectlevel4">
+<li><a href="#_implementmodel">4.1.5.1. ImplementModel</a></li>
+<li><a href="#_implementparameter">4.1.5.2. ImplementParameter</a></li>
+<li><a href="#_implementsimulationenvironment">4.1.5.3. ImplementSimulationEnvironment</a></li>
+<li><a href="#_integratesimulation">4.1.5.4. IntegrateSimulation</a></li>
+<li><a href="#_implementtestcase">4.1.5.5. ImplementTestCase</a></li>
+<li><a href="#_assuresimulationsetupquality">4.1.5.6. AssureSimulationSetupQuality</a></li>
+<li><a href="#_derivesimulationsetupqualityverdict">4.1.5.7. DeriveSimulationSetupQualityVerdict</a></li>
+<li><a href="#_lifecycleinformation_4">4.1.5.8. LifeCycleInformation</a></li>
+<li><a href="#_classification_11">4.1.5.9. Classification</a></li>
+<li><a href="#_annotations_10">4.1.5.10. Annotations</a></li>
+</ul>
+</li>
+<li><a href="#_executionphase">4.1.6. ExecutionPhase</a>
+<ul class="sectlevel4">
+<li><a href="#_executesimulation">4.1.6.1. ExecuteSimulation</a></li>
+<li><a href="#_lifecycleinformation_5">4.1.6.2. LifeCycleInformation</a></li>
+<li><a href="#_classification_12">4.1.6.3. Classification</a></li>
+<li><a href="#_annotations_11">4.1.6.4. Annotations</a></li>
+</ul>
+</li>
+<li><a href="#_evaluationphase">4.1.7. EvaluationPhase</a>
+<ul class="sectlevel4">
+<li><a href="#_evaluatesimulationresults">4.1.7.1. EvaluateSimulationResults</a></li>
+<li><a href="#_assuresimulationquality">4.1.7.2. AssureSimulationQuality</a></li>
+<li><a href="#_derivesimulationqualityverdict">4.1.7.3. DeriveSimulationQualityVerdict</a></li>
+<li><a href="#_lifecycleinformation_6">4.1.7.4. LifeCycleInformation</a></li>
+<li><a href="#_classification_13">4.1.7.5. Classification</a></li>
+<li><a href="#_annotations_12">4.1.7.6. Annotations</a></li>
+</ul>
+</li>
+<li><a href="#_fulfillmentphase">4.1.8. FulfillmentPhase</a>
+<ul class="sectlevel4">
+<li><a href="#_decideobjectivefulfilment">4.1.8.1. DecideObjectiveFulfilment</a></li>
+<li><a href="#_lifecycleinformation_7">4.1.8.2. LifeCycleInformation</a></li>
+<li><a href="#_classification_14">4.1.8.3. Classification</a></li>
+<li><a href="#_annotations_13">4.1.8.4. Annotations</a></li>
+</ul>
+</li>
+<li><a href="#_classification_15">4.1.9. Classification</a></li>
+<li><a href="#_annotations_14">4.1.10. Annotations</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_simulation_resource_meta_data_file_format">5. Simulation Resource Meta Data File Format</a></li>
+<li><a href="#_ssp_traceability_packaging">6. SSP Traceability Packaging</a>
+<ul class="sectlevel2">
+<li><a href="#_introduction_2">6.1. Introduction</a></li>
+<li><a href="#_ssp_1_0">6.2. SSP 1.0</a></li>
+<li><a href="#_stmd_file">6.3. STMD File</a></li>
+<li><a href="#_srmd">6.4. SRMD</a>
+<ul class="sectlevel3">
+<li><a href="#_attaching_via_stmd_meta_data_mechanism">6.4.1. Attaching via STMD meta-data mechanism</a></li>
+<li><a href="#_embedding_into_fmus">6.4.2. Embedding into FMUs</a></li>
+<li><a href="#_embedding_into_ssps">6.4.3. Embedding into SSPs</a></li>
+<li><a href="#_placing_beside_resources">6.4.4. Placing beside resources</a></li>
 </ul>
 </li>
 </ul>
@@ -648,39 +868,169 @@ This is a development version of the specification.
 <div class="sect1">
 <h2 id="_introduction">1. Introduction</h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="_what_is_ssp_traceability">1.1. What is SSP Traceability</h3>
-
+<div class="paragraph">
+<p>During the development of products, systems and components, design decisions often have to be made, e.g. to select or approve design concepts or to pre-select system components. Nowadays, design decisions are often made on the basis of simulations resp. simulation results, among other aspects that can influence these decisions. Usually an engineering project initiates and requests a simulation and addresses a simulation order to a simulation department or a simulation engineer. The simulation results then might be basis for design decisions.</p>
+</div>
+<div class="paragraph">
+<p>Due to the fact that design decisions might determine the design of a product, a system or a component and determine or significantly influence further product development processes and costs, it is crucial that such design decisions must be based on a reliable information basis with a high degree of trust, especially if functional safety is affected and if the criticality of a simulation, that emerges these base information, is rated high.</p>
+</div>
+<div class="paragraph">
+<p>In order to be able to make design decisions based on reliable information resp. on reliable simulation results, it is important that the underlying simulation task has been planned, performed, secured and documented in a transparent and comprehensible manner and that there is a high degree of confidence in the correctness and validity of the simulation results. This is not only important for making safe and reliable design decisions (<em>quality assurance aspiration</em>), but also to be able to understand such design decisions afterwards (<em>traceability aspiration</em>).</p>
+</div>
+<div class="paragraph">
+<p>In addition, to enable and support the reuse of simulation results and simulation tasks or parts of the simulation setup, e.g. the simulation models or parameter sets, a comprehensive and as precise as possible documentation of the simulation task and the simulation setup is essential (<em>reusability aspiration</em>).</p>
+</div>
+<div class="paragraph">
+<p>The enhancement of quality assurance, traceability and reusability is the core objective of the SSP Traceability Specification and the "Glue Particle" approach in the context of "Credible Simulation Processes."</p>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p><strong>Disclaimer</strong></p>
+</div>
+<div class="paragraph">
+<p>It is very important to recognize and understand that a high-quality documentation of simulation tasks consistent with the simulation process using STMD files as specified in this Modelica Association standard does not automatically lead to high-quality and consistent simulation processes and to credible engineering decisions based on simulation results.</p>
+</div>
+<div class="paragraph">
+<p>A high-quality documentation of simulation tasks consistent with the simulation process using STMD files can maximally reflect the quality and consistency of the actually performed simulation task.</p>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="paragraph">
+<p><strong>Credible Simulation Process</strong></p>
+</div>
+<div class="paragraph">
+<p>+ + + tbd + + +<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Glue Particle Approach</strong></p>
+</div>
+<div class="paragraph">
+<p>A Glue Particle is a tool-independet XML file that records or references all information nessecary to enhance the quality assurance, traceability and reusability of simulation processes and results. This is on the one hand the information handed over by the engineering project along with the simulation order to the simulation department or the simulation engineer. On the other hand it is all information having been used and generated during the planning, preparation, execution, validation and documentation of the simulation task, including references to externally defined and documented resources (external file or database references) and information on responsibilities, quality checks and approvals.</p>
+</div>
+<div class="paragraph">
+<p>The XML Files for simulation tasks are called STMD files <strong>(STMD: Simulation Task Meta Data)</strong>. These STMD files can be used to inspect and trace simulation tasks, or to support the re-usage of simulation task or parts of a simulation task. They may also be used to describe simulation tasks that are assigned to service providers or delegated to development partners.</p>
+</div>
+<div class="paragraph">
+<p><strong>Document structure</strong></p>
+</div>
+<div class="paragraph">
+<p>Chapter XXX describes the general approach for the STMD files and the design of the referenced normative STMD XML schema. Chapter XXX describes the structure of STMD files in detail. Chapter XXX documents rules and recommendations for the handling of STMD files, i.e. the creation and use of STMD files. Chapter XXX specifies meaningful resp. recommended tool based functionalities that might support STMD handling use cases. Chapter XXX illustrates the handling and interpretation of STMD files using a simple and easy to understand instantiation example for a DC motor simulation. Finally, Chapter XXX provides a glossary of terms. <strong>Die Beschreibungen der Kapitelinhalte müssen von Zeit zu Zeit aktualisiert bzw. zum Schluss ausformuliert werden.</strong></p>
 </div>
 <div class="sect2">
-<h3 id="_overview">1.2. Overview</h3>
+<h3 id="_engineering_task_traceability">1.1. Engineering task traceability</h3>
 <div class="paragraph">
-<p>The SSP Traceability Specification consists of the following parts:</p>
+<p>+ + + tbd + + +<br></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_credible_simulation_process">1.2. Credible Simulation Process</h3>
+<div class="paragraph">
+<p>Considering that design decisions in the context of product resp. system development are made on the basis of simulations or simulation results, it is essential that the simulation results can be trusted and that it is possible to reconstruct how the simulation results were obtained. Finally, this can be summarized in the term <strong>Credible Simulation Process</strong> as illustrated in figure <a href="#im-crediblesimulationprocess">Figure 1</a>.</p>
+</div>
+<div id="im-crediblesimulationprocess" class="imageblock">
+<div class="content">
+<img src="images/CredibleSimulationProcess.png" alt="CredibleSimulationProcess">
+</div>
+<div class="title">Figure 1. Credible simulation process</div>
+</div>
+<div class="paragraph">
+<p>Typical applications of the Credible Simzlation Process are System Analysis, Optimization and Test. The Credible Simuzlation Process than only differs in some specific aspects. For
+better readability, the <strong>synonym "Test" is used for System Analysis, Optimization and Test.</strong></p>
+</div>
+<div class="paragraph">
+<p>A simulation task in the sense of the STMD standard represents the entire credible simulation process, starting with the analysis of the engineering task from which the need for a simulation arises through the individual stages of simulation preparation, simulation execution and simulation post-processing until the decision is made whether the simulation results meet the simulation objectives and requirements and thus the simulation can be completed. Figure <a href="#im-crediblesimulationprocess2">Figure 2</a> shows the overall process with its individual phases. The phases of the credible simulation process are:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The Simulation Task Meta Data (STMD) file format specification, specifying how to store, retrieve and handle simulation task meta data.</p>
+<p><strong>Analyze the Simulation Task &amp; Objectives (Analysis Phase):</strong> In this process phase the information from the higher-level engineering process is further specified and detailed with regard of the needed information in the following phases of the Credible Simulation Process.</p>
 </li>
 <li>
-<p>The Simulation Resource Meta Data (SRMD) file format specification, specifying how to store, retrieve and handle simulation resource meta data.</p>
+<p><strong>Define Requirements (Simulation) (Requirement Phase):</strong> In this phase the requirements for the individual components of the simulation and their interaction as well as the requirements for quality assurance are formulated in detail.</p>
 </li>
 <li>
-<p>The SSP Traceability Packaging specification, specifying how to package STMD and SRMD data, as well as related resources into SSP.</p>
+<p><strong>Define Design Specification for Simulation Setup (Design Phase):</strong> The purpose of the Design Phase is to create all specifications needed to implement the complete simulation setup.</p>
+</li>
+<li>
+<p><strong>Implement and Assure Quality for Simulation Setup (Implementation Phase):</strong> The purpose of the Implementation Phase is to implement the complete simulation setup with all its setup components as specified in the design specifications.</p>
+</li>
+<li>
+<p><strong>Execute Simulation (Execution Phase):</strong> The purpose of the Execution Phase is to execute the simulation and to record the simulation reults.</p>
+</li>
+<li>
+<p><strong>Evaluate Simulation Results &amp; Assure Quality (Evaluation Phase):</strong> The purpose of the Evaluation Phase is to evaluate the simulation reults.</p>
+</li>
+<li>
+<p><strong>Decide about Fulfillment of Simulation Objectives (Fulfillment Phase):</strong> The purpose of the Fulfilment Phase is to confirm that the simulation results fulfil the original objectives of the sululatino task.</p>
 </li>
 </ul>
 </div>
-<div class="sect3">
-<h4 id="_simulation_task_meta_data">1.2.1. Simulation Task Meta Data</h4>
-
+<div id="im-crediblesimulationprocess2" class="imageblock">
+<div class="content">
+<img src="images/CredibleSimulationProcess_2.png" alt="CredibleSimulationProcess 2">
 </div>
-<div class="sect3">
-<h4 id="_simulation_resource_meta_data">1.2.2. Simulation Resource Meta Data</h4>
-
+<div class="title">Figure 2. Phases of the Credible Simulation Process</div>
 </div>
-<div class="sect3">
-<h4 id="_ssp_traceability_packaging">1.2.3. SSP Traceability Packaging</h4>
-
+<div class="paragraph">
+<p>Each of these phases can comprise several steps or several partial aspects of a phase.  For example, the Design phase comprises the following steps:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Define Design Specification Simulation Integration</p>
+</li>
+<li>
+<p>Define Design Specification Simulation Models</p>
+</li>
+<li>
+<p>Define Design Specification Parameters</p>
+</li>
+<li>
+<p>Define Design Specification Test Cases</p>
+</li>
+<li>
+<p>Define Design Specification Simulation Environment</p>
+</li>
+<li>
+<p>Define Design Specification Quality Assurance</p>
+</li>
+<li>
+<p>Verify Design</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Each of these steps is an activity of the simulation engineer with respective inputs and outputs. The outputs in turn are usually inputs for follow-up activities within the credible simulation process, except for the outputs of the steps in the final phase. For each of these steps there is usually a defined procedure according to which the work is carried out.</p>
+</div>
+<div class="paragraph">
+<p>The information associated with an individual step can be subdivided into the following information blocks.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Inputs</p>
+</li>
+<li>
+<p>Procedure</p>
+</li>
+<li>
+<p>Outputs</p>
+</li>
+<li>
+<p>Rationales</p>
+</li>
+<li>
+<p>LifeCycleInformation</p>
+</li>
+<li>
+<p>Classification</p>
+</li>
+<li>
+<p>Annotations</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The STMD format is a data format desinged to store information associated with the credible simulation process and covers simulation task meta data for the entire credible simulation process with all phases and steps. An STMD file can be recognized as an implementatation of a Glue Particle for a simulation tasks in the sense of the credible simulation process.</p>
 </div>
 </div>
 <div class="sect2">
@@ -705,19 +1055,2604 @@ This is a development version of the specification.
 </div>
 </div>
 <div class="sect1">
-<h2 id="_simulation_task_meta_data_file_format">2. Simulation Task Meta Data File Format</h2>
+<h2 id="_overview_of_ssp_traceability">2. Overview of SSP Traceability</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The SSP Traceability Specification consists of the following parts:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The Simulation Task Meta Data (STMD) file format specification, specifying how to store, retrieve and handle simulation task meta data.</p>
+</li>
+<li>
+<p>The Simulation Resource Meta Data (SRMD) file format specification, specifying how to store, retrieve and handle simulation resource meta data.</p>
+</li>
+<li>
+<p>Definitions common to these two file format specifications, that can also be re-used in other traceability contexts.</p>
+</li>
+<li>
+<p>The SSP Traceability Packaging specification, specifying how to package STMD and SRMD data, as well as related resources into SSP.</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_purpose_and_usage_of_glue_particle">2.1. Purpose and usage of Glue Particle</h3>
+<div class="literalblock">
+<div class="content">
+<pre>+ + + tbd + + +</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>A Glue Particle does not store any version histories of simulation traceability information but does store one snapchot of simulation traceability information of a specific date and time. The only exception is the lifecycle information. A Glue Particle stores who and as which role had influenced in which way, i.e. drafted, accepted etc. the simulation traceability information within a Glue Particle and when the interaction took place.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_simulation_task_meta_data">2.2. Simulation Task Meta Data</h3>
+<div class="paragraph">
+<p>In the sense of tracking simulation processes that have actually been performed, all relevant information about the simulation process should be recorded in the form of metadata. If necessary, these metadata can be evaluated at a later time in order to be able to trace simulation processes of the past.</p>
+</div>
+<div class="paragraph">
+<p>The metadata for a simulation task is organized in an XML files called STMD files. The strcuture of STMD files is spefiied by an STMD XML Schema. The glue particle approach implies that IT tools and systems that contribute or use metadata can read and write STMD files depending on the situation. The STMD files are filled step by step with metadata by the IT tools and systems involved in the simulation process. The graphic in figure <a href="#im-bild">Figure 3</a> shows this principle of filling the STMD files step by step.</p>
+</div>
+<div id="im-bild" class="imageblock">
+<div class="content">
+<img src="images/Bild1.png" alt="Bild1">
+</div>
+<div class="title">Figure 3. Bildunterschrift</div>
+</div>
+<div class="paragraph">
+<p>It is importamt to understand that STMD files do not document the simulation process itself. The STMD data format is not a process documentation format. STMD files document metadata of process inputs, procedures, outputs, responsibilitiess etc. that are associated with the simzulation process.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_glue_particle_layout">2.3. Glue Particle Layout</h3>
+<div class="paragraph">
+<p>The <strong><em>Glue Particle</em></strong> files are based on a generic traceability documentation layout that determines which descriptive elements are required to document engineering activities in general in a transparent and comprehensible way in terms of traceability. This layout is basically independent of the actual engineering activities described. This means that it can be applied to mechanical design as well as to software development, E/E development, system development and simulation processes.</p>
+</div>
+<div class="paragraph">
+<p>A glue particle documents a structured scope of engineering activities. The size of this scope depends on the amount and complexity of the activities described within a glue particle. The documentation of such a scope can also be done in several referencing/referenced glue particles files.</p>
+</div>
+<div class="paragraph">
+<p>The traceability documentation layout with its overall structure and descriptive elements will be introduced and explained in the following.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Note:</em></strong> <em>The description of the traceability documentation layout is completely independent from STMD standard format.</em></p>
+</div>
+<div class="sect3">
+<h4 id="_general_information">2.3.1. General information</h4>
+<div class="paragraph">
+<p>Each glue particle always has a chapter reserved for information valid for the entire glue particle, i.e. valid for all engineering activities described by a single glue particle.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_technical_content_structure">2.3.2. Technical content structure</h4>
+<div class="paragraph">
+<p>The actual technical content is organized in a generic three-level hierarchy structure. This structure contains engineering activity phase’s information on the first level and engineering activity step’s information on the second level (see figure). The structure and the naming of the phases and steps is derived from the process of the engineering activity described. Each step is broken down into a generic structure with a subchapter for inputs, procedure, outputs, rationales and lifecycle information valid for the step. These subchapter represent the third level of the generic three-level hierarchy structure. Lifecycle information might also be considered valid for an entire phase which implies, that the lifecycle Information is valid for all underlying steps of the phase. In this case lifecycle information is documented on the second level of the technical content structure.</p>
+</div>
+<div id="im-glueparticlesructure" class="imageblock">
+<div class="content">
+<img src="images/GlueParticleStructure.png" alt="GlueParticleStructure">
+</div>
+<div class="title">Figure 4. General structure of a Glue Particle <strong>AUISTAUSCHEN GEGEN EIN SCHÖNERES BILD</strong></div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_descriptive_elements">2.3.3. Descriptive elements</h4>
+<div class="sect4">
+<h5 id="_title">2.3.3.1. Title</h5>
+<div class="paragraph">
+<p>A glue particle and a structural segment on the first and the second level (phases and steps) within a glue particle always has a title. A glue particle can be recognized by its title. However, the title does not serve to uniquely identify a glue particle.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_identifier">2.3.3.2. Identifier</h5>
+<div class="paragraph">
+<p>A glue particle and a structural segment (XML Element) within a glue particle has an identifier by which a glue particle or the structural segment within a glue particle can be uniquely identified within a given namespace. In principle, an identifier can also be multi-part, e.g. a combination of two attributes or the specification of a given namespace and an ID attribute.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_short_description">2.3.3.3. Short description</h5>
+<div class="paragraph">
+<p>A short description in a glue particle and a structural segment within a glue particle serves to quickly recognize what the glue particle is documenting without inspecting the contents in detail. This can be, for example, a short textual description of the contents or a set of descriptive attributes by which you can recognize the contents or the scope and purpose of a glue particle.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_long_description">2.3.3.4. Long description</h5>
+<div class="paragraph">
+<p>A long description within a glue particle and a structural segment within a glue particle is the documentation of the actual technical content of a glue particle. It is thus at the same time the legitimation of the glue particle. Without a long description, the glue particle may lose its value or must inevitably be considered incomplete.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_lifecycle_information">2.3.3.5. Lifecycle information</h5>
+<div class="paragraph">
+<p>Lifecycle information in a glue particle and a structural segment within a glue particle can be used to control processes, but also to assess the formal status of the information of a glue particle. Lifecycle Information are lifecycle stage specific and comprises the lifecycle stage itself, responsibilities, signatures and checksums.</p>
+</div>
+<div class="sect5">
+<h6 id="_lifecycle_stage">2.3.3.5.1. Lifecycle stage</h6>
+<div class="paragraph">
+<p>The lifecycle stage itself marks the progress and the liability of an assessed information, i.e. engineering activity phase information and engineering activity step information.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_responsible">2.3.3.5.2. Responsible</h6>
+<div class="paragraph">
+<p>The responsible is, depending on the lifecycle stage either the person who created or edited the information (e.g. for lifecycle stage “defined”) or the person who set the lifecycle (e.g. for lifecycle stage “approved”).</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_signature">2.3.3.5.3. Signature</h6>
+<div class="paragraph">
+<p>The signature helps to prove that the person who is recorded responsible is actually authentic.</p>
+</div>
+</div>
+<div class="sect5">
+<h6 id="_checksum">2.3.3.5.4. Checksum</h6>
+<div class="paragraph">
+<p>The checksum should make it possible to determine whether or not the content of a glue particle has been changed after the checksum has been created by generating a new "live checksum" at a certain time and comparing it with the checksum stored in the glue particle. If these two checksums are the same, it can be assumed that the glue particle or the area of the glue particle being checked has not been changed after the checksum has been saved in the file.</p>
+</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_quality_information">2.3.3.6. Quality information</h5>
+<div class="paragraph">
+<p>Quality information in a glue particle or a structural segment within a glue particle gives a statement about how high the quality of the information and the confidence in the quality of the information is. Unlike the lifecycle stage which is only a single label, the quality information can provide more details about the actual quality.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_administrative_metadata">2.3.3.7. Administrative metadata</h5>
+<div class="paragraph">
+<p>These are usually fixed attributes that can be assigned a limited selection of values. Metadata is used both to control data management processes and to search for glue particles.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_keywords_or_classifications">2.3.3.8. Keywords or classifications</h5>
+<div class="paragraph">
+<p>Keywords or classification usually are terms that can be used to describe content, but do not necessarily have to be predefined.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_internal_and_external_object_links_references">2.3.3.9. Internal and external object links / references</h5>
+<div class="paragraph">
+<p>Internal links serve to avoid or reduce documentation redundancy within a single glue particle file. External links are used to link information that is distributed across several glue particles and to integrate or reference other external resources, such as specifications or procedural instructions.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_glue_particle_packaging">2.4. Glue Particle Packaging</h3>
+
+</div>
+<div class="sect2">
+<h3 id="_glue_particle_linkage">2.5. Glue Particle Linkage</h3>
+
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_ssp_traceability_common">3. SSP Traceability Common</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="sec-generalinformationtype">3.1. GeneralInformationType</h3>
+<div class="paragraph">
+<p>The generalInformationType element defines the structure and attributes for general information associated with the overall simulation task.</p>
+</div>
+<div id="im-generalinformationtypeschema" class="imageblock">
+<div class="content">
+<img src="images/GeneralInformationTypeSchema.png" alt="GeneralInformationTypeSchema">
+</div>
+<div class="title">Figure 5. GeneralInformationType element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The GeneralInformationType element is structured by the followuing subordinated element.</p>
+</div>
+<table id="tb-generalinformationtypesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. GeneralInformationType element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DeviationChain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The GeneralInformationType element is not associated with any attributes.</p>
+</div>
+<div class="sect3">
+<h4 id="_deviationchain">3.1.1. DeviationChain</h4>
+<div class="paragraph">
+<p>The DeviationChain element can be used to provide the set of file information that was used to derive the current file. I.e. if the content of the current file can be considered to be derived from one or a set of other STMD files, then the top level meta data and derivation chain information of those files should be included in their original order as entries in this file&#8217;s DerivationChain element.</p>
+</div>
+<div class="paragraph">
+<p>The derivation chain described by the DerivationChain element may contain one or more Entries (with their associated attributes) or even no entry at all.</p>
+</div>
+<div id="im-deviationchaischema" class="imageblock">
+<div class="content">
+<img src="images/DeviationChainSchema.png" alt="DeviationChainSchema">
+</div>
+<div class="title">Figure 6. DeviationChain element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The DeviationChain element is structured by the following subordinated element.</p>
+</div>
+<table id="tb-deviationchainsubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. DeviationChain element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DeviationChainEntry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The DeviationChain element is not associated with any attributes.</p>
+</div>
+<div class="sect4">
+<h5 id="_deviationchainentry">3.1.1.1. DeviationChainEntry</h5>
+<div class="paragraph">
+<p>The DeviationChaiEntry element is a single entry within the deviation chain.</p>
+</div>
+<div id="im-deviationchainentryschema" class="imageblock">
+<div class="content">
+<img src="images/DeviationChainEntrySchema.png" alt="DeviationChainEntrySchema">
+</div>
+<div class="title">Figure 7. DeviationChainEntry element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The DerivationChainEntry element is associated with the following attributes.</p>
+</div>
+<table id="tb-deviationchainentryattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. DeviationChainEntry element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">author</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the name of the author of this file&#8217;s content.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fileversion</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a version number for this file&#8217;s content.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">copyright</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives copyright information for this file&#8217;s content.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">license</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives license information for this file&#8217;s content.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">generatingTool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the name of the tool that generated this file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">generationDateAndTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the date and time this file was generated.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec-steptype">3.2. StepType</h3>
+<div class="paragraph">
+<p>The StepType element defines the structure and attributes of an individual step inside a phase of the overall simulation task.</p>
+</div>
+<div id="im-steptypeschema" class="imageblock">
+<div class="content">
+<img src="images/StepTypeSchema.png" alt="StepTypeSchema">
+</div>
+<div class="title">Figure 8. StepType element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The StepType element is structured by the following subordinated elements.</p>
+</div>
+<table id="tb-steptypesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. StepType element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Input</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Procedure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Output</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rationale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LifeCycleInformation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The StepType element is associated with the following attributes.</p>
+</div>
+<table id="tb-steptypeattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. StepType element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_inputs">3.2.1. Inputs</h4>
+<div class="paragraph">
+<p>For the details of the Input element structure and attributes see chapter <a href="#sec-particletype">Section 3.3</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_procedure">3.2.2. Procedure</h4>
+<div class="paragraph">
+<p>For the details of the Procedure element structure and attributes see chapter <a href="#sec-particletype">Section 3.3</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_output">3.2.3. Output</h4>
+<div class="paragraph">
+<p>For the details of the Output element structure and attributes see chapter <a href="#sec-particletype">Section 3.3</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_rationale">3.2.4. Rationale</h4>
+<div class="paragraph">
+<p>For the details of the Rationale element structure and attributes see chapter <a href="#sec-particletype">Section 3.3</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_lifecycle_information_2">3.2.5. Lifecycle information</h4>
+<div class="paragraph">
+<p>For the details of the LifeycleInformation element structure and attributes see chapter <a href="#sec-lifecycleinformationtype">Section 3.4</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_classification">3.2.6. Classification</h4>
+<div class="paragraph">
+<p>For the details of the Classification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_annotations">3.2.7. Annotations</h4>
+<div class="paragraph">
+<p>For the details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec-particletype">3.3. ParticleType</h3>
+<div class="paragraph">
+<p>The ParticleType element defines the structure and attributes of an individual particle inside a step of a phase of the overall simulation task.</p>
+</div>
+<div id="im-particletypeschema" class="imageblock">
+<div class="content">
+<img src="images/ParticleTypeSchema.png" alt="ParticleTypeSchema">
+</div>
+<div class="title">Figure 9. ParticleType element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The ParticleType element is structured by the following subordinated elements.</p>
+</div>
+<table id="tb-particletypesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 6. ParticleType element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Resource</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The ParticleType element is associated with the following attributes.</p>
+</div>
+<table id="tb-particletypeattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 7. ParticleType aelement ttributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_resource">3.3.1. Resource</h4>
+<div class="paragraph">
+<p>For details of the Resource element structure and attributes see chapter <a href="#sec-resourcetype">Section 3.8</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_classification_2">3.3.2. Classification</h4>
+<div class="paragraph">
+<p>For details of the Classification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_annotations_2">3.3.3. Annotations</h4>
+<div class="paragraph">
+<p>For details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec-lifecycleinformationtype">3.4. LifeCycleInformationType</h3>
+<div class="paragraph">
+<p>The LifeCycleInformationType element defines the structure and attributes of lifecycle information about the enclosing phase or step element.</p>
+</div>
+<div class="paragraph">
+<p>Due to the inherent dependencies of lifecycles, lifecycle information at later phases will be dependent on lifecycle status of former phases to a certain extent:  For example, if the implementation phase is designated as having reached the status "Validated", it would create a contradiction if the requirements phase has only reached status "Drafted". Multiple lifecycle information entries can be present, in order to record the historical progression of the lifecycle status, however only the last entry in document order, which will also be of the highest maturity, will be considered valid for the current file contents, earlier states only recording historical data.</p>
+</div>
+<div id="im-lifecycleinformationtypeschema" class="imageblock">
+<div class="content">
+<img src="images/LifeCycleInformationTypeSchema.png" alt="LifeCycleInformationTypeSchema">
+</div>
+<div class="title">Figure 10. LifeCycleInformationType element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The LifeCycleInformationType element is structured by the following subordinated elements.</p>
+</div>
+<table id="tb-lifecycleinformationtypesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 8. LifecycleInformationType element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Drafted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defined</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Approved</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Archived</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Retracted</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The LifeCycleInformationType element is not associated with any attributes.</p>
+</div>
+<div class="sect3">
+<h4 id="_drafted">3.4.1. Drafted</h4>
+<div class="paragraph">
+<p>For details of the "Drafted" LifeCyleEntry element strructure and attributes see chapter <a href="#sec-lifecycleentrytype">Section 3.5</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_defined">3.4.2. Defined</h4>
+<div class="paragraph">
+<p>For details of the "Defined" LifeCyleEntry element strructure and attributes see chapter <a href="#sec-lifecycleentrytype">Section 3.5</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_validated">3.4.3. Validated</h4>
+<div class="paragraph">
+<p>For details of the "Validated" LifeCyleEntry element strructure and attributes see chapter <a href="#sec-lifecycleentrytype">Section 3.5</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_approved">3.4.4. Approved</h4>
+<div class="paragraph">
+<p>For details of the "Approved" LifeCyleEntry element strructure and attributes see chapter <a href="#sec-lifecycleentrytype">Section 3.5</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_archived">3.4.5. Archived</h4>
+<div class="paragraph">
+<p>For details of the "Archived" LifeCyleEntry element strructure and attributes see chapter <a href="#sec-lifecycleentrytype">Section 3.5</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_retracted">3.4.6. Retracted</h4>
+<div class="paragraph">
+<p>For details of the "Retracted" LifeCyleEntry element strructure and attributes see chapter <a href="#sec-lifecycleentrytype">Section 3.5</a></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec-lifecycleentrytype">3.5. LifeCycleEntryType</h3>
+<div class="paragraph">
+<p>The LifeCycleEntryType element defines the structutre and the attributes of lifecycle information entries and therefor is the basis of the Drafted, Defined, Validated, Approved, Archived and Retracted XML elements.</p>
+</div>
+<div id="im-lifecycleentrytypeschema" class="imageblock">
+<div class="content">
+<img src="images/LifeCycleEntryTypeSchema.png" alt="LifeCycleEntryTypeSchema">
+</div>
+<div class="title">Figure 11. LifeCycleEntryType element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The LifeCycleEntryType element is structured by the following subordinated elements.</p>
+</div>
+<table id="tb-lifecycleentryypesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 9. LifeCycleEntryType element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Resource</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Responsible</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Signature</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The LifeCycleEntryType element is associated with the following attributes.</p>
+</div>
+<table id="tb-lifecycleetypeattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 10. LifeCycleEntryType element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Timestamp when lifecycle entry was assigned. Note that the time stamp data type makes time zone information mandatory, so that a full ordering of times is possible.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">checksum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the checksum over the phase/step information stored in the enclosing phase/step element, calculated according to the STMD specification.  This attribute is optional if the lifecycle stage is not Approved or Archived, but becomes required if the lifecycle stage is Approved or Archived. Optionally, digital signatures over this checksum can be provided using Signature elements in the enclosing lifecycle entry element. The checksum is calculated using the algorithm indicated by the checksumType attribute.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">checsumType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the algorithm for the calculation of the checksum attribute. MUST be SHA3-256 for now, indicating a SHA3 256bit secure hash algorithm, as specified in FIPS 202. In the future other checksum algorithms might be supported.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_resource_2">3.5.1. Resource</h4>
+<div class="paragraph">
+<p>For details of the Resource element structure and attributes see chapter <a href="#sec-resourcetype">Section 3.8</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_responsible_2">3.5.2. Responsible</h4>
+<div class="paragraph">
+<p>For details of the Responsible element structure and attributes see chapter <a href="#sec-responsibletype">Section 3.6</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_signature_2">3.5.3. Signature</h4>
+<div class="paragraph">
+<p>For details of the Signature element structure and attributes see chapter <a href="#sec-signaturetype">Section 3.7</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_classification_3">3.5.4. Classification</h4>
+<div class="paragraph">
+<p>For details of the Classification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_annotations_3">3.5.5. Annotations</h4>
+<div class="paragraph">
+<p>For details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec-responsibletype">3.6. ResponsibleType</h3>
+<div class="paragraph">
+<p>The ResponsibleType element defines the structure and attributes of the responsible entry for a lifecycle entry of a step or a phase of the overall simulation task.</p>
+</div>
+<div id="im-responsibletypeschema" class="imageblock">
+<div class="content">
+<img src="images/ResponsibleTypeSchema.png" alt="ResponsibleTypeSchema">
+</div>
+<div class="title">Figure 12. ResponsibleType element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The ResponsibleType element is not structured by subordinated elements.</p>
+</div>
+<div class="paragraph">
+<p>The ResponsibleType element is associated with the following attributes.</p>
+</div>
+<table id="tb-responsibletypeattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 11. ResponsibleType attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">organization</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the organization that is responsible for a given step.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">role</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the role of the person that is responsible for a given step.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the name of the person that is responsible for a given step.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="sec-signaturetype">3.7. SignatureType</h3>
+<div class="paragraph">
+<p>The SignatureType element defines the structure and attributes of the signature entity for a given step or phase.</p>
+</div>
+<div id="im-signaturetypeschema" class="imageblock">
+<div class="content">
+<img src="images/SignatureTypeSchema.png" alt="SignatureTypeSchema">
+</div>
+<div class="title">Figure 13. SignatureType element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The SignatureType element is structured by the following subordinated elements.</p>
+</div>
+<table id="tb-signaturetypesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 12. SignatureType element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Content</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The SignatureType element is associated with the following attributes.</p>
+</div>
+<table id="tb-signaturetypeattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 13. SignatureType element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">role</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This mandatory attribute specifies the role this signature has in the overall process. It indicates whether the digital signature is intended to just convey the authenticity of the information, or whether a claim for suitability of the information for certain purposes is made.  In the latter case, the digital signature format should include detailed information about what suitability claims are being made.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This mandatory attribute specifies the MIME type of the resource signature, which does not have a default value.  If no specific MIME type can be indicated, then the type application/octet-stream is to be used.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">source</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute indicates the source of the resource signature as a URI (cf. RFC 3986).  For purposes of the resolution of relative URIs the base URI is the URI of the STMD, if the sourceBase attribute is not specified or is specified as STMD, and the URI of the referenced resource if the sourceBase attribute is specified as resource. This allows the specification of signature sources that reside inside the resource (e.g. an FMU) through relative URIs. For signatures that are located alongside the STMD, relative URIs without scheme and authority can and should be used to specify the signature sources. For signatures that are packaged inside an SSP that contains this STMD, this is mandatory (in this way, the STMD URIs remain valid after unpacking the SSP into the filesystem). If the source attribute is missing, the signature is provided inline as contents of the Content element, which must not be present otherwise.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sourdceBase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the base the source URI is resolved against:  If the attribute s missing or is specified as STMD, the source is resolved against the URI of the STMD, if the attribute is specified as resource the URI is resolved against the (resolved) URI of the resource source.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_content">3.7.1. Content</h4>
+<div class="paragraph">
+<p>For details of the Content element structure and attributes see chapter <a href="#sec-contenttype">Section 3.9</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_classification_4">3.7.2. Classification</h4>
+<div class="paragraph">
+<p>For details of the Classification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_annotations_4">3.7.3. Annotations</h4>
+<div class="paragraph">
+<p>For details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec-resourcetype">3.8. ResourceType</h3>
+<div class="paragraph">
+<p>The ResourceType element defines the structure and attributes of information about a resource that is related to the particular step and particle. Multiple (or no) resources may be present.</p>
+</div>
+<div id="im-resourcetypeschema" class="imageblock">
+<div class="content">
+<img src="images/ResourceTypeSchema.png" alt="ResourceTypeSchema">
+</div>
+<div class="title">Figure 14. ResourceType element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The ResourceType element is structured by the following subordinated elements.</p>
+</div>
+<table id="tb-resourcetypesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 14. ResourceType element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Content</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Summary</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Metadata</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Signature</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The ResourceType element is associated with the following attributes.</p>
+</div>
+<table id="tb-resourcetypeattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 15. ResourceType attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute indicates the kind of resource that is referenced, i.e. what role it plays in relation to the particle being described.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This mandatory attribute specifies the MIME type of the resource, which does not have a default value.  If no specific MIME type can be indicated, then the type application/octet-stream is to be used.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">source</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute indicates the source of the resource as a URI (cf. RFC 3986).  For purposes of the resolution of relative URIs the base URI is the URI of the STMD.  Therefore for resources that are located alongside the STMD, relative URIs without scheme and authority can and should be used to specify the component sources.  For resources that are packaged inside an SSP that contains this STMD, this is mandatory (in this way, the STMD URIs remain valid after unpacking the SSP into the file system). If the source attribute is missing, the resource is provided inline as contents of the Content element, which must not be present otherwise.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">master</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute, if present, indicates the original, canonical master source for the resource. If it is present, it indicates that the content provided via source attribute and/or Content element is only a copy of the original, canonical data, and this attributes provides the URI reference to that original canonical master data.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_content_2">3.8.1. Content</h4>
+<div class="paragraph">
+<p>For details of the the Content element structure and attributessee chapter <a href="#sec-contenttype">Section 3.9</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_summary">3.8.2. Summary</h4>
+<div class="paragraph">
+<p>The Summary element provides an optional summary of the resource being referenced. The summary information is intended for human consumption to get an overview of the resource content without looking at the content itself.  The summary content can be provided inline through the Content element, or it can be provided through the source URI attribute.</p>
+</div>
+<div id="im-summaryschema" class="imageblock">
+<div class="content">
+<img src="images/SummarySchema.png" alt="SummarySchema">
+</div>
+<div class="title">Figure 15. Summary elements structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The Summary element is structured by the following subordinated elements.</p>
+</div>
+<table id="tb-summarysubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 16. Summary element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Content</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Signature</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The Summary element is associated with the following attributes.</p>
+</div>
+<table id="tb-summaryattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 17. Summary element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This mandatory attribute specifies the MIME type of the resource summary, which does not have a default value.  If no specific MIME type can be indicated, then the type application/octet-stream is to be used.  If markdown content is used, then the type text/markdown shall be used.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">source</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute indicates the source of the resource summary as a URI (cf. RFC 3986).  For purposes of the resolution of relative URIs the base URI is the URI of the STMD, if the sourceBase attribute is not specified or is specified as STMD, and the URI of the referenced resource if the sourceBase attribute is specified as resource. This allows the specification of summary sources that reside  inside the resource (e.g. an FMU) through relative URIs. For summaries that are located alongside the STMD, relative URIs without scheme and authority can and should be used to specify the summary sources.  For summaries that are packaged inside an SSP that contains this STMD, this is mandatory (in this way, the STMD URIs remain valid after unpacking the SSP into the filesystem). If the source attribute is missing, the summary is provided inline as contents of the Content element, which must not be resent otherwise.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sourceBase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the base the source URI is resolved against: If the attribute is missing or is specified as STMD, the source is resolved against the URI of the STMD, if the attribute is specified as resource the URI is resolved against the (resolved) URI of the resource source.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="_content_3">3.8.2.1. Content</h5>
+<div class="paragraph">
+<p>For the details of the Content element structure and attributes see chapter <a href="#sec-contenttype">Section 3.9</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_signature_3">3.8.2.2. Signature</h5>
+<div class="paragraph">
+<p>For the details of the Signature element structure and attributes see chapter <a href="#sec-signaturetype">Section 3.7</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_classification_5">3.8.2.3. Classification</h5>
+<div class="paragraph">
+<p>For the details of theClassification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_annotations_5">3.8.2.4. Annotations</h5>
+<div class="paragraph">
+<p>For the details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_metadata">3.8.3. MetaData</h4>
+<div class="paragraph">
+<p>The MetaData element can specify additional metadata for the given resource. Multiple (or no) MetaData elements may be present.</p>
+</div>
+<div id="im-metadataschema" class="imageblock">
+<div class="content">
+<img src="images/MetaDataSchema.png" alt="MetaDataSchema">
+</div>
+<div class="title">Figure 16. MetaData element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The MetaData element is structured by the following subordinated elements.</p>
+</div>
+<table id="tb-metadatasubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 18. MetaData element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Content</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Signature</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The MetaData element is associated with the following attributes.</p>
+</div>
+<table id="tb-metadataattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 19. MetaData element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">kind</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute indicates the kind of resource meta data that is referenced, i.e. what role it plays in relation to the resource being described.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This mandatory attribute specifies the MIME type of the resource meta data, which does not have a default value. If no specific MIME type can be indicated, then the type application/octet-stream is to be used.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">source</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute indicates the source of the resource meta data as a URI (cf. RFC 3986). For purposes of the resolution of relative URIs the base URI is the URI of the STMD, if the sourceBase attribute is ot specified or is specified as STMD, and the URI of the referenced resource if the sourceBase attribute is specified as resource. This allows the specification of meta data sources that reside inside the resource (e.g. an FMU) through relative URIs. For meta data that are located alongside the STMD, relative URIs without scheme and authority can and should be used to specify the meta data sources.  For meta data that are packaged inside an SSP that contains this STMD, this is mandatory (in this way, the STMD URIs remain valid after unpacking the SSP into the file system). If the source attribute is missing, the meta data is provided inline as contents of the Content element, which must not be present otherwise.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sourceBase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the base the source URI is resolved against:  If the attribute is missing or is specified as STMD, the source is resolved against the URI of the STMD, if the attribute is specified as resource the URI is resolved against the (resolved) URI of the resource source.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="_content_4">3.8.3.1. Content</h5>
+<div class="paragraph">
+<p>For the details of the Content element structure and attributes see chapter <a href="#sec-contenttype">Section 3.9</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_signature_4">3.8.3.2. Signature</h5>
+<div class="paragraph">
+<p>For the details of the Signature element structure and attributes see chapter <a href="#sec-signaturetype">Section 3.7</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_classification_6">3.8.3.3. Classification</h5>
+<div class="paragraph">
+<p>For the details of the Classification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_annotation">3.8.3.4. Annotation</h5>
+<div class="paragraph">
+<p>For the details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_signature_5">3.8.4. Signature</h4>
+<div class="paragraph">
+<p>For the details of the Signatutre element structure and attributes see chapter <a href="#sec-signaturetype">Section 3.7</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_classification_7">3.8.5. Classification</h4>
+<div class="paragraph">
+<p>For the details of the Classification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_annotations_6">3.8.6. Annotations</h4>
+<div class="paragraph">
+<p>For the details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec-contenttype">3.9. ContentType</h3>
+<div class="paragraph">
+<p>The ContentType element defines the structure and attributes of inline content of an entity. If it is present, then the attribute source of the enclosing element must not be present.</p>
+</div>
+<div id="im-contenttypeschema" class="imageblock">
+<div class="content">
+<img src="images/ContentTypeSchema.png" alt="ContentTypeSchema">
+</div>
+<div class="title">Figure 17. ContentType element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The ContentType element is structured by following subordinated elements.</p>
+</div>
+<table id="tb-contenttypesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 20. ContentType element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">##any</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The ContentType is not associated with any attributes.</p>
+</div>
+<div class="sect3">
+<h4 id="_any">3.9.1. ##any</h4>
+<div class="paragraph">
+<p>The ContentType may contain XML Elements of any kind, i.e. the STMD Schema provides the possibility and capability to code any kind of information regardless of what the STMD specifies. This mean the name, structure and attributes of XML elements enclosed by a contentType element is completely free.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec-classification">3.10. Classification</h3>
+<div class="paragraph">
+<p>The Classification element, which can occur multiple times, provides a set of classifications of an STMD modeling element, provided as Keyword Value Pairs (KWP), the meaning of which is interpreted according to the name of the classification provided in the name attribute. This approach can be used, for example, to provide searchable keywords for content, or to assign and track quality or validation level requirements across the STMD process, or to maintain variant or other classification content across the process.</p>
+</div>
+<div id="im-classificationschema" class="imageblock">
+<div class="content">
+<img src="images/ClassificationSchema.png" alt="ClassificationSchema">
+</div>
+<div class="title">Figure 18. Classification element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The Classification element is structured by the following subordinated elements.</p>
+</div>
+<table id="tb-classificationsubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 21. Classification elemenst structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ClassificationEntry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The Classification element is associated with the following attribute.</p>
+</div>
+<table id="tb-classificationattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 22. Classification element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional/ Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute provides the name of the type of classification being provided.  The name should be unique across the Classification elements of the immediately enclosing element. In order to ensure uniqueness all types should be identified with reverse domain name notation (cf. Java package names or Apple UTIs) of a domain that is controlled by the entity defining the semantics and content of the classification.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_classificationentry">3.10.1. ClassificationEntry</h4>
+<div id="im-classificationentryschema" class="imageblock">
+<div class="content">
+<img src="images/ClassificationEntrySchema.png" alt="ClassificationEntrySchema">
+</div>
+<div class="title">Figure 19. ClassificationEntry element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The ClassificationEntry element is structured by the followeing subordinated elements.</p>
+</div>
+<table id="tb-classificationentrysubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 23. ClassificationEntry element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">##any</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oOtional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The ClassificationEntry element is associated with the following attributes.</p>
+</div>
+<table id="tb-classificationentryattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 24. ClassificationEntry element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keyword</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the keyword for the classification entry (i.e. keyword value pair). It is left undefined whether this must be unique across the entries of the Classification element, or whether repeated entries are allowed. This will depend on the definition of the classification.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="_any_2">3.10.1.1. ##any</h5>
+<div class="paragraph">
+<p>The ClassificationEntry element may contain XML Elements of any kind, i.e. the STMD Schema provides the possibility and capability to code any kind of information regardless of what the STMD specifies. This means, the name, structure and attributes of XML elements enclosed by a ClassificationEntry element are completely free.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec-annotations">3.11. Annotations</h3>
+<div class="paragraph">
+<p>The Annotations element can be used to add a list of additional free style annotations.</p>
+</div>
+<div id="im-annotationsschema" class="imageblock">
+<div class="content">
+<img src="images/AnnotationsSchema.png" alt="AnnotationsSchema">
+</div>
+<div class="title">Figure 20. Annotations element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The Annotations element is structured by the following subordinated elements.</p>
+</div>
+<table id="tb-annotationssubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 25. Annotations element strcuture</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional/ Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Annotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The Annotations element is not associated with any attributes.</p>
+</div>
+<div class="sect3">
+<h4 id="_annotation_2">3.11.1. Annotation</h4>
+<div class="paragraph">
+<p>The Annotation element can be used to add a single free style annotation to the list of annotations.</p>
+</div>
+<div id="im-annotationschema" class="imageblock">
+<div class="content">
+<img src="images/AnnotationSchema.png" alt="AnnotationSchema">
+</div>
+<div class="title">Figure 21. Annotation element structure and attributes</div>
+</div>
+<table id="tb-annotationsubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 26. Annotation element strcuture</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">##any</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The Annotation element is associated with the following attributes.</p>
+</div>
+<table id="tb-annotationattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 27. Annotation element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The unique name of the type of the annotation. In order to ensure uniqueness all types should be identified with reverse domain name notation (cf. Java package names or Apple UTIs) of a domain that is controlled by the entity defining the semantics and content of the annotation. For vendor-specific annotations this would e.g. be a domain controlled by the tool vendor. For MAP-SSP defined annotations, this will be a domain under the org.modelica prefix.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="_any_3">3.11.1.1. ##any</h5>
+<div class="paragraph">
+<p>The Annotation element may contain XML Elements of any kind, i.e. the STMD Schema provides the possibility and capability to code any kind of information regardless of what the STMD specifies. This means, the name, structure and attributes of XML elements enclosed by aa Annotation element are completely free.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_simulation_task_meta_data_file_format">4. Simulation Task Meta Data File Format</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <em>Simulation Task Meta Data</em> file (short: STMD file) is an implementation of a Glue Particle for simulation tasks. It is specified to support traceability, quality assurance and re-usability for simulation tasks in terms of a credible simulation process as it is specified in <strong>Document Reference</strong>. The following subchapters describe the structure of an STMD file.</p>
+</div>
+<div class="sect2">
+<h3 id="_simulationtaskmetadata">4.1. SimulationTaskMetaData</h3>
+<div class="paragraph">
+<p>The SimulationTaskMetaData element is the all enclosing top level XML element of STMD files.</p>
+</div>
+<div id="im-simulationtaskmetadataschema" class="imageblock">
+<div class="content">
+<img src="images/SimulationTaskMetaDataSchema.png" alt="SimulationTaskMetaDataSchema">
+</div>
+<div class="title">Figure 22. SimulationTaskMetaData element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The SimulationTaskMetaData element is structured by following subordinated element.</p>
+</div>
+<table id="tb-simulationtaskmetadatasubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 28. SimulationTaskMetaData element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GeneralInformation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AnalysisPhase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RequirementsPhase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DesignPhase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ImplementationPhase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ExecutionPhase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EvaluationPhase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FulfilmentPhase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The SimulationTaskMetaData element is associated with the following attributes.</p>
+</div>
+<table id="tb-simulationtaskmetadataattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 29. SimulationTaskMetaData element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version of STMD format, 0.x for this pre-release.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the simulation task a name, which can be used for purposes of presenting the simulation task to the user, e.g. when selecting individual variant STMDs from an SSP.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">author</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the name of the author of this file&#8217;s content.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fileversion</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a version number for this file&#8217;s content.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">copyright</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives copyright information for this file&#8217;s content.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">license</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives license information for this file&#8217;s content.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">generatingTool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the name of the tool that generated this file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">generationDateAndTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the date and time this file was generated.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_generalinformation">4.1.1. GeneralInformation</h4>
+<div class="paragraph">
+<p>The GeneralInformation element is used to encapsulate general information about the simulation task, which is not part of any specific phase or step.</p>
+</div>
+<div class="paragraph">
+<p>For the details of the GeneralInformation element structure and attributes see chapter <a href="#sec-generalinformationtype">Section 3.1</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_analysisphase">4.1.2. AnalysisPhase</h4>
+<div class="paragraph">
+<p>The AnalysisPhase element specifies the analysis phase of the overall simulation task.</p>
+</div>
+<div id="im-analysisschemaschema" class="imageblock">
+<div class="content">
+<img src="images/AnalysisPhaseSchema.png" alt="AnalysisPhaseSchema">
+</div>
+<div class="title">Figure 23. AnalysisPhase element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The AnalysisPhase element is structured by the following subordinated element.</p>
+</div>
+<table id="tb-analysisphasesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 30. AnalysisPhase element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AnalyzeEngineeringTask</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VerifyEngineeringTaskAnalysis</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LifeCycleInformation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The AnalysisPhase element is associated with the following attributes.</p>
+</div>
+<table id="tb-analysisphaseattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 31. AnalysisPhase element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="_analyzeengineeringtask">4.1.2.1. AnalyzeEngineeringTask</h5>
+<div class="paragraph">
+<p>For the details of the AnalyzeEngineeringTask element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_verifyengineeringtaskanalysis">4.1.2.2. VerifyEngineeringTaskAnalysis</h5>
+<div class="paragraph">
+<p>For the details of the VerifyEngineeringTaskAnalysis element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_lifecycleinformation">4.1.2.3. LifeCycleInformation</h5>
+<div class="paragraph">
+<p>For the details of the LifeCycleInformation element structure and attributes see chapter <a href="#sec-lifecycleinformationtype">Section 3.4</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_classification_8">4.1.2.4. Classification</h5>
+<div class="paragraph">
+<p>For the details of the Classification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_annotations_7">4.1.2.5. Annotations</h5>
+<div class="paragraph">
+<p>For the details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_requirementsphase">4.1.3. RequirementsPhase</h4>
+<div class="paragraph">
+<p>The RequirementsPhase element specifies the requirements phase of the overall simulation task.</p>
+</div>
+<div id="im-requirementphaseschema" class="imageblock">
+<div class="content">
+<img src="images/RequirementsPhaseSchema.png" alt="RequirementsPhaseSchema">
+</div>
+<div class="title">Figure 24. RequirementsPhase element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The RequirememtsPhase element is structured by the followuing subordinated element.</p>
+</div>
+<table id="tb-requirementsphasesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 32. RequirementsPhase element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DeriveModelRequirements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DeriveParameterRequirements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DeriveSimulationEnvironmentRequirements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DeriveSimulationIntegrationRequirements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DeriveTestCaseRequirements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DeriveProcessQualityRequirements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VerifyRequirements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LifeCycleInformation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The RequirementsPhase element is associated with the following attributes.</p>
+</div>
+<table id="tb-requirementsphaseattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 33. RequirementsPhase element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="_derivemodelrequirements">4.1.3.1. DeriveModelRequirements</h5>
+<div class="paragraph">
+<p>For the details of the DeriveModelRequirements element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_deriveparameterrequirements">4.1.3.2. DeriveParameterRequirements</h5>
+<div class="paragraph">
+<p>For the details of the DeriveParameterRequirements element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_derivesimulationenvironmentrequirements">4.1.3.3. DeriveSimulationEnvironmentRequirements</h5>
+<div class="paragraph">
+<p>For the details of the DeriveSimulationEnvironmentRequirements element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_derivesimulationintegrationrequirements">4.1.3.4. DeriveSimulationIntegrationRequirements</h5>
+<div class="paragraph">
+<p>For the details of the DeriveSimulationIntegrationRequirements element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_derivetestcaserequirements">4.1.3.5. DeriveTestCaseRequirements</h5>
+<div class="paragraph">
+<p>For the details of the DeriveTestCaseRequirements element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_deriveprocessqualityrequirements">4.1.3.6. DeriveProcessQualityRequirements</h5>
+<div class="paragraph">
+<p>For the details of the DeriveProcessQualityRequirements element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_verifyrequirements">4.1.3.7. VerifyRequirements</h5>
+<div class="paragraph">
+<p>For the details of the VerifyRequirements element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_lifecycleinformation_2">4.1.3.8. LifeCycleInformation</h5>
+<div class="paragraph">
+<p>For the details of the LifeCycleInformation element structure and attributes see chapter <a href="#sec-lifecycleinformationtype">Section 3.4</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_classification_9">4.1.3.9. Classification</h5>
+<div class="paragraph">
+<p>For the details of the Classification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_annotations_8">4.1.3.10. Annotations</h5>
+<div class="paragraph">
+<p>For the details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_designphase">4.1.4. DesignPhase</h4>
+<div class="paragraph">
+<p>The DesignPhase element specifies the design specification phase of the overall simulation task.</p>
+</div>
+<div id="im-designphaseschema" class="imageblock">
+<div class="content">
+<img src="images/DesignPhaseSchema.png" alt="DesignPhaseSchema">
+</div>
+<div class="title">Figure 25. DesignPhase element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The DesignPhase element is structured by the following subordinated element.</p>
+</div>
+<table id="tb-designphasesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 34. DesignPhase element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DesignModelSpecification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DesignParameterSpecification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DesignSimulationEnvironmentSpecification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DesignSimulationIntegrationSpecification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DesignTestCaseSpecification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DeriveProcessQualityRequirements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VerifyDesignSpecification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LifeCycleInformation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The DesignPhase element is associated with the following attributes.</p>
+</div>
+<table id="tb-designphaseattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 35. DesignPhase element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="_designmodelspecification">4.1.4.1. DesignModelSpecification</h5>
+<div class="paragraph">
+<p>For the details of the DesignModelSpecification element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_designparameterspecification">4.1.4.2. DesignParameterSpecification</h5>
+<div class="paragraph">
+<p>For the details of the DesignParameterSpecification element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_designsimulationenvironmentspecification">4.1.4.3. DesignSimulationEnvironmentSpecification</h5>
+<div class="paragraph">
+<p>For the details of the DesignSimulationEnvironmentSpecification element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_designsimulationintegrationspecification">4.1.4.4. DesignSimulationIntegrationSpecification</h5>
+<div class="paragraph">
+<p>For the details of the DesignSimulationIntegrationSpecification element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_designtestcasespecification">4.1.4.5. DesignTestCaseSpecification</h5>
+<div class="paragraph">
+<p>For the details of the DesignTestCaseSpecification element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_deriveprocessqualityrequirements_2">4.1.4.6. DeriveProcessQualityRequirements</h5>
+<div class="paragraph">
+<p>For the details of DeriveProcessQualityRequirements element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_verifydesignspecification">4.1.4.7. VerifyDesignSpecification</h5>
+<div class="paragraph">
+<p>For the details of the VerifyDesignSpecification element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_lifecycleinformation_3">4.1.4.8. LifeCycleInformation</h5>
+<div class="paragraph">
+<p>For the details of the LifeCycleInformation element structure and attributes see chapter <a href="#sec-lifecycleinformationtype">Section 3.4</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_classification_10">4.1.4.9. Classification</h5>
+<div class="paragraph">
+<p>For the details of the Classification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_annotations_9">4.1.4.10. Annotations</h5>
+<div class="paragraph">
+<p>For the details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_implementationphase">4.1.5. ImplementationPhase</h4>
+<div class="paragraph">
+<p>The ImplementationPhase element specifies the implementation phase of the overall simulation task including the implementation validation.</p>
+</div>
+<div id="im-implementationphaseschema" class="imageblock">
+<div class="content">
+<img src="images/ImplementationPhaseSchema.png" alt="ImplementationPhaseSchema">
+</div>
+<div class="title">Figure 26. ImplementationPhase element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The ImplementationPhase element is structured by the following subordinated element.</p>
+</div>
+<table id="tb-implementationphasesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 36. ImplementationPhase element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ImplementModel</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ImplementParameter</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ImplementSimulationEnvironment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IntegrateSimulation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ImplementTestCase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AssureSimulationSetupQuality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DeriveSimulationSetupQualityVerdict</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LifeCycleInformation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The ImplementationPhase element is associated with the following attributes.</p>
+</div>
+<table id="tb-implementationphaseattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 37. ImplementationPhase element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="_implementmodel">4.1.5.1. ImplementModel</h5>
+<div class="paragraph">
+<p>For the details of the ImplementModel element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_implementparameter">4.1.5.2. ImplementParameter</h5>
+<div class="paragraph">
+<p>For the details of the ImplementParameter element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_implementsimulationenvironment">4.1.5.3. ImplementSimulationEnvironment</h5>
+<div class="paragraph">
+<p>For the details of the ImplementSimulationEnvironment element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_integratesimulation">4.1.5.4. IntegrateSimulation</h5>
+<div class="paragraph">
+<p>For the details of the IntegrateSimulation element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_implementtestcase">4.1.5.5. ImplementTestCase</h5>
+<div class="paragraph">
+<p>For the details of the ImplementTestCase element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_assuresimulationsetupquality">4.1.5.6. AssureSimulationSetupQuality</h5>
+<div class="paragraph">
+<p>For the details of the AssureSimulationSetupQuality element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_derivesimulationsetupqualityverdict">4.1.5.7. DeriveSimulationSetupQualityVerdict</h5>
+<div class="paragraph">
+<p>For the details of the DeriveSimulationSetupQualityVerdict element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_lifecycleinformation_4">4.1.5.8. LifeCycleInformation</h5>
+<div class="paragraph">
+<p>For the details of the LifeCycleInformation element structure and attributes see chapter <a href="#sec-lifecycleinformationtype">Section 3.4</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_classification_11">4.1.5.9. Classification</h5>
+<div class="paragraph">
+<p>For the details of the Classification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_annotations_10">4.1.5.10. Annotations</h5>
+<div class="paragraph">
+<p>For the details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_executionphase">4.1.6. ExecutionPhase</h4>
+<div class="paragraph">
+<p>The ExecutionPhase element specifies the execution phase of the overall simulation task.</p>
+</div>
+<div id="im-executionphaseschema" class="imageblock">
+<div class="content">
+<img src="images/ExecutionPhaseSchema.png" alt="ExecutionPhaseSchema">
+</div>
+<div class="title">Figure 27. ExecutionPhase element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The ExecutionPhase element is structured by the followeing subordinated element.</p>
+</div>
+<table id="tb-executionphasesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 38. ExecutionPhase element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ExecuteSimulation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LifeCycleInformation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The ExecutionPhase element is associated with the following attributes.</p>
+</div>
+<table id="tb-executionphaseattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 39. ExecutionPhase element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="_executesimulation">4.1.6.1. ExecuteSimulation</h5>
+<div class="paragraph">
+<p>For the details of the ExecuteSimulation element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_lifecycleinformation_5">4.1.6.2. LifeCycleInformation</h5>
+<div class="paragraph">
+<p>For the details of the LifeCycleInformation element structure and attributes see chapter <a href="#sec-lifecycleinformationtype">Section 3.4</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_classification_12">4.1.6.3. Classification</h5>
+<div class="paragraph">
+<p>For the details of the Classification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_annotations_11">4.1.6.4. Annotations</h5>
+<div class="paragraph">
+<p>For the details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_evaluationphase">4.1.7. EvaluationPhase</h4>
+<div class="paragraph">
+<p>The EvaluationPhase element specifies the evaluation phase of the overall simulation task.</p>
+</div>
+<div id="im-evaluationphaseschema" class="imageblock">
+<div class="content">
+<img src="images/EvaluationPhaseSchema.png" alt="EvaluationPhaseSchema">
+</div>
+<div class="title">Figure 28. EvaluationPhase element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The EvaluationPhase element is structured by the following subordinated element.</p>
+</div>
+<table id="tb-evaluationphasesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 40. EvaluationPhase element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EvaluateSimulationResults</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AssureSimulationQuality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DeriveSimulationQualityVerdict</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LifeCycleInformation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The EvaluationPhase element is associated with the following attributes.</p>
+</div>
+<table id="tb-evaluationphaseattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 41. EvaluationPhase element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="_evaluatesimulationresults">4.1.7.1. EvaluateSimulationResults</h5>
+<div class="paragraph">
+<p>For the details of the EvaluateSimulationResults element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_assuresimulationquality">4.1.7.2. AssureSimulationQuality</h5>
+<div class="paragraph">
+<p>For the details of the AssureSimulationQuality element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_derivesimulationqualityverdict">4.1.7.3. DeriveSimulationQualityVerdict</h5>
+<div class="paragraph">
+<p>For the details of the DeriveSimulationQualityVerdict element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_lifecycleinformation_6">4.1.7.4. LifeCycleInformation</h5>
+<div class="paragraph">
+<p>For the details of the LifeCycleInformation element structure and attributes see chapter <a href="#sec-lifecycleinformationtype">Section 3.4</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_classification_13">4.1.7.5. Classification</h5>
+<div class="paragraph">
+<p>For the details of the Classification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_annotations_12">4.1.7.6. Annotations</h5>
+<div class="paragraph">
+<p>For the details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_fulfillmentphase">4.1.8. FulfillmentPhase</h4>
+<div class="paragraph">
+<p>The FulfillmentPhase element specifies the fulfillment phase of the overall simulation task.</p>
+</div>
+<div id="im-fulfilmentphaseschema" class="imageblock">
+<div class="content">
+<img src="images/FulfilmentPhaseSchema.png" alt="FulfilmentPhaseSchema">
+</div>
+<div class="title">Figure 29. FulfilmentPhase elements structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The FulfilmentPhase element is structured by the following subordinated element.</p>
+</div>
+<table id="tb-fulfilmentphasesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 42. FulfilmentPhase element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DecideObjectiveFulfilment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LifeCycleInformation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The EvaluationPhase element is associated with the following attributes.</p>
+</div>
+<table id="tb-fulfilmentphaseattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 43. FulfilmentPhase element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="_decideobjectivefulfilment">4.1.8.1. DecideObjectiveFulfilment</h5>
+<div class="paragraph">
+<p>For the details of the DecideObjectiveFulfilment element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_lifecycleinformation_7">4.1.8.2. LifeCycleInformation</h5>
+<div class="paragraph">
+<p>For the details of the LifeCycleInformation structure and attributes see chapter <a href="#sec-lifecycleinformationtype">Section 3.4</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_classification_14">4.1.8.3. Classification</h5>
+<div class="paragraph">
+<p>For the details of the Classification structure and attributes see chapter <a href="#sec-classification">Section 3.10</a></p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_annotations_13">4.1.8.4. Annotations</h5>
+<div class="paragraph">
+<p>For the details of the Annotations structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a></p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_classification_15">4.1.9. Classification</h4>
+<div class="paragraph">
+<p>tbd</p>
+</div>
+<div class="paragraph">
+<p>For the details of the Classification structure and attributes see chapter <a href="#sec-classification">Section 3.10</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_annotations_14">4.1.10. Annotations</h4>
+<div class="paragraph">
+<p>tbd</p>
+</div>
+<div class="paragraph">
+<p>For the details of the Annotations structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_simulation_resource_meta_data_file_format">5. Simulation Resource Meta Data File Format</h2>
 <div class="sectionbody">
 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_simulation_resource_meta_data_file_format">3. Simulation Resource Meta Data File Format</h2>
-<div class="sectionbody">
-
-</div>
-</div>
-<div class="sect1">
-<h2 id="_ssp_traceability_packaging_2">4. SSP Traceability Packaging</h2>
+<h2 id="_ssp_traceability_packaging">6. SSP Traceability Packaging</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section specifies the packaging of simulation task meta-data
@@ -727,7 +3662,7 @@ task meta-data files together with related system descriptions, models
 and other resources using the SSP packaging format.</p>
 </div>
 <div class="sect2">
-<h3 id="_introduction_2">4.1. Introduction</h3>
+<h3 id="_introduction_2">6.1. Introduction</h3>
 <div class="paragraph">
 <p>The current specification specifies the packaging of simulation task
 meta-data files together with all referenced system descriptions,
@@ -744,7 +3679,7 @@ the built-in functionality of the SSP standard.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_ssp_1_0">4.2. SSP 1.0</h3>
+<h3 id="_ssp_1_0">6.2. SSP 1.0</h3>
 <div class="paragraph">
 <p>Any STMD-based package MUST be a valid <em>SSP 1.0</em> <a href="#SSP10">[SSP10]</a> SSP archive.
 Inter alia this means that it MUST contain at least one SSD file named
@@ -756,7 +3691,7 @@ Those cases will be recognizable by the content of the STMD file.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_stmd_file">4.3. STMD File</h3>
+<h3 id="_stmd_file">6.3. STMD File</h3>
 <div class="paragraph">
 <p>Any STMD-based package MUST include an STMD XML file under the
 <code>extra/net.pmsf.ssp.stmd/SimulationTask.stmd</code> name. The file MUST be
@@ -810,7 +3745,7 @@ file name extension is <code>.stmd</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_srmd">4.4. SRMD</h3>
+<h3 id="_srmd">6.4. SRMD</h3>
 <div class="paragraph">
 <p>Simulation resource meta data for components or other resources (e.g.
 parameter sets, etc.) can be provided using SRMD files. These files can
@@ -824,7 +3759,7 @@ mechanisms.</p>
 name extension is <code>.srmd</code>.</p>
 </div>
 <div class="sect3">
-<h4 id="_attaching_via_stmd_meta_data_mechanism">4.4.1. Attaching via STMD meta-data mechanism</h4>
+<h4 id="_attaching_via_stmd_meta_data_mechanism">6.4.1. Attaching via STMD meta-data mechanism</h4>
 <div class="paragraph">
 <p>For SRMD data that is to be tied to the resource through the STMD
 meta-data mechanism, the SRMD file is either referenced from or
@@ -832,7 +3767,7 @@ contained in the <code>MetaData</code> elements for the resource.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_embedding_into_fmus">4.4.2. Embedding into FMUs</h4>
+<h4 id="_embedding_into_fmus">6.4.2. Embedding into FMUs</h4>
 <div class="paragraph">
 <p>For FMUs the SRMD file CAN be embedded by placing the SRMD data into a
 file named <code>extra/net.pmsf.ssp.srmd/resourceMetaData.srmd</code> in the FMU
@@ -840,7 +3775,7 @@ archive.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_embedding_into_ssps">4.4.3. Embedding into SSPs</h4>
+<h4 id="_embedding_into_ssps">6.4.3. Embedding into SSPs</h4>
 <div class="paragraph">
 <p>For SSPs the SRMD file that applies to the SSP as a whole CAN be
 embedded by placing the SRMD data into a file named
@@ -874,7 +3809,7 @@ that is packaged within the component.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_placing_beside_resources">4.4.4. Placing beside resources</h4>
+<h4 id="_placing_beside_resources">6.4.4. Placing beside resources</h4>
 <div class="paragraph">
 <p>When placing an SRMD file beside (i.e. outside of) the referenced
 resources, the SRMD file SHOULD be named like the resource file name,
