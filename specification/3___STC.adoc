@@ -1,9 +1,11 @@
 == SSP Traceability Common
 
+This chapter describes in detail the content and structure of the XML schema stc.xsd. The elements defined by the schema represent common concepts for ensuring traceability that are reused in many places of other XML schemas for the topic of simulation process traceability. The purpose of the extraction of these reused elements is to increase the flexibility and extensibility of the Glue Particles concept and to help to apply the Glue Particles concept to other topics in product and system engineering.
+
 [#sec-generalinformationtype]
 === GeneralInformationType
 
-The generalInformationType element defines the structure and attributes for general information associated with the overall simulation task.
+This element is used to encapsulate general information about the simulation task, which is not part of any specific phase or step.
 
 [#im-generalinformationtypeschema]
 .GeneralInformationType element structure and attributes
@@ -16,44 +18,46 @@ The GeneralInformationType element is structured by the followuing subordinated 
 [width="100%",options="header"]
 |===
 | Sub element name | Optional / Mandatory
-| DeviationChain   | Optional 
+| DerivationChain  | Optional 
+| Link             | Optional
 |===
 
 The GeneralInformationType element is not associated with any attributes.
 
-==== DeviationChain
+==== DerivationChain
 
-The DeviationChain element can be used to provide the set of file information that was used to derive the current file. I.e. if the content of the current file can be considered to be derived from one or a set of other STMD files, then the top level meta data and derivation chain information of those files should be included in their original order as entries in this file's DerivationChain element.
+This element can be used to provide the set of file information that was used to derive the current file. I.e. if the content of the current file can be considered to be derived from one or a set of other STC files, then the top level meta data and DerivationChain information of those files should be included in their original order as entries in this file's DerivationChain element.
 
-The derivation chain described by the DerivationChain element may contain one or more Entries (with their associated attributes) or even no entry at all.
 
-[#im-deviationchaischema]
-.DeviationChain element structure and attributes
-image::DeviationChainSchema.png[]
+[#im-derivationchaischema]
+.DerivationChain element structure and attributes
+image::DerivationChainSchema.png[]
 
-The DeviationChain element is structured by the following subordinated element.
+The DerivationChain element is structured by the following subordinated element.
 
-[#tb-deviationchainsubelements]
-.DeviationChain element structure
+[#tb-derivationchainsubelements]
+.DerivationChain element structure
 [width="100%",options="header"]
 |===
 | Sub element name     | Optional / Mandatory
-| DeviationChainEntry  | Optional 
+| DerivationChainEntry | Optional 
 |===
 
-The DeviationChain element is not associated with any attributes.
+The DerivationChain element is not associated with any attributes.
 
-===== DeviationChainEntry
-The DeviationChaiEntry element is a single entry within the deviation chain.
+===== DerivationChainEntry
+The DerivationChainEntry element is a single entry within the derivation chain.
 
-[#im-deviationchainentryschema]
-.DeviationChainEntry element structure and attributes
-image::DeviationChainEntrySchema.png[]
+[#im-derivationchainentryschema]
+.DerivationChainEntry element structure and attributes
+image::DerivationChainEntrySchema.png[]
+
+The DerivationChainEntry element is not structured by subordinated elements.
 
 The DerivationChainEntry element is associated with the following attributes.
 
-[#tb-deviationchainentryattributes]
-.DeviationChainEntry element attributes
+[#tb-derivationchainentryattributes]
+.DerivationChainEntry element attributes
 [width="100%",options="header"]
 |===
 | Attribute name        | Optional / Mandatory | Atrribute description
@@ -65,121 +69,176 @@ The DerivationChainEntry element is associated with the following attributes.
 | generationDateAndTime | Optional             | This attribute gives the date and time this file was generated.
 |===
 
+==== Links
+For the details of the Links element structure and attributes see chapter <<sec-linkstype>>.
 
+[#sec-gelementcommon]
+=== GElementCommon
+Common element content for all modeling elements of the file.
 
+[#im-gelementcommonschema]
+.GElementCommon structure and attributes
+image::GElementCommonSchema.png[]
 
-[#sec-steptype]
-=== StepType
+The GElementCommon element is structured by the following subordinated elements.
 
-The StepType element defines the structure and attributes of an individual step inside a phase of the overall simulation task.
-
-[#im-steptypeschema]
-.StepType element structure and attributes
-image::StepTypeSchema.png[]
-
-The StepType element is structured by the following subordinated elements.
-
-[#tb-steptypesubelements]
-.StepType element structure
+[#tb-gelementcommonsubelements]
+.GElementCommon elemenst structure
 [width="100%",options="header"]
 |===
 | Sub element name     | Optional / Mandatory
-| Input                | Optional 
-| Procedure            | Optional
-| Output               | Optional 
-| Rationale            | Optional
-| LifeCycleInformation | Optional 
 | Classification       | Optional
 | Annotations          | Optional
+|=== 
+
+The GElementCommon element is not associated with any attributes.
+
+[#sec-classification]
+==== Classification
+
+The Classification element, which can occur multiple times, provides a set of classifications of an STMD modeling element, provided as Keyword Value Pairs (KWP), the meaning of which is interpreted according to the name of the classification provided in the name attribute. This approach can be used, for example, to provide searchable keywords for content, or to assign and track quality or validation level requirements across the STMD process, or to maintain variant or other classification content across the process.
+
+[#im-classificationschema]
+.Classification element structure and attributes
+image::ClassificationSchema.png[]
+
+The Classification element is structured by the following subordinated elements.
+
+[#tb-classificationsubelements]
+.Classification elemenst structure
+[width="100%",options="header"]
+|===
+| Sub element name     | Optional / Mandatory
+| ClassificationEntry  | Optional 
 |===
 
-The StepType element is associated with the following attributes.
+The Classification element is associated with the following attribute.
 
-[#tb-steptypeattributes]
-.StepType element attributes
+[#tb-classificationattributes]
+.Classification element attributes
+[width="100%",options="header"]
+|===
+| Attribute name | Optional/ Mandatory | Atrribute description
+| type           | Optional            | This attribute provides the name of the type of classification being provided.  The name should be unique across the Classification elements of the immediately enclosing element. In order to ensure uniqueness all types should be identified with reverse domain name notation (cf. Java package names or Apple UTIs) of a domain that is controlled by the entity defining the semantics and content of the classification.
+|===
+
+
+===== ClassificationEntry
+
+[#im-classificationentryschema]
+.ClassificationEntry element structure and attributes
+image::ClassificationEntrySchema.png[]
+
+The ClassificationEntry element is structured by the followeing subordinated elements.
+
+[#tb-classificationentrysubelements]
+.ClassificationEntry element structure
+[width="100%",options="header"]
+|===
+| Sub element name     | Optional / Mandatory
+| ##any                | Optional 
+|===
+
+The ClassificationEntry element is associated with the following attributes.
+
+[#tb-classificationentryattributes]
+.ClassificationEntry element attributes
 [width="100%",options="header"]
 |===
 | Attribute name | Optional / Mandatory | Atrribute description
-| id             | Optional           | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
-| description    | Optional           | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+| keyword        | Mandatory            | This attribute gives the keyword for the classification entry (i.e. keyword value pair). It is left undefined whether this must be unique across the entries of the Classification element, or whether repeated entries are allowed. This will depend on the definition of the classification. 
+| xlink:type     | Optional             |    
+| xlink:href     | Optional             | This attribute gives an optional link for the classification entry (i.e. keyword value pair). This link can be given in addition to any content of the classification entry, or it can be the sole information of the classification entry. The rules will depend on the definition of the classification.
 |===
 
-==== Inputs
+====== ##any
 
-For the details of the Input element structure and attributes see chapter <<sec-particletype>>.
+The ClassificationEntry element may contain XML Elements of any kind, i.e. the STMD Schema provides the possibility and capability to code any kind of information regardless of what the STMD specifies. This means, the name, structure and attributes of XML elements enclosed by a ClassificationEntry element are completely free.  
 
-==== Procedure
-
-For the details of the Procedure element structure and attributes see chapter <<sec-particletype>>
-
-==== Output
-
-For the details of the Output element structure and attributes see chapter <<sec-particletype>>.
-
-==== Rationale
-
-For the details of the Rationale element structure and attributes see chapter <<sec-particletype>>.
-
-==== Lifecycle information
-
-For the details of the LifeycleInformation element structure and attributes see chapter <<sec-lifecycleinformationtype>>.
-
-==== Classification
-
-For the details of the Classification element structure and attributes see chapter <<sec-classification>>.
-
+[#sec-annotations]
 ==== Annotations
 
-For the details of the Annotations element structure and attributes see chapter <<sec-annotations>>.
+The Annotations element can be used to add a list of additional free style annotations.
 
+[#im-annotationsschema]
+.Annotations element structure and attributes
+image::AnnotationsSchema.png[]
 
+The Annotations element is structured by the following subordinated elements.
 
-
-
-[#sec-particletype]
-=== ParticleType
-
-The ParticleType element defines the structure and attributes of an individual particle inside a step of a phase of the overall simulation task.
-
-[#im-particletypeschema]
-.ParticleType element structure and attributes
-image::ParticleTypeSchema.png[]
-
-The ParticleType element is structured by the following subordinated elements.
-
-[#tb-particletypesubelements]
-.ParticleType element structure
+[#tb-annotationssubelements]
+.Annotations element strcuture
 [width="100%",options="header"]
 |===
-| Sub element name | Optional / Mandatory
-| Resource         | Optional 
-| Classification   | Optional
-| Annotations      | Optional
+| Sub element name     | Optional/ Mandatory
+| Annotation           | Optional 
 |===
 
-The ParticleType element is associated with the following attributes.
+The Annotations element is not associated with any attributes.
 
-[#tb-particletypeattributes]
-.ParticleType aelement ttributes
+===== Annotation
+The Annotation element can be used to add a single free style annotation to the list of annotations.
+
+[#im-annotationschema]
+.Annotation element structure and attributes
+image::AnnotationSchema.png[]
+
+
+[#tb-annotationsubelements]
+.Annotation element strcuture
+[width="100%",options="header"]
+|===
+| Sub element name     | Optional / Mandatory
+| ##any                | Optional
+|===
+
+The Annotation element is associated with the following attributes.
+
+[#tb-annotationattributes]
+.Annotation element attributes
 [width="100%",options="header"]
 |===
 | Attribute name | Optional / Mandatory | Atrribute description
-| id             | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
-| description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+| type           | Mandatory            | The unique name of the type of the annotation. In order to ensure uniqueness all types should be identified with reverse domain name notation (cf. Java package names or Apple UTIs) of a domain that is controlled by the entity defining the semantics and content of the annotation. For vendor-specific annotations this would e.g. be a domain controlled by the tool vendor. For MAP-SSP defined annotations, this will be a domain under the org.modelica prefix.
 |===
 
+====== ##any
 
-==== Resource
+The Annotation element may contain XML Elements of any kind, i.e. the STMD Schema provides the possibility and capability to code any kind of information regardless of what the STMD specifies. This means, the name, structure and attributes of XML elements enclosed by aa Annotation element are completely free.  
 
-For details of the Resource element structure and attributes see chapter <<sec-resourcetype>>.
+=== GPhaseCommon
+Common element content for all phases.
 
-==== Classification
+[#im-gephaseschema]
+.GPhaseCommon structure and attributes
+image::GPhaseCommonSchema.png[]
 
-For details of the Classification element structure and attributes see chapter <<sec-classification>>.
+The GPhaseCommon element is structured by the following subordinated elements.
 
-==== Annotations
+[#tb-gphasecommonsubelements]
+.GPhaseCommon element structure
+[width="100%",options="header"]
+|===
+| Sub element name     | Optional / Mandatory
+| Links                | Optional
+| LifeCycleInformation | Optional
+| GElementCommon       | Optional
+|===
 
-For details of the Annotations element structure and attributes see chapter <<sec-annotations>>.
+The GPhaseCommon element is not associated with any attributes.
+
+==== Links
+
+For the details of the Links element structure and attributes see chapter <<sec-linkstype>>.
+
+==== LifeCycleInformation
+
+For the details of the LifeCyleInformation element structure and attributes see chapter <<sec-lifecycleinformationtype>>.
+
+==== GElementCommon
+
+For the details of the GElementCommon element structure and attributes see chapter <<sec-gelementcommon>>.
+
 
 
 
@@ -197,13 +256,13 @@ image::LifeCycleInformationTypeSchema.png[]
 The LifeCycleInformationType element is structured by the following subordinated elements.
 
 [#tb-lifecycleinformationtypesubelements]
-.LifecycleInformationType element structure
+.LifeCycleInformationType element structure
 [width="100%",options="header"]
 |===
 | Sub element name | Optional / Mandatory
 | Drafted          | Optional 
 | Defined          | Optional
-| Validate         | Optional 
+| Validated        | Optional 
 | Approved         | Optional
 | Archived         | Optional 
 | Retracted        | Optional
@@ -251,11 +310,10 @@ The LifeCycleEntryType element is structured by the following subordinated eleme
 [width="100%",options="header"]
 |===
 | Sub element name     | Optional / Mandatory
-| Resource             | Optional 
-| Responsible          | Optional
+| GResourceOrReference | Optional 
+| Responsible          | Mandatory
 | Signature            | Optional 
-| Classification       | Optional
-| Annotations          | Optional
+| GElementCommon       | Optional
 |===
 
 The LifeCycleEntryType element is associated with the following attributes.
@@ -267,12 +325,13 @@ The LifeCycleEntryType element is associated with the following attributes.
 | Attribute name | Optional / Mandatory | Atrribute description
 | date           | Mandatory            | Timestamp when lifecycle entry was assigned. Note that the time stamp data type makes time zone information mandatory, so that a full ordering of times is possible.
 | checksum       | Optional             | This attribute gives the checksum over the phase/step information stored in the enclosing phase/step element, calculated according to the STMD specification.  This attribute is optional if the lifecycle stage is not Approved or Archived, but becomes required if the lifecycle stage is Approved or Archived. Optionally, digital signatures over this checksum can be provided using Signature elements in the enclosing lifecycle entry element. The checksum is calculated using the algorithm indicated by the checksumType attribute.
-| checsumType    | Optional             | This attribute gives the algorithm for the calculation of the checksum attribute. MUST be SHA3-256 for now, indicating a SHA3 256bit secure hash algorithm, as specified in FIPS 202. In the future other checksum algorithms might be supported.
+| checksumType    | Optional             | This attribute gives the algorithm for the calculation of the checksum attribute. MUST be SHA3-256 for now, indicating a SHA3 256bit secure hash algorithm, as specified in FIPS 202. In the future other checksum algorithms might be supported.
 |===
 
-==== Resource
 
-For details of the Resource element structure and attributes see chapter <<sec-resourcetype>>.
+==== GResourceOrReference
+
+For details of the GResourceOrReference element structure and attributes see chapter <<sec-gresourceorreference>>.
 
 ==== Responsible
 
@@ -282,83 +341,218 @@ For details of the Responsible element structure and attributes see chapter <<se
 
 For details of the Signature element structure and attributes see chapter <<sec-signaturetype>>.
 
-==== Classification
+==== GElementCommon
 
-For details of the Classification element structure and attributes see chapter <<sec-classification>>.
+For details of the GElementCommon element structure and attributes see chapter <<sec-gelementcommon>>.
 
-==== Annotations
+[#sec-steptype]
+=== StepType
 
-For details of the Annotations element structure and attributes see chapter <<sec-annotations>>.
+The StepType element defines the structure and attributes of an individual step inside a phase of the overall simulation task.
 
-[#sec-responsibletype]
-=== ResponsibleType
+[#im-steptypeschema]
+.StepType element structure and attributes
+image::StepTypeSchema.png[]
 
-The ResponsibleType element defines the structure and attributes of the responsible entry for a lifecycle entry of a step or a phase of the overall simulation task.
+The StepType element is structured by the following subordinated elements.
 
-[#im-responsibletypeschema]
-.ResponsibleType element structure and attributes
-image::ResponsibleTypeSchema.png[]
+[#tb-steptypesubelements]
+.StepType element structure
+[width="100%",options="header"]
+|===
+| Sub element name     | Optional / Mandatory
+| Input                | Optional 
+| Procedure            | Optional
+| Output               | Optional 
+| Rationale            | Optional
+| Links                | Optional
+| LifeCycleInformation | Optional 
+| GElementCommon       | Optional
+|===
 
-The ResponsibleType element is not structured by subordinated elements.
+The StepType element is associated with the following attributes.
 
-The ResponsibleType element is associated with the following attributes.
-
-[#tb-responsibletypeattributes]
-.ResponsibleType attributes
+[#tb-steptypeattributes]
+.StepType element attributes
 [width="100%",options="header"]
 |===
 | Attribute name | Optional / Mandatory | Atrribute description
-| organization   | Optional           | This attribute gives the organization that is responsible for a given step.
-|role            | Optional           | This attribute gives the role of the person that is responsible for a given step.
-|name            | Optional           | This attribute gives the name of the person that is responsible for a given step.
+| id             | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
+| description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
 |===
 
-[#sec-signaturetype]
-=== SignatureType
+==== Inputs
 
-The SignatureType element defines the structure and attributes of the signature entity for a given step or phase.
+For the details of the Input element structure and attributes see chapter <<sec-particletype>>.
 
-[#im-signaturetypeschema]
-.SignatureType element structure and attributes
-image::SignatureTypeSchema.png[]
+==== Procedure
 
-The SignatureType element is structured by the following subordinated elements.
+For the details of the Procedure element structure and attributes see chapter <<sec-particletype>>
 
-[#tb-signaturetypesubelements]
-.SignatureType element structure
+==== Output
+
+For the details of the Output element structure and attributes see chapter <<sec-particletype>>.
+
+==== Rationale
+
+For the details of the Rationale element structure and attributes see chapter <<sec-particletype>>.
+
+==== Links
+
+For the details of the Links element structure and attributes see chapter <<sec-linkstype>>.
+
+==== LifeCycleInformation
+
+For the details of the LifeCyleInformation element structure and attributes see chapter <<sec-lifecycleinformationtype>>.
+
+==== GElementCommon
+
+For details of the GElementCommon element structure and attributes see chapter <<sec-gelementcommon>>.
+
+
+[#sec-particletype]
+=== ParticleType
+
+The ParticleType element defines the structure and attributes of an individual particle inside a step of a phase of the overall simulation task.
+
+[#im-particletypeschema]
+.ParticleType element structure and attributes
+image::ParticleTypeSchema.png[]
+
+The ParticleType element is structured by the following subordinated elements.
+
+[#tb-particletypesubelements]
+.ParticleType element structure
+[width="100%",options="header"]
+|===
+| Sub element name     | Optional / Mandatory
+| GResourceOrReference | Optional 
+| GElementCommon       | Optional
+|===
+
+The ParticleType element is associated with the following attributes.
+
+[#tb-particletypeattributes]
+.ParticleType aelement ttributes
+[width="100%",options="header"]
+|===
+| Attribute name | Optional / Mandatory | Atrribute description
+| id             | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
+| description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+|===
+
+
+==== GResourceOrReference
+
+For details of the GResourceOrReference element structure and attributes see chapter <<sec-gresourceorreference>>.
+
+==== GElementCommon
+
+For details of the GElementCommon element structure and attributes see chapter <<sec-gelementcommon>>.
+
+
+[#sec-linkstype]
+=== LinksType 
+
+The LinksType element defines the structure and attributes for the linkage mechnism to use links within the stmd file as well as links to external resources outside the STMF file.
+
+
+[#im-linkstypeschema]
+.LinksType element structure and attributes
+image::LinksTypeSchema.png[]
+
+The LinksType element is structured by the following subordinated elements.
+
+[#tb-linkstypesubelements]
+.LinksType element structure
 [width="100%",options="header"]
 |===
 | Sub element name | Optional / Mandatory
-| Content          | Optional 
-| Classification   | Optional
-| Annotations      | Optional 
+| Link             | Mandatory 
 |===
 
-The SignatureType element is associated with the following attributes.
+The LinksType element is not associated with any attributes.
 
-[#tb-signaturetypeattributes]
-.SignatureType element attributes
+==== Link
+
+The Link elemenet represents a single links no mater if it is an STMD file internal link or a link targeted to the outside of the STMD file.
+
+[#im-linkschema]
+.Link element structure and attributes
+image::LinkSchema.png[]
+
+The Link element is structured by the following subordinated elements.
+
+[#tb-linksubelements]
+.Link element structure
+[width="100%",options="header"]
+|===
+| Sub element name | Optional / Mandatory
+| Locator          | Mandatory 
+| Arc 	           | Optional
+|===
+
+The Link element is associated with the following attributes.
+
+
+[#tb-linkattributes]
+.Link element attributes
 [width="100%",options="header"]
 |===
 | Attribute name | Optional / Mandatory | Atrribute description
-| role           | Mandatory          | This mandatory attribute specifies the role this signature has in the overall process. It indicates whether the digital signature is intended to just convey the authenticity of the information, or whether a claim for suitability of the information for certain purposes is made.  In the latter case, the digital signature format should include detailed information about what suitability claims are being made.
-| type           | Mandatory          | This mandatory attribute specifies the MIME type of the resource signature, which does not have a default value.  If no specific MIME type can be indicated, then the type application/octet-stream is to be used.
-| source         | Optional           | This attribute indicates the source of the resource signature as a URI (cf. RFC 3986).  For purposes of the resolution of relative URIs the base URI is the URI of the STMD, if the sourceBase attribute is not specified or is specified as STMD, and the URI of the referenced resource if the sourceBase attribute is specified as resource. This allows the specification of signature sources that reside inside the resource (e.g. an FMU) through relative URIs. For signatures that are located alongside the STMD, relative URIs without scheme and authority can and should be used to specify the signature sources. For signatures that are packaged inside an SSP that contains this STMD, this is mandatory (in this way, the STMD URIs remain valid after unpacking the SSP into the filesystem). If the source attribute is missing, the signature is provided inline as contents of the Content element, which must not be present otherwise. 
-| sourdceBase    | Optional           | Defines the base the source URI is resolved against:  If the attribute s missing or is specified as STMD, the source is resolved against the URI of the STMD, if the attribute is specified as resource the URI is resolved against the (resolved) URI of the resource source.
+| xlink:type     | Optional             | Text fehlt noch
+| xlink:title    | Optional             | Text fehlt noch
+| xlink:role     | Optional             | Text fehlt noch
 |===
 
-==== Content
+==== Locator
 
-For details of the Content element structure and attributes see chapter <<sec-contenttype>>
+The Locator elemenet represents ... Text fehlt noch
 
-==== Classification
-
-For details of the Classification element structure and attributes see chapter <<sec-classification>>
-
-==== Annotations
-For details of the Annotations element structure and attributes see chapter <<sec-annotations>>
+[#im-locatorschema]
+.Locator element structure and attributes
+image::LocatorSchema.png[]
 
 
+The Locator element is not structured by subordinated elements.
+
+The Locator element is associated with the following attributes.
+
+[#tb-locatorattributes]
+.Locator element attributes
+[width="100%",options="header"]
+|===
+| Attribute name | Optional / Mandatory | Atrribute description
+| xlink:type     | Optional             | Text fehlt noch
+| xlink:href     | Mandatory            | Text fehlt noch
+| xlink:label    | Optional             | Text fehlt noch
+| xlink:title    | Optional             | Text fehlt noch
+| xlink:role     | Optional             | Text fehlt noch
+|===
+
+==== Arc
+
+The Arc elemenet represents ... Text fehlt noch
+
+[#im-arcschema]
+.Arc element structure and attributes
+image::ArcSchema.png[]
+
+The Arc element is not structured by subordinated elements.
+
+The Arc element is associated with the following attributes.
+
+[#tb-arcattributes]
+.Arc element attributes
+[width="100%",options="header"]
+|===
+| Attribute name | Optional / Mandatory | Atrribute description
+| xlink:type     | Optional             | Text fehlt noch
+| xlink:from     | Mandatory            | Text fehlt noch
+| xlink:to       | Mandatory            | Text fehlt noch
+| xlink:title    | Optional             | Text fehlt noch
+| xlink:arcrole  | Optional             | Text fehlt noch
+|===
 
 
 [#sec-resourcetype]
@@ -381,24 +575,24 @@ The ResourceType element is structured by the following subordinated elements.
 | Summary          | Optional
 | Metadata         | Optional 
 | Signature        | Optional
-| Classification   | Optional 
-| Annotations      | Optional
+| GElementCommon   | Optional 
 |===
 
 The ResourceType element is associated with the following attributes.
 
 
 [#tb-resourcetypeattributes]
-.ResourceType attributes
+.ResourceType element attributes
 [width="100%",options="header"]
 |===
 | Attribute name | Optional / Mandatory | Atrribute description
-| kind           | Mandatory          | This attribute indicates the kind of resource that is referenced, i.e. what role it plays in relation to the particle being described.
-| type           | Mandatory          | This mandatory attribute specifies the MIME type of the resource, which does not have a default value.  If no specific MIME type can be indicated, then the type application/octet-stream is to be used.
-| source         | Optional           | This attribute indicates the source of the resource as a URI (cf. RFC 3986).  For purposes of the resolution of relative URIs the base URI is the URI of the STMD.  Therefore for resources that are located alongside the STMD, relative URIs without scheme and authority can and should be used to specify the component sources.  For resources that are packaged inside an SSP that contains this STMD, this is mandatory (in this way, the STMD URIs remain valid after unpacking the SSP into the file system). If the source attribute is missing, the resource is provided inline as contents of the Content element, which must not be present otherwise.
-| master         | Optional           | This attribute, if present, indicates the original, canonical master source for the resource. If it is present, it indicates that the content provided via source attribute and/or Content element is only a copy of the original, canonical data, and this attributes provides the URI reference to that original canonical master data.
-| id             | Optional           | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier. 
-| description    | Optional           | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+| kind           | Mandatory           | This attribute indicates the kind of resource that is referenced, i.e. what role it plays in relation to the particle being described.
+| scope          | Optional            | This attribute indicates the scope or level that a resource is specific to, i.e. whether the resource applies at a global, system, subsystem or component level.  The use of this attribute is optional, i.e. it should only be specified where it makes sense to give this kind of information.
+| type           | Mandatory           | This mandatory attribute specifies the MIME type of the resource, which does not have a default value.  If no specific MIME type can be indicated, then the type application/octet-stream is to be used.
+| source         | Optional            | This attribute indicates the source of the resource as a URI (cf. RFC 3986).  For purposes of the resolution of relative URIs the base URI is the URI of the STMD.  Therefore for resources that are located alongside the STMD, relative URIs without scheme and authority can and should be used to specify the component sources.  For resources that are packaged inside an SSP that contains this STMD, this is mandatory (in this way, the STMD URIs remain valid after unpacking the SSP into the file system). If the source attribute is missing, the resource is provided inline as contents of the Content element, which must not be present otherwise.
+| master         | Optional            | This attribute, if present, indicates the original, canonical master source for the resource. If it is present, it indicates that the content provided via source attribute and/or Content element is only a copy of the original, canonical data, and this attributes provides the URI reference to that original canonical master data.
+| id             | Optional            | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier. 
+| description    | Optional            | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
 |===
 
 ==== Content
@@ -422,8 +616,7 @@ The Summary element is structured by the following subordinated elements.
 | Sub element name | Optional / Mandatory
 | Content          | Optional 
 | Signature        | Optional
-| Classification   | Optional 
-| Annotations      | Optional
+| GElementCommon   | Optional 
 |===
 
 The Summary element is associated with the following attributes.
@@ -433,9 +626,9 @@ The Summary element is associated with the following attributes.
 [width="100%",options="header"]
 |===
 | Attribute name | Optional / Mandatory | Atrribute description
-| type           | Mandatory          | This mandatory attribute specifies the MIME type of the resource summary, which does not have a default value.  If no specific MIME type can be indicated, then the type application/octet-stream is to be used.  If markdown content is used, then the type text/markdown shall be used. 
-| source         | Optional           | This attribute indicates the source of the resource summary as a URI (cf. RFC 3986).  For purposes of the resolution of relative URIs the base URI is the URI of the STMD, if the sourceBase attribute is not specified or is specified as STMD, and the URI of the referenced resource if the sourceBase attribute is specified as resource. This allows the specification of summary sources that reside  inside the resource (e.g. an FMU) through relative URIs. For summaries that are located alongside the STMD, relative URIs without scheme and authority can and should be used to specify the summary sources.  For summaries that are packaged inside an SSP that contains this STMD, this is mandatory (in this way, the STMD URIs remain valid after unpacking the SSP into the filesystem). If the source attribute is missing, the summary is provided inline as contents of the Content element, which must not be resent otherwise. 
-| sourceBase     | Optional           | Defines the base the source URI is resolved against: If the attribute is missing or is specified as STMD, the source is resolved against the URI of the STMD, if the attribute is specified as resource the URI is resolved against the (resolved) URI of the resource source. 
+| type           | Mandatory            | This mandatory attribute specifies the MIME type of the resource summary, which does not have a default value.  If no specific MIME type can be indicated, then the type application/octet-stream is to be used.  If markdown content is used, then the type text/markdown shall be used. 
+| source         | Optional             | This attribute indicates the source of the resource summary as a URI (cf. RFC 3986).  For purposes of the resolution of relative URIs the base URI is the URI of the STMD, if the sourceBase attribute is not specified or is specified as STMD, and the URI of the referenced resource if the sourceBase attribute is specified as resource. This allows the specification of summary sources that reside  inside the resource (e.g. an FMU) through relative URIs. For summaries that are located alongside the STMD, relative URIs without scheme and authority can and should be used to specify the summary sources.  For summaries that are packaged inside an SSP that contains this STMD, this is mandatory (in this way, the STMD URIs remain valid after unpacking the SSP into the filesystem). If the source attribute is missing, the summary is provided inline as contents of the Content element, which must not be resent otherwise. 
+| sourceBase     | Optional             | Defines the base the source URI is resolved against: If the attribute is missing or is specified as STMD, the source is resolved against the URI of the STMD, if the attribute is specified as resource the URI is resolved against the (resolved) URI of the resource source. 
 |===
 
 ===== Content
@@ -446,13 +639,9 @@ For the details of the Content element structure and attributes see chapter <<se
 
 For the details of the Signature element structure and attributes see chapter <<sec-signaturetype>>
 
-===== Classification
+===== GElementCommon
 
-For the details of theClassification element structure and attributes see chapter <<sec-classification>>
-
-===== Annotations
-
-For the details of the Annotations element structure and attributes see chapter <<sec-annotations>>
+For details of the GElementCommon element structure and attributes see chapter <<sec-gelementcommon>>.
 
 ==== MetaData
 
@@ -471,8 +660,7 @@ The MetaData element is structured by the following subordinated elements.
 | Sub element name | Optional / Mandatory
 | Content          | Optional 
 | Signature        | Optional
-| Classification   | Optional 
-| Annotations      | Optional
+| GElementCommon   | Optional 
 |===
 
 The MetaData element is associated with the following attributes.
@@ -482,10 +670,10 @@ The MetaData element is associated with the following attributes.
 [width="100%",options="header"]
 |===
 | Attribute name | Optional / Mandatory | Atrribute description
-| kind           | Mandatory          | This attribute indicates the kind of resource meta data that is referenced, i.e. what role it plays in relation to the resource being described. 
-| type           | Mandatory          | This mandatory attribute specifies the MIME type of the resource meta data, which does not have a default value. If no specific MIME type can be indicated, then the type application/octet-stream is to be used.
-| source         | Optional           | This attribute indicates the source of the resource meta data as a URI (cf. RFC 3986). For purposes of the resolution of relative URIs the base URI is the URI of the STMD, if the sourceBase attribute is ot specified or is specified as STMD, and the URI of the referenced resource if the sourceBase attribute is specified as resource. This allows the specification of meta data sources that reside inside the resource (e.g. an FMU) through relative URIs. For meta data that are located alongside the STMD, relative URIs without scheme and authority can and should be used to specify the meta data sources.  For meta data that are packaged inside an SSP that contains this STMD, this is mandatory (in this way, the STMD URIs remain valid after unpacking the SSP into the file system). If the source attribute is missing, the meta data is provided inline as contents of the Content element, which must not be present otherwise. 
-| sourceBase     | Optional           | Defines the base the source URI is resolved against:  If the attribute is missing or is specified as STMD, the source is resolved against the URI of the STMD, if the attribute is specified as resource the URI is resolved against the (resolved) URI of the resource source.
+| kind           | Mandatory           | This attribute indicates the kind of resource meta data that is referenced, i.e. what role it plays in relation to the resource being described. 
+| type           | Mandatory           | This mandatory attribute specifies the MIME type of the resource meta data, which does not have a default value. If no specific MIME type can be indicated, then the type application/octet-stream is to be used.
+| source         | Optional            | This attribute indicates the source of the resource meta data as a URI (cf. RFC 3986). For purposes of the resolution of relative URIs the base URI is the URI of the STMD, if the sourceBase attribute is ot specified or is specified as STMD, and the URI of the referenced resource if the sourceBase attribute is specified as resource. This allows the specification of meta data sources that reside inside the resource (e.g. an FMU) through relative URIs. For meta data that are located alongside the STMD, relative URIs without scheme and authority can and should be used to specify the meta data sources.  For meta data that are packaged inside an SSP that contains this STMD, this is mandatory (in this way, the STMD URIs remain valid after unpacking the SSP into the file system). If the source attribute is missing, the meta data is provided inline as contents of the Content element, which must not be present otherwise. 
+| sourceBase     | Optional            | Defines the base the source URI is resolved against:  If the attribute is missing or is specified as STMD, the source is resolved against the URI of the STMD, if the attribute is specified as resource the URI is resolved against the (resolved) URI of the resource source.
 |===
 
 ===== Content
@@ -496,11 +684,9 @@ For the details of the Content element structure and attributes see chapter <<se
 
 For the details of the Signature element structure and attributes see chapter <<sec-signaturetype>>
 
-===== Classification
+===== GElementCommon
 
-For the details of the Classification element structure and attributes see chapter <<sec-classification>>
-
-===== Annotation
+For details of the GElementCommon element structure and attributes see chapter <<sec-gelementcommon>>.
 
 For the details of the Annotations element structure and attributes see chapter <<sec-annotations>>
 
@@ -508,13 +694,52 @@ For the details of the Annotations element structure and attributes see chapter 
 
 For the details of the Signatutre element structure and attributes see chapter <<sec-signaturetype>>
 
-==== Classification
+==== GElementCommon
 
-For the details of the Classification element structure and attributes see chapter <<sec-classification>>
+For details of the GElementCommon element structure and attributes see chapter <<sec-gelementcommon>>.
 
-==== Annotations
 
-For the details of the Annotations element structure and attributes see chapter <<sec-annotations>>
+[#sec-signaturetype]
+=== SignatureType
+
+The SignatureType element defines the structure and attributes of the signature entity for a given step or phase.
+
+[#im-signaturetypeschema]
+.SignatureType element structure and attributes
+image::SignatureTypeSchema.png[]
+
+The SignatureType element is structured by the following subordinated elements.
+
+[#tb-signaturetypesubelements]
+.SignatureType element structure
+[width="100%",options="header"]
+|===
+| Sub element name | Optional / Mandatory
+| Content          | Optional 
+| GElementCommon   | Optional 
+|===
+
+The SignatureType element is associated with the following attributes.
+
+[#tb-signaturetypeattributes]
+.SignatureType element attributes
+[width="100%",options="header"]
+|===
+| Attribute name | Optional / Mandatory | Atrribute description
+| role           | Mandatory           | This mandatory attribute specifies the role this signature has in the overall process. It indicates whether the digital signature is intended to just convey the authenticity of the information, or whether a claim for suitability of the information for certain purposes is made.  In the latter case, the digital signature format should include detailed information about what suitability claims are being made.
+| type           | Mandatory           | This mandatory attribute specifies the MIME type of the resource signature, which does not have a default value.  If no specific MIME type can be indicated, then the type application/octet-stream is to be used.
+| source         | Optional            | This attribute indicates the source of the resource signature as a URI (cf. RFC 3986).  For purposes of the resolution of relative URIs the base URI is the URI of the STMD, if the sourceBase attribute is not specified or is specified as STMD, and the URI of the referenced resource if the sourceBase attribute is specified as resource. This allows the specification of signature sources that reside inside the resource (e.g. an FMU) through relative URIs. For signatures that are located alongside the STMD, relative URIs without scheme and authority can and should be used to specify the signature sources. For signatures that are packaged inside an SSP that contains this STMD, this is mandatory (in this way, the STMD URIs remain valid after unpacking the SSP into the filesystem). If the source attribute is missing, the signature is provided inline as contents of the Content element, which must not be present otherwise. 
+| sourdceBase    | Optional            | Defines the base the source URI is resolved against:  If the attribute s missing or is specified as STMD, the source is resolved against the URI of the STMD, if the attribute is specified as resource the URI is resolved against the (resolved) URI of the resource source.
+|===
+
+==== Content
+
+For details of the Content element structure and attributes see chapter <<sec-contenttype>>
+
+==== GElementCommon
+
+For details of the GElementCommon element structure and attributes see chapter <<sec-gelementcommon>>.
+
 
 [#sec-contenttype]
 === ContentType
@@ -542,114 +767,95 @@ The ContentType is not associated with any attributes.
 The ContentType may contain XML Elements of any kind, i.e. the STMD Schema provides the possibility and capability to code any kind of information regardless of what the STMD specifies. This mean the name, structure and attributes of XML elements enclosed by a contentType element is completely free.
 
 
-[#sec-classification]
-=== Classification
 
-The Classification element, which can occur multiple times, provides a set of classifications of an STMD modeling element, provided as Keyword Value Pairs (KWP), the meaning of which is interpreted according to the name of the classification provided in the name attribute. This approach can be used, for example, to provide searchable keywords for content, or to assign and track quality or validation level requirements across the STMD process, or to maintain variant or other classification content across the process.
 
-[#im-classificationschema]
-.Classification element structure and attributes
-image::ClassificationSchema.png[]
 
-The Classification element is structured by the following subordinated elements.
 
-[#tb-classificationsubelements]
-.Classification elemenst structure
+
+[#sec-responsibletype]
+=== ResponsibleType
+
+The ResponsibleType element defines the structure and attributes of the responsible entry for a lifecycle entry of a step or a phase of the overall simulation task.
+
+[#im-responsibletypeschema]
+.ResponsibleType element structure and attributes
+image::ResponsibleTypeSchema.png[]
+
+The ResponsibleType element is not structured by subordinated elements.
+
+The ResponsibleType element is associated with the following attributes.
+
+[#tb-responsibletypeattributes]
+.ResponsibleType attributes
 [width="100%",options="header"]
 |===
-| Sub element name     | Optional / Mandatory
-| ClassificationEntry  | Optional 
+| Attribute name | Optional / Mandatory | Atrribute description
+| organization   | Optional             | This attribute gives the organization that is responsible for a given step.
+|role            | Optional             | This attribute gives the role of the person that is responsible for a given step.
+|name            | Optional             | This attribute gives the name of the person that is responsible for a given step.
 |===
 
-The Classification element is associated with the following attribute.
 
-[#tb-classificationattributes]
-.Classification element attributes
+
+[#sec-gresourceorreference]
+=== GResourceOrReference
+
+The GResourceOrReference element ... Text fehlt noch
+
+[#im-gresourcereorferenceschema]
+.GResourceOrReference element structure and attributes
+image::GResourceOrReferenceSchema.png[]
+
+The GResourceOrReference element is structured by the following subordinated elements.
+
+[#tb-gresourceorreferencesubelements]
+.GResourceOrReference element structure
+[width="100%",options="header"]
+|===
+| Sub element name  | Optional / Mandatory
+| Resource          | Mandatory
+| ResourceReference | Mandatory
+|===
+
+The GResourceOrReference element is not associated with any attributes.
+
+==== Resource
+
+For the details of the Resource element structure and attributes see chapter <<sec-resourcetype>>
+
+[#sec-resourcereference]
+==== ResourceReference
+
+The ResourceReference element ... Text fehlt noch
+
+[#im-resourcereferenceschema]
+.ResourceReference element structure and attributes
+image::ResourceReferenceSchema.png[]
+
+The ResourceReference element is structured by the following subordinated elements.
+
+[#tb-resourcereferencesubelements]
+.ResourceReference element structure
+[width="100%",options="header"]
+|===
+| Sub element name | Optional / Mandatory
+| GElementCommon   | Optional 
+|===
+
+The ResourceRefernece element is associated with the following attribute.
+
+[#tb-resourcereferenceattributes]
+.ResourceRefernece element attributes
 [width="100%",options="header"]
 |===
 | Attribute name | Optional/ Mandatory | Atrribute description
-| type           | Mandatory          | This attribute provides the name of the type of classification being provided.  The name should be unique across the Classification elements of the immediately enclosing element. In order to ensure uniqueness all types should be identified with reverse domain name notation (cf. Java package names or Apple UTIs) of a domain that is controlled by the entity defining the semantics and content of the classification.
+| xlink:type     | Optional            | Text fehlt noch
+| xlink:href     | Optional            | Text fehlt noch
+| id             | Optional            | Text fehlt noch
+| description    | Optional            | Text fehlt noch
 |===
 
+===== GElementCommon
 
-==== ClassificationEntry
-
-[#im-classificationentryschema]
-.ClassificationEntry element structure and attributes
-image::ClassificationEntrySchema.png[]
-
-The ClassificationEntry element is structured by the followeing subordinated elements.
-
-[#tb-classificationentrysubelements]
-.ClassificationEntry element structure
-[width="100%",options="header"]
-|===
-| Sub element name     | Optional / Mandatory
-| ##any                | oOtional 
-|===
-
-The ClassificationEntry element is associated with the following attributes.
-
-[#tb-classificationentryattributes]
-.ClassificationEntry element attributes
-[width="100%",options="header"]
-|===
-| Attribute name | Optional / Mandatory | Atrribute description
-| keyword        | Optional           | This attribute gives the keyword for the classification entry (i.e. keyword value pair). It is left undefined whether this must be unique across the entries of the Classification element, or whether repeated entries are allowed. This will depend on the definition of the classification. 
-|===
-
-===== ##any
-
-The ClassificationEntry element may contain XML Elements of any kind, i.e. the STMD Schema provides the possibility and capability to code any kind of information regardless of what the STMD specifies. This means, the name, structure and attributes of XML elements enclosed by a ClassificationEntry element are completely free.  
-
-[#sec-annotations]
-=== Annotations
-
-The Annotations element can be used to add a list of additional free style annotations.
-
-[#im-annotationsschema]
-.Annotations element structure and attributes
-image::AnnotationsSchema.png[]
-
-The Annotations element is structured by the following subordinated elements.
-
-[#tb-annotationssubelements]
-.Annotations element strcuture
-[width="100%",options="header"]
-|===
-| Sub element name     | Optional/ Mandatory
-| Annotation           | Optional 
-|===
-
-The Annotations element is not associated with any attributes.
-
-==== Annotation
-The Annotation element can be used to add a single free style annotation to the list of annotations.
-
-[#im-annotationschema]
-.Annotation element structure and attributes
-image::AnnotationSchema.png[]
-
-
-[#tb-annotationsubelements]
-.Annotation element strcuture
-[width="100%",options="header"]
-|===
-| Sub element name     | Optional / Mandatory
-| ##any                | Optional
-|===
-
-The Annotation element is associated with the following attributes.
-
-[#tb-annotationattributes]
-.Annotation element attributes
-[width="100%",options="header"]
-|===
-| Attribute name | Optional / Mandatory | Atrribute description
-| type           | mandatory            | The unique name of the type of the annotation. In order to ensure uniqueness all types should be identified with reverse domain name notation (cf. Java package names or Apple UTIs) of a domain that is controlled by the entity defining the semantics and content of the annotation. For vendor-specific annotations this would e.g. be a domain controlled by the tool vendor. For MAP-SSP defined annotations, this will be a domain under the org.modelica prefix.
-|===
-
-===== ##any
-
-The Annotation element may contain XML Elements of any kind, i.e. the STMD Schema provides the possibility and capability to code any kind of information regardless of what the STMD specifies. This means, the name, structure and attributes of XML elements enclosed by aa Annotation element are completely free.  
+For details of the GElementCommon element structure and attributes see chapter <<sec-gelementcommon>>.
 
