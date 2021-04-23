@@ -24,9 +24,8 @@ The SimulationTaskMetaData element is structured by following subordinated eleme
 | ImplementationPhase | Optional 
 | ExecutionPhase      | Optional
 | EvaluationPhase     | Optional
-| FulfilmentPhase     | Optional
-| Classification      | Optional
-| Annotations         | Optional
+| FulfillmentPhase     | Optional
+| GElementCommon      | 
 |===
 
 The SimulationTaskMetaData element is associated with the following attributes.
@@ -57,7 +56,9 @@ For the details of the GeneralInformation element structure and attributes see c
 
 ==== AnalysisPhase
 
-The AnalysisPhase element specifies the analysis phase of the overall simulation task.
+In the analysis phase, the simulation-relevant information is taken from the higher-level commissioning engineering process and the essential simulation relevant requirements and goals of the simulation task are derived from it. It is important that at the end of the analysis phase the essential simulation requirements and the objectives of the simulation task fully and clearly understood.
+
+The AnalysisPhase element documents all relevant information.
 
 [#im-analysisschemaschema]
 .AnalysisPhase element structure and attributes
@@ -69,12 +70,10 @@ The AnalysisPhase element is structured by the following subordinated element.
 .AnalysisPhase element structure
 [width="100%",options="header"]
 |===
-| Sub element name              | Optional / Mandatory
-| AnalyzeEngineeringTask        | Optional 
-| VerifyEngineeringTaskAnalysis | Optional
-| LifeCycleInformation          | Optional 
-| Classification                | Optional
-| Annotations                   | Optional
+| Sub element name                   | Optional / Mandatory
+| AnalyzeSimulationTaskAndObjectives | Optional 
+| VerifyAnalysis                     | Optional
+| GPhaseCommon                       | Mandatory      
 |===
 
 The AnalysisPhase element is associated with the following attributes.
@@ -88,29 +87,21 @@ The AnalysisPhase element is associated with the following attributes.
 | description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
 |===
 
-===== AnalyzeEngineeringTask
+===== AnalyzeSimulationTaskAndObjectives
 
-For the details of the AnalyzeEngineeringTask element structure and attributes see chapter <<sec-steptype>>
+For the details of the AnalyzeSimulationTaskAndObjectives element structure and attributes see chapter <<sec-steptype>>
 
-===== VerifyEngineeringTaskAnalysis
-For the details of the VerifyEngineeringTaskAnalysis element structure and attributes see chapter <<sec-steptype>>
+===== VerifyAnalysis
+For the details of the VerifyAnalysis element structure and attributes see chapter <<sec-steptype>>
 
-===== LifeCycleInformation
-
-For the details of the LifeCycleInformation element structure and attributes see chapter <<sec-lifecycleinformationtype>>
-
-===== Classification
-
-For the details of the Classification element structure and attributes see chapter <<sec-classification>>
-
-===== Annotations
-
-For the details of the Annotations element structure and attributes see chapter <<sec-annotations>>
-
+===== GPhaseCommon
+For the details of the GPhaseCommon element structure and attributes see chapter <<sec-gphasecommon>>
 
 ==== RequirementsPhase
 
-The RequirementsPhase element specifies the requirements phase of the overall simulation task.
+In the requirements phase, the requirements for the simulation that were agreed and defined in the analysis phase are broken down to the individual components required for the simulation. This includes the requirements for the models, parameters, test cases and the simulation environment, but also for the integration of all components and for measures to assure the process quality. In addition, all requirements must be finally verified to ensure the integrity and consistency of the requirements.
+
+The RequirementsPhase element documents all relevant information.
 
 [#im-requirementphaseschema]
 .RequirementsPhase element structure and attributes
@@ -123,16 +114,14 @@ The RequirememtsPhase element is structured by the followuing subordinated eleme
 [width="100%",options="header"]
 |===
 | Sub element name                        | Optional / Mandatory
-| DeriveModelRequirements                 | Optional 
-| DeriveParameterRequirements             | Optional
-| DeriveSimulationEnvironmentRequirements | Optional 
-| DeriveSimulationIntegrationRequirements | Optional
-| DeriveTestCaseRequirements              | Optional
-| DeriveProcessQualityRequirements        | Optional 
+| DefineModelRequirements                 | Optional 
+| DefineParameterRequirements             | Optional
+| DefineSimulationEnvironmentRequirements | Optional 
+| DefineSimulationIntegrationRequirements | Optional
+| DefineTestCaseRequirements              | Optional
+| DefineQualityAssuranceRequirements      | Optional 
 | VerifyRequirements                      | Optional
-| LifeCycleInformation                    | Optional 
-| Classification                          | Optional
-| Annotations                             | Optional
+| GPhaseCommon                            | Mandatory
 |===
 
 The RequirementsPhase element is associated with the following attributes.
@@ -146,52 +135,43 @@ The RequirementsPhase element is associated with the following attributes.
 | description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
 |=== 
 
-===== DeriveModelRequirements
+===== DefineModelRequirements
 
-For the details of the DeriveModelRequirements element structure and attributes see chapter <<sec-steptype>>
+For the details of the DefineModelRequirements element structure and attributes see chapter <<sec-steptype>>
 
-===== DeriveParameterRequirements
+===== DefineParameterRequirements
 
-For the details of the DeriveParameterRequirements element structure and attributes see chapter <<sec-steptype>>
+For the details of the DefineParameterRequirements element structure and attributes see chapter <<sec-steptype>>
 
-===== DeriveSimulationEnvironmentRequirements
+===== DefineSimulationEnvironmentRequirements
 
-For the details of the DeriveSimulationEnvironmentRequirements element structure and attributes see chapter <<sec-steptype>>
+For the details of the DefineSimulationEnvironmentRequirements element structure and attributes see chapter <<sec-steptype>>
 
-===== DeriveSimulationIntegrationRequirements
+===== DefineSimulationIntegrationRequirements
 
-For the details of the DeriveSimulationIntegrationRequirements element structure and attributes see chapter <<sec-steptype>>
+For the details of the DefineSimulationIntegrationRequirements element structure and attributes see chapter <<sec-steptype>>
 
-===== DeriveTestCaseRequirements
+===== DefineTestCaseRequirements
 
-For the details of the DeriveTestCaseRequirements element structure and attributes see chapter <<sec-steptype>>
+For the details of the DefineTestCaseRequirements element structure and attributes see chapter <<sec-steptype>>
 
-===== DeriveProcessQualityRequirements
+===== DefineQualityAsuranceRequirements
 
-For the details of the DeriveProcessQualityRequirements element structure and attributes see chapter <<sec-steptype>>
+For the details of the DefineQualityAssuranceRequirements element structure and attributes see chapter <<sec-steptype>>
 
 ===== VerifyRequirements
 
 For the details of the VerifyRequirements element structure and attributes see chapter <<sec-steptype>>
 
-===== LifeCycleInformation
-
-For the details of the LifeCycleInformation element structure and attributes see chapter <<sec-lifecycleinformationtype>>
-
-===== Classification
-
-For the details of the Classification element structure and attributes see chapter <<sec-classification>>
-
-===== Annotations
-
-For the details of the Annotations element structure and attributes see chapter <<sec-annotations>>
-
-
+===== GPhaseCommon
+For the details of the GPhaseCommon element structure and attributes see chapter <<sec-gphasecommon>>
 
 
 ==== DesignPhase
 
-The DesignPhase element specifies the design specification phase of the overall simulation task.
+In the design phase, based on the requirements for the individual components of the simulation defined in the requirements phase, the required components of the simulation are specified, i.e. the models, parameters, test cases and the simulation environment, but also the necessary measures for integrating all components and for assuring the process quality. In addition, all specifications must be finally verified to ensure the integrity and consistency of the specifications.
+
+The DesignPhase element documents all relevant information.
 
 [#im-designphaseschema]
 .DesignPhase element structure and attributes
@@ -203,17 +183,15 @@ The DesignPhase element is structured by the following subordinated element.
 .DesignPhase element structure
 [width="100%",options="header"]
 |===
-| Sub element name                         | Optional / Mandatory
-| DesignModelSpecification                 | Optional 
-| DesignParameterSpecification             | Optional
-| DesignSimulationEnvironmentSpecification | Optional 
-| DesignSimulationIntegrationSpecification | Optional
-| DesignTestCaseSpecification              | Optional
-| DeriveProcessQualityRequirements         | Optional 
-| VerifyDesignSpecification                | Optional
-| LifeCycleInformation                     | Optional 
-| Classification                           | Optional
-| Annotations                              | Optional
+| Sub element name                               | Optional / Mandatory
+| DefineModelDesignSpecification                 | Optional 
+| DefineParaneterDesignSpecification             | Optional
+| DefineSimulationEnvironmentDesignSpecification | Optional 
+| DefineSimulationIntegrationDesignSpecification | Optional
+| DefineTestCaseDesignSpecification              | Optional
+| DefineQualityAssuranceDesignSpecification      | Optional 
+| VerifyDesignSpecification                      | Optional
+| GPhaseCommon                                   | Mandatory
 |===
 
 The DesignPhase element is associated with the following attributes.
@@ -227,50 +205,40 @@ The DesignPhase element is associated with the following attributes.
 | description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
 |===
 
-===== DesignModelSpecification
+===== DefineModelDesignSpecification
 
-For the details of the DesignModelSpecification element structure and attributes see chapter <<sec-steptype>>
-
-
-===== DesignParameterSpecification
-
-For the details of the DesignParameterSpecification element structure and attributes see chapter <<sec-steptype>>
+For the details of the DefineModelDesignSpecification element structure and attributes see chapter <<sec-steptype>>
 
 
-===== DesignSimulationEnvironmentSpecification
+===== DefineParaneterDesignSpecification
 
-For the details of the DesignSimulationEnvironmentSpecification element structure and attributes see chapter <<sec-steptype>>
-
-===== DesignSimulationIntegrationSpecification
-
-For the details of the DesignSimulationIntegrationSpecification element structure and attributes see chapter <<sec-steptype>>
-
-===== DesignTestCaseSpecification
-
-For the details of the DesignTestCaseSpecification element structure and attributes see chapter <<sec-steptype>>
+For the details of the DefineParaneterDesignSpecification element structure and attributes see chapter <<sec-steptype>>
 
 
-===== DeriveProcessQualityRequirements
+===== DefineSimulationEnvironmentDesignSpecification
 
-For the details of DeriveProcessQualityRequirements element structure and attributes see chapter <<sec-steptype>>
+For the details of the DefineSimulationEnvironmentDesignSpecification element structure and attributes see chapter <<sec-steptype>>
+
+===== DefineSimulationIntegrationDesignSpecification
+
+For the details of the DefineSimulationIntegrationDesignSpecification element structure and attributes see chapter <<sec-steptype>>
+
+===== DefineTestCaseDesignSpecification
+
+For the details of the DefineTestCaseDesignSpecification element structure and attributes see chapter <<sec-steptype>>
+
+
+===== DefineQualityAssuranceDesignSpecification
+
+For the details of DefineQualityAssuranceDesignSpecification element structure and attributes see chapter <<sec-steptype>>
 
 
 ===== VerifyDesignSpecification
 
 For the details of the VerifyDesignSpecification element structure and attributes see chapter <<sec-steptype>>
 
-
-===== LifeCycleInformation
-
-For the details of the LifeCycleInformation element structure and attributes see chapter <<sec-lifecycleinformationtype>>
-
-===== Classification
-
-For the details of the Classification element structure and attributes see chapter <<sec-classification>>
-
-===== Annotations
-
-For the details of the Annotations element structure and attributes see chapter <<sec-annotations>>
+===== GPhaseCommon
+For the details of the GPhaseCommon element structure and attributes see chapter <<sec-gphasecommon>>
 
 
 
@@ -278,7 +246,10 @@ For the details of the Annotations element structure and attributes see chapter 
 
 ==== ImplementationPhase
 
-The ImplementationPhase element specifies the implementation phase of the overall simulation task including the implementation validation.
+In the implementation phase, all specified components of the simulation are implemented, i.e. the models, parameters, test cases and the simulation environment is set up.
+All components are then integrated and the specified measures to ensure process quality are implemented. In addition, it must be determined by a quality verdict that the entire setup of the simulation meets all technical and quality requirements.
+
+The ImplementationPhase element documents all relevant information.
 
 [#im-implementationphaseschema]
 .ImplementationPhase element structure and attributes
@@ -294,13 +265,11 @@ The ImplementationPhase element is structured by the following subordinated elem
 | ImplementModel                      | Optional 
 | ImplementParameter                  | Optional
 | ImplementSimulationEnvironment      | Optional 
-| IntegrateSimulation                 | Optional
 | ImplementTestCase                   | Optional
+| IntegrateSimulation                 | Optional
 | AssureSimulationSetupQuality        | Optional 
 | DeriveSimulationSetupQualityVerdict | Optional
-| LifeCycleInformation                | Optional 
-| Classification                      | Optional
-| Annotations                         | Optional
+| GPhaseCommon                        | Mandatory 
 |===
 
 The ImplementationPhase element is associated with the following attributes.
@@ -329,14 +298,14 @@ For the details of the ImplementParameter element structure and attributes see c
 For the details of the ImplementSimulationEnvironment element structure and attributes see chapter <<sec-steptype>>
 
 
+===== ImplementTestCase
+
+For the details of the ImplementTestCase element structure and attributes see chapter <<sec-steptype>>
+
 ===== IntegrateSimulation
 
 For the details of the IntegrateSimulation element structure and attributes see chapter <<sec-steptype>>
 
-
-===== ImplementTestCase
-
-For the details of the ImplementTestCase element structure and attributes see chapter <<sec-steptype>>
 
 
 ===== AssureSimulationSetupQuality
@@ -349,24 +318,17 @@ For the details of the AssureSimulationSetupQuality element structure and attrib
 For the details of the DeriveSimulationSetupQualityVerdict element structure and attributes see chapter <<sec-steptype>>
 
 
-===== LifeCycleInformation
-
-For the details of the LifeCycleInformation element structure and attributes see chapter <<sec-lifecycleinformationtype>>
-
-===== Classification
-
-For the details of the Classification element structure and attributes see chapter <<sec-classification>>
-
-===== Annotations
-
-For the details of the Annotations element structure and attributes see chapter <<sec-annotations>>
-
+===== GPhaseCommon
+For the details of the GPhaseCommon element structure and attributes see chapter <<sec-gphasecommon>>
 
 
 
 ==== ExecutionPhase
 
-The ExecutionPhase element specifies the execution phase of the overall simulation task.
+In the execution phase, the previously set up simulation is executed.
+
+The ImplementationPhase element documents all relevant information.
+
 
 [#im-executionphaseschema]
 .ExecutionPhase element structure and attributes
@@ -380,9 +342,7 @@ The ExecutionPhase element is structured by the followeing subordinated element.
 |===
 | Sub element name                    | Optional / Mandatory
 | ExecuteSimulation                   | Optional 
-| LifeCycleInformation                | Optional 
-| Classification                      | Optional
-| Annotations                         | Optional
+| GPhaseCommon                        | Mandatory 
 |===
 
 The ExecutionPhase element is associated with the following attributes.
@@ -400,23 +360,17 @@ The ExecutionPhase element is associated with the following attributes.
 
 For the details of the ExecuteSimulation element structure and attributes see chapter <<sec-steptype>>
 
-===== LifeCycleInformation
 
-For the details of the LifeCycleInformation element structure and attributes see chapter <<sec-lifecycleinformationtype>>
-
-===== Classification
-
-For the details of the Classification element structure and attributes see chapter <<sec-classification>>
-
-===== Annotations
-
-For the details of the Annotations element structure and attributes see chapter <<sec-annotations>>
+===== GPhaseCommon
+For the details of the GPhaseCommon element structure and attributes see chapter <<sec-gphasecommon>>
 
 
 
 ==== EvaluationPhase
 
-The EvaluationPhase element specifies the evaluation phase of the overall simulation task.
+In the evaluation phase, the simulation results are evaluated and quality assurance measures are implemented.  In addition, it must be determined by a quality verdict that the simulation meets all technical and quality requirements.
+
+The EvaluationPhase element documents all relevant information.
 
 [#im-evaluationphaseschema]
 .EvaluationPhase element structure and attributes
@@ -432,9 +386,7 @@ The EvaluationPhase element is structured by the following subordinated element.
 | EvaluateSimulationResults      | Optional 
 | AssureSimulationQuality        | Optional
 | DeriveSimulationQualityVerdict | Optional
-| LifeCycleInformation           | Optional 
-| Classification                 | Optional
-| Annotations                    | Optional
+| GPhaseCommon                   | Mandatory
 |===
 
 The EvaluationPhase element is associated with the following attributes.
@@ -461,45 +413,36 @@ For the details of the AssureSimulationQuality element structure and attributes 
 For the details of the DeriveSimulationQualityVerdict element structure and attributes see chapter <<sec-steptype>>
 
 
-===== LifeCycleInformation
-
-For the details of the LifeCycleInformation element structure and attributes see chapter <<sec-lifecycleinformationtype>>
-
-===== Classification
-
-For the details of the Classification element structure and attributes see chapter <<sec-classification>>
-
-===== Annotations
-
-For the details of the Annotations element structure and attributes see chapter <<sec-annotations>>
+===== GPhaseCommon
+For the details of the GPhaseCommon element structure and attributes see chapter <<sec-gphasecommon>>
 
 
 
 ==== FulfillmentPhase
 
-The FulfillmentPhase element specifies the fulfillment phase of the overall simulation task.
+In the fulfillment phase, it is checked and decided whether the entire simulation task, including the simulation results, fulfills the requirements placed on the simulation by the commissioning higher-level engineering task and whether the simulation tasks can be completed.
 
-[#im-fulfilmentphaseschema]
-.FulfilmentPhase elements structure and attributes
-image::FulfilmentPhaseSchema.png[]
+The FulfillmentPhasePhase element documents all relevant information.
 
-The FulfilmentPhase element is structured by the following subordinated element.
+[#im-fulfillmentphaseschema]
+.FulfillmentPhase elements structure and attributes
+image::FulfillmentPhaseSchema.png[]
 
-[#tb-fulfilmentphasesubelements]
-.FulfilmentPhase element structure
+The FulfillmentPhase element is structured by the following subordinated element.
+
+[#tb-fulfillmentphasesubelements]
+.FulfillmentPhase element structure
 [width="100%",options="header"]
 |===
-| Sub element name               | Optional / Mandatory
-| DecideObjectiveFulfilment      | Optional 
-| LifeCycleInformation           | Optional 
-| Classification                 | Optional
-| Annotations                    | Optional
+| Sub element name                      | Optional / Mandatory
+| DecideSimuzlationObjectiveFulfillment | Optional 
+| GPhaseCommon                          | Mandatory
 |===
 
-The EvaluationPhase element is associated with the following attributes.
+The FulfillmentPhase element is associated with the following attributes.
 
-[#tb-fulfilmentphaseattributes]
-.FulfilmentPhase element attributes
+[#tb-fulfillmentphaseattributes]
+.FulfillmentPhase element attributes
 [width="100%",options="header"]
 |===
 | Attribute name | Optional / Mandatory | Atrribute description
@@ -507,30 +450,12 @@ The EvaluationPhase element is associated with the following attributes.
 | description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
 |===
 
-===== DecideObjectiveFulfilment
+===== DecideObjectiveFulfillment
 
-For the details of the DecideObjectiveFulfilment element structure and attributes see chapter <<sec-steptype>>
+For the details of the DecideObjectiveFulfillment element structure and attributes see chapter <<sec-steptype>>
 
-===== LifeCycleInformation
+===== GPhaseCommon
+For the details of the GPhaseCommon element structure and attributes see chapter <<sec-gphasecommon>>
 
-For the details of the LifeCycleInformation structure and attributes see chapter <<sec-lifecycleinformationtype>>
-
-===== Classification
-
-For the details of the Classification structure and attributes see chapter <<sec-classification>>
-
-===== Annotations
-
-For the details of the Annotations structure and attributes see chapter <<sec-annotations>>
-
-==== Classification
-
-tbd
-
-For the details of the Classification structure and attributes see chapter <<sec-classification>>
-
-==== Annotations
-
-tbd
-
-For the details of the Annotations structure and attributes see chapter <<sec-annotations>>
+==== GElementCommon
+For the details of the GElementCommon element structure and attributes see chapter <<sec-gelementcommon>>
