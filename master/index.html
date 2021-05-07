@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.12">
+<meta name="generator" content="Asciidoctor 2.0.15">
 <title>SSP Traceability Specification</title>
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -639,29 +639,41 @@ document.addEventListener('keydown', (event) => {
 <ul class="sectlevel2">
 <li><a href="#sec-generalinformationtype">3.1. GeneralInformationType</a>
 <ul class="sectlevel3">
-<li><a href="#_deviationchain">3.1.1. DeviationChain</a>
+<li><a href="#_derivationchain">3.1.1. DerivationChain</a>
 <ul class="sectlevel4">
-<li><a href="#_deviationchainentry">3.1.1.1. DeviationChainEntry</a></li>
+<li><a href="#_derivationchainentry">3.1.1.1. DerivationChainEntry</a></li>
 </ul>
 </li>
+<li><a href="#_links">3.1.2. Links</a></li>
 </ul>
 </li>
-<li><a href="#sec-steptype">3.2. StepType</a>
+<li><a href="#sec-gelementcommon">3.2. GElementCommon</a>
 <ul class="sectlevel3">
-<li><a href="#_inputs">3.2.1. Inputs</a></li>
-<li><a href="#_procedure">3.2.2. Procedure</a></li>
-<li><a href="#_output">3.2.3. Output</a></li>
-<li><a href="#_rationale">3.2.4. Rationale</a></li>
-<li><a href="#_lifecycle_information_2">3.2.5. Lifecycle information</a></li>
-<li><a href="#_classification">3.2.6. Classification</a></li>
-<li><a href="#_annotations">3.2.7. Annotations</a></li>
+<li><a href="#sec-classification">3.2.1. Classification</a>
+<ul class="sectlevel4">
+<li><a href="#_classificationentry">3.2.1.1. ClassificationEntry</a>
+<ul class="sectlevel5">
+<li><a href="#_any">3.2.1.1.1. ##any</a></li>
 </ul>
 </li>
-<li><a href="#sec-particletype">3.3. ParticleType</a>
+</ul>
+</li>
+<li><a href="#sec-annotations">3.2.2. Annotations</a>
+<ul class="sectlevel4">
+<li><a href="#_annotation">3.2.2.1. Annotation</a>
+<ul class="sectlevel5">
+<li><a href="#_any_2">3.2.2.1.1. ##any</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_gphasecommon">3.3. GPhaseCommon</a>
 <ul class="sectlevel3">
-<li><a href="#_resource">3.3.1. Resource</a></li>
-<li><a href="#_classification_2">3.3.2. Classification</a></li>
-<li><a href="#_annotations_2">3.3.3. Annotations</a></li>
+<li><a href="#_links_2">3.3.1. Links</a></li>
+<li><a href="#_lifecycleinformation">3.3.2. LifeCycleInformation</a></li>
+<li><a href="#_gelementcommon">3.3.3. GElementCommon</a></li>
 </ul>
 </li>
 <li><a href="#sec-lifecycleinformationtype">3.4. LifeCycleInformationType</a>
@@ -676,64 +688,75 @@ document.addEventListener('keydown', (event) => {
 </li>
 <li><a href="#sec-lifecycleentrytype">3.5. LifeCycleEntryType</a>
 <ul class="sectlevel3">
-<li><a href="#_resource_2">3.5.1. Resource</a></li>
+<li><a href="#_gresourceorreference">3.5.1. GResourceOrReference</a></li>
 <li><a href="#_responsible_2">3.5.2. Responsible</a></li>
 <li><a href="#_signature_2">3.5.3. Signature</a></li>
-<li><a href="#_classification_3">3.5.4. Classification</a></li>
-<li><a href="#_annotations_3">3.5.5. Annotations</a></li>
+<li><a href="#_gelementcommon_2">3.5.4. GElementCommon</a></li>
 </ul>
 </li>
-<li><a href="#sec-responsibletype">3.6. ResponsibleType</a></li>
-<li><a href="#sec-signaturetype">3.7. SignatureType</a>
+<li><a href="#sec-steptype">3.6. StepType</a>
 <ul class="sectlevel3">
-<li><a href="#_content">3.7.1. Content</a></li>
-<li><a href="#_classification_4">3.7.2. Classification</a></li>
-<li><a href="#_annotations_4">3.7.3. Annotations</a></li>
+<li><a href="#_inputs">3.6.1. Inputs</a></li>
+<li><a href="#_procedure">3.6.2. Procedure</a></li>
+<li><a href="#_output">3.6.3. Output</a></li>
+<li><a href="#_rationale">3.6.4. Rationale</a></li>
+<li><a href="#_links_3">3.6.5. Links</a></li>
+<li><a href="#_lifecycleinformation_2">3.6.6. LifeCycleInformation</a></li>
+<li><a href="#_gelementcommon_3">3.6.7. GElementCommon</a></li>
 </ul>
 </li>
-<li><a href="#sec-resourcetype">3.8. ResourceType</a>
+<li><a href="#sec-particletype">3.7. ParticleType</a>
 <ul class="sectlevel3">
-<li><a href="#_content_2">3.8.1. Content</a></li>
-<li><a href="#_summary">3.8.2. Summary</a>
+<li><a href="#_gresourceorreference_2">3.7.1. GResourceOrReference</a></li>
+<li><a href="#_gelementcommon_4">3.7.2. GElementCommon</a></li>
+</ul>
+</li>
+<li><a href="#sec-linkstype">3.8. LinksType</a>
+<ul class="sectlevel3">
+<li><a href="#_link">3.8.1. Link</a></li>
+<li><a href="#_locator">3.8.2. Locator</a></li>
+<li><a href="#_arc">3.8.3. Arc</a></li>
+</ul>
+</li>
+<li><a href="#sec-resourcetype">3.9. ResourceType</a>
+<ul class="sectlevel3">
+<li><a href="#_content">3.9.1. Content</a></li>
+<li><a href="#_summary">3.9.2. Summary</a>
 <ul class="sectlevel4">
-<li><a href="#_content_3">3.8.2.1. Content</a></li>
-<li><a href="#_signature_3">3.8.2.2. Signature</a></li>
-<li><a href="#_classification_5">3.8.2.3. Classification</a></li>
-<li><a href="#_annotations_5">3.8.2.4. Annotations</a></li>
+<li><a href="#_content_2">3.9.2.1. Content</a></li>
+<li><a href="#_signature_3">3.9.2.2. Signature</a></li>
+<li><a href="#_gelementcommon_5">3.9.2.3. GElementCommon</a></li>
 </ul>
 </li>
-<li><a href="#_metadata">3.8.3. MetaData</a>
+<li><a href="#_metadata">3.9.3. MetaData</a>
 <ul class="sectlevel4">
-<li><a href="#_content_4">3.8.3.1. Content</a></li>
-<li><a href="#_signature_4">3.8.3.2. Signature</a></li>
-<li><a href="#_classification_6">3.8.3.3. Classification</a></li>
-<li><a href="#_annotation">3.8.3.4. Annotation</a></li>
+<li><a href="#_content_3">3.9.3.1. Content</a></li>
+<li><a href="#_signature_4">3.9.3.2. Signature</a></li>
+<li><a href="#_gelementcommon_6">3.9.3.3. GElementCommon</a></li>
 </ul>
 </li>
-<li><a href="#_signature_5">3.8.4. Signature</a></li>
-<li><a href="#_classification_7">3.8.5. Classification</a></li>
-<li><a href="#_annotations_6">3.8.6. Annotations</a></li>
+<li><a href="#_signature_5">3.9.4. Signature</a></li>
+<li><a href="#_gelementcommon_7">3.9.5. GElementCommon</a></li>
 </ul>
 </li>
-<li><a href="#sec-contenttype">3.9. ContentType</a>
+<li><a href="#sec-signaturetype">3.10. SignatureType</a>
 <ul class="sectlevel3">
-<li><a href="#_any">3.9.1. ##any</a></li>
+<li><a href="#_content_4">3.10.1. Content</a></li>
+<li><a href="#_gelementcommon_8">3.10.2. GElementCommon</a></li>
 </ul>
 </li>
-<li><a href="#sec-classification">3.10. Classification</a>
+<li><a href="#sec-contenttype">3.11. ContentType</a>
 <ul class="sectlevel3">
-<li><a href="#_classificationentry">3.10.1. ClassificationEntry</a>
+<li><a href="#_any_3">3.11.1. ##any</a></li>
+</ul>
+</li>
+<li><a href="#sec-responsibletype">3.12. ResponsibleType</a></li>
+<li><a href="#sec-gresourceorreference">3.13. GResourceOrReference</a>
+<ul class="sectlevel3">
+<li><a href="#_resource">3.13.1. Resource</a></li>
+<li><a href="#sec-resourcereference">3.13.2. ResourceReference</a>
 <ul class="sectlevel4">
-<li><a href="#_any_2">3.10.1.1. ##any</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#sec-annotations">3.11. Annotations</a>
-<ul class="sectlevel3">
-<li><a href="#_annotation_2">3.11.1. Annotation</a>
-<ul class="sectlevel4">
-<li><a href="#_any_3">3.11.1.1. ##any</a></li>
+<li><a href="#_gelementcommon_9">3.13.2.1. GElementCommon</a></li>
 </ul>
 </li>
 </ul>
@@ -747,39 +770,33 @@ document.addEventListener('keydown', (event) => {
 <li><a href="#_generalinformation">4.1.1. GeneralInformation</a></li>
 <li><a href="#_analysisphase">4.1.2. AnalysisPhase</a>
 <ul class="sectlevel4">
-<li><a href="#_analyzeengineeringtask">4.1.2.1. AnalyzeEngineeringTask</a></li>
-<li><a href="#_verifyengineeringtaskanalysis">4.1.2.2. VerifyEngineeringTaskAnalysis</a></li>
-<li><a href="#_lifecycleinformation">4.1.2.3. LifeCycleInformation</a></li>
-<li><a href="#_classification_8">4.1.2.4. Classification</a></li>
-<li><a href="#_annotations_7">4.1.2.5. Annotations</a></li>
+<li><a href="#_analyzesimulationtaskandobjectives">4.1.2.1. AnalyzeSimulationTaskAndObjectives</a></li>
+<li><a href="#_verifyanalysis">4.1.2.2. VerifyAnalysis</a></li>
+<li><a href="#_gphasecommon_2">4.1.2.3. GPhaseCommon</a></li>
 </ul>
 </li>
 <li><a href="#_requirementsphase">4.1.3. RequirementsPhase</a>
 <ul class="sectlevel4">
-<li><a href="#_derivemodelrequirements">4.1.3.1. DeriveModelRequirements</a></li>
-<li><a href="#_deriveparameterrequirements">4.1.3.2. DeriveParameterRequirements</a></li>
-<li><a href="#_derivesimulationenvironmentrequirements">4.1.3.3. DeriveSimulationEnvironmentRequirements</a></li>
-<li><a href="#_derivesimulationintegrationrequirements">4.1.3.4. DeriveSimulationIntegrationRequirements</a></li>
-<li><a href="#_derivetestcaserequirements">4.1.3.5. DeriveTestCaseRequirements</a></li>
-<li><a href="#_deriveprocessqualityrequirements">4.1.3.6. DeriveProcessQualityRequirements</a></li>
+<li><a href="#_definemodelrequirements">4.1.3.1. DefineModelRequirements</a></li>
+<li><a href="#_defineparameterrequirements">4.1.3.2. DefineParameterRequirements</a></li>
+<li><a href="#_definesimulationenvironmentrequirements">4.1.3.3. DefineSimulationEnvironmentRequirements</a></li>
+<li><a href="#_definesimulationintegrationrequirements">4.1.3.4. DefineSimulationIntegrationRequirements</a></li>
+<li><a href="#_definetestcaserequirements">4.1.3.5. DefineTestCaseRequirements</a></li>
+<li><a href="#_definequalityasurancerequirements">4.1.3.6. DefineQualityAsuranceRequirements</a></li>
 <li><a href="#_verifyrequirements">4.1.3.7. VerifyRequirements</a></li>
-<li><a href="#_lifecycleinformation_2">4.1.3.8. LifeCycleInformation</a></li>
-<li><a href="#_classification_9">4.1.3.9. Classification</a></li>
-<li><a href="#_annotations_8">4.1.3.10. Annotations</a></li>
+<li><a href="#_gphasecommon_3">4.1.3.8. GPhaseCommon</a></li>
 </ul>
 </li>
 <li><a href="#_designphase">4.1.4. DesignPhase</a>
 <ul class="sectlevel4">
-<li><a href="#_designmodelspecification">4.1.4.1. DesignModelSpecification</a></li>
-<li><a href="#_designparameterspecification">4.1.4.2. DesignParameterSpecification</a></li>
-<li><a href="#_designsimulationenvironmentspecification">4.1.4.3. DesignSimulationEnvironmentSpecification</a></li>
-<li><a href="#_designsimulationintegrationspecification">4.1.4.4. DesignSimulationIntegrationSpecification</a></li>
-<li><a href="#_designtestcasespecification">4.1.4.5. DesignTestCaseSpecification</a></li>
-<li><a href="#_deriveprocessqualityrequirements_2">4.1.4.6. DeriveProcessQualityRequirements</a></li>
+<li><a href="#_definemodeldesignspecification">4.1.4.1. DefineModelDesignSpecification</a></li>
+<li><a href="#_defineparaneterdesignspecification">4.1.4.2. DefineParaneterDesignSpecification</a></li>
+<li><a href="#_definesimulationenvironmentdesignspecification">4.1.4.3. DefineSimulationEnvironmentDesignSpecification</a></li>
+<li><a href="#_definesimulationintegrationdesignspecification">4.1.4.4. DefineSimulationIntegrationDesignSpecification</a></li>
+<li><a href="#_definetestcasedesignspecification">4.1.4.5. DefineTestCaseDesignSpecification</a></li>
+<li><a href="#_definequalityassurancedesignspecification">4.1.4.6. DefineQualityAssuranceDesignSpecification</a></li>
 <li><a href="#_verifydesignspecification">4.1.4.7. VerifyDesignSpecification</a></li>
-<li><a href="#_lifecycleinformation_3">4.1.4.8. LifeCycleInformation</a></li>
-<li><a href="#_classification_10">4.1.4.9. Classification</a></li>
-<li><a href="#_annotations_9">4.1.4.10. Annotations</a></li>
+<li><a href="#_gphasecommon_4">4.1.4.8. GPhaseCommon</a></li>
 </ul>
 </li>
 <li><a href="#_implementationphase">4.1.5. ImplementationPhase</a>
@@ -787,21 +804,17 @@ document.addEventListener('keydown', (event) => {
 <li><a href="#_implementmodel">4.1.5.1. ImplementModel</a></li>
 <li><a href="#_implementparameter">4.1.5.2. ImplementParameter</a></li>
 <li><a href="#_implementsimulationenvironment">4.1.5.3. ImplementSimulationEnvironment</a></li>
-<li><a href="#_integratesimulation">4.1.5.4. IntegrateSimulation</a></li>
-<li><a href="#_implementtestcase">4.1.5.5. ImplementTestCase</a></li>
+<li><a href="#_implementtestcase">4.1.5.4. ImplementTestCase</a></li>
+<li><a href="#_integratesimulation">4.1.5.5. IntegrateSimulation</a></li>
 <li><a href="#_assuresimulationsetupquality">4.1.5.6. AssureSimulationSetupQuality</a></li>
 <li><a href="#_derivesimulationsetupqualityverdict">4.1.5.7. DeriveSimulationSetupQualityVerdict</a></li>
-<li><a href="#_lifecycleinformation_4">4.1.5.8. LifeCycleInformation</a></li>
-<li><a href="#_classification_11">4.1.5.9. Classification</a></li>
-<li><a href="#_annotations_10">4.1.5.10. Annotations</a></li>
+<li><a href="#_gphasecommon_5">4.1.5.8. GPhaseCommon</a></li>
 </ul>
 </li>
 <li><a href="#_executionphase">4.1.6. ExecutionPhase</a>
 <ul class="sectlevel4">
 <li><a href="#_executesimulation">4.1.6.1. ExecuteSimulation</a></li>
-<li><a href="#_lifecycleinformation_5">4.1.6.2. LifeCycleInformation</a></li>
-<li><a href="#_classification_12">4.1.6.3. Classification</a></li>
-<li><a href="#_annotations_11">4.1.6.4. Annotations</a></li>
+<li><a href="#_gphasecommon_6">4.1.6.2. GPhaseCommon</a></li>
 </ul>
 </li>
 <li><a href="#_evaluationphase">4.1.7. EvaluationPhase</a>
@@ -809,21 +822,16 @@ document.addEventListener('keydown', (event) => {
 <li><a href="#_evaluatesimulationresults">4.1.7.1. EvaluateSimulationResults</a></li>
 <li><a href="#_assuresimulationquality">4.1.7.2. AssureSimulationQuality</a></li>
 <li><a href="#_derivesimulationqualityverdict">4.1.7.3. DeriveSimulationQualityVerdict</a></li>
-<li><a href="#_lifecycleinformation_6">4.1.7.4. LifeCycleInformation</a></li>
-<li><a href="#_classification_13">4.1.7.5. Classification</a></li>
-<li><a href="#_annotations_12">4.1.7.6. Annotations</a></li>
+<li><a href="#_gphasecommon_7">4.1.7.4. GPhaseCommon</a></li>
 </ul>
 </li>
 <li><a href="#_fulfillmentphase">4.1.8. FulfillmentPhase</a>
 <ul class="sectlevel4">
-<li><a href="#_decideobjectivefulfilment">4.1.8.1. DecideObjectiveFulfilment</a></li>
-<li><a href="#_lifecycleinformation_7">4.1.8.2. LifeCycleInformation</a></li>
-<li><a href="#_classification_14">4.1.8.3. Classification</a></li>
-<li><a href="#_annotations_13">4.1.8.4. Annotations</a></li>
+<li><a href="#_decideobjectivefulfillment">4.1.8.1. DecideObjectiveFulfillment</a></li>
+<li><a href="#_gphasecommon_8">4.1.8.2. GPhaseCommon</a></li>
 </ul>
 </li>
-<li><a href="#_classification_15">4.1.9. Classification</a></li>
-<li><a href="#_annotations_14">4.1.10. Annotations</a></li>
+<li><a href="#_gelementcommon_10">4.1.9. GElementCommon</a></li>
 </ul>
 </li>
 </ul>
@@ -1232,10 +1240,13 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <div class="sect1">
 <h2 id="_ssp_traceability_common">3. SSP Traceability Common</h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>This chapter describes in detail the content and structure of the XML schema stc.xsd. The elements defined by the schema represent common concepts for ensuring traceability that are reused in many places of other XML schemas for the topic of simulation process traceability. The purpose of the extraction of these reused elements is to increase the flexibility and extensibility of the Glue Particles concept and to help to apply the Glue Particles concept to other topics in product and system engineering.</p>
+</div>
 <div class="sect2">
 <h3 id="sec-generalinformationtype">3.1. GeneralInformationType</h3>
 <div class="paragraph">
-<p>The generalInformationType element defines the structure and attributes for general information associated with the overall simulation task.</p>
+<p>This element is used to encapsulate general information about the simulation task, which is not part of any specific phase or step.</p>
 </div>
 <div id="im-generalinformationtypeschema" class="imageblock">
 <div class="content">
@@ -1260,7 +1271,11 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DeviationChain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DerivationChain</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 </tbody>
@@ -1269,24 +1284,21 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <p>The GeneralInformationType element is not associated with any attributes.</p>
 </div>
 <div class="sect3">
-<h4 id="_deviationchain">3.1.1. DeviationChain</h4>
+<h4 id="_derivationchain">3.1.1. DerivationChain</h4>
 <div class="paragraph">
-<p>The DeviationChain element can be used to provide the set of file information that was used to derive the current file. I.e. if the content of the current file can be considered to be derived from one or a set of other STMD files, then the top level meta data and derivation chain information of those files should be included in their original order as entries in this file&#8217;s DerivationChain element.</p>
+<p>This element can be used to provide the set of file information that was used to derive the current file. I.e. if the content of the current file can be considered to be derived from one or a set of other STC files, then the top level meta data and DerivationChain information of those files should be included in their original order as entries in this file&#8217;s DerivationChain element.</p>
 </div>
-<div class="paragraph">
-<p>The derivation chain described by the DerivationChain element may contain one or more Entries (with their associated attributes) or even no entry at all.</p>
-</div>
-<div id="im-deviationchaischema" class="imageblock">
+<div id="im-derivationchaischema" class="imageblock">
 <div class="content">
-<img src="images/DeviationChainSchema.png" alt="DeviationChainSchema">
+<img src="images/DerivationChainSchema.png" alt="DerivationChainSchema">
 </div>
-<div class="title">Figure 6. DeviationChain element structure and attributes</div>
+<div class="title">Figure 6. DerivationChain element structure and attributes</div>
 </div>
 <div class="paragraph">
-<p>The DeviationChain element is structured by the following subordinated element.</p>
+<p>The DerivationChain element is structured by the following subordinated element.</p>
 </div>
-<table id="tb-deviationchainsubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 2. DeviationChain element structure</caption>
+<table id="tb-derivationchainsubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. DerivationChain element structure</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1299,30 +1311,33 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DeviationChainEntry</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DerivationChainEntry</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>The DeviationChain element is not associated with any attributes.</p>
+<p>The DerivationChain element is not associated with any attributes.</p>
 </div>
 <div class="sect4">
-<h5 id="_deviationchainentry">3.1.1.1. DeviationChainEntry</h5>
+<h5 id="_derivationchainentry">3.1.1.1. DerivationChainEntry</h5>
 <div class="paragraph">
-<p>The DeviationChaiEntry element is a single entry within the deviation chain.</p>
+<p>The DerivationChainEntry element is a single entry within the derivation chain.</p>
 </div>
-<div id="im-deviationchainentryschema" class="imageblock">
+<div id="im-derivationchainentryschema" class="imageblock">
 <div class="content">
-<img src="images/DeviationChainEntrySchema.png" alt="DeviationChainEntrySchema">
+<img src="images/DerivationChainEntrySchema.png" alt="DerivationChainEntrySchema">
 </div>
-<div class="title">Figure 7. DeviationChainEntry element structure and attributes</div>
+<div class="title">Figure 7. DerivationChainEntry element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The DerivationChainEntry element is not structured by subordinated elements.</p>
 </div>
 <div class="paragraph">
 <p>The DerivationChainEntry element is associated with the following attributes.</p>
 </div>
-<table id="tb-deviationchainentryattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 3. DeviationChainEntry element attributes</caption>
+<table id="tb-derivationchainentryattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. DerivationChainEntry element attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1370,23 +1385,29 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 </table>
 </div>
 </div>
+<div class="sect3">
+<h4 id="_links">3.1.2. Links</h4>
+<div class="paragraph">
+<p>For the details of the Links element structure and attributes see chapter <a href="#sec-linkstype">Section 3.8</a>.</p>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="sec-steptype">3.2. StepType</h3>
+<h3 id="sec-gelementcommon">3.2. GElementCommon</h3>
 <div class="paragraph">
-<p>The StepType element defines the structure and attributes of an individual step inside a phase of the overall simulation task.</p>
+<p>Common element content for all modeling elements of the file.</p>
 </div>
-<div id="im-steptypeschema" class="imageblock">
+<div id="im-gelementcommonschema" class="imageblock">
 <div class="content">
-<img src="images/StepTypeSchema.png" alt="StepTypeSchema">
+<img src="images/GElementCommonSchema.png" alt="GElementCommonSchema">
 </div>
-<div class="title">Figure 8. StepType element structure and attributes</div>
+<div class="title">Figure 8. GElementCommon structure and attributes</div>
 </div>
 <div class="paragraph">
-<p>The StepType element is structured by the following subordinated elements.</p>
+<p>The GElementCommon element is structured by the following subordinated elements.</p>
 </div>
-<table id="tb-steptypesubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 4. StepType element structure</caption>
+<table id="tb-gelementcommonsubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. GElementCommon elemenst structure</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1399,19 +1420,278 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Input</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Procedure</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The GElementCommon element is not associated with any attributes.</p>
+</div>
+<div class="sect3">
+<h4 id="sec-classification">3.2.1. Classification</h4>
+<div class="paragraph">
+<p>The Classification element, which can occur multiple times, provides a set of classifications of an STMD modeling element, provided as Keyword Value Pairs (KWP), the meaning of which is interpreted according to the name of the classification provided in the name attribute. This approach can be used, for example, to provide searchable keywords for content, or to assign and track quality or validation level requirements across the STMD process, or to maintain variant or other classification content across the process.</p>
+</div>
+<div id="im-classificationschema" class="imageblock">
+<div class="content">
+<img src="images/ClassificationSchema.png" alt="ClassificationSchema">
+</div>
+<div class="title">Figure 9. Classification element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The Classification element is structured by the following subordinated elements.</p>
+</div>
+<table id="tb-classificationsubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. Classification elemenst structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Output</p></td>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ClassificationEntry</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The Classification element is associated with the following attribute.</p>
+</div>
+<table id="tb-classificationattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 6. Classification element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Rationale</p></td>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional/ Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute provides the name of the type of classification being provided.  The name should be unique across the Classification elements of the immediately enclosing element. In order to ensure uniqueness all types should be identified with reverse domain name notation (cf. Java package names or Apple UTIs) of a domain that is controlled by the entity defining the semantics and content of the classification.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect4">
+<h5 id="_classificationentry">3.2.1.1. ClassificationEntry</h5>
+<div id="im-classificationentryschema" class="imageblock">
+<div class="content">
+<img src="images/ClassificationEntrySchema.png" alt="ClassificationEntrySchema">
+</div>
+<div class="title">Figure 10. ClassificationEntry element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The ClassificationEntry element is structured by the followeing subordinated elements.</p>
+</div>
+<table id="tb-classificationentrysubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 7. ClassificationEntry element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">##any</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The ClassificationEntry element is associated with the following attributes.</p>
+</div>
+<table id="tb-classificationentryattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 8. ClassificationEntry element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">keyword</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the keyword for the classification entry (i.e. keyword value pair). It is left undefined whether this must be unique across the entries of the Classification element, or whether repeated entries are allowed. This will depend on the definition of the classification.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xlink:type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xlink:href</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives an optional link for the classification entry (i.e. keyword value pair). This link can be given in addition to any content of the classification entry, or it can be the sole information of the classification entry. The rules will depend on the definition of the classification.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect5">
+<h6 id="_any">3.2.1.1.1. ##any</h6>
+<div class="paragraph">
+<p>The ClassificationEntry element may contain XML Elements of any kind, i.e. the STMD Schema provides the possibility and capability to code any kind of information regardless of what the STMD specifies. This means, the name, structure and attributes of XML elements enclosed by a ClassificationEntry element are completely free.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sec-annotations">3.2.2. Annotations</h4>
+<div class="paragraph">
+<p>The Annotations element can be used to add a list of additional free style annotations.</p>
+</div>
+<div id="im-annotationsschema" class="imageblock">
+<div class="content">
+<img src="images/AnnotationsSchema.png" alt="AnnotationsSchema">
+</div>
+<div class="title">Figure 11. Annotations element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The Annotations element is structured by the following subordinated elements.</p>
+</div>
+<table id="tb-annotationssubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 9. Annotations element strcuture</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional/ Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Annotation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The Annotations element is not associated with any attributes.</p>
+</div>
+<div class="sect4">
+<h5 id="_annotation">3.2.2.1. Annotation</h5>
+<div class="paragraph">
+<p>The Annotation element can be used to add a single free style annotation to the list of annotations.</p>
+</div>
+<div id="im-annotationschema" class="imageblock">
+<div class="content">
+<img src="images/AnnotationSchema.png" alt="AnnotationSchema">
+</div>
+<div class="title">Figure 12. Annotation element structure and attributes</div>
+</div>
+<table id="tb-annotationsubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 10. Annotation element strcuture</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">##any</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The Annotation element is associated with the following attributes.</p>
+</div>
+<table id="tb-annotationattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 11. Annotation element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The unique name of the type of the annotation. In order to ensure uniqueness all types should be identified with reverse domain name notation (cf. Java package names or Apple UTIs) of a domain that is controlled by the entity defining the semantics and content of the annotation. For vendor-specific annotations this would e.g. be a domain controlled by the tool vendor. For MAP-SSP defined annotations, this will be a domain under the org.modelica prefix.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect5">
+<h6 id="_any_2">3.2.2.1.1. ##any</h6>
+<div class="paragraph">
+<p>The Annotation element may contain XML Elements of any kind, i.e. the STMD Schema provides the possibility and capability to code any kind of information regardless of what the STMD specifies. This means, the name, structure and attributes of XML elements enclosed by aa Annotation element are completely free.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_gphasecommon">3.3. GPhaseCommon</h3>
+<div class="paragraph">
+<p>Common element content for all phases.</p>
+</div>
+<div id="im-gephaseschema" class="imageblock">
+<div class="content">
+<img src="images/GPhaseCommonSchema.png" alt="GPhaseCommonSchema">
+</div>
+<div class="title">Figure 13. GPhaseCommon structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The GPhaseCommon element is structured by the following subordinated elements.</p>
+</div>
+<table id="tb-gphasecommonsubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 12. GPhaseCommon element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Links</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
@@ -1419,175 +1699,30 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GElementCommon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>The StepType element is associated with the following attributes.</p>
+<p>The GPhaseCommon element is not associated with any attributes.</p>
 </div>
-<table id="tb-steptypeattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 5. StepType element attributes</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Attribute name</th>
-<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
-<th class="tableblock halign-left valign-top">Atrribute description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.</p></td>
-</tr>
-</tbody>
-</table>
 <div class="sect3">
-<h4 id="_inputs">3.2.1. Inputs</h4>
+<h4 id="_links_2">3.3.1. Links</h4>
 <div class="paragraph">
-<p>For the details of the Input element structure and attributes see chapter <a href="#sec-particletype">Section 3.3</a>.</p>
+<p>For the details of the Links element structure and attributes see chapter <a href="#sec-linkstype">Section 3.8</a>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_procedure">3.2.2. Procedure</h4>
+<h4 id="_lifecycleinformation">3.3.2. LifeCycleInformation</h4>
 <div class="paragraph">
-<p>For the details of the Procedure element structure and attributes see chapter <a href="#sec-particletype">Section 3.3</a></p>
+<p>For the details of the LifeCyleInformation element structure and attributes see chapter <a href="#sec-lifecycleinformationtype">Section 3.4</a>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_output">3.2.3. Output</h4>
+<h4 id="_gelementcommon">3.3.3. GElementCommon</h4>
 <div class="paragraph">
-<p>For the details of the Output element structure and attributes see chapter <a href="#sec-particletype">Section 3.3</a>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_rationale">3.2.4. Rationale</h4>
-<div class="paragraph">
-<p>For the details of the Rationale element structure and attributes see chapter <a href="#sec-particletype">Section 3.3</a>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_lifecycle_information_2">3.2.5. Lifecycle information</h4>
-<div class="paragraph">
-<p>For the details of the LifeycleInformation element structure and attributes see chapter <a href="#sec-lifecycleinformationtype">Section 3.4</a>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_classification">3.2.6. Classification</h4>
-<div class="paragraph">
-<p>For the details of the Classification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_annotations">3.2.7. Annotations</h4>
-<div class="paragraph">
-<p>For the details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a>.</p>
-</div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="sec-particletype">3.3. ParticleType</h3>
-<div class="paragraph">
-<p>The ParticleType element defines the structure and attributes of an individual particle inside a step of a phase of the overall simulation task.</p>
-</div>
-<div id="im-particletypeschema" class="imageblock">
-<div class="content">
-<img src="images/ParticleTypeSchema.png" alt="ParticleTypeSchema">
-</div>
-<div class="title">Figure 9. ParticleType element structure and attributes</div>
-</div>
-<div class="paragraph">
-<p>The ParticleType element is structured by the following subordinated elements.</p>
-</div>
-<table id="tb-particletypesubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 6. ParticleType element structure</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Sub element name</th>
-<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Resource</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>The ParticleType element is associated with the following attributes.</p>
-</div>
-<table id="tb-particletypeattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 7. ParticleType aelement ttributes</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Attribute name</th>
-<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
-<th class="tableblock halign-left valign-top">Atrribute description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="sect3">
-<h4 id="_resource">3.3.1. Resource</h4>
-<div class="paragraph">
-<p>For details of the Resource element structure and attributes see chapter <a href="#sec-resourcetype">Section 3.8</a>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_classification_2">3.3.2. Classification</h4>
-<div class="paragraph">
-<p>For details of the Classification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_annotations_2">3.3.3. Annotations</h4>
-<div class="paragraph">
-<p>For details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a>.</p>
+<p>For the details of the GElementCommon element structure and attributes see chapter <a href="#sec-gelementcommon">Section 3.2</a>.</p>
 </div>
 </div>
 </div>
@@ -1603,13 +1738,13 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <div class="content">
 <img src="images/LifeCycleInformationTypeSchema.png" alt="LifeCycleInformationTypeSchema">
 </div>
-<div class="title">Figure 10. LifeCycleInformationType element structure and attributes</div>
+<div class="title">Figure 14. LifeCycleInformationType element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The LifeCycleInformationType element is structured by the following subordinated elements.</p>
 </div>
 <table id="tb-lifecycleinformationtypesubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 8. LifecycleInformationType element structure</caption>
+<caption class="title">Table 13. LifeCycleInformationType element structure</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1630,7 +1765,7 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Validate</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Validated</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
@@ -1696,13 +1831,13 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <div class="content">
 <img src="images/LifeCycleEntryTypeSchema.png" alt="LifeCycleEntryTypeSchema">
 </div>
-<div class="title">Figure 11. LifeCycleEntryType element structure and attributes</div>
+<div class="title">Figure 15. LifeCycleEntryType element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The LifeCycleEntryType element is structured by the following subordinated elements.</p>
 </div>
 <table id="tb-lifecycleentryypesubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 9. LifeCycleEntryType element structure</caption>
+<caption class="title">Table 14. LifeCycleEntryType element structure</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1715,23 +1850,19 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Resource</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GResourceOrReference</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Responsible</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Signature</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GElementCommon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 </tbody>
@@ -1740,7 +1871,7 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <p>The LifeCycleEntryType element is associated with the following attributes.</p>
 </div>
 <table id="tb-lifecycleetypeattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 10. LifeCycleEntryType element attributes</caption>
+<caption class="title">Table 15. LifeCycleEntryType element attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1765,109 +1896,53 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the checksum over the phase/step information stored in the enclosing phase/step element, calculated according to the STMD specification.  This attribute is optional if the lifecycle stage is not Approved or Archived, but becomes required if the lifecycle stage is Approved or Archived. Optionally, digital signatures over this checksum can be provided using Signature elements in the enclosing lifecycle entry element. The checksum is calculated using the algorithm indicated by the checksumType attribute.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">checsumType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">checksumType</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the algorithm for the calculation of the checksum attribute. MUST be SHA3-256 for now, indicating a SHA3 256bit secure hash algorithm, as specified in FIPS 202. In the future other checksum algorithms might be supported.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_resource_2">3.5.1. Resource</h4>
+<h4 id="_gresourceorreference">3.5.1. GResourceOrReference</h4>
 <div class="paragraph">
-<p>For details of the Resource element structure and attributes see chapter <a href="#sec-resourcetype">Section 3.8</a>.</p>
+<p>For details of the GResourceOrReference element structure and attributes see chapter <a href="#sec-gresourceorreference">Section 3.13</a>.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_responsible_2">3.5.2. Responsible</h4>
 <div class="paragraph">
-<p>For details of the Responsible element structure and attributes see chapter <a href="#sec-responsibletype">Section 3.6</a>.</p>
+<p>For details of the Responsible element structure and attributes see chapter <a href="#sec-responsibletype">Section 3.12</a>.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_signature_2">3.5.3. Signature</h4>
 <div class="paragraph">
-<p>For details of the Signature element structure and attributes see chapter <a href="#sec-signaturetype">Section 3.7</a>.</p>
+<p>For details of the Signature element structure and attributes see chapter <a href="#sec-signaturetype">Section 3.10</a>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_classification_3">3.5.4. Classification</h4>
+<h4 id="_gelementcommon_2">3.5.4. GElementCommon</h4>
 <div class="paragraph">
-<p>For details of the Classification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a>.</p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_annotations_3">3.5.5. Annotations</h4>
-<div class="paragraph">
-<p>For details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a>.</p>
+<p>For details of the GElementCommon element structure and attributes see chapter <a href="#sec-gelementcommon">Section 3.2</a>.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sec-responsibletype">3.6. ResponsibleType</h3>
+<h3 id="sec-steptype">3.6. StepType</h3>
 <div class="paragraph">
-<p>The ResponsibleType element defines the structure and attributes of the responsible entry for a lifecycle entry of a step or a phase of the overall simulation task.</p>
+<p>The StepType element defines the structure and attributes of an individual step inside a phase of the overall simulation task.</p>
 </div>
-<div id="im-responsibletypeschema" class="imageblock">
+<div id="im-steptypeschema" class="imageblock">
 <div class="content">
-<img src="images/ResponsibleTypeSchema.png" alt="ResponsibleTypeSchema">
+<img src="images/StepTypeSchema.png" alt="StepTypeSchema">
 </div>
-<div class="title">Figure 12. ResponsibleType element structure and attributes</div>
-</div>
-<div class="paragraph">
-<p>The ResponsibleType element is not structured by subordinated elements.</p>
+<div class="title">Figure 16. StepType element structure and attributes</div>
 </div>
 <div class="paragraph">
-<p>The ResponsibleType element is associated with the following attributes.</p>
+<p>The StepType element is structured by the following subordinated elements.</p>
 </div>
-<table id="tb-responsibletypeattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 11. ResponsibleType attributes</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Attribute name</th>
-<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
-<th class="tableblock halign-left valign-top">Atrribute description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">organization</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the organization that is responsible for a given step.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">role</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the role of the person that is responsible for a given step.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the name of the person that is responsible for a given step.</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="sec-signaturetype">3.7. SignatureType</h3>
-<div class="paragraph">
-<p>The SignatureType element defines the structure and attributes of the signature entity for a given step or phase.</p>
-</div>
-<div id="im-signaturetypeschema" class="imageblock">
-<div class="content">
-<img src="images/SignatureTypeSchema.png" alt="SignatureTypeSchema">
-</div>
-<div class="title">Figure 13. SignatureType element structure and attributes</div>
-</div>
-<div class="paragraph">
-<p>The SignatureType element is structured by the following subordinated elements.</p>
-</div>
-<table id="tb-signaturetypesubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 12. SignatureType element structure</caption>
+<table id="tb-steptypesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 16. StepType element structure</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1880,24 +1955,40 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Content</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Input</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Procedure</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Output</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Rationale</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Links</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">LifeCycleInformation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GElementCommon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>The SignatureType element is associated with the following attributes.</p>
+<p>The StepType element is associated with the following attributes.</p>
 </div>
-<table id="tb-signaturetypeattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 13. SignatureType element attributes</caption>
+<table id="tb-steptypeattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 17. StepType element attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -1912,48 +2003,372 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">role</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This mandatory attribute specifies the role this signature has in the overall process. It indicates whether the digital signature is intended to just convey the authenticity of the information, or whether a claim for suitability of the information for certain purposes is made.  In the latter case, the digital signature format should include detailed information about what suitability claims are being made.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This mandatory attribute specifies the MIME type of the resource signature, which does not have a default value.  If no specific MIME type can be indicated, then the type application/octet-stream is to be used.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">source</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute indicates the source of the resource signature as a URI (cf. RFC 3986).  For purposes of the resolution of relative URIs the base URI is the URI of the STMD, if the sourceBase attribute is not specified or is specified as STMD, and the URI of the referenced resource if the sourceBase attribute is specified as resource. This allows the specification of signature sources that reside inside the resource (e.g. an FMU) through relative URIs. For signatures that are located alongside the STMD, relative URIs without scheme and authority can and should be used to specify the signature sources. For signatures that are packaged inside an SSP that contains this STMD, this is mandatory (in this way, the STMD URIs remain valid after unpacking the SSP into the filesystem). If the source attribute is missing, the signature is provided inline as contents of the Content element, which must not be present otherwise.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">sourdceBase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the base the source URI is resolved against:  If the attribute s missing or is specified as STMD, the source is resolved against the URI of the STMD, if the attribute is specified as resource the URI is resolved against the (resolved) URI of the resource source.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.</p></td>
 </tr>
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_content">3.7.1. Content</h4>
+<h4 id="_inputs">3.6.1. Inputs</h4>
 <div class="paragraph">
-<p>For details of the Content element structure and attributes see chapter <a href="#sec-contenttype">Section 3.9</a></p>
+<p>For the details of the Input element structure and attributes see chapter <a href="#sec-particletype">Section 3.7</a>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_classification_4">3.7.2. Classification</h4>
+<h4 id="_procedure">3.6.2. Procedure</h4>
 <div class="paragraph">
-<p>For details of the Classification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a></p>
+<p>For the details of the Procedure element structure and attributes see chapter <a href="#sec-particletype">Section 3.7</a></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_annotations_4">3.7.3. Annotations</h4>
+<h4 id="_output">3.6.3. Output</h4>
 <div class="paragraph">
-<p>For details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a></p>
+<p>For the details of the Output element structure and attributes see chapter <a href="#sec-particletype">Section 3.7</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_rationale">3.6.4. Rationale</h4>
+<div class="paragraph">
+<p>For the details of the Rationale element structure and attributes see chapter <a href="#sec-particletype">Section 3.7</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_links_3">3.6.5. Links</h4>
+<div class="paragraph">
+<p>For the details of the Links element structure and attributes see chapter <a href="#sec-linkstype">Section 3.8</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_lifecycleinformation_2">3.6.6. LifeCycleInformation</h4>
+<div class="paragraph">
+<p>For the details of the LifeCyleInformation element structure and attributes see chapter <a href="#sec-lifecycleinformationtype">Section 3.4</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_gelementcommon_3">3.6.7. GElementCommon</h4>
+<div class="paragraph">
+<p>For details of the GElementCommon element structure and attributes see chapter <a href="#sec-gelementcommon">Section 3.2</a>.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sec-resourcetype">3.8. ResourceType</h3>
+<h3 id="sec-particletype">3.7. ParticleType</h3>
+<div class="paragraph">
+<p>The ParticleType element defines the structure and attributes of an individual particle inside a step of a phase of the overall simulation task.</p>
+</div>
+<div id="im-particletypeschema" class="imageblock">
+<div class="content">
+<img src="images/ParticleTypeSchema.png" alt="ParticleTypeSchema">
+</div>
+<div class="title">Figure 17. ParticleType element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The ParticleType element is structured by the following subordinated elements.</p>
+</div>
+<table id="tb-particletypesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 18. ParticleType element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GResourceOrReference</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GElementCommon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The ParticleType element is associated with the following attributes.</p>
+</div>
+<table id="tb-particletypeattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 19. ParticleType aelement ttributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_gresourceorreference_2">3.7.1. GResourceOrReference</h4>
+<div class="paragraph">
+<p>For details of the GResourceOrReference element structure and attributes see chapter <a href="#sec-gresourceorreference">Section 3.13</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_gelementcommon_4">3.7.2. GElementCommon</h4>
+<div class="paragraph">
+<p>For details of the GElementCommon element structure and attributes see chapter <a href="#sec-gelementcommon">Section 3.2</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec-linkstype">3.8. LinksType</h3>
+<div class="paragraph">
+<p>The LinksType element defines the structure and attributes for the linkage mechnism to use links within the stmd file as well as links to external resources outside the STMF file.</p>
+</div>
+<div id="im-linkstypeschema" class="imageblock">
+<div class="content">
+<img src="images/LinksTypeSchema.png" alt="LinksTypeSchema">
+</div>
+<div class="title">Figure 18. LinksType element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The LinksType element is structured by the following subordinated elements.</p>
+</div>
+<table id="tb-linkstypesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 20. LinksType element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Link</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The LinksType element is not associated with any attributes.</p>
+</div>
+<div class="sect3">
+<h4 id="_link">3.8.1. Link</h4>
+<div class="paragraph">
+<p>The Link elemenet represents a single links no mater if it is an STMD file internal link or a link targeted to the outside of the STMD file.</p>
+</div>
+<div id="im-linkschema" class="imageblock">
+<div class="content">
+<img src="images/LinkSchema.png" alt="LinkSchema">
+</div>
+<div class="title">Figure 19. Link element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The Link element is structured by the following subordinated elements.</p>
+</div>
+<table id="tb-linksubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 21. Link element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Locator</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Arc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The Link element is associated with the following attributes.</p>
+</div>
+<table id="tb-linkattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 22. Link element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xlink:type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text fehlt noch</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xlink:title</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text fehlt noch</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xlink:role</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text fehlt noch</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_locator">3.8.2. Locator</h4>
+<div class="paragraph">
+<p>The Locator elemenet represents &#8230;&#8203; Text fehlt noch</p>
+</div>
+<div id="im-locatorschema" class="imageblock">
+<div class="content">
+<img src="images/LocatorSchema.png" alt="LocatorSchema">
+</div>
+<div class="title">Figure 20. Locator element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The Locator element is not structured by subordinated elements.</p>
+</div>
+<div class="paragraph">
+<p>The Locator element is associated with the following attributes.</p>
+</div>
+<table id="tb-locatorattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 23. Locator element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xlink:type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text fehlt noch</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xlink:href</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text fehlt noch</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xlink:label</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text fehlt noch</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xlink:title</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text fehlt noch</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xlink:role</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text fehlt noch</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_arc">3.8.3. Arc</h4>
+<div class="paragraph">
+<p>The Arc elemenet represents &#8230;&#8203; Text fehlt noch</p>
+</div>
+<div id="im-arcschema" class="imageblock">
+<div class="content">
+<img src="images/ArcSchema.png" alt="ArcSchema">
+</div>
+<div class="title">Figure 21. Arc element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The Arc element is not structured by subordinated elements.</p>
+</div>
+<div class="paragraph">
+<p>The Arc element is associated with the following attributes.</p>
+</div>
+<table id="tb-arcattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 24. Arc element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xlink:type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text fehlt noch</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xlink:from</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text fehlt noch</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xlink:to</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text fehlt noch</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xlink:title</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text fehlt noch</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xlink:arcrole</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text fehlt noch</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec-resourcetype">3.9. ResourceType</h3>
 <div class="paragraph">
 <p>The ResourceType element defines the structure and attributes of information about a resource that is related to the particular step and particle. Multiple (or no) resources may be present.</p>
 </div>
@@ -1961,13 +2376,13 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <div class="content">
 <img src="images/ResourceTypeSchema.png" alt="ResourceTypeSchema">
 </div>
-<div class="title">Figure 14. ResourceType element structure and attributes</div>
+<div class="title">Figure 22. ResourceType element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The ResourceType element is structured by the following subordinated elements.</p>
 </div>
 <table id="tb-resourcetypesubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 14. ResourceType element structure</caption>
+<caption class="title">Table 25. ResourceType element structure</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1996,11 +2411,7 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GElementCommon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 </tbody>
@@ -2009,7 +2420,7 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <p>The ResourceType element is associated with the following attributes.</p>
 </div>
 <table id="tb-resourcetypeattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 15. ResourceType attributes</caption>
+<caption class="title">Table 26. ResourceType element attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2027,6 +2438,11 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <td class="tableblock halign-left valign-top"><p class="tableblock">kind</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This attribute indicates the kind of resource that is referenced, i.e. what role it plays in relation to the particle being described.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">scope</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute indicates the scope or level that a resource is specific to, i.e. whether the resource applies at a global, system, subsystem or component level.  The use of this attribute is optional, i.e. it should only be specified where it makes sense to give this kind of information.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
@@ -2056,13 +2472,13 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 </tbody>
 </table>
 <div class="sect3">
-<h4 id="_content_2">3.8.1. Content</h4>
+<h4 id="_content">3.9.1. Content</h4>
 <div class="paragraph">
-<p>For details of the the Content element structure and attributessee chapter <a href="#sec-contenttype">Section 3.9</a>.</p>
+<p>For details of the the Content element structure and attributessee chapter <a href="#sec-contenttype">Section 3.11</a>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_summary">3.8.2. Summary</h4>
+<h4 id="_summary">3.9.2. Summary</h4>
 <div class="paragraph">
 <p>The Summary element provides an optional summary of the resource being referenced. The summary information is intended for human consumption to get an overview of the resource content without looking at the content itself.  The summary content can be provided inline through the Content element, or it can be provided through the source URI attribute.</p>
 </div>
@@ -2070,13 +2486,13 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <div class="content">
 <img src="images/SummarySchema.png" alt="SummarySchema">
 </div>
-<div class="title">Figure 15. Summary elements structure and attributes</div>
+<div class="title">Figure 23. Summary elements structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The Summary element is structured by the following subordinated elements.</p>
 </div>
 <table id="tb-summarysubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 16. Summary element structure</caption>
+<caption class="title">Table 27. Summary element structure</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2097,11 +2513,7 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GElementCommon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 </tbody>
@@ -2110,7 +2522,7 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <p>The Summary element is associated with the following attributes.</p>
 </div>
 <table id="tb-summaryattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 17. Summary element attributes</caption>
+<caption class="title">Table 28. Summary element attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2142,32 +2554,26 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="_content_3">3.8.2.1. Content</h5>
+<h5 id="_content_2">3.9.2.1. Content</h5>
 <div class="paragraph">
-<p>For the details of the Content element structure and attributes see chapter <a href="#sec-contenttype">Section 3.9</a></p>
+<p>For the details of the Content element structure and attributes see chapter <a href="#sec-contenttype">Section 3.11</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_signature_3">3.8.2.2. Signature</h5>
+<h5 id="_signature_3">3.9.2.2. Signature</h5>
 <div class="paragraph">
-<p>For the details of the Signature element structure and attributes see chapter <a href="#sec-signaturetype">Section 3.7</a></p>
+<p>For the details of the Signature element structure and attributes see chapter <a href="#sec-signaturetype">Section 3.10</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_classification_5">3.8.2.3. Classification</h5>
+<h5 id="_gelementcommon_5">3.9.2.3. GElementCommon</h5>
 <div class="paragraph">
-<p>For the details of theClassification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a></p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_annotations_5">3.8.2.4. Annotations</h5>
-<div class="paragraph">
-<p>For the details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a></p>
+<p>For details of the GElementCommon element structure and attributes see chapter <a href="#sec-gelementcommon">Section 3.2</a>.</p>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_metadata">3.8.3. MetaData</h4>
+<h4 id="_metadata">3.9.3. MetaData</h4>
 <div class="paragraph">
 <p>The MetaData element can specify additional metadata for the given resource. Multiple (or no) MetaData elements may be present.</p>
 </div>
@@ -2175,13 +2581,13 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <div class="content">
 <img src="images/MetaDataSchema.png" alt="MetaDataSchema">
 </div>
-<div class="title">Figure 16. MetaData element structure and attributes</div>
+<div class="title">Figure 24. MetaData element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The MetaData element is structured by the following subordinated elements.</p>
 </div>
 <table id="tb-metadatasubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 18. MetaData element structure</caption>
+<caption class="title">Table 29. MetaData element structure</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2202,11 +2608,7 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GElementCommon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 </tbody>
@@ -2215,7 +2617,7 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <p>The MetaData element is associated with the following attributes.</p>
 </div>
 <table id="tb-metadataattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 19. MetaData element attributes</caption>
+<caption class="title">Table 30. MetaData element attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2252,51 +2654,132 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="_content_4">3.8.3.1. Content</h5>
+<h5 id="_content_3">3.9.3.1. Content</h5>
 <div class="paragraph">
-<p>For the details of the Content element structure and attributes see chapter <a href="#sec-contenttype">Section 3.9</a></p>
+<p>For the details of the Content element structure and attributes see chapter <a href="#sec-contenttype">Section 3.11</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_signature_4">3.8.3.2. Signature</h5>
+<h5 id="_signature_4">3.9.3.2. Signature</h5>
 <div class="paragraph">
-<p>For the details of the Signature element structure and attributes see chapter <a href="#sec-signaturetype">Section 3.7</a></p>
+<p>For the details of the Signature element structure and attributes see chapter <a href="#sec-signaturetype">Section 3.10</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_classification_6">3.8.3.3. Classification</h5>
+<h5 id="_gelementcommon_6">3.9.3.3. GElementCommon</h5>
 <div class="paragraph">
-<p>For the details of the Classification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a></p>
+<p>For details of the GElementCommon element structure and attributes see chapter <a href="#sec-gelementcommon">Section 3.2</a>.</p>
 </div>
-</div>
-<div class="sect4">
-<h5 id="_annotation">3.8.3.4. Annotation</h5>
 <div class="paragraph">
-<p>For the details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a></p>
+<p>For the details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.2.2</a></p>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_signature_5">3.8.4. Signature</h4>
+<h4 id="_signature_5">3.9.4. Signature</h4>
 <div class="paragraph">
-<p>For the details of the Signatutre element structure and attributes see chapter <a href="#sec-signaturetype">Section 3.7</a></p>
+<p>For the details of the Signatutre element structure and attributes see chapter <a href="#sec-signaturetype">Section 3.10</a></p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_classification_7">3.8.5. Classification</h4>
+<h4 id="_gelementcommon_7">3.9.5. GElementCommon</h4>
 <div class="paragraph">
-<p>For the details of the Classification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_annotations_6">3.8.6. Annotations</h4>
-<div class="paragraph">
-<p>For the details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a></p>
+<p>For details of the GElementCommon element structure and attributes see chapter <a href="#sec-gelementcommon">Section 3.2</a>.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sec-contenttype">3.9. ContentType</h3>
+<h3 id="sec-signaturetype">3.10. SignatureType</h3>
+<div class="paragraph">
+<p>The SignatureType element defines the structure and attributes of the signature entity for a given step or phase.</p>
+</div>
+<div id="im-signaturetypeschema" class="imageblock">
+<div class="content">
+<img src="images/SignatureTypeSchema.png" alt="SignatureTypeSchema">
+</div>
+<div class="title">Figure 25. SignatureType element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The SignatureType element is structured by the following subordinated elements.</p>
+</div>
+<table id="tb-signaturetypesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 31. SignatureType element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Content</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GElementCommon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The SignatureType element is associated with the following attributes.</p>
+</div>
+<table id="tb-signaturetypeattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 32. SignatureType element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">role</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This mandatory attribute specifies the role this signature has in the overall process. It indicates whether the digital signature is intended to just convey the authenticity of the information, or whether a claim for suitability of the information for certain purposes is made.  In the latter case, the digital signature format should include detailed information about what suitability claims are being made.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This mandatory attribute specifies the MIME type of the resource signature, which does not have a default value.  If no specific MIME type can be indicated, then the type application/octet-stream is to be used.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">source</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute indicates the source of the resource signature as a URI (cf. RFC 3986).  For purposes of the resolution of relative URIs the base URI is the URI of the STMD, if the sourceBase attribute is not specified or is specified as STMD, and the URI of the referenced resource if the sourceBase attribute is specified as resource. This allows the specification of signature sources that reside inside the resource (e.g. an FMU) through relative URIs. For signatures that are located alongside the STMD, relative URIs without scheme and authority can and should be used to specify the signature sources. For signatures that are packaged inside an SSP that contains this STMD, this is mandatory (in this way, the STMD URIs remain valid after unpacking the SSP into the filesystem). If the source attribute is missing, the signature is provided inline as contents of the Content element, which must not be present otherwise.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sourdceBase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the base the source URI is resolved against:  If the attribute s missing or is specified as STMD, the source is resolved against the URI of the STMD, if the attribute is specified as resource the URI is resolved against the (resolved) URI of the resource source.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_content_4">3.10.1. Content</h4>
+<div class="paragraph">
+<p>For details of the Content element structure and attributes see chapter <a href="#sec-contenttype">Section 3.11</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_gelementcommon_8">3.10.2. GElementCommon</h4>
+<div class="paragraph">
+<p>For details of the GElementCommon element structure and attributes see chapter <a href="#sec-gelementcommon">Section 3.2</a>.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="sec-contenttype">3.11. ContentType</h3>
 <div class="paragraph">
 <p>The ContentType element defines the structure and attributes of inline content of an entity. If it is present, then the attribute source of the enclosing element must not be present.</p>
 </div>
@@ -2304,13 +2787,13 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <div class="content">
 <img src="images/ContentTypeSchema.png" alt="ContentTypeSchema">
 </div>
-<div class="title">Figure 17. ContentType element structure and attributes</div>
+<div class="title">Figure 26. ContentType element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The ContentType element is structured by following subordinated elements.</p>
 </div>
 <table id="tb-contenttypesubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 20. ContentType element structure</caption>
+<caption class="title">Table 33. ContentType element structure</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2332,105 +2815,31 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <p>The ContentType is not associated with any attributes.</p>
 </div>
 <div class="sect3">
-<h4 id="_any">3.9.1. ##any</h4>
+<h4 id="_any_3">3.11.1. ##any</h4>
 <div class="paragraph">
 <p>The ContentType may contain XML Elements of any kind, i.e. the STMD Schema provides the possibility and capability to code any kind of information regardless of what the STMD specifies. This mean the name, structure and attributes of XML elements enclosed by a contentType element is completely free.</p>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="sec-classification">3.10. Classification</h3>
+<h3 id="sec-responsibletype">3.12. ResponsibleType</h3>
 <div class="paragraph">
-<p>The Classification element, which can occur multiple times, provides a set of classifications of an STMD modeling element, provided as Keyword Value Pairs (KWP), the meaning of which is interpreted according to the name of the classification provided in the name attribute. This approach can be used, for example, to provide searchable keywords for content, or to assign and track quality or validation level requirements across the STMD process, or to maintain variant or other classification content across the process.</p>
+<p>The ResponsibleType element defines the structure and attributes of the responsible entry for a lifecycle entry of a step or a phase of the overall simulation task.</p>
 </div>
-<div id="im-classificationschema" class="imageblock">
+<div id="im-responsibletypeschema" class="imageblock">
 <div class="content">
-<img src="images/ClassificationSchema.png" alt="ClassificationSchema">
+<img src="images/ResponsibleTypeSchema.png" alt="ResponsibleTypeSchema">
 </div>
-<div class="title">Figure 18. Classification element structure and attributes</div>
-</div>
-<div class="paragraph">
-<p>The Classification element is structured by the following subordinated elements.</p>
-</div>
-<table id="tb-classificationsubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 21. Classification elemenst structure</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Sub element name</th>
-<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ClassificationEntry</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>The Classification element is associated with the following attribute.</p>
-</div>
-<table id="tb-classificationattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 22. Classification element attributes</caption>
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Attribute name</th>
-<th class="tableblock halign-left valign-top">Optional/ Mandatory</th>
-<th class="tableblock halign-left valign-top">Atrribute description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute provides the name of the type of classification being provided.  The name should be unique across the Classification elements of the immediately enclosing element. In order to ensure uniqueness all types should be identified with reverse domain name notation (cf. Java package names or Apple UTIs) of a domain that is controlled by the entity defining the semantics and content of the classification.</p></td>
-</tr>
-</tbody>
-</table>
-<div class="sect3">
-<h4 id="_classificationentry">3.10.1. ClassificationEntry</h4>
-<div id="im-classificationentryschema" class="imageblock">
-<div class="content">
-<img src="images/ClassificationEntrySchema.png" alt="ClassificationEntrySchema">
-</div>
-<div class="title">Figure 19. ClassificationEntry element structure and attributes</div>
+<div class="title">Figure 27. ResponsibleType element structure and attributes</div>
 </div>
 <div class="paragraph">
-<p>The ClassificationEntry element is structured by the followeing subordinated elements.</p>
+<p>The ResponsibleType element is not structured by subordinated elements.</p>
 </div>
-<table id="tb-classificationentrysubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 23. ClassificationEntry element structure</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Sub element name</th>
-<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">##any</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oOtional</p></td>
-</tr>
-</tbody>
-</table>
 <div class="paragraph">
-<p>The ClassificationEntry element is associated with the following attributes.</p>
+<p>The ResponsibleType element is associated with the following attributes.</p>
 </div>
-<table id="tb-classificationentryattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 24. ClassificationEntry element attributes</caption>
+<table id="tb-responsibletypeattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 34. ResponsibleType attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2445,69 +2854,39 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">keyword</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">organization</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the keyword for the classification entry (i.e. keyword value pair). It is left undefined whether this must be unique across the entries of the Classification element, or whether repeated entries are allowed. This will depend on the definition of the classification.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the organization that is responsible for a given step.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">role</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the role of the person that is responsible for a given step.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the name of the person that is responsible for a given step.</p></td>
 </tr>
 </tbody>
 </table>
-<div class="sect4">
-<h5 id="_any_2">3.10.1.1. ##any</h5>
-<div class="paragraph">
-<p>The ClassificationEntry element may contain XML Elements of any kind, i.e. the STMD Schema provides the possibility and capability to code any kind of information regardless of what the STMD specifies. This means, the name, structure and attributes of XML elements enclosed by a ClassificationEntry element are completely free.</p>
-</div>
-</div>
-</div>
 </div>
 <div class="sect2">
-<h3 id="sec-annotations">3.11. Annotations</h3>
+<h3 id="sec-gresourceorreference">3.13. GResourceOrReference</h3>
 <div class="paragraph">
-<p>The Annotations element can be used to add a list of additional free style annotations.</p>
+<p>The GResourceOrReference element &#8230;&#8203; Text fehlt noch</p>
 </div>
-<div id="im-annotationsschema" class="imageblock">
+<div id="im-gresourcereorferenceschema" class="imageblock">
 <div class="content">
-<img src="images/AnnotationsSchema.png" alt="AnnotationsSchema">
+<img src="images/GResourceOrReferenceSchema.png" alt="GResourceOrReferenceSchema">
 </div>
-<div class="title">Figure 20. Annotations element structure and attributes</div>
+<div class="title">Figure 28. GResourceOrReference element structure and attributes</div>
 </div>
 <div class="paragraph">
-<p>The Annotations element is structured by the following subordinated elements.</p>
+<p>The GResourceOrReference element is structured by the following subordinated elements.</p>
 </div>
-<table id="tb-annotationssubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 25. Annotations element strcuture</caption>
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Sub element name</th>
-<th class="tableblock halign-left valign-top">Optional/ Mandatory</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Annotation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-</tbody>
-</table>
-<div class="paragraph">
-<p>The Annotations element is not associated with any attributes.</p>
-</div>
-<div class="sect3">
-<h4 id="_annotation_2">3.11.1. Annotation</h4>
-<div class="paragraph">
-<p>The Annotation element can be used to add a single free style annotation to the list of annotations.</p>
-</div>
-<div id="im-annotationschema" class="imageblock">
-<div class="content">
-<img src="images/AnnotationSchema.png" alt="AnnotationSchema">
-</div>
-<div class="title">Figure 21. Annotation element structure and attributes</div>
-</div>
-<table id="tb-annotationsubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 26. Annotation element strcuture</caption>
+<table id="tb-gresourceorreferencesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 35. GResourceOrReference element structure</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2520,16 +2899,62 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">##any</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Resource</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ResourceReference</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The GResourceOrReference element is not associated with any attributes.</p>
+</div>
+<div class="sect3">
+<h4 id="_resource">3.13.1. Resource</h4>
+<div class="paragraph">
+<p>For the details of the Resource element structure and attributes see chapter <a href="#sec-resourcetype">Section 3.9</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sec-resourcereference">3.13.2. ResourceReference</h4>
+<div class="paragraph">
+<p>The ResourceReference element &#8230;&#8203; Text fehlt noch</p>
+</div>
+<div id="im-resourcereferenceschema" class="imageblock">
+<div class="content">
+<img src="images/ResourceReferenceSchema.png" alt="ResourceReferenceSchema">
+</div>
+<div class="title">Figure 29. ResourceReference element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The ResourceReference element is structured by the following subordinated elements.</p>
+</div>
+<table id="tb-resourcereferencesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 36. ResourceReference element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GElementCommon</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>The Annotation element is associated with the following attributes.</p>
+<p>The ResourceRefernece element is associated with the following attribute.</p>
 </div>
-<table id="tb-annotationattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 27. Annotation element attributes</caption>
+<table id="tb-resourcereferenceattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 37. ResourceRefernece element attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2538,22 +2963,37 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Attribute name</th>
-<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Optional/ Mandatory</th>
 <th class="tableblock halign-left valign-top">Atrribute description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">mandatory</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The unique name of the type of the annotation. In order to ensure uniqueness all types should be identified with reverse domain name notation (cf. Java package names or Apple UTIs) of a domain that is controlled by the entity defining the semantics and content of the annotation. For vendor-specific annotations this would e.g. be a domain controlled by the tool vendor. For MAP-SSP defined annotations, this will be a domain under the org.modelica prefix.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xlink:type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text fehlt noch</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xlink:href</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text fehlt noch</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text fehlt noch</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Text fehlt noch</p></td>
 </tr>
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="_any_3">3.11.1.1. ##any</h5>
+<h5 id="_gelementcommon_9">3.13.2.1. GElementCommon</h5>
 <div class="paragraph">
-<p>The Annotation element may contain XML Elements of any kind, i.e. the STMD Schema provides the possibility and capability to code any kind of information regardless of what the STMD specifies. This means, the name, structure and attributes of XML elements enclosed by aa Annotation element are completely free.</p>
+<p>For details of the GElementCommon element structure and attributes see chapter <a href="#sec-gelementcommon">Section 3.2</a>.</p>
 </div>
 </div>
 </div>
@@ -2575,13 +3015,13 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <div class="content">
 <img src="images/SimulationTaskMetaDataSchema.png" alt="SimulationTaskMetaDataSchema">
 </div>
-<div class="title">Figure 22. SimulationTaskMetaData element structure and attributes</div>
+<div class="title">Figure 30. SimulationTaskMetaData element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The SimulationTaskMetaData element is structured by following subordinated element.</p>
 </div>
 <table id="tb-simulationtaskmetadatasubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 28. SimulationTaskMetaData element structure</caption>
+<caption class="title">Table 38. SimulationTaskMetaData element structure</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2622,16 +3062,12 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FulfilmentPhase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FulfillmentPhase</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GElementCommon</p></td>
+<td class="tableblock halign-left valign-top"></td>
 </tr>
 </tbody>
 </table>
@@ -2639,7 +3075,7 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <p>The SimulationTaskMetaData element is associated with the following attributes.</p>
 </div>
 <table id="tb-simulationtaskmetadataattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 29. SimulationTaskMetaData element attributes</caption>
+<caption class="title">Table 39. SimulationTaskMetaData element attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2717,19 +3153,22 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <div class="sect3">
 <h4 id="_analysisphase">4.1.2. AnalysisPhase</h4>
 <div class="paragraph">
-<p>The AnalysisPhase element specifies the analysis phase of the overall simulation task.</p>
+<p>In the analysis phase, the simulation-relevant information is taken from the higher-level commissioning engineering process and the essential simulation relevant requirements and goals of the simulation task are derived from it. It is important that at the end of the analysis phase the essential simulation requirements and the objectives of the simulation task fully and clearly understood.</p>
+</div>
+<div class="paragraph">
+<p>The AnalysisPhase element documents all relevant information.</p>
 </div>
 <div id="im-analysisschemaschema" class="imageblock">
 <div class="content">
 <img src="images/AnalysisPhaseSchema.png" alt="AnalysisPhaseSchema">
 </div>
-<div class="title">Figure 23. AnalysisPhase element structure and attributes</div>
+<div class="title">Figure 31. AnalysisPhase element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The AnalysisPhase element is structured by the following subordinated element.</p>
 </div>
 <table id="tb-analysisphasesubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 30. AnalysisPhase element structure</caption>
+<caption class="title">Table 40. AnalysisPhase element structure</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2742,24 +3181,16 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">AnalyzeEngineeringTask</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AnalyzeSimulationTaskAndObjectives</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">VerifyEngineeringTaskAnalysis</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VerifyAnalysis</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">LifeCycleInformation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GPhaseCommon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
 </tr>
 </tbody>
 </table>
@@ -2767,7 +3198,7 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <p>The AnalysisPhase element is associated with the following attributes.</p>
 </div>
 <table id="tb-analysisphaseattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 31. AnalysisPhase element attributes</caption>
+<caption class="title">Table 41. AnalysisPhase element attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2794,52 +3225,43 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="_analyzeengineeringtask">4.1.2.1. AnalyzeEngineeringTask</h5>
+<h5 id="_analyzesimulationtaskandobjectives">4.1.2.1. AnalyzeSimulationTaskAndObjectives</h5>
 <div class="paragraph">
-<p>For the details of the AnalyzeEngineeringTask element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the AnalyzeSimulationTaskAndObjectives element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_verifyengineeringtaskanalysis">4.1.2.2. VerifyEngineeringTaskAnalysis</h5>
+<h5 id="_verifyanalysis">4.1.2.2. VerifyAnalysis</h5>
 <div class="paragraph">
-<p>For the details of the VerifyEngineeringTaskAnalysis element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the VerifyAnalysis element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_lifecycleinformation">4.1.2.3. LifeCycleInformation</h5>
+<h5 id="_gphasecommon_2">4.1.2.3. GPhaseCommon</h5>
 <div class="paragraph">
-<p>For the details of the LifeCycleInformation element structure and attributes see chapter <a href="#sec-lifecycleinformationtype">Section 3.4</a></p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_classification_8">4.1.2.4. Classification</h5>
-<div class="paragraph">
-<p>For the details of the Classification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a></p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_annotations_7">4.1.2.5. Annotations</h5>
-<div class="paragraph">
-<p>For the details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a></p>
+<p>For the details of the GPhaseCommon element structure and attributes see chapter <a href="#sec-gphasecommon">[sec-gphasecommon]</a></p>
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_requirementsphase">4.1.3. RequirementsPhase</h4>
 <div class="paragraph">
-<p>The RequirementsPhase element specifies the requirements phase of the overall simulation task.</p>
+<p>In the requirements phase, the requirements for the simulation that were agreed and defined in the analysis phase are broken down to the individual components required for the simulation. This includes the requirements for the models, parameters, test cases and the simulation environment, but also for the integration of all components and for measures to assure the process quality. In addition, all requirements must be finally verified to ensure the integrity and consistency of the requirements.</p>
+</div>
+<div class="paragraph">
+<p>The RequirementsPhase element documents all relevant information.</p>
 </div>
 <div id="im-requirementphaseschema" class="imageblock">
 <div class="content">
 <img src="images/RequirementsPhaseSchema.png" alt="RequirementsPhaseSchema">
 </div>
-<div class="title">Figure 24. RequirementsPhase element structure and attributes</div>
+<div class="title">Figure 32. RequirementsPhase element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The RequirememtsPhase element is structured by the followuing subordinated element.</p>
 </div>
 <table id="tb-requirementsphasesubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 32. RequirementsPhase element structure</caption>
+<caption class="title">Table 42. RequirementsPhase element structure</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -2852,27 +3274,27 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DeriveModelRequirements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DefineModelRequirements</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DeriveParameterRequirements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DefineParameterRequirements</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DeriveSimulationEnvironmentRequirements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DefineSimulationEnvironmentRequirements</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DeriveSimulationIntegrationRequirements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DefineSimulationIntegrationRequirements</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DeriveTestCaseRequirements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DefineTestCaseRequirements</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DeriveProcessQualityRequirements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DefineQualityAssuranceRequirements</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
@@ -2880,16 +3302,8 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">LifeCycleInformation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GPhaseCommon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
 </tr>
 </tbody>
 </table>
@@ -2897,7 +3311,7 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <p>The RequirementsPhase element is associated with the following attributes.</p>
 </div>
 <table id="tb-requirementsphaseattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 33. RequirementsPhase element attributes</caption>
+<caption class="title">Table 43. RequirementsPhase element attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -2924,82 +3338,73 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="_derivemodelrequirements">4.1.3.1. DeriveModelRequirements</h5>
+<h5 id="_definemodelrequirements">4.1.3.1. DefineModelRequirements</h5>
 <div class="paragraph">
-<p>For the details of the DeriveModelRequirements element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the DefineModelRequirements element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_deriveparameterrequirements">4.1.3.2. DeriveParameterRequirements</h5>
+<h5 id="_defineparameterrequirements">4.1.3.2. DefineParameterRequirements</h5>
 <div class="paragraph">
-<p>For the details of the DeriveParameterRequirements element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the DefineParameterRequirements element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_derivesimulationenvironmentrequirements">4.1.3.3. DeriveSimulationEnvironmentRequirements</h5>
+<h5 id="_definesimulationenvironmentrequirements">4.1.3.3. DefineSimulationEnvironmentRequirements</h5>
 <div class="paragraph">
-<p>For the details of the DeriveSimulationEnvironmentRequirements element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the DefineSimulationEnvironmentRequirements element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_derivesimulationintegrationrequirements">4.1.3.4. DeriveSimulationIntegrationRequirements</h5>
+<h5 id="_definesimulationintegrationrequirements">4.1.3.4. DefineSimulationIntegrationRequirements</h5>
 <div class="paragraph">
-<p>For the details of the DeriveSimulationIntegrationRequirements element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the DefineSimulationIntegrationRequirements element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_derivetestcaserequirements">4.1.3.5. DeriveTestCaseRequirements</h5>
+<h5 id="_definetestcaserequirements">4.1.3.5. DefineTestCaseRequirements</h5>
 <div class="paragraph">
-<p>For the details of the DeriveTestCaseRequirements element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the DefineTestCaseRequirements element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_deriveprocessqualityrequirements">4.1.3.6. DeriveProcessQualityRequirements</h5>
+<h5 id="_definequalityasurancerequirements">4.1.3.6. DefineQualityAsuranceRequirements</h5>
 <div class="paragraph">
-<p>For the details of the DeriveProcessQualityRequirements element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the DefineQualityAssuranceRequirements element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_verifyrequirements">4.1.3.7. VerifyRequirements</h5>
 <div class="paragraph">
-<p>For the details of the VerifyRequirements element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the VerifyRequirements element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_lifecycleinformation_2">4.1.3.8. LifeCycleInformation</h5>
+<h5 id="_gphasecommon_3">4.1.3.8. GPhaseCommon</h5>
 <div class="paragraph">
-<p>For the details of the LifeCycleInformation element structure and attributes see chapter <a href="#sec-lifecycleinformationtype">Section 3.4</a></p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_classification_9">4.1.3.9. Classification</h5>
-<div class="paragraph">
-<p>For the details of the Classification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a></p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_annotations_8">4.1.3.10. Annotations</h5>
-<div class="paragraph">
-<p>For the details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a></p>
+<p>For the details of the GPhaseCommon element structure and attributes see chapter <a href="#sec-gphasecommon">[sec-gphasecommon]</a></p>
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_designphase">4.1.4. DesignPhase</h4>
 <div class="paragraph">
-<p>The DesignPhase element specifies the design specification phase of the overall simulation task.</p>
+<p>In the design phase, based on the requirements for the individual components of the simulation defined in the requirements phase, the required components of the simulation are specified, i.e. the models, parameters, test cases and the simulation environment, but also the necessary measures for integrating all components and for assuring the process quality. In addition, all specifications must be finally verified to ensure the integrity and consistency of the specifications.</p>
+</div>
+<div class="paragraph">
+<p>The DesignPhase element documents all relevant information.</p>
 </div>
 <div id="im-designphaseschema" class="imageblock">
 <div class="content">
 <img src="images/DesignPhaseSchema.png" alt="DesignPhaseSchema">
 </div>
-<div class="title">Figure 25. DesignPhase element structure and attributes</div>
+<div class="title">Figure 33. DesignPhase element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The DesignPhase element is structured by the following subordinated element.</p>
 </div>
 <table id="tb-designphasesubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 34. DesignPhase element structure</caption>
+<caption class="title">Table 44. DesignPhase element structure</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -3012,27 +3417,27 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DesignModelSpecification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DefineModelDesignSpecification</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DesignParameterSpecification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DefineParaneterDesignSpecification</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DesignSimulationEnvironmentSpecification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DefineSimulationEnvironmentDesignSpecification</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DesignSimulationIntegrationSpecification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DefineSimulationIntegrationDesignSpecification</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DesignTestCaseSpecification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DefineTestCaseDesignSpecification</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DeriveProcessQualityRequirements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DefineQualityAssuranceDesignSpecification</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
@@ -3040,16 +3445,8 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">LifeCycleInformation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GPhaseCommon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
 </tr>
 </tbody>
 </table>
@@ -3057,7 +3454,7 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <p>The DesignPhase element is associated with the following attributes.</p>
 </div>
 <table id="tb-designphaseattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 35. DesignPhase element attributes</caption>
+<caption class="title">Table 45. DesignPhase element attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3084,82 +3481,74 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="_designmodelspecification">4.1.4.1. DesignModelSpecification</h5>
+<h5 id="_definemodeldesignspecification">4.1.4.1. DefineModelDesignSpecification</h5>
 <div class="paragraph">
-<p>For the details of the DesignModelSpecification element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the DefineModelDesignSpecification element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_designparameterspecification">4.1.4.2. DesignParameterSpecification</h5>
+<h5 id="_defineparaneterdesignspecification">4.1.4.2. DefineParaneterDesignSpecification</h5>
 <div class="paragraph">
-<p>For the details of the DesignParameterSpecification element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the DefineParaneterDesignSpecification element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_designsimulationenvironmentspecification">4.1.4.3. DesignSimulationEnvironmentSpecification</h5>
+<h5 id="_definesimulationenvironmentdesignspecification">4.1.4.3. DefineSimulationEnvironmentDesignSpecification</h5>
 <div class="paragraph">
-<p>For the details of the DesignSimulationEnvironmentSpecification element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the DefineSimulationEnvironmentDesignSpecification element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_designsimulationintegrationspecification">4.1.4.4. DesignSimulationIntegrationSpecification</h5>
+<h5 id="_definesimulationintegrationdesignspecification">4.1.4.4. DefineSimulationIntegrationDesignSpecification</h5>
 <div class="paragraph">
-<p>For the details of the DesignSimulationIntegrationSpecification element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the DefineSimulationIntegrationDesignSpecification element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_designtestcasespecification">4.1.4.5. DesignTestCaseSpecification</h5>
+<h5 id="_definetestcasedesignspecification">4.1.4.5. DefineTestCaseDesignSpecification</h5>
 <div class="paragraph">
-<p>For the details of the DesignTestCaseSpecification element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the DefineTestCaseDesignSpecification element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_deriveprocessqualityrequirements_2">4.1.4.6. DeriveProcessQualityRequirements</h5>
+<h5 id="_definequalityassurancedesignspecification">4.1.4.6. DefineQualityAssuranceDesignSpecification</h5>
 <div class="paragraph">
-<p>For the details of DeriveProcessQualityRequirements element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of DefineQualityAssuranceDesignSpecification element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_verifydesignspecification">4.1.4.7. VerifyDesignSpecification</h5>
 <div class="paragraph">
-<p>For the details of the VerifyDesignSpecification element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the VerifyDesignSpecification element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_lifecycleinformation_3">4.1.4.8. LifeCycleInformation</h5>
+<h5 id="_gphasecommon_4">4.1.4.8. GPhaseCommon</h5>
 <div class="paragraph">
-<p>For the details of the LifeCycleInformation element structure and attributes see chapter <a href="#sec-lifecycleinformationtype">Section 3.4</a></p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_classification_10">4.1.4.9. Classification</h5>
-<div class="paragraph">
-<p>For the details of the Classification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a></p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_annotations_9">4.1.4.10. Annotations</h5>
-<div class="paragraph">
-<p>For the details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a></p>
+<p>For the details of the GPhaseCommon element structure and attributes see chapter <a href="#sec-gphasecommon">[sec-gphasecommon]</a></p>
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_implementationphase">4.1.5. ImplementationPhase</h4>
 <div class="paragraph">
-<p>The ImplementationPhase element specifies the implementation phase of the overall simulation task including the implementation validation.</p>
+<p>In the implementation phase, all specified components of the simulation are implemented, i.e. the models, parameters, test cases and the simulation environment is set up.
+All components are then integrated and the specified measures to ensure process quality are implemented. In addition, it must be determined by a quality verdict that the entire setup of the simulation meets all technical and quality requirements.</p>
+</div>
+<div class="paragraph">
+<p>The ImplementationPhase element documents all relevant information.</p>
 </div>
 <div id="im-implementationphaseschema" class="imageblock">
 <div class="content">
 <img src="images/ImplementationPhaseSchema.png" alt="ImplementationPhaseSchema">
 </div>
-<div class="title">Figure 26. ImplementationPhase element structure and attributes</div>
+<div class="title">Figure 34. ImplementationPhase element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The ImplementationPhase element is structured by the following subordinated element.</p>
 </div>
 <table id="tb-implementationphasesubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 36. ImplementationPhase element structure</caption>
+<caption class="title">Table 46. ImplementationPhase element structure</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -3184,11 +3573,11 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">IntegrateSimulation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ImplementTestCase</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">ImplementTestCase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">IntegrateSimulation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
@@ -3200,16 +3589,8 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">LifeCycleInformation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GPhaseCommon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
 </tr>
 </tbody>
 </table>
@@ -3217,7 +3598,7 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <p>The ImplementationPhase element is associated with the following attributes.</p>
 </div>
 <table id="tb-implementationphaseattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 37. ImplementationPhase element attributes</caption>
+<caption class="title">Table 47. ImplementationPhase element attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3246,80 +3627,71 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <div class="sect4">
 <h5 id="_implementmodel">4.1.5.1. ImplementModel</h5>
 <div class="paragraph">
-<p>For the details of the ImplementModel element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the ImplementModel element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_implementparameter">4.1.5.2. ImplementParameter</h5>
 <div class="paragraph">
-<p>For the details of the ImplementParameter element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the ImplementParameter element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_implementsimulationenvironment">4.1.5.3. ImplementSimulationEnvironment</h5>
 <div class="paragraph">
-<p>For the details of the ImplementSimulationEnvironment element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the ImplementSimulationEnvironment element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_integratesimulation">4.1.5.4. IntegrateSimulation</h5>
+<h5 id="_implementtestcase">4.1.5.4. ImplementTestCase</h5>
 <div class="paragraph">
-<p>For the details of the IntegrateSimulation element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the ImplementTestCase element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_implementtestcase">4.1.5.5. ImplementTestCase</h5>
+<h5 id="_integratesimulation">4.1.5.5. IntegrateSimulation</h5>
 <div class="paragraph">
-<p>For the details of the ImplementTestCase element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the IntegrateSimulation element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_assuresimulationsetupquality">4.1.5.6. AssureSimulationSetupQuality</h5>
 <div class="paragraph">
-<p>For the details of the AssureSimulationSetupQuality element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the AssureSimulationSetupQuality element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_derivesimulationsetupqualityverdict">4.1.5.7. DeriveSimulationSetupQualityVerdict</h5>
 <div class="paragraph">
-<p>For the details of the DeriveSimulationSetupQualityVerdict element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the DeriveSimulationSetupQualityVerdict element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_lifecycleinformation_4">4.1.5.8. LifeCycleInformation</h5>
+<h5 id="_gphasecommon_5">4.1.5.8. GPhaseCommon</h5>
 <div class="paragraph">
-<p>For the details of the LifeCycleInformation element structure and attributes see chapter <a href="#sec-lifecycleinformationtype">Section 3.4</a></p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_classification_11">4.1.5.9. Classification</h5>
-<div class="paragraph">
-<p>For the details of the Classification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a></p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_annotations_10">4.1.5.10. Annotations</h5>
-<div class="paragraph">
-<p>For the details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a></p>
+<p>For the details of the GPhaseCommon element structure and attributes see chapter <a href="#sec-gphasecommon">[sec-gphasecommon]</a></p>
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_executionphase">4.1.6. ExecutionPhase</h4>
 <div class="paragraph">
-<p>The ExecutionPhase element specifies the execution phase of the overall simulation task.</p>
+<p>In the execution phase, the previously set up simulation is executed.</p>
+</div>
+<div class="paragraph">
+<p>The ImplementationPhase element documents all relevant information.</p>
 </div>
 <div id="im-executionphaseschema" class="imageblock">
 <div class="content">
 <img src="images/ExecutionPhaseSchema.png" alt="ExecutionPhaseSchema">
 </div>
-<div class="title">Figure 27. ExecutionPhase element structure and attributes</div>
+<div class="title">Figure 35. ExecutionPhase element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The ExecutionPhase element is structured by the followeing subordinated element.</p>
 </div>
 <table id="tb-executionphasesubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 38. ExecutionPhase element structure</caption>
+<caption class="title">Table 48. ExecutionPhase element structure</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -3336,16 +3708,8 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">LifeCycleInformation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GPhaseCommon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
 </tr>
 </tbody>
 </table>
@@ -3353,7 +3717,7 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <p>The ExecutionPhase element is associated with the following attributes.</p>
 </div>
 <table id="tb-executionphaseattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 39. ExecutionPhase element attributes</caption>
+<caption class="title">Table 49. ExecutionPhase element attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3382,44 +3746,35 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <div class="sect4">
 <h5 id="_executesimulation">4.1.6.1. ExecuteSimulation</h5>
 <div class="paragraph">
-<p>For the details of the ExecuteSimulation element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the ExecuteSimulation element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_lifecycleinformation_5">4.1.6.2. LifeCycleInformation</h5>
+<h5 id="_gphasecommon_6">4.1.6.2. GPhaseCommon</h5>
 <div class="paragraph">
-<p>For the details of the LifeCycleInformation element structure and attributes see chapter <a href="#sec-lifecycleinformationtype">Section 3.4</a></p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_classification_12">4.1.6.3. Classification</h5>
-<div class="paragraph">
-<p>For the details of the Classification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a></p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_annotations_11">4.1.6.4. Annotations</h5>
-<div class="paragraph">
-<p>For the details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a></p>
+<p>For the details of the GPhaseCommon element structure and attributes see chapter <a href="#sec-gphasecommon">[sec-gphasecommon]</a></p>
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_evaluationphase">4.1.7. EvaluationPhase</h4>
 <div class="paragraph">
-<p>The EvaluationPhase element specifies the evaluation phase of the overall simulation task.</p>
+<p>In the evaluation phase, the simulation results are evaluated and quality assurance measures are implemented.  In addition, it must be determined by a quality verdict that the simulation meets all technical and quality requirements.</p>
+</div>
+<div class="paragraph">
+<p>The EvaluationPhase element documents all relevant information.</p>
 </div>
 <div id="im-evaluationphaseschema" class="imageblock">
 <div class="content">
 <img src="images/EvaluationPhaseSchema.png" alt="EvaluationPhaseSchema">
 </div>
-<div class="title">Figure 28. EvaluationPhase element structure and attributes</div>
+<div class="title">Figure 36. EvaluationPhase element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The EvaluationPhase element is structured by the following subordinated element.</p>
 </div>
 <table id="tb-evaluationphasesubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 40. EvaluationPhase element structure</caption>
+<caption class="title">Table 50. EvaluationPhase element structure</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -3444,16 +3799,8 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">LifeCycleInformation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GPhaseCommon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
 </tr>
 </tbody>
 </table>
@@ -3461,7 +3808,7 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <p>The EvaluationPhase element is associated with the following attributes.</p>
 </div>
 <table id="tb-evaluationphaseattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 41. EvaluationPhase element attributes</caption>
+<caption class="title">Table 51. EvaluationPhase element attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3490,56 +3837,47 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <div class="sect4">
 <h5 id="_evaluatesimulationresults">4.1.7.1. EvaluateSimulationResults</h5>
 <div class="paragraph">
-<p>For the details of the EvaluateSimulationResults element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the EvaluateSimulationResults element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_assuresimulationquality">4.1.7.2. AssureSimulationQuality</h5>
 <div class="paragraph">
-<p>For the details of the AssureSimulationQuality element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the AssureSimulationQuality element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
 <h5 id="_derivesimulationqualityverdict">4.1.7.3. DeriveSimulationQualityVerdict</h5>
 <div class="paragraph">
-<p>For the details of the DeriveSimulationQualityVerdict element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the DeriveSimulationQualityVerdict element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_lifecycleinformation_6">4.1.7.4. LifeCycleInformation</h5>
+<h5 id="_gphasecommon_7">4.1.7.4. GPhaseCommon</h5>
 <div class="paragraph">
-<p>For the details of the LifeCycleInformation element structure and attributes see chapter <a href="#sec-lifecycleinformationtype">Section 3.4</a></p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_classification_13">4.1.7.5. Classification</h5>
-<div class="paragraph">
-<p>For the details of the Classification element structure and attributes see chapter <a href="#sec-classification">Section 3.10</a></p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_annotations_12">4.1.7.6. Annotations</h5>
-<div class="paragraph">
-<p>For the details of the Annotations element structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a></p>
+<p>For the details of the GPhaseCommon element structure and attributes see chapter <a href="#sec-gphasecommon">[sec-gphasecommon]</a></p>
 </div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_fulfillmentphase">4.1.8. FulfillmentPhase</h4>
 <div class="paragraph">
-<p>The FulfillmentPhase element specifies the fulfillment phase of the overall simulation task.</p>
-</div>
-<div id="im-fulfilmentphaseschema" class="imageblock">
-<div class="content">
-<img src="images/FulfilmentPhaseSchema.png" alt="FulfilmentPhaseSchema">
-</div>
-<div class="title">Figure 29. FulfilmentPhase elements structure and attributes</div>
+<p>In the fulfillment phase, it is checked and decided whether the entire simulation task, including the simulation results, fulfills the requirements placed on the simulation by the commissioning higher-level engineering task and whether the simulation tasks can be completed.</p>
 </div>
 <div class="paragraph">
-<p>The FulfilmentPhase element is structured by the following subordinated element.</p>
+<p>The FulfillmentPhasePhase element documents all relevant information.</p>
 </div>
-<table id="tb-fulfilmentphasesubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 42. FulfilmentPhase element structure</caption>
+<div id="im-fulfillmentphaseschema" class="imageblock">
+<div class="content">
+<img src="images/FulfillmentPhaseSchema.png" alt="FulfillmentPhaseSchema">
+</div>
+<div class="title">Figure 37. FulfillmentPhase elements structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The FulfillmentPhase element is structured by the following subordinated element.</p>
+</div>
+<table id="tb-fulfillmentphasesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 52. FulfillmentPhase element structure</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -3552,28 +3890,20 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">DecideObjectiveFulfilment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DecideSimuzlationObjectiveFulfillment</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">LifeCycleInformation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Classification</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Annotations</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GPhaseCommon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
 </tr>
 </tbody>
 </table>
 <div class="paragraph">
-<p>The EvaluationPhase element is associated with the following attributes.</p>
+<p>The FulfillmentPhase element is associated with the following attributes.</p>
 </div>
-<table id="tb-fulfilmentphaseattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 43. FulfilmentPhase element attributes</caption>
+<table id="tb-fulfillmentphaseattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 53. FulfillmentPhase element attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3600,46 +3930,22 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 </tbody>
 </table>
 <div class="sect4">
-<h5 id="_decideobjectivefulfilment">4.1.8.1. DecideObjectiveFulfilment</h5>
+<h5 id="_decideobjectivefulfillment">4.1.8.1. DecideObjectiveFulfillment</h5>
 <div class="paragraph">
-<p>For the details of the DecideObjectiveFulfilment element structure and attributes see chapter <a href="#sec-steptype">Section 3.2</a></p>
+<p>For the details of the DecideObjectiveFulfillment element structure and attributes see chapter <a href="#sec-steptype">Section 3.6</a></p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_lifecycleinformation_7">4.1.8.2. LifeCycleInformation</h5>
+<h5 id="_gphasecommon_8">4.1.8.2. GPhaseCommon</h5>
 <div class="paragraph">
-<p>For the details of the LifeCycleInformation structure and attributes see chapter <a href="#sec-lifecycleinformationtype">Section 3.4</a></p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_classification_14">4.1.8.3. Classification</h5>
-<div class="paragraph">
-<p>For the details of the Classification structure and attributes see chapter <a href="#sec-classification">Section 3.10</a></p>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_annotations_13">4.1.8.4. Annotations</h5>
-<div class="paragraph">
-<p>For the details of the Annotations structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a></p>
+<p>For the details of the GPhaseCommon element structure and attributes see chapter <a href="#sec-gphasecommon">[sec-gphasecommon]</a></p>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="_classification_15">4.1.9. Classification</h4>
+<h4 id="_gelementcommon_10">4.1.9. GElementCommon</h4>
 <div class="paragraph">
-<p>tbd</p>
-</div>
-<div class="paragraph">
-<p>For the details of the Classification structure and attributes see chapter <a href="#sec-classification">Section 3.10</a></p>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_annotations_14">4.1.10. Annotations</h4>
-<div class="paragraph">
-<p>tbd</p>
-</div>
-<div class="paragraph">
-<p>For the details of the Annotations structure and attributes see chapter <a href="#sec-annotations">Section 3.11</a></p>
+<p>For the details of the GElementCommon element structure and attributes see chapter <a href="#sec-gelementcommon">Section 3.2</a></p>
 </div>
 </div>
 </div>
