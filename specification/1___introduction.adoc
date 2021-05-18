@@ -23,14 +23,14 @@ A high-quality documentation of simulation tasks consistent with the simulation 
 **Credible Simulation Process**
 
 Virtualization and digitalization are becoming more and more important in development. However, this also means that decisions and releases will be based much more on virtual prototypes (simulation models). This results in:
-•	The simulation must be integrated into the development processes
-•	Statements about the reliability of the results must be available
-•	Traceability and comprehensibility must be guaranteed
-•	The development will take place on a more cooperative basis with partners, the procedures and infrastructures should therefore be coordinated industry-wide (automotive-wide)
+* The simulation must be integrated into the development processes
+*	Statements about the reliability of the results must be available
+*	Traceability and comprehensibility must be guaranteed
+*	The development will take place on a more cooperative basis with partners, the procedures and infrastructures should therefore be coordinated industry-wide (automotive-wide)
 In Chapter xx a simulation process is described, which enables and supports these aspects. The description is deliberately kept on a generic level, which can be adopted across companies and must then be concretized in a company-specific and application-specific manner. This described basic sequence of steps shall enable the structured documentation of the information created and used in the simulation process.
 This is the basis for the transition from a simulation process to a Credible Simulation Process (CSP).
-•	Consistent documentation with traceability and quality assurance
-•	Finding and reuse of information and artifacts (models, infrastructures, etc.)
+*	Consistent documentation with traceability and quality assurance
+*	Finding and reuse of information and artifacts (models, infrastructures, etc.)
 
 
 **Glue Particle Approach**
