@@ -836,7 +836,15 @@ document.addEventListener('keydown', (event) => {
 </li>
 </ul>
 </li>
-<li><a href="#_simulation_resource_meta_data_file_format">5. Simulation Resource Meta Data File Format</a></li>
+<li><a href="#_simulation_resource_meta_data_file_format">5. Simulation Resource Meta Data File Format</a>
+<ul class="sectlevel2">
+<li><a href="#_simulationressourcemetadata">5.1. SimulationRessourceMetaData</a>
+<ul class="sectlevel3">
+<li><a href="#_gelementcommon_11">5.1.1. GElementCommon</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#_ssp_traceability_packaging">6. SSP Traceability Packaging</a>
 <ul class="sectlevel2">
 <li><a href="#_introduction_2">6.1. Introduction</a></li>
@@ -3954,7 +3962,134 @@ All components are then integrated and the specified measures to ensure process 
 <div class="sect1">
 <h2 id="_simulation_resource_meta_data_file_format">5. Simulation Resource Meta Data File Format</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>Simulation resource meta data for components or other resources (e.g. parameter sets, etc.) can be provided using SRMD files. These files can be embedded into such resources, where possible, they can be placed outside the resources and reference the resources to which they apply, or they can be tied to the resources through the STMD meta-data mechanisms.</p>
+</div>
+<div class="sect2">
+<h3 id="_simulationressourcemetadata">5.1. SimulationRessourceMetaData</h3>
+<div class="paragraph">
+<p>The SimulationResourceMetaData element is the all enclosing top level XML element of SRMD files.</p>
+</div>
+<div id="im-simulationresourcemetadataschema" class="imageblock">
+<div class="content">
+<img src="images/SimulationResourceMetaDataSchema.png" alt="SimulationResourceMetaDataSchema">
+</div>
+<div class="title">Figure 38. SimulationResourceMetaData element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The SimulationTaskMetaData element is structured by following subordinated element.</p>
+</div>
+<table id="tb-simulationresourcemetadatasubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 54. SimulationResourcekMetaData element structure</caption>
+<colgroup>
+<col style="width: 50%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GElementCommon</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The SimulationResourceMetaData element is associated with the following attributes.</p>
+</div>
+<table id="tb-simulationresourcemetadataattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 55. SimulationResourceMetaData element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Atrribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version of SRMD format, 0.x for this pre-release.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the simulation resource meta data a name, which can be used for purposes of presenting the simulation resource meta data to the user.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">data</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This optional attribute gives a URI to the data item this resource meta data applies to. If this attribute is not present, then the data this resource meta data applies to is provided outside of the meta data (e.g. by embedding SRMD into the data format, or providing it as meta data in an STMD file).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">checksum</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the checksum over the data item this meta data applies to. This is optional information to allow the identificatio of the data item and the precise algorithm specifying. The checksum is calculated using the algorithm indicated by the checksumType attribute.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">checksumtype</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the algorithm for the calculation of the checksum attribute. MUST be SHA3-256 for now, indicating a SHA3 256bit secure hash algorithm, as specified in FIPS 202. In the future other checksum algorithms might be supported.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">author</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the name of the author of this file&#8217;s content.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fileversion</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a version number for this file&#8217;s content.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">copyright</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives copyright information for this file&#8217;s content.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">license</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives license information for this file&#8217;s content.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">generatingTool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the name of the tool that generated this file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">generationDateAndTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the date and time this file was generated.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="_gelementcommon_11">5.1.1. GElementCommon</h4>
+<div class="paragraph">
+<p>For the details of the GElementCommon element structure and attributes see chapter <a href="#sec-gelementcommon">Section 3.2</a></p>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
