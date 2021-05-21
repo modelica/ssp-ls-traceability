@@ -206,10 +206,11 @@ The Annotation element is associated with the following attributes.
 
 The Annotation element may contain XML Elements of any kind, i.e. the STMD Schema provides the possibility and capability to code any kind of information regardless of what the STMD specifies. This means, the name, structure and attributes of XML elements enclosed by aa Annotation element are completely free.  
 
+[#sec-gphasecommon]
 === GPhaseCommon
 Common element content for all phases.
 
-[#im-gephaseschema]
+[#im-gphaseschema]
 .GPhaseCommon structure and attributes
 image::GPhaseCommonSchema.png[]
 
@@ -858,4 +859,3 @@ The ResourceRefernece element is associated with the following attribute.
 ===== GElementCommon
 
 For details of the GElementCommon element structure and attributes see chapter <<sec-gelementcommon>>.
-
