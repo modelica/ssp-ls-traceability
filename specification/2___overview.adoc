@@ -20,10 +20,10 @@ A Glue Particle does not store any version histories of simulation traceability 
 
 In the sense of tracking simulation processes that have actually been performed, all relevant information about the simulation process should be recorded in the form of metadata. If necessary, these metadata can be evaluated at a later time in order to be able to trace simulation processes of the past.
 
-The metadata for a simulation task is organized in an XML files called STMD files. The strcuture of STMD files is spefiied by an STMD XML Schema. The glue particle approach implies that IT tools and systems that contribute or use metadata can read and write STMD files depending on the situation. The STMD files are filled step by step with metadata by the IT tools and systems involved in the simulation process. The graphic in figure <<im-bild>> shows this principle of filling the STMD files step by step.
+The metadata for a simulation task is organized in an XML files called STMD files. The strcuture of STMD files is spefiied by an STMD XML Schema. The glue particle approach implies that IT tools and systems that contribute or use metadata can read and write STMD files depending on the situation. The STMD files are filled step by step with metadata by the IT tools and systems involved in the simulation process. The graphic in figure <<im-bild1>> shows this principle of filling the STMD files step by step.
 
-[#im-bild]
-.Bildunterschrift
+[#im-bild1]
+.Step by step filling of STMD file in an heterogeneous environment
 image::Bild1.png[]
 
 It is importamt to understand that STMD files do not document the simulation process itself. The STMD data format is not a process documentation format. STMD files document metadata of process inputs, procedures, outputs, responsibilitiess etc. that are associated with the simzulation process.  
