@@ -596,9 +596,8 @@ document.addEventListener('keydown', (event) => {
 <ul class="sectlevel1">
 <li><a href="#_introduction">1. Introduction</a>
 <ul class="sectlevel2">
-<li><a href="#_engineering_task_traceability">1.1. Engineering task traceability</a></li>
-<li><a href="#_credible_simulation_process">1.2. Credible Simulation Process</a></li>
-<li><a href="#_conventions_used_in_this_document">1.3. Conventions Used in This Document</a></li>
+<li><a href="#_credible_simulation_process">1.1. Credible Simulation Process</a></li>
+<li><a href="#_conventions_used_in_this_document">1.2. Conventions Used in This Document</a></li>
 </ul>
 </li>
 <li><a href="#_overview_of_ssp_traceability">2. Overview of SSP Traceability</a>
@@ -872,7 +871,7 @@ This is a development version of the specification.
 <p>In addition, to enable and support the reuse of simulation results and simulation tasks or parts of the simulation setup, e.g. the simulation models or parameter sets, a comprehensive and as precise as possible documentation of the simulation task and the simulation setup is essential (<em>reusability aspiration</em>).</p>
 </div>
 <div class="paragraph">
-<p>The enhancement of quality assurance, traceability and reusability is the core objective of the SSP Traceability Specification and the "Glue Particle" approach in the context of "Credible Simulation Processes."</p>
+<p>The enhancement of quality assurance, traceability and reusability is the core objective of the SSP Traceability Specification and the "Glue Particle" approach in the context of "Credible Simulation Processes".</p>
 </div>
 <div style="page-break-after: always;"></div>
 <div class="paragraph">
@@ -909,7 +908,7 @@ This is a development version of the specification.
 </div>
 <div class="paragraph">
 <p>In Chapter xx a simulation process is described, which enables and supports these aspects. The description is deliberately kept on a generic level, which can be adopted across companies and must then be concretized in a company-specific and application-specific manner. This described basic sequence of steps shall enable the structured documentation of the information created and used in the simulation process.
-This is the basis for the transition from a simulation process to a Credible Simulation Process (CSP).</p>
+This is the basis for the transition from a simulation process to a Credible Simulation Process (CSP):</p>
 </div>
 <div class="ulist">
 <ul>
@@ -925,40 +924,33 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <p><strong>Glue Particle Approach</strong></p>
 </div>
 <div class="paragraph">
-<p>The core of the glue particle approach is that a consistent data schema exists or is created for a process, such as the credible simulation process. This is the basis for traceability. A Glue Particle is a tool-independent XML file that records or references all information necessary to enhance the quality assurance, traceability and reusability of simulation processes and results. This is on the one hand the information handed over by the engineering project along with the simulation order to the simulation department or the simulation engineer. On the other hand it is all information having been used and generated during the planning, preparation, execution, validation and documentation of the simulation task, including references to externally defined and documented resources (external file or database references) and information on responsibilities, quality checks and approvals.</p>
+<p>The core of the glue particle approach is that a consistent data schema exists or is created for a process, such as the Credible Simulation Process. This is the basis for traceability. A Glue Particle is a tool-independent XML file that records or references all information necessary to enhance the quality assurance, traceability and reusability of simulation processes and results. This is on the one hand the information handed over by the engineering project along with the simulation order to the simulation department or the simulation engineer. On the other hand it is all information that was used and generated during the planning, preparation, execution, validation and documentation of the simulation task, including references to externally defined and documented resources (external file or database references) and information on responsibilities, quality checks and approvals.</p>
 </div>
 <div class="paragraph">
-<p>The XML Files for simulation tasks are called STMD files <strong>(STMD: Simulation Task Meta Data)</strong>. These STMD files can be used to inspect and trace simulation tasks, or to support the re-usage of simulation task or parts of a simulation task. They may also be used to describe simulation tasks that are assigned to service providers or delegated to development partners.</p>
+<p>The XML files for simulation tasks are called STMD files <strong>(STMD: Simulation Task Meta Data)</strong>. These STMD files can be used to inspect and trace simulation tasks, or to support the reuse of simulation task or parts of a simulation task. They may also be used to describe simulation tasks that are assigned to service providers or delegated to development partners.</p>
 </div>
 <div class="paragraph">
 <p><strong>Document structure</strong></p>
 </div>
 <div class="paragraph">
-<p>Chapter XXX describes the general approach for the STMD files and the design of the referenced normative STMD XML schema. Chapter XXX describes the structure of STMD files in detail. Chapter XXX documents rules and recommendations for the handling of STMD files, i.e. the creation and use of STMD files. Chapter XXX specifies meaningful resp. recommended tool based functionalities that might support STMD handling use cases. Chapter XXX illustrates the handling and interpretation of STMD files using a simple and easy to understand instantiation example for a DC motor simulation. Finally, Chapter XXX provides a glossary of terms. <strong>Die Beschreibungen der Kapitelinhalte müssen von Zeit zu Zeit aktualisiert bzw. zum Schluss ausformuliert werden.</strong></p>
+<p>Chapter XXX describes the general approach for the STMD files and the design of the referenced normative STMD XML schema. Chapter XXX describes the structure of STMD files in detail. Chapter XXX documents rules and recommendations for the handling of STMD files, i.e. the creation and use of STMD files. Chapter XXX specifies meaningful resp. recommended tool based functionalities that might support STMD handling use cases. Chapter XXX illustrates the handling and interpretation of STMD files using a simple and easy to understand instantiation example for a DC motor simulation. Finally, Chapter XXX provides a glossary of terms.</p>
 </div>
 <div class="sect2">
-<h3 id="_engineering_task_traceability">1.1. Engineering task traceability</h3>
+<h3 id="_credible_simulation_process">1.1. Credible Simulation Process</h3>
 <div class="paragraph">
-<p>+ + + tbd + + +<br></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_credible_simulation_process">1.2. Credible Simulation Process</h3>
-<div class="paragraph">
-<p>Considering that design decisions in the context of product resp. system development are made on the basis of simulations or simulation results, it is essential that the simulation results can be trusted and that it is possible to reconstruct how the simulation results were obtained. Finally, this can be summarized in the term <strong>Credible Simulation Process</strong> as illustrated in figure <a href="#im-crediblesimulationprocess">Figure 1</a>.</p>
+<p>Considering that design decisions in the context of product resp. system development are made on the basis of simulations or simulation results, it is essential that the simulation results can be trusted and that it is possible to reconstruct how the simulation results were obtained. This can be summarized in the term "Credible Simulation Process" as illustrated in figure <a href="#im-crediblesimulationprocess">Figure 1</a>.</p>
 </div>
 <div id="im-crediblesimulationprocess" class="imageblock">
 <div class="content">
 <img src="images/CredibleSimulationProcess.png" alt="CredibleSimulationProcess">
 </div>
-<div class="title">Figure 1. Credible simulation process</div>
+<div class="title">Figure 1. Credible Simulation Process</div>
 </div>
 <div class="paragraph">
-<p>Typical applications of the Credible Simzlation Process are System Analysis, Optimization and Test. The Credible Simuzlation Process than only differs in some specific aspects. For
-better readability, the <strong>synonym "Test" is used for System Analysis, Optimization and Test.</strong></p>
+<p>Typical applications of the Credible Simulation Process are System Analysis, Optimization and Test. The Credible Simulation Process then only differs in some specific aspects. For better readability, the synonym "Test" is used for System Analysis, Optimization and Test.</p>
 </div>
 <div class="paragraph">
-<p>A simulation task in the sense of the STMD standard represents the entire credible simulation process, starting with the analysis of the engineering task from which the need for a simulation arises through the individual stages of simulation preparation, simulation execution and simulation post-processing until the decision is made whether the simulation results meet the simulation objectives and requirements and thus the simulation can be completed. Figure <a href="#im-crediblesimulationprocess2">Figure 2</a> shows the overall process with its individual phases. The phases of the credible simulation process are:</p>
+<p>A simulation task in the sense of the STMD standard represents the entire Credible Simulation Process, starting with the analysis of the engineering task from which the need for a simulation arises through the individual stages of simulation preparation, simulation execution and simulation post-processing until the decision is made whether the simulation results meet the simulation objectives and requirements and thus the simulation can be completed. Figure <a href="#im-crediblesimulationprocess2">Figure 2</a> shows the overall process with its individual phases and steps. The phases of the Credible Simulation Process are:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -966,7 +958,7 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <p><strong>Analyze the Simulation Task &amp; Objectives (Analysis Phase):</strong> In this process phase the information from the higher-level engineering process is further specified and detailed with regard of the needed information in the following phases of the Credible Simulation Process.</p>
 </li>
 <li>
-<p><strong>Define Requirements (Simulation) (Requirement Phase):</strong> In this phase the requirements for the individual components of the simulation and their interaction as well as the requirements for quality assurance are formulated in detail.</p>
+<p><strong>Define Requirements (Simulation) (Requirements Phase):</strong> In this phase the requirements for the individual components of the simulation and their interaction as well as the requirements for quality assurance are formulated in detail.</p>
 </li>
 <li>
 <p><strong>Define Design Specification for Simulation Setup (Design Phase):</strong> The purpose of the Design Phase is to create all specifications needed to implement the complete simulation setup.</p>
@@ -975,13 +967,13 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <p><strong>Implement and Assure Quality for Simulation Setup (Implementation Phase):</strong> The purpose of the Implementation Phase is to implement the complete simulation setup with all its setup components as specified in the design specifications.</p>
 </li>
 <li>
-<p><strong>Execute Simulation (Execution Phase):</strong> The purpose of the Execution Phase is to execute the simulation and to record the simulation reults.</p>
+<p><strong>Execute Simulation (Execution Phase):</strong> The purpose of the Execution Phase is to execute the simulation and to record the simulation results.</p>
 </li>
 <li>
-<p><strong>Evaluate Simulation Results &amp; Assure Quality (Evaluation Phase):</strong> The purpose of the Evaluation Phase is to evaluate the simulation reults.</p>
+<p><strong>Evaluate Simulation Results &amp; Assure Quality (Evaluation Phase):</strong> The purpose of the Evaluation Phase is to evaluate the simulation results.</p>
 </li>
 <li>
-<p><strong>Decide about Fulfillment of Simulation Objectives (Fulfillment Phase):</strong> The purpose of the Fulfilment Phase is to confirm that the simulation results fulfil the original objectives of the sululatino task.</p>
+<p><strong>Decide about Fulfillment of Simulation Objectives (Fulfillment Phase):</strong> The purpose of the Fulfillment Phase is to confirm that the simulation results fulfill the original objectives of the simulation task.</p>
 </li>
 </ul>
 </div>
@@ -989,10 +981,10 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 <div class="content">
 <img src="images/CredibleSimulationProcess_2.png" alt="CredibleSimulationProcess 2">
 </div>
-<div class="title">Figure 2. Phases of the Credible Simulation Process</div>
+<div class="title">Figure 2. Phases and Steps of the Credible Simulation Process</div>
 </div>
 <div class="paragraph">
-<p>Each of these phases can comprise several steps or several partial aspects of a phase.  For example, the Design phase comprises the following steps:</p>
+<p>Each of these phases can comprise several steps or several partial aspects of a phase. For example, the Design Phase comprises the following steps:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1020,10 +1012,10 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 </ul>
 </div>
 <div class="paragraph">
-<p>Each of these steps is an activity of the simulation engineer with respective inputs and outputs. The outputs in turn are usually inputs for follow-up activities within the credible simulation process, except for the outputs of the steps in the final phase. For each of these steps there is usually a defined procedure according to which the work is carried out.</p>
+<p>Each of these steps is an activity of the simulation engineer with respective inputs and outputs. The outputs in turn are usually inputs for follow-up activities within the Credible Simulation Process, except for the outputs of the steps in the final phase. For each of these steps there is usually a defined procedure according to which the work is carried out.</p>
 </div>
 <div class="paragraph">
-<p>The information associated with an individual step can be subdivided into the following information blocks.</p>
+<p>The information associated with an individual step can be subdivided into the following information blocks:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -1051,11 +1043,11 @@ better readability, the <strong>synonym "Test" is used for System Analysis, Opti
 </ul>
 </div>
 <div class="paragraph">
-<p>The STMD format is a data format desinged to store information associated with the credible simulation process and covers simulation task meta data for the entire credible simulation process with all phases and steps. An STMD file can be recognized as an implementatation of a Glue Particle for a simulation tasks in the sense of the credible simulation process.</p>
+<p>The STMD format is a data format designed to store information associated with the credible simulation process and covers simulation task meta data for the entire Credible Simulation Process with all phases and steps. An STMD file can be recognized as an implementation of a Glue Particle for a simulation tasks in the sense of the Credible Simulation Process.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_conventions_used_in_this_document">1.3. Conventions Used in This Document</h3>
+<h3 id="_conventions_used_in_this_document">1.2. Conventions Used in This Document</h3>
 <div class="ulist">
 <ul>
 <li>
