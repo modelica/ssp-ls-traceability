@@ -1097,7 +1097,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 </div>
 </div>
 <div class="paragraph">
-<p>A Glue Particle does not store any version histories of simulation traceability information but does store one snapchot of simulation traceability information of a specific date and time. The only exception is the lifecycle information. A Glue Particle stores who and as which role had influenced in which way, i.e. drafted, accepted etc. the simulation traceability information within a Glue Particle and when the interaction took place.</p>
+<p>A Glue Particle does not store any version histories of simulation traceability information but does store one snapshot of simulation traceability information of a specific date and time. The only exception is the lifecycle information. A Glue Particle stores who and as which role had influenced in which way, i.e. drafted, accepted etc. the simulation traceability information within a Glue Particle and when the interaction took place.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1106,7 +1106,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <p>In the sense of tracking simulation processes that have actually been performed, all relevant information about the simulation process should be recorded in the form of metadata. If necessary, these metadata can be evaluated at a later time in order to be able to trace simulation processes of the past.</p>
 </div>
 <div class="paragraph">
-<p>The metadata for a simulation task is organized in an XML files called STMD files. The strcuture of STMD files is spefiied by an STMD XML Schema. The glue particle approach implies that IT tools and systems that contribute or use metadata can read and write STMD files depending on the situation. The STMD files are filled step by step with metadata by the IT tools and systems involved in the simulation process. The graphic in figure <a href="#im-bild1">Figure 3</a> shows this principle of filling the STMD files step by step.</p>
+<p>The metadata for a simulation task is organized in an XML files called STMD files. The structure of STMD files is specified by an STMD XML Schema. The glue particle approach implies that IT tools and systems that contribute or use metadata can read and write STMD files depending on the situation. The STMD files are filled step by step with metadata by the IT tools and systems involved in the simulation process. The graphic in figure <a href="#im-bild1">Figure 3</a> shows this principle of filling the STMD files step by step.</p>
 </div>
 <div id="im-bild1" class="imageblock">
 <div class="content">
@@ -1115,7 +1115,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <div class="title">Figure 3. Step by step filling of STMD file in an heterogeneous environment</div>
 </div>
 <div class="paragraph">
-<p>It is importamt to understand that STMD files do not document the simulation process itself. The STMD data format is not a process documentation format. STMD files document metadata of process inputs, procedures, outputs, responsibilitiess etc. that are associated with the simzulation process.</p>
+<p>It is important to understand that STMD files do not document the simulation process itself. The STMD data format is not a process documentation format. STMD files document metadata of process inputs, procedures, outputs, responsibilities etc. that are associated with the simulation process.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1161,7 +1161,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 </ul>
 </div>
 <div class="paragraph">
-<p>In addition, the entire Simulation Traceability Glue Particle can be classified and annotated. All phase elements are subdivided into step elements, which have different names in each phase and also correspond to the steps of the Credible Simulation Process. Regardless of the sematic content of a step element, the step elements are all structurally the same. All step elements have the subnodes Input, Procedure, Output, Rationale, Links, LifecycleInformation and additionally elements for Classification and Annotations.</p>
+<p>In addition, the entire Simulation Traceability Glue Particle can be classified and annotated. All phase elements are subdivided into step elements, which have different names in each phase and also correspond to the steps of the Credible Simulation Process. Regardless of the semantic content of a step element, the step elements are all structurally the same. All step elements have the sub-nodes Input, Procedure, Output, Rationale, Links, LifecycleInformation and additionally elements for Classification and Annotations.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1182,7 +1182,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <h2 id="_ssp_traceability_common">3. SSP Traceability Common</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This chapter describes in detail the content and structure of the XML schema stc.xsd. The elements defined by the schema represent common concepts for ensuring traceability that are reused in many places of other XML schemas for the topic of simulation process traceability. The purpose of the extraction of these reused elements is to increase the flexibility and extensibility of the Glue Particles concept and to help to apply the Glue Particles concept to other topics in product and system engineering.</p>
+<p>This chapter describes in detail the content and structure of the XML schema stc.xsd. The elements defined by the schema represent common concepts for ensuring traceability that are reused in many places of other XML schemes for the topic of simulation process traceability. The purpose of the extraction of these reused elements is to increase the flexibility and extensibility of the Glue Particles concept and to help to apply the Glue Particles concept to other topics in product and system engineering.</p>
 </div>
 <div class="sect2">
 <h3 id="sec-generalinformationtype">3.1. GeneralInformationType</h3>
@@ -1196,7 +1196,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <div class="title">Figure 5. GeneralInformationType element structure and attributes</div>
 </div>
 <div class="paragraph">
-<p>The GeneralInformationType element is structured by the followuing subordinated element.</p>
+<p>The GeneralInformationType element is structured by the following subordinated element.</p>
 </div>
 <table id="tb-generalinformationtypesubelements" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. GeneralInformationType element structure</caption>
@@ -1288,7 +1288,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <tr>
 <th class="tableblock halign-left valign-top">Attribute name</th>
 <th class="tableblock halign-left valign-top">Optional / Mandatory</th>
-<th class="tableblock halign-left valign-top">Atrribute description</th>
+<th class="tableblock halign-left valign-top">Attribute description</th>
 </tr>
 </thead>
 <tbody>
@@ -1388,7 +1388,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <p>The Classification element is structured by the following subordinated elements.</p>
 </div>
 <table id="tb-classificationsubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 5. Classification elemenst structure</caption>
+<caption class="title">Table 5. Classification element structure</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1420,7 +1420,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <tr>
 <th class="tableblock halign-left valign-top">Attribute name</th>
 <th class="tableblock halign-left valign-top">Optional/ Mandatory</th>
-<th class="tableblock halign-left valign-top">Atrribute description</th>
+<th class="tableblock halign-left valign-top">Attribute description</th>
 </tr>
 </thead>
 <tbody>
@@ -1440,7 +1440,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <div class="title">Figure 10. ClassificationEntry element structure and attributes</div>
 </div>
 <div class="paragraph">
-<p>The ClassificationEntry element is structured by the followeing subordinated elements.</p>
+<p>The ClassificationEntry element is structured by the following subordinated elements.</p>
 </div>
 <table id="tb-classificationentrysubelements" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 7. ClassificationEntry element structure</caption>
@@ -1475,7 +1475,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <tr>
 <th class="tableblock halign-left valign-top">Attribute name</th>
 <th class="tableblock halign-left valign-top">Optional / Mandatory</th>
-<th class="tableblock halign-left valign-top">Atrribute description</th>
+<th class="tableblock halign-left valign-top">Attribute description</th>
 </tr>
 </thead>
 <tbody>
@@ -1519,7 +1519,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <p>The Annotations element is structured by the following subordinated elements.</p>
 </div>
 <table id="tb-annotationssubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 9. Annotations element strcuture</caption>
+<caption class="title">Table 9. Annotations element structure</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1552,7 +1552,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <div class="title">Figure 12. Annotation element structure and attributes</div>
 </div>
 <table id="tb-annotationsubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 10. Annotation element strcuture</caption>
+<caption class="title">Table 10. Annotation element structure</caption>
 <colgroup>
 <col style="width: 50%;">
 <col style="width: 50%;">
@@ -1584,7 +1584,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <tr>
 <th class="tableblock halign-left valign-top">Attribute name</th>
 <th class="tableblock halign-left valign-top">Optional / Mandatory</th>
-<th class="tableblock halign-left valign-top">Atrribute description</th>
+<th class="tableblock halign-left valign-top">Attribute description</th>
 </tr>
 </thead>
 <tbody>
@@ -1598,7 +1598,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <div class="sect5">
 <h6 id="_any_2">3.2.2.1.1. ##any</h6>
 <div class="paragraph">
-<p>The Annotation element may contain XML Elements of any kind, i.e. the STMD Schema provides the possibility and capability to code any kind of information regardless of what the STMD specifies. This means, the name, structure and attributes of XML elements enclosed by aa Annotation element are completely free.</p>
+<p>The Annotation element may contain XML Elements of any kind, i.e. the STMD Schema provides the possibility and capability to code any kind of information regardless of what the STMD specifies. This means, the name, structure and attributes of XML elements enclosed by an Annotation element are completely free.</p>
 </div>
 </div>
 </div>
@@ -1729,44 +1729,44 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <div class="sect3">
 <h4 id="_drafted">3.4.1. Drafted</h4>
 <div class="paragraph">
-<p>For details of the "Drafted" LifeCyleEntry element strructure and attributes see chapter <a href="#sec-lifecycleentrytype">Section 3.5</a>.</p>
+<p>For details of the "Drafted" LifeCyleEntry element structure and attributes see chapter <a href="#sec-lifecycleentrytype">Section 3.5</a>.</p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_defined">3.4.2. Defined</h4>
 <div class="paragraph">
-<p>For details of the "Defined" LifeCyleEntry element strructure and attributes see chapter <a href="#sec-lifecycleentrytype">Section 3.5</a></p>
+<p>For details of the "Defined" LifeCyleEntry element structure and attributes see chapter <a href="#sec-lifecycleentrytype">Section 3.5</a></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_validated">3.4.3. Validated</h4>
 <div class="paragraph">
-<p>For details of the "Validated" LifeCyleEntry element strructure and attributes see chapter <a href="#sec-lifecycleentrytype">Section 3.5</a></p>
+<p>For details of the "Validated" LifeCyleEntry element structure and attributes see chapter <a href="#sec-lifecycleentrytype">Section 3.5</a></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_approved">3.4.4. Approved</h4>
 <div class="paragraph">
-<p>For details of the "Approved" LifeCyleEntry element strructure and attributes see chapter <a href="#sec-lifecycleentrytype">Section 3.5</a></p>
+<p>For details of the "Approved" LifeCyleEntry element structure and attributes see chapter <a href="#sec-lifecycleentrytype">Section 3.5</a></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_archived">3.4.5. Archived</h4>
 <div class="paragraph">
-<p>For details of the "Archived" LifeCyleEntry element strructure and attributes see chapter <a href="#sec-lifecycleentrytype">Section 3.5</a></p>
+<p>For details of the "Archived" LifeCyleEntry element structure and attributes see chapter <a href="#sec-lifecycleentrytype">Section 3.5</a></p>
 </div>
 </div>
 <div class="sect3">
 <h4 id="_retracted">3.4.6. Retracted</h4>
 <div class="paragraph">
-<p>For details of the "Retracted" LifeCyleEntry element strructure and attributes see chapter <a href="#sec-lifecycleentrytype">Section 3.5</a></p>
+<p>For details of the "Retracted" LifeCyleEntry element structure and attributes see chapter <a href="#sec-lifecycleentrytype">Section 3.5</a></p>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="sec-lifecycleentrytype">3.5. LifeCycleEntryType</h3>
 <div class="paragraph">
-<p>The LifeCycleEntryType element defines the structutre and the attributes of lifecycle information entries and therefor is the basis of the Drafted, Defined, Validated, Approved, Archived and Retracted XML elements.</p>
+<p>The LifeCycleEntryType element defines the structure and the attributes of lifecycle information entries and therefor is the basis of the Drafted, Defined, Validated, Approved, Archived and Retracted XML elements.</p>
 </div>
 <div id="im-lifecycleentrytypeschema" class="imageblock">
 <div class="content">
@@ -1822,14 +1822,14 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <tr>
 <th class="tableblock halign-left valign-top">Attribute name</th>
 <th class="tableblock halign-left valign-top">Optional / Mandatory</th>
-<th class="tableblock halign-left valign-top">Atrribute description</th>
+<th class="tableblock halign-left valign-top">Attribute description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">date</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Timestamp when lifecycle entry was assigned. Note that the time stamp data type makes time zone information mandatory, so that a full ordering of times is possible.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Time-stamp when lifecycle entry was assigned. Note that the time stamp data type makes time zone information mandatory, so that a full ordering of times is possible.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">checksum</p></td>
@@ -1939,7 +1939,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <tr>
 <th class="tableblock halign-left valign-top">Attribute name</th>
 <th class="tableblock halign-left valign-top">Optional / Mandatory</th>
-<th class="tableblock halign-left valign-top">Atrribute description</th>
+<th class="tableblock halign-left valign-top">Attribute description</th>
 </tr>
 </thead>
 <tbody>
@@ -2049,7 +2049,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <tr>
 <th class="tableblock halign-left valign-top">Attribute name</th>
 <th class="tableblock halign-left valign-top">Optional / Mandatory</th>
-<th class="tableblock halign-left valign-top">Atrribute description</th>
+<th class="tableblock halign-left valign-top">Attribute description</th>
 </tr>
 </thead>
 <tbody>
@@ -2081,7 +2081,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <div class="sect2">
 <h3 id="sec-linkstype">3.8. LinksType</h3>
 <div class="paragraph">
-<p>The LinksType element defines the structure and attributes for the linkage mechnism to use links within the stmd file as well as links to external resources outside the STMF file.</p>
+<p>The LinksType element defines the structure and attributes for the linkage mechanism to use links within the stmd file as well as links to external resources outside the STMF file.</p>
 </div>
 <div id="im-linkstypeschema" class="imageblock">
 <div class="content">
@@ -2117,7 +2117,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <div class="sect3">
 <h4 id="_link">3.8.1. Link</h4>
 <div class="paragraph">
-<p>The Link elemenet represents a single links no mater if it is an STMD file internal link or a link targeted to the outside of the STMD file.</p>
+<p>The Link element represents a single links no mater if it is an STMD file internal link or a link targeted to the outside of the STMD file.</p>
 </div>
 <div id="im-linkschema" class="imageblock">
 <div class="content">
@@ -2165,7 +2165,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <tr>
 <th class="tableblock halign-left valign-top">Attribute name</th>
 <th class="tableblock halign-left valign-top">Optional / Mandatory</th>
-<th class="tableblock halign-left valign-top">Atrribute description</th>
+<th class="tableblock halign-left valign-top">Attribute description</th>
 </tr>
 </thead>
 <tbody>
@@ -2190,7 +2190,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <div class="sect3">
 <h4 id="_locator">3.8.2. Locator</h4>
 <div class="paragraph">
-<p>The Locator elemenet represents &#8230;&#8203; Text fehlt noch</p>
+<p>The Locator element represents &#8230;&#8203; Text fehlt noch</p>
 </div>
 <div id="im-locatorschema" class="imageblock">
 <div class="content">
@@ -2215,7 +2215,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <tr>
 <th class="tableblock halign-left valign-top">Attribute name</th>
 <th class="tableblock halign-left valign-top">Optional / Mandatory</th>
-<th class="tableblock halign-left valign-top">Atrribute description</th>
+<th class="tableblock halign-left valign-top">Attribute description</th>
 </tr>
 </thead>
 <tbody>
@@ -2250,7 +2250,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <div class="sect3">
 <h4 id="_arc">3.8.3. Arc</h4>
 <div class="paragraph">
-<p>The Arc elemenet represents &#8230;&#8203; Text fehlt noch</p>
+<p>The Arc element represents &#8230;&#8203; Text fehlt noch</p>
 </div>
 <div id="im-arcschema" class="imageblock">
 <div class="content">
@@ -2275,7 +2275,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <tr>
 <th class="tableblock halign-left valign-top">Attribute name</th>
 <th class="tableblock halign-left valign-top">Optional / Mandatory</th>
-<th class="tableblock halign-left valign-top">Atrribute description</th>
+<th class="tableblock halign-left valign-top">Attribute description</th>
 </tr>
 </thead>
 <tbody>
@@ -2371,7 +2371,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <tr>
 <th class="tableblock halign-left valign-top">Attribute name</th>
 <th class="tableblock halign-left valign-top">Optional / Mandatory</th>
-<th class="tableblock halign-left valign-top">Atrribute description</th>
+<th class="tableblock halign-left valign-top">Attribute description</th>
 </tr>
 </thead>
 <tbody>
@@ -2415,7 +2415,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <div class="sect3">
 <h4 id="_content">3.9.1. Content</h4>
 <div class="paragraph">
-<p>For details of the the Content element structure and attributessee chapter <a href="#sec-contenttype">Section 3.11</a>.</p>
+<p>For details of the the Content element structure and attributes, see chapter <a href="#sec-contenttype">Section 3.11</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -2473,7 +2473,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <tr>
 <th class="tableblock halign-left valign-top">Attribute name</th>
 <th class="tableblock halign-left valign-top">Optional / Mandatory</th>
-<th class="tableblock halign-left valign-top">Atrribute description</th>
+<th class="tableblock halign-left valign-top">Attribute description</th>
 </tr>
 </thead>
 <tbody>
@@ -2568,7 +2568,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <tr>
 <th class="tableblock halign-left valign-top">Attribute name</th>
 <th class="tableblock halign-left valign-top">Optional / Mandatory</th>
-<th class="tableblock halign-left valign-top">Atrribute description</th>
+<th class="tableblock halign-left valign-top">Attribute description</th>
 </tr>
 </thead>
 <tbody>
@@ -2680,7 +2680,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <tr>
 <th class="tableblock halign-left valign-top">Attribute name</th>
 <th class="tableblock halign-left valign-top">Optional / Mandatory</th>
-<th class="tableblock halign-left valign-top">Atrribute description</th>
+<th class="tableblock halign-left valign-top">Attribute description</th>
 </tr>
 </thead>
 <tbody>
@@ -2790,7 +2790,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <tr>
 <th class="tableblock halign-left valign-top">Attribute name</th>
 <th class="tableblock halign-left valign-top">Optional / Mandatory</th>
-<th class="tableblock halign-left valign-top">Atrribute description</th>
+<th class="tableblock halign-left valign-top">Attribute description</th>
 </tr>
 </thead>
 <tbody>
@@ -2905,7 +2905,7 @@ This is the basis for the transition from a simulation process to a Credible Sim
 <tr>
 <th class="tableblock halign-left valign-top">Attribute name</th>
 <th class="tableblock halign-left valign-top">Optional/ Mandatory</th>
-<th class="tableblock halign-left valign-top">Atrribute description</th>
+<th class="tableblock halign-left valign-top">Attribute description</th>
 </tr>
 </thead>
 <tbody>
