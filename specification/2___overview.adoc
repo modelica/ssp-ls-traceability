@@ -14,19 +14,19 @@ The SSP Traceability Specification consists of the following parts:
 
  + + + tbd + + + 
  
-A Glue Particle does not store any version histories of simulation traceability information but does store one snapchot of simulation traceability information of a specific date and time. The only exception is the lifecycle information. A Glue Particle stores who and as which role had influenced in which way, i.e. drafted, accepted etc. the simulation traceability information within a Glue Particle and when the interaction took place.
+A Glue Particle does not store any version histories of simulation traceability information but does store one snapshot of simulation traceability information of a specific date and time. The only exception is the lifecycle information. A Glue Particle stores who and as which role had influenced in which way, i.e. drafted, accepted etc. the simulation traceability information within a Glue Particle and when the interaction took place.
 
 === Simulation Task Meta Data
 
 In the sense of tracking simulation processes that have actually been performed, all relevant information about the simulation process should be recorded in the form of metadata. If necessary, these metadata can be evaluated at a later time in order to be able to trace simulation processes of the past.
 
-The metadata for a simulation task is organized in an XML files called STMD files. The strcuture of STMD files is spefiied by an STMD XML Schema. The glue particle approach implies that IT tools and systems that contribute or use metadata can read and write STMD files depending on the situation. The STMD files are filled step by step with metadata by the IT tools and systems involved in the simulation process. The graphic in figure <<im-bild1>> shows this principle of filling the STMD files step by step.
+The metadata for a simulation task is organized in an XML files called STMD files. The structure of STMD files is specified by an STMD XML Schema. The glue particle approach implies that IT tools and systems that contribute or use metadata can read and write STMD files depending on the situation. The STMD files are filled step by step with metadata by the IT tools and systems involved in the simulation process. The graphic in figure <<im-bild1>> shows this principle of filling the STMD files step by step.
 
 [#im-bild1]
 .Step by step filling of STMD file in an heterogeneous environment
 image::Bild1.png[]
 
-It is importamt to understand that STMD files do not document the simulation process itself. The STMD data format is not a process documentation format. STMD files document metadata of process inputs, procedures, outputs, responsibilitiess etc. that are associated with the simzulation process.  
+It is important to understand that STMD files do not document the simulation process itself. The STMD data format is not a process documentation format. STMD files document metadata of process inputs, procedures, outputs, responsibilities etc. that are associated with the simulation process.  
 
 === Glue Particle Layout
 
@@ -49,7 +49,7 @@ Beside some general and partly technical attributes, which are valid for the who
 ** EvaluationPhase
 ** FullfillmentPhase
 
-In addition, the entire Simulation Traceability Glue Particle can be classified and annotated. All phase elements are subdivided into step elements, which have different names in each phase and also correspond to the steps of the Credible Simulation Process. Regardless of the sematic content of a step element, the step elements are all structurally the same. All step elements have the subnodes Input, Procedure, Output, Rationale, Links, LifecycleInformation and additionally elements for Classification and Annotations.
+In addition, the entire Simulation Traceability Glue Particle can be classified and annotated. All phase elements are subdivided into step elements, which have different names in each phase and also correspond to the steps of the Credible Simulation Process. Regardless of the semantic content of a step element, the step elements are all structurally the same. All step elements have the sub-nodes Input, Procedure, Output, Rationale, Links, LifecycleInformation and additionally elements for Classification and Annotations.
 
 === Glue Particle Packaging
 
