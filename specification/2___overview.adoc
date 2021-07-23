@@ -53,7 +53,13 @@ In addition, the entire Simulation Traceability Glue Particle can be classified 
 
 === Glue Particle Packaging
 
-+ + + tbd + + + +
+Glue Particles by their nature are not self-contained but reference many resources that they tie together in their function as glue particles.
+Packaging of glue particles together with their referenced resources into easily exchangeable packages is therefore of fundamental importance.
+
+The current approach to packaging is based, like other parts of this approach, on the SSP 1.0 standard.
+Chaoter xxx gives details if how the currentlx defined particles can be packaged into SSP archives either stand-alone or in ways thst allow the treatment if those archives as native SSP packages by SSP-aware processors.
+
+Additionally ways if packaging glue particles into other containers like FMUs are specified.
 
 === Glue Particle Linkage
 + + + tbd + + + +
