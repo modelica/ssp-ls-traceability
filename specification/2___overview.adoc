@@ -6,21 +6,29 @@ The SSP Traceability Specification consists of the following parts:
 
  * The Simulation Resource Meta Data (SRMD) file format specification, specifying how to store, retrieve and handle simulation resource meta data.
 
- * Definitions common to these two file format specifications, that can also be re-used in other traceability contexts.
+ * Common definitions used in those specifications that can be re-used in other traceability contexts.
 
  * The SSP Traceability Packaging specification, specifying how to package STMD and SRMD data, as well as related resources into SSP.
 
-=== Purpose and usage of Glue Particle
+=== Purpose and Usage of Glue Particles
 
- + + + tbd + + + 
- 
-A Glue Particle does not store any version histories of simulation traceability information but does store one snapshot of simulation traceability information of a specific date and time. The only exception is the lifecycle information. A Glue Particle stores who and as which role had influenced in which way, i.e. drafted, accepted etc. the simulation traceability information within a Glue Particle and when the interaction took place.
+The ability to trace simulation results back to the requirements, models, procedures, rationale, etc., that influenced those results is one of the requirements for credible simulations.
+
+Recognizing that formats already exist for most of those artefacts, the glue particle approach defines formats that allow the user to tie the relevant information together by referencing existing artefacts:
+Rather than incorporating all information into one homogenous file format, the format acts as a glue between existing file formats.
+
+The role of a glue particle is to provide the necessary context and relationships tying the relevant information together in transit between two parties or systems.
+It acts as an interchange standard, not necessarily as a native format used inside one party or system.
+
+A glue particle does not store any version histories of the carried information but stores only one snapshot valid for a specific date and time.
+When such information is passed around multiple times, new glue particles incorporating new information are created.
+They may, however, reference former glue particles they are based on to allow easy reintegration of the new information into the original system.
 
 === Simulation Task Meta Data
 
 In the sense of tracking simulation processes that have actually been performed, all relevant information about the simulation process should be recorded in the form of metadata. If necessary, these metadata can be evaluated at a later time in order to be able to trace simulation processes of the past.
 
-The metadata for a simulation task is organized in an XML files called STMD files. The structure of STMD files is specified by an STMD XML Schema. The glue particle approach implies that IT tools and systems that contribute or use metadata can read and write STMD files depending on the situation. The STMD files are filled step by step with metadata by the IT tools and systems involved in the simulation process. The graphic in figure <<im-bild1>> shows this principle of filling the STMD files step by step.
+The metadata for a simulation task is organized in XML files called STMD files. The structure of STMD files is specified by an STMD XML Schema. The glue particle approach implies that IT tools and systems that contribute or use metadata can read and write STMD files depending on the situation. The STMD files are filled step by step with metadata by the IT tools and systems involved in the simulation process. The graphic in figure <<im-bild1>> shows this principle of filling the STMD files step by step.
 
 [#im-bild1]
 .Step by step filling of STMD file in an heterogeneous environment
@@ -49,17 +57,24 @@ Beside some general and partly technical attributes, which are valid for the who
 ** EvaluationPhase
 ** FullfillmentPhase
 
-In addition, the entire Simulation Traceability Glue Particle can be classified and annotated. All phase elements are subdivided into step elements, which have different names in each phase and also correspond to the steps of the Credible Simulation Process. Regardless of the semantic content of a step element, the step elements are all structurally the same. All step elements have the sub-nodes Input, Procedure, Output, Rationale, Links, LifecycleInformation and additionally elements for Classification and Annotations.
+All phase elements are subdivided into step elements, which have different names in each phase, corresponding to the steps of the Credible Simulation Process.
+Step elements are all structured identically, regardless of the semantic content of a step element: 
+Each step element has the sub-nodes Input, Procedure, Output, Rationale, Links, LifecycleInformation, and additional sub-elements for Classification and Annotations.
+
+In addition, the entire Simulation Traceability Glue Particle can be classified and annotated.
 
 === Glue Particle Packaging
 
-Glue Particles by their nature are not self-contained but reference many resources that they tie together in their function as glue particles.
+Glue Particles, by their nature, are not self-contained but reference many resources that they tie together in their function as glue particles.
 Packaging of glue particles together with their referenced resources into easily exchangeable packages is therefore of fundamental importance.
 
-The current approach to packaging is based, like other parts of this approach, on the SSP 1.0 standard.
-Chaoter xxx gives details if how the currentlx defined particles can be packaged into SSP archives either stand-alone or in ways thst allow the treatment if those archives as native SSP packages by SSP-aware processors.
-
-Additionally ways if packaging glue particles into other containers like FMUs are specified.
+The current approach to packaging is based on the SSP 1.0 standard, which also serves as a base in other regards.
+Chapter xxx details how the currently defined particles can be packaged into SSP archives either stand-alone or in ways that allow the treatment of those archives as native SSP packages by SSP-aware processors.
+Additionally, ways of packaging glue particles into other container formats like FMUs are specified.
 
 === Glue Particle Linkage
-+ + + tbd + + + +
+
+Glue particles tie the referenced resources together in a two-fold manner:
+The broad flow of dependencies from inputs via procedures to outputs, supported by rationale information is given by the explicit structure of the step elements.
+
+This broad dependency chain can be enhanced via more fine granular links through the XML Links (XLinks) based link sections that are present in each step and phase.
