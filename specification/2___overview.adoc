@@ -17,12 +17,17 @@ The ability to trace simulation results back to the requirements, models, proced
 Recognizing that formats already exist for most of those artefacts, the glue particle approach defines formats that allow the user to tie the relevant information together by referencing existing artefacts:
 Rather than incorporating all information into one homogenous file format, the format acts as a glue between existing file formats.
 
-The role of a glue particle is to provide the necessary context and relationships tying the relevant information together in transit between two parties or systems.
+Thus the glue particle approach focuses on traceability, as well as the exchange between partners, or in heterogeneous IT environments. The role of a single glue particle is to provide the necessary context and relationships tying the relevant information together in transit between two parties or systems.
 It acts as an interchange standard, not necessarily as a native format used inside one party or system.
+
+It is used to exchange relevant configuration and version statuses between partners and IT environments.
+For this the relevant information chains are derived from process steps (e.g. for traceability) and made  explicit (configuration of information). Version statuses are also made explicit for traceability.
 
 A glue particle does not store any version histories of the carried information but stores only one snapshot valid for a specific date and time.
 When such information is passed around multiple times, new glue particles incorporating new information are created.
 They may, however, reference former glue particles they are based on to allow easy reintegration of the new information into the original system.
+
+The glue particle approach can be applied to engineering tasks in general. The STMD file format is the specific variant for simulation tasks.
 
 === Simulation Task Meta Data
 
@@ -34,7 +39,7 @@ The metadata for a simulation task is organized in XML files called STMD files. 
 .Step by step filling of STMD file in an heterogeneous environment
 image::Bild1.png[]
 
-It is important to understand that STMD files do not document the simulation process itself. The STMD data format is not a process documentation format. STMD files document metadata of process inputs, procedures, outputs, responsibilities etc. that are associated with the simulation process.  
+It is important to understand that STMD files do not document the simulation process itself. The STMD data format is not a process documentation format. STMD files document metadata of process inputs, procedures, outputs, responsibilities etc. that are associated with the simulation process.
 
 === Glue Particle Layout
 
@@ -58,7 +63,7 @@ Beside some general and partly technical attributes, which are valid for the who
 ** FullfillmentPhase
 
 All phase elements are subdivided into step elements, which have different names in each phase, corresponding to the steps of the Credible Simulation Process.
-Step elements are all structured identically, regardless of the semantic content of a step element: 
+Step elements are all structured identically, regardless of the semantic content of a step element:
 Each step element has the sub-nodes Input, Procedure, Output, Rationale, Links, LifecycleInformation, and additional sub-elements for Classification and Annotations.
 
 In addition, the entire Simulation Traceability Glue Particle can be classified and annotated.
