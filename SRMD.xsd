@@ -16,12 +16,12 @@
             <xs:attribute name="version" use="required">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">
-                        Version of SRMD format, 0.x for this pre-release.
+                        Version of SRMD format, 1.0.0-beta2 for this pre-release.
                     </xs:documentation>
                 </xs:annotation>
                 <xs:simpleType>
                     <xs:restriction base="xs:normalizedString">
-                        <xs:pattern value="0[.][0-9]+(-.*)?"/>
+                        <xs:pattern value="[0-9]+[.][0-9]+([.][0-9]+)?(-.*)?"/>
                     </xs:restriction>
                 </xs:simpleType>
             </xs:attribute>
