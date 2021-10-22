@@ -4,8 +4,8 @@
     xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon"
     xmlns:xlink="http://www.w3.org/1999/xlink"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://apps.pmsf.net/STMD/SimulationTaskMetaData https://raw.githubusercontent.com/PMSFIT/SSPTraceability/v1.0-beta1/STMD.xsd"
-    version="0.2" name="Simulation Task" author="Pierre R. Mai" fileversion="1.1"
+    xsi:schemaLocation="http://apps.pmsf.net/STMD/SimulationTaskMetaData https://raw.githubusercontent.com/PMSFIT/SSPTraceability/v1.0-beta2/STMD.xsd"
+    version="1.0.0-beta2" name="Simulation Task" author="Pierre R. Mai" fileversion="1.1"
     generationTool="PMSF FMI Bench 1.9.9.7" generationDateAndTime="2021-03-09T08:13:39+01:00"
     GUID="769c543a-d088-4b86-9f75-f27bdd12f5f9"
     description="Simple SimulationTask Example">
