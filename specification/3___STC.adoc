@@ -61,7 +61,7 @@ The DerivationChainEntry element is associated with the following attributes.
 [width="100%",options="header"]
 |===
 | Attribute name        | Optional / Mandatory | Attribute description
-| GUID                  | mandatory            | GUID identifier of referenced STMD file. Must be globally unique and MUST change, whenever a new file with differing information is written.
+| GUID                  | mandatory            | GUID identifier of a referenced STMD file. Must be globally unique and MUST change, whenever a new file with differing information is written.
 | author                | Optional             | This attribute gives the name of the author of this file's content.
 | fileversion           | Optional             | This attribute gives a version number for this file's content.
 | copyright             | Optional             | This attribute gives copyright information for this file's content.
