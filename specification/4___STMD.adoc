@@ -45,6 +45,7 @@ The SimulationTaskMetaData element is associated with the following attributes.
 | license               | Optional             | This attribute gives license information for this file's content.
 | generatingTool        | Optional             | This attribute gives the name of the tool that generated this file.
 | generationDateAndTime | Optional             | This attribute gives the date and time this file was generated.
+| GUID                  | Mandatory            | GUID identifier of this STMD file. Must be globally unique and MUST change, whenever a new file with differing information is written.
 |===
 
 
