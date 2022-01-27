@@ -40,7 +40,9 @@
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
+            <xs:group ref="stc:GResourceOrReference" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="Links" minOccurs="0" type="stc:LinksType"/>
+            <xs:group ref="stc:GElementCommon"/>
         </xs:sequence>
     </xs:complexType>
     
