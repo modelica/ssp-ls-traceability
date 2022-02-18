@@ -242,11 +242,41 @@
     </xs:complexType>
 
     <xs:complexType name="LinksType">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                This element provides a set of links that provide more detailed relationship information between parts of
+                resources or other information relevant to a phase or step.
+            </xs:documentation>
+        </xs:annotation>
         <xs:sequence>
             <xs:element name="Link" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        This element provides an extended link conforming to the XLink specification. It provides detailed
+                        relationship information between (parts of) resources or other information relevant to a phase or
+                        step.
+                        
+                        An extended link relates 2 or more locators (which identify a particular piece of information
+                        through an URI). It can provide navigation information between these locators through arcs.
+                        
+                        Locators, arcs and the link itself can further specify their semantic meaning through optional
+                        role or arcrole attributes. The SSP Traceability specification currently provides no predefined
+                        roles.
+                        
+                        All individual elements and attributes are as specified in the XLink specification.
+                    </xs:documentation>
+                </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
                         <xs:element name="Locator" minOccurs="2" maxOccurs="unbounded">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This element provides a locator conforming to the XLink specification. It identifies a
+                                    particular piece of information through an URI, that is taking part in the linking
+                                    relationship. Locators can further specify their semantic meaning through an optional
+                                    role attribute. The SSP Traceability specification currently provides no predefined roles.
+                                </xs:documentation>
+                            </xs:annotation>
                             <xs:complexType>
                                 <xs:attribute ref="xlink:type" fixed="locator"/>
                                 <xs:attribute ref="xlink:href" use="required"/>
@@ -256,6 +286,14 @@
                             </xs:complexType>
                         </xs:element>
                         <xs:element name="Arc" minOccurs="0" maxOccurs="unbounded">
+                            <xs:annotation>
+                                <xs:documentation xml:lang="en">
+                                    This element provides an arc conforming to the XLink specification. An arc relates sets
+                                    of locators in a navigable relationship, including directionality information.
+                                    Arcs can further specify their semantic meaning through an optional arcrole attribute.
+                                    The SSP Traceability specification currently provides no predefined roles.
+                                </xs:documentation>
+                            </xs:annotation>
                             <xs:complexType>
                                 <xs:attribute ref="xlink:type" fixed="arc"/>
                                 <xs:attribute ref="xlink:from" use="required"/>
@@ -674,13 +712,21 @@
     </xs:complexType>
     
     <xs:group name="GResourceOrReference">
+        <xs:annotation>
+            <xs:documentation xml:lang="en">
+                This group provides a choice between a resource and a resource reference, which references
+                a resource defined in another location in the file or somewhere else.
+            </xs:documentation>
+        </xs:annotation>
         <xs:choice>
             <xs:element name="Resource" type="stc:ResourceType"/>
             <xs:element name="ResourceReference">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">
                         This element references a resource element defined in another place, that is
-                        related to the particular step and particle.
+                        related to the particular step and particle.  The referenced resource is
+                        specified using a URI. The resource reference element conforms to the simple
+                        link type of the XLink specification.
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
