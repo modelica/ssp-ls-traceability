@@ -148,7 +148,7 @@ The ClassificationEntry element is associated with the following attributes.
 |===
 | Attribute name | Optional / Mandatory | Attribute description
 | keyword        | Mandatory            | This attribute gives the keyword for the classification entry (i.e. keyword value pair). It is left undefined whether this must be unique across the entries of the Classification element, or whether repeated entries are allowed. This will depend on the definition of the classification. 
-| xlink:type     | Optional             |    
+| xlink:type     | Fixed                | Has the fixed value `simple` to indicate an XLink simple link.
 | xlink:href     | Optional             | This attribute gives an optional link for the classification entry (i.e. keyword value pair). This link can be given in addition to any content of the classification entry, or it can be the sole information of the classification entry. The rules will depend on the definition of the classification.
 |===
 
@@ -502,7 +502,7 @@ The Link element is associated with the following attributes.
 [width="100%",options="header"]
 |===
 | Attribute name | Optional / Mandatory | Attribute description
-| xlink:type     | Optional             | Text fehlt noch
+| xlink:type     | Fixed                | Has the fixed value `extended` to indicate an XLink extended link.
 | xlink:title    | Optional             | Text fehlt noch
 | xlink:role     | Optional             | Text fehlt noch
 |===
@@ -525,7 +525,7 @@ The Locator element is associated with the following attributes.
 [width="100%",options="header"]
 |===
 | Attribute name | Optional / Mandatory | Attribute description
-| xlink:type     | Optional             | Text fehlt noch
+| xlink:type     | Fixed                | Has the fixed value `locator` to indicate an XLink locator.
 | xlink:href     | Mandatory            | Text fehlt noch
 | xlink:label    | Optional             | Text fehlt noch
 | xlink:title    | Optional             | Text fehlt noch
@@ -549,7 +549,7 @@ The Arc element is associated with the following attributes.
 [width="100%",options="header"]
 |===
 | Attribute name | Optional / Mandatory | Attribute description
-| xlink:type     | Optional             | Text fehlt noch
+| xlink:type     | Fixed                | Has the fixed value `arc` to indicate an XLink arc.
 | xlink:from     | Mandatory            | Text fehlt noch
 | xlink:to       | Mandatory            | Text fehlt noch
 | xlink:title    | Optional             | Text fehlt noch
@@ -851,7 +851,7 @@ The ResourceRefernece element is associated with the following attribute.
 [width="100%",options="header"]
 |===
 | Attribute name | Optional/ Mandatory | Attribute description
-| xlink:type     | Optional            | Text fehlt noch
+| xlink:type     | Fixed               | Has the fixed value `simple` to indicate an XLink simple link.
 | xlink:href     | Optional            | Text fehlt noch
 | id             | Optional            | Text fehlt noch
 | description    | Optional            | Text fehlt noch
