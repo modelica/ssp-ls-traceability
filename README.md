@@ -10,7 +10,12 @@ being worked on, and thus subject to change without notice.
 The [specification][spec] is maintained on [GitHub][github] and is
 published [here][spec]. It is based on the [SSP 1.0][SSP10] standard.
 
+Additional guides are provided [here][guides] and example files are
+provided [here][examples].
+
 [SSP]: https://ssp-standard.org/
 [SSP10]: https://ssp-standard.org/publications/SSP10/SystemStructureAndParameterization10.pdf
 [github]: specification/index.adoc
 [spec]: https://pmsfit.github.io/SSPTraceability/master/
+[guides]: https://github.com/PMSFIT/SSPTraceabilityGuides/
+[examples]: https://github.com/PMSFIT/SSPTraceabilityExamples/
