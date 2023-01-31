@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.17">
+<meta name="generator" content="Asciidoctor 2.0.18">
 <title>SSP Traceability Specification</title>
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -4118,8 +4118,9 @@ Schema distributed as part of this standard.  The file MUST use the
 UTF-8 encoding.</p>
 </div>
 <div class="paragraph">
-<p>All STMD-specific elements live in the <code><a href="http://apps.pmsf.net/STMD/SimulationTaskMetaData" class="bare">http://apps.pmsf.net/STMD/SimulationTaskMetaData</a></code>
-namespace, nicknamed <code>stmd</code> in this document.</p>
+<p>All STMD-specific elements live in the
+<code>http://apps.pmsf.net/STMD/SimulationTaskMetaData</code> namespace, nicknamed
+<code>stmd</code> in this document.</p>
 </div>
 <div class="paragraph">
 <p>The root element of an STMD file MUST be a <code>SimulationTaskMetaData</code>
@@ -4203,7 +4204,7 @@ can be specified using the SSPMD referencing mechanism:</p>
 <p>An annotation with type <code>net.pmsf.ssp.sspmd</code> MUST be added to the
 element (e.g. the <code>Component</code> element) in question. The content of the
 annotation MUST be a <code>ResourceMetaData</code> element in the
-<code><a href="http://apps.pmsf.net/SSPMD/SSPMetaData" class="bare">http://apps.pmsf.net/SSPMD/SSPMetaData</a></code> namespace.</p>
+<code>http://apps.pmsf.net/SSPMD/SSPMetaData</code> namespace.</p>
 </div>
 <div class="paragraph">
 <p>If the SRMD content is to be placed inline, then the content of the
@@ -4260,7 +4261,7 @@ to the resource.</p>
 <script>
 if (!hljs.initHighlighting.called) {
   hljs.initHighlighting.called = true
-  ;[].slice.call(document.querySelectorAll('pre.highlight > code')).forEach(function (el) { hljs.highlightBlock(el) })
+  ;[].slice.call(document.querySelectorAll('pre.highlight > code[data-lang]')).forEach(function (el) { hljs.highlightBlock(el) })
 }
 </script>
 <script type="text/x-mathjax-config">
