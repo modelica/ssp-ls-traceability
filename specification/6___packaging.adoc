@@ -41,8 +41,9 @@ well-formed XML 1.0 [XML10] file that conforms to the SimulationTask XML
 Schema distributed as part of this standard.  The file MUST use the
 UTF-8 encoding.
 
-All STMD-specific elements live in the `http://apps.pmsf.net/STMD/SimulationTaskMetaData`
-namespace, nicknamed `stmd` in this document.
+All STMD-specific elements live in the
+`\http://apps.pmsf.net/STMD/SimulationTaskMetaData` namespace, nicknamed
+`stmd` in this document.
 
 The root element of an STMD file MUST be a `SimulationTaskMetaData`
 element, which gives overall information about the simulation task
@@ -108,7 +109,7 @@ can be specified using the SSPMD referencing mechanism:
 An annotation with type `net.pmsf.ssp.sspmd` MUST be added to the
 element (e.g. the `Component` element) in question. The content of the
 annotation MUST be a `ResourceMetaData` element in the
-`http://apps.pmsf.net/SSPMD/SSPMetaData` namespace.
+`\http://apps.pmsf.net/SSPMD/SSPMetaData` namespace.
 
 If the SRMD content is to be placed inline, then the content of the
 `ResourceMetaData` element MUST be valid SRMD content.  If the SRMD
