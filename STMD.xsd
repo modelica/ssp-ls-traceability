@@ -8,7 +8,7 @@
     xmlns:xlink="http://www.w3.org/1999/xlink"
     targetNamespace="http://apps.pmsf.net/STMD/SimulationTaskMetaData">
     
-    <xs:import namespace="http://ssp-standard.org/SSP1/SystemStructureCommon" schemaLocation="ssp/SystemStructureCommon.xsd"/>
+    <xs:import namespace="http://ssp-standard.org/SSP1/SystemStructureCommon" schemaLocation="ssp-standard/schema/SystemStructureCommon.xsd"/>
     <xs:import namespace="http://apps.pmsf.net/SSPTraceability/SSPTraceabilityCommon" schemaLocation="STC.xsd"/>
     <xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="https://www.w3.org/XML/2008/06/xlink.xsd"/>
     

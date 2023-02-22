@@ -1,0 +1,3 @@
+[submodule "ssp-standard"]
+	path = ssp-standard
+	url = https://github.com/modelica/ssp-standard
