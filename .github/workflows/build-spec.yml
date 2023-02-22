@@ -10,11 +10,13 @@ jobs:
   build-spec:
     name: Build Specification
 
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
 
     steps:
     - name: checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
+      with:
+        submodules: recursive
     - name: prepare
       run: mkdir build
     - name: build
@@ -24,7 +26,7 @@ jobs:
     - name: copy images
       run: tar cfC - specification images | tar xfC - build
     - name: archive
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: SSP-Traceability-Spec
         path: build/*
