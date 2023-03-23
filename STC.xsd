@@ -296,8 +296,8 @@
                             </xs:annotation>
                             <xs:complexType>
                                 <xs:attribute ref="xlink:type" fixed="arc"/>
-                                <xs:attribute ref="xlink:from" use="required"/>
-                                <xs:attribute ref="xlink:to" use="required"/>
+                                <xs:attribute ref="xlink:from"/>
+                                <xs:attribute ref="xlink:to"/>
                                 <xs:attribute ref="xlink:title"/>
                                 <xs:attribute ref="xlink:arcrole"/>
                             </xs:complexType>
