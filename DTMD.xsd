@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:sdmd="http://apps.pmsf.net/STMD/SimulationBasedDecisionProcessMetaData" xmlns:stc="http://apps.pmsf.net/SSPTraceability/SSPTraceabilityCommon" xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon" targetNamespace="http://apps.pmsf.net/STMD/SimulationBasedDecisionProcessMetaData" elementFormDefault="qualified" vc:minVersion="1.1">
-	<xs:import namespace="http://ssp-standard.org/SSP1/SystemStructureCommon" schemaLocation="ssp/SystemStructureCommon.xsd"/>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:dtmd="http://apps.pmsf.net/STMD/DecisionTaskMetaData" xmlns:stc="http://apps.pmsf.net/SSPTraceability/SSPTraceabilityCommon" xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon" targetNamespace="http://apps.pmsf.net/STMD/DecisionTaskMetaData" elementFormDefault="qualified" vc:minVersion="1.1">
+	<xs:import namespace="http://ssp-standard.org/SSP1/SystemStructureCommon" schemaLocation="ssp-standard/schema/SystemStructureCommon.xsd"/>
 	<xs:import namespace="http://apps.pmsf.net/SSPTraceability/SSPTraceabilityCommon" schemaLocation="STC.xsd"/>
-	<xs:element name="SimulationBasedDecisionProcessMetaData">
+	<xs:element name="DecisionTaskMetaData">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="GeneralInformation" minOccurs="0" type="stc:GeneralInformationType"/>
 				<xs:element name="AnalysisPhase" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation xml:lang="en">
-							This element specifies the Analysis Phase of the overall Simulation-based Decision Process.
+							This element specifies the Analysis Phase of the overall Decision Task.
 						</xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
@@ -24,8 +24,8 @@
 				<xs:element name="DefinitionPhase" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation xml:lang="en">
-							This element specifies the Definition Phase of the overall Simulation-based Decision Process,
-							where the Simulation Tasks to be performed are defined.
+							This element specifies the Definition Phase of the overall Decision Task,
+							where the individual sub-tasks to be performed are defined.
 						</xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
@@ -41,7 +41,7 @@
 				<xs:element name="ExecutionPhase" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation xml:lang="en">
-							This element specifies the Performance Phase of the overall Simulation-based Decision Process.
+							This element specifies the Performance Phase of the overall Decision Task.
 						</xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
@@ -55,7 +55,7 @@
 				<xs:element name="EvaluationPhase" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation xml:lang="en">
-							This element specifies the Evaluation Phase of the overall Simulation-based Decision Process.
+							This element specifies the Evaluation Phase of the overall Decision Task.
 						</xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
@@ -71,7 +71,7 @@
 				<xs:element name="FulfillmentPhase" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation xml:lang="en">
-							This element specifies the Fulfillment Phase of the overall Simulation-based Decision Process.
+							This element specifies the Fulfillment Phase of the overall Decision Task.
 						</xs:documentation>
 					</xs:annotation>
 					<xs:complexType>
@@ -87,7 +87,7 @@
 			<xs:attribute name="version" use="required">
 				<xs:annotation>
 					<xs:documentation xml:lang="en">
-						Version of SDMD format, 1.0.0-beta2 for this pre-release.
+						Version of DTMD format, 1.0.0-beta2 for this pre-release.
 					</xs:documentation>
 				</xs:annotation>
 				<xs:simpleType>
@@ -99,9 +99,9 @@
 			<xs:attribute name="name" type="xs:string" use="required">
 				<xs:annotation>
 					<xs:documentation xml:lang="en">
-						This attribute gives the Simulation-based Decision Process a name, which can be used
-						for purposes of presenting the Simulation-based Decision Process to the user, e.g.
-						when selecting individual variant SDMDs from an SSP.
+						This attribute gives the Decision Task a name, which can be used
+						for purposes of presenting the Decision Task to the user, e.g.
+						when selecting individual variant DTMDs from an SSP.
 					</xs:documentation>
 				</xs:annotation>
 			</xs:attribute>
@@ -110,7 +110,7 @@
 			<xs:attribute name="GUID" use="required" type="xs:string">
 				<xs:annotation>
 					<xs:documentation xml:lang="en">
-						GUID identifier of this SDMD file. Must be globally unique and MUST
+						GUID identifier of this DTMD file. Must be globally unique and MUST
 						change, whenever a new file with differing information is written.
 					</xs:documentation>
 				</xs:annotation>
