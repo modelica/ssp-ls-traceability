@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:dtmd="http://apps.pmsf.net/STMD/DecisionTaskMetaData" xmlns:stc="http://apps.pmsf.net/SSPTraceability/SSPTraceabilityCommon" xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon" targetNamespace="http://apps.pmsf.net/STMD/DecisionTaskMetaData" elementFormDefault="qualified" vc:minVersion="1.1">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:dtmd="http://apps.pmsf.net/SSPTraceability/DecisionTaskMetaData" xmlns:stc="http://apps.pmsf.net/SSPTraceability/SSPTraceabilityCommon" xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon" targetNamespace="http://apps.pmsf.net/SSPTraceability/DecisionTaskMetaData" elementFormDefault="qualified" vc:minVersion="1.1">
 	<xs:import namespace="http://ssp-standard.org/SSP1/SystemStructureCommon" schemaLocation="ssp-standard/schema/SystemStructureCommon.xsd"/>
 	<xs:import namespace="http://apps.pmsf.net/SSPTraceability/SSPTraceabilityCommon" schemaLocation="STC.xsd"/>
 	<xs:element name="DecisionTaskMetaData">
