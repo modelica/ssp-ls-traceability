@@ -46,7 +46,7 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="PeformTasks" type="stc:StepType" minOccurs="0"/>
+							<xs:element name="PerformTasks" type="stc:StepType" minOccurs="0"/>
 							<xs:group ref="stc:GPhaseCommon"/>
 						</xs:sequence>
 						<xs:attributeGroup ref="ssc:ABaseElement"/>
