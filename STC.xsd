@@ -530,11 +530,15 @@
                     <xs:enumeration value="model"/>
                     <xs:enumeration value="parameter"/>
                     <xs:enumeration value="system"/>
-                    <xs:enumeration value="test case"/>
+                    <xs:enumeration value="testcase"/>
                     <xs:enumeration value="result"/>
                     <xs:enumeration value="method"/>
                     <xs:enumeration value="rationale"/>
                     <xs:enumeration value="report"/>
+                    <xs:enumeration value="request"/>
+                    <xs:enumeration value="delivery"/>
+                    <xs:enumeration value="executable"/>
+                    <xs:enumeration value="configuration"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
