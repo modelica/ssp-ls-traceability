@@ -103,28 +103,6 @@ For SSPs the SRMD file that applies to the SSP as a whole CAN be
 embedded by placing the SRMD data into a file named
 `extra/net.pmsf.ssp.srmd/resourceMetaData.srmd` in the SSP archive.
 
-Inside SSPs, additional SRMD files for referenced resources of the SSP
-can be specified using the SSPMD referencing mechanism:
-
-An annotation with type `net.pmsf.ssp.sspmd` MUST be added to the
-element (e.g. the `Component` element) in question. The content of the
-annotation MUST be a `ResourceMetaData` element in the
-`\http://apps.pmsf.net/SSPMD/SSPMetaData` namespace.
-
-If the SRMD content is to be placed inline, then the content of the
-`ResourceMetaData` element MUST be valid SRMD content.  If the SRMD
-content is to be referenced externally, then the `ResourceMetaData`
-element MUST be empty, and MUST have an attribute named `source` that
-provides the location of the SRMD file as a URI.
-
-If the SRMD meta-data is packaged inside the SSP archive, then the URI
-MUST be a relative URI that is resolved against the SSD file as its base
-URI, as specified in the SSP standard for all SSP-relative content
-addressing, unless the `sourceBase` attribute is present and has a value
-of `component`, in which case the relative URI is resolved against the
-component itself as its base URI, allowing the addressing of meta-data
-that is packaged within the component.
-
 ==== Placing beside resources
 
 When placing an SRMD file beside (i.e. outside of) the referenced
