@@ -596,7 +596,8 @@
                     
                     If the source attribute is missing, the resource is provided
                     inline as contents of the Content element, which must not be
-                    present otherwise.
+                    present otherwise.  If the placeholder attribute is true, then
+                    both the source attribute and the Content element can be missing.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -607,6 +608,18 @@
                     If it is present, it indicates that the content provided via source attribute and/or Content
                     element is only a copy of the original, canonical data, and this attributes provides the
                     URI reference to that original canonical master data.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="placeholder" type="xs:boolean" use="optional" default="false">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    This attribute, if true, indicates that the given resource is just a placeholder,
+                    meaning that it should be replaced by actual content at a later stage of the process
+                    execution. Any source or Content supplied can be regarded as being provided just for
+                    information in this case. If the placeholder attribute is true, then both the source
+                    attribute and the Content element can be left unspecified to indicate no informational
+                    placeholder content.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
