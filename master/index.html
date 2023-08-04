@@ -4196,32 +4196,6 @@ archive.</p>
 embedded by placing the SRMD data into a file named
 <code>extra/net.pmsf.ssp.srmd/resourceMetaData.srmd</code> in the SSP archive.</p>
 </div>
-<div class="paragraph">
-<p>Inside SSPs, additional SRMD files for referenced resources of the SSP
-can be specified using the SSPMD referencing mechanism:</p>
-</div>
-<div class="paragraph">
-<p>An annotation with type <code>net.pmsf.ssp.sspmd</code> MUST be added to the
-element (e.g. the <code>Component</code> element) in question. The content of the
-annotation MUST be a <code>ResourceMetaData</code> element in the
-<code>http://apps.pmsf.net/SSPMD/SSPMetaData</code> namespace.</p>
-</div>
-<div class="paragraph">
-<p>If the SRMD content is to be placed inline, then the content of the
-<code>ResourceMetaData</code> element MUST be valid SRMD content.  If the SRMD
-content is to be referenced externally, then the <code>ResourceMetaData</code>
-element MUST be empty, and MUST have an attribute named <code>source</code> that
-provides the location of the SRMD file as a URI.</p>
-</div>
-<div class="paragraph">
-<p>If the SRMD meta-data is packaged inside the SSP archive, then the URI
-MUST be a relative URI that is resolved against the SSD file as its base
-URI, as specified in the SSP standard for all SSP-relative content
-addressing, unless the <code>sourceBase</code> attribute is present and has a value
-of <code>component</code>, in which case the relative URI is resolved against the
-component itself as its base URI, allowing the addressing of meta-data
-that is packaged within the component.</p>
-</div>
 </div>
 <div class="sect3">
 <h4 id="_placing_beside_resources">6.4.4. Placing beside resources</h4>
