@@ -20,14 +20,22 @@ include::0___preamble.adoc[]
 
 include::1___introduction.adoc[]
 
-include::2___overview.adoc[]
+include::2___framework.adoc[]
 
-include::3___STC.adoc[]
+include::3___overview.adoc[]
 
-include::4___STMD.adoc[]
+include::4___common.adoc[]
 
-include::5___SRMD.adoc[]
+include::5___stc.adoc[]
 
-include::6___packaging.adoc[]
+include::6___dtmd.adoc[]
 
-include::7___literature.adoc[]
+include::7___stmd.adoc[]
+
+include::8___srmd.adoc[]
+
+include::9___packaging.adoc[]
+
+include::10___literature.adoc[]
+
+
