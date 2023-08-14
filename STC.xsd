@@ -34,16 +34,19 @@
                         <xs:element name="DerivationChainEntry" minOccurs="0" maxOccurs="unbounded">
                             <xs:complexType>
                                 <xs:attribute name="GUID" type="xs:string" use="required"/>
+                                <xs:attributeGroup ref="ssc:ABaseElement"/>
                                 <xs:attributeGroup ref="ssc:ATopLevelMetaData"/>
                             </xs:complexType>
                         </xs:element>
                     </xs:sequence>
+                    <xs:attributeGroup ref="ssc:ABaseElement"/>
                 </xs:complexType>
             </xs:element>
             <xs:group ref="stc:GResourceOrReference" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="Links" minOccurs="0" type="stc:LinksType"/>
             <xs:group ref="stc:GElementCommon"/>
         </xs:sequence>
+        <xs:attributeGroup ref="ssc:ABaseElement"/>
     </xs:complexType>
     
     <xs:group name="GElementCommon">
@@ -104,6 +107,7 @@
                                         </xs:documentation>
                                     </xs:annotation>
                                 </xs:attribute>
+                                <xs:attributeGroup ref="ssc:ABaseElement"/>
                             </xs:complexType>
                         </xs:element>
                     </xs:sequence>
@@ -121,6 +125,7 @@
                             </xs:documentation>
                         </xs:annotation>
                     </xs:attribute>
+                    <xs:attributeGroup ref="ssc:ABaseElement"/>
                 </xs:complexType>
             </xs:element>
             <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
@@ -160,6 +165,7 @@
             <xs:element name="Archived" minOccurs="0" type="stc:LifeCycleEntryType"/>
             <xs:element name="Retracted" minOccurs="0" type="stc:LifeCycleEntryType"/>
         </xs:sequence>
+        <xs:attributeGroup ref="ssc:ABaseElement"/>
     </xs:complexType>
     
     <xs:complexType name="LifeCycleEntryType">
@@ -208,6 +214,7 @@
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
+        <xs:attributeGroup ref="ssc:ABaseElement"/>
     </xs:complexType>
     
     <xs:complexType name="StepType">
@@ -283,6 +290,7 @@
                                 <xs:attribute ref="xlink:label"/>
                                 <xs:attribute ref="xlink:title"/>
                                 <xs:attribute ref="xlink:role"/>
+                                <xs:attributeGroup ref="ssc:ABaseElement"/>
                             </xs:complexType>
                         </xs:element>
                         <xs:element name="Arc" minOccurs="0" maxOccurs="unbounded">
@@ -300,15 +308,18 @@
                                 <xs:attribute ref="xlink:to"/>
                                 <xs:attribute ref="xlink:title"/>
                                 <xs:attribute ref="xlink:arcrole"/>
+                                <xs:attributeGroup ref="ssc:ABaseElement"/>
                             </xs:complexType>
                         </xs:element>
                     </xs:sequence>
                     <xs:attribute ref="xlink:type" fixed="extended"/>
                     <xs:attribute ref="xlink:title"/>
                     <xs:attribute ref="xlink:role"/>
+                    <xs:attributeGroup ref="ssc:ABaseElement"/>
                 </xs:complexType>
             </xs:element>
         </xs:sequence>
+        <xs:attributeGroup ref="ssc:ABaseElement"/>
     </xs:complexType>
     
     <xs:complexType name="ResourceType">
@@ -408,6 +419,7 @@
                             </xs:restriction>
                         </xs:simpleType>
                     </xs:attribute>
+                    <xs:attributeGroup ref="ssc:ABaseElement"/>
                 </xs:complexType>
             </xs:element>
             <xs:element name="MetaData" minOccurs="0" maxOccurs="unbounded">
@@ -501,6 +513,7 @@
                             </xs:restriction>
                         </xs:simpleType>
                     </xs:attribute>
+                    <xs:attributeGroup ref="ssc:ABaseElement"/>
                 </xs:complexType>
             </xs:element>
             <xs:element name="Signature" minOccurs="0" maxOccurs="unbounded" type="stc:SignatureType">
@@ -530,11 +543,15 @@
                     <xs:enumeration value="model"/>
                     <xs:enumeration value="parameter"/>
                     <xs:enumeration value="system"/>
-                    <xs:enumeration value="test case"/>
+                    <xs:enumeration value="testcase"/>
                     <xs:enumeration value="result"/>
                     <xs:enumeration value="method"/>
                     <xs:enumeration value="rationale"/>
                     <xs:enumeration value="report"/>
+                    <xs:enumeration value="request"/>
+                    <xs:enumeration value="delivery"/>
+                    <xs:enumeration value="executable"/>
+                    <xs:enumeration value="configuration"/>
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
@@ -579,7 +596,8 @@
                     
                     If the source attribute is missing, the resource is provided
                     inline as contents of the Content element, which must not be
-                    present otherwise.
+                    present otherwise.  If the placeholder attribute is true, then
+                    both the source attribute and the Content element can be missing.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -590,6 +608,18 @@
                     If it is present, it indicates that the content provided via source attribute and/or Content
                     element is only a copy of the original, canonical data, and this attributes provides the
                     URI reference to that original canonical master data.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="placeholder" type="xs:boolean" use="optional" default="false">
+            <xs:annotation>
+                <xs:documentation xml:lang="en">
+                    This attribute, if true, indicates that the given resource is just a placeholder,
+                    meaning that it should be replaced by actual content at a later stage of the process
+                    execution. Any source or Content supplied can be regarded as being provided just for
+                    information in this case. If the placeholder attribute is true, then both the source
+                    attribute and the Content element can be left unspecified to indicate no informational
+                    placeholder content.
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
@@ -668,6 +698,7 @@
                 </xs:restriction>
             </xs:simpleType>
         </xs:attribute>
+        <xs:attributeGroup ref="ssc:ABaseElement"/>
     </xs:complexType>
     
     <xs:complexType name="ContentType" mixed="true">
@@ -680,6 +711,7 @@
         <xs:choice>
             <xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
         </xs:choice>
+        <xs:attributeGroup ref="ssc:ABaseElement"/>
     </xs:complexType>
     
     <xs:complexType name="ResponsibleType">
@@ -709,6 +741,7 @@
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
+        <xs:attributeGroup ref="ssc:ABaseElement"/>
     </xs:complexType>
     
     <xs:group name="GResourceOrReference">
