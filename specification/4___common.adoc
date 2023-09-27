@@ -1,0 +1,4 @@
+[#sec-commonconcepts]
+== Common concepts for SSP Traceability
+
+#Content to be defined#

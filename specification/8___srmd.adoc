@@ -1,0 +1,44 @@
+[#sec-srmd]
+== Simulation Resource Meta Data File Format
+
+Simulation resource meta data for components or other resources (e.g. parameter sets, etc.) can be provided using SRMD files. These files can be embedded into such resources, where possible, they can be placed outside the resources and reference the resources to which they apply, or they can be tied to the resources through the STMD meta-data mechanisms.
+
+=== SimulationRessourceMetaData
+
+The SimulationResourceMetaData element is the all enclosing top level XML element of SRMD files.
+
+[#im-simulationresourcemetadataschema]
+.SimulationResourceMetaData element structure and attributes
+image::SimulationResourceMetaDataSchema.png[]
+
+The SimulationTaskMetaData element is structured by following subordinated element.
+
+[#tb-simulationresourcemetadatasubelements]
+.SimulationResourcekMetaData element structure
+[width="100%",options="header"]
+|===
+| Sub element name    | Optional / Mandatory | Details
+| GElementCommon      | Mandatory            | <<sec-gphasecommon>>
+|===
+
+The SimulationResourceMetaData element is associated with the following attributes.
+
+[#tb-simulationresourcemetadataattributes]
+.SimulationResourceMetaData element attributes
+[width="100%",options="header"]
+|===
+| Attribute name        | Optional / Mandatory | Attribute description
+| version               | Mandatory            |  Version of SRMD format, 0.x for this pre-release.
+| name                  | Mandatory            | This attribute gives the simulation resource meta data a name, which can be used for purposes of presenting the simulation resource meta data to the user.
+| data                    | Optional             | This optional attribute gives a URI to the data item this resource meta data applies to. If this attribute is not present, then the data this resource meta data applies to is provided outside of the meta data (e.g. by embedding SRMD into the data format, or providing it as meta data in an STMD file). 
+| checksum           | Optional             | This attribute gives the checksum over the data item this meta data applies to. This is optional information to allow the identification of the data item and the precise algorithm specifying. The checksum is calculated using the algorithm indicated by the checksumType attribute.
+| checksumtype                | Optional             | This attribute gives the algorithm for the calculation of the checksum attribute. MUST be SHA3-256 for now, indicating a SHA3 256bit secure hash algorithm, as specified in FIPS 202. In the future other checksum algorithms might be supported.
+| id           | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
+| description             | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+| author                | Optional             | This attribute gives the name of the author of this file's content.
+| fileversion           | Optional             | This attribute gives a version number for this file's content.
+| copyright             | Optional             | This attribute gives copyright information for this file's content.
+| license               | Optional             | This attribute gives license information for this file's content.
+| generatingTool        | Optional             | This attribute gives the name of the tool that generated this file.
+| generationDateAndTime | Optional             | This attribute gives the date and time this file was generated.
+|===

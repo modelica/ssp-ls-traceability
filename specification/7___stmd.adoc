@@ -1,0 +1,315 @@
+[#sec-stmd]
+== Simulation Task Meta Data File Format
+
+The __Simulation Task Meta Data__ file (short: STMD file) is an implementation of a GlueParticle for simulation tasks. It is specified to support traceability, quality assurance and re-usability for simulation tasks in terms of a credible simulation process as it is specified in **Document Reference**. The following sub-chapters describe the structure of an STMD file.
+
+=== SimulationTaskMetaData
+
+The SimulationTaskMetaData element is the all enclosing top level XML element of STMD files.
+
+[#im-simulationtaskmetadataschema]
+.SimulationTaskMetaData element structure and attributes
+image::SimulationTaskMetaDataSchema.png[]
+
+The SimulationTaskMetaData element is structured by following subordinated element.
+
+[#tb-simulationtaskmetadatasubelements]
+.SimulationTaskMetaData element structure
+[width="100%",options="header"]
+|===
+| Sub element name    | Optional / Mandatory | Details
+| GeneralInformation  | Optional             | <<sec-generalinformation>>
+| AnalysisPhase       | Optional             | <<sec-analysisphase>>
+| RequirementsPhase   | Optional             | <<sec-requirementsphase>> 
+| DesignPhase         | Optional             | <<sec-designphase>>
+| ImplementationPhase | Optional             | <<sec-implementationphase>>
+| ExecutionPhase      | Optional             | <<sec-executionphase>>
+| EvaluationPhase     | Optional             | <<sec-evaluationphase>>
+| FulfillmentPhase    | Optional             | <<sec-fulfillmentphase>>
+| GElementCommon      | Mandatory            | <<sec-gphasecommon>>
+|===
+
+The SimulationTaskMetaData element is associated with the following attributes.
+
+[#tb-simulationtaskmetadataattributes]
+.SimulationTaskMetaData element attributes
+[width="100%",options="header"]
+|===
+| Attribute name        | Optional / Mandatory | Attribute description
+| version               | Mandatory            | Version of STMD format, 0.x for this pre-release.
+| name                  | Mandatory            | This attribute gives the simulation task a name, which can be used for purposes of presenting the simulation task to the user, e.g. when selecting individual variant STMDs from an SSP.
+| id                    | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier. 
+| description           | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+| author                | Optional             | This attribute gives the name of the author of this file's content.
+| fileversion           | Optional             | This attribute gives a version number for this file's content.
+| copyright             | Optional             | This attribute gives copyright information for this file's content.
+| license               | Optional             | This attribute gives license information for this file's content.
+| generatingTool        | Optional             | This attribute gives the name of the tool that generated this file.
+| generationDateAndTime | Optional             | This attribute gives the date and time this file was generated.
+| GUID                  | Mandatory            | GUID identifier of this STMD file. Must be globally unique and MUST change, whenever a new file with differing information is written.
+|===
+
+[#sec-generalinformation]
+==== GeneralInformation
+
+The GeneralInformation element is used to encapsulate general information about the simulation task, which is not part of any specific phase or step.
+
+For the details of the GeneralInformation element structure and attributes see chapter <<sec-generalinformationtype>>.
+
+[#sec-analysisphase]
+==== AnalysisPhase
+
+In the analysis phase, the simulation-relevant information is taken from the higher-level commissioning engineering process and the essential simulation relevant requirements and goals of the simulation task are derived from it. It is important that at the end of the analysis phase the essential simulation requirements and the objectives of the simulation task fully and clearly understood.
+
+The AnalysisPhase element documents all relevant information.
+
+[#im-analysisschemaschema]
+.AnalysisPhase element structure and attributes
+image::AnalysisPhaseSchema.png[]
+
+The AnalysisPhase element is structured by the following subordinated element.
+
+[#tb-analysisphasesubelements]
+.AnalysisPhase element structure
+[width="100%",options="header"]
+|===
+| Sub element name                   | Optional / Mandatory | Details
+| AnalyzeSimulationTaskAndObjectives | Optional             | <<sec-steptype>>
+| VerifyAnalysis                     | Optional             | <<sec-steptype>>
+| GPhaseCommon                       | Mandatory            | <<sec-gphasecommon>>
+|===
+
+The AnalysisPhase element is associated with the following attributes.
+
+[#tb-analysisphaseattributes]
+.AnalysisPhase element attributes
+[width="100%",options="header"]
+|===
+| Attribute name | Optional / Mandatory | Attribut description
+| id             | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
+| description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+|===
+
+
+[#sec-requirementsphase]
+==== RequirementsPhase
+
+In the requirements phase, the requirements for the simulation that were agreed and defined in the analysis phase are broken down to the individual components required for the simulation. This includes the requirements for the models, parameters, test cases and the simulation environment, but also for the integration of all components and for measures to assure the process quality. In addition, all requirements must be finally verified to ensure the integrity and consistency of the requirements.
+
+The RequirementsPhase element documents all relevant information.
+
+[#im-requirementphaseschema]
+.RequirementsPhase element structure and attributes
+image::RequirementsPhaseSchema.png[]
+
+The RequirememtsPhase element is structured by the followuing subordinated element.
+
+[#tb-requirementsphasesubelements]
+.RequirementsPhase element structure
+[width="100%",options="header"]
+|===
+| Sub element name                        | Optional / Mandatory | Details
+| DefineModelRequirements                 | Optional             | <<sec-steptype>>
+| DefineParameterRequirements             | Optional             | <<sec-steptype>>
+| DefineSimulationEnvironmentRequirements | Optional             | <<sec-steptype>>
+| DefineSimulationIntegrationRequirements | Optional             | <<sec-steptype>>
+| DefineTestCaseRequirements              | Optional             | <<sec-steptype>>
+| DefineQualityAssuranceRequirements      | Optional             | <<sec-steptype>>
+| VerifyRequirements                      | Optional             | <<sec-steptype>>
+| GPhaseCommon                            | Mandatory            | <<sec-gphasecommon>>
+|===
+
+The RequirementsPhase element is associated with the following attributes.
+
+[#tb-requirementsphaseattributes]
+.RequirementsPhase element attributes
+[width="100%",options="header"]
+|===
+| Attribute name | Optional / Mandatory | Attribute description
+| id             | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
+| description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+|=== 
+
+
+[#sec-designphase]
+==== DesignPhase
+
+In the design phase, based on the requirements for the individual components of the simulation defined in the requirements phase, the required components of the simulation are specified, i.e. the models, parameters, test cases and the simulation environment, but also the necessary measures for integrating all components and for assuring the process quality. In addition, all specifications must be finally verified to ensure the integrity and consistency of the specifications.
+
+The DesignPhase element documents all relevant information.
+
+[#im-designphaseschema]
+.DesignPhase element structure and attributes
+image::DesignPhaseSchema.png[]
+
+The DesignPhase element is structured by the following subordinated element.
+
+[#tb-designphasesubelements]
+.DesignPhase element structure
+[width="100%",options="header"]
+|===
+| Sub element name                               | Optional / Mandatory | Details
+| DefineModelDesignSpecification                 | Optional             | <<sec-steptype>>
+| DefineParaneterDesignSpecification             | Optional             | <<sec-steptype>>
+| DefineSimulationEnvironmentDesignSpecification | Optional             | <<sec-steptype>>
+| DefineSimulationIntegrationDesignSpecification | Optional             | <<sec-steptype>>
+| DefineTestCaseDesignSpecification              | Optional             | <<sec-steptype>>
+| DefineQualityAssuranceDesignSpecification      | Optional             | <<sec-steptype>>
+| VerifyDesignSpecification                      | Optional             | <<sec-steptype>>
+| GPhaseCommon                                   | Mandatory            | <<sec-gphasecommon>>
+|===
+
+The DesignPhase element is associated with the following attributes.
+
+[#tb-designphaseattributes]
+.DesignPhase element attributes
+[width="100%",options="header"]
+|===
+| Attribute name | Optional / Mandatory | Attribute description
+| id             | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
+| description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+|===
+
+
+
+[#sec-implementationphase]
+==== ImplementationPhase
+
+In the implementation phase, all specified components of the simulation are implemented, i.e. the models, parameters, test cases and the simulation environment is set up.
+All components are then integrated and the specified measures to ensure process quality are implemented. In addition, it must be determined by a quality verdict that the entire setup of the simulation meets all technical and quality requirements.
+
+The ImplementationPhase element documents all relevant information.
+
+[#im-implementationphaseschema]
+.ImplementationPhase element structure and attributes
+image::ImplementationPhaseSchema.png[]
+
+The ImplementationPhase element is structured by the following subordinated element.
+
+[#tb-implementationphasesubelements]
+.ImplementationPhase element structure
+[width="100%",options="header"]
+|===
+| Sub element name                    | Optional / Mandatory | Details
+| ImplementModel                      | Optional             | <<sec-steptype>>
+| ImplementParameter                  | Optional             | <<sec-steptype>>
+| ImplementSimulationEnvironment      | Optional             | <<sec-steptype>>
+| ImplementTestCase                   | Optional             | <<sec-steptype>>
+| IntegrateSimulation                 | Optional             | <<sec-steptype>>
+| AssureSimulationSetupQuality        | Optional             | <<sec-steptype>>
+| DeriveSimulationSetupQualityVerdict | Optional             | <<sec-steptype>>
+| GPhaseCommon                        | Mandatory            | <<sec-gphasecommon>>
+|===
+
+The ImplementationPhase element is associated with the following attributes.
+
+[#tb-implementationphaseattributes]
+.ImplementationPhase element attributes
+[width="100%",options="header"]
+|===
+| Attribute name | Optional / Mandatory | Attribute description
+| id             | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
+| description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+|===
+
+[#sec-executionphase]
+==== ExecutionPhase
+
+In the execution phase, the previously set up simulation is executed.
+
+The ImplementationPhase element documents all relevant information.
+
+
+[#im-executionphaseschema]
+.ExecutionPhase element structure and attributes
+image::ExecutionPhaseSchema.png[]
+
+The ExecutionPhase element is structured by the following subordinated element.
+
+[#tb-executionphasesubelements]
+.ExecutionPhase element structure
+[width="100%",options="header"]
+|===
+| Sub element name                    | Optional / Mandatory | Details
+| ExecuteSimulation                   | Optional             | <<sec-steptype>>
+| GPhaseCommon                        | Mandatory            | <<sec-gphasecommon>>
+|===
+
+The ExecutionPhase element is associated with the following attributes.
+
+[#tb-executionphaseattributes]
+.ExecutionPhase element attributes
+[width="100%",options="header"]
+|===
+| Attribute name | Optional / Mandatory | Attribute description
+| id             | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
+| description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+|===
+
+[#sec-evaluationphase]
+==== EvaluationPhase
+
+In the evaluation phase, the simulation results are evaluated and quality assurance measures are implemented.  In addition, it must be determined by a quality verdict that the simulation meets all technical and quality requirements.
+
+The EvaluationPhase element documents all relevant information.
+
+[#im-evaluationphaseschema]
+.EvaluationPhase element structure and attributes
+image::EvaluationPhaseSchema.png[]
+
+The EvaluationPhase element is structured by the following subordinated element.
+
+[#tb-evaluationphasesubelements]
+.EvaluationPhase element structure
+[width="100%",options="header"]
+|===
+| Sub element name               | Optional / Mandatory | Details
+| EvaluateSimulationResults      | Optional             | <<sec-steptype>>
+| AssureSimulationQuality        | Optional             | <<sec-steptype>>
+| DeriveSimulationQualityVerdict | Optional             | <<sec-steptype>>
+| GPhaseCommon                   | Mandatory            | <<sec-gphasecommon>>
+|===
+
+The EvaluationPhase element is associated with the following attributes.
+
+[#tb-evaluationphaseattributes]
+.EvaluationPhase element attributes
+[width="100%",options="header"]
+|===
+| Attribute name | Optional / Mandatory | Attribute description
+| id             | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
+| description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+|===
+
+[#sec-fulfillmentphase]
+==== FulfillmentPhase
+
+In the fulfillment phase, it is checked and decided whether the entire simulation task, including the simulation results, fulfills the requirements placed on the simulation by the commissioning higher-level engineering task and whether the simulation tasks can be completed.
+
+The FulfillmentPhasePhase element documents all relevant information.
+
+[#im-fulfillmentphaseschema]
+.FulfillmentPhase elements structure and attributes
+image::FulfillmentPhaseSchema.png[]
+
+The FulfillmentPhase element is structured by the following subordinated element.
+
+[#tb-fulfillmentphasesubelements]
+.FulfillmentPhase element structure
+[width="100%",options="header"]
+|===
+| Sub element name                      | Optional / Mandatory | Details
+| DecideSimuzlationObjectiveFulfillment | Optional             | <<sec-steptype>>
+| GPhaseCommon                          | Mandatory            | <<sec-gphasecommon>>
+|===
+
+The FulfillmentPhase element is associated with the following attributes.
+
+[#tb-fulfillmentphaseattributes]
+.FulfillmentPhase element attributes
+[width="100%",options="header"]
+|===
+| Attribute name | Optional / Mandatory | Attribute description
+| id             | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
+| description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+|===
