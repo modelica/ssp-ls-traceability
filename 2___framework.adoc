@@ -1,0 +1,70 @@
+[#sec-crediblesimulationprocessframework]
+== Credible Simulation Process Framework
+
+Throughout the product development process as part of the product life-cycle a large number of design decisions are made, each of which follows its own decision process, named __Credible Decision Process.__ These decisions are based on simulation results, among other criteria. To obtain the decision-relevant simulation results, simulations are performed, often based on a complex simulation process, named __Credible Simulation Process.__ This process constellation forming the Credible Simulation Process Framework is illustrated in <<im-crediblesimulationprocessframework>>. 
+
+The __Credible Decision Process__ and the __Credible Simulation Process__ in principle are separate and independent processes, especially since they may be carried out by different roles and organizations or even different companies. However, the processes are linked by communication or information transfer. When a __Credible Decision Process__ identifies the need for a simulation, a __Simulation Request__ is made and a __Credible Simulation Process__ is initiated. The __Credible Simulation Process__ then starts as an independent process.
+
+The result of a __Credible Simulation Process__, i.e. the simulation results, is then delivered to the triggering __Credible Decision Process.__ This information transfer is referred to as __Simulation Delivery__ in <<im-crediblesimulationprocessframework>>.
+
+For more information on the processes of the Credible Simulation Process Framework, click <<SETLEVEL>>.
+
+__Note: The Credible Simulation Process Framework actually includes more than just Credible Decision Process and Credible Simulation Process. However, the SSP Traceability specification currently only supports traceability with respect to the Credible Decision Process and the Credible Simulation Process.__
+
+[#im-crediblesimulationprocessframework]
+.Credible Simulation Process Framework
+image::CredibleSimulationProcessFramework.png[]
+
+[#sec-credibledecisionprocess]
+=== Credible Decision Process
+
+The Credible Decision Process as part of the Credible Simulation Process Frameworkconsists of five successive phases, starting with the analysis of the decision to be made through the preparation of the decision and up the actual decision itself. The preparation includes all activities necessary to obtain and evaluate the information on which the decision will be based. The information needed may include simulation results. <<im-credibledecisionprocess>> illustrates this process.
+
+[#im-credibledecisionprocess]
+.Credible Decision Process
+image::CredibleDecisionProcess.png[]
+
+The phases of the Credible Decision Process are:
+ 
+Analyze Task:: In this phase, the information required for the execution of the decision process is determined and analyzed.
+
+Define Sub-Tasks:: In this phase, the sub-tasks, e.g. simulation or test tasks, required to obtain the information on which the decision should be based are defined and specified.
+ 
+Perform Sub-Processes:: In this phase, the sub-tasks, e.g. simulation or test tasks, required to obtain the information on which the decision should be based, are defined and specified. The phase starts e.g. with the simulation request and ends with the simulation delivery from the perspective of the credible decision process.
+ 
+Evaluate:: In this phase, the decision-relevant information returned from the sub-tasks, e.g. simulation results, is evaluated from the point of view of the Credible Decision Process.
+ 
+Decide:: In this phase the actual decision is done.
+
+For more information on the Credible Decision Process, click <<SETLEVEL>>.
+
+__Note: The Credible Simulation Process Framework actually includes more than just Credible Decision Process and Credible Simulation Process. However, the SSP Traceability specification currently only supports traceability with respect to the Credible Decision Process and the Credible Simulation Process.__
+
+[#sec-crediblesimulationprocess]
+=== Credible Simulation Process
+
+The Credible Simulation Process as part of the Credible Simulation Process Framework consists of seven successive phases starting with the analysis of the simulation task through stages of simulation preparation, simulation execution and evaluation of simulation results until the decision is made whether the simulation results meet the simulation objectives and thus the simulation task can be completed. The Credible Simulation Process is triggered and initiated by a Simulation Request. <<im-crediblesimulationprocess>> illustrates this process.
+
+[#im-crediblesimulationprocess]
+.Credible Simulation Process
+image::CredibleSimulationProcess.png[]
+
+The phases of the Credible Simulation Process are:
+
+Analyze Simulation Task:: In this phase, the information from the higher-level Credible Decision Process, provided as a Simulation Request, is analyzed and detailed with respect to the information needed in the subsequent phases of the Credible Simulation Process.
+
+Define Requirements:: In this phase, the requirements for the individual components of the simulation setup and their interaction as well as the requirements for quality assurance are formulated in detail.
+
+Design Specification:: The purpose of this phase is to create all the specifications needed to implement the complete simulation setup.
+
+Implement:: The purpose of this phase is to implement the complete simulation setup with all its setup components as specified in the design specifications.
+
+Execute Simulation:: The purpose of this phase is to run the simulation and record the simulation results. It may also include any necessary post-processing. 
+
+Evaluate:: The purpose of this phase is to evaluate the simulation results, i.e. to verify that the simulation results are plausible and robust.
+
+Decide Fulfillment:: The purpose of this phase is to confirm that the simulation results meet the original objectives of the simulation task.
+
+For more information on the Credible Simulation Process, click <<SETLEVEL>>.
+
+__Note: The Credible Simulation Process Framework actually includes more than just Credible Decision Process and Credible Simulation Process. However, the SSP Traceability specification currently only supports traceability with respect to the Credible Decision Process and the Credible Simulation Process.__

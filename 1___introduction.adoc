@@ -1,0 +1,38 @@
+[#sec-introduction]
+== Introduction
+
+In the development of products, systems, and system components, design decisions often need to be made based on simulation results. The results of a simulation can be used as one aspect among others for design decisions. Design decisions have a major impact on the further development of a product, system or system component and can also have a significant impact on development costs. It is therefore important that design decisions are based on reliable information and especially on credible simulation results.
+
+In order to make design decisions based on credible simulation results, it is essential that underlying simulation tasks are planned, executed and documented in a transparent and comprehensible manner and that there is a high degree of confidence in the correctness and validity of simulation results. This is essential not only to make reliable design decisions (__quality assurance__), but also to be able to understand design decisions retrospectively (__traceability__).
+
+Improving traceability of decisions and simulations is the core objective of the SSP Traceability specification, based on consistent and compatible documentation of decision processes and simulation process that produces the decision-relevant simulation results. Other goals of the SSP Traceability specification are to provide the ability to re-run a simulation later and to provide the ability to re-use parts of the simulation setup for similar simulations (__reusability__).
+
+**Credible Simulation Process Framework**
+
+The SSP Traceability Specification applies in a __Credible Simulation Process Framework__ as procedural framework, which consists of a __Credible Decision Process__ and a __Credible Simulation Process__, coupled by a __Simulation Request__ and a __Simulation Delivery.__ 
+
+As the traceability of decision and simulation processes improve by applying the SSP Traceability Specification, it is expected that the reliability and credibility of simulation results will increase. This is expected not only when decisions and simulations are performed within a company, but also when the Credible Simulation Process Framework is spread across companies and when simulation results are requested, exchanged and shared across companies. Since the commissioning, preparation and execution of a simulation in that case are usually carried out by different persons or departments, sometimes even by different companies, a common understanding of the simulation task and the objectives of the simulation is essential for the quality and credibility of simulation results. Traceable documentation of simulation requests and simulation deliveries is therefore just as important as traceable documentation of the decision processes and simulation processes themselves.
+
+**Applying SSP Traceability**
+
+The SSP Traceability Specification defines and describes a concept for assuring traceability for the processes of the Credible Simulation Process Framework. The specification proposes to document Credible Decision Processes and Credible Simulation Processes by binding __(gluing)__ together all process-relevant resources and information in the sense of process metadata by means of appropriate SSP Traceability files for Credible Decision Processes and Credible Simulation Processes. The essential core of the SSP Traceability Specification document is the documentation of the appropriate set of SSP Traceability file data formats.
+
+**Document structure** #rework according the latest document structure#
+
+<<sec-crediblesimulationprocessframework>> describes the Credible Simulation Process Framework as the procedural context of SSP Traceability while <<sec-overviewofssptraceability>> introduces the SSP Traceability concept and its associated set of data formats without going into detail. The detail description of the SSP Traceability data formats is subject of <<sec-stc>> through <<sec-srmd>>. <<sec-stc>> describes a common set of re-usable metadata description elements. <<sec-dtmd>> describes how the SSP Traceability data format for documenting Credible Decision Processes are structured  and <<sec-stmd>> describes the structure of SSP Traceability data formats for the documentation of Credible Simulation Processes. <<sec-srmd>> additionally describes a data format for documenting resource metadata von resources in the sense of SSP Traceability. <<sec-ssptraceabilitypackaging>> describes how SSP Traceability files can be bundled into an SSP Traceability package. The SSP traceability specification concludes with a list of other applicable documents such as relevant standards and referenced literature.
+
+*Disclaimer*
+
+High-quality documentation of simulation tasks using the SSP traceability mechanisms can only reflect the quality and consistency of the simulation task actually performed to the maximum. However, the quality of the documentation does not guarantee the quality of the performed process.
+
+<<<
+
+**Conventions used in this document**
+
+* The version number of this specification is to be interpreted according to the _Semantic Versioning Specification (SemVer) 2.0.0_ <<SEMVER200>>.
+
+* Non-normative text is given in square brackets in italic font: _[Especially examples are defined in this style.]_
+
+* The key words *MUST*, *MUST NOT*, *REQUIRED*, *SHALL*, *SHALL NOT*, *SHOULD*, *SHOULD NOT*, *RECOMMENDED*, *NOT RECOMMENDED*, *MAY*, and *OPTIONAL* in this document are to be interpreted as described in _RFC 2119_ <<RFC2119>>.
+
+* All name spaces and reverse domain notation domain names used in this draft version of this document are subject to change once the draft is finalized.
