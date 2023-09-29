@@ -34,7 +34,7 @@ Those cases will be recognizable by the content of the STMD file.
 === STMD File
 
 Any STMD-based package MUST include an STMD XML file under the
-`extra/net.pmsf.ssp.stmd/SimulationTask.stmd` name. The file MUST be
+`extra/org.ssp-standard.ssp-traceability.stmd/SimulationTask.stmd` name. The file MUST be
 a valid STMD file according to the specification below.
 
 A Simulation Task Meta Data file (STMD, file extension .stmd) MUST be a
@@ -42,7 +42,7 @@ well-formed XML 1.0 [XML10] file that conforms to the SimulationTask XML
 Schema distributed as part of this standard.  The file MUST use the
 UTF-8 encoding.
 
-All STMD-specific elements live in the `http://apps.pmsf.net/STMD/SimulationTaskMetaData`
+All STMD-specific elements live in the `http://ssp-standard.org/SSPTraceability1/SimulationTaskMetaData`
 namespace, nicknamed `stmd` in this document.
 
 The root element of an STMD file MUST be a `SimulationTaskMetaData`
@@ -94,14 +94,14 @@ contained in the `MetaData` elements for the resource.
 ==== Embedding into FMUs
 
 For FMUs the SRMD file CAN be embedded by placing the SRMD data into a
-file named `extra/net.pmsf.ssp.srmd/resourceMetaData.srmd` in the FMU
+file named `extra/org.ssp-standard.ssp-traceability.srmd/resourceMetaData.srmd` in the FMU
 archive.
 
 ==== Embedding into SSPs
 
 For SSPs the SRMD file that applies to the SSP as a whole CAN be
 embedded by placing the SRMD data into a file named
-`extra/net.pmsf.ssp.srmd/resourceMetaData.srmd` in the SSP archive.
+`extra/org.ssp-standard.ssp-traceability.srmd/resourceMetaData.srmd` in the SSP archive.
 
 Inside SSPs, additional SRMD files for referenced resources of the SSP
 can be specified using the SSPMD referencing mechanism:
