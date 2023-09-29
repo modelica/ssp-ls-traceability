@@ -125,6 +125,18 @@
                             </xs:documentation>
                         </xs:annotation>
                     </xs:attribute>
+                    <xs:attribute ref="xlink:type" fixed="simple"/>
+                    <xs:attribute ref="xlink:href">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                This attribute gives an optional link for the classification
+                                itself.  This link can be given to provide additional,
+                                potentially human readable information on the classification
+                                type that tools can use to provide this information to the
+                                user, especially for unknown classification types.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
                     <xs:attributeGroup ref="ssc:ABaseElement"/>
                 </xs:complexType>
             </xs:element>
