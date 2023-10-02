@@ -2,10 +2,10 @@
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
     vc:minVersion="1.1"
-    xmlns:stc="http://apps.pmsf.net/SSPTraceability/SSPTraceabilityCommon"
+    xmlns:stc="http://ssp-standard.org/SSPTraceability1/SSPTraceabilityCommon"
     xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon"
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    targetNamespace="http://apps.pmsf.net/SSPTraceability/SSPTraceabilityCommon">
+    targetNamespace="http://ssp-standard.org/SSPTraceability1/SSPTraceabilityCommon">
     
     <xs:import namespace="http://ssp-standard.org/SSP1/SystemStructureCommon" schemaLocation="ssp-standard/schema/SystemStructureCommon.xsd"/>
     <xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="https://www.w3.org/XML/2008/06/xlink.xsd"/>
@@ -122,6 +122,18 @@
                                 with reverse domain name notation (cf. Java package names
                                 or Apple UTIs) of a domain that is controlled by the entity
                                 defining the semantics and content of the classification.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
+                    <xs:attribute ref="xlink:type" fixed="simple"/>
+                    <xs:attribute ref="xlink:href">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                This attribute gives an optional link for the classification
+                                itself.  This link can be given to provide additional,
+                                potentially human readable information on the classification
+                                type that tools can use to provide this information to the
+                                user, especially for unknown classification types.
                             </xs:documentation>
                         </xs:annotation>
                     </xs:attribute>
