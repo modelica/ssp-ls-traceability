@@ -1,7 +1,8 @@
 [#sec-stc]
 == SSP Traceability Common
 
-This chapter describes in detail the content and structure of the XML schema stc.xsd. The elements defined by the schema represent common concepts for ensuring traceability that are reused in many places of other XML schemes for the topic of simulation process traceability. The purpose of the extraction of these reused elements is to increase the flexibility and extensibility of the GlueParticles approach and to help to apply the GlueParticles concept to other topics in product and system engineering.
+This chapter describes in detail the content and structure of the XML schema stc.xsd, which represent common concepts that are reused in the other XML schemas of the specification.
+The purpose of extractiong these elements is to increase the flexibility and extensibility of the GlueParticles approach and to help to apply the GlueParticles concept to other topics in product and system engineering.
 
 [#sec-generalinformationtype]
 === GeneralInformationType
@@ -28,11 +29,17 @@ The GeneralInformationType element is not associated with any attributes.
 [#sec-derivationchain]
 ==== DerivationChain
 
-#The SSP Traceability data formats DTMD and STMD are primarily intended for the standardized exchange of information packages between tools and partners. They do not have built-in versioning mechanisms. The SSP Traceability package represents a snapshot of the used versions of the linked sources and resources. Versioning of sources and resources is done in the generating tools and data management systems.#
-#The exception is the derivation chain. Each time an STMD or DTMD file is written, a new entry is created in the derivation chain with a unique identifier of the file from which the new instance is derived.
-When a tool or data management system receives an SSP Traceability container with STDM, DTMD back, it can check, by comparing the derivation chain with the target system's data infrastructure, which version of the DTMD or STMD was sent. This serves as a basis for controlling the reintegration of received DTMD STMD and it can be determined what is already available, what has been modified, what is new, etc.).#
+The SSP Traceability data formats DTMD and STMD are primarily intended for the standardized exchange of information packages between tools and partners.
+They do not have built-in versioning mechanisms.
+The SSP Traceability package represents a snapshot of the used versions of the linked sources and resources.
+Versioning of sources and resources is done in the generating tools and data management systems.
 
-The DerivationChain element can be used to provide the appropriated set of information about files that were used to derive the current file. If the content of the current file can be considered to be derived from one or a set of other GlueParticle, then the top level meta data and DerivationChain information of those files should be included in their original order as entries in this file's DerivationChain element.
+The exception is the derivation chain. Each time an STMD or DTMD file is written, a new entry is created in the derivation chain with a unique identifier of the file from which the new instance is derived.
+When a tool or data management system receives an SSP Traceability container with STDM, DTMD back, it can check, by comparing the derivation chain with the target system's data infrastructure, which version of the DTMD or STMD was sent.
+This serves as a basis for controlling the reintegration of received DTMD STMD and it can be determined what is already available, what has been modified, what is new, etc.
+
+The DerivationChain element can be used to provide the appropriated set of information about files that were used to derive the current file.
+If the content of the current file can be considered to be derived from one or a set of other GlueParticle, then the top level meta data and DerivationChain information of those files should be included in their original order as entries in this file's DerivationChain element.
 
 [#im-derivationchainschema]
 .DerivationChain element structure and attributes
@@ -100,7 +107,8 @@ The GElementCommon element is not associated with any attributes.
 [#sec-classification]
 ==== Classification
 
-The Classification element, which can occur multiple times, provides a set of classifications of an element, provided as Keyword Value Pairs (KWP), the meaning of which is interpreted according to the name of the classification provided in the name attribute. This approach can be used, for example, to provide searchable keywords for content, or to assign and track quality or validation level requirements across the process, or to maintain variant or other classification content across the process.
+The Classification element, which can occur multiple times, provides a set of classifications of an element, provided as keyword value pairs, the meaning of which is interpreted according to the name of the classification provided in the name attribute.
+This approach can be used, for example, to provide searchable keywords for content, or to assign and track quality or validation level requirements across the process, or to maintain variant or other classification content across the process.
 
 [#im-classificationschema]
 .Classification element structure and attributes
@@ -123,7 +131,7 @@ The Classification element is associated with the following attribute.
 [width="100%",options="header"]
 |===
 | Attribute name | Optional/ Mandatory | Attribute description
-| type           | Optional            | This attribute provides the name of the type of classification being provided.  The name should be unique across the Classification elements of the immediately enclosing element. In order to ensure uniqueness all types should be identified with reverse domain name notation (cf. Java package names or Apple UTIs) of a domain that is controlled by the entity defining the semantics and content of the classification.
+| type           | Optional            | This attribute provides the name of the type of classification being provided. The name should be unique across the Classification elements of the immediately enclosing element. In order to ensure uniqueness all types should be identified with reverse domain name notation (cf. Java package names or Apple UTIs) of a domain that is controlled by the entity defining the semantics and content of the classification.
 |===
 
 [#sec-classificationentry]
@@ -150,7 +158,7 @@ The ClassificationEntry element is associated with the following attributes.
 [width="100%",options="header"]
 |===
 | Attribute name | Optional / Mandatory | Attribute description
-| keyword        | Mandatory            | This attribute gives the keyword for the classification entry (i.e. keyword value pair). It is left undefined whether this must be unique across the entries of the Classification element, or whether repeated entries are allowed. This will depend on the definition of the classification. 
+| keyword        | Mandatory            | This attribute gives the keyword for the classification entry (i.e. keyword value pair). It is left undefined whether this must be unique across the entries of the Classification element, or whether repeated entries are allowed. This will depend on the definition of the classification.
 | xlink:type     | Optional             | #Text fehlt noch#
 | xlink:href     | Optional             | This attribute gives an optional link for the classification entry (i.e. keyword value pair). This link can be given in addition to any content of the classification entry, or it can be the sole information of the classification entry. The rules will depend on the definition of the classification.
 |===
@@ -158,7 +166,8 @@ The ClassificationEntry element is associated with the following attributes.
 [#sec-any01]
 ====== ##any
 
-The ClassificationEntry element may contain XML Elements of any kind, i.e. it provides the possibility and capability to code any kind of information regardless of what the containing schema specifies. This means, the name, structure and attributes of XML elements enclosed by a ClassificationEntry element are completely free.  
+The ClassificationEntry element may contain XML Elements of any kind, i.e. it provides the possibility and capability to code any kind of information regardless of what the containing schema specifies.
+This means, the name, structure and attributes of XML elements enclosed by a ClassificationEntry element are completely free.  
 
 [#sec-annotations]
 ==== Annotations
@@ -211,7 +220,8 @@ The Annotation element is associated with the following attributes.
 [#sec-any02]
 ====== ##any
 
-The Annotation element may contain XML Elements of any kind, i.e. it provides the possibility and capability to code any kind of information regardless of what the containing Schema specifies. This means, the name, structure and attributes of XML elements enclosed by an Annotation element are completely free.  
+The Annotation element may contain XML Elements of any kind, i.e. it provides the possibility and capability to code any kind of information regardless of what the containing Schema specifies.
+This means, the name, structure and attributes of XML elements enclosed by an Annotation element are completely free.  
 
 [#sec-gphasecommon]
 === GPhaseCommon
@@ -246,9 +256,12 @@ The LifeCycleInformationType element defines the structure and attributes of lif
 .LifeCycleInformationType element structure and attributes
 image::LifeCycleInformationTypeSchema.png[]
 
-The following life-cycle states are intended for use. In the following explanations, the term "information to which life-cycle status applies" always refers to a **complete** phase with all of its steps, or to a **complete** step within a phase. Life-cycle information **never** refers to more than one phase and **never** refers to more than one step within a phase. 
+The following life-cycle states are intended for use.
+In the following explanations, the term "information to which life-cycle status applies" always refers to a **complete** phase with all of its steps, or to a **complete** step within a phase.
+Life-cycle information **never** refers to more than one phase and **never** refers to more than one step within a phase.
 
-* **Drafted:** The information to which the life-cycle status applies represents a draft status and is still in progress. This can also mean that the information is not complete and is still being finalized.
+* **Drafted:** The information to which the life-cycle status applies represents a draft status and is still in progress.
+This can also mean that the information is not complete and is still being finalized.
 
 * **Defined:** The information to which the life-cycle status applies is considered complete and may be subject to review or validation.
 
@@ -260,9 +273,9 @@ The following life-cycle states are intended for use. In the following explanati
 
 * **Retracted:** The information to which the life-cycle status applies has been withdrawn and is considered invalid or may need to be revised.
 
-Due to the inherent dependencies of life-cycles, life-cycle information in later phases will depend to some extent on the life-cycle status of earlier phases: For example, if the Implementation phase is marked as having reached Validated status, there would be a contradiction if the Requirements phase had only reached Drafted status. Multiple life-cycle information entries may exist to record the historical progression of the life-cycle status, but only the last entry in the document order, which will also be the most recent, is considered valid for the current file contents; earlier states only record historical data.
-
-
+Due to the inherent dependencies of life-cycles, life-cycle information in later phases will depend to some extent on the life-cycle status of earlier phases:
+For example, if the Implementation phase is marked as having reached Validated status, there would be a contradiction if the Requirements phase had only reached Drafted status.
+Multiple life-cycle information entries may exist to record the historical progression of the life-cycle status, but only the last entry in the document order, which will also be the most recent, is considered valid for the current file contents; earlier states only record historical data.
 
 The LifeCycleInformationType element is structured by the following subordinated elements.
 
@@ -343,12 +356,13 @@ The essential description elements of a step are explained below.
 
 * **Input:** Anything that is used, processed, or used as a source of information for the step can be specified or referenced as input.
 
-* **Procedure:** Anything that documents how a step should be performed or has been performed can be specified or referenced as a procedure. This can be self-written documentation or a predefined procedure.
+* **Procedure:** Anything that documents how a step should be performed or has been performed can be specified or referenced as a procedure.
+This can be self-written documentation or a predefined procedure.
 
 * **Output:** Anything that is created by the execution of a step, or that is considered the result of a step, can be specified or referenced as output. 
 
-* **Rationale:** The rationale for the chosen approach to performing a step can be provided if required. Typically, this is used to justify decisions such as simplifications or deviations from the specification.
-
+* **Rationale:** The rationale for the chosen approach to performing a step can be provided if required.
+Typically, this is used to justify decisions such as simplifications or deviations from the specification.
 
 The StepType element is associated with the following attributes.
 
@@ -453,7 +467,7 @@ The Link element is associated with the following attributes.
 [width="100%",options="header"]
 |===
 | Attribute name | Optional / Mandatory | Attribute description
-| xlink:type     | Optional             | #Text fehlt noch#
+| xlink:type     | Fixed                | Has the fixed value `extended` to indicate an XLink extended link.
 | xlink:title    | Optional             | #Text fehlt noch#
 | xlink:role     | Optional             | #Text fehlt noch#
 |===
@@ -477,7 +491,7 @@ The Locator element is associated with the following attributes.
 [width="100%",options="header"]
 |===
 | Attribute name | Optional / Mandatory | Attribute description
-| xlink:type     | Optional             | #Text fehlt noch#
+| xlink:type     | Fixed                | Has the fixed value `locator` to indicate an XLink locator.
 | xlink:href     | Mandatory            | #Text fehlt noch#
 | xlink:label    | Optional             | #Text fehlt noch#
 | xlink:title    | Optional             | #Text fehlt noch#
@@ -502,7 +516,7 @@ The Arc element is associated with the following attributes.
 [width="100%",options="header"]
 |===
 | Attribute name | Optional / Mandatory | Attribute description
-| xlink:type     | Optional             | #Text fehlt noch#
+| xlink:type     | Fixed                | Has the fixed value `arc` to indicate an XLink arc.
 | xlink:from     | Mandatory            | #Text fehlt noch#
 | xlink:to       | Mandatory            | #Text fehlt noch#
 | xlink:title    | Optional             | #Text fehlt noch#
@@ -587,7 +601,9 @@ __'configuration'__:: #A resource of kind __'configuration'__ contains a detaile
 [#sec-summary]
 ==== Summary
 
-The Summary element provides an optional summary of the resource being referenced. The summary information is intended for human consumption to get an overview of the resource content without looking at the content itself.  The summary content can be provided inline through the Content element, or it can be provided through the source URI attribute.
+The Summary element provides an optional summary of the resource being referenced.
+The summary information is intended for human consumption to get an overview of the resource content without looking at the content itself.
+The summary content can be provided inline through the Content element, or it can be provided through the source URI attribute.
 
 [#im-summaryschema]
 .Summary elements structure and attributes
@@ -688,7 +704,8 @@ The SignatureType element is associated with the following attributes.
 [#sec-contenttype]
 === ContentType
 
-The ContentType element defines the structure and attributes of inline content of an entity. If it is present, then the attribute source of the enclosing element must not be present.
+The ContentType element defines the structure and attributes of inline content of an entity.
+If it is present, then the attribute source of the enclosing element must not be present.
 
 [#im-contenttypeschema]
 .ContentType element structure and attributes
@@ -709,7 +726,8 @@ The ContentType is not associated with any attributes.
 [#sec-any03]
 ==== ##any
 
-The ContentType may contain XML Elements of any kind, i.e. the it provides the possibility and capability to code any kind of information regardless of what the Schema specifies. This mean the name, structure and attributes of XML elements enclosed by a contentType element is completely free.
+The ContentType may contain XML Elements of any kind, i.e. the it provides the possibility and capability to code any kind of information regardless of what the Schema specifies.
+This mean the name, structure and attributes of XML elements enclosed by a contentType element is completely free.
 
 
 [#sec-responsibletype]
@@ -786,7 +804,7 @@ The ResourceRefernece element is associated with the following attribute.
 [width="100%",options="header"]
 |===
 | Attribute name | Optional/ Mandatory | Attribute description
-| xlink:type     | Optional            | #Text fehlt noch#
+| xlink:type     | Fixed               | Has the fixed value `simple` to indicate an XLink simple link.
 | xlink:href     | Optional            | #Text fehlt noch#
 | id             | Optional            | #Text fehlt noch#
 | description    | Optional            | #Text fehlt noch#
