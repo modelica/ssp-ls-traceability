@@ -1,33 +1,107 @@
-[#sec-introduction]
 == Introduction
 
-In the development of products, systems, and system components, design decisions often need to be made based on simulation results. The results of a simulation can be used as one aspect among others for design decisions. Design decisions have a major impact on the further development of a product, system or system component and can also have a significant impact on development costs. It is therefore important that design decisions are based on reliable information and especially on credible simulation results.
+During the development of products, systems and components, design decisions often have to be made, e.g. to select or approve design concepts or to pre-select system components. Nowadays, design decisions are often made on the basis of simulations resp. simulation results, among other aspects that can influence these decisions. Usually an engineering project initiates and requests a simulation and addresses a simulation order to a simulation department or a simulation engineer. The simulation results then might be basis for design decisions.
 
-In order to make design decisions based on credible simulation results, it is essential that underlying simulation tasks are planned, executed and documented in a transparent and comprehensible manner and that there is a high degree of confidence in the correctness and validity of simulation results. This is essential not only to make reliable design decisions (__quality assurance__), but also to be able to understand design decisions retrospectively (__traceability__).
+Due to the fact that design decisions might determine the design of a product, a system or a component and determine or significantly influence further product development processes and costs, it is crucial that such design decisions must be based on a reliable information basis with a high degree of trust, especially if functional safety is affected and if the criticality of a simulation, that emerges these base information, is rated high.
 
-Improving traceability of decisions and simulations is the core objective of the SSP Traceability specification, based on consistent and compatible documentation of decision processes and simulation process that produces the decision-relevant simulation results. Other goals of the SSP Traceability specification are to provide the ability to re-run a simulation later and to provide the ability to re-use parts of the simulation setup for similar simulations (__reusability__).
+In order to be able to make design decisions based on reliable information resp. on reliable simulation results, it is important that the underlying simulation task has been planned, performed, secured and documented in a transparent and comprehensible manner and that there is a high degree of confidence in the correctness and validity of the simulation results. This is not only important for making safe and reliable design decisions (__quality assurance aspiration__), but also to be able to understand such design decisions afterwards (__traceability aspiration__).
 
-**Credible Simulation Process Framework**
+In addition, to enable and support the reuse of simulation results and simulation tasks or parts of the simulation setup, e.g. the simulation models or parameter sets, a comprehensive and as precise as possible documentation of the simulation task and the simulation setup is essential (__reusability aspiration__).
 
-The SSP Traceability Specification applies in a __Credible Simulation Process Framework__ as procedural framework, which consists of a __Credible Decision Process__ and a __Credible Simulation Process__, coupled by a __Simulation Request__ and a __Simulation Delivery.__ 
-
-As the traceability of decision and simulation processes improve by applying the SSP Traceability Specification, it is expected that the reliability and credibility of simulation results will increase. This is expected not only when decisions and simulations are performed within a company, but also when the Credible Simulation Process Framework is spread across companies and when simulation results are requested, exchanged and shared across companies. Since the commissioning, preparation and execution of a simulation in that case are usually carried out by different persons or departments, sometimes even by different companies, a common understanding of the simulation task and the objectives of the simulation is essential for the quality and credibility of simulation results. Traceable documentation of simulation requests and simulation deliveries is therefore just as important as traceable documentation of the decision processes and simulation processes themselves.
-
-**Applying SSP Traceability**
-
-The SSP Traceability Specification defines and describes a concept for assuring traceability for the processes of the Credible Simulation Process Framework. The specification proposes to document Credible Decision Processes and Credible Simulation Processes by binding __(gluing)__ together all process-relevant resources and information in the sense of process metadata by means of appropriate SSP Traceability files for Credible Decision Processes and Credible Simulation Processes. The essential core of the SSP Traceability Specification document is the documentation of the appropriate set of SSP Traceability file data formats.
-
-**Document structure** #rework according the latest document structure#
-
-<<sec-crediblesimulationprocessframework>> describes the Credible Simulation Process Framework as the procedural context of SSP Traceability while <<sec-overviewofssptraceability>> introduces the SSP Traceability concept and its associated set of data formats without going into detail. The detail description of the SSP Traceability data formats is subject of <<sec-stc>> through <<sec-srmd>>. <<sec-stc>> describes a common set of re-usable metadata description elements. <<sec-dtmd>> describes how the SSP Traceability data format for documenting Credible Decision Processes are structured  and <<sec-stmd>> describes the structure of SSP Traceability data formats for the documentation of Credible Simulation Processes. <<sec-srmd>> additionally describes a data format for documenting resource metadata von resources in the sense of SSP Traceability. <<sec-ssptraceabilitypackaging>> describes how SSP Traceability files can be bundled into an SSP Traceability package. The SSP traceability specification concludes with a list of other applicable documents such as relevant standards and referenced literature.
-
-*Disclaimer*
-
-High-quality documentation of simulation tasks using the SSP traceability mechanisms can only reflect the quality and consistency of the simulation task actually performed to the maximum. However, the quality of the documentation does not guarantee the quality of the performed process.
+The enhancement of quality assurance, traceability and reusability is the core objective of the SSP Traceability Specification and the "Glue Particle" approach in the context of "Credible Simulation Processes".
 
 <<<
 
-**Conventions used in this document**
+*Disclaimer*
+
+It is very important to recognize and understand that a high-quality documentation of simulation tasks consistent with the simulation process using STMD files as specified in this Modelica Association standard does not automatically lead to high-quality and consistent simulation processes and to credible engineering decisions based on simulation results.
+
+A high-quality documentation of simulation tasks consistent with the simulation process using STMD files can maximally reflect the quality and consistency of the actually performed simulation task.
+
+<<<
+
+**Credible Simulation Process**
+
+Virtualization and digitalization are becoming more and more important in development. However, this also means that decisions and releases will be based much more on virtual prototypes (simulation models). This results in:
+
+* The simulation must be integrated into the development processes
+*	Statements about the reliability of the results must be available
+*	Traceability and comprehensibility must be guaranteed
+*	The development will take place on a more cooperative basis with partners, the procedures and infrastructures should therefore be coordinated industry-wide (automotive-wide)
+
+In Chapter xx a simulation process is described, which enables and supports these aspects. The description is deliberately kept on a generic level, which can be adopted across companies and must then be concretized in a company-specific and application-specific manner. This described basic sequence of steps shall enable the structured documentation of the information created and used in the simulation process.
+This is the basis for the transition from a simulation process to a Credible Simulation Process (CSP):
+
+*	Consistent documentation with traceability and quality assurance
+*	Finding and reuse of information and artifacts (models, infrastructures, etc.)
+
+
+**Glue Particle Approach**
+
+The core of the glue particle approach is that a consistent data schema exists or is created for a process, such as the Credible Simulation Process. This is the basis for traceability. A Glue Particle is a tool-independent XML file that records or references all information necessary to enhance the quality assurance, traceability and reusability of simulation processes and results. This is on the one hand the information handed over by the engineering project along with the simulation order to the simulation department or the simulation engineer. On the other hand it is all information that was used and generated during the planning, preparation, execution, validation and documentation of the simulation task, including references to externally defined and documented resources (external file or database references) and information on responsibilities, quality checks and approvals.
+
+The XML files for simulation tasks are called STMD files **(STMD: Simulation Task Meta Data)**. These STMD files can be used to inspect and trace simulation tasks, or to support the reuse of simulation task or parts of a simulation task. They may also be used to describe simulation tasks that are assigned to service providers or delegated to development partners.
+
+**Document structure**
+
+Chapter XXX describes the general approach for the STMD files and the design of the referenced normative STMD XML schema. Chapter XXX describes the structure of STMD files in detail. Chapter XXX documents rules and recommendations for the handling of STMD files, i.e. the creation and use of STMD files. Chapter XXX specifies meaningful resp. recommended tool based functionalities that might support STMD handling use cases. Chapter XXX illustrates the handling and interpretation of STMD files using a simple and easy to understand instantiation example for a DC motor simulation. Finally, Chapter XXX provides a glossary of terms.
+
+
+=== Credible Simulation Process
+
+Considering that design decisions in the context of product resp. system development are made on the basis of simulations or simulation results, it is essential that the simulation results can be trusted and that it is possible to reconstruct how the simulation results were obtained. This can be summarized in the term "Credible Simulation Process" as illustrated in figure <<im-crediblesimulationprocess>>.
+
+[#im-crediblesimulationprocess]
+.Credible Simulation Process
+image::CredibleSimulationProcess.png[]
+
+Typical applications of the Credible Simulation Process are System Analysis, Optimization and Test. The Credible Simulation Process then only differs in some specific aspects. For better readability, the synonym "Test" is used for System Analysis, Optimization and Test.
+
+A simulation task in the sense of the STMD standard represents the entire Credible Simulation Process, starting with the analysis of the engineering task from which the need for a simulation arises through the individual stages of simulation preparation, simulation execution and simulation post-processing until the decision is made whether the simulation results meet the simulation objectives and requirements and thus the simulation can be completed. Figure <<im-crediblesimulationprocess2>> shows the overall process with its individual phases and steps. The phases of the Credible Simulation Process are:
+
+* **Analyze the Simulation Task & Objectives (Analysis Phase):** In this process phase the information from the higher-level engineering process is further specified and detailed with regard of the needed information in the following phases of the Credible Simulation Process.
+
+* **Define Requirements (Simulation) (Requirements Phase):** In this phase the requirements for the individual components of the simulation and their interaction as well as the requirements for quality assurance are formulated in detail.
+
+* **Define Design Specification for Simulation Setup (Design Phase):** The purpose of the Design Phase is to create all specifications needed to implement the complete simulation setup.
+
+* **Implement and Assure Quality for Simulation Setup (Implementation Phase):** The purpose of the Implementation Phase is to implement the complete simulation setup with all its setup components as specified in the design specifications.
+
+* **Execute Simulation (Execution Phase):** The purpose of the Execution Phase is to execute the simulation and to record the simulation results.
+
+* **Evaluate Simulation Results & Assure Quality (Evaluation Phase):** The purpose of the Evaluation Phase is to evaluate the simulation results.
+
+* **Decide about Fulfillment of Simulation Objectives (Fulfillment Phase):** The purpose of the Fulfillment Phase is to confirm that the simulation results fulfill the original objectives of the simulation task.
+
+[#im-crediblesimulationprocess2]
+.Phases and Steps of the Credible Simulation Process
+image::CredibleSimulationProcess_2.png[]
+
+Each of these phases can comprise several steps or several partial aspects of a phase. For example, the Design Phase comprises the following steps:
+
+* Define Design Specification Simulation Integration
+* Define Design Specification Simulation Models
+* Define Design Specification Parameters
+* Define Design Specification Test Cases
+* Define Design Specification Simulation Environment
+* Define Design Specification Quality Assurance
+* Verify Design
+
+Each of these steps is an activity of the simulation engineer with respective inputs and outputs. The outputs in turn are usually inputs for follow-up activities within the Credible Simulation Process, except for the outputs of the steps in the final phase. For each of these steps there is usually a defined procedure according to which the work is carried out.
+
+The information associated with an individual step can be subdivided into the following information blocks:
+
+* Inputs
+* Procedure
+* Outputs
+* Rationales
+* LifeCycleInformation
+* Classification
+* Annotations
+
+The STMD format is a data format designed to store information associated with the credible simulation process and covers simulation task meta data for the entire Credible Simulation Process with all phases and steps. An STMD file can be recognized as an implementation of a Glue Particle for a simulation tasks in the sense of the Credible Simulation Process.
+
+=== Conventions Used in This Document
 
 * The version number of this specification is to be interpreted according to the _Semantic Versioning Specification (SemVer) 2.0.0_ <<SEMVER200>>.
 
@@ -35,4 +109,4 @@ High-quality documentation of simulation tasks using the SSP traceability mechan
 
 * The key words *MUST*, *MUST NOT*, *REQUIRED*, *SHALL*, *SHALL NOT*, *SHOULD*, *SHOULD NOT*, *RECOMMENDED*, *NOT RECOMMENDED*, *MAY*, and *OPTIONAL* in this document are to be interpreted as described in _RFC 2119_ <<RFC2119>>.
 
-* All name spaces and reverse domain notation domain names used in this draft version of this document are subject to change once the draft is finalized.
+* All namespaces and reverse domain notation domain names used in this draft version of this document are subject to change once the draft is finalized.
