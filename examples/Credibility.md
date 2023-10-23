@@ -96,7 +96,10 @@ Can you tell me the quantities of interest (QOI) which are the relevant outputs 
 > ⚡ *"Did we implement the M\&S right?"* ⚡
 
 The objective of verification is to ensure that the mathematical model is implemented correctly and then accurately solved. Verification is
-composed of two activities: code verification and calculation verification, which we will discuss now in more detail.
+composed of two activities: code verification and calculation verification, which we will discuss now in more detail. There we have following topics
+
+  [3.1 Code Verification] (### 3.1 Code Verification)
+  [3.1.1 Software Quality Assurance] (### 3.1.1 Software Quality Assurance)
 
 ### 3.1 Code Verification
 
