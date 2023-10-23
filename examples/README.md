@@ -96,7 +96,7 @@ Can you tell me the quantities of interest (QOI) which are the relevant outputs 
 > ⚡ *"Did we implement the M\&S right?"* ⚡
 
 The objective of verification is to ensure that the mathematical model is implemented correctly and then accurately solved. Verification is
-composed of two activities: code verification and calculation verification, which we will discuss now in more detail. There we have following topics. Click on the list on you will jump to the specific chapter.
+composed of two activities: code verification and calculation verification, which we will discuss now in more detail. There we have following topics. Click on the list, you will jump to the specific chapter.
 - [3.1 Code Verification](#3.1 Code Verification)
   - [3.1.1 Software Quality Assurance] (#3.1.1 Software Quality Assurance)
   - [3.1.2 Numerical Code Verification] (#3.1.2 Numerical Code Verification)
@@ -169,6 +169,8 @@ might be generated using the method of manufactured solutions.
 *   [ ] **b**: The numerical solution was compared to an accurate benchmark solution from another verified code.
 *   [ ] **c**: Discretization error was quantified by comparison to an exact solution as the discretization was refined, i.e. the numerical solution asymptotically approaches the exact solution as the discretization is refined.
 *   [ ] **d**: In addition to the quantification of discretization error and the execution of a grid convergence study as described in level c, the observed order of accuracy was quantified and compared to the theoretical order of accuracy.
+
+[**Back to 3. Verification**] (#3. Verification)
 
 ### 3.2 Calculation Verification
 
