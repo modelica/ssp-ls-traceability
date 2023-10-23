@@ -4,6 +4,7 @@
 
 ## 1. Introdution
 
+
 > ⚡ *The term credibility generally describes the quality to elicit trust in the results.* ⚡
 
 I think you already know this, but to fully unleash the benefits of Modeling and Simulation (M\&S) and to enable simulation-informed decision making in product development, the credibility of the M\&S results has to be established and appropriately communicated between decision makers and simulation engineers.
