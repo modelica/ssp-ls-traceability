@@ -100,6 +100,9 @@ composed of two activities: code verification and calculation verification, whic
 - [3.1 Code Verification](#3.1 Code Verification)
   - [3.1.1 Software Quality Assurance] (#3.1.1 Software Quality Assurance)
   - [3.1.2 Numerical Code Verification] (#3.1.2 Numerical Code Verification)
+- [3.2 Calculation Verification] (#3.2 Calculation Verification)
+  - [3.2.1 Discretization Error] (#3.2.1 Discretization Error)
+  - [3.2.2 Numerical Solver Error] (#3.2.2 Numerical Solver Error)
 
 ### 3.1 Code Verification
 
