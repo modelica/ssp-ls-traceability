@@ -2,7 +2,13 @@
 
 > Hi, I'm COSTA (**C**redibility **O**f **S**imulation **T**ool **A**ssistant)! I'm your companion in assessing the credibility of your simulation!
 
-## 1. Introdution
+Here is the list of main chapters, which you can use to navigate
+- [**1. Introduction**] (#1. Introduction)
+- [**2. Context**] (#2.Context)
+- [**3. Verification**] (#3. Verification)
+- [**4. Validation**] (#4.Validation)
+
+## 1. Introduction
 
 
 > ⚡ *The term credibility generally describes the quality to elicit trust in the results.* ⚡
@@ -32,6 +38,8 @@ I was developed to help you in assessing the credibility of your M\&S results.
     *   [ ] **d**: Benchmark verification test cases, provided by the vendor, are run on the user's computer platform. The results are compared to vendor results and documented
 
 5.  That's it! Once we are done with all the questions, you will receive a credibility spider which you can use for documentation and communication of your M\&S results.
+
+[**Back to main chapter list**] (#COSTA)
 
 Enough chitchat for now! Let's get started! :-)
 
@@ -89,6 +97,9 @@ Can you tell me the quantities of interest (QOI) which are the relevant outputs 
 ```
     Enter QOIs (e.g. accelerations)
 ```
+
+[**Back to main chapter list**] (#COSTA)
+
 ## Now, buckle up! It's time for the questions! :-)
 
 ## 3. Verification
@@ -249,6 +260,8 @@ of discretization error, numerical solver error, and identification of use error
 *   [ ] **c**: Key user errors are identified, appropriate mechanisms for detection and mitigation are implemented and reviewed.
 
 [**Back to 3. Verification**] (#3. Verification)
+
+[**Back to main chapter list**] (#COSTA)
 
 ## 4. Validation
 
@@ -533,6 +546,8 @@ Determine how well the simulation results and the comparator match and document 
 *   [ ] **b**: Visual or qualitative comparison concludes sufficient agreement. What sufficient means is to be defined contextually by experts.
 *   [ ] **c**: Differences between computational results and comparator data (e.g. experimental) are typically less than 5%. Includes consideration of relevant uncertainty, but statistical distributions for uncertainty quantification are unknown.
 *   [ ] **d**: Differences between computational results and comparator data (e.g. experimental) are typically less than 5%. Statistical distributions for uncertainty quantifications are known. 
+
+[**Back to main chapter list**] (#COSTA)
 
 # CONGRATS!
 You have just crossed the finish line! Now, I will create the credibility spider for you...
