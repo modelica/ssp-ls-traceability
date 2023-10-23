@@ -99,6 +99,7 @@ The objective of verification is to ensure that the mathematical model is implem
 composed of two activities: code verification and calculation verification, which we will discuss now in more detail. There we have following topics
 
   [3.1 Code Verification] (###3.1 Code Verification)
+  
   [3.1.1 Software Quality Assurance] (###3.1.1 Software Quality Assurance)
 
 ### 3.1 Code Verification
