@@ -126,8 +126,8 @@ Can you tell me the quantities of interest (QOI) which are the relevant outputs 
 
 The objective of verification is to ensure that the mathematical model is implemented correctly and then accurately solved. Verification is
 composed of two activities: code verification and calculation verification, which we will discuss now in more detail. There we have following topics. Click on the list, you will jump to the specific chapter.
-- [3.1 Code Verification](#3.1-Code-Verification)
-  - [3.1.1 Software Quality Assurance](#3.1.1-Software-Quality-Assurance)
+- [3.1 Code Verification](#31-Code-Verification)
+  - [3.1.1 Software Quality Assurance](#311-Software-Quality-Assurance)
   - [3.1.2 Numerical Code Verification](#3.1.2-Numerical-Code-Verification)
 - [3.2 Calculation Verification](#3.2-Calculation-Verification)
   - [3.2.1 Discretization Error](#3.2.1-Discretization-Error)
