@@ -9,9 +9,9 @@
 
 Here is the list of main chapters, which you can use to navigate
 - [**1. Introduction**](#1-Introduction)
-- [**2. Context**](#2.-Context)
-- [**3. Verification**](#3.-Verification)
-- [**4. Validation**](#4.-Validation)
+- [**2. Context**](#2-Context)
+- [**3. Verification**](#3-Verification)
+- [**4. Validation**](#4-Validation)
 
 **Versuch Nutzung und Ertellung einer custum-id in Kap2**
 
