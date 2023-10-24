@@ -8,10 +8,9 @@
 > Hi, I'm COSTA (**C**redibility **O**f **S**imulation **T**ool **A**ssistant)! I'm your companion in assessing the credibility of your simulation!
 
 Here is the list of main chapters, which you can use to navigate
-- [**Anchor Link**](#my-chapter)
 - [**1. Introduction**](#1.-Introduction)
 - [**2. Context**](#2.-Context)
-- [**3. Verification**] (#3.-Verification)
+- [**3. Verification**](#3.-Verification)
 - [**4. Validation**](#4.-Validation)
 
 **Versuch Nutzung und Ertellung einer custum-id in Kap2**
@@ -51,13 +50,13 @@ I was developed to help you in assessing the credibility of your M\&S results.
 
 5.  That's it! Once we are done with all the questions, you will receive a credibility spider which you can use for documentation and communication of your M\&S results.
 
-[**Back to main chapter list**] (#COSTA)
+[**Back to main chapter list**](#COSTA)
 
 Enough chitchat for now! Let's get started! :-)
 
 **Versuch Nutzung und Ertellung einer custum-id in Kap2**
 
-[My great Heading to custom id] (#custom-id)
+[My great Heading to custom id](#custom-id)
 
 
 ## 2. Context
@@ -115,7 +114,7 @@ Can you tell me the quantities of interest (QOI) which are the relevant outputs 
     Enter QOIs (e.g. accelerations)
 ```
 
-[**Back to main chapter list**] (#COSTA)
+[**Back to main chapter list**](#COSTA)
 
 ## Now, buckle up! It's time for the questions! :-)
 
@@ -170,7 +169,7 @@ assurance on MOTS and user-developed software.
 *   [ ] **c**: An audit is conducted with the vendor to confirm that quality procedures are conducted and documented during the software development process.
 *   [ ] **d**: Benchmark verification test cases, provided by the vendor, are run on the user's computer platform. The results are compared to vendor results and documented.
 
-[**Back to 3. Verification**] (#3. Verification)
+[**Back to 3. Verification**](#3.-Verification)
 
 #### 3.1.2 Numerical Code Verification
 
@@ -200,7 +199,7 @@ might be generated using the method of manufactured solutions.
 *   [ ] **c**: Discretization error was quantified by comparison to an exact solution as the discretization was refined, i.e. the numerical solution asymptotically approaches the exact solution as the discretization is refined.
 *   [ ] **d**: In addition to the quantification of discretization error and the execution of a grid convergence study as described in level c, the observed order of accuracy was quantified and compared to the theoretical order of accuracy.
 
-[**Back to 3. Verification**] (#3. Verification)
+[**Back to 3. Verification**](#3.-Verification)
 
 ### 3.2 Calculation Verification
 
@@ -231,7 +230,7 @@ of discretization error, numerical solver error, and identification of use error
 *   [ ] **b**: Applicable grid or time-step convergence analyses are performed and documented and their respective convergence behaviors are observed to be stable, but the discretization error is not estimated.
 *   [ ] **c**: Applicable grid or time-step convergence analyses are performed and documented and discretization error is estimated.
 
-[**Back to 3. Verification**] (#3. Verification)
+[**Back to 3. Verification**](#3.-Verification)
 
 #### 3.2.2 Numerical Solver Error
 
@@ -254,7 +253,7 @@ of discretization error, numerical solver error, and identification of use error
 *   [ ] **b**: No solver parameter sensitivity is performed. Solver parameters are established based on values from a previously verified computational model. This is documented in a sufficiently traceable manner.
 *   [ ] **c**: Problem-specific sensitivity study is performed and documented on solver parameters, confirming that changes in simulation results due to changes in the solver parameters are negligible relative to the modeling & simulation accuracy goal.
 
-[**Back to 3. Verification**] (#3. Verification)
+[**Back to 3. Verification**](#3.-Verification)
 
 #### 3.2.3 User Error Analysis
 
@@ -278,7 +277,7 @@ of discretization error, numerical solver error, and identification of use error
 
 [**Back to 3. Verification**] (#3. Verification)
 
-[**Back to main chapter list**] (#COSTA)
+[**Back to main chapter list**](#COSTA)
 
 ## 4. Validation
 
@@ -564,7 +563,7 @@ Determine how well the simulation results and the comparator match and document 
 *   [ ] **c**: Differences between computational results and comparator data (e.g. experimental) are typically less than 5%. Includes consideration of relevant uncertainty, but statistical distributions for uncertainty quantification are unknown.
 *   [ ] **d**: Differences between computational results and comparator data (e.g. experimental) are typically less than 5%. Statistical distributions for uncertainty quantifications are known. 
 
-[**Back to main chapter list**] (#COSTA)
+[**Back to main chapter list**](#COSTA)
 
 # CONGRATS!
 
