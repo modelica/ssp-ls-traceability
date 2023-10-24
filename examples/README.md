@@ -293,7 +293,7 @@ Therefore, appropriate validation activities require attention to both the compu
 an appropriately rigorous evaluation of the simulation results.There we have following topics. Click on the list, you will jump to the specific chapter.
 - [4.1 Computational Model](#41-Computationa-Model)
   - [4.1.1 Model Form](#411-Model-Form)
-  - [4.1.2 Model Inputs & Parameters Sensitivities](#412-Model-Inputs-&-Parameters-Sensitivities)
+  - [4.1.2 Model Inputs & Parameters Sensitivities](#412-Model-Inputs--Parameters-Sensitivities)
 - [4.2 Comparator](#42-Comparator)
 - [4.3 Applicability](#43-Applicability)
   - [4.3.1 Relevance of the QOIs](#431-Relevance-of-the-QOIs)
