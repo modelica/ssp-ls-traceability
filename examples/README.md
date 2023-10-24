@@ -538,7 +538,7 @@ vance of the validation activities to the COU and the relevance of the validatio
 
 ### 4.4 Assessment
 > An assessment of the accuracy of the simulation output can be performed after the outputs from the
-V&V activities are obtained and compared.
+V&V activities are obtained and compared.<a name="custom_anchor_name"></a>
 
 We are almost done! There is just one final step missing: The output comparison between simulation and comparator.
 
@@ -568,7 +568,7 @@ Determine how well the simulation results and the comparator match and document 
 
 # CONGRATS!
 
-<a name="custom_anchor_name"></a>
+
 # some header
 
 # My Chapter
