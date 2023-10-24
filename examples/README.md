@@ -6,6 +6,7 @@
 > Hi, I'm COSTA (**C**redibility **O**f **S**imulation **T**ool **A**ssistant)! I'm your companion in assessing the credibility of your simulation!
 
 Here is the list of main chapters, which you can use to navigate
+- [Anchor Link](#my-chapter)
 - [**1. Introduction**] (#1. Introduction)
 - [**2. Context**] (#2.Context)
 - [**3. Verification**] (#3. Verification)
