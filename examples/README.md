@@ -122,16 +122,18 @@ Can you tell me the quantities of interest (QOI) which are the relevant outputs 
 
 ## 3. Verification
 
+
+[**Back to main chapter list**](#COSTA)
 > ⚡ *"Did we implement the M\&S right?"* ⚡
 
 The objective of verification is to ensure that the mathematical model is implemented correctly and then accurately solved. Verification is
 composed of two activities: code verification and calculation verification, which we will discuss now in more detail. There we have following topics. Click on the list, you will jump to the specific chapter.
 - [3.1 Code Verification](#31-Code-Verification)
   - [3.1.1 Software Quality Assurance](#311-Software-Quality-Assurance)
-  - [3.1.2 Numerical Code Verification](#3.1.2-Numerical-Code-Verification)
-- [3.2 Calculation Verification](#3.2-Calculation-Verification)
-  - [3.2.1 Discretization Error](#3.2.1-Discretization-Error)
-  - [3.2.2 Numerical Solver Error](#3.2.2-Numerical-Solver-Error)
+  - [3.1.2 Numerical Code Verification](#312-Numerical-Code-Verification)
+- [3.2 Calculation Verification](#32-Calculation-Verification)
+  - [3.2.1 Discretization Error](#321-Discretization-Error)
+  - [3.2.2 Numerical Solver Error](#322-Numerical-Solver-Error)
 
 ### 3.1 Code Verification
 
@@ -171,7 +173,7 @@ assurance on MOTS and user-developed software.
 *   [ ] **c**: An audit is conducted with the vendor to confirm that quality procedures are conducted and documented during the software development process.
 *   [ ] **d**: Benchmark verification test cases, provided by the vendor, are run on the user's computer platform. The results are compared to vendor results and documented.
 
-[**Back to 3. Verification**](#3.-Verification)
+[**Back to 3. Verification**](#3-Verification)
 
 #### 3.1.2 Numerical Code Verification
 
@@ -201,7 +203,7 @@ might be generated using the method of manufactured solutions.
 *   [ ] **c**: Discretization error was quantified by comparison to an exact solution as the discretization was refined, i.e. the numerical solution asymptotically approaches the exact solution as the discretization is refined.
 *   [ ] **d**: In addition to the quantification of discretization error and the execution of a grid convergence study as described in level c, the observed order of accuracy was quantified and compared to the theoretical order of accuracy.
 
-[**Back to 3. Verification**](#3.-Verification)
+[**Back to 3. Verification**](#3-Verification)
 
 ### 3.2 Calculation Verification
 
@@ -232,7 +234,7 @@ of discretization error, numerical solver error, and identification of use error
 *   [ ] **b**: Applicable grid or time-step convergence analyses are performed and documented and their respective convergence behaviors are observed to be stable, but the discretization error is not estimated.
 *   [ ] **c**: Applicable grid or time-step convergence analyses are performed and documented and discretization error is estimated.
 
-[**Back to 3. Verification**](#3.-Verification)
+[**Back to 3. Verification**](#3-Verification)
 
 #### 3.2.2 Numerical Solver Error
 
@@ -255,7 +257,7 @@ of discretization error, numerical solver error, and identification of use error
 *   [ ] **b**: No solver parameter sensitivity is performed. Solver parameters are established based on values from a previously verified computational model. This is documented in a sufficiently traceable manner.
 *   [ ] **c**: Problem-specific sensitivity study is performed and documented on solver parameters, confirming that changes in simulation results due to changes in the solver parameters are negligible relative to the modeling & simulation accuracy goal.
 
-[**Back to 3. Verification**](#3.-Verification)
+[**Back to 3. Verification**](#3-Verification)
 
 #### 3.2.3 User Error Analysis
 
@@ -277,7 +279,7 @@ of discretization error, numerical solver error, and identification of use error
 *   [ ] **b**: Key user errors are identified, and the practitioner knows about basic mitigation concepts .
 *   [ ] **c**: Key user errors are identified, appropriate mechanisms for detection and mitigation are implemented and reviewed.
 
-[**Back to 3. Verification**] (#3. Verification)
+[**Back to 3. Verification**](#3-Verification)
 
 [**Back to main chapter list**](#COSTA)
 
