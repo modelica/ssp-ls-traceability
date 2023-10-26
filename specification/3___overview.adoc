@@ -48,7 +48,7 @@ The STC data format is never instantiated as an individual XML file.
 
 [#im-ssptraceabilityfiles]
 .SSP Traceability cross-file structure and dependencies
-image::SspTraceabilityFiles.png[]
+image::SSPTraceabilityFiles.png[]
 
 A GlueParticle file represents the structure of a process to be documented.
 This means that it is structured in a similar way as the process, i.e., it contains elements for documenting process-relevant information and resources related to phases and steps of the process, supplemented by some additional elements for information about the life-cycle of the GlueParticle information, cross-functional general information and additional administrative information, such as signatures, classifications and annotations. 
@@ -101,7 +101,7 @@ See <<sec-stmd>> for a detailed specification of the STMD GlueParticle file stru
 
 [#im-stmdbriefschema]
 .Simulation Task Meta Data: Brief XML Schema structure
-image::StmdBriefSchema.png[]
+image::STMDBriefSchema.png[]
 
 [#sec-srmdintroduction]
 === Simulation Resource Meta Data
@@ -112,7 +112,7 @@ For example, this support can reduce the effort required to analyze a set of res
 
 [#im-srmdbriefschema.png]
 .Simulation Resource Meta Data: Brief XML Schema structure
-image::SrmdBriefSchema.png[]
+image::SRMDBriefSchema.png[]
 
 However, the existence of Simulation Resource Meta Data files is not tied to the actual referencing of corresponding resources by DTMD files or STMD files.
 Simulation Resource Meta Data files can also exist for resources regardless of whether the corresponding resource is actually referenced or not.
