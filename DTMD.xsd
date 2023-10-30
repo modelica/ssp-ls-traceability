@@ -3,9 +3,14 @@
 	<xs:import namespace="http://ssp-standard.org/SSP1/SystemStructureCommon" schemaLocation="ssp-standard/schema/SystemStructureCommon.xsd"/>
 	<xs:import namespace="http://ssp-standard.org/SSPTraceability1/SSPTraceabilityCommon" schemaLocation="STC.xsd"/>
 	<xs:element name="DecisionTaskMetaData">
+		<xs:annotation>
+			<xs:documentation xml:lang="en">
+				This element specifies the structure of the Credible Decision Process.
+			</xs:documentation>
+		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="GeneralInformation" minOccurs="0" type="stc:GeneralInformationType"/>
+				<xs:element name="GeneralInformation" type="stc:GeneralInformationType" minOccurs="0"/>
 				<xs:element name="AnalysisPhase" minOccurs="0">
 					<xs:annotation>
 						<xs:documentation xml:lang="en">
@@ -14,8 +19,23 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="AnalyzeEngineeringTask" type="stc:StepType" minOccurs="0"/>
-							<xs:element name="VerifyAnalysis" type="stc:StepType" minOccurs="0"/>
+							<xs:element name="AnalyzeEngineeringTask" type="stc:StepType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation xml:lang="en">
+										In this step the necessary information required for the execution of this
+										decision task is determined and provided from the overall product
+										development process.
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="VerifyAnalysis" type="stc:StepType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation xml:lang="en">
+										In this step the outputs and credibility documentation of the phase are
+										verified and the result is documented.
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
 							<xs:group ref="stc:GPhaseCommon"/>
 						</xs:sequence>
 						<xs:attributeGroup ref="ssc:ABaseElement"/>
@@ -30,9 +50,31 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="DefineTasks" type="stc:StepType" minOccurs="0"/>
-							<xs:element name="DefineResultQuality" type="stc:StepType" minOccurs="0"/>
-							<xs:element name="VerifyTasks" type="stc:StepType" minOccurs="0"/>
+							<xs:element name="DefineTasks" type="stc:StepType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation xml:lang="en">
+										In this step the development or test strategy is defined. This means
+										that a set of individual tasks is defined, from their individual
+										results an overall evaluation can be made.
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="DefineResultQuality" type="stc:StepType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation xml:lang="en">
+										In this step the expected result quality of the tasks to be performed
+										is defined.
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="VerifyTasks" type="stc:StepType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation xml:lang="en">
+										In this step the outputs and credibility documentation of the phase are
+										verified and the result is documented.
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
 							<xs:group ref="stc:GPhaseCommon"/>
 						</xs:sequence>
 						<xs:attributeGroup ref="ssc:ABaseElement"/>
@@ -46,7 +88,14 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="PerformTasks" type="stc:StepType" minOccurs="0"/>
+							<xs:element name="PerformTasks" type="stc:StepType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation xml:lang="en">
+										In this step all sub-tasks are performed and the output according to
+										the simulation objectives and confidence is provided.
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
 							<xs:group ref="stc:GPhaseCommon"/>
 						</xs:sequence>
 						<xs:attributeGroup ref="ssc:ABaseElement"/>
@@ -60,9 +109,31 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="EvaluateResults" type="stc:StepType" minOccurs="0"/>
-							<xs:element name="AssureResultQuality" type="stc:StepType" minOccurs="0"/>
-							<xs:element name="DeriveResultQualityVerdict" type="stc:StepType" minOccurs="0"/>
+							<xs:element name="EvaluateResults" type="stc:StepType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation xml:lang="en">
+										In this step an overall evaluation regarding the requirements from the
+										decision task is carried out based on the individual results.
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="AssureResultQuality" type="stc:StepType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation xml:lang="en">
+										In this step quality assurance for the decision task and result is
+										performed. Quality information about the according tasks is provided,
+										according to the criticality of the decision of the task.
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
+							<xs:element name="DeriveResultQualityVerdict" type="stc:StepType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation xml:lang="en">
+										In this step an assessment of the quality of the decision task and
+										result is carried out.
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
 							<xs:group ref="stc:GPhaseCommon"/>
 						</xs:sequence>
 						<xs:attributeGroup ref="ssc:ABaseElement"/>
@@ -76,7 +147,14 @@
 					</xs:annotation>
 					<xs:complexType>
 						<xs:sequence>
-							<xs:element name="DecideEngineeringObjectiveFulfillment" type="stc:StepType" minOccurs="0"/>
+							<xs:element name="DecideEngineeringObjectiveFulfillment" type="stc:StepType" minOccurs="0">
+								<xs:annotation>
+									<xs:documentation xml:lang="en">
+										In this step the decision is made whether the requirements and
+										objectives of the engineering task have been fulfilled.
+									</xs:documentation>
+								</xs:annotation>
+							</xs:element>
 							<xs:group ref="stc:GPhaseCommon"/>
 						</xs:sequence>
 						<xs:attributeGroup ref="ssc:ABaseElement"/>
@@ -87,7 +165,7 @@
 			<xs:attribute name="version" use="required">
 				<xs:annotation>
 					<xs:documentation xml:lang="en">
-						Version of DTMD format, 1.0.0-beta2 for this pre-release.
+						Version of DTMD format, 1.0.0 for this release.
 					</xs:documentation>
 				</xs:annotation>
 				<xs:simpleType>
@@ -107,7 +185,7 @@
 			</xs:attribute>
 			<xs:attributeGroup ref="ssc:ABaseElement"/>
 			<xs:attributeGroup ref="ssc:ATopLevelMetaData"/>
-			<xs:attribute name="GUID" use="required" type="xs:string">
+			<xs:attribute name="GUID" type="xs:string" use="required">
 				<xs:annotation>
 					<xs:documentation xml:lang="en">
 						GUID identifier of this DTMD file. Must be globally unique and MUST
@@ -116,5 +194,5 @@
 				</xs:annotation>
 			</xs:attribute>
 		</xs:complexType>
-	</xs:element>	
+	</xs:element>
 </xs:schema>
