@@ -555,7 +555,7 @@ The ResourceType element is associated with the following attributes.
 [width="100%",options="header"]
 |===
 | Attribute name | Optional / Mandatory | Attribute description
-| kind           | Mandatory           | This attribute indicates the kind of resource that is referenced, i.e. what role it plays in relation to the particle being described. Recommended value entries are #__'document', 'requirement', 'specification', 'model', 'parameter', 'system', 'testcase', 'result', 'method', 'rationale', 'report', 'request', 'delivery', 'executable', 'configuration'__#. The meaning of the values are described directly below this table.  If no more precise label applies, the kind __'document'__ can be used.
+| kind           | Mandatory           | This attribute indicates the kind of resource that is referenced, i.e. what role it plays in relation to the particle being described. Recommended value entries are __'document', 'requirement', 'specification', 'model', 'parameter', 'system', 'testcase', 'result', 'method', 'rationale', 'report', 'request', 'delivery', 'executable', 'configuration'__. The meaning of the values are described directly below this table.  If no more precise label applies, the kind __'document'__ can be used.
 | scope          | Optional            | This attribute indicates the scope or level that a resource is specific to, i.e. whether the resource applies at a global, system, subsystem or component level.  The use of this attribute is optional, i.e. it should only be specified where it makes sense to give this kind of information.
 | type           | Mandatory           | This mandatory attribute specifies the MIME type of the resource, which does not have a default value.  If no specific MIME type can be indicated, then the type application/octet-stream is to be used.
 | source         | Optional            | This attribute indicates the source of the resource as a URI (cf. RFC 3986).  For purposes of the resolution of relative URIs the base URI is the URI of the GlueParticle.  Therefore for resources that are located alongside the GlueParticle, relative URIs without scheme and authority can and should be used to specify the component sources.  For resources that are packaged inside an SSP that contains this GlueParticle, this is mandatory (in this way, the GlueParticle URIs remain valid after unpacking the SSP into the file system). If the source attribute is missing, the resource is provided inline as contents of the Content element, which must not be present otherwise.
@@ -567,35 +567,35 @@ The ResourceType element is associated with the following attributes.
 
 #List of recommended value entries for the attribute __kind__ with short explanations.#
 
-__'document'__:: #The Value __'document'__ can be used as a generic resource kind in any case a more specific kind does not fit to the referenced resource.#
+__'document'__:: The Value __'document'__ can be used as a generic resource kind in any case a more specific kind does not fit to the referenced resource.
 
-__'requirement__:: #The __'requirement'__ kind value is used to indicate that a resource contains a requirements document, or sets of consistent single requirements without distinguishing between different subjects to which the requirements apply.#
+__'requirement__:: The __'requirement'__ kind value is used to indicate that a resource contains a requirements document, or sets of consistent single requirements without distinguishing between different subjects to which the requirements apply.
 
-__'specification'__:: #The __'specification'__ kind value is used to indicate that a resource contain a specifications document , or sets of consistent single specifications without distinguishing between different subjects to which the specifications apply.#
+__'specification'__:: The __'specification'__ kind value is used to indicate that a resource contain a specifications document , or sets of consistent single specifications without distinguishing between different subjects to which the specifications apply.
 
-__'model'__:: #The kind value __'model'__ is used to indicate that a resource contains a simulation model. It does not distinguish between parameterized models, which do not need additional parameters or unparameterized models, which require an additional parameter file.#
+__'model'__:: The kind value __'model'__ is used to indicate that a resource contains a simulation model. It does not distinguish between parameterized models, which do not need additional parameters or unparameterized models, which require an additional parameter file.
 
-__'parameter'__:: #The kind value __'parameter'__ is used to indicate that a resource contains parameters or sets of consistent parameters for a simulation model.#
+__'parameter'__:: The kind value __'parameter'__ is used to indicate that a resource contains parameters or sets of consistent parameters for a simulation model.
 
-__'system'__:: #A resource of kind __'system'__ is or contains a reference to the s__ystem under test__ in a PDM system or similar IT system or any other kind of description of the __system under test.__#
+__'system'__:: A resource of kind __'system'__ is or contains a reference to the s__ystem under test__ in a PDM system or similar IT system or any other kind of description of the __system under test.__
 
-__'testcase'__:: #A resource of kind __'testcase'__ should contain information that describe how the simulation objectives are achieved at the operational level by one more test cases. A consistent set of test cases could be considered a technical breakdown of the simulation objectives.#
+__'testcase'__:: A resource of kind __'testcase'__ should contain information that describe how the simulation objectives are achieved at the operational level by one more test cases. A consistent set of test cases could be considered a technical breakdown of the simulation objectives.#
 
-__'results'__:: #A resource of kind __'result'__ should contain information that answers questions posed by the simulation requester about the goals and intent of the simulation. In principle, this could be any kind of result data, no matter what it actually represents in detail. If the result is intended to be an aggregated and condensed report, the value __'report'__ can be used instead.#
+__'results'__:: #A resource of kind __'result'__ should contain information that answers questions posed by the simulation requester about the goals and intent of the simulation. In principle, this could be any kind of result data, no matter what it actually represents in detail. If the result is intended to be an aggregated and condensed report, the value __'report'__ can be used instead.
 
-__'method'__:: #A resource of kind __'method'__ should contain information that describes how a described process step is performed or should be performed.#
+__'method'__:: A resource of kind __'method'__ should contain information that describes how a described process step is performed or should be performed.
 
-__'rationale'__:: #A resource of kind __'method'__ should contain information about why a related process step is or was performed in the way it was performed. This is especially true for activities that were not performed in the specified way for good reasons, or where assumptions and simplifications were made.#
+__'rationale'__:: A resource of kind __'method'__ should contain information about why a related process step is or was performed in the way it was performed. This is especially true for activities that were not performed in the specified way for good reasons, or where assumptions and simplifications were made.
 
-__'report'__:: #A resource of kind  __'report'__ should provide information about the requested results in a human-readable report format, i.e., aggregated and condensed to a level that directly relates to the requestor's question or the goals and intent of the simulation.#
+__'report'__:: A resource of kind  __'report'__ should provide information about the requested results in a human-readable report format, i.e., aggregated and condensed to a level that directly relates to the requestor's question or the goals and intent of the simulation.
 
-__'request'__:: #A resource of kind __'request'__ should contain information provided by the "requester" to perform the task. The requestor here is synonymous with the parent process or requesting organizational unit.#
+__'request'__:: A resource of kind __'request'__ should contain information provided by the "requester" to perform the task. The requestor here is synonymous with the parent process or requesting organizational unit.
 
-__'delivery'__:: #A resource of kind __'delivery'__ should contain information that provides the "client" with information about the execution of the task and the result of the task.#
+__'delivery'__:: A resource of kind __'delivery'__ should contain information that provides the "client" with information about the execution of the task and the result of the task.
 
-__'executable'__:: #The type value __'executable'__ is used to indicate that a resource contains an executable file, such as a script or an Office file with an executable VBA macro.#
+__'executable'__:: The type value __'executable'__ is used to indicate that a resource contains an executable file, such as a script or an Office file with an executable VBA macro.
 
-__'configuration'__:: #A resource of kind __'configuration'__ contains a detailed description of the configuration of the simulation environment setup.#
+__'configuration'__:: A resource of kind __'configuration'__ contains a detailed description of the configuration of the simulation environment setup.
 
 
 [#sec-summary]
