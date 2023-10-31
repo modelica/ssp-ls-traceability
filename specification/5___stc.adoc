@@ -565,7 +565,7 @@ The ResourceType element is associated with the following attributes.
 |===
 
 
-#List of recommended value entries for the attribute __kind__ with short explanations.#
+List of recommended value entries for the attribute __kind__ with short explanations.
 
 __'document'__:: The Value __'document'__ can be used as a generic resource kind in any case a more specific kind does not fit to the referenced resource.
 
