@@ -2421,7 +2421,7 @@ Typically, this is used to justify decisions such as simplifications or deviatio
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">kind</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute indicates the kind of resource that is referenced, i.e. what role it plays in relation to the particle being described. Recommended value entries are <mark><em>'document', 'requirement', 'specification', 'model', 'parameter', 'system', 'testcase', 'result', 'method', 'rationale', 'report', 'request', 'delivery', 'executable', 'configuration'</em></mark>. The meaning of the values are described directly below this table.  If no more precise label applies, the kind <em>'document'</em> can be used.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute indicates the kind of resource that is referenced, i.e. what role it plays in relation to the particle being described. Recommended value entries are <em>'document', 'requirement', 'specification', 'model', 'parameter', 'system', 'testcase', 'result', 'method', 'rationale', 'report', 'request', 'delivery', 'executable', 'configuration'</em>. The meaning of the values are described directly below this table.  If no more precise label applies, the kind <em>'document'</em> can be used.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">scope</p></td>
@@ -2462,63 +2462,63 @@ Typically, this is used to justify decisions such as simplifications or deviatio
 <dl>
 <dt class="hdlist1"><em>'document'</em></dt>
 <dd>
-<p><mark>The Value <em>'document'</em> can be used as a generic resource kind in any case a more specific kind does not fit to the referenced resource.</mark></p>
+<p>The Value <em>'document'</em> can be used as a generic resource kind in any case a more specific kind does not fit to the referenced resource.</p>
 </dd>
 <dt class="hdlist1"><em>'requirement</em></dt>
 <dd>
-<p><mark>The <em>'requirement'</em> kind value is used to indicate that a resource contains a requirements document, or sets of consistent single requirements without distinguishing between different subjects to which the requirements apply.</mark></p>
+<p>The <em>'requirement'</em> kind value is used to indicate that a resource contains a requirements document, or sets of consistent single requirements without distinguishing between different subjects to which the requirements apply.</p>
 </dd>
 <dt class="hdlist1"><em>'specification'</em></dt>
 <dd>
-<p><mark>The <em>'specification'</em> kind value is used to indicate that a resource contain a specifications document , or sets of consistent single specifications without distinguishing between different subjects to which the specifications apply.</mark></p>
+<p>The <em>'specification'</em> kind value is used to indicate that a resource contain a specifications document , or sets of consistent single specifications without distinguishing between different subjects to which the specifications apply.</p>
 </dd>
 <dt class="hdlist1"><em>'model'</em></dt>
 <dd>
-<p><mark>The kind value <em>'model'</em> is used to indicate that a resource contains a simulation model. It does not distinguish between parameterized models, which do not need additional parameters or unparameterized models, which require an additional parameter file.</mark></p>
+<p>The kind value <em>'model'</em> is used to indicate that a resource contains a simulation model. It does not distinguish between parameterized models, which do not need additional parameters or unparameterized models, which require an additional parameter file.</p>
 </dd>
 <dt class="hdlist1"><em>'parameter'</em></dt>
 <dd>
-<p><mark>The kind value <em>'parameter'</em> is used to indicate that a resource contains parameters or sets of consistent parameters for a simulation model.</mark></p>
+<p>The kind value <em>'parameter'</em> is used to indicate that a resource contains parameters or sets of consistent parameters for a simulation model.</p>
 </dd>
 <dt class="hdlist1"><em>'system'</em></dt>
 <dd>
-<p><mark>A resource of kind <em>'system'</em> is or contains a reference to the s<em>ystem under test</em> in a PDM system or similar IT system or any other kind of description of the <em>system under test.</em></mark></p>
+<p>A resource of kind <em>'system'</em> is or contains a reference to the s<em>ystem under test</em> in a PDM system or similar IT system or any other kind of description of the <em>system under test.</em></p>
 </dd>
 <dt class="hdlist1"><em>'testcase'</em></dt>
 <dd>
-<p><mark>A resource of kind <em>'testcase'</em> should contain information that describe how the simulation objectives are achieved at the operational level by one more test cases. A consistent set of test cases could be considered a technical breakdown of the simulation objectives.</mark></p>
+<p>A resource of kind <em>'testcase'</em> should contain information that describe how the simulation objectives are achieved at the operational level by one more test cases. A consistent set of test cases could be considered a technical breakdown of the simulation objectives.#</p>
 </dd>
 <dt class="hdlist1"><em>'results'</em></dt>
 <dd>
-<p><mark>A resource of kind <em>'result'</em> should contain information that answers questions posed by the simulation requester about the goals and intent of the simulation. In principle, this could be any kind of result data, no matter what it actually represents in detail. If the result is intended to be an aggregated and condensed report, the value <em>'report'</em> can be used instead.</mark></p>
+<p>#A resource of kind <em>'result'</em> should contain information that answers questions posed by the simulation requester about the goals and intent of the simulation. In principle, this could be any kind of result data, no matter what it actually represents in detail. If the result is intended to be an aggregated and condensed report, the value <em>'report'</em> can be used instead.</p>
 </dd>
 <dt class="hdlist1"><em>'method'</em></dt>
 <dd>
-<p><mark>A resource of kind <em>'method'</em> should contain information that describes how a described process step is performed or should be performed.</mark></p>
+<p>A resource of kind <em>'method'</em> should contain information that describes how a described process step is performed or should be performed.</p>
 </dd>
 <dt class="hdlist1"><em>'rationale'</em></dt>
 <dd>
-<p><mark>A resource of kind <em>'method'</em> should contain information about why a related process step is or was performed in the way it was performed. This is especially true for activities that were not performed in the specified way for good reasons, or where assumptions and simplifications were made.</mark></p>
+<p>A resource of kind <em>'method'</em> should contain information about why a related process step is or was performed in the way it was performed. This is especially true for activities that were not performed in the specified way for good reasons, or where assumptions and simplifications were made.</p>
 </dd>
 <dt class="hdlist1"><em>'report'</em></dt>
 <dd>
-<p><mark>A resource of kind  <em>'report'</em> should provide information about the requested results in a human-readable report format, i.e., aggregated and condensed to a level that directly relates to the requestor&#8217;s question or the goals and intent of the simulation.</mark></p>
+<p>A resource of kind  <em>'report'</em> should provide information about the requested results in a human-readable report format, i.e., aggregated and condensed to a level that directly relates to the requestor&#8217;s question or the goals and intent of the simulation.</p>
 </dd>
 <dt class="hdlist1"><em>'request'</em></dt>
 <dd>
-<p><mark>A resource of kind <em>'request'</em> should contain information provided by the "requester" to perform the task. The requestor here is synonymous with the parent process or requesting organizational unit.</mark></p>
+<p>A resource of kind <em>'request'</em> should contain information provided by the "requester" to perform the task. The requestor here is synonymous with the parent process or requesting organizational unit.</p>
 </dd>
 <dt class="hdlist1"><em>'delivery'</em></dt>
 <dd>
-<p><mark>A resource of kind <em>'delivery'</em> should contain information that provides the "client" with information about the execution of the task and the result of the task.</mark></p>
+<p>A resource of kind <em>'delivery'</em> should contain information that provides the "client" with information about the execution of the task and the result of the task.</p>
 </dd>
 <dt class="hdlist1"><em>'executable'</em></dt>
 <dd>
-<p><mark>The type value <em>'executable'</em> is used to indicate that a resource contains an executable file, such as a script or an Office file with an executable VBA macro.</mark></p>
+<p>The type value <em>'executable'</em> is used to indicate that a resource contains an executable file, such as a script or an Office file with an executable VBA macro.</p>
 </dd>
 <dt class="hdlist1"><em>'configuration'</em></dt>
 <dd>
-<p><mark>A resource of kind <em>'configuration'</em> contains a detailed description of the configuration of the simulation environment setup.</mark></p>
+<p>A resource of kind <em>'configuration'</em> contains a detailed description of the configuration of the simulation environment setup.</p>
 </dd>
 </dl>
 </div>
