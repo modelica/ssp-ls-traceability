@@ -132,21 +132,13 @@ composed of two activities: code verification and calculation verification, whic
 > The objective is to identify and to remove errors in the source code and numerical algorithms of the computational software.
 
 The goals of code verification are to identify and remove errors in the source code and
-numerical algorithms of the computational software. Documented results from verification studies conducted by
-the software developer may be referenced to support code verification. However, the verification studies from the
-software developer may not encompass all aspects of the software used for the COU, and thus additional code verification
-specific to the COU may be required. Code verification activities include software quality assurance and numerical code
-verification.
+numerical algorithms of the computational software...
 
 #### 3.1.1 Software Quality Assurance
 
 > Apply Software Quality Assurance (SQA) procedures and document the results to ensure that the software is functioning correctly and produces repeatable results on a specified computer resource in a specified software environment.
 
-The objective of SQA is to ensure that the software is functioning correctly and produces repeatable results on a specified computer resource in a specified software environment. Types of computa-
-tional model software include, but are not limited to, off-the-shelf (OTS), modified off-the-shelf (MOTS), and user-devel-
-oped. SQA is achieved through software validation on OTS and MOTS software and software quality development
-assurance on MOTS and user-developed software.
-
+The objective of SQA is to ensure that the software is functioning correctly and produces repeatable results on a specified computer resource in a specified software environment....
 #### Documentation
 ```
     Describe your executed activities
