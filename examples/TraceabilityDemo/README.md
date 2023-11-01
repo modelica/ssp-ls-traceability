@@ -585,7 +585,4 @@ Determine how well the simulation results and the comparator match and document 
 # CONGRATS!
 
 
-# some header
-
-# My Chapter
-You have just crossed the finish line! Now, I will create the credibility spider for you...
+**You have just crossed the finish line! Now, I will create the credibility spider for you...**
