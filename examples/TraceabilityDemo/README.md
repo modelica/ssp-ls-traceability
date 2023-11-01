@@ -1,7 +1,3 @@
-[Anchor Link](#my-chapter)
-
-[click here to jump to my anchor](#custom_anchor_name)
-
 
 # COSTA
 
