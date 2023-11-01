@@ -1,6 +1,4 @@
-Anchor Link
 
-click here to jump to my anchor
 COSTA
 
     Hi, I'm COSTA (Credibility Of Simulation Tool Assistant)! I'm your companion in assessing the credibility of your simulation!
