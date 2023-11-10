@@ -89,7 +89,7 @@ The content of the GlueParticles grows more and more with every new instance of 
 The structure of a DTMD GlueParticle represents all five phases of the Credible Decision Process and, as further specified in <<sec-dtmd>>, each element representing a phase has a phase-specific substructure, that represents the process steps within the phase. See <<sec-dtmd>> for a detailed specification of the DTMD GlueParticle file structure.
 
 [#im-dtmdbriefschema.png]
-.Decision Task Meta Data: Brief XML Schema structure #TO DO: Insert Image#
+.Decision Task Meta Data: Brief XML Schema structure
 image::DtmdBriefSchema.png[]
 
 [#sec-stmdintroduction]
