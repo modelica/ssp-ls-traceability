@@ -159,7 +159,7 @@ The ClassificationEntry element is associated with the following attributes.
 |===
 | Attribute name | Optional / Mandatory | Attribute description
 | keyword        | Mandatory            | This attribute gives the keyword for the classification entry (i.e. keyword value pair). It is left undefined whether this must be unique across the entries of the Classification element, or whether repeated entries are allowed. This will depend on the definition of the classification.
-| xlink:type     | Optional             | #Text fehlt noch#
+| xlink:type     | Fixed                | Has the fixed value `simple` to indicate an XLink simple link.
 | xlink:href     | Optional             | This attribute gives an optional link for the classification entry (i.e. keyword value pair). This link can be given in addition to any content of the classification entry, or it can be the sole information of the classification entry. The rules will depend on the definition of the classification.
 |===
 
@@ -442,13 +442,13 @@ The LinksType element is not associated with any attributes.
 [#sec-link]
 ==== Link
 
-The Link element represents a single links no mater if it is a GlueParticle internal link or a link targeted to the outside of the GlueParticle.
+The Link element represents a single extended link relating two or more endpoints, regardless of whether they are GlueParticle internal or outside of the GlueParticle.
 
 [#im-linkschema]
 .Link element structure and attributes
 image::LinkSchema.png[]
 
-The Link element is structured by the following subordinated elements.
+An extended link consists out of two or more Locator elements that address the resources outside of the link that are participating in the link, and optional Arc elements that provide traversal rules among the link's participating resources:
 
 [#tb-linksubelements]
 .Link element structure
@@ -468,14 +468,17 @@ The Link element is associated with the following attributes.
 |===
 | Attribute name | Optional / Mandatory | Attribute description
 | xlink:type     | Fixed                | Has the fixed value `extended` to indicate an XLink extended link.
-| xlink:title    | Optional             | #Text fehlt noch#
-| xlink:role     | Optional             | #Text fehlt noch#
+| xlink:title    | Optional             | This attribute is used to describe the meaning of an entire link in a human-readable fashion.
+| xlink:role     | Optional             | This attribute supplies semantic information about the link as a whole: The xlink:role attribute indicates a property that the entire link has.
 |===
 
 [#sec-locator]
 ==== Locator
 
-The Locator element represents ... #Text fehlt noch#
+An extended link indicates resources that participate in it by means of Locator elements.
+
+NOTE:
+A Locator element, by itself, does not constitute a link just because it has a href attribute; unlike simple links, it does not create an XLink-governed association between itself and the referenced resource.
 
 [#im-locatorschema]
 .Locator element structure and attributes
@@ -492,16 +495,26 @@ The Locator element is associated with the following attributes.
 |===
 | Attribute name | Optional / Mandatory | Attribute description
 | xlink:type     | Fixed                | Has the fixed value `locator` to indicate an XLink locator.
-| xlink:href     | Mandatory            | #Text fehlt noch#
-| xlink:label    | Optional             | #Text fehlt noch#
-| xlink:title    | Optional             | #Text fehlt noch#
-| xlink:role     | Optional             | #Text fehlt noch#
+| xlink:href     | Mandatory            | This attribute provides an IRI reference that identifies a resource.
+| xlink:label    | Optional             | This attribute provides a way for an Arc element to refer to it in creating a traversal arc.
+| xlink:title    | Optional             | This attribute is used to describe the meaning of the resource in a human-readable fashion.
+| xlink:role     | Optional             | This attribute supplies semantic information about the locator's resource: The xlink:role attribute indicates a property that the resource has.
 |===
 
 [#sec-arc]
 ==== Arc
 
-The Arc element represents ... #Text fehlt noch#
+An extended link may indicate rules for traversing among its participating resources by means of a series of optional Arc elements.
+
+The traversal attributes (xlink:from and xlink:to) define the desired traversal between pairs of resources that participate in the same link, where the resources are identified by their locator's label attribute values.
+The xlink:from attribute defines resources from which traversal may be initiated, that is, starting resources, while the xlink:to attribute defines resources that may be traversed to, that is, ending resources.
+
+The semantic attributes (xlink:title and xlink:arcrole) describe the meaning of the arc's ending resource relative to its starting resource.
+The xlink:arcrole attribute corresponds to the RDF notion of a property, where the role can be interpreted as stating that "starting-resource HAS arc-role ending-resource."
+This contextual role can differ from the meaning of an ending resource when taken outside the context of this particular arc.
+For example, a resource might generically represent a "person," but in the context of a particular arc it might have the role of "mother" and in the context of a different arc it might have the role of "daughter."
+
+When the same resource serves as a starting resource in several arcs (whether in a single link or across many links), traversal-request behavior is unconstrained by this specification, but one possibility for interactive applications is a pop-up menu that lists the relevant arc or link titles.
 
 [#im-arcschema]
 .Arc element structure and attributes
@@ -517,10 +530,10 @@ The Arc element is associated with the following attributes.
 |===
 | Attribute name | Optional / Mandatory | Attribute description
 | xlink:type     | Fixed                | Has the fixed value `arc` to indicate an XLink arc.
-| xlink:from     | Mandatory            | #Text fehlt noch#
-| xlink:to       | Mandatory            | #Text fehlt noch#
-| xlink:title    | Optional             | #Text fehlt noch#
-| xlink:arcrole  | Optional             | #Text fehlt noch#
+| xlink:from     | Mandatory            | The xlink:from attribute defines resources from which traversal may be initiated, that is, starting resources.
+| xlink:to       | Mandatory            | The xlink:to attribute defines resources that may be traversed to, that is, ending resources.
+| xlink:title    | Optional             | This attribute is used to describe the meaning of the arc in a human-readable fashion.
+| xlink:arcrole  | Optional             | This attribute supplies semantic information about the arc: The xlink:arcrole attribute indicates a property that the arc relationship has.
 |===
 
 
