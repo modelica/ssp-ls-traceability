@@ -1,3 +1,226 @@
 [#sec-dtmd]
 == Decision Task Meta Data File Format
 
+The __Decision Task Meta Data__ file (short: DTMD file) is an implementation of a GlueParticle for decition tasks. It is specified to support traceability, quality assurance and re-usability for decision tasks in terms of a credible decision process as it is specified in #Document Reference#. The following sub-chapters describe the structure of an DTMD file.
+
+=== DecisionTaskMetaData
+
+The DecisionMetaData element is the all enclosing top level XML element of DTMD files.
+
+[#im-decisiontaskmetadataschema]
+.DecisionTaskMetaData element structure and attributes
+image::DecisionTaskMetaDataSchema.png[]
+
+The DecisionTaskTaskMetaData element is structured by following subordinated element.
+
+[#tb-decisiontaskmetadatasubelements]
+.DecisionTaskMetaData element structure
+[width="100%",options="header"]
+|===
+| Sub element name    | Optional / Mandatory | Details
+| GeneralInformation  | Optional             | <<sec-dtmdgeneralinformation>>
+| AnalysisPhase       | Optional             | <<sec-dtmdanalysisphase>>
+| DefinitionPhase     | Optional             | <<sec-dtmddefinitionphase>> 
+| ExecutionPhase      | Optional             | <<sec-dtmdexecutionphase>>
+| EvaluationPhase     | Optional             | <<sec-dtmdevaluationphase>>
+| FulfillmentPhase    | Optional             | <<sec-dtmdfulfillmentphase>>
+| GElementCommon      | Mandatory            | <<sec-gphasecommon>>
+
+|===
+
+The DecisionTaskMetaData element is associated with the following attributes.
+
+[#tb-decisiontaskmetadataattributes]
+.DecisionTaskMetaData element attributes
+[width="100%",options="header"]
+|===
+| Attribute name        | Optional / Mandatory | Attribute description
+| version               | Mandatory            | Version of DTMD format, 1.0.0-beta2 for this pre-release.
+| name                  | Mandatory            | This attribute gives the Decision Task a name, which can be used for purposes of presenting the Decision Task to the user, e.g. when selecting individual variant DTMDs from an SSP.
+| id                    | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
+| description           | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+| author                | Optional             | This attribute gives the name of the author of this file's content.
+| fileversion           | Optional             | This attribute gives a version number for this file's content.
+| copyright             | Optional             | This attribute gives copyright information for this file's content.
+| license               | Optional             | This attribute gives license information for this file's content.
+| generatingTool        | Optional             | This attribute gives the name of the tool that generated this file.
+| generationDateAndTime | Optional             | This attribute gives the date and time this file was generated.
+| GUID                  | Mandatory            | GUID identifier of this DTMD file. Must be globally unique and MUST change, whenever a new file with differing information is written.
+|===
+
+[#sec-dtmdgeneralinformation]
+==== GeneralInformation
+
+The GeneralInformation element is used to encapsulate general information about the decision task, which is not part of any specific phase or step.
+
+For the details of the GeneralInformation element structure and attributes see chapter <<sec-generalinformationtype>>.
+
+[#sec-dtmdanalysisphase]
+==== AnalysisPhase
+
+In the analysis phase, the decision-relevant information is taken from the higher-level commissioning engineering process and the essential decision-relevant requirements and goals of the decision task are derived from it. It is important that at the end of the analysis phase the essential decision requirements and the objectives of the decision task fully and clearly understood.
+
+The AnalysisPhase element documents all relevant information.
+
+[#im-dtmdanalysisphaseschema]
+.AnalysisPhase element structure and attributes
+image::DtmdAnalysisPhaseSchema.png[]
+
+The AnalysisPhase element is structured by the following subordinated element.
+
+[#tb-dtmdanalysisphasesubelements]
+.AnalysisPhase element structure
+[width="100%",options="header"]
+|===
+| Sub element name                   | Optional / Mandatory | Details
+| AnalyzeEngineeringTask             | Optional             | <<sec-steptype>>
+| VerifyAnalysis                     | Optional             | <<sec-steptype>>
+| GPhaseCommon                       | Mandatory            | <<sec-gphasecommon>>
+|===
+
+The AnalysisPhase element is associated with the following attributes.
+
+[#tb-dtmdanalysisphaseattributes]
+.AnalysisPhase element attributes
+[width="100%",options="header"]
+|===
+| Attribute name | Optional / Mandatory | Attribut description
+| id             | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
+| description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+|===
+
+[#sec-dtmddefinitionphase]
+==== DefinitionPhase
+
+#In the definition phase, ....#
+
+The DefinitionPhase element documents all relevant information.
+
+[#im-dtmddefinitionphaseschema]
+.DefinitionPhase element structure and attributes
+image::DtmdDefinitionPhaseSchema.png[]
+
+The DefinitionPhase element is structured by the following subordinated element.
+
+[#tb-dtmddefinitionphasesubelements]
+.DefinitionPhase element structure
+[width="100%",options="header"]
+|===
+| Sub element name    | Optional / Mandatory | Details
+| DefineTasks         | Optional             | <<sec-steptype>>
+| DefineResultQuality | Optional             | <<sec-steptype>>
+| VerifyTasks         | Optional             | <<sec-steptype>>
+| GPhaseCommon        | Mandatory            | <<sec-gphasecommon>>
+|===
+
+The DefinitionPhase element is associated with the following attributes.
+
+[#tb-dtmddefinitionphaseattributes]
+.DefinitionPhase element attributes
+[width="100%",options="header"]
+|===
+| Attribute name | Optional / Mandatory | Attribut description
+| id             | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
+| description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+|===
+
+[#sec-dtmdexecutionphase]
+==== ExecutionPhase
+
+In the execution phase, the previously defined tasks are executed with respect to the defined result quality.
+
+The ExecutionPhase element documents all relevant information.
+
+[#im-dtmdexecutionphaseschema]
+.ExecutionPhase element structure and attributes
+image::DtmdExecutionPhaseSchema.png[]
+
+The ExecutionPhase element is structured by the following subordinated element.
+
+[#tb-dtmdexecutionphasesubelements]
+.ExecutionPhase element structure
+[width="100%",options="header"]
+|===
+| Sub element name | Optional / Mandatory | Details
+| PerformTasks     | Optional             | <<sec-steptype>>
+| GPhaseCommon     | Mandatory            | <<sec-gphasecommon>>
+|===
+
+The ExecutionPhase element is associated with the following attributes.
+
+[#tb-dtmdexecutionphaseattributes]
+.ExecutionPhase element attributes
+[width="100%",options="header"]
+|===
+| Attribute name | Optional / Mandatory | Attribute description
+| id             | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
+| description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+|===
+
+[#sec-dtmdevaluationphase]
+==== EvaluationPhase
+
+In the evaluation phase, the results of the tasks performed are evaluated and quality assurance measures are implemented.
+
+The EvaluationPhase element documents all relevant information.
+
+[#im-dtmdevaluationphaseschema]
+.EvaluationPhase element structure and attributes
+image::DtmdEvaluationPhaseSchema.png[]
+
+The EvaluationPhase element is structured by the following subordinated element.
+
+[#tb-dtmdevaluationphasesubelements]
+.EvaluationPhase element structure
+[width="100%",options="header"]
+|===
+| Sub element name            | Optional / Mandatory | Details
+| EvaluateResults             | Optional             | <<sec-steptype>>
+| AssureResultsQuality        | Optional             | <<sec-steptype>>
+| DeriveResultsQualityVerdict | Optional             | <<sec-steptype>>
+| GPhaseCommon                | Mandatory            | <<sec-gphasecommon>>
+|===
+
+The EvaluationPhase element is associated with the following attributes.
+
+[#tb-dtmdevaluationphaseattributes]
+.EvaluationPhase element attributes
+[width="100%",options="header"]
+|===
+| Attribute name | Optional / Mandatory | Attribute description
+| id             | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
+| description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+|===
+
+[#sec-dtmdfulfillmentphase]
+==== FulfillmentPhase 
+
+#In the fulfillment phase, it is checked and decided whether the entire simulation task, including the simulation results, fulfills the requirements placed on the simulation by the commissioning higher-level engineering task and whether the simulation tasks can be completed.#
+
+The FulfillmentPhasePhase element documents all relevant information.
+
+[#im-dtmdfulfillmentphaseschema]
+.FulfillmentPhase elements structure and attributes
+image::DtmdFulfillmentPhaseSchema.png[]
+
+The FulfillmentPhase element is structured by the following subordinated element.
+
+[#tb-dtmdfulfillmentphasesubelements]
+.FulfillmentPhase element structure
+[width="100%",options="header"]
+|===
+| Sub element name                      | Optional / Mandatory | Details
+| DecideEngineeringObjectiveFulfillment | Optional             | <<sec-steptype>>
+| GPhaseCommon                          | Mandatory            | <<sec-gphasecommon>>
+|===
+
+The FulfillmentPhase element is associated with the following attributes.
+
+[#tb-dtmdfulfillmentphaseattributes]
+.FulfillmentPhase element attributes
+[width="100%",options="header"]
+|===
+| Attribute name | Optional / Mandatory | Attribute description
+| id             | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
+| description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
+|===
