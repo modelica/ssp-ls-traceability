@@ -685,7 +685,20 @@ document.addEventListener('keydown', (event) => {
 </li>
 </ul>
 </li>
-<li><a href="#sec-dtmd">6. Decision Task Meta Data File Format</a></li>
+<li><a href="#sec-dtmd">6. Decision Task Meta Data File Format</a>
+<ul class="sectlevel2">
+<li><a href="#_decisiontaskmetadata">6.1. DecisionTaskMetaData</a>
+<ul class="sectlevel3">
+<li><a href="#sec-dtmdgeneralinformation">6.1.1. GeneralInformation</a></li>
+<li><a href="#sec-dtmdanalysisphase">6.1.2. AnalysisPhase</a></li>
+<li><a href="#sec-dtmddefinitionphase">6.1.3. DefinitionPhase</a></li>
+<li><a href="#sec-dtmdexecutionphase">6.1.4. ExecutionPhase</a></li>
+<li><a href="#sec-dtmdevaluationphase">6.1.5. EvaluationPhase</a></li>
+<li><a href="#sec-dtmdfulfillmentphase">6.1.6. FulfillmentPhase</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li><a href="#sec-stmd">7. Simulation Task Meta Data File Format</a>
 <ul class="sectlevel2">
 <li><a href="#_simulationtaskmetadata">7.1. SimulationTaskMetaData</a>
@@ -3001,7 +3014,560 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 <div class="sect1">
 <h2 id="sec-dtmd">6. Decision Task Meta Data File Format</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>The <em>Decision Task Meta Data</em> file (short: DTMD file) is an implementation of a GlueParticle for decition tasks. It is specified to support traceability, quality assurance and re-usability for decision tasks in terms of a credible decision process as it is specified in <mark>Document Reference</mark>. The following sub-chapters describe the structure of an DTMD file.</p>
+</div>
+<div class="sect2">
+<h3 id="_decisiontaskmetadata">6.1. DecisionTaskMetaData</h3>
+<div class="paragraph">
+<p>The DecisionMetaData element is the all enclosing top level XML element of DTMD files.</p>
+</div>
+<div id="im-decisiontaskmetadataschema" class="imageblock">
+<div class="content">
+<img src="images/DecisionTaskMetaDataSchema.png" alt="DecisionTaskMetaDataSchema">
+</div>
+<div class="title">Figure 34. DecisionTaskMetaData element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The DecisionTaskTaskMetaData element is structured by following subordinated element.</p>
+</div>
+<table id="tb-decisiontaskmetadatasubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 38. DecisionTaskMetaData element structure</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GeneralInformation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-dtmdgeneralinformation">Section 6.1.1</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AnalysisPhase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-dtmdanalysisphase">Section 6.1.2</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DefinitionPhase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-dtmddefinitionphase">Section 6.1.3</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ExecutionPhase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-dtmdexecutionphase">Section 6.1.4</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EvaluationPhase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-dtmdevaluationphase">Section 6.1.5</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FulfillmentPhase</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-dtmdfulfillmentphase">Section 6.1.6</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GElementCommon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-gphasecommon">Section 5.3</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The DecisionTaskMetaData element is associated with the following attributes.</p>
+</div>
+<table id="tb-decisiontaskmetadataattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 39. DecisionTaskMetaData element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Attribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">version</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Version of DTMD format, 1.0.0-beta2 for this pre-release.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">name</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the Decision Task a name, which can be used for purposes of presenting the Decision Task to the user, e.g. when selecting individual variant DTMDs from an SSP.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">author</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the name of the author of this file&#8217;s content.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fileversion</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a version number for this file&#8217;s content.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">copyright</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives copyright information for this file&#8217;s content.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">license</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives license information for this file&#8217;s content.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">generatingTool</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the name of the tool that generated this file.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">generationDateAndTime</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the date and time this file was generated.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GUID</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GUID identifier of this DTMD file. Must be globally unique and MUST change, whenever a new file with differing information is written.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect3">
+<h4 id="sec-dtmdgeneralinformation">6.1.1. GeneralInformation</h4>
+<div class="paragraph">
+<p>The GeneralInformation element is used to encapsulate general information about the decision task, which is not part of any specific phase or step.</p>
+</div>
+<div class="paragraph">
+<p>For the details of the GeneralInformation element structure and attributes see chapter <a href="#sec-generalinformationtype">Section 5.1</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="sec-dtmdanalysisphase">6.1.2. AnalysisPhase</h4>
+<div class="paragraph">
+<p>In the analysis phase, the decision-relevant information is taken from the higher-level commissioning engineering process and the essential decision-relevant requirements and goals of the decision task are derived from it. It is important that at the end of the analysis phase the essential decision requirements and the objectives of the decision task fully and clearly understood.</p>
+</div>
+<div class="paragraph">
+<p>The AnalysisPhase element documents all relevant information.</p>
+</div>
+<div id="im-dtmdanalysisphaseschema" class="imageblock">
+<div class="content">
+<img src="images/DtmdAnalysisPhaseSchema.png" alt="DtmdAnalysisPhaseSchema">
+</div>
+<div class="title">Figure 35. AnalysisPhase element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The AnalysisPhase element is structured by the following subordinated element.</p>
+</div>
+<table id="tb-dtmdanalysisphasesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 40. AnalysisPhase element structure</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AnalyzeEngineeringTask</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-steptype">Section 5.6</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VerifyAnalysis</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-steptype">Section 5.6</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GPhaseCommon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-gphasecommon">Section 5.3</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The AnalysisPhase element is associated with the following attributes.</p>
+</div>
+<table id="tb-dtmdanalysisphaseattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 41. AnalysisPhase element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Attribut description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="sec-dtmddefinitionphase">6.1.3. DefinitionPhase</h4>
+<div class="paragraph">
+<p><mark>In the definition phase, &#8230;&#8203;.</mark></p>
+</div>
+<div class="paragraph">
+<p>The DefinitionPhase element documents all relevant information.</p>
+</div>
+<div id="im-dtmddefinitionphaseschema" class="imageblock">
+<div class="content">
+<img src="images/DtmdDefinitionPhaseSchema.png" alt="DtmdDefinitionPhaseSchema">
+</div>
+<div class="title">Figure 36. DefinitionPhase element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The DefinitionPhase element is structured by the following subordinated element.</p>
+</div>
+<table id="tb-dtmddefinitionphasesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 42. DefinitionPhase element structure</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DefineTasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-steptype">Section 5.6</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DefineResultQuality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-steptype">Section 5.6</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">VerifyTasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-steptype">Section 5.6</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GPhaseCommon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-gphasecommon">Section 5.3</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The DefinitionPhase element is associated with the following attributes.</p>
+</div>
+<table id="tb-dtmddefinitionphaseattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 43. DefinitionPhase element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Attribut description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="sec-dtmdexecutionphase">6.1.4. ExecutionPhase</h4>
+<div class="paragraph">
+<p>In the execution phase, the previously defined tasks are executed with respect to the defined result quality.</p>
+</div>
+<div class="paragraph">
+<p>The ExecutionPhase element documents all relevant information.</p>
+</div>
+<div id="im-dtmdexecutionphaseschema" class="imageblock">
+<div class="content">
+<img src="images/DtmdExecutionPhaseSchema.png" alt="DtmdExecutionPhaseSchema">
+</div>
+<div class="title">Figure 37. ExecutionPhase element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The ExecutionPhase element is structured by the following subordinated element.</p>
+</div>
+<table id="tb-dtmdexecutionphasesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 44. ExecutionPhase element structure</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">PerformTasks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-steptype">Section 5.6</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GPhaseCommon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-gphasecommon">Section 5.3</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The ExecutionPhase element is associated with the following attributes.</p>
+</div>
+<table id="tb-dtmdexecutionphaseattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 45. ExecutionPhase element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Attribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="sec-dtmdevaluationphase">6.1.5. EvaluationPhase</h4>
+<div class="paragraph">
+<p>In the evaluation phase, the results of the tasks performed are evaluated and quality assurance measures are implemented.</p>
+</div>
+<div class="paragraph">
+<p>The EvaluationPhase element documents all relevant information.</p>
+</div>
+<div id="im-dtmdevaluationphaseschema" class="imageblock">
+<div class="content">
+<img src="images/DtmdEvaluationPhaseSchema.png" alt="DtmdEvaluationPhaseSchema">
+</div>
+<div class="title">Figure 38. EvaluationPhase element structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The EvaluationPhase element is structured by the following subordinated element.</p>
+</div>
+<table id="tb-dtmdevaluationphasesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 46. EvaluationPhase element structure</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">EvaluateResults</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-steptype">Section 5.6</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AssureResultsQuality</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-steptype">Section 5.6</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DeriveResultsQualityVerdict</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-steptype">Section 5.6</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GPhaseCommon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-gphasecommon">Section 5.3</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The EvaluationPhase element is associated with the following attributes.</p>
+</div>
+<table id="tb-dtmdevaluationphaseattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 47. EvaluationPhase element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Attribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="sec-dtmdfulfillmentphase">6.1.6. FulfillmentPhase</h4>
+<div class="paragraph">
+<p><mark>In the fulfillment phase, it is checked and decided whether the entire simulation task, including the simulation results, fulfills the requirements placed on the simulation by the commissioning higher-level engineering task and whether the simulation tasks can be completed.</mark></p>
+</div>
+<div class="paragraph">
+<p>The FulfillmentPhasePhase element documents all relevant information.</p>
+</div>
+<div id="im-dtmdfulfillmentphaseschema" class="imageblock">
+<div class="content">
+<img src="images/DtmdFulfillmentPhaseSchema.png" alt="DtmdFulfillmentPhaseSchema">
+</div>
+<div class="title">Figure 39. FulfillmentPhase elements structure and attributes</div>
+</div>
+<div class="paragraph">
+<p>The FulfillmentPhase element is structured by the following subordinated element.</p>
+</div>
+<table id="tb-dtmdfulfillmentphasesubelements" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 48. FulfillmentPhase element structure</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Sub element name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Details</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DecideEngineeringObjectiveFulfillment</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-steptype">Section 5.6</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GPhaseCommon</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-gphasecommon">Section 5.3</a></p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>The FulfillmentPhase element is associated with the following attributes.</p>
+</div>
+<table id="tb-dtmdfulfillmentphaseattributes" class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 49. FulfillmentPhase element attributes</caption>
+<colgroup>
+<col style="width: 33.3333%;">
+<col style="width: 33.3333%;">
+<col style="width: 33.3334%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Attribute name</th>
+<th class="tableblock halign-left valign-top">Optional / Mandatory</th>
+<th class="tableblock halign-left valign-top">Attribute description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -3019,13 +3585,13 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 <div class="content">
 <img src="images/SimulationTaskMetaDataSchema.png" alt="SimulationTaskMetaDataSchema">
 </div>
-<div class="title">Figure 34. SimulationTaskMetaData element structure and attributes</div>
+<div class="title">Figure 40. SimulationTaskMetaData element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The SimulationTaskMetaData element is structured by following subordinated element.</p>
 </div>
 <table id="tb-simulationtaskmetadatasubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 38. SimulationTaskMetaData element structure</caption>
+<caption class="title">Table 50. SimulationTaskMetaData element structure</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3090,7 +3656,7 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 <p>The SimulationTaskMetaData element is associated with the following attributes.</p>
 </div>
 <table id="tb-simulationtaskmetadataattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 39. SimulationTaskMetaData element attributes</caption>
+<caption class="title">Table 51. SimulationTaskMetaData element attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3182,13 +3748,13 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 <div class="content">
 <img src="images/AnalysisPhaseSchema.png" alt="AnalysisPhaseSchema">
 </div>
-<div class="title">Figure 35. AnalysisPhase element structure and attributes</div>
+<div class="title">Figure 41. AnalysisPhase element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The AnalysisPhase element is structured by the following subordinated element.</p>
 </div>
 <table id="tb-analysisphasesubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 40. AnalysisPhase element structure</caption>
+<caption class="title">Table 52. AnalysisPhase element structure</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3223,7 +3789,7 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 <p>The AnalysisPhase element is associated with the following attributes.</p>
 </div>
 <table id="tb-analysisphaseattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 41. AnalysisPhase element attributes</caption>
+<caption class="title">Table 53. AnalysisPhase element attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3262,13 +3828,13 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 <div class="content">
 <img src="images/RequirementsPhaseSchema.png" alt="RequirementsPhaseSchema">
 </div>
-<div class="title">Figure 36. RequirementsPhase element structure and attributes</div>
+<div class="title">Figure 42. RequirementsPhase element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The RequirememtsPhase element is structured by the followuing subordinated element.</p>
 </div>
 <table id="tb-requirementsphasesubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 42. RequirementsPhase element structure</caption>
+<caption class="title">Table 54. RequirementsPhase element structure</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3328,7 +3894,7 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 <p>The RequirementsPhase element is associated with the following attributes.</p>
 </div>
 <table id="tb-requirementsphaseattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 43. RequirementsPhase element attributes</caption>
+<caption class="title">Table 55. RequirementsPhase element attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3367,13 +3933,13 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 <div class="content">
 <img src="images/DesignPhaseSchema.png" alt="DesignPhaseSchema">
 </div>
-<div class="title">Figure 37. DesignPhase element structure and attributes</div>
+<div class="title">Figure 43. DesignPhase element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The DesignPhase element is structured by the following subordinated element.</p>
 </div>
 <table id="tb-designphasesubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 44. DesignPhase element structure</caption>
+<caption class="title">Table 56. DesignPhase element structure</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3433,7 +3999,7 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 <p>The DesignPhase element is associated with the following attributes.</p>
 </div>
 <table id="tb-designphaseattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 45. DesignPhase element attributes</caption>
+<caption class="title">Table 57. DesignPhase element attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3473,13 +4039,13 @@ All components are then integrated and the specified measures to ensure process 
 <div class="content">
 <img src="images/ImplementationPhaseSchema.png" alt="ImplementationPhaseSchema">
 </div>
-<div class="title">Figure 38. ImplementationPhase element structure and attributes</div>
+<div class="title">Figure 44. ImplementationPhase element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The ImplementationPhase element is structured by the following subordinated element.</p>
 </div>
 <table id="tb-implementationphasesubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 46. ImplementationPhase element structure</caption>
+<caption class="title">Table 58. ImplementationPhase element structure</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3539,7 +4105,7 @@ All components are then integrated and the specified measures to ensure process 
 <p>The ImplementationPhase element is associated with the following attributes.</p>
 </div>
 <table id="tb-implementationphaseattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 47. ImplementationPhase element attributes</caption>
+<caption class="title">Table 59. ImplementationPhase element attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3578,13 +4144,13 @@ All components are then integrated and the specified measures to ensure process 
 <div class="content">
 <img src="images/ExecutionPhaseSchema.png" alt="ExecutionPhaseSchema">
 </div>
-<div class="title">Figure 39. ExecutionPhase element structure and attributes</div>
+<div class="title">Figure 45. ExecutionPhase element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The ExecutionPhase element is structured by the following subordinated element.</p>
 </div>
 <table id="tb-executionphasesubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 48. ExecutionPhase element structure</caption>
+<caption class="title">Table 60. ExecutionPhase element structure</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3614,7 +4180,7 @@ All components are then integrated and the specified measures to ensure process 
 <p>The ExecutionPhase element is associated with the following attributes.</p>
 </div>
 <table id="tb-executionphaseattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 49. ExecutionPhase element attributes</caption>
+<caption class="title">Table 61. ExecutionPhase element attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3653,13 +4219,13 @@ All components are then integrated and the specified measures to ensure process 
 <div class="content">
 <img src="images/EvaluationPhaseSchema.png" alt="EvaluationPhaseSchema">
 </div>
-<div class="title">Figure 40. EvaluationPhase element structure and attributes</div>
+<div class="title">Figure 46. EvaluationPhase element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The EvaluationPhase element is structured by the following subordinated element.</p>
 </div>
 <table id="tb-evaluationphasesubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 50. EvaluationPhase element structure</caption>
+<caption class="title">Table 62. EvaluationPhase element structure</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3699,7 +4265,7 @@ All components are then integrated and the specified measures to ensure process 
 <p>The EvaluationPhase element is associated with the following attributes.</p>
 </div>
 <table id="tb-evaluationphaseattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 51. EvaluationPhase element attributes</caption>
+<caption class="title">Table 63. EvaluationPhase element attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3738,13 +4304,13 @@ All components are then integrated and the specified measures to ensure process 
 <div class="content">
 <img src="images/FulfillmentPhaseSchema.png" alt="FulfillmentPhaseSchema">
 </div>
-<div class="title">Figure 41. FulfillmentPhase elements structure and attributes</div>
+<div class="title">Figure 47. FulfillmentPhase elements structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The FulfillmentPhase element is structured by the following subordinated element.</p>
 </div>
 <table id="tb-fulfillmentphasesubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 52. FulfillmentPhase element structure</caption>
+<caption class="title">Table 64. FulfillmentPhase element structure</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3774,7 +4340,7 @@ All components are then integrated and the specified measures to ensure process 
 <p>The FulfillmentPhase element is associated with the following attributes.</p>
 </div>
 <table id="tb-fulfillmentphaseattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 53. FulfillmentPhase element attributes</caption>
+<caption class="title">Table 65. FulfillmentPhase element attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3819,13 +4385,13 @@ All components are then integrated and the specified measures to ensure process 
 <div class="content">
 <img src="images/SimulationResourceMetaDataSchema.png" alt="SimulationResourceMetaDataSchema">
 </div>
-<div class="title">Figure 42. SimulationResourceMetaData element structure and attributes</div>
+<div class="title">Figure 48. SimulationResourceMetaData element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The SimulationTaskMetaData element is structured by following subordinated element.</p>
 </div>
 <table id="tb-simulationresourcemetadatasubelements" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 54. SimulationResourcekMetaData element structure</caption>
+<caption class="title">Table 66. SimulationResourcekMetaData element structure</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
@@ -3850,7 +4416,7 @@ All components are then integrated and the specified measures to ensure process 
 <p>The SimulationResourceMetaData element is associated with the following attributes.</p>
 </div>
 <table id="tb-simulationresourcemetadataattributes" class="tableblock frame-all grid-all stretch">
-<caption class="title">Table 55. SimulationResourceMetaData element attributes</caption>
+<caption class="title">Table 67. SimulationResourceMetaData element attributes</caption>
 <colgroup>
 <col style="width: 33.3333%;">
 <col style="width: 33.3333%;">
