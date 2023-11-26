@@ -59,7 +59,7 @@ For the details of the GeneralInformation element structure and attributes see c
 [#sec-analysisphase]
 ==== AnalysisPhase
 
-In the analysis phase, the simulation-relevant information is taken from the higher-level commissioning engineering process and the essential simulation relevant requirements and goals of the simulation task are derived from it. It is important that at the end of the analysis phase the essential simulation requirements and the objectives of the simulation task fully and clearly understood.
+In the analysis phase, the simulation-relevant information is taken from the higher-level Crdible Decision Process (commissioning engineering process) and the essential simulation relevant requirements and goals of the simulation task are derived from it. It is important that at the end of the analysis phase the essential simulation requirements and the objectives of the simulation task fully and clearly understood.
 
 The AnalysisPhase element documents all relevant information.
 
