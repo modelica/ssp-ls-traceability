@@ -92,7 +92,7 @@ The AnalysisPhase element is associated with the following attributes.
 [#sec-dtmddefinitionphase]
 ==== DefinitionPhase
 
-#In the definition phase, ....#
+#In the definition phase the development or decision / test strategy is defined. This means that a set of individual tasks is defined. From their individual results an overall evaluation can be made. The term development task or decision / test task is broader and can include all kinds of development and V&V methods with real elements (experiment, road test, ...) as well as virtual ones with simulation. The specific information and requirements for the individual tasks are then defined and handed over to the individual tasks. #
 
 The DefinitionPhase element documents all relevant information.
 
