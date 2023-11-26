@@ -73,7 +73,7 @@ The AnalysisPhase element is structured by the following subordinated element.
 [width="100%",options="header"]
 |===
 | Sub element name                   | Optional / Mandatory | Details
-| AnalyzeEngineeringTask             | Optional             | <<sec-steptype>>
+| AnalyzeDecisionTask                | Optional             | <<sec-steptype>>
 | VerifyAnalysis                     | Optional             | <<sec-steptype>>
 | GPhaseCommon                       | Mandatory            | <<sec-gphasecommon>>
 |===
