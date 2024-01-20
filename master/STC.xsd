@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" elementFormDefault="qualified"
-    vc:minVersion="1.1"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1"
     xmlns:stc="http://ssp-standard.org/SSPTraceability1/SSPTraceabilityCommon"
     xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon"
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    targetNamespace="http://ssp-standard.org/SSPTraceability1/SSPTraceabilityCommon">
-    
+    targetNamespace="http://ssp-standard.org/SSPTraceability1/SSPTraceabilityCommon"
+    elementFormDefault="qualified">
+
     <xs:import namespace="http://ssp-standard.org/SSP1/SystemStructureCommon" schemaLocation="ssp-standard/schema/SystemStructureCommon.xsd"/>
     <xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="https://www.w3.org/XML/2008/06/xlink.xsd"/>
 
@@ -43,12 +43,11 @@
                 </xs:complexType>
             </xs:element>
             <xs:group ref="stc:GResourceOrReference" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="Links" minOccurs="0" type="stc:LinksType"/>
+            <xs:element name="Links" type="stc:LinksType" minOccurs="0"/>
             <xs:group ref="stc:GElementCommon"/>
         </xs:sequence>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
     </xs:complexType>
-    
     <xs:group name="GElementCommon">
         <xs:annotation>
             <xs:documentation xml:lang="en">
@@ -140,18 +139,17 @@
                     <xs:attributeGroup ref="ssc:ABaseElement"/>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="Annotations" minOccurs="0" type="ssc:TAnnotations"/>
+            <xs:element name="Annotations" type="ssc:TAnnotations" minOccurs="0"/>
         </xs:sequence>
     </xs:group>
-    
+
     <xs:group name="GPhaseCommon">
         <xs:sequence>
-            <xs:element name="Links" minOccurs="0" type="stc:LinksType"/>
-            <xs:element name="LifeCycleInformation" minOccurs="0" type="stc:LifeCycleInformationType"/>
+            <xs:element name="Links" type="stc:LinksType" minOccurs="0"/>
+            <xs:element name="LifeCycleInformation" type="stc:LifeCycleInformationType" minOccurs="0"/>
             <xs:group ref="stc:GElementCommon"/>
         </xs:sequence>
     </xs:group>
-    
     <xs:complexType name="LifeCycleInformationType">
         <xs:annotation>
             <xs:documentation xml:lang="en">
@@ -170,21 +168,63 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="Drafted" minOccurs="0" type="stc:LifeCycleEntryType"/>
-            <xs:element name="Defined" minOccurs="0" type="stc:LifeCycleEntryType"/>
-            <xs:element name="Validated" minOccurs="0" type="stc:LifeCycleEntryType"/>
-            <xs:element name="Approved" minOccurs="0" type="stc:LifeCycleEntryType"/>
-            <xs:element name="Archived" minOccurs="0" type="stc:LifeCycleEntryType"/>
-            <xs:element name="Retracted" minOccurs="0" type="stc:LifeCycleEntryType"/>
+            <xs:element name="Drafted" type="stc:LifeCycleEntryType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        Defines that the subject is in draft state and still in progress. This
+                        can also mean that the information is not complete and is still being
+                        finalized.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Defined" type="stc:LifeCycleEntryType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        Defines that the subject is considered complete and may be subject to
+                        review or validation.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Validated" type="stc:LifeCycleEntryType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        Defines that the subject has been reviewed and validated.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Approved" type="stc:LifeCycleEntryType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        Defines that the subject has been approved based on review and
+                        validation.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Archived" type="stc:LifeCycleEntryType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        Defines that the subject has been set as valid and remains valid for
+                        this instance of the GlueParticle, but may not be reused for similar
+                        steps or phases in other GlueParticles (reuse is not allowed).
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Retracted" type="stc:LifeCycleEntryType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        Defines that the subject has been withdrawn and is considered invalid
+                        or may need to be revised.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
         </xs:sequence>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
     </xs:complexType>
-    
     <xs:complexType name="LifeCycleEntryType">
         <xs:sequence>
             <xs:group ref="stc:GResourceOrReference" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="Responsible" type="stc:ResponsibleType"/>
-            <xs:element name="Signature" minOccurs="0" maxOccurs="unbounded" type="stc:SignatureType">
+            <xs:element name="Signature" type="stc:SignatureType" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">
                         This element can contain digital signature information on the checksum
@@ -228,7 +268,6 @@
         </xs:attribute>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
     </xs:complexType>
-    
     <xs:complexType name="StepType">
         <xs:annotation>
             <xs:documentation xml:lang="en">
@@ -236,21 +275,47 @@
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="Input" minOccurs="0" type="stc:ParticleType"/>
-            <xs:element name="Procedure" minOccurs="0" type="stc:ParticleType"/>
-            <xs:element name="Output" minOccurs="0" type="stc:ParticleType"/>
-            <xs:element name="Rationale" minOccurs="0" type="stc:ParticleType"/>
-            <xs:element name="Links" minOccurs="0" type="stc:LinksType"/>
+            <xs:element name="Input" type="stc:ParticleType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        This particle contains any input information relevant to perform a step.
+                   </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Procedure" type="stc:ParticleType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        This particle contains all information how a step should be or has been
+                        performed.
+                   </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Output" type="stc:ParticleType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        This particle contains all relevant work results of the step.
+                   </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Rationale" type="stc:ParticleType" minOccurs="0">
+                <xs:annotation>
+                    <xs:documentation xml:lang="en">
+                        This particle contains all rationales explaining why the step was
+                        performed in a certain way.
+                   </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="Links" type="stc:LinksType" minOccurs="0"/>
             <xs:element name="LifeCycleInformation" type="stc:LifeCycleInformationType" minOccurs="0"/>
             <xs:group ref="stc:GElementCommon"/>
         </xs:sequence>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
     </xs:complexType>
-    
     <xs:complexType name="ParticleType">
         <xs:annotation>
             <xs:documentation xml:lang="en">
-                This type specifies the content of each individual particle inside a step of a phase of the overall Simulation Task.
+                This type specifies the content of each individual particle inside a
+                step of a phase of the overall Simulation Task.
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
@@ -259,30 +324,32 @@
         </xs:sequence>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
     </xs:complexType>
-
     <xs:complexType name="LinksType">
         <xs:annotation>
             <xs:documentation xml:lang="en">
-                This element provides a set of links that provide more detailed relationship information between parts of
-                resources or other information relevant to a phase or step.
+                This element provides a set of links that provide more detailed
+                relationship information between parts of resources or other information
+                relevant to a phase or step.
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
             <xs:element name="Link" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">
-                        This element provides an extended link conforming to the XLink specification. It provides detailed
-                        relationship information between (parts of) resources or other information relevant to a phase or
-                        step.
+                        This element provides an extended link conforming to the XLink
+                        specification. It provides detailed relationship information between
+                        (parts of) resources or other information relevant to a phase or step.
                         
-                        An extended link relates 2 or more locators (which identify a particular piece of information
-                        through an URI). It can provide navigation information between these locators through arcs.
+                        An extended link relates 2 or more locators (which identify a particular
+                        piece of information through an URI). It can provide navigation
+                        information between these locators through arcs.
                         
-                        Locators, arcs and the link itself can further specify their semantic meaning through optional
-                        role or arcrole attributes. The SSP Traceability specification currently provides no predefined
-                        roles.
+                        Locators, arcs and the link itself can further specify their semantic
+                        meaning through optional role or arcrole attributes. The SSP
+                        Traceability specification currently provides no predefined roles.
                         
-                        All individual elements and attributes are as specified in the XLink specification.
+                        All individual elements and attributes are as specified in the XLink
+                        specification.
                     </xs:documentation>
                 </xs:annotation>
                 <xs:complexType>
@@ -290,10 +357,11 @@
                         <xs:element name="Locator" minOccurs="2" maxOccurs="unbounded">
                             <xs:annotation>
                                 <xs:documentation xml:lang="en">
-                                    This element provides a locator conforming to the XLink specification. It identifies a
-                                    particular piece of information through an URI, that is taking part in the linking
-                                    relationship. Locators can further specify their semantic meaning through an optional
-                                    role attribute. The SSP Traceability specification currently provides no predefined roles.
+                                    This element provides a locator conforming to the XLink specification.
+                                    It identifies a particular piece of information through an URI, that is
+                                    taking part in the linking relationship. Locators can further specify
+                                    their semantic meaning through an optional role attribute. The SSP
+                                    Traceability specification currently provides no predefined roles.
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
@@ -308,10 +376,11 @@
                         <xs:element name="Arc" minOccurs="0" maxOccurs="unbounded">
                             <xs:annotation>
                                 <xs:documentation xml:lang="en">
-                                    This element provides an arc conforming to the XLink specification. An arc relates sets
-                                    of locators in a navigable relationship, including directionality information.
-                                    Arcs can further specify their semantic meaning through an optional arcrole attribute.
-                                    The SSP Traceability specification currently provides no predefined roles.
+                                    This element provides an arc conforming to the XLink specification. An
+                                    arc relates sets of locators in a navigable relationship, including
+                                    directionality information.  Arcs can further specify their semantic
+                                    meaning through an optional arcrole attribute. The SSP Traceability
+                                    specification currently provides no predefined roles.
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
@@ -333,20 +402,20 @@
         </xs:sequence>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
     </xs:complexType>
-    
     <xs:complexType name="ResourceType">
         <xs:annotation>
             <xs:documentation xml:lang="en">
-                This element provides information on one resource that is related to the particular step
-                and particle.  Multiple (or no) resources may be present.
+                This element provides information on one resource that is related to the
+                particular step and particle.  Multiple (or no) resources may be present.
             </xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="Content" minOccurs="0" maxOccurs="1" type="stc:ContentType">
+            <xs:element name="Content" type="stc:ContentType" minOccurs="0" maxOccurs="1">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">
-                        This optional element can contain inlined content of the resource. If it is present,
-                        then the attribute source of the Resource element must not be present.
+                        This optional element can contain inlined content of the resource. If it
+                        is present, then the attribute source of the Resource element must not be
+                        present.
                     </xs:documentation>
                 </xs:annotation>
             </xs:element>
@@ -362,7 +431,7 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="Content" minOccurs="0" maxOccurs="1" type="stc:ContentType">
+                        <xs:element name="Content" type="stc:ContentType" minOccurs="0" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation xml:lang="en">
                                     This optional element can contain inlined content of the resource summary. If it
@@ -370,7 +439,7 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="Signature" minOccurs="0" maxOccurs="unbounded" type="stc:SignatureType">
+                        <xs:element name="Signature" type="stc:SignatureType" minOccurs="0" maxOccurs="unbounded">
                             <xs:annotation>
                                 <xs:documentation xml:lang="en">
                                     This element can contain digital signature information on the summary referenced
@@ -443,7 +512,7 @@
                 </xs:annotation>
                 <xs:complexType>
                     <xs:sequence>
-                        <xs:element name="Content" minOccurs="0" maxOccurs="1" type="stc:ContentType">
+                        <xs:element name="Content" type="stc:ContentType" minOccurs="0" maxOccurs="1">
                             <xs:annotation>
                                 <xs:documentation xml:lang="en">
                                     This optional element can contain inlined content of the resource meta data. If it
@@ -451,7 +520,7 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="Signature" minOccurs="0" maxOccurs="unbounded" type="stc:SignatureType">
+                        <xs:element name="Signature" type="stc:SignatureType" minOccurs="0" maxOccurs="unbounded">
                             <xs:annotation>
                                 <xs:documentation xml:lang="en">
                                     This element can contain digital signature information on the meta data referenced
@@ -528,7 +597,7 @@
                     <xs:attributeGroup ref="ssc:ABaseElement"/>
                 </xs:complexType>
             </xs:element>
-            <xs:element name="Signature" minOccurs="0" maxOccurs="unbounded" type="stc:SignatureType">
+            <xs:element name="Signature" type="stc:SignatureType" minOccurs="0" maxOccurs="unbounded">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">
                         This element can contain digital signature information on the resource referenced
@@ -637,10 +706,9 @@
         </xs:attribute>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
     </xs:complexType>
-    
     <xs:complexType name="SignatureType">
         <xs:sequence>
-            <xs:element name="Content" minOccurs="0" maxOccurs="1" type="stc:ContentType"/>
+            <xs:element name="Content" type="stc:ContentType" minOccurs="0" maxOccurs="1"/>
             <xs:group ref="stc:GElementCommon"/>
         </xs:sequence>
         <xs:attribute name="role" use="required">
@@ -712,7 +780,6 @@
         </xs:attribute>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
     </xs:complexType>
-    
     <xs:complexType name="ContentType" mixed="true">
         <xs:annotation>
             <xs:documentation xml:lang="en">
@@ -725,7 +792,6 @@
         </xs:choice>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
     </xs:complexType>
-    
     <xs:complexType name="ResponsibleType">
         <xs:annotation>
             <xs:documentation xml:lang="en">
@@ -755,7 +821,6 @@
         </xs:attribute>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
     </xs:complexType>
-    
     <xs:group name="GResourceOrReference">
         <xs:annotation>
             <xs:documentation xml:lang="en">
@@ -785,5 +850,4 @@
             </xs:element>
         </xs:choice>
     </xs:group>
-    
 </xs:schema>
