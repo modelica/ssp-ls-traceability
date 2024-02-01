@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:dtmd="http://ssp-standard.org/SSPTraceability1/DecisionTaskMetaData" xmlns:stc="http://ssp-standard.org/SSPTraceability1/SSPTraceabilityCommon" xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon" targetNamespace="http://ssp-standard.org/SSPTraceability1/DecisionTaskMetaData" elementFormDefault="qualified" vc:minVersion="1.1">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1"
+    xmlns:dtmd="http://ssp-standard.org/SSPTraceability1/DecisionTaskMetaData"
+    xmlns:stc="http://ssp-standard.org/SSPTraceability1/SSPTraceabilityCommon"
+    xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon"
+    targetNamespace="http://ssp-standard.org/SSPTraceability1/DecisionTaskMetaData"
+    elementFormDefault="qualified">
+
     <xs:import namespace="http://ssp-standard.org/SSP1/SystemStructureCommon" schemaLocation="ssp-standard/schema/SystemStructureCommon.xsd"/>
     <xs:import namespace="http://ssp-standard.org/SSPTraceability1/SSPTraceabilityCommon" schemaLocation="STC.xsd"/>
+
     <xs:element name="DecisionTaskMetaData">
         <xs:annotation>
             <xs:documentation xml:lang="en">
@@ -14,12 +22,12 @@
                 <xs:element name="AnalysisPhase" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">
-                            This element specifies the Analysis Phase of the overall Decision Task.
+                            This element specifies the Analysis Phase of the overall decision task.
                         </xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="AnalyzeEngineeringTask" type="stc:StepType" minOccurs="0">
+                            <xs:element name="AnalyzeDecisionTask" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
                                         In this step the necessary information required for the execution of this
@@ -44,17 +52,17 @@
                 <xs:element name="DefinitionPhase" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">
-                            This element specifies the Definition Phase of the overall Decision Task,
+                            This element specifies the Definition Phase of the overall decision task,
                             where the individual sub-tasks to be performed are defined.
                         </xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="DefineTasks" type="stc:StepType" minOccurs="0">
+                            <xs:element name="DefineSubTasks" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
                                         In this step the development or test strategy is defined. This means
-                                        that a set of individual tasks is defined, from their individual
+                                        that a set of individual sub-tasks is defined, from their individual
                                         results an overall evaluation can be made.
                                     </xs:documentation>
                                 </xs:annotation>
@@ -62,12 +70,12 @@
                             <xs:element name="DefineResultQuality" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
-                                        In this step the expected result quality of the tasks to be performed
-                                        is defined.
+                                        In this step the expected result quality of the sub-tasks to be
+                                        performed is defined.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="VerifyTasks" type="stc:StepType" minOccurs="0">
+                            <xs:element name="VerifySubTasks" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
                                         In this step the outputs and credibility documentation of the phase are
@@ -83,12 +91,12 @@
                 <xs:element name="ExecutionPhase" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">
-                            This element specifies the Performance Phase of the overall Decision Task.
+                            This element specifies the Performance Phase of the overall decision task.
                         </xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="PerformTasks" type="stc:StepType" minOccurs="0">
+                            <xs:element name="PerformSubTasks" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
                                         In this step all sub-tasks are performed and the output according to
@@ -104,7 +112,7 @@
                 <xs:element name="EvaluationPhase" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">
-                            This element specifies the Evaluation Phase of the overall Decision Task.
+                            This element specifies the Evaluation Phase of the overall decision task.
                         </xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
@@ -121,8 +129,9 @@
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
                                         In this step quality assurance for the decision task and result is
-                                        performed. Quality information about the according tasks is provided,
-                                        according to the criticality of the decision of the task.
+                                        performed. Quality information about the respective sub-tasks is
+                                        provided, according to the criticality of the decision of the
+                                        overall decision task.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
@@ -142,16 +151,16 @@
                 <xs:element name="FulfillmentPhase" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">
-                            This element specifies the Fulfillment Phase of the overall Decision Task.
+                            This element specifies the Fulfillment Phase of the overall decision task.
                         </xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="DecideEngineeringObjectiveFulfillment" type="stc:StepType" minOccurs="0">
+                            <xs:element name="DecideObjectiveFulfillment" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
                                         In this step the decision is made whether the requirements and
-                                        objectives of the engineering task have been fulfilled.
+                                        objectives of the decision task have been fulfilled.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
@@ -177,8 +186,8 @@
             <xs:attribute name="name" type="xs:string" use="required">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">
-                        This attribute gives the Decision Task a name, which can be used
-                        for purposes of presenting the Decision Task to the user, e.g.
+                        This attribute gives the decision task a name, which can be used
+                        for purposes of presenting the decision task to the user, e.g.
                         when selecting individual variant DTMDs from an SSP.
                     </xs:documentation>
                 </xs:annotation>
