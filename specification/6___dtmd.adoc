@@ -1,7 +1,7 @@
 [#sec-dtmd]
 == Decision Task Meta Data File Format
 
-The __Decision Task Meta Data__ file (short: DTMD file) is an implementation of a GlueParticle for decition tasks. It is specified to support traceability, quality assurance and re-usability for decision tasks in terms of a credible decision process as it is specified in #Document Reference#. The following sub-chapters describe the structure of an DTMD file.
+The __Decision Task Meta Data__ file (short: DTMD file) is an implementation of a GlueParticle for decision tasks. It is specified to support traceability, quality assurance and re-usability for decision tasks in terms of a credible decision process as it is specified in #Document Reference#. The following sub-chapters describe the structure of an DTMD file.
 
 === DecisionTaskMetaData
 
@@ -92,7 +92,7 @@ The AnalysisPhase element is associated with the following attributes.
 [#sec-dtmddefinitionphase]
 ==== DefinitionPhase
 
-#In the definition phase, ....#
+#In the definition phase the development or decision /test strategy is defined. This means that a set of individual tasks is defined. From their individual results an overall evaluation can be made. The term decision / test task is broad and can include all kinds of development and V&V methods with real elements (experiment, road test, ...) as well as virtual ones with simulation#
 
 The DefinitionPhase element documents all relevant information.
 
@@ -195,7 +195,7 @@ The EvaluationPhase element is associated with the following attributes.
 [#sec-dtmdfulfillmentphase]
 ==== FulfillmentPhase 
 
-#In the fulfillment phase, it is checked and decided whether the entire simulation task, including the simulation results, fulfills the requirements placed on the simulation by the commissioning higher-level engineering task and whether the simulation tasks can be completed.#
+#In the fulfillment phase, it is checked and decided whether the requirements and objectives of the decision task have been fulfilled. This is done in coordination with the higher-level development process..#
 
 The FulfillmentPhasePhase element documents all relevant information.
 
