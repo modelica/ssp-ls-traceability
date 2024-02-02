@@ -1208,7 +1208,45 @@ See <a href="#XLINK">[XLINK]</a> for details of he nature and application of XLi
 <h2 id="sec-commonconcepts">4. Common concepts for SSP Traceability</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><mark>Content to be defined</mark></p>
+<p>The SSP Traceability specification is based on the SSP standard and therefore employs many of its common concepts (see <a href="#SSP10">[SSP10]</a> for details):</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Extensibility</dt>
+<dd>
+<p>SSP Traceability employs the extensibility mechanisms of SSP, specifically the extra files mechanism, to embed traceability information into existing SSP package files.
+Furthermore, SSP Traceability itself offers the SSP extensibility mechanisms, like annotations, in its own formats, to enable further extension capabilities, e.g. for layered standards on top of the SSP Traceability specification.</p>
+</dd>
+<dt class="hdlist1">MIME-type based format dispatch</dt>
+<dd>
+<p>For all resources referenced in its file formats, the specification uses MIME-type based format dispatch to allow</p>
+</dd>
+<dt class="hdlist1">Content addressing</dt>
+<dd>
+<p>All references between files are expressed through URIs, supporting both relative and absolute URIs for references.</p>
+</dd>
+</dl>
+</div>
+<div class="paragraph">
+<p>The SSP Traceability specification extends on these concepts in the following ways:</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">Extended Links</dt>
+<dd>
+<p>The specifications provide for generic linking of resources and parts of resources using XML XLink extended links with full control of grouping, directionalities and semantics through role definitions for anchors and arcs.</p>
+</dd>
+<dt class="hdlist1">Basic Structuring</dt>
+<dd>
+<p>All steps in process descriptions provide the same information structure (input, procedure, output and rationale) across the board, which provides a basic structuring of related resources at a coarse level, that can then be extended through extended links and classifications.</p>
+</dd>
+<dt class="hdlist1">Generic Meta Data through Classifications</dt>
+<dd>
+<p>All relevant modeling elements allow for arbitrary, but well-defined, meta-data provisoning through classifications:
+These are collections of keyword value pairs, including linking capabilities, that are grouped by user-defined namespaces defined by classification types.
+In this way layered standards can provide additional meaning and rules to meta-data meeting domain-specific or company-specific needs, while providing basic processing expectations for tools even in the absence of detailed knowledge of the specific classification type.</p>
+</dd>
+</dl>
 </div>
 </div>
 </div>
@@ -1550,8 +1588,8 @@ This approach can be used, for example, to provide searchable keywords for conte
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xlink:type</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><mark>Text fehlt noch</mark></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fixed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Has the fixed value <code>simple</code> to indicate an XLink simple link.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xlink:href</p></td>
@@ -2162,7 +2200,7 @@ Typically, this is used to justify decisions such as simplifications or deviatio
 <div class="sect3">
 <h4 id="sec-link">5.8.1. Link</h4>
 <div class="paragraph">
-<p>The Link element represents a single links no mater if it is a GlueParticle internal link or a link targeted to the outside of the GlueParticle.</p>
+<p>The Link element represents a single extended link relating two or more endpoints, regardless of whether they are GlueParticle internal or outside of the GlueParticle.</p>
 </div>
 <div id="im-linkschema" class="imageblock">
 <div class="content">
@@ -2171,7 +2209,7 @@ Typically, this is used to justify decisions such as simplifications or deviatio
 <div class="title">Figure 23. Link element structure and attributes</div>
 </div>
 <div class="paragraph">
-<p>The Link element is structured by the following subordinated elements.</p>
+<p>An extended link consists out of two or more Locator elements that address the resources outside of the link that are participating in the link, and optional Arc elements that provide traversal rules among the link&#8217;s participating resources:</p>
 </div>
 <table id="tb-linksubelements" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 21. Link element structure</caption>
@@ -2226,12 +2264,12 @@ Typically, this is used to justify decisions such as simplifications or deviatio
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xlink:title</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><mark>Text fehlt noch</mark></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute is used to describe the meaning of an entire link in a human-readable fashion.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xlink:role</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><mark>Text fehlt noch</mark></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute supplies semantic information about the link as a whole: The xlink:role attribute indicates a property that the entire link has.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2239,7 +2277,11 @@ Typically, this is used to justify decisions such as simplifications or deviatio
 <div class="sect3">
 <h4 id="sec-locator">5.8.2. Locator</h4>
 <div class="paragraph">
-<p>The Locator element represents &#8230;&#8203; <mark>Text fehlt noch</mark></p>
+<p>An extended link indicates resources that participate in it by means of Locator elements.</p>
+</div>
+<div class="paragraph">
+<p>NOTE:
+A Locator element, by itself, does not constitute a link just because it has a href attribute; unlike simple links, it does not create an XLink-governed association between itself and the referenced resource.</p>
 </div>
 <div id="im-locatorschema" class="imageblock">
 <div class="content">
@@ -2276,22 +2318,22 @@ Typically, this is used to justify decisions such as simplifications or deviatio
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xlink:href</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><mark>Text fehlt noch</mark></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute provides an IRI reference that identifies a resource.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xlink:label</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><mark>Text fehlt noch</mark></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute provides a way for an Arc element to refer to it in creating a traversal arc.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xlink:title</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><mark>Text fehlt noch</mark></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute is used to describe the meaning of the resource in a human-readable fashion.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xlink:role</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><mark>Text fehlt noch</mark></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute supplies semantic information about the locator&#8217;s resource: The xlink:role attribute indicates a property that the resource has.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2299,7 +2341,20 @@ Typically, this is used to justify decisions such as simplifications or deviatio
 <div class="sect3">
 <h4 id="sec-arc">5.8.3. Arc</h4>
 <div class="paragraph">
-<p>The Arc element represents &#8230;&#8203; <mark>Text fehlt noch</mark></p>
+<p>An extended link may indicate rules for traversing among its participating resources by means of a series of optional Arc elements.</p>
+</div>
+<div class="paragraph">
+<p>The traversal attributes (xlink:from and xlink:to) define the desired traversal between pairs of resources that participate in the same link, where the resources are identified by their locator&#8217;s label attribute values.
+The xlink:from attribute defines resources from which traversal may be initiated, that is, starting resources, while the xlink:to attribute defines resources that may be traversed to, that is, ending resources.</p>
+</div>
+<div class="paragraph">
+<p>The semantic attributes (xlink:title and xlink:arcrole) describe the meaning of the arc&#8217;s ending resource relative to its starting resource.
+The xlink:arcrole attribute corresponds to the RDF notion of a property, where the role can be interpreted as stating that "starting-resource HAS arc-role ending-resource."
+This contextual role can differ from the meaning of an ending resource when taken outside the context of this particular arc.
+For example, a resource might generically represent a "person," but in the context of a particular arc it might have the role of "mother" and in the context of a different arc it might have the role of "daughter."</p>
+</div>
+<div class="paragraph">
+<p>When the same resource serves as a starting resource in several arcs (whether in a single link or across many links), traversal-request behavior is unconstrained by this specification, but one possibility for interactive applications is a pop-up menu that lists the relevant arc or link titles.</p>
 </div>
 <div id="im-arcschema" class="imageblock">
 <div class="content">
@@ -2336,22 +2391,22 @@ Typically, this is used to justify decisions such as simplifications or deviatio
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xlink:from</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><mark>Text fehlt noch</mark></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The xlink:from attribute defines resources from which traversal may be initiated, that is, starting resources.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xlink:to</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Mandatory</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><mark>Text fehlt noch</mark></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The xlink:to attribute defines resources that may be traversed to, that is, ending resources.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xlink:title</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><mark>Text fehlt noch</mark></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute is used to describe the meaning of the arc in a human-readable fashion.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xlink:arcrole</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><mark>Text fehlt noch</mark></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute supplies semantic information about the arc: The xlink:arcrole attribute indicates a property that the arc relationship has.</p></td>
 </tr>
 </tbody>
 </table>
