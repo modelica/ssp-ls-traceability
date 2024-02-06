@@ -25,7 +25,7 @@ image::CredibleSimulationProcessFramework.png[]
 [#sec-credibledecisionprocess]
 === Credible Decision Process
 
-The Credible Decision Process as part of the Credible Simulation Process Frameworkconsists of five successive phases, starting with the analysis of the decision to be made through the preparation of the decision and up the actual decision itself.
+The Credible Decision Process as part of the Credible Simulation Process Framework consists of five successive phases, starting with the analysis of the decision to be made through the preparation of the decision and up the actual decision itself.
 The preparation includes all activities necessary to obtain and evaluate the information on which the decision will be based.
 The information needed may include simulation results. <<im-credibledecisionprocess>> illustrates this process.
 
@@ -35,16 +35,16 @@ image::CredibleDecisionProcess.png[]
 
 The phases of the Credible Decision Process are:
  
-Analyze Task:: In this phase, the information required for the execution of the decision process is determined and analyzed.
+Analyze of Decision Task:: In this phase, the information required for the execution of the decision process is determined and analyzed.
 
-Define Sub-Tasks:: In this phase, the sub-tasks, e.g. simulation or test tasks, required to obtain the information on which the decision should be based are defined and specified.
+Definition of Sub-Tasks:: In this phase, the sub-tasks, e.g. simulation or test tasks, required to obtain the information on which the decision should be based are defined and specified.
  
-Perform Sub-Processes:: In this phase, the sub-tasks, e.g. simulation or test tasks, required to obtain the information on which the decision should be based, are defined and specified.
+Performing Sub-Tasks:: In this phase, the sub-tasks, e.g. simulation or test tasks, required to obtain the information on which the decision should be based, are defined and specified.
 The phase starts e.g. with the simulation request and ends with the simulation delivery from the perspective of the credible decision process.
  
-Evaluate:: In this phase, the decision-relevant information returned from the sub-tasks, e.g. simulation results, is evaluated from the point of view of the Credible Decision Process.
+Evaluation:: In this phase, the decision-relevant information returned from the sub-tasks, e.g. simulation results, is evaluated from the point of view of the Credible Decision Process.
  
-Decide:: In this phase the actual decision is done.
+Fulfillment:: The purpose of this phase is to decide whether the results fulfill the original objectives of the decision task.
 
 For more information on the Credible Decision Process, see <<SETLEVEL>>.
 
@@ -60,19 +60,19 @@ image::CredibleSimulationProcess.png[]
 
 The phases of the Credible Simulation Process are:
 
-Analyze Simulation Task:: In this phase, the information from the higher-level Credible Decision Process, provided as a Simulation Request, is analyzed and detailed with respect to the information needed in the subsequent phases of the Credible Simulation Process.
+Analysis of Simulation Task:: In this phase, the information from the higher-level Credible Decision Process, provided as a Simulation Request, is analyzed and detailed with respect to the information needed in the subsequent phases of the Credible Simulation Process.
 
-Define Requirements:: In this phase, the requirements for the individual components of the simulation setup and their interaction as well as the requirements for quality assurance are formulated in detail.
+Definition of Simulation Requirements:: In this phase, the requirements for the individual components of the simulation setup and their interaction as well as the requirements for quality assurance are formulated in detail.
 
 Design Specification:: The purpose of this phase is to create all the specifications needed to implement the complete simulation setup.
 
-Implement:: The purpose of this phase is to implement the complete simulation setup with all its setup components as specified in the design specifications.
+Implementation:: The purpose of this phase is to implement the complete simulation setup with all its setup components as specified in the design specifications.
 
-Execute Simulation:: The purpose of this phase is to run the simulation and record the simulation results.
+Simulation Execution:: The purpose of this phase is to run the simulation and record the simulation results.
 It may also include any necessary post-processing. 
 
-Evaluate:: The purpose of this phase is to evaluate the simulation results, i.e. to verify that the simulation results are plausible and robust.
+Evaluation:: The purpose of this phase is to evaluate the simulation results, i.e. to verify that the simulation results are plausible and robust.
 
-Decide Fulfillment:: The purpose of this phase is to confirm that the simulation results meet the original objectives of the simulation task.
+Fulfillment:: The purpose of this phase is to confirm that the simulation results meet the original objectives of the simulation task.
 
 For more information on the Credible Simulation Process, see <<SETLEVEL>>.
