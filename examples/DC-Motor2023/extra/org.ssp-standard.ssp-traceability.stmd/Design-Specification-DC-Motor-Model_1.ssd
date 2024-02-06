@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ssd:SystemStructureDescription version="1.0" name="Design-Specification-DC-Motor-Model" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2022-04-20T15:01:31Z" xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon" xmlns:ssb="http://ssp-standard.org/SSP1/SystemStructureSignalDictionary" xmlns:ssd="http://ssp-standard.org/SSP1/SystemStructureDescription" xmlns:easySSP="http://xsd.easy-ssp.com/SSPModel" xmlns:ssv="http://ssp-standard.org/SSP1/SystemStructureParameterValues" xmlns:ssm="http://ssp-standard.org/SSP1/SystemStructureParameterMapping">
+    <ssd:System name="Design-Specification-DC-Motor-Model" description="Design specification for the mechanical part of the DC-motor model. The inputs, outputs, and parameters are specified. Also a test environment with the stimuli block and the model of the electrical part is provided.&#10;">
+        <ssd:Connectors>
+            <ssd:Connector name="wB" kind="output" description="">
+                <ssc:Real unit="rad/s"/>
+                <ssd:ConnectorGeometry x="1.0" y="0.592556"/>
+            </ssd:Connector>
+            <ssd:Connector name="U" kind="output" description="">
+                <ssc:Real unit="V"/>
+                <ssd:ConnectorGeometry x="1.0" y="0.769865"/>
+            </ssd:Connector>
+            <ssd:Connector name="M_mot" kind="output" description="">
+                <ssc:Real unit="Nm"/>
+                <ssd:ConnectorGeometry x="1.0" y="0.441091"/>
+            </ssd:Connector>
+            <ssd:Connector name="I" kind="output" description="">
+                <ssc:Real unit="A"/>
+                <ssd:ConnectorGeometry x="1.0" y="0.300748"/>
+            </ssd:Connector>
+        </ssd:Connectors>
+        <ssd:ParameterBindings>
+            <ssd:ParameterBinding>
+                <ssd:ParameterValues>
+                    <ssv:ParameterSet version="1.0" name="Internal Parameter-Set">
+                        <ssv:Parameters/>
+                    </ssv:ParameterSet>
+                </ssd:ParameterValues>
+            </ssd:ParameterBinding>
+        </ssd:ParameterBindings>
+        <ssd:Elements>
+            <ssd:Component type="application/x-fmu-sharedlibrary" source="resources/stimuli_model.fmu" implementation="ModelExchange" name="stimuli_model" description="">
+                <ssd:Connectors>
+                    <ssd:Connector name="U" kind="output">
+                        <ssc:Real unit="V"/>
+                        <ssd:ConnectorGeometry x="1.0" y="0.6"/>
+                    </ssd:Connector>
+                    <ssd:Connector name="M_load" kind="output">
+                        <ssc:Real unit="N.m"/>
+                        <ssd:ConnectorGeometry x="1.0" y="0.255"/>
+                    </ssd:Connector>
+                </ssd:Connectors>
+                <ssd:ElementGeometry x1="-478.0" y1="-181.0" x2="-278.0" y2="21.0"/>
+                <ssd:ParameterBindings>
+                    <ssd:ParameterBinding>
+                        <ssd:ParameterValues>
+                            <ssv:ParameterSet version="1.0" name="Internal Parameter-Set">
+                                <ssv:Parameters>
+                                    <ssv:Parameter name="Voltage_step.height" description="Height of step">
+                                        <ssv:Real value="-48.0" unit="V"/>
+                                    </ssv:Parameter>
+                                    <ssv:Parameter name="Voltage_step.offset" description="Offset of output signal y">
+                                        <ssv:Real value="0.0"/>
+                                    </ssv:Parameter>
+                                    <ssv:Parameter name="Voltage_step.startTime" description="Output y = offset for time &lt; startTime">
+                                        <ssv:Real value="0.0" unit="s"/>
+                                    </ssv:Parameter>
+                                    <ssv:Parameter name="MLoad.k" description="Constant output value">
+                                        <ssv:Real value="1.0" unit="N.m"/>
+                                    </ssv:Parameter>
+                                    <ssv:Parameter name="gain.k" description="Gain value multiplied with input signal">
+                                        <ssv:Real value="1.0" unit="1"/>
+                                    </ssv:Parameter>
+                                </ssv:Parameters>
+                                <ssv:Units>
+                                    <ssc:Unit name="V">
+                                        <ssc:BaseUnit kg="1" m="2" s="-3" A="-1" K="0" mol="0" cd="0" rad="0" factor="1.0" offset="0.0"/>
+                                    </ssc:Unit>
+                                    <ssc:Unit name="s" description="Time in seconds">
+                                        <ssc:BaseUnit kg="0" m="0" s="1" A="0" K="0" mol="0" cd="0" rad="0" factor="1.0" offset="0.0"/>
+                                    </ssc:Unit>
+                                    <ssc:Unit name="N.m">
+                                        <ssc:BaseUnit kg="1" m="2" s="-2" A="0" K="0" mol="0" cd="0" rad="0" factor="1.0" offset="0.0"/>
+                                    </ssc:Unit>
+                                    <ssc:Unit name="1">
+                                        <ssc:BaseUnit kg="0" m="0" s="0" A="0" K="0" mol="0" cd="0" rad="0" factor="1.0" offset="0.0"/>
+                                    </ssc:Unit>
+                                </ssv:Units>
+                            </ssv:ParameterSet>
+                        </ssd:ParameterValues>
+                    </ssd:ParameterBinding>
+                </ssd:ParameterBindings>
+            </ssd:Component>
+            <ssd:System name="SuT" description="System under Test (DC-Motor model). Design Specification for mechanical part of DC-motor model">
+                <ssd:Connectors>
+                    <ssd:Connector name="M_mot" kind="output" description="">
+                        <ssc:Real unit="Nm"/>
+                        <ssd:ConnectorGeometry x="1.0" y="0.310247"/>
+                    </ssd:Connector>
+                    <ssd:Connector name="M_load" kind="input" description="">
+                        <ssc:Real unit="Nm"/>
+                        <ssd:ConnectorGeometry x="0.0" y="0.278134"/>
+                    </ssd:Connector>
+                    <ssd:Connector name="U" kind="input" description="">
+                        <ssc:Real unit="V"/>
+                        <ssd:ConnectorGeometry x="0.0" y="0.622195"/>
+                    </ssd:Connector>
+                    <ssd:Connector name="phiB" kind="output" description="">
+                        <ssc:Real unit="rad"/>
+                        <ssd:ConnectorGeometry x="1.0" y="0.5125"/>
+                    </ssd:Connector>
+                    <ssd:Connector name="wB" kind="output" description="">
+                        <ssc:Real unit="rad/s"/>
+                        <ssd:ConnectorGeometry x="1.0" y="0.67576"/>
+                    </ssd:Connector>
+                    <ssd:Connector name="I" kind="output" description="">
+                        <ssc:Real unit="A"/>
+                        <ssd:ConnectorGeometry x="1.0" y="0.124368"/>
+                    </ssd:Connector>
+                </ssd:Connectors>
+                <ssd:ElementGeometry x1="-152.0" y1="-185.0" x2="48.0" y2="15.0"/>
+                <ssd:ParameterBindings>
+                    <ssd:ParameterBinding>
+                        <ssd:ParameterValues>
+                            <ssv:ParameterSet version="1.0" name="Internal Parameter-Set">
+                                <ssv:Parameters/>
+                            </ssv:ParameterSet>
+                        </ssd:ParameterValues>
+                    </ssd:ParameterBinding>
+                </ssd:ParameterBindings>
+                <ssd:Elements>
+                    <ssd:Component type="" source="" implementation="ModelExchange" name="edrive_mass_spec" description="">
+                        <ssd:Connectors>
+                            <ssd:Connector name="phiA" kind="output">
+                                <ssc:Real unit="rad"/>
+                                <ssd:ConnectorGeometry x="1.0" y="0.6"/>
+                            </ssd:Connector>
+                            <ssd:Connector name="wB" kind="output">
+                                <ssc:Real unit="rad/s"/>
+                                <ssd:ConnectorGeometry x="1.0" y="0.4"/>
+                            </ssd:Connector>
+                            <ssd:Connector name="wA" kind="output">
+                                <ssc:Real unit="rad/s"/>
+                                <ssd:ConnectorGeometry x="1.0" y="0.8"/>
+                            </ssd:Connector>
+                            <ssd:Connector name="M_B" kind="input">
+                                <ssc:Real unit="N.m"/>
+                                <ssd:ConnectorGeometry x="0.0" y="0.190833"/>
+                            </ssd:Connector>
+                            <ssd:Connector name="phiB" kind="output">
+                                <ssc:Real unit="rad"/>
+                                <ssd:ConnectorGeometry x="1.0" y="0.2"/>
+                            </ssd:Connector>
+                            <ssd:Connector name="M_A" kind="input">
+                                <ssc:Real unit="N.m"/>
+                                <ssd:ConnectorGeometry x="0.0" y="0.604167"/>
+                            </ssd:Connector>
+                        </ssd:Connectors>
+                        <ssd:ElementGeometry x1="133.536036" y1="-76.108108" x2="333.536036" y2="123.891892"/>
+                        <ssd:ParameterBindings>
+                            <ssd:ParameterBinding>
+                                <ssd:ParameterValues>
+                                    <ssv:ParameterSet version="1.0" name="Internal Parameter-Set">
+                                        <ssv:Parameters>
+                                            <ssv:Parameter name="inertia.J" description="Moment of inertia">
+                                                <ssv:Real value="0.002" unit="kg.m2"/>
+                                            </ssv:Parameter>
+                                            <ssv:Parameter name="damper.d" description="Damping constant">
+                                                <ssv:Real value="0.001" unit="N.m.s/rad"/>
+                                            </ssv:Parameter>
+                                        </ssv:Parameters>
+                                        <ssv:Units>
+                                            <ssc:Unit name="kg.m2">
+                                                <ssc:BaseUnit kg="1" m="2" s="0" A="0" K="0" mol="0" cd="0" rad="0" factor="1.0" offset="0.0"/>
+                                            </ssc:Unit>
+                                            <ssc:Unit name="N.m.s/rad">
+                                                <ssc:BaseUnit kg="1" m="2" s="-1" A="0" K="0" mol="0" cd="0" rad="-1" factor="1.0" offset="0.0"/>
+                                            </ssc:Unit>
+                                        </ssv:Units>
+                                    </ssv:ParameterSet>
+                                </ssd:ParameterValues>
+                            </ssd:ParameterBinding>
+                        </ssd:ParameterBindings>
+                    </ssd:Component>
+                    <ssd:Component type="application/x-fmu-sharedlibrary" source="resources/emachine_model.fmu" implementation="ModelExchange" name="emachine_model" description="">
+                        <ssd:Connectors>
+                            <ssd:Connector name="w" kind="input">
+                                <ssc:Real unit="rad/s"/>
+                                <ssd:ConnectorGeometry x="0.0" y="0.75"/>
+                            </ssd:Connector>
+                            <ssd:Connector name="M" kind="output">
+                                <ssc:Real unit="N.m"/>
+                                <ssd:ConnectorGeometry x="1.0" y="0.6"/>
+                            </ssd:Connector>
+                            <ssd:Connector name="I" kind="output">
+                                <ssc:Real unit="A"/>
+                                <ssd:ConnectorGeometry x="1.0" y="0.275"/>
+                            </ssd:Connector>
+                            <ssd:Connector name="U" kind="input">
+                                <ssc:Real unit="V"/>
+                                <ssd:ConnectorGeometry x="0.0" y="0.25"/>
+                            </ssd:Connector>
+                            <ssd:Connector name="phi" kind="input">
+                                <ssc:Real unit="rad"/>
+                                <ssd:ConnectorGeometry x="0.0" y="0.5"/>
+                            </ssd:Connector>
+                        </ssd:Connectors>
+                        <ssd:ElementGeometry x1="-204.382883" y1="-76.054054" x2="-4.382883" y2="123.945946"/>
+                        <ssd:ParameterBindings>
+                            <ssd:ParameterBinding>
+                                <ssd:ParameterValues>
+                                    <ssv:ParameterSet version="1.0" name="Internal Parameter-Set">
+                                        <ssv:Parameters>
+                                            <ssv:Parameter name="emf.k" description="Transformation coefficient">
+                                                <ssv:Real value="0.03" unit="N.m/A"/>
+                                            </ssv:Parameter>
+                                            <ssv:Parameter name="resistor.T_ref" description="Reference temperature">
+                                                <ssv:Real value="300.15" unit="K"/>
+                                            </ssv:Parameter>
+                                            <ssv:Parameter name="resistor.alpha" description="Temperature coefficient of resistance (R_actual = R*(1 + alpha*(T_heatPort - T_ref))">
+                                                <ssv:Real value="0.0" unit="1/K"/>
+                                            </ssv:Parameter>
+                                            <ssv:Parameter name="resistor.T" description="Fixed device temperature if useHeatPort = false">
+                                                <ssv:Real value="300.15" unit="K"/>
+                                            </ssv:Parameter>
+                                            <ssv:Parameter name="inductor.L" description="Inductance">
+                                                <ssv:Real value="0.001" unit="H"/>
+                                            </ssv:Parameter>
+                                            <ssv:Parameter name="resistor.R" description="Resistance at temperature T_ref">
+                                                <ssv:Real value="0.2" unit="Ohm"/>
+                                            </ssv:Parameter>
+                                        </ssv:Parameters>
+                                        <ssv:Units>
+                                            <ssc:Unit name="1/K">
+                                                <ssc:BaseUnit kg="0" m="0" s="0" A="0" K="-1" mol="0" cd="0" rad="0" factor="1.0" offset="0.0"/>
+                                            </ssc:Unit>
+                                            <ssc:Unit name="H">
+                                                <ssc:BaseUnit kg="1" m="2" s="-2" A="-2" K="0" mol="0" cd="0" rad="0" factor="1.0" offset="0.0"/>
+                                            </ssc:Unit>
+                                            <ssc:Unit name="N.m/A">
+                                                <ssc:BaseUnit kg="1" m="2" s="-2" A="-1" K="0" mol="0" cd="0" rad="0" factor="1.0" offset="0.0"/>
+                                            </ssc:Unit>
+                                            <ssc:Unit name="Ohm">
+                                                <ssc:BaseUnit kg="1" m="2" s="-3" A="-2" K="0" mol="0" cd="0" rad="0" factor="1.0" offset="0.0"/>
+                                            </ssc:Unit>
+                                            <ssc:Unit name="K" description="Temperature in Kelvin">
+                                                <ssc:BaseUnit kg="0" m="0" s="0" A="0" K="1" mol="0" cd="0" rad="0" factor="1.0" offset="0.0"/>
+                                            </ssc:Unit>
+                                        </ssv:Units>
+                                    </ssv:ParameterSet>
+                                </ssd:ParameterValues>
+                            </ssd:ParameterBinding>
+                        </ssd:ParameterBindings>
+                    </ssd:Component>
+                </ssd:Elements>
+                <ssd:Connections>
+                    <ssd:Connection startElement="emachine_model" startConnector="M" endConnector="M_mot" suppressUnitConversion="false" description="">
+                        <ssd:ConnectionGeometry pointsX="66.5 66.5" pointsY="44.0 -89.943138"/>
+                    </ssd:Connection>
+                    <ssd:Connection startConnector="M_load" endElement="edrive_mass_spec" endConnector="M_B" suppressUnitConversion="false" description="">
+                        <ssd:ConnectionGeometry pointsX="95.0 95.0" pointsY="-109.212674 -38.0"/>
+                    </ssd:Connection>
+                    <ssd:Connection startConnector="U" endElement="emachine_model" endConnector="U" suppressUnitConversion="false" description="">
+                        <ssd:ConnectionGeometry pointsX="-340.0 -340.0" pointsY="97.242524 -26.0"/>
+                    </ssd:Connection>
+                    <ssd:Connection startElement="edrive_mass_spec" startConnector="phiB" endConnector="phiB" suppressUnitConversion="false" description="">
+                        <ssd:ConnectionGeometry pointsX="473.0 473.0" pointsY="-36.0 31.419595"/>
+                    </ssd:Connection>
+                    <ssd:Connection startElement="edrive_mass_spec" startConnector="wB" endConnector="wB" suppressUnitConversion="false" description="">
+                        <ssd:ConnectionGeometry pointsX="446.0 445.5" pointsY="4.0 129.38442"/>
+                    </ssd:Connection>
+                    <ssd:Connection startElement="emachine_model" startConnector="I" endConnector="I" suppressUnitConversion="false" description="">
+                        <ssd:ConnectionGeometry pointsX="25.0 25.0" pointsY="-21.0 -201.480585"/>
+                    </ssd:Connection>
+                    <ssd:Connection startElement="emachine_model" startConnector="phi" endElement="edrive_mass_spec" endConnector="phiA" suppressUnitConversion="false" description="">
+                        <ssd:ConnectionGeometry pointsX="-267.0 -267.0 422.0 422.0" pointsY="24.0 186.0 186.0 44.0"/>
+                    </ssd:Connection>
+                    <ssd:Connection startElement="edrive_mass_spec" startConnector="wA" endElement="emachine_model" endConnector="w" suppressUnitConversion="false" description="">
+                        <ssd:ConnectionGeometry pointsX="389.0 389.0 -237.0 -237.0" pointsY="84.0 156.0 166.0 84.0"/>
+                    </ssd:Connection>
+                    <ssd:Connection startElement="emachine_model" startConnector="M" endElement="edrive_mass_spec" endConnector="M_A" suppressUnitConversion="false" description=""/>
+                </ssd:Connections>
+                <ssd:SystemGeometry x1="-404.382883" y1="-276.108108" x2="533.536036" y2="323.945946"/>
+            </ssd:System>
+        </ssd:Elements>
+        <ssd:Connections>
+            <ssd:Connection startElement="SuT" startConnector="wB" endConnector="wB" suppressUnitConversion="false" description="">
+                <ssd:ConnectionGeometry pointsX="131.0 131.0" pointsY="-50.0 -25.911064"/>
+            </ssd:Connection>
+            <ssd:Connection startElement="stimuli_model" startConnector="U" endConnector="U" suppressUnitConversion="false" description="">
+                <ssd:ConnectionGeometry pointsX="-211.0 -211.0" pointsY="-60.0 81.53819"/>
+            </ssd:Connection>
+            <ssd:Connection startElement="SuT" startConnector="M_mot" endConnector="M_mot" suppressUnitConversion="false" description=""/>
+            <ssd:Connection startElement="SuT" startConnector="I" endConnector="I" suppressUnitConversion="false" description="">
+                <ssd:ConnectionGeometry pointsX="139.0 139.0" pointsY="-160.0 -202.746712"/>
+            </ssd:Connection>
+            <ssd:Connection startElement="stimuli_model" startConnector="U" endElement="SuT" endConnector="U" suppressUnitConversion="false" description=""/>
+            <ssd:Connection startElement="stimuli_model" startConnector="M_load" endElement="SuT" endConnector="M_load" suppressUnitConversion="false" description=""/>
+        </ssd:Connections>
+        <ssd:SystemGeometry x1="-678.0" y1="-385.0" x2="248.0" y2="221.0"/>
+    </ssd:System>
+    <ssd:Units>
+        <ssc:Unit name="V">
+            <ssc:BaseUnit kg="1" m="2" s="-3" A="-1" K="0" mol="0" cd="0" rad="0" factor="1.0" offset="0.0"/>
+        </ssc:Unit>
+        <ssc:Unit name="N.m">
+            <ssc:BaseUnit kg="1" m="2" s="-2" A="0" K="0" mol="0" cd="0" rad="0" factor="1.0" offset="0.0"/>
+        </ssc:Unit>
+        <ssc:Unit name="Nm">
+            <ssc:BaseUnit kg="1" m="2" s="-2" A="0" K="0" mol="0" cd="0" rad="0" factor="1.0" offset="0.0"/>
+        </ssc:Unit>
+        <ssc:Unit name="A">
+            <ssc:BaseUnit kg="0" m="0" s="0" A="1" K="0" mol="0" cd="0" rad="0" factor="1.0" offset="0.0"/>
+        </ssc:Unit>
+        <ssc:Unit name="rad/s">
+            <ssc:BaseUnit kg="0" m="0" s="-1" A="0" K="0" mol="0" cd="0" rad="1" factor="1.0" offset="0.0"/>
+        </ssc:Unit>
+        <ssc:Unit name="rad">
+            <ssc:BaseUnit kg="0" m="0" s="0" A="0" K="0" mol="0" cd="0" rad="1" factor="1.0" offset="0.0"/>
+        </ssc:Unit>
+    </ssd:Units>
+    <ssd:Annotations>
+        <ssc:Annotation type="com.easy-ssp.easy.ssp-model">
+            <easySSP:ParameterVariants>
+                <easySSP:ParameterVariant name="Parameter-Set-for-Test" description="" isBase="true"/>
+            </easySSP:ParameterVariants>
+        </ssc:Annotation>
+    </ssd:Annotations>
+</ssd:SystemStructureDescription>

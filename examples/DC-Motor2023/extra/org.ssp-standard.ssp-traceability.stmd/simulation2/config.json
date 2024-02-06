@@ -1,0 +1,35 @@
+{
+  "info" : "This file and other associated files based on linked filenames or filename-templates are used for the glue integration in simulations in the easySSP Tool by eXXcellent solutions. Any tempering with its content or associated filenames may result in errorneous or undesired behavior.",
+  "simulation" : {
+    "id" : "b60784a4-bcd2-4b3f-9505-e94b6870a395",
+    "systemStructureId" : "aa2269fa-3f8b-40d2-9671-cee44fee27dc",
+    "systemStructureName" : "DC-motor-mechanic",
+    "simulationName" : "DC-motor-mechanic",
+    "start-time" : "20.04.2022T 13:52Z"
+  },
+  "runs" : [ {
+    "id" : "05ba8751-b2aa-42c3-b0c3-8fdbb355b7d5",
+    "parameterVariantId" : "b903949e-a2a8-4f26-af49-4669a1420353",
+    "correspondingFileFolder" : "simulation2/run1/",
+    "parameterVariantName" : "Parameter-Variant",
+    "runName" : "Parameter-Variant",
+    "status" : "done",
+    "maxRunDurationInMinutes" : 1,
+    "actualDurationInSeconds" : 6,
+    "hardwareConfig" : {
+      "id" : 256512,
+      "cpuCores" : 0.25,
+      "ramInGb" : 0.5
+    },
+    "runConfig" : {
+      "options" : {
+        "start" : 0.0,
+        "step" : 0.01,
+        "stop" : 10.0
+      },
+      "version" : {
+        "api-version" : "0.1.0"
+      }
+    }
+  } ]
+}

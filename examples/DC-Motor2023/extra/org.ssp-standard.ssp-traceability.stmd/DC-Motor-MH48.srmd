@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<srmd:SimulationResourceMetaData version="1.0.0-beta2" name="DC-Motor MH48 Model Meta-Data" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2024-02-06T13:21:41Z" xmlns:srmd="http://ssp-standard.org/SSPTraceability1/SimulationResourceMetaData" xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon" xmlns:stc="http://ssp-standard.org/SSPTraceability1/SSPTraceabilityCommon" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <stc:Classification type="de.setlevel.srmd.model-meta-data">
+        <stc:ClassificationEntry keyword="model.type">actuator</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="actuator.manufacturer">CompanyY</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="actuator.family">Drive Train Electrical</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="actuator.name">MH48</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="actuator.version">C41</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="actuator.manufacturer.partnumber">XY12345</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="actuator.technology">DC-Motor</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="actuator.technology.variant">Mild Hybrid</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="model.manufacturer">GlueParticle</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="model.family"> DC-Motor</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="model.name">DC-Motor</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="model.version"> GPsim2.03</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="model.releasedate">2022-02-01</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="model.releasestatus">In Development</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="model.guid">For FMU-based models, this should be the GUID of the FMU, e.g. 7ae4-210f-dead-beef-0422</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="model.purpose">Pre-development of mild hybrid</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="model.modelling-approach">basic physical equations of  a DC Motor are causal modeled</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="model.preconditions">-none-</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="model.validity-range">Valid in the range -3000 rad/s up to 3000 rad/s, current less 50A </stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="model.specification">link to specification document</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="model.verification.status">false</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="model.verification.report"></stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="model.validation.concept"></stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="model.validation.status">false</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="model.validation.platform">Dymola V112 and PMSF FMIBench 1.9.9.4 on Windows 10 1809</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="model.validation.report"></stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="model.limitations">This delivery is a pre-release and the model is intended to be used for pre-development
+            The model is not validated; thus it is not intended to be used for validation or verification of any actuator.
+            
+            This delivery is not developed according to process defined in ISO 26262 (Standard for Functional Safety).
+        </stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="model.implementation.format">SSP 1.0 / FMI 2.0</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="model.implementation.preconditions">Model needs Windows 10 1809 or newer or Linux</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="model.implementation.performance-characteristics">Potentially real-time capable, 3 simple diferential equations</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="model.integration.requirements">link to requirements and considerations for operating the model</stc:ClassificationEntry>
+    </stc:Classification>
+    <stc:Classification type="de.setlevel.srmd.ISO-11010-X">
+        <stc:ClassificationEntry keyword="part">The part of the ISO-11010 relevant for model, for example 1 if ISO-11010-1</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="plant">The relevant nomencalture convention for the plant part of the model if applicable, for example a Model of the Brake physical system: BRM2.2</stc:ClassificationEntry>
+        <stc:ClassificationEntry keyword="controller">The relevant nomencalture convention for the controller part of the model if applicable, for example a Model of the Brake controller system: BRC2.1</stc:ClassificationEntry>
+    </stc:Classification>
+</srmd:SimulationResourceMetaData>

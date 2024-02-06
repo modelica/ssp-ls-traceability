@@ -1,0 +1,700 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<stmd:SimulationTaskMetaData version="1.0.0-beta2" name="DC Motor Example" GUID="56492e34-4b89-4961-b44b-a169df719f2a" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2024-02-06T13:21:38Z" xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon" xmlns:stc="http://ssp-standard.org/SSPTraceability1/SSPTraceabilityCommon" xmlns:stmd="http://ssp-standard.org/SSPTraceability1/SimulationTaskMetaData" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <stmd:GeneralInformation>
+        <stc:DerivationChain>
+            <stc:DerivationChainEntry GUID="4754bec3-0bbf-4846-8d59-9aef55649202"/>
+            <stc:DerivationChainEntry GUID="c535b361-5b14-4a32-8b5d-0fcaf5613579" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2021-10-27T21:29:54Z"/>
+            <stc:DerivationChainEntry GUID="c5576172-ec28-41e7-90ed-0fdae96d6946" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2021-10-27T21:35:32Z"/>
+            <stc:DerivationChainEntry GUID="ade89ae8-42b9-4bb5-9d17-55c79c7debf9" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2021-10-28T15:23:34Z"/>
+            <stc:DerivationChainEntry GUID="8de26046-72c1-4b30-9a85-7eb779a79c15" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2021-10-28T17:53:25Z"/>
+            <stc:DerivationChainEntry GUID="438dd89a-ff68-4f59-a922-76fbbe30ebd2" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2021-10-30T14:52:55Z"/>
+            <stc:DerivationChainEntry GUID="0a174373-1fde-4af7-bdc0-55d4e9c25521" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2021-10-30T15:53:33Z"/>
+            <stc:DerivationChainEntry GUID="dff8376b-fa79-4645-8cb1-9bc657744c40" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2021-10-30T16:25:34Z"/>
+            <stc:DerivationChainEntry GUID="ece4b534-8192-496f-90ac-0f98cea1fc0b" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2022-01-30T15:26:41Z"/>
+            <stc:DerivationChainEntry GUID="80cde0ea-f9a1-42fa-91f5-cb2478af4605" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2022-02-01T08:43:36Z"/>
+            <stc:DerivationChainEntry GUID="834748c5-fe6b-4505-b830-b7aead1bc218" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2022-02-12T15:44:22Z"/>
+            <stc:DerivationChainEntry GUID="67323f1e-e90d-4ef6-b829-8bf6aab382ef" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2022-02-17T17:54:07Z"/>
+            <stc:DerivationChainEntry GUID="c4d334b9-4286-471f-9181-e3e68b0be0b7" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2022-04-09T17:09:17Z"/>
+            <stc:DerivationChainEntry GUID="f9f023b2-e786-4bbf-add3-c72cc64f2156" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2022-04-09T17:24:14Z"/>
+            <stc:DerivationChainEntry GUID="6fae0e56-6d46-45bb-bc27-e57cffc63416" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2022-04-09T17:30:36Z"/>
+            <stc:DerivationChainEntry GUID="c8a9126c-9595-43be-bc33-c19ed7e0c220" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2022-04-19T14:26:11Z"/>
+            <stc:DerivationChainEntry GUID="00c5a1ba-0380-44e6-bf0c-27644eb1b4a7" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2022-04-19T14:41:13Z"/>
+            <stc:DerivationChainEntry GUID="e6d036c7-8c17-40fc-80d0-547bb0e374e1" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2022-04-19T15:02:36Z"/>
+            <stc:DerivationChainEntry GUID="a28b44db-3624-437e-8333-657d56d5db31" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2022-04-19T15:44:02Z"/>
+            <stc:DerivationChainEntry GUID="c86db4f0-8fde-4afb-af46-8e43a9b29659" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2022-04-19T15:59:26Z"/>
+            <stc:DerivationChainEntry GUID="4d1e6935-dcc9-48a5-844a-5cadfcb49f12" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2022-04-19T16:38:23Z"/>
+            <stc:DerivationChainEntry GUID="fc6b8856-66c4-40e4-99b2-f2bb6862a79d" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2022-04-20T13:56:00Z"/>
+            <stc:DerivationChainEntry GUID="4070a8c6-cee6-46e5-9ea4-4a3994a47533" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2022-04-20T15:03:17Z"/>
+            <stc:DerivationChainEntry GUID="e620683c-202c-485c-9f29-eebd34038bf8" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2022-04-20T15:16:47Z"/>
+            <stc:DerivationChainEntry GUID="691874ee-c46d-43ab-9f4e-2fb9c484727f" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2022-06-27T15:47:33Z"/>
+            <stc:DerivationChainEntry GUID="a8ecae9b-4448-4d28-a6b7-bf25fc1064c8" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2022-06-27T18:21:18Z"/>
+            <stc:DerivationChainEntry GUID="c98d8ff3-a794-43d0-87e0-c83136ecc08a" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2022-06-28T15:22:21Z"/>
+            <stc:DerivationChainEntry GUID="e8ebc11f-a534-4b54-8125-2a3a889494bc" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2022-07-01T05:54:29Z"/>
+            <stc:DerivationChainEntry GUID="d6750697-905e-4041-8e97-5f3eec83ccd0" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2022-07-08T11:34:19Z"/>
+            <stc:DerivationChainEntry GUID="e4b96ac7-7b1a-49c6-9a68-0fa4e57c44b5" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2022-07-21T12:23:26Z"/>
+            <stc:DerivationChainEntry GUID="18aed96e-a0db-4f73-9980-08ceca627b50" generationTool="orchideo | easySSP (eXXcellent solutions GmbH)" generationDateAndTime="2023-10-04T07:29:10Z"/>
+        </stc:DerivationChain>
+        <stc:Resource kind="document" type="text/markdown" source="0-Request-CSP-AdminInformation.md" id="d139cf288-d692-4f7a-9166-fa01e032e61b"/>
+        <stc:Classification type="de.setlevel.srmd.simulation-meta-data">
+            <stc:ClassificationEntry keyword="administrative.overall-project.ID">ID, URL of overall product, project</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.ordering-project.Name">The product/project information expresses the in-house description of a product</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.overall-project.SelfexplainigName">The meta data provides a self-explaining name which allows a natural mapping to the product/project</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.ordering-project.ID">ID, URL of ordering project</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.ordering-project.Name">description of the commissioning project</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.ordering-project.SelfexplainigName">The meta data provides a self-explaining name which allows a natural mapping to the parent product/project</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.this-element.ID">ID, URL of this element</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.this-element.Name">description of this element</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.this-element.SelfexplainigName">The meta data provides a self-explaining name which allows a natural mapping to this element</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.this-element.Version">Version of this element</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.this-element.Life-cycle">Life cycle of this element. drafted, defined, accepted, in progress, fulfilled, archived, rejected</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.connected-Process.ID">ID, URL of connected Process. The unique number for the simulation task to identify the simulation order (e.g. SPDM ID)</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.connected-Process.Name">description of the connected Process</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.connected-Process.SelfexplainigName">The meta data provides a self-explaining name which allows a natural mapping to the connected Process</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.contact.insert-name">The person who processes the simulation order and submits it to the system</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.date.submitted-system">The date at which this element (i.e. request, task) is submitted to the system</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.date.order">The order date represents the date at which the service shall start</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.date.delivery">The date at which the simulation service shall be completed</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.contact.customer-person">The person of the company and entity who placed the simulation order to obtain a simulation service</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.contact.customer-entity">The company and entity of the person who placed the simulation order to obtain a simulation service</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.contact.customer-signature">Digital signature of the person of the company and entity who placed the simulation order to obtain a simulation service</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.contact.contractor-person">The person of the company and entity who accept the simulation order to obtain a simulation service</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.contact.contractor-entity">The company and entity of the person who accept the simulation order to obtain a simulation service</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.contact.contractor-signature">Digital signature of the person of the company and entity who accept the simulation order to obtain a simulation service</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.overall-project.ID">P987658</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.ordering-project.Name">Electro Motor Mild Hybrid Variant AAA-55</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.overall-project.SelfexplainigName">Mild Hybrid, Variant</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.ordering-project.ID">E98765834</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.ordering-project.SelfexplainigName">Electro Motor Mild Hybrid Variant AAA-55</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.this-element.ID"> R424242</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.this-element.Name">Simulation Request for Electro Motor Mild Hybrid Variant AAA-55</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.this-element.SelfexplainigName">Simulation Request, Electro Motor, Mild Hybrid, Variant</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.this-element.Version">Version 42</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.this-element.Life-cycle"></stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.connected-Process.ID">R424242</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.connected-Process.Name">Simulation Request for Electro Motor Mild Hybrid Variant AAA-55</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.connected-Process.SelfexplainigName">Simulation Request, Electro Motor, Mild Hybrid, Variant</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.contact.insert-name">FG/SIM P. Bauer</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.date.submitted-system">2022.02.01 14.25.30</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.date.order">2022.01.30 12.30</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.date.delivery">2022.03.30 12.30</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.contact.customer-person">Carl Miller</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.contact.customer-entity">Company A Dep X</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.contact.customer-signature"></stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.contact.contractor-person">Albert Huber</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.contact.contractor-entity">Company B Dep SIM</stc:ClassificationEntry>
+            <stc:ClassificationEntry keyword="administrative.contact.contractor-signature"></stc:ClassificationEntry>
+        </stc:Classification>
+    </stmd:GeneralInformation>
+    <stmd:AnalysisPhase>
+        <stmd:AnalyzeSimulationTaskAndObjectives>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Request-CSP-Objectives-DC-Motor.md" id="ddc43aff1-7785-4f77-b26e-3448a05ad63c"/>
+                <stc:Resource kind="document" type="application/pdf" source="1-1-DC-Motor-MildHybrid.pdf" id="d87a85849-98e1-4be2-baa6-37da2b73e61f"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Execution.md" id="ddb213fbe-22e4-4d74-bd2e-36182365cf0f"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Outputs.md" id="d0403571f-1090-4ae1-94d9-32e7201a9fc4"/>
+            </stc:Output>
+            <stc:Rationale>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Rationale.md" id="da95ed7cb-8424-45bc-ae34-2f53e560c20e"/>
+            </stc:Rationale>
+            <stc:LifeCycleInformation/>
+            <stc:Classification type="de.setlevel.srmd.simulation-meta-data">
+                <stc:ClassificationEntry keyword="objectives.order-type">order type determines the ordered engineering services (e.g. simulation, modeling, test, risk assessment service)</stc:ClassificationEntry>
+                <stc:ClassificationEntry keyword="objectives.system-under-test">Specification of the sample type (e.g. A-sample, B-sample) or the SW status (e.g. CAT and version numbers) which is subject to the simulation, modeling (System under Test SuT)</stc:ClassificationEntry>
+                <stc:ClassificationEntry keyword="objectives.engineering-task.top-level">Description of the top-level engineering task (e.g. development of an AD driving function based on camera signals)</stc:ClassificationEntry>
+                <stc:ClassificationEntry keyword="objectives.engineering-task.specific">Description of the specific engineering task (e.g. detection of critical occlusions when turning right with pedestrians)</stc:ClassificationEntry>
+                <stc:ClassificationEntry keyword="objectives.simulation-service.target">The simulation service target details the scope of the ordered simulation service with respect to the engineering task (e.g. assessment of the camera resolution by simulation)</stc:ClassificationEntry>
+                <stc:ClassificationEntry keyword="objectives.simulation-service.objectives">Simulation objectives describe the quantities of interest and the target values (e.g. the distance between vehicle and pedestrian must be higher than 1.5m)</stc:ClassificationEntry>
+                <stc:ClassificationEntry keyword="objectives.simulation-service.explanation">Explanation why simulation was chosen as solution approach for the engineering task</stc:ClassificationEntry>
+                <stc:ClassificationEntry keyword="objectives.modeling-service.target">The modeling service target details the scope of the ordered mo service with respect to the simulation task</stc:ClassificationEntry>
+                <stc:ClassificationEntry keyword="objectives.modeling-service.objectives">Modeling objectives describe the quantities of interest and the target values</stc:ClassificationEntry>
+                <stc:ClassificationEntry keyword="objectives.quality-aspects">Quality aspects according to the criticality of the decision of the simulation task.</stc:ClassificationEntry>
+                <stc:ClassificationEntry keyword="objectives.verification">Verification aspects according to the criticality of the decision of the simulation task.</stc:ClassificationEntry>
+                <stc:ClassificationEntry keyword="objectives.validation">Validation aspects according to the criticality of the decision of the simulation task</stc:ClassificationEntry>
+                <stc:ClassificationEntry keyword="objectives.order-type">simulation</stc:ClassificationEntry>
+                <stc:ClassificationEntry keyword="objectives.engineering-task.top-level">A variant of a mild hybrid drive based on the DDC platform is to be developed.
+This application is a low cost variant.</stc:ClassificationEntry>
+                <stc:ClassificationEntry keyword="objectives.engineering-task.specific">The sub-task here is to make a pre-selection for a suitable DC electric motor in the early phase of the project. 
+    - It is to be examined whether the DC motor with the type part number XY12346 is suitable in principle. 
+    - Rationale: The DC motor type part number XY12345 is already used in automotive projects and meets the specific requirements for the application (temperature, vibration resistance, ...).</stc:ClassificationEntry>
+                <stc:ClassificationEntry keyword="objectives.simulation-service.target">- Implementation and execution of a simulation based on a simple DC motor model. 
+  - The effects which should be considered and neglected should be agreed on with experts.</stc:ClassificationEntry>
+                <stc:ClassificationEntry keyword="objectives.simulation-service.objectives">The DC motor must be able to accelerate from 0 to 1000 rad/s within 1 s at 48 V applied voltage and a load torque of 1 Nm.</stc:ClassificationEntry>
+                <stc:ClassificationEntry keyword="objectives.simulation-service.explanation">Rationale: Same approach in similar engineering tasks was performed successfully.</stc:ClassificationEntry>
+                <stc:ClassificationEntry keyword="objectives.modeling-service.target"></stc:ClassificationEntry>
+                <stc:ClassificationEntry keyword="objectives.modeling-service.objectives"></stc:ClassificationEntry>
+                <stc:ClassificationEntry keyword="objectives.quality-aspects">- Potential risk and damage in case of misjudgement limited (additional development effort &lt; 4 person weeks). 
+  - Sufficient validation of the results and tools used by expert opinion and plausibility tests.</stc:ClassificationEntry>
+                <stc:ClassificationEntry keyword="objectives.verification"></stc:ClassificationEntry>
+                <stc:ClassificationEntry keyword="objectives.validation"></stc:ClassificationEntry>
+                <stc:ClassificationEntry keyword="objectives.system-under-test">DC motor with the type part number XY12346</stc:ClassificationEntry>
+            </stc:Classification>
+        </stmd:AnalyzeSimulationTaskAndObjectives>
+        <stmd:VerifyAnalysis>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Outputs.md" id="d2685c4d2-1643-4b53-b080-a3b159a89d30"/>
+                <stc:Resource kind="document" type="application/pdf" source="1-1-GP-DC-Motor-MildHybrid.pdf" id="d8b532204-412f-49f0-9b0c-90a9d84e815c"/>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Rationale.md" id="d467f734b-e1b7-41f6-801f-eaa3cecb7a8f"/>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Request-CSP-Objectives-DC-Motor.md" id="d5d80d40a-14b3-4822-a7f2-d4a4af9819bf"/>
+                <stc:Resource kind="document" type="text/markdown" source="0-Request-CSP-AdminInformation.md" id="d41aae674-42e0-4255-af27-fc3001e5a4b5"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="1-2-Analyze-Execution.md" id="dde5ff0b7-c9ab-451f-81d2-84b9d5024c21"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="1-2-Analyze-Outputs.md" id="dcd8a1b77-91bf-4364-83f1-344045343067"/>
+            </stc:Output>
+            <stc:Rationale>
+                <stc:Resource kind="document" type="text/markdown" source="1-2-Analyze-Rationale.md" id="d2e486c29-3bb4-4300-9bec-5fa0f1eeadaf"/>
+            </stc:Rationale>
+            <stc:LifeCycleInformation/>
+        </stmd:VerifyAnalysis>
+        <stc:LifeCycleInformation/>
+    </stmd:AnalysisPhase>
+    <stmd:RequirementsPhase>
+        <stmd:DefineModelRequirements>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Outputs.md" id="d95bed4fe-24dc-49f5-8af7-417e801c0b98"/>
+                <stc:Resource kind="document" type="application/pdf" source="1-1-GP-DC-Motor-MildHybrid.pdf" id="d65557652-c814-4360-a22a-68206fc81871"/>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Inputs.md" id="dde3ace9d-3183-4bcc-bd19-e7f6006c9c54"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-2-Request-CSP-Requirements-Inputs.md" id="d4349a9be-1368-4194-9c5e-fbe4b4e16fcd"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="2-2-Requirements-Execution.md" id="d7c1432ed-80c0-4240-91c9-3aeda3add104"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="2-2-Requirements-Outputs.md" id="deb29a43f-4941-4246-bc7d-b82c9fa43a29"/>
+            </stc:Output>
+            <stc:Rationale/>
+            <stc:LifeCycleInformation/>
+            <stc:Classification type="de.setlevel.srmd.simulation-meta-data">
+                <stc:ClassificationEntry keyword="requirements.models.xx">order type determines XX (see SRMD Metadata, sensor, actuator,...)</stc:ClassificationEntry>
+            </stc:Classification>
+            <stc:Classification type="de.bosch.srmd.spdm">
+                <stc:ClassificationEntry keyword="requirements.models.valve">special effect concerning valve modeling. (only for showing how to use different classification types)</stc:ClassificationEntry>
+            </stc:Classification>
+            <stc:Classification type="de.bosch.srmd.concerthall">
+                <stc:ClassificationEntry keyword="requirements.models.circuit">special aspects for circuit modeling (only for showing how to use different classification types)</stc:ClassificationEntry>
+            </stc:Classification>
+        </stmd:DefineModelRequirements>
+        <stmd:DefineParameterRequirements>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Outputs.md" id="db09d4c89-419c-4b46-8768-b5692f6fb617"/>
+                <stc:Resource kind="document" type="application/pdf" source="1-1-GP-DC-Motor-MildHybrid.pdf" id="dc3424b87-e34a-4404-a233-27811e121f52"/>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Inputs.md" id="d0dd6d04d-7921-4f7b-9597-57244911d67d"/>
+                <stc:Resource kind="document" type="application/pdf" source="2-3-Request-CSP-GP-DC-Motor-Datasheet.pdf" id="df69b1fdb-7191-4810-be89-63127d5c50d4"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-3-Request-CSP-Requirements-Inputs.md" id="d4e9ba7fd-d85d-4d44-aed0-2397a09867cc"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="2-3-Requirements-Execution.md" id="d1f57544d-d2ef-4c40-bf4a-6dbade0b9c2f"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="2-3-Requirements-Outputs.md" id="d51179eff-ab4f-4dc6-8878-e59796e73a3d"/>
+                <stc:Resource kind="document" type="application/pdf" source="2-3-GP-DC-Motor-Datasheet.pdf" id="dd4caab29-8627-4d5f-86de-5c9c871f87c3"/>
+            </stc:Output>
+            <stc:Rationale/>
+            <stc:LifeCycleInformation/>
+            <stc:Classification type="de.setlevel.srmd.simulation-meta-data">
+                <stc:ClassificationEntry keyword="requirements.parameters.xx">Connection to specified measurement, data sheet</stc:ClassificationEntry>
+            </stc:Classification>
+        </stmd:DefineParameterRequirements>
+        <stmd:DefineSimulationEnvironmentRequirements>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Outputs.md" id="dec2cb9b2-db38-4ee4-b353-2e100a194f7b"/>
+                <stc:Resource kind="document" type="application/pdf" source="1-1-GP-DC-Motor-MildHybrid.pdf" id="dd3de0980-44c3-48fe-8cb9-696f4045008e"/>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Inputs.md" id="d800fa280-39fc-4f68-834b-a6d25094b790"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-5-Request-CSP-Requirements-Inputs.md" id="d72ee03d1-ca64-4d5a-95e4-e0ab6d87dbef"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="2-5-Requirements-Execution.md" id="db317c05a-3e0d-442e-b4a7-ad203059287d"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="2-5-Requirements-Outputs.md" id="d31743af3-a40a-4135-a2df-7406523a00f8"/>
+            </stc:Output>
+            <stc:Rationale/>
+            <stc:LifeCycleInformation/>
+            <stc:Classification type="de.setlevel.srmd.simulation-meta-data">
+                <stc:ClassificationEntry keyword="requirements.simulationenvironment.xx">i.e. type of tool (i.e. capability of FMI cosimulation)</stc:ClassificationEntry>
+            </stc:Classification>
+        </stmd:DefineSimulationEnvironmentRequirements>
+        <stmd:DefineSimulationIntegrationRequirements>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Outputs.md" id="d8dd1ea31-543e-475a-a9ca-76d5331618c5"/>
+                <stc:Resource kind="document" type="application/pdf" source="1-1-GP-DC-Motor-MildHybrid.pdf" id="d36202363-70a6-4ff2-b05d-cc761ea9306c"/>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Inputs.md" id="d958f927e-528a-4b2b-b69d-bcd6156f1c3f"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-1-Request-CSP-Requirements-Inputs.md" id="d6bcafcf1-0074-4ba9-9ebe-869b636838f6"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="2-1-Requirements-Execution.md" id="df6386c41-ac8f-4b70-a116-f91f59926e6c"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="2-1-Requirements-Outputs.md" id="d2af0fc64-9ac4-460e-b463-0e0e86b0e132"/>
+            </stc:Output>
+            <stc:Rationale/>
+            <stc:LifeCycleInformation/>
+        </stmd:DefineSimulationIntegrationRequirements>
+        <stmd:DefineTestCaseRequirements>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Outputs.md" id="d172a7939-7449-4011-866e-f5ae82ce8264"/>
+                <stc:Resource kind="document" type="application/pdf" source="1-1-GP-DC-Motor-MildHybrid.pdf" id="d2242fe58-871e-4d96-bd61-7b97993451e1"/>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Inputs.md" id="d6b8b55d5-51d5-4f50-8063-a5629d6de144"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-4-Request-CSP-Requirements-Inputs.md" id="d165a26ae-d3c3-4645-b1db-35ef033a484b"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="2-4-Requirements-Execution.md" id="d26665886-56d0-44e4-b5b8-86eef235ff58"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="2-4-Requirements-Outputs.md" id="dcb6e7848-8c21-4b5a-af4c-2af4ef45a674"/>
+            </stc:Output>
+            <stc:Rationale/>
+            <stc:LifeCycleInformation/>
+        </stmd:DefineTestCaseRequirements>
+        <stmd:DefineQualityAssuranceRequirements>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Outputs.md" id="d1f3a5c51-1315-414e-a5e5-06ea4fa4ad7b"/>
+                <stc:Resource kind="document" type="application/pdf" source="1-1-GP-DC-Motor-MildHybrid.pdf" id="dacba592b-88a3-4839-a77c-3a90a88dee57"/>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Inputs.md" id="d4bfccd77-c338-42b6-9684-e95c9e0b2be9"/>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Rationale.md" id="dd6d5d907-0c44-4896-a4e6-c3b01ecfceba"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="2-6-Requirements-Execution.md" id="dd5fd3222-cb80-4fbe-aabf-5147f6ea43ca"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="2-6-Requirements-Outputs.md" id="d993a9af6-e1ef-4aab-a6e1-0e25389098e0"/>
+            </stc:Output>
+            <stc:Rationale/>
+            <stc:LifeCycleInformation/>
+        </stmd:DefineQualityAssuranceRequirements>
+        <stmd:VerifyRequirements>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="2-2-Requirements-Outputs.md" id="dd3c71d25-45c6-438d-9ae3-93355b50db40"/>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Outputs.md" id="d9ad0d482-1cba-4244-88f7-e9372da18500"/>
+                <stc:Resource kind="document" type="application/pdf" source="1-1-GP-DC-Motor-MildHybrid.pdf" id="d6de12064-e51c-4f21-8279-7cdc0ec76c10"/>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Inputs.md" id="ded4f9222-1f0c-4551-b341-846b727ce388"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-4-Requirements-Outputs.md" id="df450de6a-dca7-4278-aecf-f6604b7215e1"/>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Rationale.md" id="d08cfedf4-17f7-4a97-b125-1e656100283c"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-5-Requirements-Outputs.md" id="dabe06af6-f3d1-434a-a9c0-20dd298bf0f0"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-6-Requirements-Outputs.md" id="d243a6ec5-a4d7-47de-a6a1-73854584752e"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-1-Requirements-Outputs.md" id="d386bd870-f229-46e3-bf21-5c7c58b6a95f"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-3-Requirements-Outputs.md" id="d8b638786-296b-46d9-ae03-4b472cf4be13"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="2-7-Requirements-Execution.md" id="d59a023c7-f2c0-4a0e-936f-e6da3bcfb62e"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="2-7-Requirements-Outputs.md" id="d02e833f6-2330-4934-8a22-6cb752c37e91"/>
+            </stc:Output>
+            <stc:Rationale>
+                <stc:Resource kind="document" type="text/markdown" source="2-7-Requirements-Rationale.md" id="d75e43d59-7665-4024-ae6f-90d92208a21b"/>
+            </stc:Rationale>
+            <stc:LifeCycleInformation/>
+        </stmd:VerifyRequirements>
+        <stc:LifeCycleInformation/>
+    </stmd:RequirementsPhase>
+    <stmd:DesignPhase>
+        <stmd:DefineModelDesignSpecification>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="2-2-Requirements-Outputs.md" id="dec0639e2-6274-4d28-9e1a-b5c094b00589"/>
+                <stc:Resource kind="document" type="text/markdown" source="3-2-Request-CSP-Design-Inputs.md" id="d8fa2cc4e-33da-46ea-acb2-c78d136af22a"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="3-2-Design-Execution.md" id="d334a7862-b338-48ce-a2a6-938fd315aa57"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="3-2-Design-Outputs.md" id="d5c33fce5-4e6b-498d-9d0e-4040e5833144"/>
+                <stc:Resource kind="document" type="application/x-ssp-definition" source="Design-Specification-DC-Motor-Model.ssd" id="d7a4c65b2-4c2d-44e5-89c8-1c000b81486a"/>
+            </stc:Output>
+            <stc:Rationale/>
+            <stc:LifeCycleInformation/>
+            <stc:Classification type="de.setlevel.srmd.simulation-meta-data">
+                <stc:ClassificationEntry keyword="design.models.xx">model type (copy from model SRMD)</stc:ClassificationEntry>
+            </stc:Classification>
+        </stmd:DefineModelDesignSpecification>
+        <stmd:DefineParameterDesignSpecification>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="2-3-Requirements-Outputs.md" id="d66c25811-9779-4469-892c-4694ccd7db12"/>
+                <stc:Resource kind="document" type="text/markdown" source="3-3-Request-CSP-Design-Inputs.md" id="df1259996-6085-44c7-85b9-79ffa394ecce"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="3-3-Design-Execution.md" id="dff6cc6f4-f009-4391-b372-fa0b1467faad"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="3-3-Design-Outputs.md" id="d23beb928-8dca-450c-8d43-bd115626c57f"/>
+            </stc:Output>
+            <stc:Rationale>
+                <stc:Resource kind="document" type="text/markdown" source="3-3-Design-Rationale.md" id="d41c33740-0252-46fd-b260-ce65e15c0410"/>
+            </stc:Rationale>
+            <stc:LifeCycleInformation/>
+            <stc:Classification type="de.setlevel.srmd.simulation-meta-data">
+                <stc:ClassificationEntry keyword="design.parameters.xx">i.e. name of paremetrization request (FDX)</stc:ClassificationEntry>
+            </stc:Classification>
+        </stmd:DefineParameterDesignSpecification>
+        <stmd:DefineSimulationEnvironmentDesignSpecification>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="2-5-Requirements-Outputs.md" id="dfc8e7af7-a513-469f-9e37-da7359447d8e"/>
+                <stc:Resource kind="document" type="text/markdown" source="3-5-Request-CSP-Design-Inputs.md" id="d361efb8b-8008-42d7-8392-49b1fc22f80e"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="3-5-Design-Execution.md" id="d0e86bb91-1281-463e-9cdb-6b7b6d067a2a"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="3-5-Design-Outputs.md" id="d065b7ef0-abb4-4d20-a541-8caa16f734ac"/>
+            </stc:Output>
+            <stc:Rationale>
+                <stc:Resource kind="document" type="text/markdown" source="3-5-Design-Rationale.md" id="d33c84175-268d-4a8f-a65b-bd6746789889"/>
+            </stc:Rationale>
+            <stc:LifeCycleInformation/>
+            <stc:Classification type="de.setlevel.srmd.simulation-meta-data">
+                <stc:ClassificationEntry keyword="design.simulationenvironment.xx">i.e. name and version of tool</stc:ClassificationEntry>
+            </stc:Classification>
+        </stmd:DefineSimulationEnvironmentDesignSpecification>
+        <stmd:DefineSimulationIntegrationDesignSpecification>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="2-1-Requirements-Outputs.md" id="d5e57a26c-d118-4cb4-95d7-0434087b0366"/>
+                <stc:Resource kind="document" type="text/markdown" source="3-1-Request-CSP-Design-Inputs.md" id="d3ac53639-3b9c-44c5-a52b-f836da6f1586"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="3-1-Design-Execution.md" id="d49017eba-c8a4-4f3a-bfcf-c2f8e5087e1b"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="3-1-Design-Outputs.md" id="d86234840-dc22-42a9-99ef-22d91ea2a21d"/>
+            </stc:Output>
+            <stc:Rationale/>
+            <stc:LifeCycleInformation/>
+        </stmd:DefineSimulationIntegrationDesignSpecification>
+        <stmd:DefineTestCaseDesignSpecification>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="2-4-Requirements-Outputs.md" id="d7909aa72-2c32-47aa-aab5-47989433af6d"/>
+                <stc:Resource kind="document" type="text/markdown" source="3-4-Request-CSP-Design-Inputs.md" id="d1c578762-5c31-4c07-b26f-d29c6bdeb364"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="3-4-Design-Execution.md" id="d75c1486e-9231-43bf-8ed9-771b479aa11e"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="3-4-Design-Outputs.md" id="d24258729-122f-453f-92e1-f1d421c4c459"/>
+            </stc:Output>
+            <stc:Rationale>
+                <stc:Resource kind="document" type="text/markdown" source="3-4-Design-Rationale.md" id="df4f510cd-c382-4227-ba47-f357705c8d06"/>
+            </stc:Rationale>
+            <stc:LifeCycleInformation/>
+        </stmd:DefineTestCaseDesignSpecification>
+        <stmd:DefineQualityAssuranceDesignSpecification>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="2-2-Requirements-Outputs.md" id="d72e88055-3f81-49fe-b67f-b766b7812a7d"/>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Outputs.md" id="d5402f802-436f-4e0b-a94f-e68f5fc24ef5"/>
+                <stc:Resource kind="document" type="application/pdf" source="1-1-GP-DC-Motor-MildHybrid.pdf" id="dafecf0f2-ea73-4fca-9fd0-dc4222acab7b"/>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Inputs.md" id="d1a0e30e3-7eb4-4518-bc6d-46a767d8828e"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-4-Requirements-Outputs.md" id="db1ec6e93-c482-46d3-b8c6-cb9b9fb8e00c"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-5-Requirements-Outputs.md" id="d84e1bd48-918d-45f6-8e63-2e79e8fa3275"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-6-Requirements-Outputs.md" id="d1c458597-cb3f-459d-ae3b-221eed68ce8a"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-1-Requirements-Outputs.md" id="db0bfe95e-6069-484b-9670-dee79e507951"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-3-Requirements-Outputs.md" id="d26a4931a-6932-4ab0-be90-174cb1544c80"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-7-Requirements-Outputs.md" id="dc79f7dfa-6e6b-4081-88c9-947f9c1a66af"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="3-6-Design-Execution.md" id="dd4f57377-93d4-4d0a-bc7f-368e48cde166"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="3-6-Design-Outputs.md" id="d9588a03a-76ea-459c-8d27-a1fab0a36eb3"/>
+            </stc:Output>
+            <stc:Rationale/>
+            <stc:LifeCycleInformation/>
+        </stmd:DefineQualityAssuranceDesignSpecification>
+        <stmd:VerifyDesignSpecification>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="3-4-Design-Outputs.md" id="d10639eff-151d-4da1-83b9-bb4a6ddc94d8"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-2-Requirements-Outputs.md" id="d7f61b6b8-df6e-4a1a-aee1-82762303a033"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-4-Requirements-Outputs.md" id="db99b805e-d5b0-42f8-8172-762846954752"/>
+                <stc:Resource kind="document" type="text/markdown" source="3-5-Design-Outputs.md" id="d9a0c2773-f729-4c8c-bee3-55dda963291f"/>
+                <stc:Resource kind="document" type="text/markdown" source="3-1-Design-Outputs.md" id="d047be5e1-aa7d-4a74-8612-262b4921c489"/>
+                <stc:Resource kind="document" type="text/markdown" source="3-2-Design-Outputs.md" id="dbe0de7e2-16ca-492f-b332-d1984498d678"/>
+                <stc:Resource kind="document" type="text/markdown" source="1-2-Analyze-Rationale.md" id="d920fbe65-fbf9-45f7-a71d-d3f5af743413"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-5-Requirements-Outputs.md" id="d20cabd99-7be3-486f-8876-0ca67626a1f8"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-6-Requirements-Outputs.md" id="db993f454-639d-4490-844e-88204d11d746"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-3-Requirements-Execution.md" id="dc289a75d-cc05-45b5-b7c4-b59a8cb61f6d"/>
+                <stc:Resource kind="document" type="text/markdown" source="3-6-Design-Outputs.md" id="d493bf196-dc24-421d-b925-353386edd8f3"/>
+                <stc:Resource kind="document" type="text/markdown" source="3-3-Design-Outputs.md" id="d4e9d4e67-e3a2-4ee6-8257-476262efec3d"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-1-Requirements-Outputs.md" id="d2400646b-fc54-4216-a609-0aea030ad03a"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-7-Requirements-Outputs.md" id="d65795384-8035-4841-b247-7bbed4ed6de0"/>
+                <stc:Resource kind="document" type="text/markdown" source="1-2-Analyze-Outputs.md" id="d2b9b342b-c741-4675-9e31-2bfbecef5156"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="3-7-Design-Execution.md" id="d614d3fa2-3980-4dc1-b190-9ee51d936974"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="3-7-Design-Outputs.md" id="da3979716-2aa3-4032-ae9e-cbbf4bdfd034"/>
+            </stc:Output>
+            <stc:Rationale>
+                <stc:Resource kind="document" type="text/markdown" source="3-7-Design-Rationale.md" id="dbc0f56da-8f86-41e2-89a5-2f6b2dba225e"/>
+            </stc:Rationale>
+            <stc:LifeCycleInformation/>
+        </stmd:VerifyDesignSpecification>
+        <stc:LifeCycleInformation/>
+    </stmd:DesignPhase>
+    <stmd:ImplementationPhase>
+        <stmd:ImplementModel>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="3-2-Design-Outputs.md" id="d0183001f-a164-4301-8e50-abc21683ec1e"/>
+                <stc:Resource kind="document" type="application/x-ssp-definition" source="../../Design-Specification-DC-Motor-Model.ssd" id="d2544220c-dbd9-4eca-81d4-caf932c4b996"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="4-1-Implement-Execution.md" id="d40c4d4a2-72e6-43b9-b0ca-724a530624e5"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="4-1-Implement-Outputs.md" id="d11f362e6-e521-4054-9602-d665aaef48a1"/>
+                <stc:Resource kind="document" type="application/x-srmd-meta-data" source="DC-Motor-el.srmd" id="df1828da9-d155-43a9-9720-55ce2562f115">
+                    <stc:Classification type="de.setlevel.srmd.simulation-meta-data">
+                        <stc:ClassificationEntry keyword="model.name">DC-Motor-el</stc:ClassificationEntry>
+                        <stc:ClassificationEntry keyword="model.version">GPsim2.03</stc:ClassificationEntry>
+                    </stc:Classification>
+                </stc:Resource>
+                <stc:Resource kind="document" type="application/x-srmd-meta-data" source="DC-Motor-mech.srmd" id="ddef19a30-2666-4ddf-b892-f0bc3a194ac8">
+                    <stc:Classification type="de.setlevel.srmd.simulation-meta-data">
+                        <stc:ClassificationEntry keyword="model.name">DC-Motor-mech</stc:ClassificationEntry>
+                        <stc:ClassificationEntry keyword="model.version">GPsim2.03</stc:ClassificationEntry>
+                    </stc:Classification>
+                </stc:Resource>
+                <stc:Resource kind="document" type="application/x-srmd-meta-data" source="DC-Motor-MH48.srmd" id="d5544ac54-5533-4c41-a620-29674a40087a">
+                    <stc:Classification type="de.setlevel.srmd.simulation-meta-data">
+                        <stc:ClassificationEntry keyword="actuator.manufacturer.partnumber">XY12345</stc:ClassificationEntry>
+                        <stc:ClassificationEntry keyword="actuator.version">C41</stc:ClassificationEntry>
+                        <stc:ClassificationEntry keyword="model.name">DC-Motor</stc:ClassificationEntry>
+                        <stc:ClassificationEntry keyword="model.version">GPsim2.03</stc:ClassificationEntry>
+                    </stc:Classification>
+                </stc:Resource>
+                <stc:Resource kind="document" type="application/x-srmd-meta-data" source="Stimuli.srmd" id="d71be9e76-d9da-425b-bc71-e9a10dc88ac7">
+                    <stc:Classification type="de.setlevel.srmd.simulation-meta-data">
+                        <stc:ClassificationEntry keyword="model.name">Stimuli</stc:ClassificationEntry>
+                        <stc:ClassificationEntry keyword="model.version">Stimuli2.03</stc:ClassificationEntry>
+                    </stc:Classification>
+                </stc:Resource>
+                <stc:Resource kind="document" type="image/png" source="Screenshot-accelerated-mass.png" id="d33b7ac34-4621-4ffd-8d55-dd183a5b5b27"/>
+            </stc:Output>
+            <stc:Rationale/>
+            <stc:LifeCycleInformation/>
+            <stc:Classification type="de.setlevel.srmd.simulation-meta-data">
+                <stc:ClassificationEntry keyword="implementation.model.xx">i.e. name and version of simulation model</stc:ClassificationEntry>
+            </stc:Classification>
+        </stmd:ImplementModel>
+        <stmd:ImplementParameter>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="3-3-Design-Outputs.md" id="d23544c6f-7491-4921-a1a8-56908cde28df"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="4-2-Implement-Execution.md" id="d3352cb9b-f130-445b-8d72-6536c7555981"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="4-2-Implement-Outputs.md" id="db112c6e8-4603-49aa-b339-58b99eb7a72d"/>
+            </stc:Output>
+            <stc:Rationale/>
+            <stc:LifeCycleInformation/>
+            <stc:Classification type="de.setlevel.srmd.simulation-meta-data">
+                <stc:ClassificationEntry keyword="implementation.parameters.xx">name and version of parameter (set)</stc:ClassificationEntry>
+            </stc:Classification>
+        </stmd:ImplementParameter>
+        <stmd:ImplementSimulationEnvironment>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="3-5-Design-Outputs.md" id="d27fddac5-e86b-43e1-b3ba-50f2a2f5e2d8"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="4-4-Implement-Execution.md" id="d64aef441-9bd4-4ac4-bb1f-945ea017a897"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="4-4-Implement-Outputs.md" id="dad2678f5-1506-4c28-84cb-529b0735def8"/>
+            </stc:Output>
+            <stc:Rationale/>
+            <stc:LifeCycleInformation/>
+            <stc:Classification type="de.setlevel.srmd.simulation-meta-data">
+                <stc:ClassificationEntry keyword="implementation.simulationenvironment.xx">i.e. name and version of simulation tool</stc:ClassificationEntry>
+            </stc:Classification>
+        </stmd:ImplementSimulationEnvironment>
+        <stmd:ImplementTestCase>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="3-4-Design-Outputs.md" id="ded519d79-abe3-4d1e-9deb-07d0892c24f7"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="4-3-Implement-Execution.md" id="d4ae4c570-f4d7-4655-b051-b89743be65df"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="4-3-Implement-Outputs.md" id="d3035eb36-323d-4349-815a-3cf8be3c14c3"/>
+            </stc:Output>
+            <stc:Rationale/>
+            <stc:LifeCycleInformation/>
+        </stmd:ImplementTestCase>
+        <stmd:IntegrateSimulation>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="4-4-Implement-Outputs.md" id="d2ef1c84c-95d0-4233-8a49-6d7ccc41e9f3"/>
+                <stc:Resource kind="document" type="text/markdown" source="3-1-Design-Outputs.md" id="d646f72f3-60e0-46e9-b9d0-4cbc33e1f171"/>
+                <stc:Resource kind="document" type="text/markdown" source="4-1-Implement-Outputs.md" id="dbe397f78-12e1-41a0-a5f2-70552a812a10"/>
+                <stc:Resource kind="document" type="text/markdown" source="4-3-Implement-Outputs.md" id="de2e2d332-04f6-44ee-afe9-bc8c18fe4fe3"/>
+                <stc:Resource kind="document" type="text/markdown" source="4-2-Implement-Outputs.md" id="d36640f28-f4eb-48a8-bb36-404226563f74"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="4-5-Implement-Execution.md" id="d693cfc9e-6d44-47ef-be3f-56c2665f9a72"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="4-5-Implement-Outputs.md" id="d1fc5353a-bceb-44fc-8979-761172beaefe"/>
+            </stc:Output>
+            <stc:Rationale/>
+            <stc:LifeCycleInformation/>
+        </stmd:IntegrateSimulation>
+        <stmd:AssureSimulationSetupQuality>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Outputs.md" id="d20763237-65c1-4fd4-9994-e432946c9972"/>
+                <stc:Resource kind="document" type="application/pdf" source="1-1-GP-DC-Motor-MildHybrid.pdf" id="d07ad8b17-3022-484b-b951-a271405da2fb"/>
+                <stc:Resource kind="document" type="text/markdown" source="3-7-Design-Outputs.md" id="d4eb61707-a31a-47d2-8ae7-8eaac1398208"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-6-Requirements-Outputs.md" id="d64f25823-4f9a-481f-b276-bd15b7ebd356"/>
+                <stc:Resource kind="document" type="text/markdown" source="4-5-Implement-Outputs.md" id="d84d452e4-1aa1-408a-be40-7f0af0ef9cd3"/>
+                <stc:Resource kind="document" type="text/markdown" source="3-6-Design-Outputs.md" id="d3743bb9c-8413-4edc-b7a7-934cf5642344"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-7-Requirements-Outputs.md" id="d8cd8ae65-f510-4c7e-8e2d-6a78d0991315"/>
+                <stc:Resource kind="document" type="text/markdown" source="1-2-Analyze-Outputs.md" id="d3d6885c1-7f56-464b-975b-c54e45e2bb27"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="4-6-Implement-Execution.md" id="d31558365-3ab4-4544-8c92-074ad683753e"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="4-6-Implement-Outputs.md" id="d8d4f4485-3f6d-4c81-9a4d-6d68de6e2d02"/>
+            </stc:Output>
+            <stc:Rationale/>
+            <stc:LifeCycleInformation/>
+        </stmd:AssureSimulationSetupQuality>
+        <stmd:DeriveSimulationSetupQualityVerdict>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="4-6-Implement-Outputs.md" id="d541d1f06-f7a0-4a0d-85a0-16cc30337332"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="4-7-Implement-Execution.md" id="df411c52a-ad68-4e66-b1d6-f288a1510799"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="4-7-Implement-Outputs.md" id="d911027aa-711a-4875-b9b1-175f1657326a"/>
+            </stc:Output>
+            <stc:Rationale/>
+            <stc:LifeCycleInformation/>
+        </stmd:DeriveSimulationSetupQualityVerdict>
+        <stc:LifeCycleInformation/>
+    </stmd:ImplementationPhase>
+    <stmd:ExecutionPhase>
+        <stmd:ExecuteSimulation>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="4-5-Implement-Outputs.md" id="d80cc1991-59f8-408b-b16d-1c200b810675"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="5-Execute-Execution.md" id="db901c2fd-e462-48be-b5db-bc938db76a6e"/>
+                <stc:Resource kind="document" type="application/json" source="simulation1/config.json" id="ddb4e5a36-0f47-4d7a-858c-86bbc860dfc5"/>
+                <stc:Resource kind="document" type="application/json" source="simulation2/config.json" id="dca12f438-e7a0-4c2a-9eae-ba7fbf37e202"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="image/png" source="Screenshot-DC-Motor-variants-R.png" id="d08276166-6537-4420-b3a6-e1a461b31d18"/>
+                <stc:Resource kind="document" type="text/markdown" source="5-Execute-Outputs.md" id="da16622b0-322f-4cec-8dfe-9b6faf6c8207"/>
+                <stc:Resource kind="result" type="text/plain" source="simulation1/run1/results.csv" id="d2d8a8628-ed50-4dcb-b1bf-0961aa294f48"/>
+                <stc:Resource kind="result" type="text/plain" source="simulation1/run1/results_sampled.csv" id="de246324d-dd28-435b-b892-882b966e074d"/>
+                <stc:Resource kind="result" type="text/plain" source="simulation1/run1/generate.log" id="d5008817b-c837-47f9-ae12-b1a71c657d3b"/>
+                <stc:Resource kind="result" type="text/plain" source="simulation1/run1/simulate.log" id="de4554a38-33d3-4690-bd92-bf7eec34ce0b"/>
+                <stc:Resource kind="result" type="text/plain" source="simulation1/run2/results.csv" id="df7e57317-1029-4ff2-aaa2-f4770a7359d9"/>
+                <stc:Resource kind="result" type="text/plain" source="simulation1/run2/results_sampled.csv" id="ddc14a455-6748-46ed-8484-146785e04530"/>
+                <stc:Resource kind="result" type="text/plain" source="simulation1/run2/generate.log" id="ded1103e0-992d-4467-9166-fe6f180899c7"/>
+                <stc:Resource kind="result" type="text/plain" source="simulation1/run2/simulate.log" id="db8864b2f-d8f4-4a5b-b3cb-931c166490d3"/>
+                <stc:Resource kind="result" type="text/plain" source="simulation1/run3/results.csv" id="db08a59ff-231c-437a-ae55-9becaea57ad5"/>
+                <stc:Resource kind="result" type="text/plain" source="simulation1/run3/results_sampled.csv" id="d397d239e-8250-40e2-b53e-2251ba3438a4"/>
+                <stc:Resource kind="result" type="text/plain" source="simulation1/run3/generate.log" id="ddcee7f41-c1c2-41fb-803f-71b2cc662adc"/>
+                <stc:Resource kind="result" type="text/plain" source="simulation1/run3/simulate.log" id="d58645dbd-fb0d-4ee1-967d-aafe5442458d"/>
+                <stc:Resource kind="result" type="text/plain" source="simulation2/run1/results.csv" id="d9a9e0b10-1047-4d18-b009-2e037a642c7d"/>
+                <stc:Resource kind="result" type="text/plain" source="simulation2/run1/results_sampled.csv" id="d69a3c570-173a-4cce-ac05-6001aae76a25"/>
+                <stc:Resource kind="result" type="text/plain" source="simulation2/run1/generate.log" id="d310608bd-6b11-4b13-ae50-e57ca3d18cc3"/>
+                <stc:Resource kind="result" type="text/plain" source="simulation2/run1/simulate.log" id="df46b2af9-b152-4eec-918f-c70d20962abb"/>
+                <stc:ResourceReference xlink:href="#ddb4e5a36-0f47-4d7a-858c-86bbc860dfc5"/>
+                <stc:ResourceReference xlink:href="#dca12f438-e7a0-4c2a-9eae-ba7fbf37e202"/>
+            </stc:Output>
+            <stc:Rationale/>
+            <stc:LifeCycleInformation/>
+        </stmd:ExecuteSimulation>
+        <stc:LifeCycleInformation/>
+    </stmd:ExecutionPhase>
+    <stmd:EvaluationPhase>
+        <stmd:EvaluateSimulationResults>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Outputs.md" id="d74ac4533-aafc-462d-bdb2-3977ab6e89c4"/>
+                <stc:Resource kind="document" type="application/pdf" source="1-1-GP-DC-Motor-MildHybrid.pdf" id="d0fa2280c-490c-4291-96d1-72cd547621ed"/>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Inputs.md" id="dc0b9ec05-d48b-45b8-ae64-4bcbf4b4e522"/>
+                <stc:Resource kind="document" type="image/png" source="Screenshot-DC-Motor-variants-R.png" id="d862279a0-308e-4433-842f-2d033d90e27f"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-6-Requirements-Outputs.md" id="d84fd2c31-2dc0-4d02-8f96-1b5ed2efc458"/>
+                <stc:Resource kind="document" type="text/markdown" source="4-7-Implement-Outputs.md" id="d041a69c4-84f4-49bc-a01f-65263f95fc83"/>
+                <stc:Resource kind="document" type="text/markdown" source="3-6-Design-Outputs.md" id="d5527114e-8b04-4ce2-b656-8b1c37bb29c8"/>
+                <stc:Resource kind="document" type="text/markdown" source="5-Execute-Outputs.md" id="d372a20e8-5091-4674-b0bb-1ac785d14db9"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="6-1-Evaluate-Execution.md" id="d936dd70f-7169-4c94-8dc4-19fa4de1bfae"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="6-1-Evaluate-Outputs.md" id="d37100bed-6bb7-476f-b8a5-2cc90db3378a"/>
+            </stc:Output>
+            <stc:Rationale/>
+            <stc:LifeCycleInformation/>
+        </stmd:EvaluateSimulationResults>
+        <stmd:AssureSimulationQuality>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Outputs.md" id="d9bdb58cb-ab40-437a-987d-29d4599d0642"/>
+                <stc:Resource kind="document" type="application/pdf" source="1-1-GP-DC-Motor-MildHybrid.pdf" id="de5c54c71-52ad-4454-9356-7472c746632b"/>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Inputs.md" id="dc5c7bca6-990a-4839-9fa7-3a67e8bedcfe"/>
+                <stc:Resource kind="document" type="text/markdown" source="6-1-Evaluate-Outputs.md" id="d17ca75cc-f144-4b36-8419-ec3bffcb5746"/>
+                <stc:Resource kind="document" type="text/markdown" source="2-6-Requirements-Outputs.md" id="dacd91d4f-d592-49fe-afa9-66067f8f2fbb"/>
+                <stc:Resource kind="document" type="text/markdown" source="4-7-Implement-Outputs.md" id="d8c584d72-24aa-4d0f-883e-94371156649e"/>
+                <stc:Resource kind="document" type="text/markdown" source="3-6-Design-Outputs.md" id="dd8a4749a-65f6-461b-ac0b-d05686eb0c0d"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="6-2-Evaluate-Execution.md" id="d7ae15a3a-b5ac-49e9-9e66-eaa0192e8200"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="6-2-Evaluate-Outputs.md" id="d3994f1b4-ad56-4425-86d0-4e21bc480d00"/>
+            </stc:Output>
+            <stc:Rationale/>
+            <stc:LifeCycleInformation/>
+        </stmd:AssureSimulationQuality>
+        <stmd:DeriveSimulationQualityVerdict>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Outputs.md" id="d1c913832-eaa1-4218-9dcc-c6f12448d4d6"/>
+                <stc:Resource kind="document" type="application/pdf" source="1-1-GP-DC-Motor-MildHybrid.pdf" id="de761f0ae-78d6-4381-8433-6673b7c8f110"/>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Inputs.md" id="d3fe12b1b-6289-4653-8066-47b73ebd6b29"/>
+                <stc:Resource kind="document" type="text/markdown" source="6-2-Evaluate-Outputs.md" id="d7233a52e-ef69-43ba-aec6-5321f3b841f1"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="6-3-Evaluate-Execution.md" id="d9486b0cc-0b97-461d-a5e0-9d9c8048d3f2"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="6-3-Evaluate-Outputs.md" id="d89850840-3f95-4928-a47c-72bee9112c20"/>
+            </stc:Output>
+            <stc:Rationale/>
+            <stc:LifeCycleInformation/>
+        </stmd:DeriveSimulationQualityVerdict>
+        <stc:LifeCycleInformation/>
+    </stmd:EvaluationPhase>
+    <stmd:FulfillmentPhase>
+        <stmd:DecideSimulationObjectiveFulfillment>
+            <stc:Input>
+                <stc:Resource kind="document" type="text/markdown" source="6-3-Evaluate-Outputs.md" id="d73387aba-7476-4c74-9248-e4c059f1c970"/>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Outputs.md" id="d750a9b9d-4fc5-409e-b69a-8d71c5028045"/>
+                <stc:Resource kind="document" type="application/pdf" source="1-1-GP-DC-Motor-MildHybrid.pdf" id="d06d3a5b1-5190-438e-93b5-964beae37d74"/>
+                <stc:Resource kind="document" type="text/markdown" source="1-1-Analyze-Inputs.md" id="d180cbb2a-293d-4318-97ad-8a65f62ed6fe"/>
+                <stc:Resource kind="document" type="text/markdown" source="6-2-Evaluate-Outputs.md" id="d3f987120-d860-4e74-aec1-4576e44cf7e1"/>
+                <stc:Resource kind="document" type="text/markdown" source="6-1-Evaluate-Outputs.md" id="d005e6540-0eaa-4ae0-b31e-64e28773174a"/>
+                <stc:Resource kind="document" type="image/png" source="Screenshot-DC-Motor-variants-R.png" id="de7dfe2ab-abb4-4306-a8c6-64c75a0d7b06"/>
+            </stc:Input>
+            <stc:Procedure>
+                <stc:Resource kind="document" type="text/markdown" source="7-Fulfillment-Execution.md" id="d1c9df9a7-77f1-4ed4-bd48-02cdb7642e1f"/>
+            </stc:Procedure>
+            <stc:Output>
+                <stc:Resource kind="document" type="text/markdown" source="7-Fulfillment-Outputs.md" id="d45ca2b1b-2d50-49fd-bc8c-740385e8e2f1"/>
+            </stc:Output>
+            <stc:Rationale/>
+            <stc:LifeCycleInformation/>
+            <stc:Classification type="de.setlevel.srmd.simulation-meta-data">
+                <stc:ClassificationEntry keyword="fulfillment.objectives">Yes (Yes / No possible)</stc:ClassificationEntry>
+                <stc:ClassificationEntry keyword="fulfillment.credibility">Yes (Yes / No possible)</stc:ClassificationEntry>
+            </stc:Classification>
+        </stmd:DecideSimulationObjectiveFulfillment>
+        <stc:LifeCycleInformation/>
+    </stmd:FulfillmentPhase>
+</stmd:SimulationTaskMetaData>

@@ -1,0 +1,83 @@
+{
+  "info" : "This file and other associated files based on linked filenames or filename-templates are used for the glue integration in simulations in the easySSP Tool by eXXcellent solutions. Any tempering with its content or associated filenames may result in errorneous or undesired behavior.",
+  "simulation" : {
+    "id" : "7e06d81f-38e4-48ff-b921-d3396421749d",
+    "systemStructureId" : "3719edb3-5a42-46c6-8bbf-57424515e6eb",
+    "systemStructureName" : "DC-Motor",
+    "simulationName" : "DC-Motor",
+    "start-time" : "20.04.2022T 13:34Z"
+  },
+  "runs" : [ {
+    "id" : "ff977778-5bee-46e9-80a8-290271cf1366",
+    "parameterVariantId" : "1187fb7c-228c-4451-9ddb-e4c790e859ca",
+    "correspondingFileFolder" : "simulation1/run1/",
+    "parameterVariantName" : "R: 0.5 Ohm",
+    "runName" : "R: 0.5 Ohm",
+    "status" : "done",
+    "maxRunDurationInMinutes" : 1,
+    "actualDurationInSeconds" : 9,
+    "hardwareConfig" : {
+      "id" : 256512,
+      "cpuCores" : 0.25,
+      "ramInGb" : 0.5
+    },
+    "runConfig" : {
+      "options" : {
+        "start" : 0.0,
+        "step" : 1.0E-4,
+        "stop" : 1.5
+      },
+      "version" : {
+        "api-version" : "0.1.0"
+      }
+    }
+  }, {
+    "id" : "5b8f6fa3-9413-4dfc-be0b-0b6f0f959260",
+    "parameterVariantId" : "f3a9d5af-26c3-46e9-9aea-bdf1a52d96a6",
+    "correspondingFileFolder" : "simulation1/run2/",
+    "parameterVariantName" : "R: 0.2 Ohm",
+    "runName" : "R: 0.2 Ohm",
+    "status" : "done",
+    "maxRunDurationInMinutes" : 1,
+    "actualDurationInSeconds" : 10,
+    "hardwareConfig" : {
+      "id" : 256512,
+      "cpuCores" : 0.25,
+      "ramInGb" : 0.5
+    },
+    "runConfig" : {
+      "options" : {
+        "start" : 0.0,
+        "step" : 1.0E-4,
+        "stop" : 1.5
+      },
+      "version" : {
+        "api-version" : "0.1.0"
+      }
+    }
+  }, {
+    "id" : "a8ba3c9f-056a-46b0-a337-c32f4b83a436",
+    "parameterVariantId" : "407ee92e-a5ba-4834-803e-58b4bf19c12d",
+    "correspondingFileFolder" : "simulation1/run3/",
+    "parameterVariantName" : "R: 0.1 Ohm",
+    "runName" : "R: 0.1 Ohm",
+    "status" : "done",
+    "maxRunDurationInMinutes" : 1,
+    "actualDurationInSeconds" : 13,
+    "hardwareConfig" : {
+      "id" : 256512,
+      "cpuCores" : 0.25,
+      "ramInGb" : 0.5
+    },
+    "runConfig" : {
+      "options" : {
+        "start" : 0.0,
+        "step" : 1.0E-4,
+        "stop" : 1.5
+      },
+      "version" : {
+        "api-version" : "0.1.0"
+      }
+    }
+  } ]
+}
