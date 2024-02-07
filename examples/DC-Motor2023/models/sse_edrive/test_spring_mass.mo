@@ -1,31 +1,26 @@
 within sse_edrive;
-model test_spring_mass
-  emachine my_emachine
-    annotation (Placement(transformation(extent={{-104,24},{-28,82}})));
-  mass mass1 annotation (Placement(transformation(extent={{14,30},{44,78}})));
-  spring_mass spring_mass1
-    annotation (Placement(transformation(extent={{78,28},{118,82}})));
+model test_spring_mass "Test model for two masses and spring"
+  emachine my_emachine annotation (Placement(transformation(extent={{-80,-60},{-40,-20}})));
+  mass mass1 annotation (Placement(transformation(extent={{-20,-60},{20,-20}})));
+  spring_mass spring_mass1 annotation (Placement(transformation(extent={{40,-60},{78,-20}})));
   Modelica.Blocks.Sources.Step step(height=100)
-    annotation (Placement(transformation(extent={{-142,68},{-122,88}})));
+    annotation (Placement(transformation(extent={{-58,40},{-38,60}})));
   Modelica.Blocks.Sources.Constant const
-    annotation (Placement(transformation(extent={{154,24},{174,44}})));
+    annotation (Placement(transformation(extent={{20,40},{40,60}})));
 equation
-  connect(my_emachine.M, mass1.M_A) annotation (Line(points={{-31.04,70.4},{-7.28,
-          70.4},{-7.28,68.4},{13.1,68.4}}, color={0,0,127}));
-  connect(mass1.wA, my_emachine.w) annotation (Line(points={{13.1,44.4},{
-          -7.45,44.4},{-7.45,46.62},{-27.24,46.62}}, color={0,0,127}));
-  connect(mass1.phiA, my_emachine.phi) annotation (Line(points={{12.8,37.68},
-          {-6.15,37.68},{-6.15,35.02},{-27.24,35.02}}, color={0,0,127}));
-  connect(spring_mass1.M_A, mass1.M_B) annotation (Line(points={{76.8,38.8},{
-          62.4,38.8},{62.4,38.64},{44.6,38.64}}, color={0,0,127}));
-  connect(spring_mass1.wA, mass1.wB) annotation (Line(points={{76,60.94},{59,
-          60.94},{59,61.2},{44.9,61.2}}, color={0,0,127}));
-  connect(spring_mass1.phiA, mass1.phiB) annotation (Line(points={{76,70.66},
-          {59,70.66},{59,70.32},{44.9,70.32}}, color={0,0,127}));
-  connect(const.y, spring_mass1.M_B) annotation (Line(points={{175,34},{148,
-          34},{148,39.88},{119.2,39.88}}, color={0,0,127}));
-  connect(step.y, my_emachine.U)
-    annotation (Line(points={{-121,78},{-118,78},{-118,68.66},{-108.56,68.66}}, color={0,0,127}));
-  annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
-        coordinateSystem(preserveAspectRatio=false)));
+  connect(my_emachine.M, mass1.M_A) annotation (Line(points={{-38,-28},{-24,-28}}, color={0,0,127}));
+  connect(mass1.wA, my_emachine.w) annotation (Line(points={{-22,-44},{-36,-44}}, color={0,0,127}));
+  connect(mass1.phiA, my_emachine.phi)
+    annotation (Line(points={{-22,-52},{-36,-52}}, color={0,0,127}));
+  connect(spring_mass1.M_A, mass1.M_B)
+    annotation (Line(points={{38.1,-52},{24,-52}}, color={0,0,127}));
+  connect(spring_mass1.wA, mass1.wB) annotation (Line(points={{36.2,-36},{22,-36}}, color={0,0,127}));
+  connect(spring_mass1.phiA, mass1.phiB)
+    annotation (Line(points={{36.2,-28},{22,-28}}, color={0,0,127}));
+  connect(const.y, spring_mass1.M_B)
+    annotation (Line(points={{41,50},{90,50},{90,-52},{81.8,-52}}, color={0,0,127}));
+  connect(step.y, my_emachine.U) annotation (Line(points={{-37,50},{-20,50},{-20,10},{-90,10},{-90,-28},
+          {-84,-28}}, color={0,0,127}));
+  annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(coordinateSystem(
+          preserveAspectRatio=false)));
 end test_spring_mass;
