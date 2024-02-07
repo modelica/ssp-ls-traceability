@@ -1,5 +1,5 @@
 within sse_edrive;
-model mass
+model mass_damper
   Modelica.Mechanics.Rotational.Components.TorqueToAngleAdaptor
     torqueToAngleAdaptor(use_a=false)
                          annotation (Placement(transformation(
@@ -49,9 +49,11 @@ model mass
         extent={{-10,-10},{10,10}},
         rotation=0,
         origin={106,68})));
+  Modelica.Mechanics.Rotational.Components.Damper damper(d=0.001)
+    annotation (Placement(transformation(extent={{0,-20},{20,0}})));
+  Modelica.Mechanics.Rotational.Components.Fixed fixed
+    annotation (Placement(transformation(extent={{30,-20},{50,0}})));
 equation
-  connect(inertia.flange_a, torqueToAngleAdaptor.flange)
-    annotation (Line(points={{-2,28},{-58,28}}, color={0,0,0}));
   connect(inertia.flange_b, torqueToAngleAdaptor1.flange) annotation (Line(
         points={{18,28},{68,28}},                 color={0,0,0}));
   connect(torqueToAngleAdaptor.tau, M_A) annotation (Line(points={{-63,36},{-86,
@@ -60,12 +62,18 @@ equation
           -80.5,23},{-80.5,-40},{-106,-40}}, color={0,0,127}));
   connect(torqueToAngleAdaptor.phi, phiA) annotation (Line(points={{-63,20},{
           -76,20},{-76,-68},{-108,-68}}, color={0,0,127}));
-  connect(torqueToAngleAdaptor1.phi, phiB) annotation (Line(points={{73,36},{88,36},{88,68},{106,68}},
-                                    color={0,0,127}));
-  connect(torqueToAngleAdaptor1.w, wB) annotation (Line(points={{73,33},{89.5,33},{89.5,30},{106,30}},
-                                   color={0,0,127}));
-  connect(torqueToAngleAdaptor1.tau, M_B) annotation (Line(points={{73,20},{86,20},{86,-64},{104,-64}},
-                                      color={0,0,127}));
+  connect(torqueToAngleAdaptor1.phi, phiB) annotation (Line(points={{73,36},{
+          88,36},{88,68},{106,68}}, color={0,0,127}));
+  connect(torqueToAngleAdaptor1.w, wB) annotation (Line(points={{73,33},{89.5,
+          33},{89.5,30},{106,30}}, color={0,0,127}));
+  connect(torqueToAngleAdaptor1.tau, M_B) annotation (Line(points={{73,20},{
+          80,20},{80,-64},{104,-64}}, color={0,0,127}));
+  connect(fixed.flange,damper. flange_b) annotation (Line(points={{40,-10},{
+          20,-10}},             color={0,0,0}));
+  connect(torqueToAngleAdaptor.flange, inertia.flange_a)
+    annotation (Line(points={{-58,28},{-2,28}}, color={0,0,0}));
+  connect(damper.flange_a, inertia.flange_a) annotation (Line(points={{0,-10},
+          {-20,-10},{-20,28},{-2,28}}, color={0,0,0}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(
         coordinateSystem(preserveAspectRatio=false)));
-end mass;
+end mass_damper;

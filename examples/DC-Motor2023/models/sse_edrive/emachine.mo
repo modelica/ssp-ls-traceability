@@ -49,8 +49,7 @@ model emachine
         extent={{-20,-20},{20,20}},
         rotation=180,
         origin={102,-62})));
-  Modelica.Blocks.Interfaces.RealOutput tau(unit="N.m")
-                                            annotation (Placement(
+  Modelica.Blocks.Interfaces.RealOutput M(unit="N.m") annotation (Placement(
         transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
@@ -66,16 +65,16 @@ model emachine
         rotation=0,
         origin={-112,54})));
 equation
-  connect(currentSensor.i,I)  annotation (Line(points={{-87,18},{-88,18},{-88,-62},{-106,-62}},
-                                                  color={0,0,127}));
+  connect(currentSensor.i,I)  annotation (Line(points={{-87,18},{-88,18},{-88,
+          -62},{-106,-62}},                       color={0,0,127}));
   connect(angleToTorqueAdaptor.flange, emf.flange)
     annotation (Line(points={{54,10},{46,10}},               color={0,0,0}));
-  connect(angleToTorqueAdaptor.w, w) annotation (Line(points={{59,5},{79,5},{79,-22},{102,-22}},
-                                     color={0,0,127}));
-  connect(angleToTorqueAdaptor.tau, tau) annotation (Line(points={{59,18},{72,
-          18},{72,60},{92,60}},      color={0,0,127}));
-  connect(phi, angleToTorqueAdaptor.phi) annotation (Line(points={{102,-62},{72,-62},{72,2},{59,2}},
-                                  color={0,0,127}));
+  connect(angleToTorqueAdaptor.w, w) annotation (Line(points={{59,5},{79,7.2},
+          {79,-22},{102,-22}},       color={0,0,127}));
+  connect(angleToTorqueAdaptor.tau, M) annotation (Line(points={{59,18},{72,
+          18},{72,60},{92,60}}, color={0,0,127}));
+  connect(phi, angleToTorqueAdaptor.phi) annotation (Line(points={{102,-62},{
+          72,-62},{72,2},{59,2}}, color={0,0,127}));
   connect(resistor.n, inductor.p)
     annotation (Line(points={{-30,68},{36,68},{36,60}}, color={0,0,255}));
   connect(emf.p, inductor.n)

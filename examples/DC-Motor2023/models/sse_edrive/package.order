@@ -1,5 +1,6 @@
 emachine
 mass
+mass_damper
 spring_mass
 stimuli
 test_spring_mass
