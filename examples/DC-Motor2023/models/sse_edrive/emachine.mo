@@ -22,7 +22,7 @@ model emachine "DC-Motor for a mild hybrid application"
   Modelica.Electrical.Analog.Sensors.CurrentSensor currentSensor annotation (Placement(transformation(
         extent={{10,-10},{-10,10}},
         rotation=270,
-        origin={-60,2})));
+        origin={-60,0})));
   Modelica.Blocks.Interfaces.RealOutput I(unit="A") annotation (Placement(transformation(
         extent={{-10,-10},{10,10}},
         rotation=180,
@@ -45,7 +45,7 @@ model emachine "DC-Motor for a mild hybrid application"
         rotation=180,
         origin={110,60})));
   Modelica.Electrical.Analog.Sources.SignalVoltage signalVoltage annotation (Placement(transformation(
-        extent={{-10,-10},{10,10}},
+        extent={{10,-10},{-10,10}},
         rotation=90,
         origin={-60,40})));
   Modelica.Blocks.Interfaces.RealInput U(unit="V") annotation (Placement(transformation(
@@ -54,7 +54,7 @@ model emachine "DC-Motor for a mild hybrid application"
         origin={-120,60})));
 equation
   connect(currentSensor.i, I)
-    annotation (Line(points={{-71,2},{-88,2},{-88,-60},{-110,-60}}, color={0,0,127}));
+    annotation (Line(points={{-71,0},{-88,0},{-88,-60},{-110,-60}}, color={0,0,127}));
   connect(angleToTorqueAdaptor.flange, emf.flange)
     annotation (Line(points={{58,0},{50,0}}, color={0,0,0}));
   connect(angleToTorqueAdaptor.w, w)
@@ -67,13 +67,13 @@ equation
   connect(emf.p, inductor.n) annotation (Line(points={{40,10},{40,30}}, color={0,0,255}));
   connect(emf.n, ground.p) annotation (Line(points={{40,-10},{40,-40},{-10,-40}}, color={0,0,255}));
   connect(ground.p, currentSensor.p)
-    annotation (Line(points={{-10,-40},{-60,-40},{-60,-8}}, color={0,0,255}));
-  connect(signalVoltage.n, resistor.p)
-    annotation (Line(points={{-60,50},{-60,60},{-20,60}}, color={0,0,255}));
-  connect(signalVoltage.p, currentSensor.n)
-    annotation (Line(points={{-60,30},{-60,12}}, color={0,0,255}));
+    annotation (Line(points={{-10,-40},{-60,-40},{-60,-10}},color={0,0,255}));
   connect(signalVoltage.v, U)
-    annotation (Line(points={{-72,40},{-94,40},{-94,60},{-120,60}}, color={0,0,127}));
+    annotation (Line(points={{-72,40},{-90,40},{-90,60},{-120,60}}, color={0,0,127}));
+  connect(signalVoltage.p, resistor.p)
+    annotation (Line(points={{-60,50},{-60,60},{-20,60}}, color={0,0,255}));
+  connect(signalVoltage.n, currentSensor.n)
+    annotation (Line(points={{-60,30},{-60,10}}, color={0,0,255}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(coordinateSystem(
           preserveAspectRatio=false)));
 end emachine;
