@@ -72,6 +72,7 @@ equation
         subPlot=201,
         colors={{28,108,200}},
         timeUnit="s",
-        displayUnits={"N.m"})} "Plot KPI"),
+        displayUnits={"N.m"})} "Plot KPI", file(description="Export FMUs for SSP") =
+        "Export FMUs.mos" "Export FMUs"),
     experiment(StopTime=1, __Dymola_Algorithm="Dassl"));
 end test;
