@@ -75,5 +75,36 @@ equation
   connect(signalVoltage.n, currentSensor.n)
     annotation (Line(points={{-60,30},{-60,10}}, color={0,0,255}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(coordinateSystem(
-          preserveAspectRatio=false)));
+          preserveAspectRatio=false)),
+    __Dymola_UserMetaData(MetaData(category="DC-Motor-el Meta-Data (DC-Motor-el.srmd)", value={{
+            "Type: de.setlevel.srmd.model-meta-data=",""},{"model.type","physical principle"},{
+            "physical-principle.family","ex: Electrical"},{"physical-principle.name","ex: motor"},{
+            "physical-principle.technology","ex: DC"},{"physical-principle.technology.variant",
+            "ex: el-magn"},{"model.manufacturer","GlueParticle"},{"model.family"," DC-Motor"},{
+            "model.name","DC-Motor-el"},{"model.version","GPsim2.03"},{"model.releasedate",
+            "2022-02-01"},{"model.releasestatus","In Development"},{"model.guid",
+            "For FMU-based models, this should be the GUID of the FMU, e.g. 7ae4-210f-dead-beef-0422"},
+            {"model.purpose","Pre-development of systems with DC-motors"},{
+            "model.modelling-approach",
+            "basic physical equations of the electrical part of a DC motor is causal modeled"},{
+            "model.preconditions","-none-"},{"model.validity-range","basic physical equations"},{
+            "model.specification","link to specification document"},{"model.verification.status",
+            "false"},{"model.verification.report",""},{"model.validation.concept",""},{
+            "model.validation.status","false"},{"model.validation.platform",
+            "Dymola V112 and PMSF FMIBench 1.9.9.4 on Windows 10 1809"},{"model.validation.report",
+            ""},{"model.limitations","This delivery is a pre-release and the model is intended to be used for pre-development
+            The model is not validated; thus it is not intended to be used for validation or verification of any actuator.
+            
+            This delivery is not developed according to process defined in ISO 26262 (Standard for Functional Safety).
+        "},{"model.implementation.format","FMI 2.0"},{"model.implementation.preconditions",
+            "Model needs Windows 10 1809 or newer or Linux"},{
+            "model.implementation.performance-characteristics",
+            "Potentially real-time capable, simple differential equation 1 order"},{
+            "model.integration.requirements",
+            "link to requirements and considerations for operating the model"},{
+            "Type: de.setlevel.srmd.ISO-11010-X=",""},{"part",
+            "The part of the ISO-11010 relevant for model, for example 1 if ISO-11010-1"},{"plant",
+            "The relevant nomencalture convention for the plant part of the model if applicable, for example a Model of the Brake physical system: BRM2.2"},
+            {"controller",
+            "The relevant nomencalture convention for the controller part of the model if applicable, for example a Model of the Brake controller system: BRC2.1"}})));
 end emachine;
