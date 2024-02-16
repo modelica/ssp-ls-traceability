@@ -35,7 +35,7 @@ image::CredibleDecisionProcess.png[]
 
 The phases of the Credible Decision Process are:
  
-Analyze of Decision Task:: In this phase, the information required for the execution of the decision process is determined and analyzed.
+Analysis of Decision Task:: In this phase, the information required for the execution of the decision process is determined and analyzed.
 
 Definition of Sub-Tasks:: In this phase, the sub-tasks, e.g. simulation or test tasks, required to obtain the information on which the decision should be based are defined and specified.
  
