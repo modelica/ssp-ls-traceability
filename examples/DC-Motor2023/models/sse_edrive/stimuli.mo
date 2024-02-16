@@ -10,14 +10,8 @@ model stimuli "Stimulus of e-drive example"
     annotation (Placement(transformation(rotation=0, extent={{100,-70},{120,-50}})));
   Modelica.Blocks.Interfaces.RealOutput U(unit="V")
     annotation (Placement(transformation(rotation=0, extent={{100,50},{120,70}})));
-  Modelica.Blocks.Math.Gain gain(
-    k=-1,
-    u(unit="N.m"),
-    y(unit="N.m"))
-                 annotation (Placement(transformation(extent={{0,-70},{20,-50}})));
 equation
-  connect(M_load, gain.y) annotation (Line(points={{110,-60},{21,-60}}, color={0,0,127}));
-  connect(gain.u, MLoad.y) annotation (Line(points={{-2,-60},{-39,-60}}, color={0,0,127}));
   connect(Voltage_step.y, U)
     annotation (Line(points={{-39,40},{32,40},{32,60},{110,60}}, color={0,0,127}));
+  connect(MLoad.y, M_load) annotation (Line(points={{-39,-60},{110,-60}}, color={0,0,127}));
 end stimuli;
