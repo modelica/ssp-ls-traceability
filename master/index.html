@@ -873,7 +873,7 @@ However, the SSP Traceability specification currently only supports traceability
 <div class="sect2">
 <h3 id="sec-credibledecisionprocess">2.1. Credible Decision Process</h3>
 <div class="paragraph">
-<p>The Credible Decision Process as part of the Credible Simulation Process Frameworkconsists of five successive phases, starting with the analysis of the decision to be made through the preparation of the decision and up the actual decision itself.
+<p>The Credible Decision Process as part of the Credible Simulation Process Framework consists of five successive phases, starting with the analysis of the decision to be made through the preparation of the decision and up the actual decision itself.
 The preparation includes all activities necessary to obtain and evaluate the information on which the decision will be based.
 The information needed may include simulation results. <a href="#im-credibledecisionprocess">Figure 2</a> illustrates this process.</p>
 </div>
@@ -888,26 +888,26 @@ The information needed may include simulation results. <a href="#im-credibledeci
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Analyze Task</dt>
+<dt class="hdlist1">Analyze of Decision Task</dt>
 <dd>
 <p>In this phase, the information required for the execution of the decision process is determined and analyzed.</p>
 </dd>
-<dt class="hdlist1">Define Sub-Tasks</dt>
+<dt class="hdlist1">Definition of Sub-Tasks</dt>
 <dd>
 <p>In this phase, the sub-tasks, e.g. simulation or test tasks, required to obtain the information on which the decision should be based are defined and specified.</p>
 </dd>
-<dt class="hdlist1">Perform Sub-Processes</dt>
+<dt class="hdlist1">Performing Sub-Tasks</dt>
 <dd>
 <p>In this phase, the sub-tasks, e.g. simulation or test tasks, required to obtain the information on which the decision should be based, are defined and specified.
 The phase starts e.g. with the simulation request and ends with the simulation delivery from the perspective of the credible decision process.</p>
 </dd>
-<dt class="hdlist1">Evaluate</dt>
+<dt class="hdlist1">Evaluation</dt>
 <dd>
 <p>In this phase, the decision-relevant information returned from the sub-tasks, e.g. simulation results, is evaluated from the point of view of the Credible Decision Process.</p>
 </dd>
-<dt class="hdlist1">Decide</dt>
+<dt class="hdlist1">Fulfillment</dt>
 <dd>
-<p>In this phase the actual decision is done.</p>
+<p>The purpose of this phase is to decide whether the results fulfill the original objectives of the decision task.</p>
 </dd>
 </dl>
 </div>
@@ -932,11 +932,11 @@ The Credible Simulation Process is triggered and initiated by a Simulation Reque
 </div>
 <div class="dlist">
 <dl>
-<dt class="hdlist1">Analyze Simulation Task</dt>
+<dt class="hdlist1">Analysis of Simulation Task</dt>
 <dd>
 <p>In this phase, the information from the higher-level Credible Decision Process, provided as a Simulation Request, is analyzed and detailed with respect to the information needed in the subsequent phases of the Credible Simulation Process.</p>
 </dd>
-<dt class="hdlist1">Define Requirements</dt>
+<dt class="hdlist1">Definition of Simulation Requirements</dt>
 <dd>
 <p>In this phase, the requirements for the individual components of the simulation setup and their interaction as well as the requirements for quality assurance are formulated in detail.</p>
 </dd>
@@ -944,20 +944,20 @@ The Credible Simulation Process is triggered and initiated by a Simulation Reque
 <dd>
 <p>The purpose of this phase is to create all the specifications needed to implement the complete simulation setup.</p>
 </dd>
-<dt class="hdlist1">Implement</dt>
+<dt class="hdlist1">Implementation</dt>
 <dd>
 <p>The purpose of this phase is to implement the complete simulation setup with all its setup components as specified in the design specifications.</p>
 </dd>
-<dt class="hdlist1">Execute Simulation</dt>
+<dt class="hdlist1">Simulation Execution</dt>
 <dd>
 <p>The purpose of this phase is to run the simulation and record the simulation results.
 It may also include any necessary post-processing.</p>
 </dd>
-<dt class="hdlist1">Evaluate</dt>
+<dt class="hdlist1">Evaluation</dt>
 <dd>
 <p>The purpose of this phase is to evaluate the simulation results, i.e. to verify that the simulation results are plausible and robust.</p>
 </dd>
-<dt class="hdlist1">Decide Fulfillment</dt>
+<dt class="hdlist1">Fulfillment</dt>
 <dd>
 <p>The purpose of this phase is to confirm that the simulation results meet the original objectives of the simulation task.</p>
 </dd>
@@ -3072,6 +3072,12 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 <div class="paragraph">
 <p>The <em>Decision Task Meta Data</em> file (short: DTMD file) is an implementation of a GlueParticle for decition tasks. It is specified to support traceability, quality assurance and re-usability for decision tasks in terms of a credible decision process as it is specified in <mark>Document Reference</mark>. The following sub-chapters describe the structure of an DTMD file.</p>
 </div>
+<div id="im-credibledecisionprocess" class="imageblock">
+<div class="content">
+<img src="images/CredibleDecisionProcess.png" alt="CredibleDecisionProcess">
+</div>
+<div class="title">Figure 34. Credible Decision Process</div>
+</div>
 <div class="sect2">
 <h3 id="_decisiontaskmetadata">6.1. DecisionTaskMetaData</h3>
 <div class="paragraph">
@@ -3081,7 +3087,7 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 <div class="content">
 <img src="images/DecisionTaskMetaDataSchema.png" alt="DecisionTaskMetaDataSchema">
 </div>
-<div class="title">Figure 34. DecisionTaskMetaData element structure and attributes</div>
+<div class="title">Figure 35. DecisionTaskMetaData element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The DecisionTaskTaskMetaData element is structured by following subordinated element.</p>
@@ -3234,7 +3240,7 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 <div class="content">
 <img src="images/DtmdAnalysisPhaseSchema.png" alt="DtmdAnalysisPhaseSchema">
 </div>
-<div class="title">Figure 35. AnalysisPhase element structure and attributes</div>
+<div class="title">Figure 36. AnalysisPhase element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The AnalysisPhase element is structured by the following subordinated element.</p>
@@ -3314,7 +3320,7 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 <div class="content">
 <img src="images/DtmdDefinitionPhaseSchema.png" alt="DtmdDefinitionPhaseSchema">
 </div>
-<div class="title">Figure 36. DefinitionPhase element structure and attributes</div>
+<div class="title">Figure 37. DefinitionPhase element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The DefinitionPhase element is structured by the following subordinated element.</p>
@@ -3399,7 +3405,7 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 <div class="content">
 <img src="images/DtmdExecutionPhaseSchema.png" alt="DtmdExecutionPhaseSchema">
 </div>
-<div class="title">Figure 37. ExecutionPhase element structure and attributes</div>
+<div class="title">Figure 38. ExecutionPhase element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The ExecutionPhase element is structured by the following subordinated element.</p>
@@ -3474,7 +3480,7 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 <div class="content">
 <img src="images/DtmdEvaluationPhaseSchema.png" alt="DtmdEvaluationPhaseSchema">
 </div>
-<div class="title">Figure 38. EvaluationPhase element structure and attributes</div>
+<div class="title">Figure 39. EvaluationPhase element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The EvaluationPhase element is structured by the following subordinated element.</p>
@@ -3559,7 +3565,7 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 <div class="content">
 <img src="images/DtmdFulfillmentPhaseSchema.png" alt="DtmdFulfillmentPhaseSchema">
 </div>
-<div class="title">Figure 39. FulfillmentPhase elements structure and attributes</div>
+<div class="title">Figure 40. FulfillmentPhase elements structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The FulfillmentPhase element is structured by the following subordinated element.</p>
@@ -3631,6 +3637,12 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 <div class="paragraph">
 <p>The <em>Simulation Task Meta Data</em> file (short: STMD file) is an implementation of a GlueParticle for simulation tasks. It is specified to support traceability, quality assurance and re-usability for simulation tasks in terms of a credible simulation process as it is specified in <mark>Document Reference</mark>. The following sub-chapters describe the structure of an STMD file.</p>
 </div>
+<div id="im-crediblesimulationprocess" class="imageblock">
+<div class="content">
+<img src="images/CredibleSimulationProcess.png" alt="CredibleSimulationProcess">
+</div>
+<div class="title">Figure 41. Credible Simulation Process</div>
+</div>
 <div class="sect2">
 <h3 id="_simulationtaskmetadata">7.1. SimulationTaskMetaData</h3>
 <div class="paragraph">
@@ -3640,7 +3652,7 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 <div class="content">
 <img src="images/SimulationTaskMetaDataSchema.png" alt="SimulationTaskMetaDataSchema">
 </div>
-<div class="title">Figure 40. SimulationTaskMetaData element structure and attributes</div>
+<div class="title">Figure 42. SimulationTaskMetaData element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The SimulationTaskMetaData element is structured by following subordinated element.</p>
@@ -3803,7 +3815,7 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 <div class="content">
 <img src="images/AnalysisPhaseSchema.png" alt="AnalysisPhaseSchema">
 </div>
-<div class="title">Figure 41. AnalysisPhase element structure and attributes</div>
+<div class="title">Figure 43. AnalysisPhase element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The AnalysisPhase element is structured by the following subordinated element.</p>
@@ -3883,7 +3895,7 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 <div class="content">
 <img src="images/RequirementsPhaseSchema.png" alt="RequirementsPhaseSchema">
 </div>
-<div class="title">Figure 42. RequirementsPhase element structure and attributes</div>
+<div class="title">Figure 44. RequirementsPhase element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The RequirememtsPhase element is structured by the followuing subordinated element.</p>
@@ -3988,7 +4000,7 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 <div class="content">
 <img src="images/DesignPhaseSchema.png" alt="DesignPhaseSchema">
 </div>
-<div class="title">Figure 43. DesignPhase element structure and attributes</div>
+<div class="title">Figure 45. DesignPhase element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The DesignPhase element is structured by the following subordinated element.</p>
@@ -4094,7 +4106,7 @@ All components are then integrated and the specified measures to ensure process 
 <div class="content">
 <img src="images/ImplementationPhaseSchema.png" alt="ImplementationPhaseSchema">
 </div>
-<div class="title">Figure 44. ImplementationPhase element structure and attributes</div>
+<div class="title">Figure 46. ImplementationPhase element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The ImplementationPhase element is structured by the following subordinated element.</p>
@@ -4199,7 +4211,7 @@ All components are then integrated and the specified measures to ensure process 
 <div class="content">
 <img src="images/ExecutionPhaseSchema.png" alt="ExecutionPhaseSchema">
 </div>
-<div class="title">Figure 45. ExecutionPhase element structure and attributes</div>
+<div class="title">Figure 47. ExecutionPhase element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The ExecutionPhase element is structured by the following subordinated element.</p>
@@ -4274,7 +4286,7 @@ All components are then integrated and the specified measures to ensure process 
 <div class="content">
 <img src="images/EvaluationPhaseSchema.png" alt="EvaluationPhaseSchema">
 </div>
-<div class="title">Figure 46. EvaluationPhase element structure and attributes</div>
+<div class="title">Figure 48. EvaluationPhase element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The EvaluationPhase element is structured by the following subordinated element.</p>
@@ -4359,7 +4371,7 @@ All components are then integrated and the specified measures to ensure process 
 <div class="content">
 <img src="images/FulfillmentPhaseSchema.png" alt="FulfillmentPhaseSchema">
 </div>
-<div class="title">Figure 47. FulfillmentPhase elements structure and attributes</div>
+<div class="title">Figure 49. FulfillmentPhase elements structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The FulfillmentPhase element is structured by the following subordinated element.</p>
@@ -4440,7 +4452,7 @@ All components are then integrated and the specified measures to ensure process 
 <div class="content">
 <img src="images/SimulationResourceMetaDataSchema.png" alt="SimulationResourceMetaDataSchema">
 </div>
-<div class="title">Figure 48. SimulationResourceMetaData element structure and attributes</div>
+<div class="title">Figure 50. SimulationResourceMetaData element structure and attributes</div>
 </div>
 <div class="paragraph">
 <p>The SimulationTaskMetaData element is structured by following subordinated element.</p>
