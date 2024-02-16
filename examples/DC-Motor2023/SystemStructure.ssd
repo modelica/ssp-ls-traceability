@@ -424,16 +424,13 @@
                             <ssv:ParameterSet version="1.0" name="Parameter-Set">
                                 <ssv:Parameters>
                                     <ssv:Parameter name="Voltage_step.height" description="Height of step">
-                                        <ssv:Real value="-48.0" unit="V"/>
+                                        <ssv:Real value="48.0" unit="V"/>
                                     </ssv:Parameter>
                                     <ssv:Parameter name="Voltage_step.offset" description="Offset of output signal y">
                                         <ssv:Real value="0.0"/>
                                     </ssv:Parameter>
                                     <ssv:Parameter name="Voltage_step.startTime" description="Output y = offset for time &lt; startTime">
                                         <ssv:Real value="0.0" unit="s"/>
-                                    </ssv:Parameter>
-                                    <ssv:Parameter name="gain.k" description="Gain value multiplied with input signal">
-                                        <ssv:Real value="1.0" unit="1"/>
                                     </ssv:Parameter>
                                     <ssv:Parameter name="MLoad.k" description="Constant output value">
                                         <ssv:Real value="1.0" unit="N.m"/>
@@ -470,13 +467,10 @@
                                                         <ssv:Real value="0.0"/>
                                                     </ssv:Parameter>
                                                     <ssv:Parameter name="Voltage_step.height" description="Height of step">
-                                                        <ssv:Real value="-48.0" unit="V"/>
+                                                        <ssv:Real value="48.0" unit="V"/>
                                                     </ssv:Parameter>
                                                     <ssv:Parameter name="Voltage_step.startTime" description="Output y = offset for time &lt; startTime">
                                                         <ssv:Real value="0.0" unit="s"/>
-                                                    </ssv:Parameter>
-                                                    <ssv:Parameter name="gain.k" description="Gain value multiplied with input signal">
-                                                        <ssv:Real value="1.0" unit="1"/>
                                                     </ssv:Parameter>
                                                     <ssv:Parameter name="MLoad.k" description="Constant output value">
                                                         <ssv:Real value="1.0" unit="N.m"/>
@@ -514,7 +508,7 @@
                                                         <ssv:Real value="1.0" unit="N.m"/>
                                                     </ssv:Parameter>
                                                     <ssv:Parameter name="Voltage_step.height" description="Height of step">
-                                                        <ssv:Real value="-48.0" unit="V"/>
+                                                        <ssv:Real value="48.0" unit="V"/>
                                                     </ssv:Parameter>
                                                     <ssv:Parameter name="Voltage_step.startTime" description="Output y = offset for time &lt; startTime">
                                                         <ssv:Real value="0.0" unit="s"/>
