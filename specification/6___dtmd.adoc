@@ -3,6 +3,9 @@
 
 The __Decision Task Meta Data__ file (short: DTMD file) is an implementation of a GlueParticle for decition tasks. It is specified to support traceability, quality assurance and re-usability for decision tasks in terms of a credible decision process as it is specified in #Document Reference#. The following sub-chapters describe the structure of an DTMD file.
 
+[#im-credibledecisionprocess]
+.Credible Decision Process
+image::CredibleDecisionProcess.png[]
 === DecisionTaskMetaData
 
 The DecisionMetaData element is the all enclosing top level XML element of DTMD files.
