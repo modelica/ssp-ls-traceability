@@ -52,6 +52,10 @@ model emachine "DC-Motor for a mild hybrid application"
         extent={{-20,-20},{20,20}},
         rotation=0,
         origin={-120,60})));
+  Modelica.Blocks.Math.Gain M_gain(k=-1) annotation (Placement(transformation(
+        extent={{-7,-7},{7,7}},
+        rotation=90,
+        origin={75,33})));
 equation
   connect(currentSensor.i, I)
     annotation (Line(points={{-71,0},{-88,0},{-88,-60},{-110,-60}}, color={0,0,127}));
@@ -59,8 +63,6 @@ equation
     annotation (Line(points={{58,0},{50,0}}, color={0,0,0}));
   connect(angleToTorqueAdaptor.w, w)
     annotation (Line(points={{63,-5},{83,-5},{83,-20},{120,-20}}, color={0,0,127}));
-  connect(angleToTorqueAdaptor.tau, M)
-    annotation (Line(points={{63,8},{76,8},{76,60},{110,60}}, color={0,0,127}));
   connect(phi, angleToTorqueAdaptor.phi)
     annotation (Line(points={{120,-60},{76,-60},{76,-8},{63,-8}}, color={0,0,127}));
   connect(resistor.n, inductor.p) annotation (Line(points={{0,60},{40,60},{40,50}}, color={0,0,255}));
@@ -74,8 +76,18 @@ equation
     annotation (Line(points={{-60,50},{-60,60},{-20,60}}, color={0,0,255}));
   connect(signalVoltage.n, currentSensor.n)
     annotation (Line(points={{-60,30},{-60,10}}, color={0,0,255}));
+  connect(angleToTorqueAdaptor.tau, M_gain.u)
+    annotation (Line(points={{63,8},{75,8},{75,24.6}},
+                                                     color={0,0,127}));
+  connect(M_gain.y, M) annotation (Line(points={{75,40.7},{75,60},{110,60}},
+                                                                           color={0,0,127}));
   annotation (Icon(coordinateSystem(preserveAspectRatio=false)), Diagram(coordinateSystem(
-          preserveAspectRatio=false)),
+          preserveAspectRatio=false), graphics={Text(
+          extent={{56,74},{96,64}},
+          textColor={0,0,0},
+          textString="Note: interface is defined to use a
+positive sign of the torque.",
+          horizontalAlignment=TextAlignment.Left)}),
     __Dymola_UserMetaData(MetaData(category="DC-Motor-el Meta-Data (DC-Motor-el.srmd)", value={{
             "Type: de.setlevel.srmd.model-meta-data=",""},{"model.type","physical principle"},{
             "physical-principle.family","ex: Electrical"},{"physical-principle.name","ex: motor"},{
