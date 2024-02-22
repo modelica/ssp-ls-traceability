@@ -433,7 +433,7 @@
                                         <ssv:Real value="0.0" unit="s"/>
                                     </ssv:Parameter>
                                     <ssv:Parameter name="MLoad.k" description="Constant output value">
-                                        <ssv:Real value="1.0" unit="N.m"/>
+                                        <ssv:Real value="-1.0" unit="N.m"/>
                                     </ssv:Parameter>
                                 </ssv:Parameters>
                                 <ssv:Units>

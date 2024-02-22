@@ -3,7 +3,7 @@ model test "Test model for DC-Motor e-machine with load"
   emachine my_emachine(emf(k=0.03), resistor(R=0.1))
                        annotation (Placement(transformation(extent={{-30,-20},{10,20}})));
   mass_damper my_mass annotation (Placement(transformation(extent={{40,-20},{80,20}})));
-  sse_edrive.stimuli stimuli(MLoad(k=1.0), Voltage_step(height=48.0))
+  sse_edrive.stimuli stimuli(MLoad(k=-1.0),Voltage_step(height=48.0))
     annotation (Placement(transformation(rotation=0, extent={{-100,-20},{-60,20}})));
 equation
   connect(my_emachine.M, my_mass.M_A) annotation (Line(points={{12,12},{36,12}}, color={0,0,127}));
@@ -74,5 +74,5 @@ equation
         timeUnit="s",
         displayUnits={"N.m"})} "Plot KPI", file(description="Export FMUs for SSP") =
         "Export FMUs.mos" "Export FMUs"),
-    experiment(StopTime=1, __Dymola_Algorithm="Dassl"));
+    experiment(StopTime=1.5, __Dymola_Algorithm="Dassl"));
 end test;
