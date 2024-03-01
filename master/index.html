@@ -1528,6 +1528,21 @@ This approach can be used, for example, to provide searchable keywords for conte
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This attribute provides the name of the type of classification being provided. The name should be unique across the Classification elements of the immediately enclosing element. In order to ensure uniqueness all types should be identified with reverse domain name notation (cf. Java package names or Apple UTIs) of a domain that is controlled by the entity defining the semantics and content of the classification.</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xlink:type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Fixed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Has the fixed value <code>simple</code> to indicate an XLink simple link.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">xlink:href</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives an optional link for the classification itself. This link can be given to provide additional, potentially human readable information on the classification type that tools can use to provide this information to the user, especially for unknown classification types.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">linkedType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This optional attribute specifies the MIME type of the resource pointed to by the <code>xlink:href</code> attribute of the classification. There is no default value, i.e. if the attribute is not given then other mechanisms to determine the MIME type of the resource should be used. If it is given, it shall override any other mechanism to determine the MIME type of the referenced resource.</p></td>
+</tr>
 </tbody>
 </table>
 <div class="sect4">
@@ -1587,6 +1602,11 @@ This approach can be used, for example, to provide searchable keywords for conte
 <td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the keyword for the classification entry (i.e. keyword value pair). It is left undefined whether this must be unique across the entries of the Classification element, or whether repeated entries are allowed. This will depend on the definition of the classification.</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">type</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This optional attribute specifies the MIME type of the value of the classification entry, i.e. the element content. It defaults to <code>text/plain</code>, but e.g. <code>text/markdown</code> is commonly supported for more structured text.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xlink:type</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Fixed</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Has the fixed value <code>simple</code> to indicate an XLink simple link.</p></td>
@@ -1595,6 +1615,11 @@ This approach can be used, for example, to provide searchable keywords for conte
 <td class="tableblock halign-left valign-top"><p class="tableblock">xlink:href</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives an optional link for the classification entry (i.e. keyword value pair). This link can be given in addition to any content of the classification entry, or it can be the sole information of the classification entry. The rules will depend on the definition of the classification.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">linkedType</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This optional attribute specifies the MIME type of the resource pointed to by the <code>xlink:href</code> attribute of the classification entry. There is no default value, i.e. if the attribute is not given then other mechanisms to determine the MIME type of the resource should be used. If it is given, it shall override any other mechanism to determine the MIME type of the referenced resource.</p></td>
 </tr>
 </tbody>
 </table>
