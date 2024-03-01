@@ -159,6 +159,18 @@
                             </xs:documentation>
                         </xs:annotation>
                     </xs:attribute>
+                    <xs:attribute name="linkedType" type="xs:string">
+                        <xs:annotation>
+                            <xs:documentation xml:lang="en">
+                                This optional attribute specifies the MIME type of the resource
+                                pointed to by the xlink:href attribute of the classification.
+                                There is no default value, i.e. if the attribute is not given
+                                then other mechanisms to determine the MIME type of the resource
+                                should be used. If it is given, it shall override any other
+                                mechanism to determine the MIME type of the referenced resource.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:attribute>
                     <xs:attributeGroup ref="ssc:ABaseElement"/>
                 </xs:complexType>
             </xs:element>
