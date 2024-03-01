@@ -177,7 +177,8 @@ This means, the name, structure and attributes of XML elements enclosed by a Cla
 [#sec-annotations]
 ==== Annotations
 
-The Annotations element can be used to add a list of additional free style annotations.
+The Annotations element can be used to add a list of annotations, as specified in the SSP standard (see <<SSP10>> section 4.2 for details).
+The following description is non-normative, as the type is fully defined in the SSP standard.
 
 [#im-annotationsschema]
 .Annotations element structure and attributes
@@ -193,11 +194,13 @@ The Annotations element is structured by the following subordinated elements.
 | Annotation           | Optional            | <<sec-annotation>>
 |===
 
+At least one Annotation element must be present if the Annotations element is present.
+
 The Annotations element is not associated with any attributes.
 
 [#sec-annotation]
 ===== Annotation
-The Annotation element can be used to add a single free style annotation to the list of annotations.
+The Annotation element can be used to add a single annotation to the list of annotations.
 
 [#im-annotationschema]
 .Annotation element structure and attributes
