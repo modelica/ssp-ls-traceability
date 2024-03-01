@@ -159,8 +159,10 @@ The ClassificationEntry element is associated with the following attributes.
 |===
 | Attribute name | Optional / Mandatory | Attribute description
 | keyword        | Mandatory            | This attribute gives the keyword for the classification entry (i.e. keyword value pair). It is left undefined whether this must be unique across the entries of the Classification element, or whether repeated entries are allowed. This will depend on the definition of the classification.
+| type           | Optional             | This optional attribute specifies the MIME type of the value of the classification entry, i.e. the element content. It defaults to `text/plain`, but e.g. `text/markdown`` is commonly supported for more structured text.
 | xlink:type     | Fixed                | Has the fixed value `simple` to indicate an XLink simple link.
 | xlink:href     | Optional             | This attribute gives an optional link for the classification entry (i.e. keyword value pair). This link can be given in addition to any content of the classification entry, or it can be the sole information of the classification entry. The rules will depend on the definition of the classification.
+| linkedType     | Optional             | This optional attribute specifies the MIME type of the resource pointed to by the `xlink:href`` attribute of the classification entry. There is no default value, i.e. if the attribute is not given then other mechanisms to determine the MIME type of the resource should be used. If it is given, it shall override any other mechanism to determine the MIME type of the referenced resource.
 |===
 
 [#sec-any01]

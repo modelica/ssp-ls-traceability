@@ -94,6 +94,16 @@
                                         </xs:documentation>
                                     </xs:annotation>
                                 </xs:attribute>
+                                <xs:attribute name="type" type="xs:string" default="text/plain">
+                                    <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+                                            This optional attribute specifies the MIME type of the value of
+                                            the classification entry, i.e. the element content. It defaults
+                                            to text/plain, but e.g. text/markdown is commonly supported for
+                                            more structured text.
+                                        </xs:documentation>
+                                    </xs:annotation>
+                                </xs:attribute>
                                 <xs:attribute ref="xlink:type" fixed="simple"/>
                                 <xs:attribute ref="xlink:href">
                                     <xs:annotation>
@@ -103,6 +113,19 @@
                                             addition to any content of the classification entry, or it
                                             can be the sole information of the classification entry.
                                             The rules will depend on the definition of the classification.
+                                        </xs:documentation>
+                                    </xs:annotation>
+                                </xs:attribute>
+                                <xs:attribute name="linkedType" type="xs:string">
+                                    <xs:annotation>
+                                        <xs:documentation xml:lang="en">
+                                            This optional attribute specifies the MIME type of the resource
+                                            pointed to by the xlink:href attribute of the classification
+                                            entry. There is no default value, i.e. if the attribute is not
+                                            given then other mechanisms to determine the MIME type of the
+                                            resource should be used. If it is given, it shall override any
+                                            other mechanism to determine the MIME type of the referenced
+                                            resource.
                                         </xs:documentation>
                                     </xs:annotation>
                                 </xs:attribute>
