@@ -4,7 +4,11 @@
 Evaluate=false;
 OutputCPUtime = false;
 Advanced.Translation.EnableCodeExport=true;
+Advanced.Translation.CompileWith64=2
 Advanced.FMI.CrossExport=true;
+SetDymolaCompiler("vs", {"CCompiler=MSVC", "WSLPath=C:/Windows/System32/wsl.exe",
+   "MSVCDir=C:/Program Files/Microsoft Visual Studio/2022/Professional/VC/Auxiliary/Build",
+   "DDE=0", "DLL=0", "DYNUSECLANG=0"});
 
 translateModelFMU(
   "sse_edrive.stimuli",
