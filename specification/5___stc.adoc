@@ -767,22 +767,21 @@ The ResponsibleType element is associated with the following attributes.
 |===
 | Attribute name | Optional / Mandatory | Attribute description
 | organization   | Optional             | This attribute gives the organization that is responsible for a given step.
-|role            | Optional             | This attribute gives the role of the person that is responsible for a given step.
-|name            | Optional             | This attribute gives the name of the person that is responsible for a given step.
+| role           | Optional             | This attribute gives the role of the person that is responsible for a given step.
+| name           | Optional             | This attribute gives the name of the person that is responsible for a given step.
 |===
-
 
 
 [#sec-gresourceorreference]
 === GResourceOrReference
 
-The GResourceOrReference element ... #Text fehlt noch#
+The GResourceOrReference group is used to allow the specification of either a resource element or a reference to an existing resource element.
 
 [#im-gresourcereorferenceschema]
 .GResourceOrReference element structure and attributes
 image::GResourceOrReferenceSchema.png[]
 
-The GResourceOrReference group is structured by the following subordinated elements.
+The GResourceOrReference group is structured by the following subordinated elements, which present a choice, i.e. only one of the elements may and must be present, however the group itself is usually repeated.
 
 [#tb-gresourceorreferencesubelements]
 .GResourceOrReference element structure
@@ -797,7 +796,10 @@ The GResourceOrReference group is structured by the following subordinated eleme
 [#sec-resourcereference]
 ==== ResourceReference
 
-The ResourceReference element ... #Text fehlt noch#
+The ResourceReference element is used to reference an existing Resource element, to avoid duplication of information about the resource.
+All relevant information about the resource is taken from the referenced Resource element, whereas the ResourceReference element only contains a reference to that Resource element, and additional common administrative information.
+
+Semantically, it is treated as if the referenced Resource element where present instead of the ResourceReference element in its location.
 
 [#im-resourcereferenceschema]
 .ResourceReference element structure and attributes
@@ -813,7 +815,7 @@ The ResourceReference element is structured by the following subordinated elemen
 | GElementCommon   | Optional             |<<sec-gelementcommon>>
 |===
 
-The ResourceRefernece element is associated with the following attribute.
+The ResourceRefernece element is associated with the following attributes.
 
 [#tb-resourcereferenceattributes]
 .ResourceRefernece element attributes
@@ -821,8 +823,8 @@ The ResourceRefernece element is associated with the following attribute.
 |===
 | Attribute name | Optional/ Mandatory | Attribute description
 | xlink:type     | Fixed               | Has the fixed value `simple` to indicate an XLink simple link.
-| xlink:href     | Optional            | #Text fehlt noch#
-| id             | Optional            | #Text fehlt noch#
-| description    | Optional            | #Text fehlt noch#
+| xlink:href     | Optional            | This attribute identifies the `Resource` element that is referenced as an IRI. It will usually be a relative URI that references a `Resource` element within the same document via a URI fragment identifier. It is left implementation-defined whether URIs/IRIs that refer to external resources are allowed.
+| id             | Optional            | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier. 
+| description    | Optional            | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
 |===
 
