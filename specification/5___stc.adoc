@@ -7,24 +7,27 @@ The purpose of extractiong these elements is to increase the flexibility and ext
 [#sec-generalinformationtype]
 === GeneralInformationType
 
-This element is used to encapsulate general information about the simulation task, which is not part of any specific phase or step.
+This element type is used to encapsulate general information about the simulation or decision task, which is not part of any specific phase or step.
 
 [#im-generalinformationtypeschema]
-.GeneralInformationType element structure and attributes
+.GeneralInformationType element type structure and attributes
 image::GeneralInformationTypeSchema.png[]
 
-The GeneralInformationType element is structured by the following subordinated element.
+The GeneralInformationType element type is structured by the following subordinated elements.
 
 [#tb-generalinformationtypesubelements]
 .GeneralInformationType element structure
 [width="100%",options="header"]
 |===
-| Sub element name | Optional / Mandatory | Details
-| DerivationChain  | Optional             | <<sec-derivationchain>>
-| Link             | Optional             | <<sec-linkstype>>
+| Sub element name     | Optional / Mandatory | Details
+| DerivationChain      | Optional             | <<sec-derivationchain>>
+| GResourceOrReference | Optional             | <<sec-gresourceorreference>>
+| Link                 | Optional             | <<sec-linkstype>>
 |===
 
-The GeneralInformationType element is not associated with any attributes.
+The Resource and ResourceReference elements if present, are used to provide additional information about the simulation task.
+
+The GeneralInformationType element is not associated with any specific attributes beyond the common SSP attributes.
 
 [#sec-derivationchain]
 ==== DerivationChain
@@ -45,7 +48,7 @@ If the content of the current file can be considered to be derived from one or a
 .DerivationChain element structure and attributes
 image::DerivationChainSchema.png[]
 
-The DerivationChain element is structured by the following subordinated element.
+The DerivationChain element is structured by the following subordinated elements.
 
 [#tb-derivationchainsubelements]
 .DerivationChain element structure
@@ -55,7 +58,7 @@ The DerivationChain element is structured by the following subordinated element.
 | DerivationChainEntry | Optional             | <<sec-derivationchainentry>>
 |===
 
-The DerivationChain element is not associated with any attributes.
+The DerivationChain element is not associated with any specific attributes beyond the common SSP attributes.
 
 [#sec-derivationchainentry]
 ===== DerivationChainEntry
@@ -91,7 +94,7 @@ Common element content for all modeling elements of the file.
 .GElementCommon structure and attributes
 image::GElementCommonSchema.png[]
 
-The GElementCommon element is structured by the following subordinated elements.
+The GElementCommon group is structured by the following subordinated elements.
 
 [#tb-gelementcommonsubelements]
 .GElementCommon element structure
@@ -100,9 +103,7 @@ The GElementCommon element is structured by the following subordinated elements.
 | Sub element name     | Optional / Mandatory | Details
 | Classification       | Optional             | <<sec-classification>>
 | Annotations          | Optional             | <<sec-annotations>>
-|=== 
-
-The GElementCommon element is not associated with any attributes.
+|===
 
 [#sec-classification]
 ==== Classification
@@ -239,7 +240,7 @@ Common element content for all phases.
 .GPhaseCommon structure and attributes
 image::GPhaseCommonSchema.png[]
 
-The GPhaseCommon element is structured by the following subordinated elements.
+The GPhaseCommon group is structured by the following subordinated elements.
 
 [#tb-gphasecommonsubelements]
 .GPhaseCommon element structure
@@ -251,14 +252,10 @@ The GPhaseCommon element is structured by the following subordinated elements.
 | GElementCommon       | Optional             | <<sec-gelementcommon>>
 |===
 
-The GPhaseCommon element is not associated with any attributes.
-
 [#sec-lifecycleinformationtype]
 === LifeCycleInformationType
 
-The LifeCycleInformationType element defines the structure and attributes of life-cycle information about the enclosing phase or step element.
-
-The LifeCycleInformationType element defines the structure and attributes of life-cycle information about the enclosing phase or step element.
+The LifeCycleInformationType element type defines the structure and attributes of life-cycle information about the enclosing phase or step element.
 
 [#im-lifecycleinformationtypeschema]
 .LifeCycleInformationType element structure and attributes
@@ -445,7 +442,7 @@ The LinksType element is structured by the following subordinated elements.
 | Link             | Mandatory            | <<sec-link>>
 |===
 
-The LinksType element is not associated with any attributes.
+The LinksType element is not associated with any specific attributes beyond the common SSP attributes.
 
 [#sec-link]
 ==== Link
@@ -742,7 +739,7 @@ The ContentType element is structured by following subordinated elements.
 | ##any                | Optional             | <<sec-any03>>
 |===
 
-The ContentType is not associated with any attributes.
+The ContentType is not associated with any specific attributes beyond the common SSP attributes.
 
 [#sec-any03]
 ==== ##any
@@ -785,7 +782,7 @@ The GResourceOrReference element ... #Text fehlt noch#
 .GResourceOrReference element structure and attributes
 image::GResourceOrReferenceSchema.png[]
 
-The GResourceOrReference element is structured by the following subordinated elements.
+The GResourceOrReference group is structured by the following subordinated elements.
 
 [#tb-gresourceorreferencesubelements]
 .GResourceOrReference element structure
@@ -795,8 +792,6 @@ The GResourceOrReference element is structured by the following subordinated ele
 | Resource          | Mandatory            | <<sec-resourcetype>>
 | ResourceReference | Mandatory            | <<sec-resourcereference>>
 |===
-
-The GResourceOrReference element is not associated with any attributes.
 
 
 [#sec-resourcereference]
