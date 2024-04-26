@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.21">
+<meta name="generator" content="Asciidoctor 2.0.22">
 <title>SSP Traceability Specification</title>
 <style>
 /* Asciidoctor default stylesheet | MIT License | http://asciidoctor.org */
@@ -1260,16 +1260,16 @@ The purpose of extractiong these elements is to increase the flexibility and ext
 <div class="sect2">
 <h3 id="sec-generalinformationtype">5.1. GeneralInformationType</h3>
 <div class="paragraph">
-<p>This element is used to encapsulate general information about the simulation task, which is not part of any specific phase or step.</p>
+<p>This element type is used to encapsulate general information about the simulation or decision task, which is not part of any specific phase or step.</p>
 </div>
 <div id="im-generalinformationtypeschema" class="imageblock">
 <div class="content">
 <img src="images/GeneralInformationTypeSchema.png" alt="GeneralInformationTypeSchema">
 </div>
-<div class="title">Figure 9. GeneralInformationType element structure and attributes</div>
+<div class="title">Figure 9. GeneralInformationType element type structure and attributes</div>
 </div>
 <div class="paragraph">
-<p>The GeneralInformationType element is structured by the following subordinated element.</p>
+<p>The GeneralInformationType element type is structured by the following subordinated elements.</p>
 </div>
 <table id="tb-generalinformationtypesubelements" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 1. GeneralInformationType element structure</caption>
@@ -1292,6 +1292,11 @@ The purpose of extractiong these elements is to increase the flexibility and ext
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-derivationchain">Section 5.1.1</a></p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GResourceOrReference</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-gresourceorreference">Section 5.13</a></p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Link</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#sec-linkstype">Section 5.8</a></p></td>
@@ -1299,7 +1304,10 @@ The purpose of extractiong these elements is to increase the flexibility and ext
 </tbody>
 </table>
 <div class="paragraph">
-<p>The GeneralInformationType element is not associated with any attributes.</p>
+<p>The Resource and ResourceReference elements if present, are used to provide additional information about the simulation task.</p>
+</div>
+<div class="paragraph">
+<p>The GeneralInformationType element is not associated with any specific attributes beyond the common SSP attributes.</p>
 </div>
 <div class="sect3">
 <h4 id="sec-derivationchain">5.1.1. DerivationChain</h4>
@@ -1325,7 +1333,7 @@ If the content of the current file can be considered to be derived from one or a
 <div class="title">Figure 10. DerivationChain element structure and attributes</div>
 </div>
 <div class="paragraph">
-<p>The DerivationChain element is structured by the following subordinated element.</p>
+<p>The DerivationChain element is structured by the following subordinated elements.</p>
 </div>
 <table id="tb-derivationchainsubelements" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 2. DerivationChain element structure</caption>
@@ -1350,7 +1358,7 @@ If the content of the current file can be considered to be derived from one or a
 </tbody>
 </table>
 <div class="paragraph">
-<p>The DerivationChain element is not associated with any attributes.</p>
+<p>The DerivationChain element is not associated with any specific attributes beyond the common SSP attributes.</p>
 </div>
 <div class="sect4">
 <h5 id="sec-derivationchainentry">5.1.1.1. DerivationChainEntry</h5>
@@ -1436,7 +1444,7 @@ If the content of the current file can be considered to be derived from one or a
 <div class="title">Figure 12. GElementCommon structure and attributes</div>
 </div>
 <div class="paragraph">
-<p>The GElementCommon element is structured by the following subordinated elements.</p>
+<p>The GElementCommon group is structured by the following subordinated elements.</p>
 </div>
 <table id="tb-gelementcommonsubelements" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 4. GElementCommon element structure</caption>
@@ -1465,9 +1473,6 @@ If the content of the current file can be considered to be derived from one or a
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>The GElementCommon element is not associated with any attributes.</p>
-</div>
 <div class="sect3">
 <h4 id="sec-classification">5.2.1. Classification</h4>
 <div class="paragraph">
@@ -1635,7 +1640,8 @@ This means, the name, structure and attributes of XML elements enclosed by a Cla
 <div class="sect3">
 <h4 id="sec-annotations">5.2.2. Annotations</h4>
 <div class="paragraph">
-<p>The Annotations element can be used to add a list of additional free style annotations.</p>
+<p>The Annotations element can be used to add a list of annotations, as specified in the SSP standard (see <a href="#SSP10">[SSP10]</a> section 4.2 for details).
+The following description is non-normative, as the type is fully defined in the SSP standard.</p>
 </div>
 <div id="im-annotationsschema" class="imageblock">
 <div class="content">
@@ -1669,12 +1675,15 @@ This means, the name, structure and attributes of XML elements enclosed by a Cla
 </tbody>
 </table>
 <div class="paragraph">
+<p>At least one Annotation element must be present if the Annotations element is present.</p>
+</div>
+<div class="paragraph">
 <p>The Annotations element is not associated with any attributes.</p>
 </div>
 <div class="sect4">
 <h5 id="sec-annotation">5.2.2.1. Annotation</h5>
 <div class="paragraph">
-<p>The Annotation element can be used to add a single free style annotation to the list of annotations.</p>
+<p>The Annotation element can be used to add a single annotation to the list of annotations.</p>
 </div>
 <div id="im-annotationschema" class="imageblock">
 <div class="content">
@@ -1751,7 +1760,7 @@ This means, the name, structure and attributes of XML elements enclosed by an An
 <div class="title">Figure 17. GPhaseCommon structure and attributes</div>
 </div>
 <div class="paragraph">
-<p>The GPhaseCommon element is structured by the following subordinated elements.</p>
+<p>The GPhaseCommon group is structured by the following subordinated elements.</p>
 </div>
 <table id="tb-gphasecommonsubelements" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 12. GPhaseCommon element structure</caption>
@@ -1785,17 +1794,11 @@ This means, the name, structure and attributes of XML elements enclosed by an An
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>The GPhaseCommon element is not associated with any attributes.</p>
-</div>
 </div>
 <div class="sect2">
 <h3 id="sec-lifecycleinformationtype">5.4. LifeCycleInformationType</h3>
 <div class="paragraph">
-<p>The LifeCycleInformationType element defines the structure and attributes of life-cycle information about the enclosing phase or step element.</p>
-</div>
-<div class="paragraph">
-<p>The LifeCycleInformationType element defines the structure and attributes of life-cycle information about the enclosing phase or step element.</p>
+<p>The LifeCycleInformationType element type defines the structure and attributes of life-cycle information about the enclosing phase or step element.</p>
 </div>
 <div id="im-lifecycleinformationtypeschema" class="imageblock">
 <div class="content">
@@ -2220,7 +2223,7 @@ Typically, this is used to justify decisions such as simplifications or deviatio
 </tbody>
 </table>
 <div class="paragraph">
-<p>The LinksType element is not associated with any attributes.</p>
+<p>The LinksType element is not associated with any specific attributes beyond the common SSP attributes.</p>
 </div>
 <div class="sect3">
 <h4 id="sec-link">5.8.1. Link</h4>
@@ -2907,7 +2910,7 @@ If it is present, then the attribute source of the enclosing element must not be
 </tbody>
 </table>
 <div class="paragraph">
-<p>The ContentType is not associated with any attributes.</p>
+<p>The ContentType is not associated with any specific attributes beyond the common SSP attributes.</p>
 </div>
 <div class="sect3">
 <h4 id="sec-any03">5.11.1. ##any</h4>
@@ -2970,7 +2973,7 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 <div class="sect2">
 <h3 id="sec-gresourceorreference">5.13. GResourceOrReference</h3>
 <div class="paragraph">
-<p>The GResourceOrReference element &#8230;&#8203; <mark>Text fehlt noch</mark></p>
+<p>The GResourceOrReference group is used to allow the specification of either a resource element or a reference to an existing resource element.</p>
 </div>
 <div id="im-gresourcereorferenceschema" class="imageblock">
 <div class="content">
@@ -2979,7 +2982,7 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 <div class="title">Figure 32. GResourceOrReference element structure and attributes</div>
 </div>
 <div class="paragraph">
-<p>The GResourceOrReference element is structured by the following subordinated elements.</p>
+<p>The GResourceOrReference group is structured by the following subordinated elements, which present a choice, i.e. only one of the elements may and must be present, however the group itself is usually repeated.</p>
 </div>
 <table id="tb-gresourceorreferencesubelements" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 35. GResourceOrReference element structure</caption>
@@ -3008,13 +3011,14 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p>The GResourceOrReference element is not associated with any attributes.</p>
-</div>
 <div class="sect3">
 <h4 id="sec-resourcereference">5.13.1. ResourceReference</h4>
 <div class="paragraph">
-<p>The ResourceReference element &#8230;&#8203; <mark>Text fehlt noch</mark></p>
+<p>The ResourceReference element is used to reference an existing Resource element, to avoid duplication of information about the resource.
+All relevant information about the resource is taken from the referenced Resource element, whereas the ResourceReference element only contains a reference to that Resource element, and additional common administrative information.</p>
+</div>
+<div class="paragraph">
+<p>Semantically, it is treated as if the referenced Resource element where present instead of the ResourceReference element in its location.</p>
 </div>
 <div id="im-resourcereferenceschema" class="imageblock">
 <div class="content">
@@ -3048,7 +3052,7 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 </tbody>
 </table>
 <div class="paragraph">
-<p>The ResourceRefernece element is associated with the following attribute.</p>
+<p>The ResourceRefernece element is associated with the following attributes.</p>
 </div>
 <table id="tb-resourcereferenceattributes" class="tableblock frame-all grid-all stretch">
 <caption class="title">Table 37. ResourceRefernece element attributes</caption>
@@ -3073,17 +3077,17 @@ This mean the name, structure and attributes of XML elements enclosed by a conte
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">xlink:href</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><mark>Text fehlt noch</mark></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute identifies the <code>Resource</code> element that is referenced as an IRI. It will usually be a relative URI that references a <code>Resource</code> element within the same document via a URI fragment identifier. It is left implementation-defined whether URIs/IRIs that refer to external resources are allowed.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">id</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><mark>Text fehlt noch</mark></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Optional</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><mark>Text fehlt noch</mark></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.</p></td>
 </tr>
 </tbody>
 </table>
