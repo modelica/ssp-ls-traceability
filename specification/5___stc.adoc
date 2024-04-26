@@ -7,24 +7,27 @@ The purpose of extractiong these elements is to increase the flexibility and ext
 [#sec-generalinformationtype]
 === GeneralInformationType
 
-This element is used to encapsulate general information about the simulation task, which is not part of any specific phase or step.
+This element type is used to encapsulate general information about the simulation or decision task, which is not part of any specific phase or step.
 
 [#im-generalinformationtypeschema]
-.GeneralInformationType element structure and attributes
+.GeneralInformationType element type structure and attributes
 image::GeneralInformationTypeSchema.png[]
 
-The GeneralInformationType element is structured by the following subordinated element.
+The GeneralInformationType element type is structured by the following subordinated elements.
 
 [#tb-generalinformationtypesubelements]
 .GeneralInformationType element structure
 [width="100%",options="header"]
 |===
-| Sub element name | Optional / Mandatory | Details
-| DerivationChain  | Optional             | <<sec-derivationchain>>
-| Link             | Optional             | <<sec-linkstype>>
+| Sub element name     | Optional / Mandatory | Details
+| DerivationChain      | Optional             | <<sec-derivationchain>>
+| GResourceOrReference | Optional             | <<sec-gresourceorreference>>
+| Link                 | Optional             | <<sec-linkstype>>
 |===
 
-The GeneralInformationType element is not associated with any attributes.
+The Resource and ResourceReference elements if present, are used to provide additional information about the simulation task.
+
+The GeneralInformationType element is not associated with any specific attributes beyond the common SSP attributes.
 
 [#sec-derivationchain]
 ==== DerivationChain
@@ -45,7 +48,7 @@ If the content of the current file can be considered to be derived from one or a
 .DerivationChain element structure and attributes
 image::DerivationChainSchema.png[]
 
-The DerivationChain element is structured by the following subordinated element.
+The DerivationChain element is structured by the following subordinated elements.
 
 [#tb-derivationchainsubelements]
 .DerivationChain element structure
@@ -55,7 +58,7 @@ The DerivationChain element is structured by the following subordinated element.
 | DerivationChainEntry | Optional             | <<sec-derivationchainentry>>
 |===
 
-The DerivationChain element is not associated with any attributes.
+The DerivationChain element is not associated with any specific attributes beyond the common SSP attributes.
 
 [#sec-derivationchainentry]
 ===== DerivationChainEntry
@@ -91,7 +94,7 @@ Common element content for all modeling elements of the file.
 .GElementCommon structure and attributes
 image::GElementCommonSchema.png[]
 
-The GElementCommon element is structured by the following subordinated elements.
+The GElementCommon group is structured by the following subordinated elements.
 
 [#tb-gelementcommonsubelements]
 .GElementCommon element structure
@@ -100,9 +103,7 @@ The GElementCommon element is structured by the following subordinated elements.
 | Sub element name     | Optional / Mandatory | Details
 | Classification       | Optional             | <<sec-classification>>
 | Annotations          | Optional             | <<sec-annotations>>
-|=== 
-
-The GElementCommon element is not associated with any attributes.
+|===
 
 [#sec-classification]
 ==== Classification
@@ -177,7 +178,8 @@ This means, the name, structure and attributes of XML elements enclosed by a Cla
 [#sec-annotations]
 ==== Annotations
 
-The Annotations element can be used to add a list of additional free style annotations.
+The Annotations element can be used to add a list of annotations, as specified in the SSP standard (see <<SSP10>> section 4.2 for details).
+The following description is non-normative, as the type is fully defined in the SSP standard.
 
 [#im-annotationsschema]
 .Annotations element structure and attributes
@@ -193,11 +195,13 @@ The Annotations element is structured by the following subordinated elements.
 | Annotation           | Optional            | <<sec-annotation>>
 |===
 
+At least one Annotation element must be present if the Annotations element is present.
+
 The Annotations element is not associated with any attributes.
 
 [#sec-annotation]
 ===== Annotation
-The Annotation element can be used to add a single free style annotation to the list of annotations.
+The Annotation element can be used to add a single annotation to the list of annotations.
 
 [#im-annotationschema]
 .Annotation element structure and attributes
@@ -236,7 +240,7 @@ Common element content for all phases.
 .GPhaseCommon structure and attributes
 image::GPhaseCommonSchema.png[]
 
-The GPhaseCommon element is structured by the following subordinated elements.
+The GPhaseCommon group is structured by the following subordinated elements.
 
 [#tb-gphasecommonsubelements]
 .GPhaseCommon element structure
@@ -248,14 +252,10 @@ The GPhaseCommon element is structured by the following subordinated elements.
 | GElementCommon       | Optional             | <<sec-gelementcommon>>
 |===
 
-The GPhaseCommon element is not associated with any attributes.
-
 [#sec-lifecycleinformationtype]
 === LifeCycleInformationType
 
-The LifeCycleInformationType element defines the structure and attributes of life-cycle information about the enclosing phase or step element.
-
-The LifeCycleInformationType element defines the structure and attributes of life-cycle information about the enclosing phase or step element.
+The LifeCycleInformationType element type defines the structure and attributes of life-cycle information about the enclosing phase or step element.
 
 [#im-lifecycleinformationtypeschema]
 .LifeCycleInformationType element structure and attributes
@@ -442,7 +442,7 @@ The LinksType element is structured by the following subordinated elements.
 | Link             | Mandatory            | <<sec-link>>
 |===
 
-The LinksType element is not associated with any attributes.
+The LinksType element is not associated with any specific attributes beyond the common SSP attributes.
 
 [#sec-link]
 ==== Link
@@ -739,7 +739,7 @@ The ContentType element is structured by following subordinated elements.
 | ##any                | Optional             | <<sec-any03>>
 |===
 
-The ContentType is not associated with any attributes.
+The ContentType is not associated with any specific attributes beyond the common SSP attributes.
 
 [#sec-any03]
 ==== ##any
@@ -767,22 +767,21 @@ The ResponsibleType element is associated with the following attributes.
 |===
 | Attribute name | Optional / Mandatory | Attribute description
 | organization   | Optional             | This attribute gives the organization that is responsible for a given step.
-|role            | Optional             | This attribute gives the role of the person that is responsible for a given step.
-|name            | Optional             | This attribute gives the name of the person that is responsible for a given step.
+| role           | Optional             | This attribute gives the role of the person that is responsible for a given step.
+| name           | Optional             | This attribute gives the name of the person that is responsible for a given step.
 |===
-
 
 
 [#sec-gresourceorreference]
 === GResourceOrReference
 
-The GResourceOrReference element ... #Text fehlt noch#
+The GResourceOrReference group is used to allow the specification of either a resource element or a reference to an existing resource element.
 
 [#im-gresourcereorferenceschema]
 .GResourceOrReference element structure and attributes
 image::GResourceOrReferenceSchema.png[]
 
-The GResourceOrReference element is structured by the following subordinated elements.
+The GResourceOrReference group is structured by the following subordinated elements, which present a choice, i.e. only one of the elements may and must be present, however the group itself is usually repeated.
 
 [#tb-gresourceorreferencesubelements]
 .GResourceOrReference element structure
@@ -793,13 +792,14 @@ The GResourceOrReference element is structured by the following subordinated ele
 | ResourceReference | Mandatory            | <<sec-resourcereference>>
 |===
 
-The GResourceOrReference element is not associated with any attributes.
-
 
 [#sec-resourcereference]
 ==== ResourceReference
 
-The ResourceReference element ... #Text fehlt noch#
+The ResourceReference element is used to reference an existing Resource element, to avoid duplication of information about the resource.
+All relevant information about the resource is taken from the referenced Resource element, whereas the ResourceReference element only contains a reference to that Resource element, and additional common administrative information.
+
+Semantically, it is treated as if the referenced Resource element where present instead of the ResourceReference element in its location.
 
 [#im-resourcereferenceschema]
 .ResourceReference element structure and attributes
@@ -815,7 +815,7 @@ The ResourceReference element is structured by the following subordinated elemen
 | GElementCommon   | Optional             |<<sec-gelementcommon>>
 |===
 
-The ResourceRefernece element is associated with the following attribute.
+The ResourceRefernece element is associated with the following attributes.
 
 [#tb-resourcereferenceattributes]
 .ResourceRefernece element attributes
@@ -823,8 +823,8 @@ The ResourceRefernece element is associated with the following attribute.
 |===
 | Attribute name | Optional/ Mandatory | Attribute description
 | xlink:type     | Fixed               | Has the fixed value `simple` to indicate an XLink simple link.
-| xlink:href     | Optional            | #Text fehlt noch#
-| id             | Optional            | #Text fehlt noch#
-| description    | Optional            | #Text fehlt noch#
+| xlink:href     | Optional            | This attribute identifies the `Resource` element that is referenced as an IRI. It will usually be a relative URI that references a `Resource` element within the same document via a URI fragment identifier. It is left implementation-defined whether URIs/IRIs that refer to external resources are allowed.
+| id             | Optional            | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier. 
+| description    | Optional            | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
 |===
 
