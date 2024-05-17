@@ -34,7 +34,7 @@
                                     <xs:documentation xml:lang="en">
                                         Contains information and a description of the engineering task of the
                                         higher-level engineering process as well as the general requirements
-                                        and objectives, e.g., KPI and other criteria for the simulation task.
+                                        and objectives, e.g., KPI and other criteria for the modelling task.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
@@ -62,31 +62,31 @@
                             <xs:element name="DefineModelRequirements" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
-                                        In this step the requirements of the simulation task are broken down
-                                        into the individual requirements for the simulation models.
+                                        In this step the requirements of the modelling task are broken down
+                                        into the individual requirements for the simulation model.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
                             <xs:element name="DefineParameterRequirements" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
-                                        In this step the requirements of the simulation task are broken down
+                                        In this step the requirements of the modelling task are broken down
                                         into the individual requirements for the parameters.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="DefineModellingEnvironmentRequirements" type="stc:StepType" minOccurs="0">
+                            <xs:element name="DefineSimulationEnvironmentRequirements" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
-                                        In this step the requirements of the simulation task are broken down
+                                        In this step the requirements of the modelling task are broken down
                                         into the individual requirements for the simulation environment.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="DefineModellingIntegrationRequirements" type="stc:StepType" minOccurs="0">
+                            <xs:element name="DefineSimulationIntegrationRequirements" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
-                                        In this step the requirements of the simulation task are broken down
+                                        In this step the requirements of the modelling task are broken down
                                         into the individual requirements for the simulation integration elements.
                                     </xs:documentation>
                                 </xs:annotation>
@@ -94,7 +94,7 @@
                             <xs:element name="DefineTestCaseRequirements" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
-                                        In this step the requirements of the simulation task are broken down
+                                        In this step the requirements of the modelling task are broken down
                                         into the individual requirements for the test cases.
                                     </xs:documentation>
                                 </xs:annotation>
@@ -145,7 +145,7 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="DefineModellingEnvironmentDesignSpecification" type="stc:StepType" minOccurs="0">
+                            <xs:element name="DefineSimulationEnvironmentDesignSpecification" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
                                         In this step the design specification for the simulation environment is
@@ -155,7 +155,7 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="DefineModellingIntegrationDesignSpecification" type="stc:StepType" minOccurs="0">
+                            <xs:element name="DefineSimulationIntegrationDesignSpecification" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
                                         In this step the design specification for the simulation integration is
@@ -227,7 +227,7 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="ImplementModellingEnvironment" type="stc:StepType" minOccurs="0">
+                            <xs:element name="ImplementSimulationEnvironment" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
                                         In this step the simulation environment modules, workflow and data flow
@@ -245,7 +245,7 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="IntegrateModelling" type="stc:StepType" minOccurs="0">
+                            <xs:element name="IntegrateSimulation" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
                                         In this step the models with their parametrization and tests (or the
@@ -255,22 +255,22 @@
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="AssureModellingSetupQuality" type="stc:StepType" minOccurs="0">
+                            <xs:element name="AssureSimulationSetupQuality" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
                                         In this step quality assurance (i.e., tests) for the simulation
                                         environment with integrated models and parametrization is performed. 
                                         Quality information about models and simulation environment according
-                                        to the criticality of the decision of the simulation task is provided.
+                                        to the criticality of the decision of the modelling task is provided.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="DeriveModellingSetupQualityVerdict" type="stc:StepType" minOccurs="0">
+                            <xs:element name="DeriveSimulationSetupQualityVerdict" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
                                         In this step an assessment of the quality of the simulation setup and
                                         according models, test cases, parametrization and simulation environment
-                                        is carried out (according to the criticality of the simulation task).
+                                        is carried out (according to the criticality of the modelling task).
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
@@ -287,7 +287,7 @@
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="ExecuteModelling" type="stc:StepType" minOccurs="0">
+                            <xs:element name="ExecuteSimulation" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
                                         In this step the simulation itself as well as simulations relevant for
@@ -308,29 +308,29 @@
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="EvaluateModellingResults" type="stc:StepType" minOccurs="0">
+                            <xs:element name="EvaluateSimulationResults" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
                                         In this step the post processing of simulation results and for the
                                         quality of results is performed. That often means the visualization of
-                                        simulation results according to the simulation task requirements.
+                                        simulation results according to the modelling task requirements.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="AssureModellingQuality" type="stc:StepType" minOccurs="0">
+                            <xs:element name="AssureSimulationQuality" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
-                                        In this step quality assurance for the simulation task and result is
+                                        In this step quality assurance for the modelling task and result is
                                         performed. Quality information about the simulation experiments is
-                                        provided, according to the criticality of the decision of the simulation
+                                        provided, according to the criticality of the decision of the modelling
                                         task.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
-                            <xs:element name="DeriveModellingQualityVerdict" type="stc:StepType" minOccurs="0">
+                            <xs:element name="DeriveSimulationQualityVerdict" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
-                                        In this step an assessment of the quality of the simulation task and
+                                        In this step an assessment of the quality of the modelling task and
                                         result is carried out.
                                     </xs:documentation>
                                 </xs:annotation>
@@ -352,7 +352,7 @@
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
                                         In this step the decision is made whether the requirements and
-                                        objectives of the simulation task have been fulfilled. This is done in
+                                        objectives of the modelling task have been fulfilled. This is done in
                                         coordination with the higher-level process (Credible Simulation
                                         Process).
                                     </xs:documentation>
@@ -380,8 +380,8 @@
             <xs:attribute name="name" type="xs:string" use="required">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">
-                        This attribute gives the simulation task a name, which can be used
-                        for purposes of presenting the simulation task to the user, e.g.
+                        This attribute gives the modelling task a name, which can be used
+                        for purposes of presenting the modelling task to the user, e.g.
                         when selecting individual variant STMDs from an SSP.
                     </xs:documentation>
                 </xs:annotation>
