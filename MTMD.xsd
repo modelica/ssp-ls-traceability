@@ -279,67 +279,6 @@
                         <xs:attributeGroup ref="ssc:ABaseElement"/>
                     </xs:complexType>
                 </xs:element>
-                <xs:element name="ExecutionPhase" minOccurs="0">
-                    <xs:annotation>
-                        <xs:documentation xml:lang="en">
-                            This element specifies the Execution Phase of the overall Modelling Task.
-                        </xs:documentation>
-                    </xs:annotation>
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="ExecuteSimulation" type="stc:StepType" minOccurs="0">
-                                <xs:annotation>
-                                    <xs:documentation xml:lang="en">
-                                        In this step the simulation itself as well as simulations relevant for
-                                        the following evaluation and quality assurance are carried out.
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                            <xs:group ref="stc:GPhaseCommon"/>
-                        </xs:sequence>
-                        <xs:attributeGroup ref="ssc:ABaseElement"/>
-                    </xs:complexType>
-                </xs:element>
-                <xs:element name="EvaluationPhase" minOccurs="0">
-                    <xs:annotation>
-                        <xs:documentation xml:lang="en">
-                            This element specifies the Evaluation Phase of the overall Modelling Task.
-                        </xs:documentation>
-                    </xs:annotation>
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="EvaluateSimulationResults" type="stc:StepType" minOccurs="0">
-                                <xs:annotation>
-                                    <xs:documentation xml:lang="en">
-                                        In this step the post processing of simulation results and for the
-                                        quality of results is performed. That often means the visualization of
-                                        simulation results according to the modelling task requirements.
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                            <xs:element name="AssureSimulationQuality" type="stc:StepType" minOccurs="0">
-                                <xs:annotation>
-                                    <xs:documentation xml:lang="en">
-                                        In this step quality assurance for the modelling task and result is
-                                        performed. Quality information about the simulation experiments is
-                                        provided, according to the criticality of the decision of the modelling
-                                        task.
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                            <xs:element name="DeriveSimulationQualityVerdict" type="stc:StepType" minOccurs="0">
-                                <xs:annotation>
-                                    <xs:documentation xml:lang="en">
-                                        In this step an assessment of the quality of the modelling task and
-                                        result is carried out.
-                                    </xs:documentation>
-                                </xs:annotation>
-                            </xs:element>
-                            <xs:group ref="stc:GPhaseCommon"/>
-                        </xs:sequence>
-                        <xs:attributeGroup ref="ssc:ABaseElement"/>
-                    </xs:complexType>
-                </xs:element>
                 <xs:element name="FulfillmentPhase" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">
