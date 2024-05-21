@@ -33,7 +33,7 @@
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
                                         Contains information and a description of the engineering task of the
-                                        higher-level engineering process as well as the general requirements
+                                        higher-level engineering and simulation process as well as the general requirements
                                         and objectives, e.g., KPI and other criteria for the modelling task.
                                     </xs:documentation>
                                 </xs:annotation>
@@ -70,8 +70,9 @@
                             <xs:element name="DefineParameterRequirements" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
-                                        In this step the requirements of the modelling task are broken down
-                                        into the individual requirements for the parameters.
+                                        In this step the relevant assumptions and the requirements that the model with 
+                                        parameterization in the simulation must fulfill are clarified. The requirements of
+                                        the modelling task are broken down into the individual requirements for the parameters.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
@@ -79,7 +80,7 @@
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
                                         In this step the requirements of the modelling task are broken down
-                                        into the individual requirements for the simulation environment.
+                                        into the individual requirements for the modeling and simulation environment.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
@@ -87,7 +88,7 @@
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
                                         In this step the requirements of the modelling task are broken down
-                                        into the individual requirements for the simulation integration elements.
+                                        into the individual requirements for the modeling and simulation integration elements.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
@@ -221,9 +222,9 @@
                                     <xs:documentation xml:lang="en">
                                         In step the parameter structures, the infrastructure for handling
                                         different parameter sets and the processing of material data to model
-                                        parameters is implemented. Necessary infrastructure for quality
-                                        assurance of data and parameters is implemented and quality assurance
-                                        performed.
+                                        parameters is implemented (as far it is needed for model development). 
+                                        Necessary infrastructure for quality assurance of data and parameters 
+                                        is implemented and quality assurance performed.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
