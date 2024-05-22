@@ -149,9 +149,9 @@
                             <xs:element name="DefineSimulationEnvironmentDesignSpecification" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
-                                        In this step the design specification for the simulation environment is
+                                        In this step the design specification for the modelliong and simulation environment is
                                         derived from the requirements. This can also be seen as the designi
-                                        specification for the architecture of the simulation environment
+                                        specification for the architecture of the modelling and simulation environment
                                         (structure, interfaces, modules, workflow and data flow).
                                     </xs:documentation>
                                 </xs:annotation>
@@ -259,7 +259,7 @@
                             <xs:element name="AssureSimulationSetupQuality" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
-                                        In this step quality assurance (i.e., tests) for the simulation
+                                        In this step quality assurance (i.e., tests) for the modeling and simulation
                                         environment with integrated models and parametrization is performed. 
                                         Quality information about models and simulation environment according
                                         to the criticality of the decision of the modelling task is provided.
@@ -269,8 +269,8 @@
                             <xs:element name="DeriveSimulationSetupQualityVerdict" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
-                                        In this step an assessment of the quality of the simulation setup and
-                                        according models, test cases, parametrization and simulation environment
+                                        In this step an assessment of the quality of the modeling and simulation setup 
+                                        and according models, test cases, parametrization and simulation environment
                                         is carried out (according to the criticality of the modelling task).
                                     </xs:documentation>
                                 </xs:annotation>
