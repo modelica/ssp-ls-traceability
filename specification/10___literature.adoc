@@ -7,6 +7,8 @@
 
 - [[[SSP10]]] Modelica Association: **System Structure and Parameterization 1.0**. March 2019. https://ssp-standard.org/publications/SSP10/SystemStructureAndParameterization10.pdf
 
+- [[[SSP20]]] Modelica Association: **System Structure and Parameterization 2.0-rc.1**. October 2024. https://github.com/modelica/ssp-standard/releases/download/v2.0-rc.1/SSP-Specification.zip
+
 - [[[XMLSCHEMA1.1]]] World Wide Web Consortium, Inc. (W3C): **XML Schema 1.1**. April 2012. https://www.w3.org/XML/Schema
 
 - [[[XLINK]]] World Wide Web Consortium, Inc. (W3C): **XLink 1.1**. May 2010. https://www.w3.org/TR/xlink/
