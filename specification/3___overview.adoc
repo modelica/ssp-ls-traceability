@@ -18,7 +18,7 @@ The form in which this bundle exists, e.g. whether it is stored as a file or in 
 * File-based resources linked by a GlueParticle file should be exchanged with the GlueParticle file itself to **take full advantage** of the GlueParticle transfer.
 
 NOTE: Although the idea of the GlueParticle approach does not depend on a specific data format or representation in general, the SSP Traceability Specification defines a set of data formats for the file-based representation of a GlueParticle content, i.e. process-relevant information and resources.
-The reason for this is firstly that the Modelica Association uses XML as a general encoding format for the representation of standards specific data and secondly that SSP Traceability uses System Structure and Parameterization (SSP) Standard 1.0 resources and concepts that are also encoded in XML.
+The reason for this is firstly that the Modelica Association uses XML as a general encoding format for the representation of standards specific data and secondly that SSP Traceability uses System Structure and Parameterization (SSP) Standard 2.0 resources and concepts that are also encoded in XML.
 Independently of this, SSP Traceability files in general and GlueParticle files in particular could use any other applicable data encoding format, e.g. JSON etc.
 
 The SSP Traceability specification specifies a set of data formats that can be used to document or link process-relevant information and resources for a Credible Decision Process and a Credible Simulation Process introduced in <<sec-crediblesimulationprocessframework>>.
@@ -138,7 +138,7 @@ One of the boundary conditions refer to the packaging format.
 GlueParticles, by their nature, are not self-contained, but reference many resources that they tie together in their function as GlueParticles.
 Packaging GlueParticles together with their referenced resources into easily exchangeable packages is therefore of fundamental importance.
 
-The current packaging approach is based on the SSP 1.0 standard, which also serves as the basis for other aspects.
+The current packaging approach is based on the SSP 2.0 standard, which also serves as the basis for other aspects.
 <<sec-ssptraceabilitypackaging>> details how GlueParticles can be packaged in SSP archives, either standalone or in a way that allows these archives to be treated as native SSP packages by SSP-aware processors.
 Ways to package GlueParticles in other container formats such as FMUs are also specified.
 

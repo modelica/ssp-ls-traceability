@@ -12,8 +12,8 @@ and other resources using the SSP packaging format.
 The current specification specifies the packaging of simulation task
 meta-data files together with all referenced system descriptions,
 models, parameters, their meta-data, simulation results and other
-resources in SSP 1.0 package files as a layered standard based on SSP
-1.0.
+resources in SSP 2.0 package files as a layered standard based on SSP
+2.0.
 
 By basing the packaging on the SSP standard, it is possible to treat
 STMD containing SSP packages as normal SSP packages for use in tools
@@ -21,9 +21,9 @@ that do not yet support STMD-based work flows. Furthermore this
 approach simplifies the definition of STMD-based packages by reusing
 the built-in functionality of the SSP standard.
 
-=== SSP 1.0
+=== SSP 2.0
 
-Any STMD-based package MUST be a valid _SSP 1.0_ <<SSP10>> SSP archive.
+Any STMD-based package MUST be a valid _SSP 2.0_ <<SSP20>> or _SSP 1.0_ <<SSP10>> SSP archive.
 Inter alia this means that it MUST contain at least one SSD file named
 `SystemStructure.ssd` in the root of the archive, which MUST be a valid
 system structure description file. In phases of the simulation task
