@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
     xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1"
-    xmlns:mtmd="http://ssp-standard.org/SSPTraceability1/ModellingTaskMetaData"
+    xmlns:mtmd="http://ssp-standard.org/SSPTraceability1/ModelingTaskMetaData"
     xmlns:stc="http://ssp-standard.org/SSPTraceability1/SSPTraceabilityCommon"
     xmlns:ssc="http://ssp-standard.org/SSP1/SystemStructureCommon"
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    targetNamespace="http://ssp-standard.org/SSPTraceability1/ModellingTaskMetaData"
+    targetNamespace="http://ssp-standard.org/SSPTraceability1/ModelingTaskMetaData"
     elementFormDefault="qualified">
 
     <xs:import namespace="http://ssp-standard.org/SSP1/SystemStructureCommon" schemaLocation="ssp-standard/schema/SystemStructureCommon.xsd"/>
     <xs:import namespace="http://ssp-standard.org/SSPTraceability1/SSPTraceabilityCommon" schemaLocation="STC.xsd"/>
     <xs:import namespace="http://www.w3.org/1999/xlink" schemaLocation="https://www.w3.org/XML/2008/06/xlink.xsd"/>
 
-    <xs:element name="ModellingTaskMetaData">
+    <xs:element name="ModelingTaskMetaData">
         <xs:annotation>
             <xs:documentation xml:lang="en">
-                This element specifies the structure of the Credible Modelling Process.
+                This element specifies the structure of the Credible Modeling Process.
             </xs:documentation>
         </xs:annotation>
         <xs:complexType>
@@ -24,17 +24,17 @@
                 <xs:element name="AnalysisPhase" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">
-                            This element specifies the Analysis Phase of the overall Modelling Task.
+                            This element specifies the Analysis Phase of the overall Modeling Task.
                         </xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="AnalyzeModellingTaskAndObjectives" type="stc:StepType" minOccurs="0">
+                            <xs:element name="AnalyzeModelingTaskAndObjectives" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
                                         Contains information and a description of the engineering task of the
                                         higher-level engineering process as well as the general requirements
-                                        and objectives, e.g., KPI and other criteria for the modelling task.
+                                        and objectives, e.g., KPI and other criteria for the modeling task.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
@@ -54,7 +54,7 @@
                 <xs:element name="RequirementsPhase" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">
-                            This element specifies the Requirements Phase of the overall Modelling Task.
+                            This element specifies the Requirements Phase of the overall Modeling Task.
                         </xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
@@ -62,7 +62,7 @@
                             <xs:element name="DefineModelRequirements" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
-                                        In this step the requirements of the modelling task are broken down
+                                        In this step the requirements of the modeling task are broken down
                                         into the individual requirements for the simulation model.
                                     </xs:documentation>
                                 </xs:annotation>
@@ -70,7 +70,7 @@
                             <xs:element name="DefineParameterRequirements" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
-                                        In this step the requirements of the modelling task are broken down
+                                        In this step the requirements of the modeling task are broken down
                                         into the individual requirements for the parameters.
                                     </xs:documentation>
                                 </xs:annotation>
@@ -78,7 +78,7 @@
                             <xs:element name="DefineSimulationEnvironmentRequirements" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
-                                        In this step the requirements of the modelling task are broken down
+                                        In this step the requirements of the modeling task are broken down
                                         into the individual requirements for the simulation environment.
                                     </xs:documentation>
                                 </xs:annotation>
@@ -86,7 +86,7 @@
                             <xs:element name="DefineSimulationIntegrationRequirements" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
-                                        In this step the requirements of the modelling task are broken down
+                                        In this step the requirements of the modeling task are broken down
                                         into the individual requirements for the simulation integration elements.
                                     </xs:documentation>
                                 </xs:annotation>
@@ -94,7 +94,7 @@
                             <xs:element name="DefineTestCaseRequirements" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
-                                        In this step the requirements of the modelling task are broken down
+                                        In this step the requirements of the modeling task are broken down
                                         into the individual requirements for the test cases.
                                     </xs:documentation>
                                 </xs:annotation>
@@ -124,7 +124,7 @@
                 <xs:element name="DesignPhase" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">
-                            This element specifies the Specification Phase of the overall Modelling Task.
+                            This element specifies the Specification Phase of the overall Modeling Task.
                         </xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
