@@ -201,7 +201,7 @@
                     <xs:annotation>
                         <xs:documentation xml:lang="en">
                             This element specifies the Implementation and Validation Phase of the
-                            overall Modelling Task.
+                            overall Modeling Task.
                         </xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
@@ -261,7 +261,7 @@
                                         In this step quality assurance (i.e., tests) for the simulation
                                         environment with integrated models and parametrization is performed. 
                                         Quality information about models and simulation environment according
-                                        to the criticality of the decision of the modelling task is provided.
+                                        to the criticality of the decision of the modeling task is provided.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
@@ -270,7 +270,7 @@
                                     <xs:documentation xml:lang="en">
                                         In this step an assessment of the quality of the simulation setup and
                                         according models, test cases, parametrization and simulation environment
-                                        is carried out (according to the criticality of the modelling task).
+                                        is carried out (according to the criticality of the modeling task).
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
@@ -282,16 +282,16 @@
                 <xs:element name="FulfillmentPhase" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation xml:lang="en">
-                            This element specifies the Fulfillment Phase of the overall Modelling Task.
+                            This element specifies the Fulfillment Phase of the overall Modeling Task.
                         </xs:documentation>
                     </xs:annotation>
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="DecideModellingObjectiveFulfillment" type="stc:StepType" minOccurs="0">
+                            <xs:element name="DecideModelingObjectiveFulfillment" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
                                         In this step the decision is made whether the requirements and
-                                        objectives of the modelling task have been fulfilled. This is done in
+                                        objectives of the modeling task have been fulfilled. This is done in
                                         coordination with the higher-level process (Credible Simulation
                                         Process).
                                     </xs:documentation>
@@ -319,8 +319,8 @@
             <xs:attribute name="name" type="xs:string" use="required">
                 <xs:annotation>
                     <xs:documentation xml:lang="en">
-                        This attribute gives the modelling task a name, which can be used
-                        for purposes of presenting the modelling task to the user, e.g.
+                        This attribute gives the modeling task a name, which can be used
+                        for purposes of presenting the modeling task to the user, e.g.
                         when selecting individual variant STMDs from an SSP.
                     </xs:documentation>
                 </xs:annotation>
