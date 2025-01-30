@@ -262,16 +262,7 @@
         <xs:sequence>
             <xs:group ref="stc:GResourceOrReference" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="Responsible" type="stc:ResponsibleType"/>
-            <xs:element name="Signature" type="ssc:SignatureType" minOccurs="0" maxOccurs="unbounded">
-                <xs:annotation>
-                    <xs:documentation xml:lang="en">
-                        This element can contain digital signature information on the checksum
-                        attribute of the life cycle entry element.  It is left unspecified what types
-                        of signatures are used and/or available for now.  Multiple or no signature elements
-                        may be present.
-                    </xs:documentation>
-                </xs:annotation>
-            </xs:element>
+            <xs:group ref="ssc:GSignature"/>
             <xs:group ref="stc:GElementCommon"/>
         </xs:sequence>
         <xs:attribute name="date" type="xs:dateTimeStamp" use="required">
@@ -481,15 +472,7 @@
                                 </xs:documentation>
                             </xs:annotation>
                         </xs:element>
-                        <xs:element name="Signature" type="ssc:SignatureType" minOccurs="0" maxOccurs="unbounded">
-                            <xs:annotation>
-                                <xs:documentation xml:lang="en">
-                                    This element can contain digital signature information on the summary referenced
-                                    by the enclosing Summary element. It is left unspecified what types of signatures
-                                    are used and/or available for now.  Multiple or no signature elements may be present.
-                                </xs:documentation>
-                            </xs:annotation>
-                        </xs:element>
+                        <xs:group ref="ssc:GSignature"/>
                         <xs:group ref="stc:GElementCommon"/>
                     </xs:sequence>
                     <xs:attribute name="type" type="xs:string" use="required">
@@ -546,6 +529,7 @@
                 </xs:complexType>
             </xs:element>
             <xs:group ref="ssc:GMetaData"/>
+            <xs:group ref="ssc:GSignature"/>
             <xs:group ref="stc:GElementCommon"/>
         </xs:sequence>
         <xs:attribute name="kind" use="required">
