@@ -8,9 +8,9 @@ As improving traceability of design decisions and simulations is one the core ob
 
 To enable the documentation of process-relevant information and resources for a Credible Decision Process or a Credible Simulation Process the SSP Traceability Specification introduces the GlueParticle Approach:
 
-* The **GluePartice Approach** is a concept for bundling and file-based transfer of process-relevant information and resources of a Credible Decision Process or a Credible Simulation Process.
+* The **GlueParticle Approach** is a concept for bundling and file-based transfer of process-relevant information and resources of a Credible Decision Process or a Credible Simulation Process.
 
-* A **GluePartice** is a bundle of process-relevant information and resources for a Credible Decision Process or a Credible Simulation Process.
+* A **GlueParticle** is a bundle of process-relevant information and resources for a Credible Decision Process or a Credible Simulation Process.
 The form in which this bundle exists, e.g. whether it is stored as a file or in a database or a specific data format, is not specified.
 
 * A **GlueParticle file** is a GlueParticle that is in a file-based representation and can therefore be transferred between tools or organizational units such as people, departments, or companies.
