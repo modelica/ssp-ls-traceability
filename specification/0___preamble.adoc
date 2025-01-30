@@ -1,6 +1,6 @@
 The SSP Traceability Specification is a free specification intended as a third-party layered standard upon SSP 1.0 to support traceability of simulation tasks.
 This is a development version of the specification.
-https://github.com/PMSFIT/SSPTraceability/releases[Releases] and https://github.com/PMSFIT/SSPTraceability/issues[issues] can be found on https://github.com/PMSFIT/SSPTraceability[github.com/PMSFIT/SSPTraceability].
+https://github.com/modelica/ssp-ls-traceability/releases[Releases] and https://github.com/modelica/ssp-ls-traceability/issues[issues] can be found on https://github.com/modelica/ssp-ls-traceability[github.com/modelica/ssp-ls-traceability].
 
 {empty} +
 {empty}
