@@ -33,7 +33,7 @@ The essential core of the SSP Traceability Specification document is the documen
 The detail description of the SSP Traceability data formats is subject of <<sec-stc>> through <<sec-srmd>>.
 <<sec-stc>> describes a common set of re-usable metadata description elements.
 <<sec-dtmd>> describes how the SSP Traceability data format for documenting Credible Decision Processes are structured and <<sec-stmd>> describes the structure of SSP Traceability data formats for the documentation of Credible Simulation Processes.
-<<sec-srmd>> additionally describes a data format for documenting resource metadata based on resources in the sense of SSP Traceability.
+<<sec-srmd>> additionally describes a data format for documenting metadata of individual resources in the sense of SSP Traceability.
 <<sec-ssptraceabilitypackaging>> describes how SSP Traceability files can be bundled into an SSP Traceability package.
 The SSP traceability specification concludes with a list of other applicable documents such as relevant standards and referenced literature.
 
