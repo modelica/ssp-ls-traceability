@@ -1,7 +1,7 @@
 [#sec-dtmd]
 == Decision Task Meta Data File Format
 
-The __Decision Task Meta Data__ file (short: DTMD file) is an implementation of a GlueParticle for decition tasks. It is specified to support traceability, quality assurance and re-usability for decision tasks in terms of a credible decision process as it is specified in #Document Reference#. The following sub-chapters describe the structure of an DTMD file.
+The __Decision Task Meta Data__ file (short: DTMD file) is an implementation of a GlueParticle for decition tasks. It is specified to support traceability, quality assurance and re-usability for decision tasks in terms of a credible decision process as it is specified in <<CSP>>. The following sub-chapters describe the structure of an DTMD file.
 
 [#im-credibledecisionprocess]
 .Credible Decision Process
@@ -95,7 +95,8 @@ The AnalysisPhase element is associated with the following attributes.
 [#sec-dtmddefinitionphase]
 ==== DefinitionPhase
 
-#In the definition phase, ....#
+In the definition phase, the decision task is broken down into sub-tasks, which are to be performed in the execution phase.
+Additionally, the quality of the results to be achieved is defined and the overall breakdown and quality definitions are verified.
 
 The DefinitionPhase element documents all relevant information.
 
@@ -198,7 +199,7 @@ The EvaluationPhase element is associated with the following attributes.
 [#sec-dtmdfulfillmentphase]
 ==== FulfillmentPhase 
 
-#In the fulfillment phase, it is checked and decided whether the entire simulation task, including the simulation results, fulfills the requirements placed on the simulation by the commissioning higher-level engineering task and whether the simulation tasks can be completed.#
+In the fulfillment phase, it is checked and decided whether the entire decision task, including all sub-tasks performed, fulfills the requirements placed on the decision task by the commissioning higher-level processes.
 
 The FulfillmentPhasePhase element documents all relevant information.
 

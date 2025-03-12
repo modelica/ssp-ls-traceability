@@ -13,7 +13,7 @@ When a __Credible Decision Process__ identifies the need for a simulation, a __S
 The result of a __Credible Simulation Process__, i.e. the simulation results, is then delivered to the triggering __Credible Decision Process.__
 This information transfer is referred to as __Simulation Delivery__ in <<im-crediblesimulationprocessframework>>.
 
-For more information on the processes of the Credible Simulation Process Framework, see <<SETLEVEL>>.
+For more information on the processes of the Credible Simulation Process Framework, see Appendix Part H of the prostep ivip SmartSE Recommendation v3 (<<CSP>>).
 
 __Note: The Credible Simulation Process Framework actually includes more than just Credible Decision Process and Credible Simulation Process.
 However, the SSP Traceability specification currently only supports traceability with respect to the Credible Decision Process and the Credible Simulation Process.__
@@ -46,7 +46,7 @@ Evaluation:: In this phase, the decision-relevant information returned from the 
  
 Fulfillment:: The purpose of this phase is to decide whether the results fulfill the original objectives of the decision task.
 
-For more information on the Credible Decision Process, see <<SETLEVEL>>.
+For more information on the Credible Decision Process, see <<CSP>>.
 
 [#sec-crediblesimulationprocess]
 === Credible Simulation Process
@@ -75,4 +75,4 @@ Evaluation:: The purpose of this phase is to evaluate the simulation results, i.
 
 Fulfillment:: The purpose of this phase is to confirm that the simulation results meet the original objectives of the simulation task.
 
-For more information on the Credible Simulation Process, see <<SETLEVEL>>.
+For more information on the Credible Simulation Process, see <<CSP>>.

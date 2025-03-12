@@ -15,5 +15,4 @@
 
 - [[[MICCORE2023]]] IRT SystemX and prostep ivip MIC Core specification: https://mic-core.github.io/MIC-Core/main/
 
-- [[[SETLEVEL]]] Credible Simulation Process Framework in GitLab: https://gitlab.setlevel.de/open/processes_and_traceability/credible_simulation_process_framework
-
+- [[[CSP]]] Credible Simulation Process Framework in prostep Recommendation Appendix Part-H: https://www.prostep.org/shop/detail?ai%5Baction%5D=detail&ai%5Bcontroller%5D=Catalog&ai%5Bd_name%5D=psi_11_v3-0&ai%5Bd_pos%5D=20
