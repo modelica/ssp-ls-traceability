@@ -316,7 +316,7 @@ The LifeCycleEntryType element is structured by the following subordinated eleme
 | Sub element name     | Optional / Mandatory | Details
 | GResourceOrReference | Optional             | <<sec-gresourceorreference>>
 | Responsible          | Mandatory            | <<sec-responsibletype>>
-| Signature            | Optional             | <<sec-signaturetype>>
+| Signature            | Optional             | See SSP Specification
 | GElementCommon       | Optional             | <<sec-gelementcommon>>
 |===
 
@@ -558,10 +558,10 @@ The ResourceType element is structured by the following subordinated elements.
 [width="100%",options="header"]
 |===
 | Sub element name | Optional / Mandatory | Details
-| Content          | Optional             | <<sec-contenttype>>
+| Content          | Optional             | See SSP Specification
 | Summary          | Optional             | <<sec-summary>>
-| Metadata         | Optional             | <<sec-metadata>>
-| Signature        | Optional             | <<sec-signaturetype>>
+| Metadata         | Optional             | See SSP Specification
+| Signature        | Optional             | See SSP Specification
 | GElementCommon   | Optional             | <<sec-gelementcommon>>
 |===
 
@@ -634,8 +634,8 @@ The Summary element is structured by the following subordinated elements.
 [width="100%",options="header"]
 |===
 | Sub element name | Optional / Mandatory | Details
-| Content          | Optional             | <<sec-contenttype>>
-| Signature        | Optional             | <<sec-signaturetype>>
+| Content          | Optional             | See SSP Specification
+| Signature        | Optional             | See SSP Specification
 | GElementCommon   | Optional             | <<sec-gelementcommon>> 
 |===
 
@@ -647,105 +647,10 @@ The Summary element is associated with the following attributes.
 |===
 | Attribute name | Optional / Mandatory | Attribute description
 | type           | Mandatory            | This mandatory attribute specifies the MIME type of the resource summary, which does not have a default value.  If no specific MIME type can be indicated, then the type application/octet-stream is to be used.  If markdown content is used, then the type text/markdown shall be used. 
-| source         | Optional             | This attribute indicates the source of the resource summary as a URI (cf. RFC 3986).  For purposes of the resolution of relative URIs the base URI is the URI of the GlueParticle, if the sourceBase attribute is not specified or is specified as GlueParticle, and the URI of the referenced resource if the sourceBase attribute is specified as resource. This allows the specification of summary sources that reside  inside the resource (e.g. an FMU) through relative URIs. For summaries that are located alongside the GlueParticle, relative URIs without scheme and authority can and should be used to specify the summary sources.  For summaries that are packaged inside an SSP that contains this GlueParticle, this is mandatory (in this way, the GlueParticle URIs remain valid after unpacking the SSP into the filesystem). If the source attribute is missing, the summary is provided inline as contents of the Content element, which must not be resent otherwise. 
-| sourceBase     | Optional             | Defines the base the source URI is resolved against: If the attribute is missing or is specified as GlueParticle, the source is resolved against the URI of the GlueParticle, if the attribute is specified as resource the URI is resolved against the (resolved) URI of the resource source. 
+| source         | Optional             | This attribute indicates the source of the resource summary as a URI (cf. RFC 3986). The base URI for the resolution of relative URIs is determined by the sourceBase attribute. If the source attribute is missing, the summary is provided inline as contents of the Content element, which must not be present otherwise.
+| sourceBase     | Optional             | Defines the base the source URI is resolved against:  If the attribute is missing or is specified as file, the source is resolved against the URI of the containing file. If the containing model element has a source attribute, the sourceBase attribute can be specified as resource. In this case the URI is resolved against the (resolved) source URI of the containing model element.
 |===
 
-[#sec-metadata]
-==== MetaData
-
-The MetaData element can specify additional metadata for the given resource. Multiple (or no) MetaData elements may be present.
-
-[#im-metadataschema]
-.MetaData element structure and attributes
-image::MetaDataSchema.png[]
-
-The MetaData element is structured by the following subordinated elements.
-
-[#tb-metadatasubelements]
-.MetaData element structure
-[width="100%",options="header"]
-|===
-| Sub element name | Optional / Mandatory |  Details
-| Content          | Optional             | <<sec-contenttype>>
-| Signature        | Optional             | <<sec-signaturetype>>
-| GElementCommon   | Optional             | <<sec-gelementcommon>> 
-|===
-
-The MetaData element is associated with the following attributes.
-
-[#tb-metadataattributes]
-.MetaData element attributes
-[width="100%",options="header"]
-|===
-| Attribute name | Optional / Mandatory | Attribute description
-| kind           | Mandatory           | This attribute indicates the kind of resource meta data that is referenced, i.e. what role it plays in relation to the resource being described. 
-| type           | Mandatory           | This mandatory attribute specifies the MIME type of the resource meta data, which does not have a default value. If no specific MIME type can be indicated, then the type application/octet-stream is to be used.
-| source         | Optional            | This attribute indicates the source of the resource meta data as a URI (cf. RFC 3986). For purposes of the resolution of relative URIs the base URI is the URI of the GlueParticle, if the sourceBase attribute is ot specified or is specified as GlueParticle, and the URI of the referenced resource if the sourceBase attribute is specified as resource. This allows the specification of meta data sources that reside inside the resource (e.g. an FMU) through relative URIs. For meta data that are located alongside the GlueParticle, relative URIs without scheme and authority can and should be used to specify the meta data sources.  For meta data that are packaged inside an SSP that contains this GlueParticle, this is mandatory (in this way, the GlueParticle URIs remain valid after unpacking the SSP into the file system). If the source attribute is missing, the meta data is provided inline as contents of the Content element, which must not be present otherwise. 
-| sourceBase     | Optional            | Defines the base the source URI is resolved against:  If the attribute is missing or is specified as GlueParticle, the source is resolved against the URI of the GlueParticle, if the attribute is specified as resource the URI is resolved against the (resolved) URI of the resource source.
-|===
-
-[#sec-signaturetype]
-=== SignatureType
-
-The SignatureType element defines the structure and attributes of the signature entity for a given step or phase.
-
-[#im-signaturetypeschema]
-.SignatureType element structure and attributes
-image::SignatureTypeSchema.png[]
-
-The SignatureType element is structured by the following subordinated elements.
-
-[#tb-signaturetypesubelements]
-.SignatureType element structure
-[width="100%",options="header"]
-|===
-| Sub element name | Optional / Mandatory |  Details
-| Content          | Optional             | <<sec-contenttype>>
-| GElementCommon   | Optional             | <<sec-gelementcommon>> 
-|===
-
-The SignatureType element is associated with the following attributes.
-
-[#tb-signaturetypeattributes]
-.SignatureType element attributes
-[width="100%",options="header"]
-|===
-| Attribute name | Optional / Mandatory | Attribute description
-| role           | Mandatory           | This mandatory attribute specifies the role this signature has in the overall process. It indicates whether the digital signature is intended to just convey the authenticity of the information, or whether a claim for suitability of the information for certain purposes is made.  In the latter case, the digital signature format should include detailed information about what suitability claims are being made.
-| type           | Mandatory           | This mandatory attribute specifies the MIME type of the resource signature, which does not have a default value.  If no specific MIME type can be indicated, then the type application/octet-stream is to be used.
-| source         | Optional            | This attribute indicates the source of the resource signature as a URI (cf. RFC 3986).  For purposes of the resolution of relative URIs the base URI is the URI of the GlueParticle, if the sourceBase attribute is not specified or is specified as GlueParticle, and the URI of the referenced resource if the sourceBase attribute is specified as resource. This allows the specification of signature sources that reside inside the resource (e.g. an FMU) through relative URIs. For signatures that are located alongside the GlueParticle, relative URIs without scheme and authority can and should be used to specify the signature sources. For signatures that are packaged inside an SSP that contains this GlueParticle, this is mandatory (in this way, the GlueParticle URIs remain valid after unpacking the SSP into the filesystem). If the source attribute is missing, the signature is provided inline as contents of the Content element, which must not be present otherwise. 
-| sourceBase    | Optional            | Defines the base the source URI is resolved against:  If the attribute s missing or is specified as GlueParticle, the source is resolved against the URI of the GlueParticle, if the attribute is specified as resource the URI is resolved against the (resolved) URI of the resource source.
-|===
-
-
-[#sec-contenttype]
-=== ContentType
-
-The ContentType element defines the structure and attributes of inline content of an entity.
-If it is present, then the attribute source of the enclosing element must not be present.
-
-[#im-contenttypeschema]
-.ContentType element structure and attributes
-image::ContentTypeSchema.png[]
-
-The ContentType element is structured by following subordinated elements.
-
-[#tb-contenttypesubelements]
-.ContentType element structure 
-[width="100%",options="header"]
-|===
-| Sub element name     | Optional / Mandatory |  Details
-| ##any                | Optional             | <<sec-any03>>
-|===
-
-The ContentType is not associated with any specific attributes beyond the common SSP attributes.
-
-[#sec-any03]
-==== ##any
-
-The ContentType may contain XML Elements of any kind, i.e. the it provides the possibility and capability to code any kind of information regardless of what the Schema specifies.
-This mean the name, structure and attributes of XML elements enclosed by a contentType element is completely free.
 
 
 [#sec-responsibletype]
