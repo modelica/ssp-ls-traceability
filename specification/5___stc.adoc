@@ -652,7 +652,6 @@ The Summary element is associated with the following attributes.
 |===
 
 
-
 [#sec-responsibletype]
 === ResponsibleType
 
