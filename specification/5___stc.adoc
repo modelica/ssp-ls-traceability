@@ -719,10 +719,10 @@ The ResourceReference element is structured by the following subordinated elemen
 | GElementCommon   | Optional             |<<sec-gelementcommon>>
 |===
 
-The ResourceRefernece element is associated with the following attributes.
+The ResourceReference element is associated with the following attributes.
 
 [#tb-resourcereferenceattributes]
-.ResourceRefernece element attributes
+.ResourceReference element attributes
 [width="100%",options="header"]
 |===
 | Attribute name | Optional/ Mandatory | Attribute description
