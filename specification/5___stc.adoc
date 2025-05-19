@@ -328,8 +328,6 @@ The LifeCycleEntryType element is associated with the following attributes.
 |===
 | Attribute name | Optional / Mandatory | Attribute description
 | date           | Mandatory            | Time-stamp when life-cycle entry was assigned. Note that the time stamp data type makes time zone information mandatory, so that a full ordering of times is possible.
-| checksum       | Optional             | This attribute gives the checksum over the phase/step information stored in the enclosing phase/step element, calculated according to the #STMD' specification.  This attribute is optional if the life-cycle stage is not Approved or Archived, but becomes required if the life-cycle stage is Approved or Archived. Optionally, digital signatures over this checksum can be provided using Signature elements in the enclosing lifecycle entry element. The checksum is calculated using the algorithm indicated by the checksumType attribute.
-| checksumType    | Optional             | This attribute gives the algorithm for the calculation of the checksum attribute. MUST be SHA3-256 for now, indicating a SHA3 256bit secure hash algorithm, as specified in FIPS 202. In the future other checksum algorithms might be supported.
 |===
 
 [#sec-steptype]

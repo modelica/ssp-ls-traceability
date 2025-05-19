@@ -273,28 +273,6 @@
                 </xs:documentation>
             </xs:annotation>
         </xs:attribute>
-        <xs:attribute name="checksum" type="xs:hexBinary">
-            <xs:annotation>
-                <xs:documentation xml:lang="en">
-                    This attribute gives the checksum over the phase/step information stored in the enclosing
-                    phase/step element, calculated according to the STC specification.  This attribute is optional
-                    if the life cycle stage is not Approved or Archived, but becomes required if the life cycle stage
-                    is Approved or Archived. Optionally, digital signatures over this checksum can be provided using
-                    Signature elements in the enclosing life cycle entry element.
-                    
-                    The checksum is calculated using the algorithm indicated by the checksumType attribute.
-                </xs:documentation>
-            </xs:annotation>
-        </xs:attribute>
-        <xs:attribute name="checksumType" type="xs:string" default="SHA3-256">
-            <xs:annotation>
-                <xs:documentation xml:lang="en">
-                    This attribute gives the algorithm for the calculation of the checksum attribute. MUST be
-                    SHA3-256 for now, indicating a SHA3 256bit secure hash algorithm, as specified in FIPS 202.
-                    In the future other checksum algorithms might be supported.
-                </xs:documentation>
-            </xs:annotation>
-        </xs:attribute>
         <xs:attributeGroup ref="ssc:ABaseElement"/>
     </xs:complexType>
 
