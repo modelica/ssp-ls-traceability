@@ -16,7 +16,7 @@ This information transfer is referred to as __Simulation Delivery__ in <<im-cred
 For more information on the processes of the Credible Simulation Process Framework, see Appendix Part H of the prostep ivip SmartSE Recommendation v3 (<<CSP>>).
 
 __Note: The Credible Simulation Process Framework actually includes more than just Credible Decision Process and Credible Simulation Process.
-However, the SSP Traceability specification currently only supports traceability with respect to the Credible Decision Process and the Credible Simulation Process.__
+However, the SSP Layered Standard Traceability currently only supports traceability with respect to the Credible Decision Process and the Credible Simulation Process.__
 
 [#im-crediblesimulationprocessframework]
 .Credible Simulation Process Framework

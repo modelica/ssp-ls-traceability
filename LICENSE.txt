@@ -1,4 +1,4 @@
-Copyright (C) 2019-2023 Modelica Association Project "SSP"
+Copyright (C) 2019-2025 Modelica Association Project "SSP"
               All rights reserved.
 
 Source code or other data, such as C-header and XML-schema files, that
@@ -30,7 +30,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 ----------------------------------------------------------------------------
 
 
-The SSP Traceability specification is released under the CC-BY-SA
+The SSP Layered Standard Traceability is released under the CC-BY-SA
 (Creative Common Attribution ShareAlike 4.0 International):
 
 
