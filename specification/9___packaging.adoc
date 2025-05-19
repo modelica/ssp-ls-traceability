@@ -9,7 +9,7 @@ and other resources using the SSP packaging format.
 
 === Introduction
 
-The current specification specifies the packaging of simulation task
+The current standard specifies the packaging of simulation task
 meta-data files together with all referenced system descriptions,
 models, parameters, their meta-data, simulation results and other
 resources in SSP 2.0 package files as a layered standard based on SSP

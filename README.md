@@ -1,11 +1,11 @@
-# SSP Traceability Specification
+# SSP LS Traceability
 
 [![Build Specification](https://github.com/modelica/ssp-ls-traceability/workflows/Build%20Specification/badge.svg)](https://github.com/modelica/ssp-ls-traceability/actions?query=workflow%3A%22Build+Specification%22)
 
-This repository contains the current prototyped draft specification
-for an [SSP][]-based layered standard for simulation traceability
-information exchange.  Note that this specification is actively
-being worked on, and thus subject to change without notice.
+This repository contains the [SSP][]-based layered standard for
+simulation traceability information exchange.  Note that this
+specification is actively being worked on, and thus subject to
+change without notice.
 
 The [specification][spec] is maintained on [GitHub][github] and is
 published [here][spec]. It is based on the [SSP 2.0][SSP20] standard,

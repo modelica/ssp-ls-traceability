@@ -1,7 +1,7 @@
 [#sec-stc]
 == SSP Traceability Common
 
-This chapter describes in detail the content and structure of the XML schema stc.xsd, which represent common concepts that are reused in the other XML schemas of the specification.
+This chapter describes in detail the content and structure of the XML schema stc.xsd, which represent common concepts that are reused in the other XML schemas of the standard.
 The purpose of extractiong these elements is to increase the flexibility and extensibility of the GlueParticles approach and to help to apply the GlueParticles concept to other topics in product and system engineering.
 
 [#sec-generalinformationtype]
@@ -517,7 +517,7 @@ The xlink:arcrole attribute corresponds to the RDF notion of a property, where t
 This contextual role can differ from the meaning of an ending resource when taken outside the context of this particular arc.
 For example, a resource might generically represent a "person," but in the context of a particular arc it might have the role of "mother" and in the context of a different arc it might have the role of "daughter."
 
-When the same resource serves as a starting resource in several arcs (whether in a single link or across many links), traversal-request behavior is unconstrained by this specification, but one possibility for interactive applications is a pop-up menu that lists the relevant arc or link titles.
+When the same resource serves as a starting resource in several arcs (whether in a single link or across many links), traversal-request behavior is unconstrained by this standard, but one possibility for interactive applications is a pop-up menu that lists the relevant arc or link titles.
 
 [#im-arcschema]
 .Arc element structure and attributes

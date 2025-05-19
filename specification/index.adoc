@@ -1,4 +1,4 @@
-= SSP Traceability Specification
+= SSP Layered Standard Traceability
 :doctype: book
 :imagesdir: images
 :sectnums:

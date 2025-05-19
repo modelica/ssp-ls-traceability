@@ -356,7 +356,7 @@
                         
                         Locators, arcs and the link itself can further specify their semantic
                         meaning through optional role or arcrole attributes. The SSP
-                        Traceability specification currently provides no predefined roles.
+                        Layered Standard Traceability currently provides no predefined roles.
                         
                         All individual elements and attributes are as specified in the XLink
                         specification.
@@ -371,7 +371,7 @@
                                     It identifies a particular piece of information through an URI, that is
                                     taking part in the linking relationship. Locators can further specify
                                     their semantic meaning through an optional role attribute. The SSP
-                                    Traceability specification currently provides no predefined roles.
+                                    Layered Standard Traceability currently provides no predefined roles.
                                 </xs:documentation>
                             </xs:annotation>
                             <xs:complexType>
