@@ -106,7 +106,7 @@ image::STMDBriefSchema.png[]
 [#sec-srmdintroduction]
 === Simulation Resource Meta Data
 
-<<im-srmdbriefschema>> shows the top-level structure of the SRMD XML Schema, which is the structural definition for Simulation Resouce Meta Data files.
+<<im-srmdbriefschema>> shows the top-level structure of the SRMD XML Schema, which is the structural definition for Simulation Resource Meta Data files.
 SRMD files are used to define essential metadata for resources that can help users quickly understand the content and intent of a simulation resource through human-readable attributes without having to examine the resource in detail.
 For example, this support can reduce the effort required to analyze a set of resources received with a simulation request and simplify the selection of appropriate resources from a resource library.
 

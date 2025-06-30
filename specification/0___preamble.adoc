@@ -72,7 +72,7 @@ ____
 *Abstract*
 
 The SSP Layered Standard Traceability is a layered standard provided by MAP SSP upon SSP 2.0 to support traceability of simulation tasks.
-The standard is comprised of a set of XML-based formats to interchange process-relevant resources and information in the sense of process metadata for Credible Decision Processes and Credible Simulation Processes, as well as abritrary further metadata as part of SSP packages used to exchange the structural and parametrization aspects of a system.
+The standard is comprised of a set of XML-based formats to interchange process-relevant resources and information in the sense of process metadata for Credible Decision Processes and Credible Simulation Processes, as well as arbitrary further metadata as part of SSP packages used to exchange the structural and parametrization aspects of a system.
 
 <<<
 

@@ -2,7 +2,7 @@
 == SSP Traceability Common
 
 This chapter describes in detail the content and structure of the XML schema stc.xsd, which represent common concepts that are reused in the other XML schemas of the standard.
-The purpose of extractiong these elements is to increase the flexibility and extensibility of the GlueParticles approach and to help to apply the GlueParticles concept to other topics in product and system engineering.
+The purpose of extracting these elements is to increase the flexibility and extensibility of the GlueParticles approach and to help to apply the GlueParticles concept to other topics in product and system engineering.
 
 [#sec-generalinformationtype]
 === GeneralInformationType
@@ -38,7 +38,7 @@ The SSP Traceability package represents a snapshot of the used versions of the l
 Versioning of sources and resources is done in the generating tools and data management systems.
 
 The exception is the derivation chain. Each time an STMD or DTMD file is written, a new entry is created in the derivation chain with a unique identifier of the file from which the new instance is derived.
-When a tool or data management system receives an SSP Traceability container with STDM, DTMD back, it can check, by comparing the derivation chain with the target system's data infrastructure, which version of the DTMD or STMD was sent.
+When a tool or data management system receives an SSP Traceability container with STMD/DTMD back, it can check, by comparing the derivation chain with the target system's data infrastructure, which version of the DTMD or STMD was sent.
 This serves as a basis for controlling the reintegration of received DTMD STMD and it can be determined what is already available, what has been modified, what is new, etc.
 
 The DerivationChain element can be used to provide the appropriated set of information about files that were used to derive the current file.
@@ -593,9 +593,9 @@ __'model'__:: The kind value __'model'__ is used to indicate that a resource con
 
 __'parameter'__:: The kind value __'parameter'__ is used to indicate that a resource contains parameters or sets of consistent parameters for a simulation model.
 
-__'system'__:: A resource of kind __'system'__ is or contains a reference to the s__ystem under test__ in a PDM system or similar IT system or any other kind of description of the __system under test.__
+__'system'__:: A resource of kind __'system'__ is or contains a reference to the __system under test__ in a PDM system or similar IT system or any other kind of description of the __system under test.__
 
-__'testcase'__:: A resource of kind __'testcase'__ should contain information that describe how the simulation objectives are achieved at the operational level by one more test cases. A consistent set of test cases could be considered a technical breakdown of the simulation objectives.#
+__'testcase'__:: A resource of kind __'testcase'__ should contain information that describe how the simulation objectives are achieved at the operational level by one more test cases. A consistent set of test cases could be considered a technical breakdown of the simulation objectives.
 
 __'results'__:: #A resource of kind __'result'__ should contain information that answers questions posed by the simulation requester about the goals and intent of the simulation. In principle, this could be any kind of result data, no matter what it actually represents in detail. If the result is intended to be an aggregated and condensed report, the value __'report'__ can be used instead.
 
@@ -729,4 +729,3 @@ The ResourceReference element is associated with the following attributes.
 | id             | Optional            | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier. 
 | description    | Optional            | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
 |===
-

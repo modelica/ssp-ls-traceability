@@ -106,7 +106,7 @@ The RequirementsPhase element documents all relevant information.
 .RequirementsPhase element structure and attributes
 image::RequirementsPhaseSchema.png[]
 
-The RequirementsPhase element is structured by the followuing subordinated element.
+The RequirementsPhase element is structured by the following subordinated element.
 
 [#tb-requirementsphasesubelements]
 .RequirementsPhase element structure

@@ -22,6 +22,6 @@ Basic Structuring::
 All steps in process descriptions provide the same information structure (input, procedure, output and rationale) across the board, which provides a basic structuring of related resources at a coarse level, that can then be extended through extended links and classifications.
 
 Generic Meta Data through Classifications::
-All relevant modeling elements allow for arbitrary, but well-defined, meta-data provisoning through classifications:
+All relevant modeling elements allow for arbitrary, but well-defined, meta-data provisioning through classifications:
 These are collections of keyword value pairs, including linking capabilities, that are grouped by user-defined namespaces defined by classification types.
 In this way layered standards can provide additional meaning and rules to meta-data meeting domain-specific or company-specific needs, while providing basic processing expectations for tools even in the absence of detailed knowledge of the specific classification type.
