@@ -412,7 +412,7 @@ The ParticleType element is structured by the following subordinated elements.
 The ParticleType element is associated with the following attributes.
 
 [#tb-particletypeattributes]
-.ParticleType aelement ttributes
+.ParticleType element attributes
 [width="100%",options="header"]
 |===
 | Attribute name | Optional / Mandatory | Attribute description

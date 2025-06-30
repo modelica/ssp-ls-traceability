@@ -3,7 +3,7 @@
 
 Simulation resource meta data for components or other resources (e.g. parameter sets, etc.) can be provided using SRMD files. These files can be embedded into such resources, where possible, they can be placed outside the resources and reference the resources to which they apply, or they can be tied to the resources through the STMD meta-data mechanisms.
 
-=== SimulationRessourceMetaData
+=== SimulationResourceMetaData
 
 The SimulationResourceMetaData element is the all enclosing top level XML element of SRMD files.
 
@@ -14,12 +14,16 @@ image::SimulationResourceMetaDataSchema.png[]
 The SimulationTaskMetaData element is structured by following subordinated element.
 
 [#tb-simulationresourcemetadatasubelements]
-.SimulationResourcekMetaData element structure
+.SimulationResourceMetaData element structure
 [width="100%",options="header"]
 |===
 | Sub element name    | Optional / Mandatory | Details
-| GElementCommon      | Mandatory            | <<sec-gphasecommon>>
+| GElementCommon      | Mandatory            | <<sec-gelementcommon>>
 |===
+
+More specifically, the Classification and Annotation sub-elements of the SimulationResourceMetaData element, as specified in <<sec-gelementcommon>> apply classifications and further information to the resource that is being described by the SRMD file.
+
+Other than the referent, the usual rules for these elements apply.
 
 The SimulationResourceMetaData element is associated with the following attributes.
 

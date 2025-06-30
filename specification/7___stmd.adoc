@@ -89,7 +89,7 @@ The AnalysisPhase element is associated with the following attributes.
 .AnalysisPhase element attributes
 [width="100%",options="header"]
 |===
-| Attribute name | Optional / Mandatory | Attribut description
+| Attribute name | Optional / Mandatory | Attribute description
 | id             | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
 | description    | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
 |===
@@ -106,7 +106,7 @@ The RequirementsPhase element documents all relevant information.
 .RequirementsPhase element structure and attributes
 image::RequirementsPhaseSchema.png[]
 
-The RequirememtsPhase element is structured by the followuing subordinated element.
+The RequirementsPhase element is structured by the followuing subordinated element.
 
 [#tb-requirementsphasesubelements]
 .RequirementsPhase element structure
@@ -154,7 +154,7 @@ The DesignPhase element is structured by the following subordinated element.
 |===
 | Sub element name                               | Optional / Mandatory | Details
 | DefineModelDesignSpecification                 | Optional             | <<sec-steptype>>
-| DefineParaneterDesignSpecification             | Optional             | <<sec-steptype>>
+| DefineParameterDesignSpecification             | Optional             | <<sec-steptype>>
 | DefineSimulationEnvironmentDesignSpecification | Optional             | <<sec-steptype>>
 | DefineSimulationIntegrationDesignSpecification | Optional             | <<sec-steptype>>
 | DefineTestCaseDesignSpecification              | Optional             | <<sec-steptype>>
@@ -290,7 +290,7 @@ The EvaluationPhase element is associated with the following attributes.
 
 In the fulfillment phase, it is checked and decided whether the entire simulation task, including the simulation results, fulfills the requirements placed on the simulation by the commissioning higher-level engineering task and whether the simulation tasks can be completed.
 
-The FulfillmentPhasePhase element documents all relevant information.
+The FulfillmentPhase element documents all relevant information.
 
 [#im-fulfillmentphaseschema]
 .FulfillmentPhase elements structure and attributes
