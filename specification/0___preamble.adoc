@@ -1,6 +1,6 @@
 Document version: 1.0-rc.1
 
-May 19, 2025
+July 14, 2025
 
 This document is the first release candidate of release 1.0 of the SSP Layered Standard Traceability (SSP-LS-Traceability).
 
@@ -16,7 +16,7 @@ History / Road Map
 [width="100%",cols="18%,12%,70%",]
 |===
 |Version |Date |Remarks
-|1.0-rc.1 |2025-05-19 |First Release Candidate of SSP-LS-Traceability
+|1.0-rc.1 |2025-07-14 |First Release Candidate of SSP-LS-Traceability
 |===
 
 Please report issues that you find with this specification to map-ssp_projectlead@googlegroups.com.
