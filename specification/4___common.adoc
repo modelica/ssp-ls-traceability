@@ -1,27 +1,27 @@
 [#sec-commonconcepts]
 == Common concepts for SSP Traceability
 
-The SSP Traceability specification is based on the SSP standard and therefore employs many of its common concepts (see <<SSP10>> for details):
+The SSP Layered Standard Traceability is based on the SSP standard and therefore employs many of its common concepts (see <<SSP10>> for details):
 
 Extensibility::
 SSP Traceability employs the extensibility mechanisms of SSP, specifically the extra files mechanism, to embed traceability information into existing SSP package files.
-Furthermore, SSP Traceability itself offers the SSP extensibility mechanisms, like annotations, in its own formats, to enable further extension capabilities, e.g. for layered standards on top of the SSP Traceability specification. 
+Furthermore, SSP Traceability itself offers the SSP extensibility mechanisms, like annotations, in its own formats, to enable further extension capabilities, e.g. for layered standards on top of the SSP Layered Standard Traceability. 
 
 MIME-type based format dispatch::
-For all resources referenced in its file formats, the specification uses MIME-type based format dispatch to allow  
+For all resources referenced in its file formats, the standard uses MIME-type based format dispatch to allow  
 
 Content addressing::
 All references between files are expressed through URIs, supporting both relative and absolute URIs for references.
 
-The SSP Traceability specification extends on these concepts in the following ways:
+The SSP Layered Standard Traceability extends on these concepts in the following ways:
 
 Extended Links::
-The specifications provide for generic linking of resources and parts of resources using XML XLink extended links with full control of grouping, directionalities and semantics through role definitions for anchors and arcs.
+The standard provide for generic linking of resources and parts of resources using XML XLink extended links with full control of grouping, directionalities and semantics through role definitions for anchors and arcs.
 
 Basic Structuring::
 All steps in process descriptions provide the same information structure (input, procedure, output and rationale) across the board, which provides a basic structuring of related resources at a coarse level, that can then be extended through extended links and classifications.
 
 Generic Meta Data through Classifications::
-All relevant modeling elements allow for arbitrary, but well-defined, meta-data provisoning through classifications:
+All relevant modeling elements allow for arbitrary, but well-defined, meta-data provisioning through classifications:
 These are collections of keyword value pairs, including linking capabilities, that are grouped by user-defined namespaces defined by classification types.
 In this way layered standards can provide additional meaning and rules to meta-data meeting domain-specific or company-specific needs, while providing basic processing expectations for tools even in the absence of detailed knowledge of the specific classification type.

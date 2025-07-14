@@ -1,12 +1,12 @@
 [#sec-overviewofssptraceability]
 == Overview of SSP Traceability
 
-As improving traceability of design decisions and simulations is one the core objectives of the SSP Traceability specification, a consistent and compatible documentation of decision processes and the simulation processes that produce decision-relevant simulation results is essential.
+As improving traceability of design decisions and simulations is one the core objectives of the SSP Layered Standard Traceability, a consistent and compatible documentation of decision processes and the simulation processes that produce decision-relevant simulation results is essential.
 
 [#sec-glueparticle]
 === GlueParticle Approach
 
-To enable the documentation of process-relevant information and resources for a Credible Decision Process or a Credible Simulation Process the SSP Traceability Specification introduces the GlueParticle Approach:
+To enable the documentation of process-relevant information and resources for a Credible Decision Process or a Credible Simulation Process the SSP Layered Standard Traceability introduces the GlueParticle Approach:
 
 * The **GlueParticle Approach** is a concept for bundling and file-based transfer of process-relevant information and resources of a Credible Decision Process or a Credible Simulation Process.
 
@@ -17,20 +17,20 @@ The form in which this bundle exists, e.g. whether it is stored as a file or in 
 
 * File-based resources linked by a GlueParticle file should be exchanged with the GlueParticle file itself to **take full advantage** of the GlueParticle transfer.
 
-NOTE: Although the idea of the GlueParticle approach does not depend on a specific data format or representation in general, the SSP Traceability Specification defines a set of data formats for the file-based representation of a GlueParticle content, i.e. process-relevant information and resources.
+NOTE: Although the idea of the GlueParticle approach does not depend on a specific data format or representation in general, the SSP Layered Standard Traceability defines a set of data formats for the file-based representation of a GlueParticle content, i.e. process-relevant information and resources.
 The reason for this is firstly that the Modelica Association uses XML as a general encoding format for the representation of standards specific data and secondly that SSP Traceability uses System Structure and Parameterization (SSP) Standard 2.0 resources and concepts that are also encoded in XML.
 Independently of this, SSP Traceability files in general and GlueParticle files in particular could use any other applicable data encoding format, e.g. JSON etc.
 
-The SSP Traceability specification specifies a set of data formats that can be used to document or link process-relevant information and resources for a Credible Decision Process and a Credible Simulation Process introduced in <<sec-crediblesimulationprocessframework>>.
+The SSP Layered Standard Traceability specifies a set of data formats that can be used to document or link process-relevant information and resources for a Credible Decision Process and a Credible Simulation Process introduced in <<sec-crediblesimulationprocessframework>>.
 The data formats are specified as a set of XML Schema files according to the W3C (https://www.w3.org/) XML Schema standard <<XMLSCHEMA1.1>>.
 
-The main data formats specified by this specification are:
+The main data formats specified by this standard are:
 
 D**ecision **T**ask **M**eta **D**ata **(DTMD):: XML format representing process-relevant information to the Credible Decision Process (see <<sec-dtmdintroduction>> for an introduction and <<sec-dtmd>> for the detailed specification).
 
 S**imulation **T**ask **M**eta **D**ata **(STMD):: XML format representing process-relevant information to the Credible Simulation Process (see <<sec-stmdintroduction>> for an introduction and <<sec-stmd>> for the detailed specification).
 
-A third XML format defined by the SSP Traceability specification is:
+A third XML format defined by the SSP Layered Standard Traceability is:
 
 S**imulation **R**esource **M**eta **D**ata **(SRMD):: XML format representing metadata for resources (see <<sec-srmdintroduction>> for an introduction and <<sec-srmd>> for the detailed specification).
 
@@ -106,7 +106,7 @@ image::STMDBriefSchema.png[]
 [#sec-srmdintroduction]
 === Simulation Resource Meta Data
 
-<<im-srmdbriefschema>> shows the top-level structure of the SRMD XML Schema, which is the structural definition for Simulation Resouce Meta Data files.
+<<im-srmdbriefschema>> shows the top-level structure of the SRMD XML Schema, which is the structural definition for Simulation Resource Meta Data files.
 SRMD files are used to define essential metadata for resources that can help users quickly understand the content and intent of a simulation resource through human-readable attributes without having to examine the resource in detail.
 For example, this support can reduce the effort required to analyze a set of resources received with a simulation request and simplify the selection of appropriate resources from a resource library.
 
