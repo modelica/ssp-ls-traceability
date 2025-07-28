@@ -1,8 +1,8 @@
-Document version: 1.0-rc.1
+Document version: 1.0-rc.2
 
-July 14, 2025
+July 28, 2025
 
-This document is the first release candidate of release 1.0 of the SSP Layered Standard Traceability (SSP-LS-Traceability).
+This document is the second release candidate of release 1.0 of the SSP Layered Standard Traceability (SSP-LS-Traceability).
 
 This specification, as well as supporting XML schema files, is provided on the SSP site (https://ssp-standard.org/).
 https://github.com/modelica/ssp-ls-traceability/releases[Releases] and https://github.com/modelica/ssp-ls-traceability/issues[issues] can be found on https://github.com/modelica/ssp-ls-traceability[github.com/modelica/ssp-ls-traceability].
