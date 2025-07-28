@@ -16,6 +16,7 @@ History / Road Map
 [width="100%",cols="18%,12%,70%",]
 |===
 |Version |Date |Remarks
+|1.0-rc.2 |2025-07-28 |Second Release Candidate of SSP-LS-Traceability
 |1.0-rc.1 |2025-07-14 |First Release Candidate of SSP-LS-Traceability
 |===
 
