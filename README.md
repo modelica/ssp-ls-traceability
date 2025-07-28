@@ -24,7 +24,7 @@ Documentation released under [Attribution-ShareAlike 4.0 International][CC-BY-SA
 [SSP10]: https://ssp-standard.org/publications/SSP101/SystemStructureAndParameterization101.pdf
 [SSP20]: https://ssp-standard.org/docs/2.0/
 [github]: specification/index.adoc
-[spec]: https://modelica.github.io/ssp-ls-traceability/master/
+[spec]: https://modelica.github.io/ssp-ls-traceability/main/
 [guides]: https://github.com/PMSFIT/SSPTraceabilityGuides/
 [examples]: https://github.com/modelica/ssp-ls-traceability-examples/
 [BSD-2]: https://opensource.org/licenses/BSD-2-Clause

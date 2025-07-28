@@ -13,7 +13,7 @@
 :source-highlighter: highlightjs
 :nofooter:
 :revdate: unreleased
-:revnumber: 1.0.0-beta2
+:revnumber: 1.0-rc.2
 :icons: font
 
 include::0___preamble.adoc[]
