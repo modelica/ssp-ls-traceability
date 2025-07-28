@@ -15,4 +15,4 @@
 
 - [[[MICCORE2023]]] IRT SystemX and prostep ivip MIC Core specification: https://mic-core.github.io/MIC-Core/main/
 
-- [[[CSP]]] Credible Simulation Process Framework in prostep Recommendation Appendix Part-H: https://www.prostep.org/shop/detail?ai%5Baction%5D=detail&ai%5Bcontroller%5D=Catalog&ai%5Bd_name%5D=psi_11_v3-0&ai%5Bd_pos%5D=20
+- [[[CSP]]] Credible Simulation Process Framework in prostep ivip SmartSE Recommendation 2025 PSI 11 V4.0 Part H: https://www.prostep.org/en/medialibrary/detail?ai%5Baction%5D=detail&ai%5Bcontroller%5D=Catalog&ai%5Bd_name%5D=prostep-ivip-smartse-recommendation-2025-psi-11-v-4-0-part-h-credible-simulation-process&ai%5Bd_pos%5D=2
