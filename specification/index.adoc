@@ -12,8 +12,8 @@
 :stem: latexmath
 :source-highlighter: highlightjs
 :nofooter:
-:revdate: unreleased
-:revnumber: 1.0-rc.2
+:revdate: 2025-08-29
+:revnumber: 1.0
 :icons: font
 
 include::0___preamble.adoc[]
