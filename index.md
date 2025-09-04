@@ -1,14 +1,32 @@
-# SSP Traceability Specification
+# SSP LS Traceability
 
-This repository contains the current prototyped draft specification
-for an [SSP][]-based layered standard for simulation traceability
-information exchange.  Note that this specification is actively
-being worked on, and thus subject to change without notice.
+This repository contains the [SSP][]-based layered standard for
+simulation traceability information exchange.  Note that this
+specification is actively being worked on, and thus subject to
+change without notice. See [releases][] and the [SSP][] site for
+stable releases of the specification.
 
-The [specification][spec] is maintained on [GitHub][github] and is
-published [here][spec]. It is based on the [SSP 1.0][SSP10] standard.
+The current development branch of the [specification][spec] is
+maintained on [GitHub][github] and is published [here][spec].
+It is based on the [SSP 2.0][SSP20] standard, and usable with
+both SSP 1.0 and SSP 2.0.
+
+Additional guides are provided [here][guides] and example files are
+provided [here][examples].
+
+## Copyright and License
+
+XML schemas and documentation copyright (C) 2019 - 2025 the Modelica Association Project SSP.
+XML schemas released under the [2-Clause BSD License][BSD-2].
+Documentation released under [Attribution-ShareAlike 4.0 International][CC-BY-SA-4].
 
 [SSP]: https://ssp-standard.org/
-[SSP10]: https://ssp-standard.org/publications/SSP10/SystemStructureAndParameterization10.pdf
-[github]: https://github.com/PMSFIT/SSPTraceability/
-[spec]: https://pmsfit.github.io/SSPTraceability/master/
+[SSP10]: https://ssp-standard.org/publications/SSP101/SystemStructureAndParameterization101.pdf
+[SSP20]: https://ssp-standard.org/docs/2.0/
+[github]: https://github.com/modelica/ssp-ls-traceability/specification/index.adoc
+[releases]: https://github.com/modelica/ssp-ls-traceability/releases
+[spec]: https://modelica.github.io/ssp-ls-traceability/main/
+[guides]: https://github.com/PMSFIT/SSPTraceabilityGuides/
+[examples]: https://github.com/modelica/ssp-ls-traceability-examples/
+[BSD-2]: https://opensource.org/licenses/BSD-2-Clause
+[CC-BY-SA-4]: https://creativecommons.org/licenses/by-sa/4.0/
