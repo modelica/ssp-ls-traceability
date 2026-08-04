@@ -148,9 +148,9 @@
                             <xs:element name="DefineSimulationEnvironmentDesignSpecification" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
-                                        In this step the design specification for the simulation environment is
+                                        In this step the design specification for the modeling and simulation environment is
                                         derived from the requirements. This can also be seen as the designi
-                                        specification for the architecture of the simulation environment
+                                        specification for the architecture of the modeling and simulation environment
                                         (structure, interfaces, modules, workflow and data flow).
                                     </xs:documentation>
                                 </xs:annotation>
@@ -221,9 +221,9 @@
                                     <xs:documentation xml:lang="en">
                                         In step the parameter structures, the infrastructure for handling
                                         different parameter sets and the processing of material data to model
-                                        parameters is implemented. Necessary infrastructure for quality
-                                        assurance of data and parameters is implemented and quality assurance
-                                        performed.
+                                        parameters is implemented (as far it is needed for model development). 
+                                        Necessary infrastructure for quality assurance of data and parameters 
+                                        is implemented and quality assurance performed.
                                     </xs:documentation>
                                 </xs:annotation>
                             </xs:element>
@@ -258,7 +258,7 @@
                             <xs:element name="AssureSimulationSetupQuality" type="stc:StepType" minOccurs="0">
                                 <xs:annotation>
                                     <xs:documentation xml:lang="en">
-                                        In this step quality assurance (i.e., tests) for the simulation
+                                        In this step quality assurance (i.e., tests) for the modeling and simulation
                                         environment with integrated models and parametrization is performed. 
                                         Quality information about models and simulation environment according
                                         to the criticality of the decision of the modeling task is provided.
