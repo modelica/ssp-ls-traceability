@@ -28,7 +28,7 @@ jobs:
     - name: copy schemas
       run: tar cf - *.xsd ssp-standard/schema | tar xfC - build
     - name: archive
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: SSP-Traceability-Spec
         path: build/*
