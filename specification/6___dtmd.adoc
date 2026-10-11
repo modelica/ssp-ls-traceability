@@ -38,7 +38,7 @@ The DecisionTaskMetaData element is associated with the following attributes.
 [width="100%",options="header"]
 |===
 | Attribute name        | Optional / Mandatory | Attribute description
-| version               | Mandatory            | Version of DTMD format, 1.0.0-beta2 for this pre-release.
+| version               | Mandatory            | Version of DTMD format, 1.0.0 for this release.
 | name                  | Mandatory            | This attribute gives the Decision Task a name, which can be used for purposes of presenting the Decision Task to the user, e.g. when selecting individual variant DTMDs from an SSP.
 | id                    | Optional             | This attribute gives the model element a file-wide unique id which can be referenced from other elements or via URI fragment identifier.
 | description           | Optional             | This attribute gives a human readable longer description of the model element, which can be shown to the user where appropriate.
