@@ -4,7 +4,7 @@ on:
   push:
     branches-ignore: [ 'temp/*' ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   build-spec:
@@ -38,7 +38,7 @@ jobs:
       shell: bash
       run: echo "branch=$(echo ${GITHUB_REF#refs/heads/})" >> $GITHUB_OUTPUT
     - name: deploy
-      if: (github.ref == 'refs/heads/master' || startsWith(github.ref,'refs/heads/doc')) && github.event_name == 'push'
+      if: (github.ref == 'refs/heads/main' || startsWith(github.ref,'refs/heads/doc')) && github.event_name == 'push'
       uses: peaceiris/actions-gh-pages@v3.9.3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}

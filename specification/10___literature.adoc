@@ -7,11 +7,12 @@
 
 - [[[SSP10]]] Modelica Association: **System Structure and Parameterization 1.0**. March 2019. https://ssp-standard.org/publications/SSP10/SystemStructureAndParameterization10.pdf
 
+- [[[SSP20]]] Modelica Association: **System Structure and Parameterization 2.0**. December 2024. https://ssp-standard.org/docs/2.0/
+
 - [[[XMLSCHEMA1.1]]] World Wide Web Consortium, Inc. (W3C): **XML Schema 1.1**. April 2012. https://www.w3.org/XML/Schema
 
 - [[[XLINK]]] World Wide Web Consortium, Inc. (W3C): **XLink 1.1**. May 2010. https://www.w3.org/TR/xlink/
 
 - [[[MICCORE2023]]] IRT SystemX and prostep ivip MIC Core specification: https://mic-core.github.io/MIC-Core/main/
 
-- [[[SETLEVEL]]] Credible Simulation Process Framework in GitLab: https://gitlab.setlevel.de/open/processes_and_traceability/credible_simulation_process_framework
-
+- [[[CSP]]] Credible Simulation Process Framework in prostep ivip SmartSE Recommendation 2025 PSI 11 V4.0 Part H: https://www.prostep.org/en/medialibrary/detail?ai%5Baction%5D=detail&ai%5Bcontroller%5D=Catalog&ai%5Bd_name%5D=prostep-ivip-smartse-recommendation-2025-psi-11-v-4-0-part-h-credible-simulation-process&ai%5Bd_pos%5D=2
